@@ -1,28 +1,29 @@
 # shinhanAI
+
 React
 
 프로젝트 관련 setting
-- Vanilla JS vs React
-- typescript
-- eslint
-- next ???
-- mui
-- scss, css
-- style componenet
-- 터미널 설정
-- compiled 관련
-- git 설정
-- 코딩 guide
-- data context
-- nvm 모듈
-- 폴더구조
-- css loader 관련
-- etc (Tailwind)
-- vsc 기본 설정 
-- .env
-- mobile media query
-- UDL 접근성
 
+-   Vanilla JS vs React
+-   typescript
+-   eslint
+-   next ???
+-   mui
+-   scss, css
+-   style componenet
+-   터미널 설정
+-   compiled 관련
+-   git 설정
+-   코딩 guide
+-   data context
+-   nvm 모듈
+-   폴더구조
+-   css loader 관련
+-   etc (Tailwind)
+-   vsc 기본 설정
+-   .env
+-   mobile media query
+-   UDL 접근성
 
 <pre>
 <code>
