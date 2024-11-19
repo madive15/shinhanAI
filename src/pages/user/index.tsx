@@ -1,12 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '~/shared/lib/redux';
-import { userActions } from "~/features/user/user.slice"
-import { Button } from '~/shared/ui/button';
-import { useGetQuery } from '~/features/user/user.api';
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "~/shared/lib/redux";
+import { userActions } from "~/features/user/user.slice";
+import { Button } from "~/shared/ui/button";
+import { useGetQuery } from "~/features/user/user.api";
 
-export default function User () {
-    const count = useSelector((state: RootState) => state.user.count)
-    const dispatch = useDispatch()
+export default function User() {
+    const count = useSelector((state: RootState) => state.user.count);
+    const dispatch = useDispatch();
 
     // const { data, error, isLoading } = useGetQuery({ page: 1, pageSize: 10 });
 
@@ -14,11 +14,11 @@ export default function User () {
     // if (error) return <p>Error loading users!</p>;
 
     const add = () => {
-        dispatch(userActions.add(1))
-    }
+        dispatch(userActions.add(1));
+    };
     const sub = () => {
-        dispatch(userActions.sub(1))
-    }
+        dispatch(userActions.sub(1));
+    };
     return (
         <>
             <div>User</div>
@@ -27,5 +27,5 @@ export default function User () {
             <Button onClick={sub}> - </Button>
             {/* <div>{data}</div> */}
         </>
-    )
+    );
 }

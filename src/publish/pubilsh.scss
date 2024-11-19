@@ -1,0 +1,13 @@
+@charset "utf-8";
+@import "../assets/scss/mixin";
+
+.gradient-bg {
+    background: linear-gradient(0deg, rgba(0, 70, 255, 1) 0%, rgba(75, 175, 245, 1) 100%);
+}
+
+.sample-color-box {
+    @include width-height(40px, 40px);
+    & .color-box1 {
+        @include background-color(--color1);
+    }
+}
