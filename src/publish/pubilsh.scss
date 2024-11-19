@@ -7,7 +7,7 @@
 
 .sample-color-box {
     @include width-height(40px, 40px);
-    & .color-box1 {
-        @include background-color(--color1);
-    }
+    // & .color-box1 {
+    //     @include background-color(--color1);
+    // }
 }
