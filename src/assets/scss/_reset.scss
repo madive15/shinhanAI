@@ -1,61 +1,65 @@
 @font-face {
-    font-family: "OneShinhan";
-    src: url("../font/67f9be25cebb2b86b67d7e4f824751fd.eot");
-    src: url("../font/67f9be25cebb2b86b67d7e4f824751fd.eot?#iefix") format("embedded-opentype"),
-        url("../font/67f9be25cebb2b86b67d7e4f824751fd.woff") format("woff"),
-        url("../font/67f9be25cebb2b86b67d7e4f824751fd.woff2") format("woff2"),
-        url("../font/67f9be25cebb2b86b67d7e4f824751fd.ttf") format("truetype"),
-        url("../font/67f9be25cebb2b86b67d7e4f824751fd.svg#OneShinhan") format("svg");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "OneShinhan";
+  src: url("../font/67f9be25cebb2b86b67d7e4f824751fd.eot");
+  src: url("../font/67f9be25cebb2b86b67d7e4f824751fd.eot?#iefix")
+      format("embedded-opentype"),
+    url("../font/67f9be25cebb2b86b67d7e4f824751fd.woff") format("woff"),
+    url("../font/67f9be25cebb2b86b67d7e4f824751fd.woff2") format("woff2"),
+    url("../font/67f9be25cebb2b86b67d7e4f824751fd.ttf") format("truetype"),
+    url("../font/67f9be25cebb2b86b67d7e4f824751fd.svg#OneShinhan") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: "Pretendard";
-    src: url("../font/Pretendard-Regular.woff2") format("woff2"), url("../font/Pretendard-Regular.woff") format("woff"),
-        url("../font/Pretendard-Regular.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Pretendard";
+  src: url("../font/Pretendard-Regular.woff2") format("woff2"),
+    url("../font/Pretendard-Regular.woff") format("woff"),
+    url("../font/Pretendard-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-    --color1: #0046ff;
-    --color2: #ffffff;
-    --color3: #000000;
-    --sub-color1: #8cd2f5;
-    --sub-color2: #4baff5;
-    --sub-color3: #2878f5;
-    --sub-color3: #00236e;
+  --color1: #0046ff;
+  --color2: #ffffff;
+  --color3: #000000;
+  --sub-color1: #8cd2f5;
+  --sub-color2: #4baff5;
+  --sub-color3: #2878f5;
+  --sub-color4: #00236e;
 
-    --font-style1: "OneShinhan";
-    --font-style2: "Pretendard";
-    --font-color1: #222222;
-    --font-color2: #666666;
-    --font-color3: #888888;
+  --font-style1: "OneShinhan";
+  --font-style2: "Pretendard";
+  --font-color1: #222222;
+  --font-color2: #666666;
+  --font-color3: #888888;
 
-    --border-color1: #accfff;
-    --border-color2: #d4e3f8;
-    --border-color3: #eeeeee;
-    --border-color4: #dddddd;
+  --border-color1: #accfff;
+  --border-color2: #d4e3f8;
+  --border-color3: #eeeeee;
+  --border-color4: #dddddd;
 
-    --background-color1: #f1f6fd;
-    --background-color2: #fafafa;
-    --background-color3: #dde6f3;
-    --gradient-bg: linear-gradient(0deg, rgba(0, 70, 255, 1) 0%, rgba(75, 175, 245, 1) 100%);
+  --background-color1: #f1f6fd;
+  --background-color2: #fafafa;
+  --background-color3: #dde6f3;
+  --gradient-bg: linear-gradient(0deg, #0046ff 0%, #4baff5 100%);
+  --positive: #15b86c;
+  --negative: #cb3737;
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: auto;
-    box-sizing: border-box;
-    font-family: var(--font-style2);
-    scroll-behavior: smooth;
+  height: auto;
+  box-sizing: border-box;
+  font-family: var(--font-style2);
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -64,8 +68,8 @@ li,
 dl,
 dt,
 dd {
-    list-style: none;
-    text-align: left;
+  list-style: none;
+  text-align: left;
 }
 
 button,
@@ -73,22 +77,22 @@ input,
 optgroup,
 select,
 textarea {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: rgba(0, 0, 0, 0);
-    box-shadow: none;
-    cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  cursor: pointer;
 }
 select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 button,
 input {
-    overflow: visible;
+  overflow: visible;
 }
 // input:-webkit-autofill,
 // input:-webkit-autofill:hover,
@@ -111,129 +115,143 @@ input {
 // }
 button,
 select {
-    text-transform: none;
+  text-transform: none;
 }
 
 address {
-    text-decoration: none;
-    font-style: normal;
-    text-transform: capitalize;
+  text-decoration: none;
+  font-style: normal;
+  text-transform: capitalize;
 }
 
 a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    text-decoration: none;
-    font-style: normal;
-    outline: none;
-    cursor: pointer;
-    color: white;
+  text-decoration: none;
+  font-style: normal;
+  outline: none;
+  cursor: pointer;
+  color: white;
 }
 
 a:link,
 a:visited,
 a:active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 legend {
-    box-sizing: border-box;
-    color: inherit;
-    display: table;
-    max-width: 100%;
-    padding: 0;
-    white-space: normal;
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
 }
 progress {
-    display: inline-block;
-    vertical-align: baseline;
+  display: inline-block;
+  vertical-align: baseline;
 }
 textarea {
-    overflow-x: hidden;
-    overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 table {
-    margin: 0;
-    padding: 0;
-    border-collapse: collapse;
-    border-spacing: 0;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 caption {
-    display: none;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    font-size: 0;
-    visibility: hidden;
+  display: none;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  visibility: hidden;
 }
 .disabled {
-    opacity: 0.65;
-    cursor: not-allowed !important;
+  opacity: 0.65;
+  cursor: not-allowed !important;
 }
 em {
-    font-style: normal;
+  font-style: normal;
 }
 
 [data-test-id] {
-    margin: 0 !important;
-    div {
-        position: relative !important;
-    }
+  margin: 0 !important;
+  div {
+    position: relative !important;
+  }
 }
 #text {
-    cursor: default;
+  cursor: default;
 }
 
 hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-family: var(--font-style1);
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
+  font-family: var(--font-style1);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.5px;
 }
 h2 {
-    font-family: var(--font-style1);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
+  font-family: var(--font-style1);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.5px;
 }
 h3 {
-    font-family: var(--font-style1);
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 21px;
+  font-family: var(--font-style1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: -0.5px;
 }
-.typography-text1 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
+.text1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222;
+  letter-spacing: -0.35px;
+  &.disabled {
+    color: #888;
+  }
 }
-.typography-text2 {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 15px;
+.text2 {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #666;
+  letter-spacing: -0.325px;
 }
-.typography-text3 {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
+.text3 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #666;
+  letter-spacing: -0.3px;
 }
-.typography-text4 {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 12px;
+.text4 {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #666;
+  letter-spacing: -0.25px;
 }
 
 /* custom scrollbar */
