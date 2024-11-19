@@ -1,5 +1,5 @@
 import React from "react";
-const CheckboxGroup = ({ children }) => {
+const CheckboxGroup = ({ children }: any) => {
   return <div className="checkbox-group">{children}</div>;
 };
 

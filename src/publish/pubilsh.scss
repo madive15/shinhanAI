@@ -7,8 +7,45 @@
   > div {
     margin-bottom: 40px;
     .guide-title {
-      font-size: 32px;
-      margin-bottom: 12px;
+      font-size: 30px;
+      margin-bottom: 0;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+    }
+
+    strong {
+      display: inline-block;
+      padding: 0 20px;
+      margin: 12px 0;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        margin-top: -1.5px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        margin-top: -1.5px;
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
     }
   }
   .color-box {
