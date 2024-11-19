@@ -29,7 +29,7 @@ function Guide() {
   const [radioValue, setRadioValue] = useState("option1");
   const [radioValue2, setRadioValue2] = useState("option4");
   const [selectedRadio, setSelectedRadio] = useState("");
-  const optionsRadio = ["라디오 샘플 A", "라디오 샘플 B", "라디오 샘플 C"];
+  const optionsRadio = ["라디오 샘플 AA", "라디오 샘플 B", "라디오 샘플 C"];
 
   const radioChange = (value: string) => {
     setRadioValue(value);

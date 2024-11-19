@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./checkbox.scss";
 
-type CheckboxProps = {
-  //+
-  label?: string; //+
-  checked: boolean; //+
-  onChange: (checked: boolean) => void; //+
-  disabled?: boolean; //+
-  id: string; //+
-};
-
 const Checkbox = ({
   label,
   checked,
@@ -17,7 +8,7 @@ const Checkbox = ({
   disabled,
   id,
   ...props
-}: CheckboxProps) => {
+}: any) => {
   return (
     <div className="checkbox">
       <label className={disabled ? "disabled" : ""} htmlFor={id}>

@@ -1,15 +1,9 @@
 import React from "react";
 
-const RadioGroup = ({
-  options,
-  selectedOption,
-  onChange,
-  name,
-  children,
-}: any) => {
+const RadioGroup = ({ options, selectedOption, onChange, name }: any) => {
   return (
     <div className="radio-group">
-      {options.map((option: any, index: any) => (
+      {options.map((option: any, index: number) => (
         <div className="radio" key={index}>
           <label>
             <input
@@ -17,7 +11,7 @@ const RadioGroup = ({
               name={name}
               value={option}
               defaultChecked={selectedOption === option}
-              onChange={() => onChange(option)}
+              onClick={() => onChange(option)}
             />
             <span className="radio-mark"></span>
             {option}
