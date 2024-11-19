@@ -1,6 +1,18 @@
 import React from "react";
 import "./radio.css";
 
+
+
+type PropsRadio = {
+  label?: string;
+  name:string;
+  value:string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  disabled?: boolean;
+  id: string;
+};
+
 const Radio = ({
   label,
   name,
@@ -9,7 +21,7 @@ const Radio = ({
   onChange,
   disabled,
   ...props
-}) => {
+} : PropsRadio) => {
   return (
     <div className="radio">
       <label className={disabled ? "disabled" : ""}>

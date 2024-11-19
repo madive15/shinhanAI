@@ -1,6 +1,6 @@
 import React from "react";
 
-const RadioGroup = ({ options, selectedOption, onChange, name, children }) => {
+const RadioGroup = ({ options, selectedOption, onChange, name, children } : any) => {
   return (
     <div className="radio-group">
       {options.map((option, index) => (
