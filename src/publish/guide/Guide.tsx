@@ -58,6 +58,17 @@ function Guide() {
   const [text9, setText9] = useState("");
 
   //인풋 끝
+
+  //버튼
+  const [toggle, setToggle] = useState(false);
+  const btnToggle = () => {
+    setToggle(!toggle);
+  };
+  const [toggleswitch, setToggleSwitch] = useState(false);
+  const btnSwitch = () => {
+    setToggleSwitch(!toggleswitch);
+  };
+  //버튼 끝
   return (
     <>
       <div className="guide-wrap">
@@ -386,6 +397,19 @@ function Guide() {
                 <Button value="버튼" viewType="type6" />
                 <Button value="버튼 텍스트" viewType="type6" />
                 <Button value="버튼 텍스트" viewType="type6" disabled={true} />
+              </div>
+              <div className="toggle">
+                <Button
+                  value="토글버튼"
+                  viewType={`toggle ${toggle ? "on" : ""}`}
+                  onClick={btnToggle}
+                />
+              </div>
+              <div className="switch">
+                <Button
+                  viewType={`switch ${toggleswitch ? "on" : ""}`}
+                  onClick={btnSwitch}
+                />
               </div>
             </div>
           )}
