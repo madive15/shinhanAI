@@ -5,6 +5,7 @@ import Radio from "../components/Radio";
 import RadioGroup from "../components/RadioGroup";
 import InputText from "../components/InputText";
 import Button from "../components/Button";
+import AdminTab from "../components/AdminTab";
 // import Btn from "../components/Btn.js";
 // import BtnWrap from "../components/BtnWrap.js";
 // import Modal from "../components/Modal.js";
@@ -69,6 +70,10 @@ function Guide() {
     setToggleSwitch(!toggleswitch);
   };
   //버튼 끝
+
+  //어드민 탭
+  const adminMenu = ["권한관리", "메뉴2", "메뉴3", "메뉴4"];
+  //어드민 탭 끝
   return (
     <>
       <div className="guide-wrap">
@@ -108,6 +113,12 @@ function Guide() {
             onClick={() => handleTabChange("tab6")}
           >
             button
+          </button>
+          <button
+            className={activeTab === "tab7" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab7")}
+          >
+            admin-tab
           </button>
         </div>
         <div className="guide-tab-content">
@@ -411,6 +422,12 @@ function Guide() {
                   onClick={btnSwitch}
                 />
               </div>
+            </div>
+          )}
+          {/* admintab */}
+          {activeTab == "tab7" && (
+            <div className="guide-admintab">
+              <AdminTab menuName={adminMenu} />
             </div>
           )}
         </div>
