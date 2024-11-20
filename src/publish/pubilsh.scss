@@ -3,9 +3,29 @@
 @import "../assets/scss/mixin";
 
 .guide-wrap {
-    padding: 20px;
+    display: flex;
+    .guide-tabs {
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 120px;
+        min-height: 100vh;
+        border-right: 2px solid #0046ff;
+
+        .guide-tab {
+            background-color: #0046ff;
+            padding: 16px 0;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+    }
+    .guide-tab-content {
+        padding: 20px;
+        width: 100%;
+    }
     > div {
-        margin-bottom: 40px;
         .guide-title {
             font-size: 30px;
             margin-bottom: 0;
