@@ -37,8 +37,22 @@
           letter-spacing: -0.375px;
           color: var(--color3);
           border-radius: 4px;
+          position: relative;
           &:hover {
             background-color: #e5ecff80;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 5px;
+            background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='5' viewBox='0 0 7 5' fill='none'%3E%3Cpath d='M3.49501 4.49002C3.36519 4.49002 3.23538 4.44015 3.14551 4.3404L0.149786 1.34788C-0.0499287 1.15835 -0.0499287 0.839152 0.149786 0.649626C0.349501 0.4601 0.659058 0.450125 0.848787 0.649626L3.49501 3.29302L6.14123 0.649626C6.34094 0.450125 6.6505 0.450125 6.85021 0.649626C7.04993 0.849127 7.04993 1.15835 6.85021 1.35786L3.85449 4.35037C3.75464 4.45012 3.62482 4.5 3.50499 4.5L3.49501 4.49002Z' fill='%23666666'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            margin-top: -2.5px;
           }
         }
         &.active {
@@ -46,6 +60,10 @@
             background-color: var(--color1);
             color: var(--color2);
             font-weight: 700;
+            &::after {
+              transform: rotate(180deg);
+              background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='5' viewBox='0 0 7 5' fill='none'%3E%3Cpath d='M3.49501 4.49002C3.36519 4.49002 3.23538 4.44015 3.14551 4.3404L0.149786 1.34788C-0.0499287 1.15835 -0.0499287 0.839152 0.149786 0.649626C0.349501 0.4601 0.659058 0.450125 0.848787 0.649626L3.49501 3.29302L6.14123 0.649626C6.34094 0.450125 6.6505 0.450125 6.85021 0.649626C7.04993 0.849127 7.04993 1.15835 6.85021 1.35786L3.85449 4.35037C3.75464 4.45012 3.62482 4.5 3.50499 4.5L3.49501 4.49002Z' fill='%23ffffff'/%3E%3C/svg%3E");
+            }
           }
           .two-depth {
             padding-left: 16px;
@@ -54,6 +72,9 @@
               &.active {
                 .two-depth-link {
                   border-color: var(--color3);
+                  &::after {
+                    transform: rotate(180deg);
+                  }
                 }
               }
             }
@@ -64,6 +85,20 @@
               padding: 12px 0;
               display: block;
               border-bottom: 1px solid var(--border-color3);
+              position: relative;
+              &::after {
+                content: "";
+                display: block;
+                width: 7px;
+                height: 5px;
+                background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='5' viewBox='0 0 7 5' fill='none'%3E%3Cpath d='M3.49501 4.49002C3.36519 4.49002 3.23538 4.44015 3.14551 4.3404L0.149786 1.34788C-0.0499287 1.15835 -0.0499287 0.839152 0.149786 0.649626C0.349501 0.4601 0.659058 0.450125 0.848787 0.649626L3.49501 3.29302L6.14123 0.649626C6.34094 0.450125 6.6505 0.450125 6.85021 0.649626C7.04993 0.849127 7.04993 1.15835 6.85021 1.35786L3.85449 4.35037C3.75464 4.45012 3.62482 4.5 3.50499 4.5L3.49501 4.49002Z' fill='%23666666'/%3E%3C/svg%3E");
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                margin-top: -2.5px;
+              }
             }
           }
           .three-depth {
@@ -74,6 +109,7 @@
               letter-spacing: -0.35px;
               display: block;
               margin-bottom: 20px;
+              color: var(--font-color2);
               &.active {
                 color: var(--color1);
                 font-weight: 700;

@@ -91,15 +91,15 @@ const Adminsidebar = () => {
       title: "시스템 관리",
       link: "https://naver.com",
       icon: "아이콘",
-      // submenu: [
-      //   { title: "시스템 관리 1", link: "#" },
-      //   { title: "시스템 관리 2", link: "#" },
-      // ],
+      twodepth: [
+        { title: "시스템 관리 1", link: "#" },
+        { title: "시스템 관리 2", link: "#" },
+      ],
     },
   ];
   const [openTwoDepth, setOpenTwoDepth] = useState(null);
   const [openThreeDepth, setOpenThreeDepth] = useState(null);
-  const [threeDepth, setthreeDepth] = useState(0);
+  const [threeDepth, setthreeDepth] = useState<number>();
 
   const MenuClick = ({ index, link }: any) => {
     // 서브메뉴가 없을 때는 link로 이동
