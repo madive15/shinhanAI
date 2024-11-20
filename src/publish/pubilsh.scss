@@ -3,25 +3,23 @@
 @import "../assets/scss/mixin";
 
 .guide-wrap {
+  display: flex;
+  .guide-tabs {
+    padding: 20px 10px;
     display: flex;
-    .guide-tabs {
-        padding: 20px 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        min-width: 120px;
-        min-height: 100vh;
-        border-right: 2px solid #0046ff;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 120px;
+    min-height: 100vh;
+    border-right: 2px solid #0046ff;
 
-        .guide-tab {
-            background-color: #0046ff;
-            padding: 16px 0;
-            color: #fff;
-            font-weight: 700;
-            font-size: 16px;
-        }
+    .guide-tab {
+      background-color: #0046ff;
+      padding: 16px 0;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
     }
-<<<<<<< HEAD
   }
   .guide-tab-content {
     padding: 20px;
@@ -47,121 +45,108 @@
       background-color: #000;
       color: #fff;
       padding: 10px;
-=======
-    .guide-tab-content {
-        padding: 20px;
-        width: 100%;
->>>>>>> b28a1b3d86aa3767dfe6397cbfcc32c157f3a13b
     }
-    > div {
-        .guide-title {
-            font-size: 30px;
-            margin-bottom: 0;
-            background-color: #000;
-            color: #fff;
-            padding: 10px;
-        }
 
-        strong {
-            display: inline-block;
-            padding: 0 20px;
-            margin: 12px 0;
-            position: relative;
+    strong {
+      display: inline-block;
+      padding: 0 20px;
+      margin: 12px 0;
+      position: relative;
 
-            &::after {
-                content: "";
-                display: block;
-                width: 10px;
-                height: 2px;
-                background-color: #000;
-                position: absolute;
-                top: 50%;
-                margin-top: -1.5px;
-            }
+      &::after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        margin-top: -1.5px;
+      }
 
-            &::before {
-                content: "";
-                display: block;
-                width: 10px;
-                height: 2px;
-                background-color: #000;
-                position: absolute;
-                top: 50%;
-                margin-top: -1.5px;
-                left: 0;
-            }
+      &::before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        margin-top: -1.5px;
+        left: 0;
+      }
 
-            &::after {
-                right: 0;
-            }
-        }
+      &::after {
+        right: 0;
+      }
     }
-    .color-box {
-        display: flex;
-        gap: 10px;
-        .sample-color-box {
-            @include width-height(40px, 40px);
-            &.color-box1 {
-                background-color: var(--color1);
-            }
-            &.color-box2 {
-                background-color: var(--color2);
-                border: 1px solid #ddd;
-            }
-            &.color-box3 {
-                background-color: var(--color3);
-            }
-            &.sub-color-box1 {
-                background-color: var(--sub-color1);
-            }
-            &.sub-color-box2 {
-                background-color: var(--sub-color2);
-            }
-            &.sub-color-box3 {
-                background-color: var(--sub-color3);
-            }
-            &.sub-color-box4 {
-                background-color: var(--sub-color4);
-            }
-            &.text-color-box1 {
-                background-color: var(--font-color1);
-            }
-            &.text-color-box2 {
-                background-color: var(--font-color2);
-            }
-            &.text-color-box3 {
-                background-color: var(--font-color3);
-            }
-            &.border-color-box1 {
-                background-color: var(--border-color1);
-            }
-            &.border-color-box2 {
-                background-color: var(--border-color2);
-            }
-            &.border-color-box3 {
-                background-color: var(--border-color3);
-            }
-            &.border-color-box4 {
-                background-color: var(--border-color4);
-            }
-            &.bg-color-box1 {
-                background-color: var(--background-color1);
-            }
-            &.bg-color-box2 {
-                background-color: var(--background-color2);
-            }
-            &.bg-color-box3 {
-                background-color: var(--background-color3);
-            }
-            &.bg-color-box4 {
-                background: var(--gradient-bg);
-            }
-            &.positive-box {
-                background-color: var(--positive);
-            }
-            &.negative-box {
-                background-color: var(--negative);
-            }
-        }
+  }
+  .color-box {
+    display: flex;
+    gap: 10px;
+    .sample-color-box {
+      @include width-height(40px, 40px);
+      &.color-box1 {
+        background-color: var(--color1);
+      }
+      &.color-box2 {
+        background-color: var(--color2);
+        border: 1px solid #ddd;
+      }
+      &.color-box3 {
+        background-color: var(--color3);
+      }
+      &.sub-color-box1 {
+        background-color: var(--sub-color1);
+      }
+      &.sub-color-box2 {
+        background-color: var(--sub-color2);
+      }
+      &.sub-color-box3 {
+        background-color: var(--sub-color3);
+      }
+      &.sub-color-box4 {
+        background-color: var(--sub-color4);
+      }
+      &.text-color-box1 {
+        background-color: var(--font-color1);
+      }
+      &.text-color-box2 {
+        background-color: var(--font-color2);
+      }
+      &.text-color-box3 {
+        background-color: var(--font-color3);
+      }
+      &.border-color-box1 {
+        background-color: var(--border-color1);
+      }
+      &.border-color-box2 {
+        background-color: var(--border-color2);
+      }
+      &.border-color-box3 {
+        background-color: var(--border-color3);
+      }
+      &.border-color-box4 {
+        background-color: var(--border-color4);
+      }
+      &.bg-color-box1 {
+        background-color: var(--background-color1);
+      }
+      &.bg-color-box2 {
+        background-color: var(--background-color2);
+      }
+      &.bg-color-box3 {
+        background-color: var(--background-color3);
+      }
+      &.bg-color-box4 {
+        background: var(--gradient-bg);
+      }
+      &.positive-box {
+        background-color: var(--positive);
+      }
+      &.negative-box {
+        background-color: var(--negative);
+      }
     }
+  }
 }
