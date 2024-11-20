@@ -6,6 +6,8 @@ import RadioGroup from "../components/RadioGroup";
 import InputText from "../components/InputText";
 import Button from "../components/Button";
 import AdminTab from "../components/AdminTab";
+// import Adminsidebar from "../components/Adminsidebar";
+import Adminsidebarone from "../components/Adminsidebarone";
 // import Btn from "../components/Btn.js";
 // import BtnWrap from "../components/BtnWrap.js";
 // import Modal from "../components/Modal.js";
@@ -18,7 +20,7 @@ import AdminTab from "../components/AdminTab";
 // import Textarea from "../components/Textarea.js";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab6");
+  const [activeTab, setActiveTab] = useState("tab8");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -119,6 +121,12 @@ function Guide() {
             onClick={() => handleTabChange("tab7")}
           >
             admin-tab
+          </button>
+          <button
+            className={activeTab === "tab8" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab8")}
+          >
+            admin-sidebar
           </button>
         </div>
         <div className="guide-tab-content">
@@ -428,6 +436,12 @@ function Guide() {
           {activeTab == "tab7" && (
             <div className="guide-admintab">
               <AdminTab menuName={adminMenu} />
+            </div>
+          )}
+          {/* Adminsidebar */}
+          {activeTab == "tab8" && (
+            <div className="guide-Adminsidebar">
+              <Adminsidebarone />
             </div>
           )}
         </div>
