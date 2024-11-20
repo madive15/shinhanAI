@@ -16,7 +16,7 @@
   src: url("../font/Pretendard-Regular.woff2") format("woff2"),
     url("../font/Pretendard-Regular.woff") format("woff"),
     url("../font/Pretendard-Regular.otf") format("opentype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -58,7 +58,7 @@ html,
 body {
   height: auto;
   box-sizing: border-box;
-  font-family: var(--font-style2);
+  font-family: var(--font-style2) sans-serif;
   scroll-behavior: smooth;
 }
 

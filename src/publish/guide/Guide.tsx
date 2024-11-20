@@ -3,6 +3,7 @@ import Checkbox from "../components/Checkbox";
 import CheckboxGroup from "../components/CheckboxGroup";
 import Radio from "../components/Radio";
 import RadioGroup from "../components/RadioGroup";
+import InputText from "../components/InputText";
 // import Btn from "../components/Btn.js";
 // import BtnWrap from "../components/BtnWrap.js";
 // import Modal from "../components/Modal.js";
@@ -14,6 +15,12 @@ import RadioGroup from "../components/RadioGroup";
 
 // import Textarea from "../components/Textarea.js";
 function Guide() {
+  //가이드 탭
+  const [activeTab, setActiveTab] = useState("tab5");
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+  };
+  //가이드 탭 끝
   //체크박스
   const [isChecked, setIsChecked] = useState(true);
   const [isChecked2, setIsChecked2] = useState(false);
@@ -38,43 +45,56 @@ function Guide() {
     setRadioValue2(value);
   };
   //라디오 끝
-  const [activeTab, setActiveTab] = useState("color");
-  const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-  };
+  //인풋
+  const [text, setText] = useState("");
+  const [text2, setText2] = useState("텍스트 입력");
+  const [text3, setText3] = useState("");
+  const [text4, setText4] = useState("텍스트 입력");
+  const [text5, setText5] = useState("");
+  const [text6, setText6] = useState("");
+  const [text7, setText7] = useState("");
+  const [text8, setText8] = useState("");
+  const [text9, setText9] = useState("");
+
+  //인풋 끝
   return (
     <>
       <div className="guide-wrap">
         <div className="guide-tabs">
           <button
-            className={activeTab === "color" ? "guide-tab active" : "guide-tab"}
-            onClick={() => handleTabChange("color")}
+            className={activeTab === "tab1" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab1")}
           >
             Color
           </button>
           <button
-            className={activeTab === "text" ? "guide-tab active" : "guide-tab"}
-            onClick={() => handleTabChange("text")}
+            className={activeTab === "tab2" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab2")}
           >
             Text
           </button>
           <button
-            className={
-              activeTab === "checkbox" ? "guide-tab active" : "guide-tab"
-            }
-            onClick={() => handleTabChange("checkbox")}
+            className={activeTab === "tab3" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab3")}
           >
             Checkbox
           </button>
           <button
-            className={activeTab === "radio" ? "guide-tab active" : "guide-tab"}
-            onClick={() => handleTabChange("radio")}
+            className={activeTab === "tab4" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab4")}
           >
             Radio
           </button>
+          <button
+            className={activeTab === "tab5" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab5")}
+          >
+            Input
+          </button>
         </div>
         <div className="guide-tab-content">
-          {activeTab === "color" && (
+          {/* color */}
+          {activeTab === "tab1" && (
             <div className="guide-color">
               <h2 className="guide-title">1. Color</h2>
               <strong>Primary color</strong>
@@ -117,7 +137,8 @@ function Guide() {
               </div>
             </div>
           )}
-          {activeTab === "text" && (
+          {/* text */}
+          {activeTab === "tab2" && (
             <div className="guide-text">
               <h2 className="guide-title">2. Font</h2>
               <h1>h1 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 20px</h1>
@@ -140,7 +161,8 @@ function Guide() {
               </div>
             </div>
           )}
-          {activeTab === "checkbox" && (
+          {/* checkbox */}
+          {activeTab === "tab3" && (
             <div className="guide-checkbox">
               <h2 className="guide-title">3. 체크박스</h2>
               <strong>라벨 있는 케이스</strong>
@@ -206,7 +228,8 @@ function Guide() {
               </CheckboxGroup>
             </div>
           )}
-          {activeTab === "radio" && (
+          {/* radio */}
+          {activeTab === "tab4" && (
             <div className="guide-radio">
               <h2 className="guide-title">4. 라디오</h2>
               <strong>라디오 라벨 있는 케이스</strong>
@@ -263,6 +286,68 @@ function Guide() {
                 selectedOption={selectedRadio}
                 onChange={setSelectedRadio}
                 name="RadioGroup1"
+              />
+            </div>
+          )}
+          {/* input */}
+          {activeTab === "tab5" && (
+            <div className="guide-input">
+              <InputText
+                // label="인풋 라벨"
+                id="inputText1"
+                value={text}
+                onChange={setText}
+                placeholder="플레이스홀더"
+                maxLength={30}
+              />
+              <InputText
+                id="inputText2"
+                value={text2}
+                onChange={setText2}
+                placeholder="플레이스홀더"
+              />
+              <InputText
+                id="inputText3"
+                value={text3}
+                onChange={setText3}
+                placeholder="플레이스홀더"
+                disabled={true}
+              />
+              <InputText
+                id="inputText4"
+                value={text4}
+                onChange={setText4}
+                placeholder="플레이스홀더"
+                caption="일반 캡션"
+              />
+              <InputText
+                id="inputText5"
+                value={text5}
+                onChange={setText5}
+                placeholder="플레이스홀더"
+                pass="패스 메세지"
+              />
+              <InputText
+                id="inputText6"
+                value={text6}
+                onChange={setText6}
+                placeholder="플레이스홀더"
+                error="에러 메세지"
+              />
+              <InputText
+                id="inputText7"
+                value={text7}
+                onChange={setText7}
+                placeholder="플레이스홀더"
+                tag="tag"
+              />
+              <InputText
+                id="inputText8"
+                value={text8}
+                onChange={setText8}
+                placeholder="플레이스홀더"
+                disabled={true}
+                tag="tag"
               />
             </div>
           )}

@@ -24,6 +24,19 @@
   .guide-tab-content {
     padding: 20px;
     width: 100%;
+    .guide-text {
+      h1,
+      h2,
+      h3,
+      div {
+        margin-bottom: 20px;
+      }
+    }
+    .guide-input {
+      .input-area {
+        margin-bottom: 20px;
+      }
+    }
   }
   > div {
     .guide-title {
