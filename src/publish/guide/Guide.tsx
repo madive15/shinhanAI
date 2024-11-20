@@ -4,6 +4,7 @@ import CheckboxGroup from "../components/CheckboxGroup";
 import Radio from "../components/Radio";
 import RadioGroup from "../components/RadioGroup";
 import InputText from "../components/InputText";
+import Button from "../components/Button";
 // import Btn from "../components/Btn.js";
 // import BtnWrap from "../components/BtnWrap.js";
 // import Modal from "../components/Modal.js";
@@ -16,7 +17,7 @@ import InputText from "../components/InputText";
 // import Textarea from "../components/Textarea.js";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab5");
+  const [activeTab, setActiveTab] = useState("tab6");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -90,6 +91,12 @@ function Guide() {
             onClick={() => handleTabChange("tab5")}
           >
             Input
+          </button>
+          <button
+            className={activeTab === "tab6" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab6")}
+          >
+            button
           </button>
         </div>
         <div className="guide-tab-content">
@@ -349,6 +356,37 @@ function Guide() {
                 disabled={true}
                 tag="tag"
               />
+            </div>
+          )}
+          {/* button */}
+          {activeTab == "tab6" && (
+            <div className="guide-button">
+              <div className="type1">
+                <Button value="버튼" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+              </div>
+              <div className="type2">
+                <Button value="버튼" viewType="type2" />
+                <Button value="버튼 텍스트" viewType="type2" />
+              </div>
+              <div className="type3">
+                <Button value="버튼" viewType="type3" />
+                <Button value="버튼 텍스트" viewType="type3" />
+              </div>
+              <div className="type4">
+                <Button value="버튼" viewType="type4" />
+                <Button value="버튼 텍스트" viewType="type4" />
+              </div>
+              <div className="type5">
+                <Button value="버튼" viewType="type5" />
+                <Button value="버튼 텍스트" viewType="type5" />
+              </div>
+              <div className="type6">
+                <Button value="버튼" viewType="type6" />
+                <Button value="버튼 텍스트" viewType="type6" />
+                <Button value="버튼 텍스트" viewType="type6" disabled={true} />
+              </div>
             </div>
           )}
         </div>

@@ -37,6 +37,13 @@
         margin-bottom: 20px;
       }
     }
+    .guide-button {
+      div {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+      }
+    }
   }
   > div {
     .guide-title {
