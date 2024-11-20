@@ -36,7 +36,9 @@ const Top: React.FC<IPageProps> = (props) => {
                 </NavLink>
             </h1>
             <div className="top-content">
-                <div className="search">search</div>
+                <div className="search">
+                    <input type="text" placeholder="메뉴검색" />
+                </div>
                 <div className="user-setting">
                     <div>user</div>
                     <div>sett</div>
