@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import "../../assets/scss/mixin";
+
+// parallax layout
+.flexible-side-layout {
+    max-width: 1920px;
+    margin: 0 auto;
+    header {
+        @include flex;
+        @include justify-content(flex-start);
+        @include align-items(center);
+        @include width-height(100%, 65px);
+        background-color: var(--color2);
+        & .logo {
+            margin: 18px 32px 18px 16px;
+        }
+        & .top-content {
+            @include flex;
+            @include justify-content(space-between);
+            @include align-items(center);
+            width: 100%;
+            margin: 18px 0 18px 16px;
+            & .user-setting {
+                @include flex;
+                @include justify-content(space-between);
+                @include align-items(center);
+                margin: 0 20px 0 0;
+            }
+        }
+    }
+    .container {
+        @include flex;
+        padding: 16px 16px;
+        background-color: var(--background-color1);
+        & .side-content {
+            width: 280px;
+            margin: 0 16px 0 0;
+            padding: 16px 0;
+            background-color: var(--color2);
+            border-radius: 4px 16px 16px 16px;
+        }
+    }
+}
