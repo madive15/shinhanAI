@@ -20,6 +20,14 @@
             @include align-items(center);
             width: 100%;
             margin: 18px 0 18px 16px;
+            & .search {
+                input {
+                    @include width-height(280px, 40px);
+                    padding: 8px 8px 8px 12px;
+                    border-radius: 4px 0px 0px 0px;
+                    border: 1px solid rgba(221, 221, 221, 1);
+                }
+            }
             & .user-setting {
                 @include flex;
                 @include justify-content(space-between);
@@ -30,6 +38,7 @@
     }
     .container {
         @include flex;
+        height: calc(100vh - 65px);
         padding: 16px 16px;
         background-color: var(--background-color1);
         & .side-content {
@@ -38,6 +47,33 @@
             padding: 16px 0;
             background-color: var(--color2);
             border-radius: 4px 16px 16px 16px;
+        }
+        & .content {
+            width: 100%;
+            & .tabs-area {
+                margin: 0 0 8px 0;
+            }
+            & .tabs-contents {
+                padding: 24px 22px;
+                background-color: var(--color2);
+                & .sub-title {
+                    height: 46px;
+                    margin: 0 0 24px 0;
+                    box-shadow: inset 0 -1px rgba(238, 238, 238, 1);
+                    .tit-gnb-box {
+                        @include flex;
+                        @include justify-content(space-between);
+                        @include align-items(center);
+                        height: 30px;
+                        .tit {
+                            font-family: var(--font-style1);
+                            font-size: 20px;
+                            font-weight: 700;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
