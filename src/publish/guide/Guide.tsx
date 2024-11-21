@@ -476,45 +476,61 @@ function Guide() {
             <div className="guide-button">
               <h2 className="guide-title">6. 버튼</h2>
               <ButtonWrap viewType="center">
-                <Button value="버튼" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+                <Button value="버튼" viewType="primary" />
+                <Button value="버튼 텍스트" viewType="primary" />
+                <Button
+                  value="버튼 텍스트"
+                  viewType="primary"
+                  disabled={true}
+                />
               </ButtonWrap>
               <ButtonWrap viewType="start">
-                <Button value="버튼" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+                <Button value="버튼" viewType="primary" />
+                <Button value="버튼 텍스트" viewType="primary" />
+                <Button
+                  value="버튼 텍스트"
+                  viewType="primary"
+                  disabled={true}
+                />
               </ButtonWrap>
               <ButtonWrap viewType="end">
-                <Button value="버튼" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+                <Button value="버튼" viewType="primary" />
+                <Button value="버튼 텍스트" viewType="primary" />
+                <Button
+                  value="버튼 텍스트"
+                  viewType="primary"
+                  disabled={true}
+                />
               </ButtonWrap>
-              <div className="type1">
-                <Button value="버튼" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" />
-                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+              <div className="primary">
+                <Button value="버튼" viewType="primary" />
+                <Button value="버튼 텍스트" viewType="primary" />
+                <Button
+                  value="버튼 텍스트"
+                  viewType="primary"
+                  disabled={true}
+                />
               </div>
-              <div className="type2">
-                <Button value="버튼" viewType="type2" />
-                <Button value="버튼 텍스트" viewType="type2" />
+              <div className="secondary">
+                <Button value="버튼" viewType="secondary" />
+                <Button value="버튼 텍스트" viewType="secondary" />
               </div>
-              <div className="type3">
-                <Button value="버튼" viewType="type3" />
-                <Button value="버튼 텍스트" viewType="type3" />
+              <div className="sub1">
+                <Button value="버튼" viewType="sub1" />
+                <Button value="버튼 텍스트" viewType="sub1" />
               </div>
-              <div className="type4">
-                <Button value="버튼" viewType="type4" />
-                <Button value="버튼 텍스트" viewType="type4" />
+              <div className="sub1">
+                <Button value="버튼" viewType="sub1" />
+                <Button value="버튼 텍스트" viewType="sub1" />
               </div>
-              <div className="type5">
-                <Button value="버튼" viewType="type5" />
-                <Button value="버튼 텍스트" viewType="type5" />
+              <div className="primary-big">
+                <Button value="버튼" viewType="primary-big" />
+                <Button value="버튼 텍스트" viewType="primary-big" />
               </div>
-              <div className="type6">
-                <Button value="버튼" viewType="type6" />
-                <Button value="버튼 텍스트" viewType="type6" />
-                <Button value="버튼 텍스트" viewType="type6" disabled={true} />
+              <div className="small">
+                <Button value="버튼" viewType="small" />
+                <Button value="버튼 텍스트" viewType="small" />
+                <Button value="버튼 텍스트" viewType="small" disabled={true} />
               </div>
               <div className="toggle">
                 <Button
