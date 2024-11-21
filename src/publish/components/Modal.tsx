@@ -21,19 +21,17 @@ function Modal({ title, content, isOpen, onClose, type }: any) {
         className={`modal ${type === "alert" ? "alert" : ""}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="modal-header">
-          {title && <h4>{title}</h4>}
-          {/* <button className="modal-close" onClick={onClose}>
-            ×
-          </button> */}
-        </div>
+        <div className="modal-header">{title && <h3>{title}</h3>}</div>
         <div className="modal-content">{content}</div>
         <div className="modal-footer">
-          <ButtonWrap viewType={"center"}>
-            {type === "confirm" && <Button value={"확인"} />}
-            <Button value={"닫기"} onClick={onClose} />
+          <ButtonWrap viewType={"end"}>
+            <Button viewType="type1" value={"닫기"} onClick={onClose} />
+            {type === "confirm" && <Button viewType="type4" value={"확인"} />}
           </ButtonWrap>
         </div>
+        <button className="modal-close" onClick={onClose}>
+          닫기
+        </button>
       </div>
     </div>
   );

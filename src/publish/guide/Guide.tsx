@@ -23,7 +23,7 @@ import Textarea from "../components/Textarea";
 // import Textarea from "../components/Textarea.js";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab10");
+  const [activeTab, setActiveTab] = useState("tab9");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -527,15 +527,18 @@ function Guide() {
               </ButtonWrap>
               <Modal
                 type="alert"
-                title="완료"
-                content={"완료되었습니다."}
+                content={
+                  "본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.."
+                }
                 isOpen={modals.modal1}
                 onClose={() => closeModal("modal1")}
               />
               <Modal
                 type="confirm"
-                title="완료"
-                content={"완료되었습니다."}
+                title="타이틀"
+                content={
+                  "본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.."
+                }
                 isOpen={modals.modal2}
                 onClose={() => closeModal("modal2")}
               />
