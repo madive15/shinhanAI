@@ -25,8 +25,8 @@ function Modal({ title, content, isOpen, onClose, type }: any) {
         <div className="modal-content">{content}</div>
         <div className="modal-footer">
           <ButtonWrap viewType={"end"}>
-            <Button viewType="type1" value={"닫기"} onClick={onClose} />
-            {type === "confirm" && <Button viewType="type4" value={"확인"} />}
+            <Button viewType="primary" value={"닫기"} onClick={onClose} />
+            {type === "confirm" && <Button viewType="sub1" value={"확인"} />}
           </ButtonWrap>
         </div>
         <button className="modal-close" onClick={onClose}>
