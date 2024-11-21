@@ -148,3 +148,19 @@
     }
   }
 }
+.btn-root-wrap {
+  display: flex;
+  margin-top: 20px;
+  &.center {
+    justify-content: center;
+  }
+  &.start {
+    justify-content: start;
+  }
+  &.end {
+    justify-content: end;
+  }
+  .btn-root + .btn-root {
+    margin-left: 12px;
+  }
+}

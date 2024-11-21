@@ -7,7 +7,7 @@ const Adminsidebar = () => {
       <div className="sidebar-tab">탭메뉴영역</div>
       <nav className="sidebar-nav">
         <ul className="sidebar-menu">
-          <li className="sidebar-item active ">
+          <li className="sidebar-item active">
             <a href="#" className="sidebar-link">
               원뎁스
             </a>
@@ -17,81 +17,61 @@ const Adminsidebar = () => {
                   투뎁스
                 </a>
                 <ul className="three-depth">
-                  <li>
-                    <a href="#19" className="three-depth-link">
+                  <li className="">
+                    <a href="#19" className="three-depth-link active">
                       쓰리뎁스
                     </a>
                   </li>
                   <li>
                     <a href="#20" className="three-depth-link">
-                      유틸리티 2
+                      쓰리뎁스 2
                     </a>
                   </li>
                 </ul>
               </li>
               <li className="no-three-depth">
                 <a href="#2" className="two-depth-link">
-                  홈 대시보드 2
-                </a>
-              </li>
-              <li className="no-three-depth">
-                <a href="#3" className="two-depth-link">
-                  홈 대시보드 3
-                </a>
-              </li>
-              <li className="no-three-depth">
-                <a href="#4" className="two-depth-link">
-                  홈 대시보드 4
-                </a>
-              </li>
-              <li className="no-three-depth">
-                <a href="#5" className="two-depth-link">
-                  홈 대시보드 5
-                </a>
-              </li>
-              <li className="no-three-depth">
-                <a href="#6" className="two-depth-link">
-                  홈 대시보드 6
+                  투뎁스 2
                 </a>
               </li>
             </ul>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               AI 타겟 추출
             </a>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               AI 모델 만들기
             </a>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               고객성향 지수
             </a>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               마이페이지
             </a>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               SingleView
             </a>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               게시판
             </a>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               유틸리티
             </a>
           </li>
-          <li className="sidebar-item  ">
+          <li className="sidebar-item">
             <a href="#" className="sidebar-link">
               시스템 관리
             </a>
