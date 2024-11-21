@@ -568,12 +568,12 @@ function Guide() {
               <ButtonWrap viewType="start">
                 <Button
                   value="alert"
-                  viewType="type1"
+                  viewType="primary"
                   onClick={() => openModal("modal1")}
                 />
                 <Button
                   value="confirm"
-                  viewType="type1"
+                  viewType="primary"
                   onClick={() => openModal("modal2")}
                 />
               </ButtonWrap>
