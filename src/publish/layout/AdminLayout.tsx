@@ -105,8 +105,8 @@ const AdminLayout: React.FC<IPageProps> = () => {
                             </div>
                         </div>
                         <ButtonWrap viewType="end">
-                            <Button value="초기화" viewType="type2" />
-                            <Button value="조회" viewType="type1" />
+                            <Button value="초기화" viewType="sub1" />
+                            <Button value="조회" viewType="primary" />
                         </ButtonWrap>
                         <div>권한목록</div>
                     </div>
