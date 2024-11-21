@@ -12,6 +12,7 @@ import Modal from "../components/Modal";
 import Textarea from "../components/Textarea";
 import SvgSample from "../components/SvgSample";
 import Select from "../components/Select";
+import Hash from "../components/Hash";
 
 // import Btn from "../components/Btn.js";
 // import BtnWrap from "../components/BtnWrap.js";
@@ -25,7 +26,7 @@ import Select from "../components/Select";
 // import Textarea from "../components/Textarea.js";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab12");
+  const [activeTab, setActiveTab] = useState("tab13");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -200,6 +201,12 @@ function Guide() {
             onClick={() => handleTabChange("tab12")}
           >
             select
+          </button>
+          <button
+            className={activeTab === "tab13" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab13")}
+          >
+            hash
           </button>
         </div>
         <div className="guide-tab-content">
@@ -597,13 +604,14 @@ function Guide() {
               />
             </div>
           )}
-
+          {/* svg */}
           {activeTab == "tab11" && (
             <div className="guide-svg">
               <h2 className="guide-title">11. SVG</h2>
               <SvgSample />
             </div>
           )}
+          {/* select */}
           {activeTab == "tab12" && (
             <div className="guide-select">
               <h2 className="guide-title">12. select</h2>
@@ -624,6 +632,14 @@ function Guide() {
                 disabled={true}
                 tag={true}
               />
+            </div>
+          )}
+          {/* hash */}
+          {activeTab == "tab13" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">13. hashtag</h2>
+              <Hash value="해시태그" />
+              <Hash value="해시태그" del={true} />
             </div>
           )}
         </div>
