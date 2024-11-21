@@ -8,18 +8,20 @@ const Textarea = ({
   id,
   disabled,
   ...props
-}: any) => (
-  <div className="textarea">
-    {label && <label htmlFor={id}>{label}</label>}
-    <textarea
-      value={value}
-      id={id}
-      onChange={(e) => onChange(e.target.value)}
-      placeholder={placeholder}
-      disabled={disabled}
-      {...props}
-    />
-  </div>
-);
+}: any) => {
+  return (
+    <div className="textarea">
+      {label && <label htmlFor={id}>{label}</label>}
+      <textarea
+        value={value}
+        id={id}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        disabled={disabled}
+        {...props}
+      />
+    </div>
+  );
+};
 
 export default Textarea;
