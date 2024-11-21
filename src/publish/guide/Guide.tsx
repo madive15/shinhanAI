@@ -124,9 +124,6 @@ function Guide() {
     { value: "option7", label: "옵션 7" },
     { value: "option8", label: "옵션 8" },
   ];
-  const selectValue = (value: any) => {
-    console.log("선택된 값:", value);
-  };
   //셀렉트 끝
   return (
     <>
@@ -613,25 +610,17 @@ function Guide() {
               <Select
                 options={options}
                 placeholder="옵션을 선택하세요"
-                onChange={selectValue}
                 disabled={false}
               />
               <Select
                 options={options}
                 placeholder="비활성화된 Select"
-                onChange={selectValue}
                 disabled={true}
               />
+              <Select options={options} placeholder="Select" tag={true} />
               <Select
                 options={options}
                 placeholder="Select"
-                onChange={selectValue}
-                tag={true}
-              />
-              <Select
-                options={options}
-                placeholder="Select"
-                onChange={selectValue}
                 disabled={true}
                 tag={true}
               />

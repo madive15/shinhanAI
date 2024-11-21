@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./select.scss";
 import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
-const CustomSelect = ({
-  options,
-  placeholder,
-  onChange,
-  disabled,
-  tag,
-}: any) => {
+const CustomSelect = ({ options, placeholder, disabled, tag }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("");
 
@@ -20,9 +14,6 @@ const CustomSelect = ({
   const optionClick = (value: any) => {
     setSelected(value);
     setIsOpen(false);
-    if (onChange) {
-      onChange(value);
-    }
   };
 
   return (
