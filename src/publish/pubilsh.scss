@@ -12,7 +12,13 @@
     min-width: 120px;
     min-height: 100vh;
     border-right: 2px solid #0046ff;
-
+    max-height: 100vh;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .guide-tab {
       background-color: #0046ff;
       padding: 16px 0;
