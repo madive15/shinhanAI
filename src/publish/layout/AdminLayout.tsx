@@ -6,6 +6,7 @@ import Loading from "~/publish/loading/Loading";
 import Top from "~/publish/layout/Top";
 import MenuContainer from "~/publish/layout/MenuContainer";
 import AdminTab from "~/publish/components/AdminTab";
+import { ReactComponent as Home } from "~assets/images/svg/Icons-home.svg";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -52,13 +53,33 @@ const AdminLayout: React.FC<IPageProps> = () => {
                         <div className="sub-title">
                             <div className="tit-gnb-box">
                                 <span className="tit">서브 타이틀</span>
-                                <div>
-                                    <span></span>
-                                    <span>권한/회원관리</span>
-                                    <span>권한관리</span>
+                                <div className="nav">
+                                    <Home className="home" />
+                                    <span className="deps">권한/회원관리</span>
+                                    <span className="deps">
+                                        <strong>권한관리</strong>
+                                    </span>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
+
+                        <div className="">
+                            <div className="">
+                                <span>조회항목</span>
+                                <div>
+                                    <select></select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className="">
+                                <span>권한구분</span>
+                                <div>
+                                    <select></select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div>권한목록</div>
                     </div>
                 </div>
             </div>

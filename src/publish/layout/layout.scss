@@ -49,6 +49,63 @@
                 @include justify-content(space-between);
                 @include align-items(center);
                 margin: 0 20px 0 0;
+                .user-time {
+                    @include flex;
+                    @include justify-content(space-between);
+                    @include align-items(center);
+                    @include width-height(127px, 30px);
+                    margin: 0 9px 0 0;
+                    padding: 4px 4px 4px 27px;
+                    border: 1px solid var(--border-color4);
+                    border-radius: 100px 100px;
+                    @include background(url("../../assets/images/icon/icon-time.png"), 13px, 13px, 8px, 8px, no-repeat);
+                    & > span {
+                        display: inline-block;
+                        width: 33px;
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: 14px;
+                    }
+                    & button {
+                        @include width-height(57px, 22px);
+                        margin: 0 0 0 6px;
+                        padding: 4px 8px 4px 8px;
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 14px;
+                        border-radius: 100px 100px;
+                        cursor: pointer;
+                    }
+                }
+                .nick-name {
+                    margin: 0 24px 0 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    em {
+                        font-weight: 700;
+                    }
+                }
+                .setting-box {
+                    position: relative;
+                    height: 24px;
+                    .icon-set {
+                        @include width-height(24px, 24px);
+                        margin: 0 0 0 24px;
+                        cursor: pointer;
+                        & path {
+                            fill: var(--font-color3);
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        @include absolute-left-top(0, 6px);
+                        display: block;
+                        width: 1px;
+                        height: 14px;
+                        border-left: 1px solid var(--border-color4);
+                    }
+                }
             }
         }
     }
@@ -73,16 +130,47 @@
                     height: 46px;
                     margin: 0 0 24px 0;
                     box-shadow: inset 0 -1px rgba(238, 238, 238, 1);
-                    .tit-gnb-box {
+                    & .tit-gnb-box {
                         @include flex;
                         @include justify-content(space-between);
                         @include align-items(center);
                         height: 30px;
-                        .tit {
+                        & .tit {
                             font-family: var(--font-style1);
                             font-size: 20px;
                             font-weight: 700;
                             line-height: 30px;
+                        }
+                        & .nav {
+                            @include flex;
+                            @include justify-content(space-between);
+                            @include align-items(center);
+                            height: 30px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 21px;
+                            color: var(--font-color3);
+                            & .home {
+                                @include width-height(24px, 24px);
+                                path {
+                                    fill: var(--font-color3);
+                                }
+                            }
+                            & .deps {
+                                margin: 0 0 0 12px;
+                                padding: 0 0 0 12px;
+                                @include background(
+                                    url("../../assets/images/icon/icon-right-arrow.png"),
+                                    5px,
+                                    9px,
+                                    0,
+                                    6px,
+                                    no-repeat
+                                );
+                                strong {
+                                    color: var(--font-color1);
+                                }
+                            }
                         }
                     }
                 }
