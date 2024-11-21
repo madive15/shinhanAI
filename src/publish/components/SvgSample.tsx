@@ -17,84 +17,83 @@ import { ReactComponent as Home } from "~assets/images/svg/Icons-home.svg";
 
 import "~/publish/components/svg.scss";
 const SvgSample = () => {
-    return (
-        <div className="svg-bg">
-            <h2 className="guide-title">9. SVG</h2>
-            <div>
-                <Search className="class-color-path1" />
-                <Search className="class-color-path2" />
-                <Search className="class-color-path3" />
-                <Search className="class-color-path4" />
-                <Search className="class-color-path5" />
-                <Search className="class-color-path6" />
-                <Search className="class-color-path7" />
-                <Search className="class-color-path8" />
-                <Search className="class-color-path9" />
-                <Search className="class-color-path10" />
-                <Search className="class-color-path11" />
-                <Search className="class-color-path12" />
-                <Search className="class-color-path13" />
-                <Search className="class-color-path14" />
-                <Search className="class-color-path15" />
-                <Search className="class-color-path16" />
-                <Search className="class-color-path17" />
-                <Search className="class-color-path18" />
-                <Search className="class-color-path19" />
-                <Search className="class-color-path20" />
-            </div>
-            <div>
-                <Search fill="#000" />
-                <Icons15 fill="#000" />
-                <Z fill="#000" />
-                <Trash fill="#000" />
-                <More fill="#000" />
-                <Limit fill="#000" />
-                <Board fill="#000" />
-                <UserGo fill="#000" />
-                <User fill="#000" />
-                <Ai fill="#000" />
-                <Set fill="#000" />
-                <Alarm fill="#000" />
-                <Filter fill="#000" />
-                <SearchBig fill="#000" />
-                <Home fill="#000" />
-            </div>
-            <div>
-                <Search fill="#ff0000" />
-                <Icons15 fill="#ff0000" />
-                <Z fill="#ff0000" />
-                <Trash fill="#ff0000" />
-                <More fill="#ff0000" />
-                <Limit fill="#ff0000" />
-                <Board fill="#ff0000" />
-                <UserGo fill="#ff0000" />
-                <User fill="#ff0000" />
-                <Ai fill="#ff0000" />
-                <Set fill="#ff0000" />
-                <Alarm fill="#ff0000" />
-                <Filter fill="#ff0000" />
-                <SearchBig fill="#ff0000 " />
-                <Home fill="#ff0000 " />
-            </div>
-            <div>
-                <Search fill="#0046FF" />
-                <Icons15 fill="#0046FF" />
-                <Z fill="#0046FF" />
-                <Trash fill="#0046FF" />
-                <More fill="#0046FF" />
-                <Limit fill="#0046FF" />
-                <Board fill="#0046FF" />
-                <UserGo fill="#0046FF" />
-                <User fill="#0046FF" />
-                <Ai fill="#0046FF" />
-                <Set fill="#0046FF" />
-                <Alarm fill="#0046FF" />
-                <Filter fill="#0046FF" />
-                <SearchBig fill="#0046FF" />
-                <Home fill="#0046FF" />
-            </div>
-        </div>
-    );
+  return (
+    <div className="svg-bg">
+      <div>
+        <Search className="class-color-path1" />
+        <Search className="class-color-path2" />
+        <Search className="class-color-path3" />
+        <Search className="class-color-path4" />
+        <Search className="class-color-path5" />
+        <Search className="class-color-path6" />
+        <Search className="class-color-path7" />
+        <Search className="class-color-path8" />
+        <Search className="class-color-path9" />
+        <Search className="class-color-path10" />
+        <Search className="class-color-path11" />
+        <Search className="class-color-path12" />
+        <Search className="class-color-path13" />
+        <Search className="class-color-path14" />
+        <Search className="class-color-path15" />
+        <Search className="class-color-path16" />
+        <Search className="class-color-path17" />
+        <Search className="class-color-path18" />
+        <Search className="class-color-path19" />
+        <Search className="class-color-path20" />
+      </div>
+      <div>
+        <Search fill="#000" />
+        <Icons15 fill="#000" />
+        <Z fill="#000" />
+        <Trash fill="#000" />
+        <More fill="#000" />
+        <Limit fill="#000" />
+        <Board fill="#000" />
+        <UserGo fill="#000" />
+        <User fill="#000" />
+        <Ai fill="#000" />
+        <Set fill="#000" />
+        <Alarm fill="#000" />
+        <Filter fill="#000" />
+        <SearchBig fill="#000" />
+        <Home fill="#000" />
+      </div>
+      <div>
+        <Search fill="#ff0000" />
+        <Icons15 fill="#ff0000" />
+        <Z fill="#ff0000" />
+        <Trash fill="#ff0000" />
+        <More fill="#ff0000" />
+        <Limit fill="#ff0000" />
+        <Board fill="#ff0000" />
+        <UserGo fill="#ff0000" />
+        <User fill="#ff0000" />
+        <Ai fill="#ff0000" />
+        <Set fill="#ff0000" />
+        <Alarm fill="#ff0000" />
+        <Filter fill="#ff0000" />
+        <SearchBig fill="#ff0000 " />
+        <Home fill="#ff0000 " />
+      </div>
+      <div>
+        <Search fill="#0046FF" />
+        <Icons15 fill="#0046FF" />
+        <Z fill="#0046FF" />
+        <Trash fill="#0046FF" />
+        <More fill="#0046FF" />
+        <Limit fill="#0046FF" />
+        <Board fill="#0046FF" />
+        <UserGo fill="#0046FF" />
+        <User fill="#0046FF" />
+        <Ai fill="#0046FF" />
+        <Set fill="#0046FF" />
+        <Alarm fill="#0046FF" />
+        <Filter fill="#0046FF" />
+        <SearchBig fill="#0046FF" />
+        <Home fill="#0046FF" />
+      </div>
+    </div>
+  );
 };
 
 export default SvgSample;
