@@ -176,6 +176,12 @@ function Guide() {
                     >
                         textarea
                     </button>
+                    <button
+                        className={activeTab === "tab11" ? "guide-tab active" : "guide-tab"}
+                        onClick={() => handleTabChange("tab11")}
+                    >
+                        SVG Images
+                    </button>
                 </div>
                 <div className="guide-tab-content">
                     {/* color */}
