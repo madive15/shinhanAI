@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logoPath from "~assets/images/admin_logo.png";
+import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
+import Button from "~/publish/components/Button";
 
 // Props type
 export interface IPageProps {
@@ -36,11 +38,15 @@ const Top: React.FC<IPageProps> = (props) => {
                 </NavLink>
             </h1>
             <div className="top-content">
-                <div className="search">
+                <label className="search">
                     <input type="text" placeholder="메뉴검색" />
-                </div>
+                    <Search className="icon-search" />
+                </label>
                 <div className="user-setting">
-                    <div>user</div>
+                    <div>
+                        <span>59:59</span>
+                        <Button value="시간연장" viewType="type3" />
+                    </div>
                     <div>sett</div>
                 </div>
             </div>

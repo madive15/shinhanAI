@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logoPath from "~assets/images/admin_logo.png";
 
+import Adminsidebar from "../components/Adminsidebarone";
+
 // Props type
 export interface IPageProps {
     pageName?: string;
@@ -28,7 +30,11 @@ const MenuContainer: React.FC<IPageProps> = (props) => {
     //   window.location.href = '/'
     // }
 
-    return <div className="side-content">MenuContainer</div>;
+    return (
+        <div className="side-content">
+            <Adminsidebar />
+        </div>
+    );
 };
 
 export default MenuContainer;

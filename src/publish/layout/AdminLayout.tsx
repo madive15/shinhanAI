@@ -58,9 +58,7 @@ const AdminLayout: React.FC<IPageProps> = () => {
                                     <span>권한관리</span>
                                 </div>
                             </div>
-                        </div>
-                        <div>2 </div>
-                        <div>3</div>
+                        </div> 
                     </div>
                 </div>
             </div>
