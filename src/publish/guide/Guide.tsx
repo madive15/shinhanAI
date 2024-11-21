@@ -5,9 +5,12 @@ import Radio from "../components/Radio";
 import RadioGroup from "../components/RadioGroup";
 import InputText from "../components/InputText";
 import Button from "../components/Button";
+import ButtonWrap from "../components/ButtonWrap";
 import AdminTab from "../components/AdminTab";
 // import Adminsidebar from "../components/Adminsidebar";
 import Adminsidebarone from "../components/Adminsidebarone";
+import Modal from "../components/Modal";
+import Textarea from "../components/Textarea";
 // import Btn from "../components/Btn.js";
 // import BtnWrap from "../components/BtnWrap.js";
 // import Modal from "../components/Modal.js";
@@ -20,7 +23,7 @@ import Adminsidebarone from "../components/Adminsidebarone";
 // import Textarea from "../components/Textarea.js";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab8");
+  const [activeTab, setActiveTab] = useState("tab10");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -76,6 +79,37 @@ function Guide() {
   //어드민 탭
   const adminMenu = ["권한관리", "메뉴2", "메뉴3", "메뉴4"];
   //어드민 탭 끝
+
+  //모달
+  const [modals, setModals] = useState({
+    modal1: false,
+    modal2: false,
+    modal3: false,
+  });
+
+  const openModal = (key: any) => {
+    setModals((prevModals) => ({
+      ...prevModals,
+      [key]: true,
+    }));
+  };
+
+  const closeModal = (key: any) => {
+    setModals((prevModals) => ({
+      ...prevModals,
+      [key]: false,
+    }));
+  };
+
+  //모달 끝
+
+  //텍스트에어리어
+  const [textarea, setTextarea] = useState("");
+  const [textarea2, setTextarea2] = useState(
+    "텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍스트가 이렇게 들어갑니다. 텍"
+  );
+  const [textarea3, setTextarea3] = useState("비활성");
+  //텍스트에어리어 끝
   return (
     <>
       <div className="guide-wrap">
@@ -127,6 +161,18 @@ function Guide() {
             onClick={() => handleTabChange("tab8")}
           >
             admin-sidebar
+          </button>
+          <button
+            className={activeTab === "tab9" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab9")}
+          >
+            modal
+          </button>
+          <button
+            className={activeTab === "tab10" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab10")}
+          >
+            textarea
           </button>
         </div>
         <div className="guide-tab-content">
@@ -329,6 +375,7 @@ function Guide() {
           {/* input */}
           {activeTab === "tab5" && (
             <div className="guide-input">
+              <h2 className="guide-title">5. 인풋 텍스트</h2>
               <InputText
                 // label="인풋 라벨"
                 id="inputText1"
@@ -391,6 +438,22 @@ function Guide() {
           {/* button */}
           {activeTab == "tab6" && (
             <div className="guide-button">
+              <h2 className="guide-title">6. 버튼</h2>
+              <ButtonWrap viewType="center">
+                <Button value="버튼" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+              </ButtonWrap>
+              <ButtonWrap viewType="start">
+                <Button value="버튼" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+              </ButtonWrap>
+              <ButtonWrap viewType="end">
+                <Button value="버튼" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" />
+                <Button value="버튼 텍스트" viewType="type1" disabled={true} />
+              </ButtonWrap>
               <div className="type1">
                 <Button value="버튼" viewType="type1" />
                 <Button value="버튼 텍스트" viewType="type1" />
@@ -435,13 +498,71 @@ function Guide() {
           {/* admintab */}
           {activeTab == "tab7" && (
             <div className="guide-admintab">
+              <h2 className="guide-title">7. 어드민 탭메뉴</h2>
               <AdminTab menuName={adminMenu} />
             </div>
           )}
           {/* Adminsidebar */}
           {activeTab == "tab8" && (
             <div className="guide-Adminsidebar">
+              <h2 className="guide-title">8. 어드민 사이드바</h2>
               <Adminsidebarone />
+            </div>
+          )}
+          {/* madal */}
+          {activeTab == "tab9" && (
+            <div className="guide-modal">
+              <h2 className="guide-title">9. 모달</h2>
+              <ButtonWrap viewType="start">
+                <Button
+                  value="alert"
+                  viewType="type1"
+                  onClick={() => openModal("modal1")}
+                />
+                <Button
+                  value="confirm"
+                  viewType="type1"
+                  onClick={() => openModal("modal2")}
+                />
+              </ButtonWrap>
+              <Modal
+                type="alert"
+                title="완료"
+                content={"완료되었습니다."}
+                isOpen={modals.modal1}
+                onClose={() => closeModal("modal1")}
+              />
+              <Modal
+                type="confirm"
+                title="완료"
+                content={"완료되었습니다."}
+                isOpen={modals.modal2}
+                onClose={() => closeModal("modal2")}
+              />
+            </div>
+          )}
+          {/* textarea */}
+          {activeTab == "tab10" && (
+            <div className="guide-textarea">
+              <h2 className="guide-title">10. 텍스트에어리어</h2>
+              <Textarea
+                label="텍스트에어리어 라벨"
+                value={textarea}
+                id="textArea1"
+                onChange={setTextarea}
+                placeholder="텍스트 에어리어"
+              />
+              <Textarea
+                value={textarea2}
+                onChange={setTextarea2}
+                placeholder="텍스트 에어리어2"
+              />
+              <Textarea
+                value={textarea3}
+                onChange={setTextarea3}
+                placeholder="텍스트 에어리어3"
+                disabled={true}
+              />
             </div>
           )}
         </div>
