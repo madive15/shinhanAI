@@ -5,11 +5,15 @@
 /.pnp
 .pnp.js
 
+/ai-studio-admin/node_modules
+
+
 # testing
 /coverage
 
 # production
 /build
+/ai-studio-admin/build
 
 # misc
 .DS_Store
