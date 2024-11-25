@@ -17,7 +17,7 @@ import List from "../components/List";
 import LayerPopup from "../components/LayerPopup";
 // import Table from "../components/Table";
 import DatePicker from "react-datepicker";
-
+import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 function Guide() {
   //가이드 탭
@@ -145,7 +145,7 @@ function Guide() {
   //레이어 팝업 끝
 
   //데이터 픽커
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState();
 
   const [dateRange, setDateRange] = useState([null, null]);
   const [rangeStartDate, rangeEndDate]: any = dateRange;
@@ -786,6 +786,7 @@ function Guide() {
                 dropdownMode="select"
                 dateFormat="yyyy-MM-dd"
                 isClearable={true}
+                locale={ko}
               />
               <p>range픽커</p>
               <DatePicker
@@ -797,6 +798,7 @@ function Guide() {
                 }}
                 isClearable={true}
                 dateFormat="yyyy-MM-dd"
+                locale={ko}
               />
             </div>
           )}
