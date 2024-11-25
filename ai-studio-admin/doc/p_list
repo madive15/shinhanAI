@@ -1,0 +1,149 @@
+install 
+
+1. npm 권한
+https://samsons.tistory.com/16
+
+2. ssl 끄기
+npm config set strict-ssl false
+
+3. repo 위치 저장
+
+vscode config
+https://goddaehee.tistory.com/287
+vscode plugin
+https://goddaehee.tistory.com/291
+
+
+ctrl + shift + p -> install from vsix
+
+
+react
+
+1. create
+npx create-react-app ai-studio-app --template typescript
+	https://bolob.tistory.com/entry/React-CRAcreate-react-app-TypeScript-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0
+
+2. eslint
+npx eslint --init
+	https://velog.io/@dishate/react-%ED%98%91%EC%97%85-%EC%85%8B%ED%8C%85%ED%95%98%EA%B8%B0-eslint-prettier-.vscode
+3. redux
+npm install redux react-redux @reduxjs/toolkit
+	https://velog.io/@mael1657/Redux-toolkit%EC%9C%BC%EB%A1%9C-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0
+
+4. rtk query
+설치 X
+
+	https://velog.io/@nowod_it/React-Redux-Toolkit-%EC%A0%95%EB%A6%AC
+	https://junsangyu.gitbook.io/rtk-query/tutorial
+	https://velog.io/@defaultkyle/rtk-query-1
+	https://velog.io/@hoonnn/redux-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-%EA%B0%80%EC%9D%B4%EB%93%9C
+    https://redux-toolkit.js.org/rtk-query/usage/polling
+
+5. react query
+npm install @tanstack/react-query @tanstack/react-query-devtools
+	https://musma.github.io/2023/09/14/react-query.html
+	auth 적용
+	https://medium.com/@turugdavut/implementing-refresh-token-in-react-with-rtk-query-3452295e21bb
+
+
+6. axios
+npm i axios
+    file upload
+        https://medium.com/road-to-fullstack/uploading-file-to-server-with-react-hooks-redux-and-multer-part-2-91039c8327dc
+        https://www.filestack.com/fileschool/react/react-file-upload/
+
+7. env
+npm install dotenv --save
+	https://velog.io/@jsk0406/React-%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.env%ED%8C%8C%EC%9D%BC%EC%9D%84-%ED%86%B5%ED%95%B4
+	https://velog.io/@rjsdnql123/React%EC%97%90%EC%84%9C-dotenv%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EB%B2%95
+	https://velog.io/@hyeontang0/React%EC%97%90%EC%84%9C-dotenv%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%A0%90
+
+8. router-dom
+npm i react-router-dom
+	https://velog.io/@younoah/react-router-dom
+	https://whitewise95.tistory.com/312
+	사용방법: https://woongtech.tistory.com/entry/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9A%B0%ED%84%B0-%EC%8D%A8%EB%B3%B4%EA%B8%B0-reactroutertypescript
+
+9. date-fns
+npm install date-fns date-fns-tz
+	https://velog.io/@rondido/Reactdata-fnsTimedate%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0
+
+10. Error Boundary
+npm install --save react-error-boundary
+	https://xionwcfm.tistory.com/372
+	https://velog.io/@bbaa3218/React-%EC%97%90%EB%9F%AC-%EB%B0%94%EC%9A%B4%EB%8D%94%EB%A6%ACError-Boundary
+    https://fe-developers.kakaoent.com/2022/221110-error-boundary/
+11. sweetalert
+npm i react-sweetalert2
+	https://github.com/kessejones/react-sweetalert2#readme
+	https://solarthenomadictraveler.tistory.com/70
+
+12. yup
+npm i yup
+	https://sugarsyrup.tistory.com/entry/react-hook-form%EA%B3%BC-yup-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%A0%81%EC%9A%A9-%ED%95%98%EA%B8%B0
+	https://velog.io/@boyeon_jeong/Yup-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0
+
+
+13. localStorage
+	https://velog.io/@jay_be/React-LocalStorage-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0
+
+14. editor (quill)
+npm install react-quill
+	https://www.npmjs.com/package/react-quill
+
+
+15. scss
+$npm i sass
+
+16. classname
+npm i classnames
+
+17. paths 
+  - npm install @craco/craco
+  - npm install -D tsconfig-paths-webpack-plugin
+  - craco.config.js 작성
+  	const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+
+	module.exports = {
+	  plugins: [
+	    {
+	      plugin: {
+	        overrideWebpackConfig: ({ webpackConfig }) => {
+	          webpackConfig.resolve.plugins.push(new TsconfigPathsPlugin({}));
+	          return webpackConfig;
+	        },
+	      },
+	    },
+	  ],
+	};
+  - package.json
+  	"scripts": {
+	    "start": "craco start",
+	    "build": "craco build",
+	  },
+
+https://velog.io/@yeguu037/ReactTypeScript-CRA%EC%97%90%EC%84%9C-Path-alias-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
+
+
+18. redux persist
+	- npm install redux-persist @types/redux-persist
+	- https://sj0826.github.io/react/react-Redux-Persist/
+	- https://trustmitt.tistory.com/70
+
+19. env
+    https://velog.io/@mocci/.env-%EC%99%80-craco-config
+FSD 적용
+https://wonderfulwonder.tistory.com/m/110
+
+
+----- 미적용
+20. toast
+https://github.com/fkhadra/react-toastify#readme
+
+참고
+https://github.com/brimdata/react-arborist
+
+dummy json
+https://dummyjson.com/
+
+
