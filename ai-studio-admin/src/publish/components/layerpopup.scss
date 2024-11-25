@@ -1,0 +1,48 @@
+.layer-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+  z-index: 1000;
+
+  .layer-popup-wrap {
+    background: white;
+    padding: 30px 16px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    max-height: 80vh;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &.small {
+      max-width: 500px;
+    }
+
+    &.xlarge {
+      max-width: 1000px;
+    }
+
+    .layer-popup-contents {
+      padding: 16px;
+      overflow-y: auto;
+      max-height: 100%;
+    }
+
+    .layer-popup-close {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+}

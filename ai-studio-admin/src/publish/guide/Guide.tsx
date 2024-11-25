@@ -13,20 +13,13 @@ import Textarea from "../components/Textarea";
 import SvgSample from "../components/SvgSample";
 import Select from "../components/Select";
 import Hash from "../components/Hash";
+import List from "../components/List";
+import LayerPopup from "../components/LayerPopup";
+// import Table from "../components/Table";
 
-// import Btn from "../components/Btn.js";
-// import BtnWrap from "../components/BtnWrap.js";
-// import Modal from "../components/Modal.js";
-// import LayerPopup from "../components/LayerPopup.js";
-// import Tab from "../components/Tab.js";
-// import Table from "../components/Table.js";
-// import List from "../components/List.js";
-// import InputText from "../components/InputText.js";
-
-// import Textarea from "../components/Textarea.js";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab13");
+  const [activeTab, setActiveTab] = useState("tab15");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -90,14 +83,14 @@ function Guide() {
     modal3: false,
   });
 
-  const openModal = (key: any) => {
+  const openModal = (key: string) => {
     setModals((prevModals) => ({
       ...prevModals,
       [key]: true,
     }));
   };
 
-  const closeModal = (key: any) => {
+  const closeModal = (key: string) => {
     setModals((prevModals) => ({
       ...prevModals,
       [key]: false,
@@ -126,6 +119,29 @@ function Guide() {
     { value: "option8", label: "옵션 8" },
   ];
   //셀렉트 끝
+
+  //레이어 팝업
+  const [popups, setPopups] = useState({
+    popup1: false,
+    popup2: false,
+    popup3: false,
+  });
+
+  const openPopup = (key: string) => {
+    setPopups((prevState) => ({
+      ...prevState,
+      [key]: true,
+    }));
+  };
+
+  const closePopup = (key: string) => {
+    setPopups((prevState) => ({
+      ...prevState,
+      [key]: false,
+    }));
+  };
+  //레이어 팝업 끝
+
   return (
     <>
       <div className="guide-wrap">
@@ -207,6 +223,24 @@ function Guide() {
             onClick={() => handleTabChange("tab13")}
           >
             hash
+          </button>
+          <button
+            className={activeTab === "tab14" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab14")}
+          >
+            list
+          </button>
+          <button
+            className={activeTab === "tab15" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab15")}
+          >
+            LayerPopup
+          </button>
+          <button
+            className={activeTab === "tab16" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab16")}
+          >
+            table
           </button>
         </div>
         <div className="guide-tab-content">
@@ -659,6 +693,83 @@ function Guide() {
               <h2 className="guide-title">13. hashtag</h2>
               <Hash value="해시태그" />
               <Hash value="해시태그" del={true} />
+            </div>
+          )}
+          {/* list */}
+          {activeTab == "tab14" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">14. list</h2>
+              <List type="bullet">
+                <li>
+                  불렛 리스트
+                  <br />
+                  불렛 리스트
+                </li>
+                <li>불렛 리스트</li>
+                <li>불렛 리스트</li>
+              </List>
+              <List type="order">
+                <li>
+                  오더 리스트
+                  <br />
+                  오더 리스트
+                </li>
+                <li>오더 리스트</li>
+                <li>오더 리스트</li>
+              </List>
+            </div>
+          )}
+          {/* LayerPopup */}
+          {activeTab == "tab15" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">15. LayerPopup</h2>
+              <ButtonWrap viewType="start">
+                <Button
+                  value="레이어팝업xlarge"
+                  viewType="primary"
+                  onClick={() => openPopup("popup1")}
+                />
+                <Button
+                  value="레이어팝업small"
+                  viewType="primary"
+                  onClick={() => openPopup("popup2")}
+                />
+                <Button
+                  value="레이어팝업"
+                  viewType="primary"
+                  onClick={() => openPopup("popup3")}
+                />
+              </ButtonWrap>
+              <LayerPopup
+                title="타이틀1"
+                isOpen={popups.popup1}
+                size="xlarge"
+                onClose={() => closePopup("popup1")}
+              >
+                <p>팝업1</p>
+              </LayerPopup>
+
+              <LayerPopup
+                isOpen={popups.popup2}
+                size="small"
+                onClose={() => closePopup("popup2")}
+              >
+                <p>팝업2</p>
+              </LayerPopup>
+
+              <LayerPopup
+                title="타이틀3"
+                isOpen={popups.popup3}
+                onClose={() => closePopup("popup3")}
+              >
+                <p>팝업3</p>
+              </LayerPopup>
+            </div>
+          )}
+          {/* table */}
+          {activeTab == "tab16" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">16. table</h2>
             </div>
           )}
         </div>

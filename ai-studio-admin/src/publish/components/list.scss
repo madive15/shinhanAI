@@ -1,0 +1,30 @@
+.bullet-list {
+  ul {
+    li {
+      display: flex;
+
+      &::before {
+        content: "•";
+        display: inline-flex;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.order-list {
+  ol {
+    counter-reset: number;
+
+    li {
+      display: flex;
+
+      &::before {
+        counter-increment: number 1;
+        content: counter(number) ".";
+        display: inline-flex;
+        margin-right: 8px;
+      }
+    }
+  }
+}
