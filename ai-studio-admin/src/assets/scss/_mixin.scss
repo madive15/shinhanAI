@@ -1,0 +1,114 @@
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin absolute-left-top($left, $top) {
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+
+@mixin absolute-right-top($right, $top) {
+    position: absolute;
+    right: $right;
+    top: $top;
+}
+
+@mixin absolute-left-bottom($left, $bottom) {
+    position: absolute;
+    left: $left;
+    bottom: $bottom;
+}
+
+@mixin absolute-right-bottom($right, $bottom) {
+    position: absolute;
+    right: $right;
+    bottom: $bottom;
+}
+
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($value: flex-start) {
+    @if $value == flex-start {
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        -ms-flex-pack: start;
+    } @else if $value == flex-end {
+        -webkit-box-pack: end;
+        -moz-box-pack: end;
+        -ms-flex-pack: end;
+    } @else if $value == space-between {
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+    } @else if $value == space-around {
+        -ms-flex-pack: distribute;
+    } @else {
+        -webkit-box-pack: $value;
+        -moz-box-pack: $value;
+        -ms-flex-pack: $value;
+    }
+    -webkit-justify-content: $value;
+    justify-content: $value;
+}
+
+@mixin background($img, $imgW, $imgH, $imgX, $imgY, $imgRepeat) {
+    background-image: $img;
+    background-size: $imgW $imgH;
+    background-position: $imgX $imgY;
+    background-repeat: $imgRepeat;
+}
+
+@mixin container($center: center) {
+    @include flex(column);
+    justify-content: $center;
+    height: calc(100vh - 60px);
+}
+
+@mixin bgOption($url) {
+    background-image: url($url);
+    background-size: 100% 100%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+@mixin flex($direction: row) {
+    @each $prefix in -moz-, -o-, -webkit-, -ms-, "" {
+        display: #{$prefix}flex;
+    }
+    flex-direction: $direction;
+}
+
+@mixin grid($direction: row) {
+    @each $prefix in -moz-, -o-, -webkit-, -ms-, "" {
+        display: #{$prefix}grid;
+    }
+    flex-direction: $direction;
+}
+
+@mixin alignItems($direction: center) {
+    -moz-align-items: $direction;
+    -ms-align-items: $direction;
+    align-items: $direction;
+}
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($value: stretch) {
+    @if $value == flex-start {
+        -webkit-box-align: start;
+        -moz-box-align: start;
+        -ms-flex-align: start;
+    } @else if $value == flex-end {
+        -webkit-box-align: end;
+        -moz-box-align: end;
+        -ms-flex-align: end;
+    } @else {
+        -webkit-box-align: $value;
+        -moz-box-align: $value;
+        -ms-flex-align: $value;
+    }
+    -webkit-align-items: $value;
+    align-items: $value;
+}
