@@ -770,6 +770,7 @@ function Guide() {
           {activeTab == "tab16" && (
             <div className="guide-hash">
               <h2 className="guide-title">16. table</h2>
+              테이블
             </div>
           )}
         </div>
