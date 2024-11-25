@@ -16,7 +16,9 @@ import Hash from "../components/Hash";
 import List from "../components/List";
 import LayerPopup from "../components/LayerPopup";
 // import Table from "../components/Table";
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
 function Guide() {
   //가이드 탭
   const [activeTab, setActiveTab] = useState("tab15");
@@ -142,6 +144,11 @@ function Guide() {
   };
   //레이어 팝업 끝
 
+  //데이터 픽커
+  const [startDate, setStartDate] = useState(new Date());
+
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [rangeStartDate, rangeEndDate]: any = dateRange;
   return (
     <>
       <div className="guide-wrap">
@@ -240,7 +247,7 @@ function Guide() {
             className={activeTab === "tab16" ? "guide-tab active" : "guide-tab"}
             onClick={() => handleTabChange("tab16")}
           >
-            table
+            datepicker
           </button>
         </div>
         <div className="guide-tab-content">
@@ -766,11 +773,31 @@ function Guide() {
               </LayerPopup>
             </div>
           )}
-          {/* table */}
+          {/* 테이터픽커 */}
           {activeTab == "tab16" && (
             <div className="guide-hash">
-              <h2 className="guide-title">16. table</h2>
-              테이블222
+              <h2 className="guide-title">16. datepicker</h2>
+              <p>단일픽커</p>
+              <DatePicker
+                selected={startDate}
+                onChange={(date: any) => setStartDate(date)}
+                // showYearDropdown
+                // showMonthDropdown
+                dropdownMode="select"
+                dateFormat="yyyy-MM-dd"
+                isClearable={true}
+              />
+              <p>range픽커</p>
+              <DatePicker
+                selectsRange={true}
+                startDate={rangeStartDate}
+                endDate={rangeEndDate}
+                onChange={(update: any) => {
+                  setDateRange(update);
+                }}
+                isClearable={true}
+                dateFormat="yyyy-MM-dd"
+              />
             </div>
           )}
         </div>
