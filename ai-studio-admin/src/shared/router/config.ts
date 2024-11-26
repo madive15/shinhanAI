@@ -33,4 +33,7 @@ export const pathKeys = {
     managerPage(): string {
         return `${pathKeys.root}publish/manager`; // 매니저 관리 page
     },
+    tablePage(): string {
+        return `${pathKeys.root}publish/table`; // 테이블 샘플 page
+    },
 };

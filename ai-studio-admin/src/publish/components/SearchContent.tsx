@@ -4,10 +4,11 @@ import React, { useState } from "react";
 // need content
 import Select from "~/publish/components/Select";
 import InputText from "~/publish/components/InputText";
-import SubTitle from "~/publish/components/SubTitle";
+import ButtonWrap from "~/publish/components/ButtonWrap";
+import Button from "~/publish/components/Button";
 
 // need style
-import "~/publish/layout/layout.scss";
+import "./search.scss";
 
 // Props type
 export interface IPageProps {
@@ -20,10 +21,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Sample
- * Sample page
+ * admin-front: SubTitle
+ * SubTitle page
  */
-const Sample: React.FC<IPageProps> = () => {
+const SearchContent: React.FC<IPageProps> = (props) => {
     //셀렉트
     const options = [
         { value: "option1", label: "옵션 1" },
@@ -41,8 +42,6 @@ const Sample: React.FC<IPageProps> = () => {
 
     return (
         <>
-            <SubTitle />
-
             <div className="search-contnet">
                 <div className="search-item">
                     <span className="tit">조회항목</span>
@@ -65,8 +64,13 @@ const Sample: React.FC<IPageProps> = () => {
                     </div>
                 </div>
             </div>
+
+            <ButtonWrap viewType="end">
+                <Button value="초기화" viewType="sub1" />
+                <Button value="조회" viewType="primary" />
+            </ButtonWrap>
         </>
     );
 };
 
-export default Sample;
+export default SearchContent;

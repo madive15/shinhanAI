@@ -7,12 +7,7 @@ import Top from "~/publish/layout/Top";
 import MenuContainer from "~/publish/layout/MenuContainer";
 import Auth from "~/publish/page/Auth";
 import Manager from "~/publish/page/Manager";
-
-import AdminTab from "~/publish/components/AdminTab";
-import Sample from "~/publish/page/Sample";
-import ButtonWrap from "~/publish/components/ButtonWrap";
-import Button from "~/publish/components/Button";
-import TableSample from "~/publish/components/TableSample";
+import SampleTablePage from "~/publish/page/SampleTablePage";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -42,24 +37,6 @@ const Layout: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
 
-    //어드민 탭
-    const adminMenu = ["권한관리", "메뉴2", "메뉴3", "메뉴4"];
-
-    //셀렉트
-    const options = [
-        { value: "option1", label: "옵션 1" },
-        { value: "option2", label: "옵션 2" },
-        { value: "option3", label: "옵션 3" },
-        { value: "option4", label: "옵션 4" },
-        { value: "option5", label: "옵션 5" },
-        { value: "option6", label: "옵션 6" },
-        { value: "option7", label: "옵션 7" },
-        { value: "option8", label: "옵션 8" },
-    ];
-
-    //인풋
-    const [text, setText] = useState("");
-
     return (
         <div className="flexible-side-layout">
             {loading && <Loading />}
@@ -67,18 +44,10 @@ const Layout: React.FC<IPageProps> = (props) => {
             <div className="container">
                 <MenuContainer pageName={""} subName={""} />
                 <div className="content">
-                    {props.pageName === "권한관리" && <Auth />}
-                    {props.pageName === "매니저관리" && <Manager />}
-
                     {/* Tab contents Page */}
-                    {/* <Sample />
-                    <ButtonWrap viewType="end">
-                        <Button value="초기화" viewType="sub1" />
-                        <Button value="조회" viewType="primary" />
-                    </ButtonWrap>
-
-                    <div>권한목록</div>
-                    <TableSample /> */}
+                    {props.pageName === "권한관리" && <Auth pageName={props.pageName} />}
+                    {props.pageName === "매니저관리" && <Manager pageName={props.pageName} />}
+                    {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}
                 </div>
             </div>
         </div>

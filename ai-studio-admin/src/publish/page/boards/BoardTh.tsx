@@ -30,7 +30,7 @@ export interface ITableThProps {
  * @author cardo
  *
  * @description
- * custody-admin-front: BoardTh
+ * admin-front: BoardTh
  * 기본 BoardTh
  */
 const BoardTh: React.FC<ITableProps> = (props) => {
@@ -38,7 +38,7 @@ const BoardTh: React.FC<ITableProps> = (props) => {
         <div className="tb-tit">
             {props?.titleTxt &&
                 props.titleTxt.map((data, i) => (
-                    <span key={i} style={{ width: `${data.width}%` }}>
+                    <span key={i} style={{ width: `${data.width}px` }}>
                         {data.text}
                     </span>
                 ))}

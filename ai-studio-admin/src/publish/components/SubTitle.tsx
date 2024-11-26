@@ -21,16 +21,18 @@ export interface IPageProps {
  * admin-front: SubTitle
  * SubTitle page
  */
-const SubTitle: React.FC<IPageProps> = () => {
+const SubTitle: React.FC<IPageProps> = (props) => {
     return (
         <div className="sub-title">
             <div className="tit-gnb-box">
-                <span className="tit">서브 타이틀</span>
+                <span className="tit">{props.pageName}</span>
                 <div className="nav">
                     <Home className="home" />
-                    <span className="deps">권한/회원관리</span>
                     <span className="deps">
-                        <strong>권한관리</strong>
+                        {props.pageName} / {props.pageName}
+                    </span>
+                    <span className="deps">
+                        <strong>{props.pageName}</strong>
                     </span>
                 </div>
             </div>
