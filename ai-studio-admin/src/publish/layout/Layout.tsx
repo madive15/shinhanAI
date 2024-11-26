@@ -31,7 +31,7 @@ export interface IPageProps {
  * admin-front: AdminLayout
  * AdminLayout
  */
-const AdminLayout: React.FC<IPageProps> = (props) => {
+const Layout: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -85,4 +85,4 @@ const AdminLayout: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default AdminLayout;
+export default Layout;

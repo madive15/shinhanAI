@@ -7,7 +7,7 @@ import PopupLayout from "~/pages/layouts/PopupLayout";
 import User from "~/pages/user";
 import PubIndex from "~/publish";
 import Guide from "~/publish/guide/Guide";
-import AdminLayout from "~/publish/layout/AdminLayout";
+import Layout from "~/publish/layout/Layout";
 import { pathKeys } from "~/shared/router";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -40,15 +40,15 @@ export const router = createBrowserRouter([
                       },
                       {
                           path: pathKeys.adminLayout(),
-                          element: <AdminLayout />,
+                          element: <Layout />,
                       },
                       {
                           path: pathKeys.authPage(),
-                          element: <AdminLayout pageName={"권한관리"} />,
+                          element: <Layout pageName={"권한관리"} />,
                       },
                       {
                           path: pathKeys.managerPage(),
-                          element: <AdminLayout pageName={"매니저관리"} />,
+                          element: <Layout pageName={"매니저관리"} />,
                       },
                   ]
                 : []),

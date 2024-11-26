@@ -22,6 +22,7 @@ import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 
 import SlickSlider from "../components/SlickSlider";
+import Badge from "../components/Badge";
 function Guide() {
   //가이드 탭
   const [activeTab, setActiveTab] = useState("tab15");
@@ -264,6 +265,12 @@ function Guide() {
             onClick={() => handleTabChange("tab18")}
           >
             slick slider
+          </button>
+          <button
+            className={activeTab === "tab19" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab19")}
+          >
+            badge
           </button>
         </div>
         <div className="guide-tab-content">
@@ -826,11 +833,20 @@ function Guide() {
               <SubTitle />
             </div>
           )}
-          {/* 서브타이틀 */}
+          {/* 슬릭 슬라이더 */}
           {activeTab == "tab18" && (
             <div className="guide-hash">
               <h2 className="guide-title">18. slick slider</h2>
               <SlickSlider />
+            </div>
+          )}
+          {/* 뱃지 */}
+          {activeTab == "tab19" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">19. badge</h2>
+              <Badge value="ADM006" color="gray" />
+              <Badge value="사용중" color="green" />
+              <Badge value="사용중중중중중중중중중중" color="green" />
             </div>
           )}
         </div>
