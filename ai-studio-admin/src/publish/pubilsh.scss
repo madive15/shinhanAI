@@ -42,17 +42,48 @@
       font-weight: 700;
       font-size: 16px;
     }
-  }
-  .guide-tab-content {
-    padding: 20px;
-    width: calc(100% - 138px);
-    .guide-text {
-      h1,
-      h2,
-      h3,
-      div {
-        margin-bottom: 20px;
-      }
+    > div {
+        .guide-title {
+            font-size: 30px;
+            margin-bottom: 20px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+        }
+
+        > strong {
+            display: inline-block;
+            padding: 0 20px;
+            margin: 12px 0;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 2px;
+                background-color: #000;
+                position: absolute;
+                top: 50%;
+                margin-top: -1.5px;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 2px;
+                background-color: #000;
+                position: absolute;
+                top: 50%;
+                margin-top: -1.5px;
+                left: 0;
+            }
+
+            &::after {
+                right: 0;
+            }
+        }
     }
     .guide-input {
       .input-area {
