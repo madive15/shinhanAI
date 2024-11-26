@@ -48,11 +48,12 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
                 <SearchContent />
-                <TableSample />
+
+                <TableSample pageName={props.pageName} />
 
                 <div className="card-table">
                     <Cardlist />
-                    <TableSample />
+                    <TableSample pageName={props.pageName} />
                 </div>
             </div>
         </>
