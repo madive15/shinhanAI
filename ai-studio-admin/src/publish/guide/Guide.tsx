@@ -19,9 +19,11 @@ import LayerPopup from "../components/LayerPopup";
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
+
+import SlickSlider from "../components/SlickSlider";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab15");
+  const [activeTab, setActiveTab] = useState("tab17");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -248,6 +250,12 @@ function Guide() {
             onClick={() => handleTabChange("tab16")}
           >
             datepicker
+          </button>
+          <button
+            className={activeTab === "tab17" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab17")}
+          >
+            slick slider
           </button>
         </div>
         <div className="guide-tab-content">
@@ -773,7 +781,7 @@ function Guide() {
               </LayerPopup>
             </div>
           )}
-          {/* 테이터픽커 */}
+          {/* 데이터픽커 */}
           {activeTab == "tab16" && (
             <div className="guide-hash">
               <h2 className="guide-title">16. datepicker</h2>
@@ -800,6 +808,13 @@ function Guide() {
                 dateFormat="yyyy-MM-dd"
                 locale={ko}
               />
+            </div>
+          )}
+          {/* 데이터픽커 */}
+          {activeTab == "tab17" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">17. slick slider</h2>
+              <SlickSlider />
             </div>
           )}
         </div>
