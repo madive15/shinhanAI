@@ -18,6 +18,7 @@ import LayerPopup from "../components/LayerPopup";
 // import Table from "../components/Table";
 import DatePicker from "react-datepicker";
 import SubTitle from "../components/SubTitle";
+import Cardlist from "../components/Cardlist";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -25,7 +26,7 @@ import SlickSlider from "../components/SlickSlider";
 import Badge from "../components/Badge";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab15");
+  const [activeTab, setActiveTab] = useState("tab20");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -153,6 +154,33 @@ function Guide() {
 
   const [dateRange, setDateRange] = useState([null, null]);
   const [rangeStartDate, rangeEndDate]: any = dateRange;
+  //데이터 픽커 끝
+
+  // 카드리스트
+  const cardData = [
+    {
+      badge: "사용중",
+      tit: "시스템 관리자",
+      subtit: "시스템 관리자",
+      regist: "240506 10:10:05",
+      modify: "240506 10:10:05",
+    },
+    {
+      badge: "사용중",
+      tit: "일반 사용자",
+      subtit: "메타정보 관리자",
+      regist: "240506 10:10:05",
+      modify: "240506 10:10:05",
+    },
+    {
+      badge: "사용중",
+      tit: "메타정보 관리자",
+      subtit: "OCR 관리자",
+      regist: "240506 10:10:05",
+      modify: "240506 10:10:05",
+    },
+  ];
+  // 카드리스트 끝
   return (
     <>
       <div className="guide-wrap">
@@ -271,6 +299,12 @@ function Guide() {
             onClick={() => handleTabChange("tab19")}
           >
             badge
+          </button>
+          <button
+            className={activeTab === "tab20" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab20")}
+          >
+            card list
           </button>
         </div>
         <div className="guide-tab-content">
@@ -847,6 +881,15 @@ function Guide() {
               <Badge value="ADM006" color="gray" />
               <Badge value="사용중" color="green" />
               <Badge value="사용중중중중중중중중중중" color="green" />
+            </div>
+          )}
+          {/* card */}
+          {activeTab == "tab20" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">20. card</h2>
+              <div style={{ maxWidth: "504px" }}>
+                <Cardlist />
+              </div>
             </div>
           )}
         </div>
