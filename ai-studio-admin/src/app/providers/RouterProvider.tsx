@@ -13,49 +13,57 @@ import { pathKeys } from "~/shared/router";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 export const router = createBrowserRouter([
-  {
-    errorElement: <BubbleError />,
-    children: [
-      {
-        element: <MainLayout />,
+    {
+        errorElement: <BubbleError />,
         children: [
-          { path: pathKeys.home(), element: <Home /> },
-          { path: pathKeys.user(), element: <User /> },
-          { path: pathKeys.page404(), element: <PageNotFound /> },
+            {
+                element: <MainLayout />,
+                children: [
+                    { path: pathKeys.home(), element: <Home /> },
+                    { path: pathKeys.user(), element: <User /> },
+                    { path: pathKeys.page404(), element: <PageNotFound /> },
+                ],
+            },
+            {
+                element: <PopupLayout />,
+                children: [{ path: pathKeys.popupMenu1(), element: <User /> }],
+            },
+            ...(isDevelopment
+                ? [
+                      {
+                          path: pathKeys.publish(),
+                          element: <PubIndex />,
+                      },
+                      {
+                          path: pathKeys.publishGuide(),
+                          element: <Guide />,
+                      },
+                      {
+                          path: pathKeys.adminLayout(),
+                          element: <Layout />,
+                      },
+                      {
+                          path: pathKeys.authPage(),
+                          element: <Layout pageName={"권한관리"} />,
+                      },
+                      {
+                          path: pathKeys.managerPage(),
+                          element: <Layout pageName={"매니저관리"} />,
+                      },
+                  ]
+                : []),
+            {
+                loader: async () => redirect(pathKeys.page404()),
+                path: "*",
+            },
         ],
-      },
-      {
-        element: <PopupLayout />,
-        children: [{ path: pathKeys.popupMenu1(), element: <User /> }],
-      },
-      ...(isDevelopment
-        ? [
-            {
-              path: pathKeys.publish(),
-              element: <PubIndex />,
-            },
-            {
-              path: pathKeys.publishGuide(),
-              element: <Guide />,
-            },
-            {
-              path: pathKeys.adminLayout(),
-              element: <Layout />,
-            },
-          ]
-        : []),
-      {
-        loader: async () => redirect(pathKeys.page404()),
-        path: "*",
-      },
-    ],
-  },
+    },
 ]);
 
 // https://github.com/remix-run/react-router/discussions/10166
 function BubbleError() {
-  const error = useRouteError();
+    const error = useRouteError();
 
-  if (error) throw error;
-  return null;
+    if (error) throw error;
+    return null;
 }
