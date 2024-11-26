@@ -19,6 +19,7 @@ import LayerPopup from "../components/LayerPopup";
 import DatePicker from "react-datepicker";
 import SubTitle from "../components/SubTitle";
 import Cardlist from "../components/Cardlist";
+import Treelist from "../components/Treelist";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -26,7 +27,7 @@ import SlickSlider from "../components/SlickSlider";
 import Badge from "../components/Badge";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab20");
+  const [activeTab, setActiveTab] = useState("tab21");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -305,6 +306,12 @@ function Guide() {
             onClick={() => handleTabChange("tab20")}
           >
             card list
+          </button>
+          <button
+            className={activeTab === "tab21" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab21")}
+          >
+            tree
           </button>
         </div>
         <div className="guide-tab-content">
@@ -890,6 +897,13 @@ function Guide() {
               <div style={{ maxWidth: "504px" }}>
                 <Cardlist />
               </div>
+            </div>
+          )}
+          {/* treelist */}
+          {activeTab == "tab21" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">21. tree</h2>
+              <Treelist />
             </div>
           )}
         </div>
