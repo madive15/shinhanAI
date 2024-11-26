@@ -6,6 +6,8 @@ import Loading from "~/publish/loading/Loading";
 import AdminTab from "~/publish/components/AdminTab";
 import SubTitle from "~/publish/components/SubTitle";
 import SearchContent from "~/publish/components/SearchContent";
+import TableSample from "~/publish/components/TableSample";
+import Cardlist from "~/publish/components/Cardlist";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -21,10 +23,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Manager 매니저관리
- * Manager
+ * admin-front: Sample table
+ * Sample table page
  */
-const Manager: React.FC<IPageProps> = (props) => {
+const SampleTablePage: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -35,8 +37,8 @@ const Manager: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
 
-    //어드민 탭
-    const adminMenu = ["매니저관리", "메뉴2", "메뉴3", "메뉴4"];
+    //table 탭
+    const adminMenu = ["table 관리", "메뉴2", "메뉴3", "메뉴4"];
 
     return (
         <>
@@ -46,9 +48,15 @@ const Manager: React.FC<IPageProps> = (props) => {
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
                 <SearchContent />
+                <TableSample />
+
+                <div className="card-table">
+                    <Cardlist />
+                    <TableSample />
+                </div>
             </div>
         </>
     );
 };
 
-export default Manager;
+export default SampleTablePage;

@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import "../../assets/scss/mixin";
+
+.search-contnet {
+    @include flex;
+    @include justify-content(space-between);
+    @include align-items(center);
+    margin: 0 0 0 0;
+    padding: 8px 16px;
+    background-color: var(--background-color1);
+    border-radius: 4px 4px;
+    & .search-item {
+        @include flex;
+        width: 50%;
+        padding: 0 16px 0 0;
+        .tit {
+            @include flex;
+            @include justify-content(flex-start);
+            @include align-items(center);
+            min-width: 60px;
+            height: 36px;
+            margin: 0 8px 0 0;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: -0.025em;
+        }
+        .item-box {
+            @include flex;
+            width: 100%;
+            & .custom-select {
+                width: 100%;
+                min-width: 100px;
+                max-width: 100px;
+                margin: 0 4px 0 0;
+            }
+            & .input-area {
+                width: 100%;
+                input {
+                    width: 100%;
+                    max-width: 376px;
+                }
+            }
+            &.select-long {
+                & .custom-select {
+                    width: 100%;
+                    max-width: 480px;
+                }
+            }
+        }
+    }
+}

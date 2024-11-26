@@ -2,6 +2,8 @@
 @import "../../assets/scss/mixin";
 
 .tb-body {
+    width: 100%;
+    overflow-x: auto;
     .tb-tit {
         @include flex;
         border-top: 1px solid var(--border-color5);
@@ -20,7 +22,7 @@
     }
     .tb-txt {
         @include flex;
-        box-shadow: 0px -1px 0px 0px #edf2f7 inset;
+        box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
         span {
             @include flex;
             @include align-items(center);
@@ -31,8 +33,83 @@
             font-weight: 400;
             line-height: 19px;
         }
-        // &:nth-last-child(1) {
-        //     box-shadow: 0px 0px 0px 0px #edf2f7 inset;
-        // }
+        &:hover {
+            background-color: var(--background-color1);
+            cursor: pointer;
+        }
+        &:nth-last-child(1) {
+            box-shadow: 0px -1px 0px 0px var(--border-color4) inset;
+        }
+
+        &.active {
+            background-color: var(--background-color1);
+        }
+    }
+
+    .tb-detail {
+        margin: 16px 0 0;
+        padding: 0 0 16px;
+        box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
+        .tb-modify-box {
+            border-radius: 4px 4px;
+            border: 1px solid var(--border-color1);
+            .tb-modify {
+                @include flex;
+                @include justify-content(space-between);
+                @include align-items(center);
+                margin: 0 0 0 0;
+                padding: 8px 16px;
+                background-color: var(--background-color1);
+                border-radius: 4px 4px;
+                & .modify-item {
+                    @include flex;
+                    width: 50%;
+                    padding: 0 16px 0 0;
+                    .tit {
+                        @include flex;
+                        @include justify-content(flex-start);
+                        @include align-items(center);
+                        width: 100%;
+                        max-width: 148px;
+                        height: 36px;
+                        margin: 0 8px 0 0;
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 16px;
+                        letter-spacing: -0.025em;
+                    }
+                    .item-box {
+                        @include flex;
+                        width: 100%;
+                        & .custom-select {
+                            margin: 0 4px 0 0;
+                        }
+                        & .input-area {
+                            width: 100%;
+                            input {
+                                width: 100%;
+                                max-width: 376px;
+                            }
+                        }
+                        &.select-long {
+                            & .custom-select {
+                                width: 100%;
+                                max-width: 480px;
+                            }
+                        }
+                        &.txt-box {
+                            @include flex;
+                            @include justify-content(flex-start);
+                            @include align-items(center);
+                            height: 36px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 16px;
+                            color: var(--font-color3);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 // need content
 import Loading from "~/publish/loading/Loading";
 import AdminTab from "~/publish/components/AdminTab";
-import TableSample from "~/publish/components/TableSample";
+import SubTitle from "~/publish/components/SubTitle";
+import SearchContent from "~/publish/components/SearchContent";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -42,7 +43,10 @@ const Auth: React.FC<IPageProps> = (props) => {
             <div className="tabs-area">
                 <AdminTab menuName={adminMenu} />
             </div>
-            <div className="tabs-contents">권한관리</div>
+            <div className="tabs-contents">
+                <SubTitle pageName={props.pageName} />
+                <SearchContent />
+            </div>
         </>
     );
 };

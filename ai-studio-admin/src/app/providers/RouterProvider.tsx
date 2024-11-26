@@ -50,6 +50,10 @@ export const router = createBrowserRouter([
                           path: pathKeys.managerPage(),
                           element: <Layout pageName={"매니저관리"} />,
                       },
+                      {
+                        path: pathKeys.tablePage(),
+                        element: <Layout pageName={"샘플테이블"} />,
+                    },
                   ]
                 : []),
             {
