@@ -5,14 +5,14 @@ import React, { useState, useEffect } from "react";
 import Loading from "~/publish/loading/Loading";
 import Top from "~/publish/layout/Top";
 import MenuContainer from "~/publish/layout/MenuContainer";
+import Auth from "~/publish/page/Auth";
+import Manager from "~/publish/page/Manager";
+
 import AdminTab from "~/publish/components/AdminTab";
-import Select from "~/publish/components/Select";
-import InputText from "~/publish/components/InputText";
+import Sample from "~/publish/page/Sample";
 import ButtonWrap from "~/publish/components/ButtonWrap";
 import Button from "~/publish/components/Button";
-import { ReactComponent as Home } from "~assets/images/svg/Icons-home.svg";
-
-import Sample from "~/publish/page/Sample";
+import TableSample from "~/publish/components/TableSample";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -31,7 +31,7 @@ export interface IPageProps {
  * admin-front: AdminLayout
  * AdminLayout
  */
-const AdminLayout: React.FC<IPageProps> = () => {
+const AdminLayout: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -67,17 +67,18 @@ const AdminLayout: React.FC<IPageProps> = () => {
             <div className="container">
                 <MenuContainer pageName={""} subName={""} />
                 <div className="content">
-                    <div className="tabs-area">
-                        <AdminTab menuName={adminMenu} />
-                    </div>
-                    <div className="tabs-contents">
-                        <Sample />
+                    {props.pageName === "권한관리" && <Auth />}
+                    {props.pageName === "매니저관리" && <Manager />}
+
+                    {/* Tab contents Page */}
+                    {/* <Sample />
                         <ButtonWrap viewType="end">
                             <Button value="초기화" viewType="sub1" />
                             <Button value="조회" viewType="primary" />
                         </ButtonWrap>
+
                         <div>권한목록</div>
-                    </div>
+                        <TableSample /> */}
                 </div>
             </div>
         </div>

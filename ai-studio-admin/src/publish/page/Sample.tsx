@@ -1,10 +1,9 @@
 // necessary set
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // need content
 import Select from "~/publish/components/Select";
 import InputText from "~/publish/components/InputText";
-import { ReactComponent as Home } from "~assets/images/svg/Icons-home.svg";
 import SubTitle from "~/publish/components/SubTitle";
 
 // need style
