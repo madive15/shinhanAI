@@ -12,6 +12,8 @@ import ButtonWrap from "~/publish/components/ButtonWrap";
 import Button from "~/publish/components/Button";
 import { ReactComponent as Home } from "~assets/images/svg/Icons-home.svg";
 
+import Sample from "~/publish/page/Sample";
+
 // need style
 import "~/publish/layout/layout.scss";
 
@@ -69,41 +71,7 @@ const AdminLayout: React.FC<IPageProps> = () => {
                         <AdminTab menuName={adminMenu} />
                     </div>
                     <div className="tabs-contents">
-                        <div className="sub-title">
-                            <div className="tit-gnb-box">
-                                <span className="tit">서브 타이틀</span>
-                                <div className="nav">
-                                    <Home className="home" />
-                                    <span className="deps">권한/회원관리</span>
-                                    <span className="deps">
-                                        <strong>권한관리</strong>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="search-contnet">
-                            <div className="search-item">
-                                <span className="tit">조회항목</span>
-                                <div className="item-box">
-                                    <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
-                                    <InputText
-                                        // label="인풋 라벨"
-                                        id="inputText1"
-                                        value={text}
-                                        onChange={setText}
-                                        placeholder="플레이스홀더"
-                                        maxLength={30}
-                                    />
-                                </div>
-                            </div>
-                            <div className="search-item">
-                                <span className="tit">권한구분</span>
-                                <div className="item-box select-long">
-                                    <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
-                                </div>
-                            </div>
-                        </div>
+                        <Sample />
                         <ButtonWrap viewType="end">
                             <Button value="초기화" viewType="sub1" />
                             <Button value="조회" viewType="primary" />
