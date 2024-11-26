@@ -826,7 +826,7 @@ function Guide() {
               <SubTitle />
             </div>
           )}
-          {/* 서브타이틀 */}
+          {/* 슬릭 슬라이더 */}
           {activeTab == "tab18" && (
             <div className="guide-hash">
               <h2 className="guide-title">18. slick slider</h2>
