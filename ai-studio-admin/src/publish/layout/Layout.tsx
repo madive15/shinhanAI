@@ -71,14 +71,14 @@ const Layout: React.FC<IPageProps> = (props) => {
                     {props.pageName === "매니저관리" && <Manager />}
 
                     {/* Tab contents Page */}
-                    <Sample />
+                    {/* <Sample />
                     <ButtonWrap viewType="end">
                         <Button value="초기화" viewType="sub1" />
                         <Button value="조회" viewType="primary" />
                     </ButtonWrap>
 
                     <div>권한목록</div>
-                    <TableSample />
+                    <TableSample /> */}
                 </div>
             </div>
         </div>
