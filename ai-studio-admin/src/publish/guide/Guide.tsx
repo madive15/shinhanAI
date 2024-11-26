@@ -17,11 +17,17 @@ import List from "../components/List";
 import LayerPopup from "../components/LayerPopup";
 // import Table from "../components/Table";
 import DatePicker from "react-datepicker";
-
+import SubTitle from "../components/SubTitle";
+import Cardlist from "../components/Cardlist";
+import Treelist from "../components/Treelist";
+import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
+
+import SlickSlider from "../components/SlickSlider";
+import Badge from "../components/Badge";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab15");
+  const [activeTab, setActiveTab] = useState("tab21");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -145,10 +151,37 @@ function Guide() {
   //레이어 팝업 끝
 
   //데이터 픽커
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState();
 
   const [dateRange, setDateRange] = useState([null, null]);
   const [rangeStartDate, rangeEndDate]: any = dateRange;
+  //데이터 픽커 끝
+
+  // 카드리스트
+  const cardData = [
+    {
+      badge: "사용중",
+      tit: "시스템 관리자",
+      subtit: "시스템 관리자",
+      regist: "240506 10:10:05",
+      modify: "240506 10:10:05",
+    },
+    {
+      badge: "사용중",
+      tit: "일반 사용자",
+      subtit: "메타정보 관리자",
+      regist: "240506 10:10:05",
+      modify: "240506 10:10:05",
+    },
+    {
+      badge: "사용중",
+      tit: "메타정보 관리자",
+      subtit: "OCR 관리자",
+      regist: "240506 10:10:05",
+      modify: "240506 10:10:05",
+    },
+  ];
+  // 카드리스트 끝
   return (
     <>
       <div className="guide-wrap">
@@ -248,6 +281,37 @@ function Guide() {
             onClick={() => handleTabChange("tab16")}
           >
             datepicker
+          </button>
+
+          <button
+            className={activeTab === "tab17" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab17")}
+          >
+            sub title
+          </button>
+          <button
+            className={activeTab === "tab18" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab18")}
+          >
+            slick slider
+          </button>
+          <button
+            className={activeTab === "tab19" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab19")}
+          >
+            badge
+          </button>
+          <button
+            className={activeTab === "tab20" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab20")}
+          >
+            card list
+          </button>
+          <button
+            className={activeTab === "tab21" ? "guide-tab active" : "guide-tab"}
+            onClick={() => handleTabChange("tab21")}
+          >
+            tree
           </button>
         </div>
         <div className="guide-tab-content">
@@ -786,6 +850,7 @@ function Guide() {
                 dropdownMode="select"
                 dateFormat="yyyy-MM-dd"
                 isClearable={true}
+                locale={ko}
               />
               <p>range픽커</p>
               <DatePicker
@@ -797,7 +862,48 @@ function Guide() {
                 }}
                 isClearable={true}
                 dateFormat="yyyy-MM-dd"
+                locale={ko}
               />
+            </div>
+          )}
+
+          {/* 서브타이틀 */}
+          {activeTab == "tab17" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">17. subtitle</h2>
+              <SubTitle />
+            </div>
+          )}
+          {/* 슬릭 슬라이더 */}
+          {activeTab == "tab18" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">18. slick slider</h2>
+              <SlickSlider />
+            </div>
+          )}
+          {/* 뱃지 */}
+          {activeTab == "tab19" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">19. badge</h2>
+              <Badge value="ADM006" color="gray" />
+              <Badge value="사용중" color="green" />
+              <Badge value="사용중중중중중중중중중중" color="green" />
+            </div>
+          )}
+          {/* card */}
+          {activeTab == "tab20" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">20. card</h2>
+              <div style={{ maxWidth: "504px" }}>
+                <Cardlist />
+              </div>
+            </div>
+          )}
+          {/* treelist */}
+          {activeTab == "tab21" && (
+            <div className="guide-hash">
+              <h2 className="guide-title">21. tree</h2>
+              <Treelist />
             </div>
           )}
         </div>
