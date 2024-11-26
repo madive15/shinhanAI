@@ -25,6 +25,6 @@ export const pathKeys = {
     return `${pathKeys.root}publish/page/id1`;
   },
   adminLayout(): string {
-    return `${pathKeys.root}publish/adminLayout`; //어드민 레이아웃
+    return `${pathKeys.root}publish/layout`; //어드민 레이아웃
   },
 };

@@ -7,7 +7,7 @@ import PopupLayout from "~/pages/layouts/PopupLayout";
 import User from "~/pages/user";
 import PubIndex from "~/publish";
 import Guide from "~/publish/guide/Guide";
-import AdminLayout from "~/publish/layout/AdminLayout";
+import Layout from "~/publish/layout/Layout";
 import { pathKeys } from "~/shared/router";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
             },
             {
               path: pathKeys.adminLayout(),
-              element: <AdminLayout />,
+              element: <Layout />,
             },
           ]
         : []),
