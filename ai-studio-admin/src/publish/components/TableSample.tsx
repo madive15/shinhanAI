@@ -18,18 +18,8 @@ export interface IPageProps {
     useLoading?: (data: boolean) => void;
 }
 
-export interface ITableProps {
-    titleTxt: ITableThProps[];
-    col?: number[];
-    style?: object;
-    rows?: any[];
-    type?: "input" | "data";
-    key?: number;
-}
-
-export interface ITableThProps {
-    text: string;
-    width: number;
+interface ITableProps extends IPageProps {
+    accordion?: boolean;
 }
 
 const items = [
@@ -96,7 +86,7 @@ const items = [
  * admin-front: Table
  * Table page
  */
-const TableSample: React.FC<IPageProps> = (props) => {
+const TableSample: React.FC<ITableProps> = (props) => {
     return (
         <div className="table-content">
             <div className="tb-title">
@@ -138,6 +128,7 @@ const TableSample: React.FC<IPageProps> = (props) => {
                                 { text: data.modifyDate, width: 208 },
                                 { text: data.modifyName, width: 208 },
                             ]}
+                            accordion={props.accordion}
                         />
                     ))
                 ) : (

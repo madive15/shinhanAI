@@ -49,7 +49,7 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
                 <SubTitle pageName={props.pageName} />
                 <SearchContent />
 
-                <TableSample pageName={props.pageName} />
+                <TableSample pageName={props.pageName} accordion={true} />
 
                 <div className="card-table">
                     <Cardlist />
