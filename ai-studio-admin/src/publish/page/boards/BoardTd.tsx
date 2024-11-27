@@ -82,13 +82,20 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                             <div className="modify-item">
                                 <span className="tit">관리자 권한</span>
                                 <div className="item-box select-long">
-                                    <InputText
+                                    {/* <InputText
                                         // label="인풋 라벨"
                                         id="inputText1"
                                         value={text}
                                         onChange={setText}
                                         placeholder="플레이스홀더"
                                         maxLength={30}
+                                    /> */}
+                                    <InputText
+                                        id="inputText1"
+                                        value={text}
+                                        onChange={setText}
+                                        placeholder="플레이스홀더"
+                                        tag="tag"
                                     />
                                 </div>
                             </div>

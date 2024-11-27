@@ -100,22 +100,15 @@
                             letter-spacing: -0.025em;
                         }
                         .item-box {
-                            @include flex;
                             width: 100%;
                             & .custom-select {
+                                width: 100%;
                                 margin: 0 4px 0 0;
                             }
                             & .input-area {
                                 width: 100%;
                                 input {
                                     width: 100%;
-                                    max-width: 376px;
-                                }
-                            }
-                            &.select-long {
-                                & .custom-select {
-                                    width: 100%;
-                                    max-width: 480px;
                                 }
                             }
                             &.txt-box {

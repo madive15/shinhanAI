@@ -67,7 +67,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
 
             <ButtonWrap viewType="end">
                 <Button value="초기화" viewType="sub1" />
-                <Button value="조회" viewType="primary" />
+                <Button value="조회" viewType="sub2" />
             </ButtonWrap>
         </>
     );
