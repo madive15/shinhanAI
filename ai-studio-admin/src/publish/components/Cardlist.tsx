@@ -12,7 +12,7 @@ const Cardlist = ({ data }: any) => {
           </div>
         </div>
         <ul>
-          <li className="card-item">
+          <li className="card-item active">
             <a href="#">
               <Badge value="사용중" color="green" />
               <strong className="card-tit">시스템 관리자</strong>
