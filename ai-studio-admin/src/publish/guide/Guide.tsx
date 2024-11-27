@@ -627,9 +627,9 @@ function Guide() {
                 <Button value="버튼" viewType="sub1" />
                 <Button value="버튼 텍스트" viewType="sub1" />
               </div>
-              <div className="sub1">
-                <Button value="버튼" viewType="sub1" />
-                <Button value="버튼 텍스트" viewType="sub1" />
+              <div className="sub2">
+                <Button value="버튼" viewType="sub2" />
+                <Button value="버튼 텍스트" viewType="sub2" />
               </div>
               <div className="primary-big">
                 <Button value="버튼" viewType="primary-big" />
