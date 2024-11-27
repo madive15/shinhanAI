@@ -6,6 +6,8 @@ import Loading from "~/publish/loading/Loading";
 import AdminTab from "~/publish/components/AdminTab";
 import SubTitle from "~/publish/components/SubTitle";
 import SearchContent from "~/publish/components/SearchContent";
+import TableSample from "~/publish/components/TableSample";
+import Cardlist from "~/publish/components/Cardlist";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -46,6 +48,10 @@ const Manager: React.FC<IPageProps> = (props) => {
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
                 <SearchContent />
+                <div className="card-table">
+                    <Cardlist />
+                    <TableSample pageName={props.pageName} />
+                </div>
             </div>
         </>
     );
