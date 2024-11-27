@@ -6,6 +6,7 @@ import Loading from "~/publish/loading/Loading";
 import AdminTab from "~/publish/components/AdminTab";
 import SubTitle from "~/publish/components/SubTitle";
 import SearchContent from "~/publish/components/SearchContent";
+import TableSample from "~/publish/components/TableSample";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -46,6 +47,8 @@ const Auth: React.FC<IPageProps> = (props) => {
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
                 <SearchContent />
+
+                <TableSample pageName={props.pageName} />
             </div>
         </>
     );
