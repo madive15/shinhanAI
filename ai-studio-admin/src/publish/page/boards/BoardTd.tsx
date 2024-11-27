@@ -22,6 +22,7 @@ export interface ITableProps {
     type?: "input" | "data";
     key?: number;
     id?: number;
+    accordion?: boolean;
 }
 export interface ITableThProps {
     text: string;
@@ -53,14 +54,13 @@ const BoardTd: React.FC<ITableProps> = (props) => {
 
     //인풋
     const [text, setText] = useState("");
-
     const [boardToggle, setBoardToggle] = useState(false);
 
     return (
         <>
             <div
-                className={boardToggle === true ? "tb-txt active" : "tb-txt"}
-                onClick={() => setBoardToggle(!boardToggle)}
+                className={props.accordion === true && boardToggle === true ? "tb-txt active" : "tb-txt"}
+                onClick={props.accordion === true ? () => setBoardToggle(!boardToggle) : undefined}
             >
                 {props?.titleTxt &&
                     props.titleTxt.map((data, i) => (
@@ -69,7 +69,7 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                         </span>
                     ))}
             </div>
-            {boardToggle === true && (
+            {props.accordion === true && boardToggle === true && (
                 <div className="tb-detail">
                     <div className="tb-modify-box">
                         <div className="tb-modify">
@@ -82,14 +82,6 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                             <div className="modify-item">
                                 <span className="tit">관리자 권한</span>
                                 <div className="item-box select-long">
-                                    {/* <InputText
-                                        // label="인풋 라벨"
-                                        id="inputText1"
-                                        value={text}
-                                        onChange={setText}
-                                        placeholder="플레이스홀더"
-                                        maxLength={30}
-                                    /> */}
                                     <InputText
                                         id="inputText1"
                                         value={text}
