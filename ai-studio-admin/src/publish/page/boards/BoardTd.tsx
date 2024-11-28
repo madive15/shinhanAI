@@ -6,6 +6,8 @@ import Select from "~/publish/components/Select";
 import InputText from "~/publish/components/InputText";
 import ButtonWrap from "~/publish/components/ButtonWrap";
 import Button from "~/publish/components/Button";
+import BoardDetailType1 from "~/publish/page/boards/BoardDetailType1";
+import BoardDetailType2 from "~/publish/page/boards/BoardDetailType2";
 
 // Props type
 /**
@@ -23,6 +25,7 @@ export interface ITableProps {
     key?: number;
     id?: number;
     accordion?: boolean;
+    pageName?: string;
 }
 export interface ITableThProps {
     text: string;
@@ -33,7 +36,7 @@ export interface ITableThProps {
 
 /**
  *
- * @author cardo
+ * @author shinhanAI
  *
  * @description
  * admin-front: BoardTd
@@ -69,51 +72,17 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                         </span>
                     ))}
             </div>
-            {props.accordion === true && boardToggle === true && (
-                <div className="tb-detail">
-                    <div className="tb-modify-box">
-                        <div className="tb-modify">
-                            <div className="modify-item">
-                                <span className="tit">사용자 권한</span>
-                                <div className="item-box">
-                                    <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
-                                </div>
-                            </div>
-                            <div className="modify-item">
-                                <span className="tit">관리자 권한</span>
-                                <div className="item-box select-long">
-                                    <InputText
-                                        id="inputText1"
-                                        value={text}
-                                        onChange={setText}
-                                        placeholder="플레이스홀더"
-                                        tag="tag"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="tb-modify">
-                            <div className="modify-item">
-                                <span className="tit">이전 사용자 권한</span>
-                                <div className="item-box txt-box">-</div>
-                            </div>
-                            <div className="modify-item">
-                                <span className="tit">최종권한 변경일시</span>
-                                <div className="item-box txt-box">2024-05-06 10:10:05</div>
-                            </div>
-                            <div className="modify-item">
-                                <span className="tit">최종권한 변경자</span>
-                                <div className="item-box txt-box">김멀더</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <ButtonWrap viewType="end">
-                        <Button value="변경 취소" viewType="sub1" />
-                        <Button value="변경 사항 저장" viewType="primary" />
-                    </ButtonWrap>
-                </div>
+            {props.accordion === true && boardToggle === true && props.pageName === "샘플테이블" && (
+                <BoardDetailType1 />
             )}
+            {props.accordion === true && boardToggle === true && props.pageName === "권한관리" && <BoardDetailType1 />}
+            {props.accordion === true && boardToggle === true && props.pageName === "관리자메뉴 권한관리" && (
+                <BoardDetailType1 />
+            )}
+            {props.accordion === true && boardToggle === true && props.pageName === "권한그룹관리" && (
+                <BoardDetailType1 />
+            )}
+            {props.accordion === true && boardToggle === true && props.pageName === "회원관리" && <BoardDetailType2 />}
         </>
     );
 };

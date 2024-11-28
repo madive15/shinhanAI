@@ -46,7 +46,7 @@ const Top: React.FC<IPageProps> = (props) => {
                 <div className="user-setting">
                     <div className="user-time">
                         <span>59:59</span>
-                        <Button value="시간연장" viewType="primary" />
+                        <Button value="시간연장" viewType="secondary" />
                     </div>
                     <span className="nick-name">
                         <em>김멀더(MulderKim)</em> 님

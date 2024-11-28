@@ -23,7 +23,7 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Manager 매니저관리
+ * admin-front: Manager 관리자메뉴 권한관리
  * Manager
  */
 const Manager: React.FC<IPageProps> = (props) => {
@@ -38,7 +38,7 @@ const Manager: React.FC<IPageProps> = (props) => {
     }, []);
 
     //어드민 탭
-    const adminMenu = ["매니저관리", "메뉴2", "메뉴3", "메뉴4"];
+    const adminMenu = ["관리자메뉴 권한관리", "메뉴2", "메뉴3", "메뉴4"];
 
     return (
         <>
@@ -47,10 +47,11 @@ const Manager: React.FC<IPageProps> = (props) => {
             </div>
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
-                <SearchContent />
-                <div className="card-table">
-                    <Cardlist />
-                    <TableSample pageName={props.pageName} />
+                <div className="tabs-scroll-area">
+                    <SearchContent />
+                    <div className="card-table">
+                        <Cardlist pageName={props.pageName} />
+                    </div>
                 </div>
             </div>
         </>

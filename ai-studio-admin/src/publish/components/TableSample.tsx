@@ -129,6 +129,7 @@ const TableSample: React.FC<ITableProps> = (props) => {
                                 { text: data.modifyName, width: 208 },
                             ]}
                             accordion={props.accordion}
+                            pageName={props.pageName}
                         />
                     ))
                 ) : (

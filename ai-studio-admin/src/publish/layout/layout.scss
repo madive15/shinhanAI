@@ -68,6 +68,7 @@
                     }
                     & button {
                         @include width-height(57px, 22px);
+                        min-width: auto;
                         margin: 0 0 0 6px;
                         padding: 4px 8px 4px 8px;
                         font-size: 12px;
@@ -111,7 +112,8 @@
     }
     .container {
         @include flex;
-        height: calc(100vh - 65px);
+        // height: calc(100vh - 65px);
+        flex: 1;
         padding: 16px 16px;
         background-color: var(--background-color1);
         & .side-content {
@@ -120,13 +122,17 @@
         }
         & .content {
             width: calc(100% - 296px);
+            height: calc(100vh - 97px);
             & .tabs-area {
                 margin: 0 0 8px 0;
             }
             & .tabs-contents {
                 padding: 24px 22px;
                 background-color: var(--color2);
-
+                & .tabs-scroll-area {
+                    height: calc(100vh - 244px);
+                    overflow-y: auto;
+                }
                 .card-table {
                     @include flex;
                     & .card-list {
