@@ -45,4 +45,7 @@ export const pathKeys = {
     ocrPage(): string {
         return `${pathKeys.root}publish/ocr`; // ocr page
     },
+    metaPage(): string {
+        return `${pathKeys.root}publish/meta`;
+    },
 };

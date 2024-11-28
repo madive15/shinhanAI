@@ -2,27 +2,24 @@
 @import "../../assets/scss/mixin";
 
 .table-content {
+  width: 100%;
+  overflow-x: auto;
+  .tb-title {
+    @include flex;
+    @include align-items(center);
+    @include justify-content(space-between);
     width: 100%;
     min-width: 600px;
     .tb-title {
         @include flex;
         @include align-items(center);
-        @include justify-content(space-between);
-        width: 100%;
-        height: 36px;
-        margin: 0 0 12px 0;
-        & .tit-sum {
-            @include flex;
-            @include align-items(center);
-            height: 24px;
-            .sum {
-                margin: 0 0 0 8px;
-                font-size: 14px;
-                font-weight: 700;
-                line-height: 16px;
-                color: var(--sub-color3);
-            }
-        }
+        @include justify-content(center);
+        flex: 1;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+      }
     }
     .tb-body {
         .tb-tit {
@@ -72,64 +69,137 @@
             }
         }
 
-        .tb-detail {
-            margin: 16px 0 0;
-            padding: 0 0 16px;
-            box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
-            .tb-modify-box {
-                border-radius: 4px 4px;
-                border: 1px solid var(--border-color1);
-                .tb-modify {
-                    @include flex;
-                    @include justify-content(space-between);
-                    @include align-items(center);
-                    margin: 0 0 0 0;
-                    padding: 8px 16px;
-                    background-color: var(--background-color1);
-                    border-radius: 4px 4px;
-                    & .modify-item {
-                        @include flex;
-                        width: 50%;
-                        padding: 0 16px 0 0;
-                        .tit {
-                            @include flex;
-                            @include justify-content(flex-start);
-                            @include align-items(center);
-                            width: 100%;
-                            max-width: 148px;
-                            height: 36px;
-                            margin: 0 8px 0 0;
-                            font-size: 14px;
-                            font-weight: 700;
-                            line-height: 16px;
-                            letter-spacing: -0.025em;
-                        }
-                        .item-box {
-                            width: 100%;
-                            & .custom-select {
-                                width: 100%;
-                                margin: 0 4px 0 0;
-                            }
-                            & .input-area {
-                                width: 100%;
-                                input {
-                                    width: 100%;
-                                }
-                            }
-                            &.txt-box {
-                                @include flex;
-                                @include justify-content(flex-start);
-                                @include align-items(center);
-                                height: 36px;
-                                font-size: 14px;
-                                font-weight: 400;
-                                line-height: 16px;
-                                color: var(--font-color3);
-                            }
-                        }
-                    }
-                }
+    .tb-detail {
+      margin: 16px 0 0;
+      padding: 0 0 16px;
+      box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
+      .tb-modify-box {
+        border-radius: 4px 4px;
+        border: 1px solid var(--border-color1);
+        .tb-modify {
+          @include flex;
+          @include justify-content(space-between);
+          @include align-items(center);
+          margin: 0 0 0 0;
+          padding: 8px 16px;
+          background-color: var(--background-color1);
+          border-radius: 4px 4px;
+          & .modify-item {
+            @include flex;
+            width: 50%;
+            padding: 0 16px 0 0;
+            .tit {
+              @include flex;
+              @include justify-content(flex-start);
+              @include align-items(center);
+              width: 100%;
+              max-width: 148px;
+              height: 36px;
+              margin: 0 8px 0 0;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 16px;
+              letter-spacing: -0.025em;
             }
+            .item-box {
+              width: 100%;
+              & .custom-select {
+                width: 100%;
+                margin: 0 4px 0 0;
+              }
+              & .input-area {
+                width: 100%;
+                input {
+                  width: 100%;
+                }
+              }
+              &.txt-box {
+                @include flex;
+                @include justify-content(flex-start);
+                @include align-items(center);
+                height: 36px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                color: var(--font-color3);
+              }
+            }
+          }
         }
+      }
     }
+  }
+}
+.row-table {
+  width: 100%;
+  .row-table-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    .desc {
+      font-size: 13px;
+      color: var(--font-color2);
+    }
+  }
+  ul {
+    li {
+      border-bottom: 1px solid var(--border-color4);
+      &:first-of-type {
+        border-top: 1px solid var(--border-color4);
+      }
+      .row-table-item {
+        height: 52px;
+        display: flex;
+        align-items: center;
+
+        .row-table-tit {
+          display: inline-flex;
+          align-items: center;
+          padding: 0 16px;
+          background-color: var(--background-color2);
+          max-width: 240px;
+          min-width: 128px;
+          width: 100%;
+          height: 100%;
+          strong {
+            color: var(--color3);
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
+        .row-table-content {
+          padding: 0 16px;
+          width: 100%;
+          font-size: 14px;
+          color: var(--font-color2);
+
+          .input-area {
+            input[type="text"] {
+              max-width: 480px;
+              min-width: 437px;
+              width: 100%;
+            }
+          }
+          .custom-select {
+            max-width: 480px;
+            min-width: 437px;
+            width: 100%;
+          }
+        }
+      }
+      &.half {
+        display: flex;
+        justify-content: start;
+        .row-table-item {
+          width: 50%;
+          .row-table-content {
+            max-width: 272px;
+            width: 100%;
+            min-width: 170.5px;
+          }
+        }
+      }
+    }
+  }
 }

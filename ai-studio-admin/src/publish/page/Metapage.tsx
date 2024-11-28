@@ -6,8 +6,8 @@ import Loading from "~/publish/loading/Loading";
 import AdminTab from "~/publish/components/AdminTab";
 import SubTitle from "~/publish/components/SubTitle";
 import SearchContent from "~/publish/components/SearchContent";
-import OcrTable from "~/publish/components/OcrTable";
 import Cardlist from "~/publish/components/Cardlist";
+import RowTable from "~/publish/components/RowTable";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -38,7 +38,7 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
   }, []);
 
   //table 탭
-  const adminMenu = ["AI-OCR검증", "메뉴2", "메뉴3", "메뉴4"];
+  const adminMenu = ["상품 메타관리", "메뉴2", "메뉴3", "메뉴4"];
 
   return (
     <>
@@ -49,7 +49,10 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
         <SubTitle pageName={props.pageName} />
         <div className="tabs-scroll-area">
           <SearchContent pageName={props.pageName} />
-          <OcrTable pageName={props.pageName} />
+          <div className="card-table">
+            <Cardlist pageName={props.pageName} />
+            <RowTable />
+          </div>
         </div>
       </div>
     </>

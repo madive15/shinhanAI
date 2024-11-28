@@ -66,6 +66,10 @@ export const router = createBrowserRouter([
                           path: pathKeys.ocrPage(),
                           element: <Layout pageName={"AI-OCR 검증 결과 관리"} />,
                       },
+                      {
+                          path: pathKeys.metaPage(),
+                          element: <Layout pageName={"상품 메타관리"} />,
+                      },
                   ]
                 : []),
             {
