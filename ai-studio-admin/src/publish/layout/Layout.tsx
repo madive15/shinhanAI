@@ -9,6 +9,10 @@ import Auth from "~/publish/page/Auth";
 import Manager from "~/publish/page/Manager";
 import SampleTablePage from "~/publish/page/SampleTablePage";
 import PermissionGroup from "~/publish/page/PermissionGroup";
+<<<<<<< Updated upstream
+import Ocrpage from "~/publish/page/Ocrpage";
+=======
+>>>>>>> Stashed changes
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -50,6 +54,7 @@ const Layout: React.FC<IPageProps> = (props) => {
                     {props.pageName === "권한관리" && <Auth pageName={props.pageName} />}
                     {props.pageName === "관리자메뉴 권한관리" && <Manager pageName={props.pageName} />}
                     {props.pageName === "권한그룹관리" && <PermissionGroup pageName={props.pageName} />}
+                    {props.pageName === "AI-OCR 검증 결과 관리" && <Ocrpage pageName={props.pageName} />}
                 </div>
             </div>
         </div>
