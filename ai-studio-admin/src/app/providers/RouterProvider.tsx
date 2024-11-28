@@ -59,6 +59,10 @@ export const router = createBrowserRouter([
                           element: <Layout pageName={"권한그룹관리"} />,
                       },
                       {
+                          path: pathKeys.memberPage(),
+                          element: <Layout pageName={"회원관리"} />,
+                      },
+                      {
                           path: pathKeys.ocrPage(),
                           element: <Layout pageName={"AI-OCR 검증 결과 관리"} />,
                       },

@@ -3,7 +3,7 @@
 
 .table-content {
     width: 100%;
-    overflow-x: auto;
+    min-width: 600px;
     .tb-title {
         @include flex;
         @include align-items(center);
