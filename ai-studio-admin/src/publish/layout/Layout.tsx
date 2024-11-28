@@ -9,10 +9,7 @@ import Auth from "~/publish/page/Auth";
 import Manager from "~/publish/page/Manager";
 import SampleTablePage from "~/publish/page/SampleTablePage";
 import PermissionGroup from "~/publish/page/PermissionGroup";
-<<<<<<< Updated upstream
 import Ocrpage from "~/publish/page/Ocrpage";
-=======
->>>>>>> Stashed changes
 
 // need style
 import "~/publish/layout/layout.scss";
