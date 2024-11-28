@@ -43,6 +43,12 @@ export default function PubIndex() {
       link: "/publish/ocr",
       etc: "",
     },
+    {
+      id: "화면아이디",
+      name: "상품메타관리",
+      link: "/publish/meta",
+      etc: "",
+    },
   ];
   return (
     <div className="index-wrap">
