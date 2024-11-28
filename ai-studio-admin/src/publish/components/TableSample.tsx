@@ -92,7 +92,8 @@ const TableSample: React.FC<ITableProps> = (props) => {
             <div className="tb-title">
                 <div className="tit-sum">
                     <h2>{props.pageName}</h2>
-                    <span className="sum">2024-07-01 ~ 2024-07-31</span>
+                    {props.pageName === "AI-OCR 검증 결과 관리" && <span className="sum">2024-07-01 ~ 2024-07-31</span>}
+                    <span className="sum">00 건</span>
                 </div>
 
                 <Button value="신규 추가" viewType="secondary" />
