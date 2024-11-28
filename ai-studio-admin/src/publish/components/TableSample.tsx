@@ -101,6 +101,7 @@ const TableSample: React.FC<ITableProps> = (props) => {
             <div className="tb-body">
                 <BoardTh
                     titleTxt={[
+                        { text: "체크박스", width: 30 },
                         { text: "번호", width: 48 },
                         { text: "권한ID", width: 112 },
                         { text: "권한명", width: 136 },
@@ -111,6 +112,7 @@ const TableSample: React.FC<ITableProps> = (props) => {
                         { text: "수정일시", width: 208 },
                         { text: "수정자", width: 208 },
                     ]}
+                    type={props.pageName === "권한그룹관리" ? "input" : "data"}
                 />
 
                 {items !== undefined && items.length > 0 ? (
@@ -119,6 +121,7 @@ const TableSample: React.FC<ITableProps> = (props) => {
                             key={i}
                             id={i}
                             titleTxt={[
+                                { text: "체크박스", width: 30 },
                                 { text: data.no, width: 48 },
                                 { text: data.id, width: 112 },
                                 { text: data.name, width: 136 },
@@ -131,6 +134,7 @@ const TableSample: React.FC<ITableProps> = (props) => {
                             ]}
                             accordion={props.accordion}
                             pageName={props.pageName}
+                            type={props.pageName === "권한그룹관리" ? "input" : "data"}
                         />
                     ))
                 ) : (
@@ -139,6 +143,7 @@ const TableSample: React.FC<ITableProps> = (props) => {
                     </div>
                 )}
             </div>
+            asdasdasdasdasdasd
         </div>
     );
 };

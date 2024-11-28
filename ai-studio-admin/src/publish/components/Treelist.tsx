@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./treelist.scss";
 import Button from "../components/Button";
+import ButtonWrap from "../components/ButtonWrap";
 const Treelist = ({ data, ...props }: any) => {
   const [toggleswitch, setToggleSwitch] = useState(false);
   const btnSwitch = () => {
@@ -88,6 +89,10 @@ const Treelist = ({ data, ...props }: any) => {
           </div>
         </li>
       </ul>
+      <ButtonWrap viewType="end">
+        <Button value="변경 취소" viewType="sub1" />
+        <Button value="변경 사항 저장" viewType="primary" />
+      </ButtonWrap>
     </div>
   );
 };

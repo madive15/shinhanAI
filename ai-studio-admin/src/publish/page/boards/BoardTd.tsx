@@ -6,6 +6,7 @@ import Select from "~/publish/components/Select";
 import InputText from "~/publish/components/InputText";
 import ButtonWrap from "~/publish/components/ButtonWrap";
 import Button from "~/publish/components/Button";
+import Checkbox from "~/publish/components/Checkbox";
 import BoardDetailType1 from "~/publish/page/boards/BoardDetailType1";
 import BoardDetailType2 from "~/publish/page/boards/BoardDetailType2";
 
@@ -58,6 +59,7 @@ const BoardTd: React.FC<ITableProps> = (props) => {
     //인풋
     const [text, setText] = useState("");
     const [boardToggle, setBoardToggle] = useState(false);
+    const [isChecked, setIsChecked] = useState(true);
 
     return (
         <>
@@ -65,12 +67,33 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                 className={props.accordion === true && boardToggle === true ? "tb-txt active" : "tb-txt"}
                 onClick={props.accordion === true ? () => setBoardToggle(!boardToggle) : undefined}
             >
-                {props?.titleTxt &&
-                    props.titleTxt.map((data, i) => (
-                        <span key={i} style={{ width: `${data.width}px` }}>
-                            {data.text}
-                        </span>
-                    ))}
+                {props?.type === "input"
+                    ? // <label htmlFor={"ck" + props.id}>
+                      props?.titleTxt &&
+                      props.titleTxt.map((data, i) =>
+                          i === 0 ? (
+                              <span key={i} style={{ width: `${data.width}px` }}>
+                                  {/* <input type="checkbox" id={"ck" + props.id} /> */}
+                                  <Checkbox
+                                      // label="체크박스"
+                                      id={"ck" + props.id}
+                                      checked={isChecked}
+                                      onChange={setIsChecked}
+                                  />
+                              </span>
+                          ) : (
+                              <span key={i} style={{ width: `${data.width}px` }}>
+                                  {data.text}
+                              </span>
+                          )
+                      )
+                    : // </label>
+                      props?.titleTxt &&
+                      props.titleTxt.map((data, i) => (
+                          <span key={i} style={{ width: `${data.width}px` }}>
+                              {data.text}
+                          </span>
+                      ))}
             </div>
             {props.accordion === true && boardToggle === true && props.pageName === "샘플테이블" && (
                 <BoardDetailType1 />

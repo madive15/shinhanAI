@@ -30,7 +30,7 @@
             border-top: 1px solid var(--border-color5);
             border-bottom: 1px solid var(--border-color5);
             background-color: var(--color2);
-            span {
+            > span {
                 @include flex;
                 @include align-items(center);
                 @include justify-content(center);
@@ -44,7 +44,7 @@
         .tb-txt {
             @include flex;
             box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
-            span {
+            > span {
                 @include flex;
                 @include align-items(center);
                 @include justify-content(center);
@@ -64,6 +64,11 @@
 
             &.active {
                 background-color: var(--background-color1);
+            }
+
+            > label {
+                @include flex;
+                width: 100%;
             }
         }
 

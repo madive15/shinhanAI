@@ -9,6 +9,8 @@ import SearchContent from "~/publish/components/SearchContent";
 import TableSample from "~/publish/components/TableSample";
 import Cardlist from "~/publish/components/Cardlist";
 import Treelist from "~/publish/components/Treelist";
+import Button from "~/publish/components/Button";
+import ButtonWrap from "~/publish/components/ButtonWrap";
 
 // need style
 import "~/publish/layout/layout.scss";
