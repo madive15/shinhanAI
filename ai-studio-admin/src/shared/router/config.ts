@@ -39,7 +39,13 @@ export const pathKeys = {
     permissionPage(): string {
         return `${pathKeys.root}publish/permission`; // 권한그룹관리 page
     },
+    memberPage(): string {
+        return `${pathKeys.root}publish/member`; // 회원관리 page
+    },
     ocrPage(): string {
         return `${pathKeys.root}publish/ocr`; // ocr page
+    },
+    metaPage(): string {
+        return `${pathKeys.root}publish/meta`;
     },
 };

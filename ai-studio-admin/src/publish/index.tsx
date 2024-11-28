@@ -37,6 +37,24 @@ export default function PubIndex() {
             link: "/publish/permission",
             etc: "",
         },
+        {
+            id: "화면아이디",
+            name: "회원관리",
+            link: "/publish/member",
+            etc: "",
+        },
+        {
+            id: "화면아이디",
+            name: "AI-OCR 검증 결과 관리",
+            link: "/publish/ocr",
+            etc: "",
+        },
+        {
+            id: "화면아이디",
+            name: "상품메타관리",
+            link: "/publish/meta",
+            etc: "",
+        },
     ];
     return (
         <div className="index-wrap">

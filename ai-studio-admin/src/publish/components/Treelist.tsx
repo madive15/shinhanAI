@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./treelist.scss";
 import Button from "../components/Button";
-const Cardlist = ({ data }: any) => {
+import ButtonWrap from "../components/ButtonWrap";
+const Treelist = ({ data, ...props }: any) => {
   const [toggleswitch, setToggleSwitch] = useState(false);
   const btnSwitch = () => {
     setToggleSwitch(!toggleswitch);
   };
   return (
     <div className="tree-list">
+      <div className="tree-title">
+        <div className="tit-sum">
+          <h2>{props.pageName}</h2>
+        </div>
+      </div>
       <ul>
         <li>
           <div className="tree-main-item">
@@ -83,8 +89,12 @@ const Cardlist = ({ data }: any) => {
           </div>
         </li>
       </ul>
+      <ButtonWrap viewType="end">
+        <Button value="변경 취소" viewType="sub1" />
+        <Button value="변경 사항 저장" viewType="primary" />
+      </ButtonWrap>
     </div>
   );
 };
 
-export default Cardlist;
+export default Treelist;

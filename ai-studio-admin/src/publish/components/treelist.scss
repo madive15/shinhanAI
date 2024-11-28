@@ -1,4 +1,25 @@
 .tree-list {
+  width: 100%;
+  .tree-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 36px;
+    margin: 0 0 12px 0;
+    & .tit-sum {
+      display: flex;
+      align-items: center;
+      height: 24px;
+      .sum {
+        margin: 0 0 0 8px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+        color: var(--sub-color3);
+      }
+    }
+  }
   ul {
     li {
       .tree-main-item {

@@ -9,8 +9,13 @@
         @include align-items(center);
         @include justify-content(space-between);
         width: 100%;
-        height: 36px;
+        min-width: 600px;
+        flex: 1;
+        height: 40px;
         margin: 0 0 12px 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
         & .tit-sum {
             @include flex;
             @include align-items(center);
@@ -30,7 +35,7 @@
             border-top: 1px solid var(--border-color5);
             border-bottom: 1px solid var(--border-color5);
             background-color: var(--color2);
-            span {
+            > span {
                 @include flex;
                 @include align-items(center);
                 @include justify-content(center);
@@ -44,7 +49,7 @@
         .tb-txt {
             @include flex;
             box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
-            span {
+            > span {
                 @include flex;
                 @include align-items(center);
                 @include justify-content(center);
@@ -64,6 +69,11 @@
 
             &.active {
                 background-color: var(--background-color1);
+            }
+
+            > label {
+                @include flex;
+                width: 100%;
             }
         }
 
@@ -125,6 +135,126 @@
                     }
                 }
             }
+        }
+    }
+}
+.row-table {
+    width: 100%;
+    .row-table-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 16px;
+        .desc {
+            font-size: 13px;
+            color: var(--font-color2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+    }
+    ul {
+        li {
+            border-bottom: 1px solid var(--border-color4);
+            &:first-of-type {
+                border-top: 1px solid var(--border-color4);
+            }
+            .row-table-item {
+                height: 52px;
+                display: flex;
+                align-items: center;
+
+                .row-table-tit {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 16px;
+                    background-color: var(--background-color2);
+                    max-width: 240px;
+                    min-width: 128px;
+                    width: 100%;
+                    height: 100%;
+                    gap: 6px;
+                    strong {
+                        color: var(--color3);
+                        font-weight: 400;
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                }
+                .row-table-content {
+                    padding: 0 16px;
+                    width: 100%;
+                    font-size: 14px;
+                    color: var(--font-color2);
+
+                    .input-area {
+                        input[type="text"] {
+                            max-width: 480px;
+                            min-width: 437px;
+                            width: 100%;
+                        }
+                    }
+                    .custom-select {
+                        max-width: 480px;
+                        min-width: 437px;
+                        width: 100%;
+                    }
+                }
+            }
+            &.half {
+                display: flex;
+                justify-content: start;
+                .row-table-item {
+                    width: 50%;
+                    .row-table-content {
+                        max-width: 272px;
+                        width: 100%;
+                        min-width: 170.5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tooltip {
+    position: relative;
+    > .ico-text {
+        &:hover {
+            cursor: pointer;
+            & + .tooltip-box {
+                display: block;
+            }
+        }
+    }
+    .tooltip-box {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 24px;
+        z-index: 2;
+        width: 280px;
+        padding: 16px;
+        background-color: var(--color2);
+        border-radius: 8px;
+        border: 1px solid var(--border-color4);
+        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+        h3 {
+            font-family: var(--font-style2);
+            .ico-text {
+                margin-left: 4px;
+            }
+        }
+        .tooltip-content {
+            font-size: 12px;
+            color: var(--font-color2);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border-color3);
         }
     }
 }

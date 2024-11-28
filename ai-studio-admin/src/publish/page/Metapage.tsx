@@ -6,11 +6,8 @@ import Loading from "~/publish/loading/Loading";
 import AdminTab from "~/publish/components/AdminTab";
 import SubTitle from "~/publish/components/SubTitle";
 import SearchContent from "~/publish/components/SearchContent";
-import TableSample from "~/publish/components/TableSample";
 import Cardlist from "~/publish/components/Cardlist";
-import Treelist from "~/publish/components/Treelist";
-import Button from "~/publish/components/Button";
-import ButtonWrap from "~/publish/components/ButtonWrap";
+import RowTable from "~/publish/components/RowTable";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -26,10 +23,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Manager 관리자메뉴 권한관리
- * Manager
+ * admin-front: Sample table
+ * Sample table page
  */
-const Manager: React.FC<IPageProps> = (props) => {
+const SampleTablePage: React.FC<IPageProps> = (props) => {
   // loading
   const [loading, setLoading] = useState<boolean>(true);
   const useLoading = (onoff: boolean) => {
@@ -40,8 +37,8 @@ const Manager: React.FC<IPageProps> = (props) => {
     setLoading(false);
   }, []);
 
-  //어드민 탭
-  const adminMenu = ["관리자메뉴 권한관리", "메뉴2", "메뉴3", "메뉴4"];
+  //table 탭
+  const adminMenu = ["상품 메타관리", "메뉴2", "메뉴3", "메뉴4"];
 
   return (
     <>
@@ -51,10 +48,10 @@ const Manager: React.FC<IPageProps> = (props) => {
       <div className="tabs-contents">
         <SubTitle pageName={props.pageName} />
         <div className="tabs-scroll-area">
-          <SearchContent />
+          <SearchContent pageName={props.pageName} />
           <div className="card-table">
             <Cardlist pageName={props.pageName} />
-            <Treelist pageName="관리자메뉴 목록" />
+            <RowTable />
           </div>
         </div>
       </div>
@@ -62,4 +59,4 @@ const Manager: React.FC<IPageProps> = (props) => {
   );
 };
 
-export default Manager;
+export default SampleTablePage;
