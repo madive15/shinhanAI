@@ -50,11 +50,6 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
         <SearchContent />
 
         <TableSample pageName={props.pageName} accordion={true} />
-
-        <div className="card-table">
-          <Cardlist />
-          <TableSample pageName={props.pageName} />
-        </div>
       </div>
     </>
   );
