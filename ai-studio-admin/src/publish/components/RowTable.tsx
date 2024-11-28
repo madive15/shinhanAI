@@ -43,8 +43,8 @@ const RowTable = () => {
         <div className="tit-desc">
           <h2>상품 메타상세</h2>
           <span className="desc">
-            <i></i>상품분류, 상위분류, 상품ID를 수정 후 저장하면 신규 상품메타로
-            등록됩니다.
+            <i className="ico-text">i</i>상품분류, 상위분류, 상품ID를 수정 후
+            저장하면 신규 상품메타로 등록됩니다.
           </span>
         </div>
         <Button value="신규 상품메타 추가" viewType="secondary" />
@@ -86,6 +86,21 @@ const RowTable = () => {
           <div className="row-table-item">
             <div className="row-table-tit">
               <strong>사용 여부</strong>
+              <div className="tooltip">
+                <i className="ico-text">?</i>
+                <div className="tooltip-box">
+                  <h3>
+                    상품명<i className="ico-text">?</i>
+                  </h3>
+                  <div className="tooltip-content">
+                    해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다.
+                    이렇게 들어갑니다. 언제까지 들어갑니다. 해당 항목에 대한
+                    설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다.
+                    언제까지 들어갑니다. 해당 항목에 대한 설명이 들어갑니다.
+                    여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다.
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="row-table-content">
               <Select
