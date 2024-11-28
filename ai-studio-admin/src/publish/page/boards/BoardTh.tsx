@@ -1,7 +1,8 @@
 // necessary set
-import React from "react";
+import React, { useState } from "react";
 
 // need content
+import Checkbox from "~/publish/components/Checkbox";
 
 // Props type
 /**
@@ -17,6 +18,7 @@ export interface ITableProps {
     rows?: any[];
     type?: "input" | "data";
     key?: number;
+    id?: string;
 }
 export interface ITableThProps {
     text: string;
@@ -34,14 +36,26 @@ export interface ITableThProps {
  * 기본 BoardTh
  */
 const BoardTh: React.FC<ITableProps> = (props) => {
+    const [isChecked, setIsChecked] = useState(true);
     return (
         <div className="tb-tit">
             {props?.titleTxt &&
-                props.titleTxt.map((data, i) => (
-                    <span key={i} style={{ width: `${data.width}px` }}>
-                        {data.text}
-                    </span>
-                ))}
+                props.titleTxt.map((data, i) =>
+                    props?.type === "input" && i === 0 ? (
+                        <span key={i} style={{ width: `${data.width}px` }}>
+                            <Checkbox
+                                // label="체크박스"
+                                id={"ck" + props.id}
+                                checked={isChecked}
+                                onChange={setIsChecked}
+                            />
+                        </span>
+                    ) : (
+                        <span key={i} style={{ width: `${data.width}px` }}>
+                            {data.text}
+                        </span>
+                    )
+                )}
         </div>
     );
 };
