@@ -47,13 +47,14 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
             </div>
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
-                <SearchContent />
 
-                <TableSample pageName={props.pageName} accordion={true} />
-
-                <div className="card-table">
-                    <Cardlist />
-                    <TableSample pageName={props.pageName} />
+                <div className="tabs-scroll-area">
+                    <SearchContent />
+                    <TableSample pageName={props.pageName} accordion={true} />
+                    <div className="card-table">
+                        <Cardlist />
+                        <TableSample pageName={props.pageName} />
+                    </div>
                 </div>
             </div>
         </>

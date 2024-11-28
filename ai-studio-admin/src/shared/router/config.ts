@@ -27,13 +27,19 @@ export const pathKeys = {
     adminLayout(): string {
         return `${pathKeys.root}publish/adminLayout`; //어드민 레이아웃
     },
+    tablePage(): string {
+        return `${pathKeys.root}publish/table`; // 테이블 샘플 page
+    },
     authPage(): string {
         return `${pathKeys.root}publish/auth`; // 권한관리 page
     },
     managerPage(): string {
-        return `${pathKeys.root}publish/manager`; // 매니저 관리 page
+        return `${pathKeys.root}publish/manager`; // 관리자메뉴 권한관리 page
     },
-    tablePage(): string {
-        return `${pathKeys.root}publish/table`; // 테이블 샘플 page
+    permissionPage(): string {
+        return `${pathKeys.root}publish/permission`; // 권한그룹관리 page
+    },
+    ocrPage(): string {
+        return `${pathKeys.root}publish/ocr`; // ocr page
     },
 };

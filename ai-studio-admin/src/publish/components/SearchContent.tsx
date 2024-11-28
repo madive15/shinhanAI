@@ -43,26 +43,52 @@ const SearchContent: React.FC<IPageProps> = (props) => {
     return (
         <>
             <div className="search-contnet">
-                <div className="search-item">
-                    <span className="tit">조회항목</span>
-                    <div className="item-box">
-                        <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
-                        <InputText
-                            // label="인풋 라벨"
-                            id="inputText1"
-                            value={text}
-                            onChange={setText}
-                            placeholder="플레이스홀더"
-                            maxLength={30}
-                        />
+                <div className="search-item-box">
+                    <div className="search-item">
+                        <span className="tit">조회항목</span>
+                        <div className="item-box">
+                            <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
+                            <InputText
+                                // label="인풋 라벨"
+                                id="inputText1"
+                                value={text}
+                                onChange={setText}
+                                placeholder="플레이스홀더"
+                                maxLength={30}
+                            />
+                        </div>
+                    </div>
+                    <div className="search-item">
+                        <span className="tit">권한구분</span>
+                        <div className="item-box select-long">
+                            <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
+                        </div>
                     </div>
                 </div>
-                <div className="search-item">
-                    <span className="tit">권한구분</span>
-                    <div className="item-box select-long">
-                        <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
+                {props.pageName === "AI-OCR 검증 결과 관리" && (
+                    <div className="search-item-box">
+                        <div className="search-item">
+                            <span className="tit">조회항목</span>
+                            <div className="item-box">
+                                <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
+                                <InputText
+                                    // label="인풋 라벨"
+                                    id="inputText1"
+                                    value={text}
+                                    onChange={setText}
+                                    placeholder="플레이스홀더"
+                                    maxLength={30}
+                                />
+                            </div>
+                        </div>
+                        <div className="search-item">
+                            <span className="tit">권한구분</span>
+                            <div className="item-box select-long">
+                                <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
+                            </div>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
 
             <ButtonWrap viewType="end">

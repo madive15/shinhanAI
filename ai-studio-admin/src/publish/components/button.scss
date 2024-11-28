@@ -110,6 +110,7 @@
   &.switch {
     padding: 0;
     width: 40px;
+    min-width: auto;
     height: 24px;
     background-color: var(--background-color3);
     border-radius: 100px;
@@ -164,5 +165,21 @@
   }
   .btn-root + .btn-root {
     margin-left: 12px;
+  }
+}
+
+.ico-btn {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    svg {
+      opacity: 0.5;
+    }
   }
 }

@@ -20,14 +20,16 @@ import DatePicker from "react-datepicker";
 import SubTitle from "../components/SubTitle";
 import Cardlist from "../components/Cardlist";
 import Treelist from "../components/Treelist";
+import Iconbutton from "../components/Iconbutton";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 
 import SlickSlider from "../components/SlickSlider";
 import Badge from "../components/Badge";
+import { ReactComponent as Trash } from "~assets/images/svg/Icons-trash.svg";
 function Guide() {
   //가이드 탭
-  const [activeTab, setActiveTab] = useState("tab21");
+  const [activeTab, setActiveTab] = useState("tab6");
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
@@ -652,6 +654,20 @@ function Guide() {
                   viewType={`switch ${toggleswitch ? "on" : ""}`}
                   onClick={btnSwitch}
                 />
+              </div>
+              <div>
+                <Iconbutton>
+                  <Trash fill="#666" />
+                </Iconbutton>
+                <Iconbutton value="아이콘버튼" type="end">
+                  <Trash fill="#666" />
+                </Iconbutton>
+                <Iconbutton value="아이콘버튼" type="start">
+                  <Trash fill="#666" />
+                </Iconbutton>
+                <Iconbutton value="disabled" type="start" disabled={true}>
+                  <Trash fill="#666" />
+                </Iconbutton>
               </div>
             </div>
           )}

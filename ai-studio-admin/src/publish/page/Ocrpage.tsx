@@ -23,10 +23,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Manager 관리자메뉴 권한관리
- * Manager
+ * admin-front: Sample table
+ * Sample table page
  */
-const Manager: React.FC<IPageProps> = (props) => {
+const SampleTablePage: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -37,8 +37,8 @@ const Manager: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
 
-    //어드민 탭
-    const adminMenu = ["관리자메뉴 권한관리", "메뉴2", "메뉴3", "메뉴4"];
+    //table 탭
+    const adminMenu = ["AI-OCR검증", "메뉴2", "메뉴3", "메뉴4"];
 
     return (
         <>
@@ -47,15 +47,12 @@ const Manager: React.FC<IPageProps> = (props) => {
             </div>
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
-                <div className="tabs-scroll-area">
-                    <SearchContent />
-                    <div className="card-table">
-                        <Cardlist pageName={props.pageName} />
-                    </div>
-                </div>
+                <SearchContent pageName={props.pageName} />
+
+                <TableSample pageName={props.pageName} accordion={true} />
             </div>
         </>
     );
 };
 
-export default Manager;
+export default SampleTablePage;
