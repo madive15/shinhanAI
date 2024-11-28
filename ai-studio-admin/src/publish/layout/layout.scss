@@ -141,6 +141,26 @@
         & .tabs-scroll-area {
           height: calc(100vh - 260px);
           overflow-y: auto;
+
+          &::-webkit-scrollbar {
+            display: none;
+            // width: 4px;
+            // height: 8px;
+          }
+
+          //   &::-webkit-scrollbar-track {
+          //     background: #e9ecef;
+          //     border-radius: 4px;
+          //   }
+
+          //   &::-webkit-scrollbar-thumb {
+          //     background: #adb5bd;
+          //     border-radius: 4px;
+
+          //     &:hover {
+          //       background: #6c757d;
+          //     }
+          //   }
         }
         .card-table {
           @include flex;
@@ -150,5 +170,15 @@
         }
       }
     }
+  }
+}
+.flex-box {
+  display: flex;
+  gap: 16px;
+  .left {
+    min-width: fit-content;
+  }
+  .right {
+    width: 100%;
   }
 }
