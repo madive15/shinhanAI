@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./pubilsh.scss";
-import { tr } from "date-fns/locale";
+import {} from "date-fns/locale";
 
 export default function PubIndex() {
     const pubListHeader = ["No", "화면아이디", "화면명", "링크", "비고"];
@@ -29,6 +29,12 @@ export default function PubIndex() {
             id: "화면아이디",
             name: "관리자메뉴 권한관리",
             link: "/publish/manager",
+            etc: "",
+        },
+        {
+            id: "화면아이디",
+            name: "권한그룹관리",
+            link: "/publish/permission",
             etc: "",
         },
     ];

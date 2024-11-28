@@ -46,9 +46,10 @@ const Auth: React.FC<IPageProps> = (props) => {
             </div>
             <div className="tabs-contents">
                 <SubTitle pageName={props.pageName} />
-                <SearchContent />
-
-                <TableSample pageName={props.pageName} accordion={true} />
+                <div className="tabs-scroll-area">
+                    <SearchContent />
+                    <TableSample pageName={props.pageName} accordion={true} />
+                </div>
             </div>
         </>
     );
