@@ -171,14 +171,17 @@
           width: 100%;
           font-size: 14px;
           color: var(--font-color2);
+
           .input-area {
             input[type="text"] {
               max-width: 480px;
+              min-width: 437px;
               width: 100%;
             }
           }
           .custom-select {
             max-width: 480px;
+            min-width: 437px;
             width: 100%;
           }
         }
@@ -191,6 +194,7 @@
           .row-table-content {
             max-width: 272px;
             width: 100%;
+            min-width: 170.5px;
           }
         }
       }
