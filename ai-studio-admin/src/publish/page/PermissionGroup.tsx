@@ -23,10 +23,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Manager 관리자메뉴 권한관리
- * Manager
+ * admin-front: PermissionGroup 관리자메뉴 권한관리
+ * PermissionGroup
  */
-const Manager: React.FC<IPageProps> = (props) => {
+const PermissionGroup: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -38,7 +38,7 @@ const Manager: React.FC<IPageProps> = (props) => {
     }, []);
 
     //어드민 탭
-    const adminMenu = ["관리자메뉴 권한관리", "메뉴2", "메뉴3", "메뉴4"];
+    const adminMenu = ["권한그룹관리", "메뉴2", "메뉴3", "메뉴4"];
 
     return (
         <>
@@ -51,6 +51,7 @@ const Manager: React.FC<IPageProps> = (props) => {
                     <SearchContent />
                     <div className="card-table">
                         <Cardlist pageName={props.pageName} />
+                        <TableSample pageName={props.pageName} />
                     </div>
                 </div>
             </div>
@@ -58,4 +59,4 @@ const Manager: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default Manager;
+export default PermissionGroup;

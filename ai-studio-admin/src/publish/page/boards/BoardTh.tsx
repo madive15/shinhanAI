@@ -27,7 +27,7 @@ export interface ITableThProps {
 
 /**
  *
- * @author cardo
+ * @author shinhanAI
  *
  * @description
  * admin-front: BoardTh

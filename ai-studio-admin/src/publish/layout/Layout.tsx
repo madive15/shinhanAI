@@ -8,6 +8,7 @@ import MenuContainer from "~/publish/layout/MenuContainer";
 import Auth from "~/publish/page/Auth";
 import Manager from "~/publish/page/Manager";
 import SampleTablePage from "~/publish/page/SampleTablePage";
+import PermissionGroup from "~/publish/page/PermissionGroup";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -45,9 +46,10 @@ const Layout: React.FC<IPageProps> = (props) => {
                 <MenuContainer pageName={""} subName={""} />
                 <div className="content">
                     {/* Tab contents Page */}
-                    {props.pageName === "권한관리" && <Auth pageName={props.pageName} />}
-                    {props.pageName === "매니저관리" && <Manager pageName={props.pageName} />}
                     {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}
+                    {props.pageName === "권한관리" && <Auth pageName={props.pageName} />}
+                    {props.pageName === "관리자메뉴 권한관리" && <Manager pageName={props.pageName} />}
+                    {props.pageName === "권한그룹관리" && <PermissionGroup pageName={props.pageName} />}
                 </div>
             </div>
         </div>

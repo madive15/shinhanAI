@@ -43,16 +43,20 @@ export const router = createBrowserRouter([
                           element: <Layout />,
                       },
                       {
+                          path: pathKeys.tablePage(),
+                          element: <Layout pageName={"샘플테이블"} />,
+                      },
+                      {
                           path: pathKeys.authPage(),
                           element: <Layout pageName={"권한관리"} />,
                       },
                       {
                           path: pathKeys.managerPage(),
-                          element: <Layout pageName={"매니저관리"} />,
+                          element: <Layout pageName={"관리자메뉴 권한관리"} />,
                       },
                       {
-                        path: pathKeys.tablePage(),
-                        element: <Layout pageName={"샘플테이블"} />,
+                        path: pathKeys.permissionPage(),
+                        element: <Layout pageName={"권한그룹관리"} />,
                     },
                   ]
                 : []),
