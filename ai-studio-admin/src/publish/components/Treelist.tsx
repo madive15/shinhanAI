@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import "./treelist.scss";
 import Button from "../components/Button";
-const Cardlist = ({ data }: any) => {
+const Treelist = ({ data, ...props }: any) => {
   const [toggleswitch, setToggleSwitch] = useState(false);
   const btnSwitch = () => {
     setToggleSwitch(!toggleswitch);
   };
   return (
     <div className="tree-list">
+      <div className="tree-title">
+        <div className="tit-sum">
+          <h2>{props.pageName}</h2>
+        </div>
+      </div>
       <ul>
         <li>
           <div className="tree-main-item">
@@ -87,4 +92,4 @@ const Cardlist = ({ data }: any) => {
   );
 };
 
-export default Cardlist;
+export default Treelist;
