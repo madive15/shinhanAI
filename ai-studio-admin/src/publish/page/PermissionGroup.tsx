@@ -14,10 +14,10 @@ import "~/publish/layout/layout.scss";
 
 // Props type
 export interface IPageProps {
-    pageName?: string;
-    subName?: string;
-    loading?: boolean;
-    useLoading?: (data: boolean) => void;
+  pageName?: string;
+  subName?: string;
+  loading?: boolean;
+  useLoading?: (data: boolean) => void;
 }
 
 /**
@@ -27,36 +27,42 @@ export interface IPageProps {
  * PermissionGroup
  */
 const PermissionGroup: React.FC<IPageProps> = (props) => {
-    // loading
-    const [loading, setLoading] = useState<boolean>(true);
-    const useLoading = (onoff: boolean) => {
-        setLoading(onoff);
-    };
+  // loading
+  const [loading, setLoading] = useState<boolean>(true);
+  const useLoading = (onoff: boolean) => {
+    setLoading(onoff);
+  };
 
-    useEffect(() => {
-        setLoading(false);
-    }, []);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
-    //어드민 탭
-    const adminMenu = ["권한그룹관리", "메뉴2", "메뉴3", "메뉴4"];
+  //어드민 탭
+  const adminMenu = ["권한그룹관리", "메뉴2", "메뉴3", "메뉴4"];
 
-    return (
-        <>
-            <div className="tabs-area">
-                <AdminTab menuName={adminMenu} />
+  return (
+    <>
+      <div className="tabs-area">
+        <AdminTab menuName={adminMenu} />
+      </div>
+      <div className="tabs-contents">
+        <SubTitle pageName={props.pageName} />
+        <div className="tabs-scroll-area">
+          <SearchContent />
+          <div className="card-table">
+            <div className="left">
+              <Cardlist pageName={props.pageName} />
             </div>
-            <div className="tabs-contents">
-                <SubTitle pageName={props.pageName} />
-                <div className="tabs-scroll-area">
-                    <SearchContent />
-                    <div className="card-table">
-                        <Cardlist pageName={props.pageName} />
-                        <TableSample pageName={props.pageName} />
-                    </div>
-                </div>
+            <div className="right">
+              <div className="right-scroll-area">
+                <TableSample pageName={props.pageName} />
+              </div>
             </div>
-        </>
-    );
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default PermissionGroup;

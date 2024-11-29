@@ -155,6 +155,7 @@
           .right {
             width: 100%;
             height: calc(100vh - 368px);
+            overflow-x: auto;
             .right-scroll-area {
               max-height: calc(100vh - 424px);
               overflow-y: auto;

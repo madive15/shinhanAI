@@ -8,7 +8,8 @@ import SubTitle from "~/publish/components/SubTitle";
 import SearchContent from "~/publish/components/SearchContent";
 import Cardlist from "~/publish/components/Cardlist";
 import RowTable from "~/publish/components/RowTable";
-
+import Button from "~/publish/components/Button";
+import ButtonWrap from "~/publish/components/ButtonWrap";
 // need style
 import "~/publish/layout/layout.scss";
 
@@ -50,8 +51,18 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
         <div className="tabs-scroll-area">
           <SearchContent pageName={props.pageName} />
           <div className="card-table">
-            <Cardlist pageName={props.pageName} />
-            <RowTable />
+            <div className="left">
+              <Cardlist pageName={props.pageName} />
+            </div>
+            <div className="right">
+              <div className="right-scroll-area">
+                <RowTable />
+              </div>
+              <ButtonWrap viewType="end">
+                <Button value="변경 취소" viewType="sub1" />
+                <Button value="변경 사항 저장" viewType="primary" />
+              </ButtonWrap>
+            </div>
           </div>
         </div>
       </div>
