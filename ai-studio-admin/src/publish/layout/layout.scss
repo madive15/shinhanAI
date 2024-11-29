@@ -3,6 +3,7 @@
 
 #root {
   background-color: var(--background-color1);
+  min-width: 1280px;
 }
 // parallax layout
 .flexible-side-layout {
@@ -141,7 +142,27 @@
         & .tabs-scroll-area {
           height: calc(100vh - 260px);
           overflow-y: auto;
-
+          .left {
+            max-width: 504px;
+            width: 100%;
+            margin-right: 16px;
+            height: calc(100vh - 368px);
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+              display: none;
+            }
+          }
+          .right {
+            width: 100%;
+            height: calc(100vh - 368px);
+            .right-scroll-area {
+              max-height: calc(100vh - 424px);
+              overflow-y: auto;
+              &::-webkit-scrollbar {
+                display: none;
+              }
+            }
+          }
           &::-webkit-scrollbar {
             display: none;
             // width: 4px;
@@ -164,9 +185,9 @@
         }
         .card-table {
           @include flex;
-          & .card-list {
-            margin: 0 16px 0 0;
-          }
+          // & .card-list {
+          //   margin: 0 16px 0 0;
+          // }
         }
       }
     }

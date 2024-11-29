@@ -88,11 +88,19 @@ const Treelist = ({ data, ...props }: any) => {
             />
           </div>
         </li>
+        <li>
+          <div className="tree-main-item">
+            <div className="tree-left">
+              <button type="button" className="tree-btn"></button>
+              <strong className="tree-menu-name">메타관리(S-빌더)</strong>
+            </div>
+            <Button
+              viewType={`switch ${toggleswitch ? "on" : ""}`}
+              onClick={btnSwitch}
+            />
+          </div>
+        </li>
       </ul>
-      <ButtonWrap viewType="end">
-        <Button value="변경 취소" viewType="sub1" />
-        <Button value="변경 사항 저장" viewType="primary" />
-      </ButtonWrap>
     </div>
   );
 };

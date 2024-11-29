@@ -13,10 +13,10 @@ import "~/publish/layout/layout.scss";
 
 // Props type
 export interface IPageProps {
-    pageName?: string;
-    subName?: string;
-    loading?: boolean;
-    useLoading?: (data: boolean) => void;
+  pageName?: string;
+  subName?: string;
+  loading?: boolean;
+  useLoading?: (data: boolean) => void;
 }
 
 /**
@@ -26,33 +26,33 @@ export interface IPageProps {
  * Auth
  */
 const Auth: React.FC<IPageProps> = (props) => {
-    // loading
-    const [loading, setLoading] = useState<boolean>(true);
-    const useLoading = (onoff: boolean) => {
-        setLoading(onoff);
-    };
+  // loading
+  const [loading, setLoading] = useState<boolean>(true);
+  const useLoading = (onoff: boolean) => {
+    setLoading(onoff);
+  };
 
-    useEffect(() => {
-        setLoading(false);
-    }, []);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
-    //어드민 탭
-    const adminMenu = ["권한관리", "메뉴2", "메뉴3", "메뉴4"];
+  //어드민 탭
+  const adminMenu = ["권한관리", "메뉴2", "메뉴3", "메뉴4"];
 
-    return (
-        <>
-            <div className="tabs-area">
-                <AdminTab menuName={adminMenu} />
-            </div>
-            <div className="tabs-contents">
-                <SubTitle pageName={props.pageName} />
-                <div className="tabs-scroll-area">
-                    <SearchContent />
-                    <TableSample pageName={props.pageName} accordion={true} />
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="tabs-area">
+        <AdminTab menuName={adminMenu} />
+      </div>
+      <div className="tabs-contents">
+        <SubTitle pageName={props.pageName} />
+        <div className="tabs-scroll-area">
+          <SearchContent />
+          <TableSample pageName={props.pageName} accordion={true} />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Auth;

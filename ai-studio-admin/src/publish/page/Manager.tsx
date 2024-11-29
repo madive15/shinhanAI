@@ -53,8 +53,18 @@ const Manager: React.FC<IPageProps> = (props) => {
         <div className="tabs-scroll-area">
           <SearchContent />
           <div className="card-table">
-            <Cardlist pageName={props.pageName} />
-            <Treelist pageName="관리자메뉴 목록" />
+            <div className="left">
+              <Cardlist pageName={props.pageName} />
+            </div>
+            <div className="right">
+              <div className="right-scroll-area">
+                <Treelist pageName="관리자메뉴 목록" />
+              </div>
+              <ButtonWrap viewType="end">
+                <Button value="변경 취소" viewType="sub1" />
+                <Button value="변경 사항 저장" viewType="primary" />
+              </ButtonWrap>
+            </div>
           </div>
         </div>
       </div>
