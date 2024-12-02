@@ -10,6 +10,10 @@ import Radio from "../components/Radio";
 import RadioGroup from "../components/RadioGroup";
 import Checkbox from "../components/Checkbox";
 import CheckboxGroup from "../components/CheckboxGroup";
+import DatePicker from "react-datepicker";
+import { ko } from "date-fns/locale";
+import "react-datepicker/dist/react-datepicker.css";
+
 // need style
 import "./search.scss";
 
@@ -55,6 +59,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
   const [isChecked7, setIsChecked7] = useState(false);
   const [isChecked8, setIsChecked8] = useState(true);
   const [isChecked9, setIsChecked9] = useState(false);
+
+  //데이터 픽커
+  const [startDate, setStartDate] = useState();
   return (
     <>
       <div className="search-contnet">
@@ -293,6 +300,32 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                     placeholder="세분류"
                     disabled={false}
                   />
+                </div>
+              </div>
+            </div>
+            <div className="search-item-box full">
+              <div className="search-item">
+                <span className="tit">상품 분류</span>
+                <div className="date-picker-area">
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date: any) => setStartDate(date)}
+                    // showYearDropdown
+                    // showMonthDropdown
+                    dropdownMode="select"
+                    dateFormat="yyyy-MM-dd"
+                    isClearable={true}
+                    locale={ko}
+                  />
+                  <div className="date-month-btn">
+                    <button type="button" className="active">
+                      3개월
+                    </button>
+                    <button type="button">6개월</button>
+                    <button type="button">1년</button>
+                    <button type="button">3년</button>
+                    <button type="button">5년</button>
+                  </div>
                 </div>
               </div>
             </div>
