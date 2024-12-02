@@ -31,8 +31,12 @@ export interface ITableProps {
 export interface ITableThProps {
     text: string;
     width: number;
+    subTit?: ITableSubThProps[];
 }
-
+export interface ITableSubThProps {
+    subtext: string;
+    width: number;
+}
 // need style
 
 /**
@@ -72,7 +76,11 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                       props?.titleTxt &&
                       props.titleTxt.map((data, i) =>
                           i === 0 ? (
-                              <span key={i} style={{ maxWidth: `${data.width}px` }}>
+                              <div
+                                  key={i}
+                                  className={props?.rows && props.rows?.length > 0 ? "rows" + props.rows?.length : ""}
+                                  style={{ maxWidth: `${data.width}px` }}
+                              >
                                   {/* <input type="checkbox" id={"ck" + props.id} /> */}
                                   <Checkbox
                                       // label="체크박스"
@@ -80,20 +88,40 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                                       checked={isChecked}
                                       onChange={setIsChecked}
                                   />
-                              </span>
+                              </div>
                           ) : (
-                              <span key={i} style={{ width: `${data.width}px` }}>
-                                  {data.text}
-                              </span>
+                              <div key={i} style={{ maxWidth: `${data.width}px` }}>
+                                  {props?.rows && props.rows?.length > 0 && data.subTit ? (
+                                      <div style={{ maxWidth: `${data.width}px` }}>
+                                          {data.subTit.map((subdata, subi) => (
+                                              <span key={subi} style={{ maxWidth: `${subdata.width}px` }}>
+                                                  {subdata.subtext}
+                                              </span>
+                                          ))}
+                                      </div>
+                                  ) : (
+                                      <div style={{ maxWidth: `${data.width}px` }}>{data.text}</div>
+                                  )}
+                              </div>
                           )
                       )
                     : // </label>
                       props?.titleTxt &&
-                      props.titleTxt.map((data, i) => (
-                          <span key={i} style={{ width: `${data.width}px` }}>
-                              {data.text}
-                          </span>
-                      ))}
+                      props.titleTxt.map((data, i) =>
+                          props?.rows && props.rows?.length > 0 && data.subTit ? (
+                              <div key={i} style={{ maxWidth: `${data.width}px` }}>
+                                  {data.subTit.map((subdata, subi) => (
+                                      <span key={subi} style={{ maxWidth: `${subdata.width}px` }}>
+                                          {subdata.subtext}
+                                      </span>
+                                  ))}
+                              </div>
+                          ) : (
+                              <div key={i} style={{ maxWidth: `${data.width}px` }}>
+                                  {data.text}
+                              </div>
+                          )
+                      )}
             </div>
             {props.accordion === true && boardToggle === true && props.pageName === "샘플테이블" && (
                 <BoardDetailType1 />

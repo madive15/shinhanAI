@@ -23,6 +23,11 @@ export interface ITableProps {
 export interface ITableThProps {
     text: string;
     width: number;
+    subTit?: ITableSubThProps[];
+}
+export interface ITableSubThProps {
+    subtext: string;
+    width: number;
 }
 
 // need style
@@ -37,23 +42,45 @@ export interface ITableThProps {
  */
 const BoardTh: React.FC<ITableProps> = (props) => {
     const [isChecked, setIsChecked] = useState(true);
+
     return (
         <div className="tb-tit">
             {props?.titleTxt &&
                 props.titleTxt.map((data, i) =>
                     props?.type === "input" && i === 0 ? (
-                        <span key={i} style={{ maxWidth: `${data.width}px` }}>
+                        <div
+                            key={i}
+                            className={props?.rows && props.rows?.length > 0 ? "rows" + props.rows?.length : ""}
+                            style={{ maxWidth: `${data.width}px` }}
+                        >
                             <Checkbox
                                 // label="체크박스"
                                 id={"ck" + props.id}
                                 checked={isChecked}
                                 onChange={setIsChecked}
                             />
-                        </span>
+                        </div>
                     ) : (
-                        <span key={i} style={{ width: `${data.width}px` }}>
-                            {data.text}
-                        </span>
+                        <div
+                            key={i}
+                            className={props?.rows && props.rows?.length > 0 ? "rows" + (props.rows?.length + 1) : ""}
+                            style={{ maxWidth: `${data.width}px` }}
+                        >
+                            {props?.rows && props.rows?.length > 0 && data.subTit ? (
+                                <>
+                                    <p>{data.text}</p>
+                                    <div className="subth" style={{ maxWidth: `${data.width}px` }}>
+                                        {data.subTit.map((subdata, subi) => (
+                                            <span key={subi} style={{ maxWidth: `${subdata.width}px` }}>
+                                                {subdata.subtext}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : (
+                                <span style={{ maxWidth: `${data.width}px` }}>{data.text}</span>
+                            )}
+                        </div>
                     )
                 )}
         </div>

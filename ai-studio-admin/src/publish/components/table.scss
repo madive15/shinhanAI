@@ -2,258 +2,306 @@
 @import "../../assets/scss/mixin";
 
 .table-content {
-  width: 100%;
-  overflow-x: auto;
-  position: relative;
-  .tb-title {
-    @include flex;
-    @include align-items(center);
-    @include justify-content(space-between);
     width: 100%;
-    min-width: 600px;
-    flex: 1;
-    height: 40px;
-    margin: 0 0 12px 0;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
-    & .tit-sum {
-      @include flex;
-      @include align-items(center);
-      height: 24px;
-      .sum {
-        margin: 0 0 0 8px;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 16px;
-        color: var(--sub-color3);
-      }
-    }
-  }
-  .tb-body {
-    .tb-tit {
-      @include flex;
-      border-top: 1px solid var(--border-color5);
-      border-bottom: 1px solid var(--border-color5);
-      background-color: var(--color2);
-      > span {
+    overflow-x: auto;
+    position: relative;
+    .tb-title {
         @include flex;
         @include align-items(center);
-        @include justify-content(center);
+        @include justify-content(space-between);
+        width: 100%;
+        min-width: 600px;
         flex: 1;
         height: 40px;
+        margin: 0 0 12px 0;
         font-size: 14px;
         font-weight: 700;
         line-height: 16px;
-      }
-    }
-    .tb-txt {
-      @include flex;
-      box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
-      > span {
-        @include flex;
-        @include align-items(center);
-        @include justify-content(center);
-        flex: 1;
-        height: 48px;
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 19px;
-      }
-      &:hover {
-        background-color: var(--background-color1);
-        cursor: pointer;
-      }
-      &:nth-last-child(1) {
-        box-shadow: 0px -1px 0px 0px var(--border-color4) inset;
-      }
-
-      &.active {
-        background-color: var(--background-color1);
-      }
-
-      > label {
-        @include flex;
-        width: 100%;
-      }
-    }
-
-    .tb-detail {
-      margin: 16px 0 0;
-      padding: 0 0 16px;
-      box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
-      .tb-modify-box {
-        border-radius: 4px 4px;
-        border: 1px solid var(--border-color1);
-        .tb-modify {
-          @include flex;
-          @include justify-content(space-between);
-          @include align-items(center);
-          margin: 0 0 0 0;
-          padding: 8px 16px;
-          background-color: var(--background-color1);
-          border-radius: 4px 4px;
-          & .modify-item {
+        & .tit-sum {
             @include flex;
-            width: 50%;
-            padding: 0 16px 0 0;
-            .tit {
-              @include flex;
-              @include justify-content(flex-start);
-              @include align-items(center);
-              width: 100%;
-              max-width: 148px;
-              height: 36px;
-              margin: 0 8px 0 0;
-              font-size: 14px;
-              font-weight: 700;
-              line-height: 16px;
-              letter-spacing: -0.025em;
-            }
-            .item-box {
-              width: 100%;
-              & .custom-select {
-                width: 100%;
-                margin: 0 4px 0 0;
-              }
-              & .input-area {
-                width: 100%;
-                input {
-                  width: 100%;
-                }
-              }
-              &.txt-box {
-                @include flex;
-                @include justify-content(flex-start);
-                @include align-items(center);
-                height: 36px;
+            @include align-items(center);
+            height: 24px;
+            .sum {
+                margin: 0 0 0 8px;
                 font-size: 14px;
-                font-weight: 400;
+                font-weight: 700;
                 line-height: 16px;
-                color: var(--font-color3);
-              }
+                color: var(--sub-color3);
             }
-          }
         }
-      }
     }
-  }
+    .tb-body {
+        .tb-tit {
+            @include flex;
+            border-top: 1px solid var(--border-color5);
+            border-bottom: 1px solid var(--border-color5);
+            background-color: var(--color2);
+            > div {
+                @include flex;
+                @include align-items(center);
+                @include justify-content(center);
+                flex: 1;
+                height: 40px;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 16px;
+                > span {
+                    @include flex;
+                    @include align-items(center);
+                    @include justify-content(center);
+                }
+                &.rows2 {
+                    @include flex(column);
+                    @include align-items(unset);
+                    height: 80px;
+                }
+                &.rows3 {
+                    @include flex(column);
+                    @include align-items(unset);
+                    height: 120px;
+                }
+                &.rows4 {
+                    @include flex(column);
+                    @include align-items(unset);
+                    height: 160px;
+                }
+                & p {
+                    @include flex;
+                    @include align-items(center);
+                    @include justify-content(center);
+                    height: 40px;
+                    border-bottom: 1px solid var(--border-color5);
+                }
+                & .subth {
+                    @include flex;
+                    @include align-items(center);
+                    @include justify-content(space-evenly);
+                    height: 40px;
+                    > span {
+                        @include flex;
+                        @include align-items(center);
+                        @include justify-content(center);
+                    }
+                }
+            }
+        }
+        .tb-txt {
+            @include flex;
+            box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
+            > div {
+                @include flex;
+                @include align-items(center);
+                @include justify-content(center);
+                flex: 1;
+                height: 48px;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 19px;
+                > span {
+                    @include flex;
+                    @include align-items(center);
+                    @include justify-content(center);
+                    flex: 1;
+                    height: 48px;
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 19px;
+                }
+            }
+            &:hover {
+                background-color: var(--background-color1);
+                cursor: pointer;
+            }
+            &:nth-last-child(1) {
+                box-shadow: 0px -1px 0px 0px var(--border-color4) inset;
+            }
+
+            &.active {
+                background-color: var(--background-color1);
+            }
+
+            > label {
+                @include flex;
+                width: 100%;
+            }
+        }
+
+        .tb-detail {
+            margin: 16px 0 0;
+            padding: 0 0 16px;
+            box-shadow: 0px -1px 0px 0px var(--border-color3) inset;
+            .tb-modify-box {
+                border-radius: 4px 4px;
+                border: 1px solid var(--border-color1);
+                .tb-modify {
+                    @include flex;
+                    @include justify-content(space-between);
+                    @include align-items(center);
+                    margin: 0 0 0 0;
+                    padding: 8px 16px;
+                    background-color: var(--background-color1);
+                    border-radius: 4px 4px;
+                    & .modify-item {
+                        @include flex;
+                        width: 50%;
+                        padding: 0 16px 0 0;
+                        .tit {
+                            @include flex;
+                            @include justify-content(flex-start);
+                            @include align-items(center);
+                            width: 100%;
+                            max-width: 148px;
+                            height: 36px;
+                            margin: 0 8px 0 0;
+                            font-size: 14px;
+                            font-weight: 700;
+                            line-height: 16px;
+                            letter-spacing: -0.025em;
+                        }
+                        .item-box {
+                            width: 100%;
+                            & .custom-select {
+                                width: 100%;
+                                margin: 0 4px 0 0;
+                            }
+                            & .input-area {
+                                width: 100%;
+                                input {
+                                    width: 100%;
+                                }
+                            }
+                            &.txt-box {
+                                @include flex;
+                                @include justify-content(flex-start);
+                                @include align-items(center);
+                                height: 36px;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 16px;
+                                color: var(--font-color3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 .row-table {
-  width: 100%;
-  .row-table-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-bottom: 16px;
-    .desc {
-      font-size: 13px;
-      color: var(--font-color2);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-    }
-  }
-  ul {
-    li {
-      border-bottom: 1px solid var(--border-color4);
-      &:first-of-type {
-        border-top: 1px solid var(--border-color4);
-      }
-      .row-table-item {
-        height: 52px;
+    width: 100%;
+    .row-table-title {
         display: flex;
         align-items: center;
+        justify-content: space-between;
 
-        .row-table-tit {
-          display: flex;
-          align-items: center;
-          padding: 0 16px;
-          background-color: var(--background-color2);
-          max-width: 240px;
-          min-width: 128px;
-          width: 100%;
-          height: 100%;
-          gap: 6px;
-          strong {
-            color: var(--color3);
-            font-weight: 400;
-            font-size: 14px;
+        margin-bottom: 16px;
+        .desc {
+            font-size: 13px;
+            color: var(--font-color2);
             display: flex;
             align-items: center;
             gap: 6px;
-          }
+            margin-top: 4px;
         }
-        .row-table-content {
-          padding: 0 16px;
-          width: 100%;
-          font-size: 14px;
-          color: var(--font-color2);
-
-          .input-area {
-            input[type="text"] {
-              max-width: 480px;
-              width: 100%;
-            }
-          }
-          .custom-select {
-            max-width: 480px;
-            width: 100%;
-          }
-        }
-      }
-      &.half {
-        display: flex;
-        justify-content: start;
-        .row-table-item {
-          width: 50%;
-          .row-table-content {
-            max-width: 272px;
-            width: 100%;
-            min-width: 170.5px;
-          }
-        }
-      }
     }
-  }
+    ul {
+        li {
+            border-bottom: 1px solid var(--border-color4);
+            &:first-of-type {
+                border-top: 1px solid var(--border-color4);
+            }
+            .row-table-item {
+                height: 52px;
+                display: flex;
+                align-items: center;
+
+                .row-table-tit {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 16px;
+                    background-color: var(--background-color2);
+                    max-width: 240px;
+                    min-width: 128px;
+                    width: 100%;
+                    height: 100%;
+                    gap: 6px;
+                    strong {
+                        color: var(--color3);
+                        font-weight: 400;
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                }
+                .row-table-content {
+                    padding: 0 16px;
+                    width: 100%;
+                    font-size: 14px;
+                    color: var(--font-color2);
+
+                    .input-area {
+                        input[type="text"] {
+                            max-width: 480px;
+                            width: 100%;
+                        }
+                    }
+                    .custom-select {
+                        max-width: 480px;
+                        width: 100%;
+                    }
+                }
+            }
+            &.half {
+                display: flex;
+                justify-content: start;
+                .row-table-item {
+                    width: 50%;
+                    .row-table-content {
+                        max-width: 272px;
+                        width: 100%;
+                        min-width: 170.5px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .tooltip {
-  position: relative;
-  > .ico-text {
-    &:hover {
-      cursor: pointer;
-      & + .tooltip-box {
-        display: block;
-      }
+    position: relative;
+    > .ico-text {
+        &:hover {
+            cursor: pointer;
+            & + .tooltip-box {
+                display: block;
+            }
+        }
     }
-  }
-  .tooltip-box {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 24px;
-    z-index: 2;
-    width: 280px;
-    padding: 16px;
-    background-color: var(--color2);
-    border-radius: 8px;
-    border: 1px solid var(--border-color4);
-    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
-    h3 {
-      font-family: var(--font-style2);
-      .ico-text {
-        margin-left: 4px;
-      }
+    .tooltip-box {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 24px;
+        z-index: 2;
+        width: 280px;
+        padding: 16px;
+        background-color: var(--color2);
+        border-radius: 8px;
+        border: 1px solid var(--border-color4);
+        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+        h3 {
+            font-family: var(--font-style2);
+            .ico-text {
+                margin-left: 4px;
+            }
+        }
+        .tooltip-content {
+            font-size: 12px;
+            color: var(--font-color2);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border-color3);
+        }
     }
-    .tooltip-content {
-      font-size: 12px;
-      color: var(--font-color2);
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px solid var(--border-color3);
-    }
-  }
 }
