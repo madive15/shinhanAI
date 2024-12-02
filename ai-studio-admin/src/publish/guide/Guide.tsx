@@ -904,6 +904,9 @@ function Guide() {
               <Badge value="ADM006" color="gray" />
               <Badge value="사용중" color="green" />
               <Badge value="사용중중중중중중중중중중" color="green" />
+              <Badge value="사용중" color="green" size="large" />
+              <Badge value="과제 종료" color="gray" size="large" />
+              <Badge value="반려" color="red" size="large" />
             </div>
           )}
           {/* card */}

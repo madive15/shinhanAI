@@ -16,4 +16,14 @@
     color: var(--color2);
     background-color: var(--positive);
   }
+  &.red {
+    color: var(--color2);
+    background-color: var(--negative);
+  }
+  &.large {
+    height: 25px;
+    min-width: 64px;
+    border-radius: 100px;
+    justify-content: center;
+  }
 }
