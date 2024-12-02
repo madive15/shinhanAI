@@ -217,4 +217,7 @@
   background-color: var(--font-color3);
   color: var(--color2);
   border-radius: 50%;
+  &.blue {
+    background-color: var(--sub-color2);
+  }
 }
