@@ -2,222 +2,218 @@
 @import "../../assets/scss/mixin";
 
 #root {
-  background-color: var(--background-color1);
-  min-width: 1280px;
+    background-color: var(--background-color1);
+    min-width: 1280px;
+    overflow-x: hidden;
 }
 // parallax layout
 .flexible-side-layout {
-  max-width: 1920px;
-  margin: 0 auto;
-  header {
-    @include flex;
-    @include justify-content(flex-start);
-    @include align-items(center);
-    @include width-height(100%, 65px);
-    background-color: var(--color2);
-    & .logo {
-      margin: 18px 32px 18px 16px;
-    }
-    & .top-content {
-      @include flex;
-      @include justify-content(space-between);
-      @include align-items(center);
-      width: 100%;
-      margin: 18px 0 18px 16px;
-      & .search {
-        position: relative;
-        input {
-          @include width-height(280px, 40px);
-          padding: 8px 40px 8px 12px;
-          border-radius: 4px 0px 0px 0px;
-          border: 1px solid rgba(221, 221, 221, 1);
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 17px;
-          color: var(--font-color3);
-        }
-        & .icon-search {
-          @include absolute-right-top(8px, 8px);
-          @include width-height(24px, 24px);
-          cursor: pointer;
-          & path {
-            fill: var(--font-color3);
-          }
-        }
-      }
-      & .user-setting {
+    max-width: 1920px;
+    margin: 0 auto;
+    header {
         @include flex;
-        @include justify-content(space-between);
+        @include justify-content(flex-start);
         @include align-items(center);
-        margin: 0 20px 0 0;
-        .user-time {
-          @include flex;
-          @include justify-content(space-between);
-          @include align-items(center);
-          @include width-height(127px, 30px);
-          margin: 0 9px 0 0;
-          padding: 4px 4px 4px 27px;
-          border: 1px solid var(--border-color4);
-          border-radius: 100px 100px;
-          @include background(
-            url("../../assets/images/icon/icon-time.png"),
-            13px,
-            13px,
-            8px,
-            8px,
-            no-repeat
-          );
-          & > span {
-            display: inline-block;
-            width: 33px;
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 14px;
-          }
-          & button {
-            @include width-height(57px, 22px);
-            min-width: auto;
-            margin: 0 0 0 6px;
-            padding: 4px 8px 4px 8px;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 14px;
-            border-radius: 100px 100px;
-            cursor: pointer;
-          }
-        }
-        .nick-name {
-          margin: 0 24px 0 0;
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 16px;
-          em {
-            font-weight: 700;
-          }
-        }
-        .setting-box {
-          position: relative;
-          height: 24px;
-          .icon-set {
-            @include width-height(24px, 24px);
-            margin: 0 0 0 24px;
-            cursor: pointer;
-            & path {
-              fill: var(--font-color3);
-            }
-          }
-          &::after {
-            content: "";
-            @include absolute-left-top(0, 6px);
-            display: block;
-            width: 1px;
-            height: 14px;
-            border-left: 1px solid var(--border-color4);
-          }
-        }
-      }
-    }
-  }
-  .container {
-    @include flex;
-    // height: calc(100vh - 65px);
-    flex: 1;
-    padding: 16px 16px;
-    background-color: var(--background-color1);
-    & .side-content {
-      width: 280px;
-      margin: 0 16px 0 0;
-    }
-    & .content {
-      width: calc(100% - 296px);
-      height: calc(100vh - 97px);
-      & .tabs-area {
-        margin: 0 0 8px 0;
-      }
-      & .tabs-contents {
-        padding: 24px 22px;
+        @include width-height(100%, 65px);
         background-color: var(--color2);
-        border-radius: 4px 16px 16px 16px;
-        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
-        & .tabs-scroll-area {
-          height: calc(100vh - 260px);
-          // overflow-y: auto;
-          .left {
-            max-width: 504px;
-            width: 100%;
-            margin-right: 16px;
-            height: calc(100vh - 368px);
-            overflow-y: auto;
-            &::-webkit-scrollbar {
-              display: none;
-            }
-          }
-          .right {
-            width: 100%;
-            height: calc(100vh - 368px);
-            overflow-x: auto;
-            .right-scroll-area {
-              max-height: calc(100vh - 424px);
-              overflow-y: auto;
-              &::-webkit-scrollbar {
-                display: none;
-              }
-            }
-          }
-          &::-webkit-scrollbar {
-            display: none;
-            // width: 4px;
-            // height: 8px;
-          }
-
-          //   &::-webkit-scrollbar-track {
-          //     background: #e9ecef;
-          //     border-radius: 4px;
-          //   }
-
-          //   &::-webkit-scrollbar-thumb {
-          //     background: #adb5bd;
-          //     border-radius: 4px;
-
-          //     &:hover {
-          //       background: #6c757d;
-          //     }
-          //   }
+        & .logo {
+            margin: 18px 32px 18px 16px;
         }
-        .card-table {
-          @include flex;
-          // & .card-list {
-          //   margin: 0 16px 0 0;
-          // }
+        & .top-content {
+            @include flex;
+            @include justify-content(space-between);
+            @include align-items(center);
+            width: 100%;
+            margin: 18px 16px 18px 16px;
+            & .search {
+                position: relative;
+                input {
+                    @include width-height(280px, 40px);
+                    padding: 8px 40px 8px 12px;
+                    border-radius: 4px 0px 0px 0px;
+                    border: 1px solid rgba(221, 221, 221, 1);
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 17px;
+                    color: var(--font-color3);
+                }
+                & .icon-search {
+                    @include absolute-right-top(8px, 8px);
+                    @include width-height(24px, 24px);
+                    cursor: pointer;
+                    & path {
+                        fill: var(--font-color3);
+                    }
+                }
+            }
+            & .user-setting {
+                @include flex;
+                @include justify-content(space-between);
+                @include align-items(center);
+                .user-time {
+                    @include flex;
+                    @include justify-content(space-between);
+                    @include align-items(center);
+                    @include width-height(127px, 30px);
+                    margin: 0 9px 0 0;
+                    padding: 4px 4px 4px 27px;
+                    border: 1px solid var(--border-color4);
+                    border-radius: 100px 100px;
+                    @include background(url("../../assets/images/icon/icon-time.png"), 13px, 13px, 8px, 8px, no-repeat);
+                    & > span {
+                        display: inline-block;
+                        width: 33px;
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: 14px;
+                    }
+                    & button {
+                        @include width-height(57px, 22px);
+                        min-width: auto;
+                        margin: 0 0 0 6px;
+                        padding: 4px 8px 4px 8px;
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 14px;
+                        border-radius: 100px 100px;
+                        cursor: pointer;
+                    }
+                }
+                .nick-name {
+                    margin: 0 24px 0 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    em {
+                        font-weight: 700;
+                    }
+                }
+                .setting-box {
+                    position: relative;
+                    height: 24px;
+                    .icon-set {
+                        @include width-height(24px, 24px);
+                        margin: 0 0 0 24px;
+                        cursor: pointer;
+                        & path {
+                            fill: var(--font-color3);
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        @include absolute-left-top(0, 6px);
+                        display: block;
+                        width: 1px;
+                        height: 14px;
+                        border-left: 1px solid var(--border-color4);
+                    }
+                }
+            }
         }
-      }
     }
-  }
+    .container {
+        @include flex;
+        // height: calc(100vh - 65px);
+        flex: 1;
+        padding: 16px 16px;
+        background-color: var(--background-color1);
+        & .side-content {
+            width: 280px;
+            margin: 0 16px 0 0;
+        }
+        & .content {
+            width: calc(100% - 296px);
+            height: calc(100vh - 97px);
+            & .tabs-area {
+                margin: 0 0 8px 0;
+            }
+            & .tabs-contents {
+                padding: 24px 24px;
+                background-color: var(--color2);
+                border-radius: 4px 16px 16px 16px;
+                box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+                & .tabs-scroll-area {
+                    height: calc(100vh - 260px);
+                    overflow-y: auto;
+                    .left {
+                        max-width: 504px;
+                        width: 100%;
+                        margin-right: 16px;
+                        height: calc(100vh - 368px);
+                        overflow-y: auto;
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                    }
+                    .right {
+                        width: 100%;
+                        height: calc(100vh - 368px);
+                        overflow-x: auto;
+                        .right-scroll-area {
+                            max-height: calc(100vh - 424px);
+                            overflow-y: auto;
+                            &::-webkit-scrollbar {
+                                display: none;
+                            }
+                        }
+                    }
+                    &::-webkit-scrollbar {
+                        display: none;
+                        // width: 4px;
+                        // height: 8px;
+                    }
+
+                    //   &::-webkit-scrollbar-track {
+                    //     background: #e9ecef;
+                    //     border-radius: 4px;
+                    //   }
+
+                    //   &::-webkit-scrollbar-thumb {
+                    //     background: #adb5bd;
+                    //     border-radius: 4px;
+
+                    //     &:hover {
+                    //       background: #6c757d;
+                    //     }
+                    //   }
+                }
+                .card-table {
+                    @include flex;
+                    // & .card-list {
+                    //   margin: 0 16px 0 0;
+                    // }
+                }
+                @media (max-width: 1440px) {
+                    padding: 24px 22px;
+                }
+            }
+        }
+    }
 }
 .flex-box {
-  display: flex;
-  gap: 16px;
-  .left {
-    min-width: fit-content;
-  }
-  .right {
-    width: 100%;
-  }
+    display: flex;
+    gap: 16px;
+    .left {
+        min-width: fit-content;
+    }
+    .right {
+        width: 100%;
+    }
 }
 
 .ico-text {
-  font-family: var(--font-style1);
-  font-style: normal;
-  font-size: 10px;
-  width: 16px;
-  height: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--font-color3);
-  color: var(--color2);
-  border-radius: 50%;
-  &.blue {
-    background-color: var(--sub-color2);
-  }
+    font-family: var(--font-style1);
+    font-style: normal;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--font-color3);
+    color: var(--color2);
+    border-radius: 50%;
+    &.blue {
+        background-color: var(--sub-color2);
+    }
 }
