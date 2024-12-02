@@ -6,11 +6,9 @@ import BoardTh from "../page/boards/BoardTh";
 import BoardTd from "../page/boards/BoardTd";
 import ButtonWrap from "~/publish/components/ButtonWrap";
 import Button from "~/publish/components/Button";
-import InputText from "../components/InputText";
-import Select from "../components/Select";
-import RadioGroup from "../components/RadioGroup";
-import LayerPopup from "../components/LayerPopup";
-import MetaPopTable from "~/publish/components/MetaPopTable";
+import InputText from "./InputText";
+import Select from "./Select";
+import RadioGroup from "./RadioGroup";
 // need style
 import "./table.scss";
 
@@ -22,7 +20,7 @@ import "./table.scss";
  * admin-front: Table
  * Table page
  */
-const RowTable = () => {
+const MetaPopTable = () => {
   const [text, setText] = useState("");
   const [text2, setText2] = useState("");
   const options = [
@@ -59,20 +57,6 @@ const RowTable = () => {
   };
   return (
     <div className="row-table">
-      <div className="row-table-title">
-        <div className="tit-desc">
-          <h2>상품 메타상세</h2>
-          <span className="desc">
-            <i className="ico-text blue">i</i>상품분류, 상위분류, 상품ID를 수정
-            후 저장하면 신규 상품메타로 등록됩니다.
-          </span>
-        </div>
-        <Button
-          value="신규 상품메타 추가"
-          viewType="secondary"
-          onClick={() => openPopup("popup1")}
-        />
-      </div>
       <ul>
         <li className="">
           <div className="row-table-item">
@@ -135,7 +119,7 @@ const RowTable = () => {
             </div>
           </div>
         </li>
-        <li className="half">
+        <li>
           <div className="row-table-item">
             <div className="row-table-tit">
               <strong>사용 여부</strong>
@@ -149,6 +133,8 @@ const RowTable = () => {
               />
             </div>
           </div>
+        </li>
+        <li>
           <div className="row-table-item">
             <div className="row-table-tit">
               <strong>전략 상품 여부</strong>
@@ -163,30 +149,13 @@ const RowTable = () => {
             </div>
           </div>
         </li>
-        <li className="half">
-          <div className="row-table-item">
-            <div className="row-table-tit">
-              <strong>수정 일시</strong>
-            </div>
-            <div className="row-table-content">2024-05-06 10:10:05</div>
-          </div>
-          <div className="row-table-item">
-            <div className="row-table-tit">
-              <strong>수정자</strong>
-            </div>
-            <div className="row-table-content">2024-05-06 10:10:05</div>
-          </div>
-        </li>
       </ul>
-      <LayerPopup
-        title="상품 메타 등록"
-        isOpen={popups.popup1}
-        onClose={() => closePopup("popup1")}
-      >
-        <MetaPopTable />
-      </LayerPopup>
+      <ButtonWrap viewType="end">
+        <Button value="변경 취소" viewType="sub1" />
+        <Button value="변경 사항 저장" viewType="primary" />
+      </ButtonWrap>
     </div>
   );
 };
 
-export default RowTable;
+export default MetaPopTable;

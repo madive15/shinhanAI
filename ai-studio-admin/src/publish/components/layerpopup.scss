@@ -11,38 +11,72 @@
   z-index: 1000;
 
   .layer-popup-wrap {
-    background: white;
-    padding: 30px 16px;
+    background: var(--color2);
+    padding: 16px;
     border-radius: 8px;
     position: relative;
-    max-width: 800px;
-    width: 100%;
+    width: 560px;
+    height: fit-content;
     max-height: 80vh;
-    height: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
+    h3 {
+      font-family: var(--font-family1);
+    }
     &.small {
-      max-width: 500px;
+      width: 500px;
     }
 
     &.xlarge {
-      max-width: 1000px;
+      width: 1000px;
     }
 
     .layer-popup-contents {
-      padding: 16px;
+      padding: 16px 0 0 0;
       overflow-y: auto;
       max-height: 100%;
+      .row-table {
+        ul {
+          li {
+            .row-table-item {
+              .row-table-tit {
+                max-width: 138px;
+              }
+            }
+          }
+        }
+      }
     }
 
     .layer-popup-close {
       position: absolute;
-      top: 0px;
+      width: 24px;
+      height: 24px;
+      top: 16px;
       right: 10px;
       background: none;
       border: none;
       font-size: 24px;
+      text-indent: -9999px;
       cursor: pointer;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 1px;
+        background-color: #000;
+        top: 50%;
+        left: 0;
+        transform-origin: center;
+      }
+
+      &::before {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateY(-50%) rotate(-45deg);
+      }
     }
   }
 }

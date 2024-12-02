@@ -23,12 +23,12 @@ const LayerPopup = ({ isOpen, onClose, children, size, title }: any) => {
       >
         {title && (
           <div className="layer-popup-header">
-            <h1>{title}</h1>
+            <h3>{title}</h3>
           </div>
         )}
         <div className="layer-popup-contents">{children}</div>
         <button className="layer-popup-close" onClick={onClose}>
-          &times;
+          닫기
         </button>
       </div>
     </div>
