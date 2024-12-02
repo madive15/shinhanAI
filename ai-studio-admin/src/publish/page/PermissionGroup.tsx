@@ -17,10 +17,10 @@ import "~/publish/layout/layout.scss";
 
 // Props type
 export interface IPageProps {
-  pageName?: string;
-  subName?: string;
-  loading?: boolean;
-  useLoading?: (data: boolean) => void;
+    pageName?: string;
+    subName?: string;
+    loading?: boolean;
+    useLoading?: (data: boolean) => void;
 }
 
 /**
@@ -30,68 +30,64 @@ export interface IPageProps {
  * PermissionGroup
  */
 const PermissionGroup: React.FC<IPageProps> = (props) => {
-  // loading
-  const [loading, setLoading] = useState<boolean>(true);
-  const useLoading = (onoff: boolean) => {
-    setLoading(onoff);
-  };
+    // loading
+    const [loading, setLoading] = useState<boolean>(true);
+    const useLoading = (onoff: boolean) => {
+        setLoading(onoff);
+    };
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
-  //어드민 탭
-  const adminMenu = ["권한그룹관리", "메뉴2", "메뉴3", "메뉴4"];
-  const options = [
-    { value: "option1", label: "옵션 1" },
-    { value: "option2", label: "옵션 2" },
-    { value: "option3", label: "옵션 3" },
-    { value: "option4", label: "옵션 4" },
-    { value: "option5", label: "옵션 5" },
-    { value: "option6", label: "옵션 6" },
-    { value: "option7", label: "옵션 7" },
-    { value: "option8", label: "옵션 8" },
-  ];
-  return (
-    <>
-      <div className="tabs-area">
-        <AdminTab menuName={adminMenu} />
-      </div>
-      <div className="tabs-contents">
-        <SubTitle pageName={props.pageName} />
-        <div className="tabs-scroll-area">
-          <SearchContent />
-          <div className="card-table">
-            <div className="left">
-              <Cardlist pageName={props.pageName} />
+    //어드민 탭
+    const adminMenu = ["권한그룹관리", "메뉴2", "메뉴3", "메뉴4"];
+    const options = [
+        { value: "option1", label: "옵션 1" },
+        { value: "option2", label: "옵션 2" },
+        { value: "option3", label: "옵션 3" },
+        { value: "option4", label: "옵션 4" },
+        { value: "option5", label: "옵션 5" },
+        { value: "option6", label: "옵션 6" },
+        { value: "option7", label: "옵션 7" },
+        { value: "option8", label: "옵션 8" },
+    ];
+    return (
+        <>
+            <div className="tabs-area">
+                <AdminTab menuName={adminMenu} />
             </div>
-            <div className="right">
-              <div className="right-scroll-area">
-                <TableSample pageName={props.pageName} />
-              </div>
-              <ButtonWrap viewType="space-between">
-                <div>
-                  <Select
-                    options={options}
-                    placeholder="옵션을 선택하세요"
-                    disabled={false}
-                  />
-                  <label className="search">
-                    <input type="text" placeholder="검색어를 입력해주세요" />
-                    <Search className="icon-search" />
-                  </label>
+            <div className="tabs-contents">
+                <SubTitle pageName={props.pageName} />
+                <div className="tabs-scroll-area">
+                    <SearchContent />
+                    <div className="card-table">
+                        <div className="left">
+                            <Cardlist pageName={props.pageName} />
+                        </div>
+                        <div className="right">
+                            <div className="right-scroll-area">
+                                <TableSample pageName={props.pageName} />
+                            </div>
+                            <ButtonWrap viewType="space-between">
+                                <div>
+                                    <Select options={options} placeholder="옵션을 선택하세요" disabled={false} />
+                                    <label className="search">
+                                        <input type="text" placeholder="검색어를 입력해주세요" />
+                                        <Search className="icon-search" />
+                                    </label>
+                                </div>
+                                <div>
+                                    <Button value="변경 취소" viewType="sub1" />
+                                    <Button value="변경 사항 저장" viewType="primary" />
+                                </div>
+                            </ButtonWrap>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <Button value="변경 취소" viewType="sub1" />
-                  <Button value="변경 사항 저장" viewType="primary" />
-                </div>
-              </ButtonWrap>
             </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    );
 };
 
 export default PermissionGroup;
