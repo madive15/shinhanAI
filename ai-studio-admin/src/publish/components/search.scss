@@ -19,6 +19,7 @@
       .search-item {
         width: 100%;
         padding: 0;
+        align-items: center;
       }
     }
   }
@@ -45,13 +46,17 @@
         width: 100%;
         min-width: 100px;
         max-width: 100px;
-        margin: 0 4px 0 0;
+        // margin: 0 4px 0 0;
+        & + .input-area {
+          margin-left: 4px;
+        }
       }
       & .input-area {
         width: 100%;
         input {
           width: 100%;
           max-width: 480px;
+          min-width: 93px;
         }
       }
       &.select-long {

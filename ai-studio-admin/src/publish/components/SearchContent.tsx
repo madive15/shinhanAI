@@ -329,6 +329,28 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 </div>
               </div>
             </div>
+            <div className="search-item-box">
+              <div className="search-item">
+                <span className="tit">상품 분류</span>
+                <div className="item-box select-long">
+                  <Select
+                    options={options}
+                    placeholder="소분류"
+                    disabled={false}
+                  />
+                </div>
+              </div>
+              <div className="search-item">
+                <span className="tit">상품 분류</span>
+                <div className="item-box select-long">
+                  <Select
+                    options={options}
+                    placeholder="세분류"
+                    disabled={false}
+                  />
+                </div>
+              </div>
+            </div>
           </>
         )}
       </div>
