@@ -43,8 +43,8 @@ const RowTable = () => {
         <div className="tit-desc">
           <h2>상품 메타상세</h2>
           <span className="desc">
-            <i className="ico-text">i</i>상품분류, 상위분류, 상품ID를 수정 후
-            저장하면 신규 상품메타로 등록됩니다.
+            <i className="ico-text blue">i</i>상품분류, 상위분류, 상품ID를 수정
+            후 저장하면 신규 상품메타로 등록됩니다.
           </span>
         </div>
         <Button value="신규 상품메타 추가" viewType="secondary" />
