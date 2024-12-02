@@ -72,7 +72,7 @@ const BoardTd: React.FC<ITableProps> = (props) => {
                       props?.titleTxt &&
                       props.titleTxt.map((data, i) =>
                           i === 0 ? (
-                              <span key={i} style={{ width: `${data.width}px` }}>
+                              <span key={i} style={{ maxWidth: `${data.width}px` }}>
                                   {/* <input type="checkbox" id={"ck" + props.id} /> */}
                                   <Checkbox
                                       // label="체크박스"
