@@ -314,8 +314,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                     // showMonthDropdown
                     dropdownMode="select"
                     dateFormat="yyyy-MM-dd"
-                    isClearable={true}
+                    // isClearable={true}
                     locale={ko}
+                    placeholderText="기간을 선택해주세요"
                   />
                   <div className="date-month-btn">
                     <button type="button" className="active">

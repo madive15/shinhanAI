@@ -858,28 +858,32 @@ function Guide() {
             <div className="guide-hash">
               <h2 className="guide-title">16. datepicker</h2>
               <p>단일픽커</p>
-              <DatePicker
-                selected={startDate}
-                onChange={(date: any) => setStartDate(date)}
-                // showYearDropdown
-                // showMonthDropdown
-                dropdownMode="select"
-                dateFormat="yyyy-MM-dd"
-                isClearable={true}
-                locale={ko}
-              />
+              <div className="date-picker-area">
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date: any) => setStartDate(date)}
+                  // showYearDropdown
+                  // showMonthDropdown
+                  dropdownMode="select"
+                  dateFormat="yyyy-MM-dd"
+                  // isClearable={true}
+                  locale={ko}
+                />
+              </div>
               <p>range픽커</p>
-              <DatePicker
-                selectsRange={true}
-                startDate={rangeStartDate}
-                endDate={rangeEndDate}
-                onChange={(update: any) => {
-                  setDateRange(update);
-                }}
-                isClearable={true}
-                dateFormat="yyyy-MM-dd"
-                locale={ko}
-              />
+              <div className="date-picker-area">
+                <DatePicker
+                  selectsRange={true}
+                  startDate={rangeStartDate}
+                  endDate={rangeEndDate}
+                  onChange={(update: any) => {
+                    setDateRange(update);
+                  }}
+                  // isClearable={true}
+                  dateFormat="yyyy-MM-dd"
+                  locale={ko}
+                />
+              </div>
             </div>
           )}
 
