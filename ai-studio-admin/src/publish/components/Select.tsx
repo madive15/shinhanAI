@@ -30,6 +30,25 @@ const CustomSelect = ({ options, placeholder, disabled, tag }: any) => {
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        const handleOutsideClick = (event: any) => {
+            //(1)
+            const dropdownOptionNodes = Array.from(document.querySelectorAll(".options"));
+            if (dropdownOptionNodes.includes(event.target)) {
+                return;
+            }
+            //(2)
+            if (openSelectRef.current && !openSelectRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+        //(3)
+        document.addEventListener("mousedown", handleOutsideClick);
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, []);
+
     return (
         <div ref={openSelectRef} className={`custom-select ${disabled ? "disabled" : ""}`}>
             <div className={`selected ${isOpen ? "open" : ""} ${tag ? "tag" : ""}`} onClick={selectOpen}>
