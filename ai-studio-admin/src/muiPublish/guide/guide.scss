@@ -25,16 +25,4 @@
       }
     }
   }
-
-  .sub1 {
-    background-color: var(--color2);
-    border: 1px solid var(--border-color4);
-    color: var(--font-color1);
-    &:hover {
-      background-color: #fafafa;
-    }
-    &:active {
-      background-color: #f0f0f0;
-    }
-  }
 }
