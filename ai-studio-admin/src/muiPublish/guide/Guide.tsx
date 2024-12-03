@@ -144,11 +144,13 @@ export default function VerticalTabs() {
       </TabPanel>
       {/* 버튼 */}
       <TabPanel value={value} index={2} guideName={"guide-btn"}>
-        <Button variant="contained">버튼 텍스트</Button>
-        <Button variant="outlined">버튼 텍스트</Button>
-        <Button variant="outlined" className="sub1">
-          outlined
-        </Button>
+        <Button variant="primary">버튼 텍스트</Button>
+        <Button variant="secondary">버튼 텍스트</Button>
+        <Button variant="sub1">버튼 텍스트</Button>
+        <Button variant="sub2">버튼 텍스트</Button>
+        <Button variant="primaryBig">버튼 텍스트</Button>
+        <Button variant="small">버튼 텍스트</Button>
+
         <Button variant="contained" disabled>
           Disabled
         </Button>
