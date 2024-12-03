@@ -4,14 +4,17 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "~/muiPublish/guide/guide.scss";
+import Button from "@mui/material/Button";
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
   value: number;
+  guideName?: string;
 }
 
 function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, guideName, ...other } = props;
 
   return (
     <div
@@ -19,6 +22,7 @@ function TabPanel(props: TabPanelProps) {
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
+      className={guideName}
       {...other}
     >
       {value === index && (
@@ -46,6 +50,7 @@ export default function VerticalTabs() {
 
   return (
     <Box
+      className="guide-wrap"
       sx={{
         flexGrow: 1,
         bgcolor: "background.paper",
@@ -73,14 +78,77 @@ export default function VerticalTabs() {
         <Tab label="Modal" {...a11yProps(9)} />
         <Tab label="LayerPopup" {...a11yProps(10)} />
       </Tabs>
+      {/* color */}
       <TabPanel value={value} index={0}>
-        컬러 가이드 추가
+        <div className="guide-color">
+          <strong>Primary color</strong>
+          <div className="color-box">
+            <div className="sample-color-box color-box1"></div>
+            <div className="sample-color-box color-box2"></div>
+            <div className="sample-color-box color-box3"></div>
+          </div>
+          <strong>Secondary color</strong>
+          <div className="color-box">
+            <div className="sample-color-box sub-color-box1"></div>
+            <div className="sample-color-box sub-color-box2"></div>
+            <div className="sample-color-box sub-color-box3"></div>
+            <div className="sample-color-box sub-color-box4"></div>
+          </div>
+          <strong>Text Color</strong>
+          <div className="color-box">
+            <div className="sample-color-box text-color-box1"></div>
+            <div className="sample-color-box text-color-box2"></div>
+            <div className="sample-color-box text-color-box3"></div>
+          </div>
+          <strong>Boder Color</strong>
+          <div className="color-box">
+            <div className="sample-color-box border-color-box1"></div>
+            <div className="sample-color-box border-color-box2"></div>
+            <div className="sample-color-box border-color-box3"></div>
+            <div className="sample-color-box border-color-box4"></div>
+          </div>
+          <strong>Background Color</strong>
+          <div className="color-box">
+            <div className="sample-color-box bg-color-box1"></div>
+            <div className="sample-color-box bg-color-box2"></div>
+            <div className="sample-color-box bg-color-box3"></div>
+            <div className="sample-color-box bg-color-box4"></div>
+          </div>
+          <strong>Positive/Negative</strong>
+          <div className="color-box">
+            <div className="sample-color-box positive-box"></div>
+            <div className="sample-color-box negative-box"></div>
+          </div>
+        </div>
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        텍스트 가이드 추가
+      {/* 텍스트 */}
+      <TabPanel value={value} index={1} guideName={"guide-text"}>
+        <h1>h1 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 20px</h1>
+        <h2>h2 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 16px</h2>
+        <h3>h3 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 14px</h3>
+        <div className="text1">
+          본문 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 14px
+        </div>
+        <div className="text1 disabled">
+          본문 비활성 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 14px
+        </div>
+        <div className="text2">
+          보조 Ai스튜디오에 오신것을 환영합니다. -- 13px
+        </div>
+        <div className="text3">
+          캡션 Ai스튜디오에 오신것을 환영합니다. -- 12px
+        </div>
+        <div className="text4">
+          작은글자 Ai스튜디오에 오신것을 환영합니다. -- 10px
+        </div>
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        버튼 가이드 추가
+      {/* 버튼 */}
+      <TabPanel value={value} index={2} guideName={"guide-btn"}>
+        <Button variant="contained">Contained</Button>
+        <Button variant="outlined">outlined</Button>
+        <Button variant="contained" disabled>
+          Disabled
+        </Button>
       </TabPanel>
       <TabPanel value={value} index={3}>
         인폿 가이드 추가

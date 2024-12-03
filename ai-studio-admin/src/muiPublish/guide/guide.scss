@@ -1,8 +1,28 @@
 @charset "utf-8";
 
-.css-1n3h4wo {
-  height: 100vh;
-}
-.css-1usuzwp-MuiButtonBase-root-MuiTab-root {
-  font-weight: 700;
+#root {
+  .guide-wrap {
+    height: 100vh;
+    .MuiButtonBase-root {
+      font-weight: 700;
+    }
+    [role="tabpanel"] {
+      width: 100%;
+    }
+    .guide-text {
+      * {
+        margin-bottom: 24px;
+      }
+    }
+    .guide-btn {
+      .MuiBox-root {
+        .MuiTypography-root {
+          button {
+            display: block;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
 }
