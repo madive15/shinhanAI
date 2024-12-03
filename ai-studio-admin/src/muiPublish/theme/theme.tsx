@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
+    fontFamily: "Pretendard, sans-serif",
     h1: {
       fontFamily: "OneShinhan",
       fontSize: "20px",
@@ -44,18 +45,34 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         contained: {
+          fontSize: "14px",
+          letterSpacing: "-0.35px",
           backgroundColor: "#0046FF",
+          lineHeight: "17px",
           color: "#FFFFFF",
+          padding: "9px 16px",
+          borderRadius: "6px",
           "&:hover": {
             backgroundColor: "#0039CE",
           },
+          "&:active": {
+            backgroundColor: "#002EA5",
+          },
         },
         outlined: {
+          fontSize: "14px",
+          letterSpacing: "-0.35px",
           backgroundColor: "#FFF",
+          lineHeight: "17px",
           color: "#0046FF",
           outline: "#0046FF",
+          padding: "9px 16px",
+          borderRadius: "6px",
           "&:hover": {
             backgroundColor: "#E8EEFF",
+          },
+          "&:active": {
+            backgroundColor: "#D1DDFF",
           },
         },
       },
