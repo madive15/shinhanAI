@@ -9,6 +9,7 @@ import PubIndex from "~/publish";
 import Guide from "~/publish/guide/Guide";
 import Layout from "~/publish/layout/Layout";
 import MuiPubIndex from "~/muiPublish";
+import MuiPubGuide from "~/muiPublish/guide/Guide";
 import { pathKeys } from "~/shared/router";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -84,6 +85,10 @@ export const router = createBrowserRouter([
             {
               path: pathKeys.taskpage(),
               element: <Layout pageName={"과제 신청"} />,
+            },
+            {
+              path: pathKeys.muiPublishGuide(),
+              element: <MuiPubGuide />,
             },
           ]
         : []),
