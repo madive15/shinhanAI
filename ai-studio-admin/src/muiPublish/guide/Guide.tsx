@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import "~/muiPublish/guide/guide.scss";
 import Button from "@mui/material/Button";
 import ToggleButton from "@mui/material/ToggleButton";
+import Switch from "@mui/material/Switch";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -155,13 +156,14 @@ export default function VerticalTabs() {
           Disabled
         </Button>
         <ToggleButton
-          className="toggle"
+          className="toggle-btn"
           value="check"
           selected={selected}
           onChange={() => setSelected((prevSelected) => !prevSelected)}
         >
           토글 버튼
         </ToggleButton>
+        <Switch className="switch-btn" />
       </TabPanel>
       <TabPanel value={value} index={3}>
         인폿 가이드 추가
