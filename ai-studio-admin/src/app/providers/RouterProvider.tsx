@@ -74,6 +74,10 @@ export const router = createBrowserRouter([
               path: pathKeys.sampleForm(),
               element: <Layout pageName={"샘플폼"} />,
             },
+            {
+              path: pathKeys.taskpage(),
+              element: <Layout pageName={"과제 신청"} />,
+            },
           ]
         : []),
       {

@@ -13,6 +13,7 @@ import Member from "~/publish/page/Member";
 import Ocrpage from "~/publish/page/Ocrpage";
 import Metapage from "~/publish/page/Metapage";
 import SampleForm from "~/publish/page/SampleForm";
+import Taskpage from "~/publish/page/Taskpage";
 
 // need style
 import "~/publish/layout/layout.scss";
@@ -71,6 +72,9 @@ const Layout: React.FC<IPageProps> = (props) => {
           )}
           {props.pageName === "상품 메타관리" && (
             <Metapage pageName={props.pageName} />
+          )}
+          {props.pageName === "과제 신청" && (
+            <Taskpage pageName={props.pageName} />
           )}
         </div>
       </div>

@@ -51,4 +51,7 @@ export const pathKeys = {
   sampleForm(): string {
     return `${pathKeys.root}publish/sampleform`;
   },
+  taskpage(): string {
+    return `${pathKeys.root}publish/task`;
+  },
 };

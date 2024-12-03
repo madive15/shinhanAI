@@ -7,7 +7,7 @@ import AdminTab from "~/publish/components/AdminTab";
 import SubTitle from "~/publish/components/SubTitle";
 import SearchContent from "~/publish/components/SearchContent";
 import Cardlist from "~/publish/components/Cardlist";
-import RowTable from "~/publish/components/RowTable";
+import TaskTable from "~/publish/components/TaskTable";
 import Button from "~/publish/components/Button";
 import ButtonWrap from "~/publish/components/ButtonWrap";
 // need style
@@ -27,7 +27,7 @@ export interface IPageProps {
  * admin-front: Sample table
  * Sample table page
  */
-const Metapage: React.FC<IPageProps> = (props) => {
+const Taskpage: React.FC<IPageProps> = (props) => {
   // loading
   const [loading, setLoading] = useState<boolean>(true);
   const useLoading = (onoff: boolean) => {
@@ -39,7 +39,7 @@ const Metapage: React.FC<IPageProps> = (props) => {
   }, []);
 
   //table 탭
-  const adminMenu = ["상품 메타관리", "메뉴2", "메뉴3", "메뉴4"];
+  const adminMenu = ["과제 신청", "메뉴2", "메뉴3", "메뉴4"];
 
   return (
     <>
@@ -49,25 +49,12 @@ const Metapage: React.FC<IPageProps> = (props) => {
       <div className="tabs-contents">
         <SubTitle pageName={props.pageName} />
         <div className="tabs-scroll-area">
-          <SearchContent pageName={props.pageName} />
-          <div className="card-table">
-            <div className="left">
-              <Cardlist pageName={props.pageName} />
-            </div>
-            <div className="right">
-              <div className="right-scroll-area">
-                <RowTable />
-              </div>
-              <ButtonWrap viewType="end">
-                <Button value="변경 취소" viewType="sub1" />
-                <Button value="변경 사항 저장" viewType="primary" />
-              </ButtonWrap>
-            </div>
-          </div>
+          {/* <SearchContent pageName={props.pageName} /> */}
+          <TaskTable />
         </div>
       </div>
     </>
   );
 };
 
-export default Metapage;
+export default Taskpage;
