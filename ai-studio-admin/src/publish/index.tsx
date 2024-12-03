@@ -61,6 +61,12 @@ export default function PubIndex() {
       link: "/publish/meta",
       etc: "",
     },
+    {
+      id: "화면아이디",
+      name: "과제 신청",
+      link: "/publish/task",
+      etc: "",
+    },
   ];
   return (
     <div className="index-wrap">
