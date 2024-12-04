@@ -201,11 +201,6 @@ const theme = createTheme({
         },
       },
     },
-    MuiRadioGroup: {
-      styleOverrides: {
-        root: {},
-      },
-    },
     MuiRadio: {
       styleOverrides: {
         root: {
@@ -217,36 +212,6 @@ const theme = createTheme({
               stroke: "#DDE6F3",
             },
           },
-        },
-      },
-    },
-    MuiFormControlLabel: {
-      styleOverrides: {
-        root: {
-          margin: "0",
-        },
-      },
-    },
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          padding: "12px 12px 0 12px",
-          height: "148px",
-          borderRadius: "6px",
-          fontSize: "14px",
-          "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "var(--color1)",
-          },
-          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "var(--color1)",
-          },
-          "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "var(--border-color1)",
-          },
-          // "& textarea": {
-          //   width: "100%",
-          //   height: "100% !important",
-          // },
         },
       },
     },
