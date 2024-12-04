@@ -11,6 +11,8 @@ import Checkbox from "@mui/material/Checkbox";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 import { ReactComponent as ChkDisabled } from "~assets/images/svg/Icons-chk-disabled.svg";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormGroup from "@mui/material/FormGroup";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -173,15 +175,62 @@ export default function VerticalTabs() {
         인폿 가이드 추가
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <Checkbox />
-        <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+        <div>
+          <Checkbox
+            icon={<ChkDefault />}
+            checkedIcon={<ChkChecked />}
+            defaultChecked
+          />
+          <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+          <Checkbox
+            icon={<ChkDefault />}
+            checkedIcon={<ChkChecked />}
+            disabled
+          />
+        </div>
+        <div>
+          <FormControlLabel
+            control={
+              <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+            }
+            label="Label"
+          />
 
-        <Checkbox
-          icon={<ChkDefault />}
-          checkedIcon={<ChkChecked />}
-          disabled
-          indeterminateIcon={<ChkDisabled />}
-        />
+          <FormControlLabel
+            control={
+              <Checkbox
+                icon={<ChkDefault />}
+                checkedIcon={<ChkChecked />}
+                disabled
+              />
+            }
+            label="Label"
+          />
+        </div>
+        <div>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+              }
+              label="Label"
+            />
+            <FormControlLabel
+              required
+              control={
+                <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+              }
+              label="Required"
+            />
+            <FormControlLabel
+              disabled
+              control={
+                <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+              }
+              label="Disabled"
+            />
+          </FormGroup>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={5}>
         라디오 가이드 추가
