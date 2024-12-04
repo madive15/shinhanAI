@@ -215,6 +215,43 @@ const theme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          border: "1px solid var(--border-color1)",
+          "&.Mui-focused": {
+            borderColor: "var(--color1)",
+          },
+          padding: "0",
+          "& legend ": {
+            display: "none",
+          },
+          "& fieldset ": {
+            border: "none",
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          border: " 1px solid var(--border-color1)",
+          "&.MuiMenu-paper": {
+            boxShadow: "none",
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontSize: "14px",
+          "&:hover": {
+            backgroundColor: "var(--background-color1)",
+          },
+        },
+      },
+    },
   },
 });
 export default theme;

@@ -20,6 +20,9 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -57,7 +60,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(6);
+  const [value, setValue] = React.useState(7);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -68,9 +71,13 @@ export default function VerticalTabs() {
   };
 
   const [radioGroup, setRadioGroup] = React.useState("female");
-
   const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRadioGroup((event.target as HTMLInputElement).value);
+  };
+
+  const [ageSelect, setAgeSelect] = React.useState("");
+  const selectChange = (event: SelectChangeEvent) => {
+    setAgeSelect(event.target.value as string);
   };
   return (
     <Box
@@ -299,6 +306,7 @@ export default function VerticalTabs() {
           </FormControl>
         </div>
       </TabPanel>
+      {/* 텍스트 에어리어 */}
       <TabPanel value={value} index={6}>
         <div className="text-area ">
           {/* <TextField multiline /> */}
@@ -308,8 +316,22 @@ export default function VerticalTabs() {
           <textarea name="" id=""></textarea>
         </div>
       </TabPanel>
+      {/* 셀렉트 */}
       <TabPanel value={value} index={7}>
-        셀렉트 가이드 추가
+        <div>
+          <Select
+            className="option-select"
+            value={ageSelect}
+            onChange={selectChange}
+            displayEmpty
+          >
+            <MenuItem value="" disabled>
+              전체
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+          </Select>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={8}>
         데이터픽커 가이드 추가

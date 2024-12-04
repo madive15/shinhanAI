@@ -46,3 +46,17 @@
     }
   }
 }
+
+.option-select {
+  max-width: 100px;
+  min-width: 80px;
+  width: 100%;
+  height: 36px;
+
+  .MuiSelect-select {
+    width: 88%;
+  }
+  .MuiOutlinedInput-notchedOutline {
+    top: 0;
+  }
+}
