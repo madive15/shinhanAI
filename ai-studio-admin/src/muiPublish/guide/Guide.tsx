@@ -5,7 +5,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "~/muiPublish/guide/guide.scss";
 import Button from "@mui/material/Button";
-
+import ToggleButton from "@mui/material/ToggleButton";
+import Switch from "@mui/material/Switch";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -43,7 +44,7 @@ function a11yProps(index: number) {
 
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
-
+  const [selected, setSelected] = React.useState(false);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -154,6 +155,15 @@ export default function VerticalTabs() {
         <Button variant="contained" disabled>
           Disabled
         </Button>
+        <ToggleButton
+          className="toggle-btn"
+          value="check"
+          selected={selected}
+          onChange={() => setSelected((prevSelected) => !prevSelected)}
+        >
+          토글 버튼
+        </ToggleButton>
+        <Switch className="switch-btn" />
       </TabPanel>
       <TabPanel value={value} index={3}>
         인폿 가이드 추가
