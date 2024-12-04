@@ -201,6 +201,36 @@ const theme = createTheme({
         },
       },
     },
+    MuiRadioGroup: {
+      styleOverrides: {
+        root: {
+          display: "grid",
+          gap: "24px",
+          backgroundColor: "red",
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          marginRight: "6px",
+          "&.Mui-disabled svg ": {
+            fill: "#DDE6F3",
+            "& rect": {
+              stroke: "#DDE6F3",
+            },
+          },
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          margin: "0",
+        },
+      },
+    },
   },
 });
 export default theme;

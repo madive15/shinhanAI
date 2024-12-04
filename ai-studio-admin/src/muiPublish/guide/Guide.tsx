@@ -11,8 +11,15 @@ import Checkbox from "@mui/material/Checkbox";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 import { ReactComponent as ChkDisabled } from "~assets/images/svg/Icons-chk-disabled.svg";
+import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
+import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
+import { ReactComponent as RadioDisabled } from "~assets/images/svg/Icons-radio-disabled.svg";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControl from "@mui/material/FormControl";
+//
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -49,12 +56,21 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(5);
   const [selected, setSelected] = React.useState(false);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  const [selectedValue, setSelectedValue] = React.useState("a");
+  const radioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
+  };
 
+  const [radioGroup, setRadioGroup] = React.useState("female");
+
+  const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRadioGroup((event.target as HTMLInputElement).value);
+  };
   return (
     <Box
       className="guide-wrap"
@@ -69,7 +85,7 @@ export default function VerticalTabs() {
         orientation="vertical"
         variant="scrollable"
         value={value}
-        onChange={handleChange}
+        onChange={tabChange}
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: "divider" }}
       >
@@ -174,6 +190,7 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={3}>
         인폿 가이드 추가
       </TabPanel>
+      {/* 체크박스 */}
       <TabPanel value={value} index={4}>
         <div>
           <Checkbox
@@ -188,27 +205,9 @@ export default function VerticalTabs() {
             disabled
           />
         </div>
-        <div>
-          <FormControlLabel
-            control={
-              <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
-            }
-            label="Label"
-          />
 
-          <FormControlLabel
-            control={
-              <Checkbox
-                icon={<ChkDefault />}
-                checkedIcon={<ChkChecked />}
-                disabled
-              />
-            }
-            label="Label"
-          />
-        </div>
         <div>
-          <FormGroup>
+          <FormGroup row className="chk-group">
             <FormControlLabel
               control={
                 <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
@@ -232,8 +231,72 @@ export default function VerticalTabs() {
           </FormGroup>
         </div>
       </TabPanel>
+      {/* 라디오 */}
       <TabPanel value={value} index={5}>
-        라디오 가이드 추가
+        <div>
+          <Radio
+            checked={selectedValue === "a"}
+            onChange={radioChange}
+            value="a"
+            name="radio-buttons"
+            inputProps={{ "aria-label": "A" }}
+            checkedIcon={<RadioChecked />}
+            icon={<RadioDefault />}
+          />
+          <Radio
+            checked={selectedValue === "b"}
+            onChange={radioChange}
+            value="b"
+            name="radio-buttons"
+            inputProps={{ "aria-label": "B" }}
+            checkedIcon={<RadioChecked />}
+            icon={<RadioDefault />}
+          />
+          <Radio
+            checked={selectedValue === "c"}
+            onChange={radioChange}
+            value="c"
+            name="radio-buttons"
+            inputProps={{ "aria-label": "C" }}
+            checkedIcon={<RadioChecked />}
+            icon={<RadioDefault />}
+            disabled
+          />
+        </div>
+        <div>
+          <FormControl>
+            <RadioGroup
+              className="radio-group"
+              row
+              aria-labelledby="radio-group"
+              name="group1"
+              value={radioGroup}
+              onChange={radioGroupChange}
+            >
+              <FormControlLabel
+                value="female"
+                control={
+                  <Radio
+                    checkedIcon={<RadioChecked />}
+                    icon={<RadioDefault />}
+                  />
+                }
+                label="Female"
+              />
+              <FormControlLabel
+                className="cr-label"
+                value="male"
+                control={
+                  <Radio
+                    checkedIcon={<RadioChecked />}
+                    icon={<RadioDefault />}
+                  />
+                }
+                label="Male"
+              />
+            </RadioGroup>
+          </FormControl>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={6}>
         텍스트에어리어 가이드 추가
