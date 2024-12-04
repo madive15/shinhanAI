@@ -246,9 +246,18 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontSize: "14px",
+          padding: "8px",
+          marginBottom: "4px",
           "&:hover": {
             backgroundColor: "var(--background-color1)",
           },
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        list: {
+          padding: "12px",
         },
       },
     },

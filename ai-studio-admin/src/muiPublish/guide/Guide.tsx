@@ -320,6 +320,18 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={7}>
         <div>
           <Select
+            className="option-select small"
+            value={ageSelect}
+            onChange={selectChange}
+            displayEmpty
+          >
+            <MenuItem value="" disabled>
+              전체
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+          </Select>
+          <Select
             className="option-select"
             value={ageSelect}
             onChange={selectChange}
