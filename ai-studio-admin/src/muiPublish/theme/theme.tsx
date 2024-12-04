@@ -235,8 +235,8 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          border: " 1px solid var(--border-color1)",
           "&.MuiMenu-paper": {
+            border: " 1px solid var(--color1)",
             boxShadow: "none",
           },
         },
