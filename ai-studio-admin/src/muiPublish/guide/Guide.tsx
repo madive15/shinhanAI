@@ -7,6 +7,10 @@ import "~/muiPublish/guide/guide.scss";
 import Button from "@mui/material/Button";
 import ToggleButton from "@mui/material/ToggleButton";
 import Switch from "@mui/material/Switch";
+import Checkbox from "@mui/material/Checkbox";
+import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
+import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
+import { ReactComponent as ChkDisabled } from "~assets/images/svg/Icons-chk-disabled.svg";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -169,7 +173,15 @@ export default function VerticalTabs() {
         인폿 가이드 추가
       </TabPanel>
       <TabPanel value={value} index={4}>
-        체크박스 가이드 추가
+        <Checkbox />
+        <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+
+        <Checkbox
+          icon={<ChkDefault />}
+          checkedIcon={<ChkChecked />}
+          disabled
+          indeterminateIcon={<ChkDisabled />}
+        />
       </TabPanel>
       <TabPanel value={value} index={5}>
         라디오 가이드 추가
