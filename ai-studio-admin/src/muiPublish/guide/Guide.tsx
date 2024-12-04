@@ -19,6 +19,7 @@ import FormGroup from "@mui/material/FormGroup";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -56,7 +57,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(5);
+  const [value, setValue] = React.useState(6);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -299,7 +300,13 @@ export default function VerticalTabs() {
         </div>
       </TabPanel>
       <TabPanel value={value} index={6}>
-        텍스트에어리어 가이드 추가
+        <div className="text-area ">
+          {/* <TextField multiline /> */}
+          <textarea name="" id=""></textarea>
+        </div>
+        <div className="text-area required">
+          <textarea name="" id=""></textarea>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={7}>
         셀렉트 가이드 추가
