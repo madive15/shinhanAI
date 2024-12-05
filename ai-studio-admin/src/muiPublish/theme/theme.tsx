@@ -7,6 +7,7 @@ declare module "@mui/material/Button" {
     primary: true;
     primaryBig: true;
     small: true;
+    icon: true;
   }
 }
 const theme = createTheme({
@@ -175,6 +176,25 @@ const theme = createTheme({
             },
           },
         },
+        {
+          props: { variant: "icon" },
+          style: {
+            minWidth: "unset",
+            width: "24px",
+            height: "24px",
+            padding: "0px",
+            "& svg": {
+              width: "24px",
+              height: "24px",
+            },
+            "&:hover": {
+              backgroundColor: "rgba(0, 0, 0, 0.05)",
+            },
+            "&:active": {
+              backgroundColor: "rgba(0, 0, 0, 0.10)",
+            },
+          },
+        },
       ],
     },
     MuiCheckbox: {
@@ -198,6 +218,76 @@ const theme = createTheme({
           //     boxShadow: "0px 4px 6px rgba(0, 70, 255, 0.1)", // checked 상태의 box-shadow
           //   },
           // },
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          marginRight: "6px",
+          "&.Mui-disabled svg ": {
+            fill: "#DDE6F3",
+            "& rect": {
+              stroke: "#DDE6F3",
+            },
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          border: "1px solid var(--border-color1)",
+          "&.Mui-focused": {
+            borderColor: "var(--color1)",
+          },
+          padding: "0",
+          "& legend ": {
+            display: "none",
+          },
+          "& fieldset ": {
+            border: "none",
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          "&.MuiMenu-paper": {
+            border: " 1px solid var(--color1)",
+            boxShadow: "none",
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontSize: "14px",
+          padding: "8px",
+          marginBottom: "4px",
+          "&:hover": {
+            backgroundColor: "var(--background-color1)",
+          },
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        list: {
+          padding: "12px",
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          minWidth: "unset",
+          width: "24px",
+          height: "24px",
+          padding: "0",
         },
       },
     },

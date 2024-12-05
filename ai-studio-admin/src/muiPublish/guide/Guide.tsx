@@ -11,8 +11,26 @@ import Checkbox from "@mui/material/Checkbox";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 import { ReactComponent as ChkDisabled } from "~assets/images/svg/Icons-chk-disabled.svg";
+import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
+import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
+import { ReactComponent as RadioDisabled } from "~assets/images/svg/Icons-radio-disabled.svg";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
+import IconButton from "@mui/material/IconButton";
+//
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -49,10 +67,40 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(9);
   const [selected, setSelected] = React.useState(false);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
+  };
+  const [selectedValue, setSelectedValue] = React.useState("a");
+  const radioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
+  };
+
+  const [radioGroup, setRadioGroup] = React.useState("female");
+  const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRadioGroup((event.target as HTMLInputElement).value);
+  };
+
+  const [ageSelect, setAgeSelect] = React.useState("");
+  const selectChange = (event: SelectChangeEvent) => {
+    setAgeSelect(event.target.value as string);
+  };
+
+  //팝업
+  const [alertStauts, setAlertStauts] = React.useState(false);
+  const alertOpen = () => {
+    setAlertStauts(true);
+  };
+  const alertClose = () => {
+    setAlertStauts(false);
+  };
+  const [confirmStauts, setConfirmStauts] = React.useState(false);
+  const confirmOpen = () => {
+    setConfirmStauts(true);
+  };
+  const confirmClose = () => {
+    setConfirmStauts(false);
   };
 
   return (
@@ -69,7 +117,7 @@ export default function VerticalTabs() {
         orientation="vertical"
         variant="scrollable"
         value={value}
-        onChange={handleChange}
+        onChange={tabChange}
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: "divider" }}
       >
@@ -174,6 +222,7 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={3}>
         인폿 가이드 추가
       </TabPanel>
+      {/* 체크박스 */}
       <TabPanel value={value} index={4}>
         <div>
           <Checkbox
@@ -188,27 +237,9 @@ export default function VerticalTabs() {
             disabled
           />
         </div>
-        <div>
-          <FormControlLabel
-            control={
-              <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
-            }
-            label="Label"
-          />
 
-          <FormControlLabel
-            control={
-              <Checkbox
-                icon={<ChkDefault />}
-                checkedIcon={<ChkChecked />}
-                disabled
-              />
-            }
-            label="Label"
-          />
-        </div>
         <div>
-          <FormGroup>
+          <FormGroup row className="chk-group">
             <FormControlLabel
               control={
                 <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
@@ -232,23 +263,172 @@ export default function VerticalTabs() {
           </FormGroup>
         </div>
       </TabPanel>
+      {/* 라디오 */}
       <TabPanel value={value} index={5}>
-        라디오 가이드 추가
+        <div>
+          <Radio
+            checked={selectedValue === "a"}
+            onChange={radioChange}
+            value="a"
+            name="radio-buttons"
+            inputProps={{ "aria-label": "A" }}
+            checkedIcon={<RadioChecked />}
+            icon={<RadioDefault />}
+          />
+          <Radio
+            checked={selectedValue === "b"}
+            onChange={radioChange}
+            value="b"
+            name="radio-buttons"
+            inputProps={{ "aria-label": "B" }}
+            checkedIcon={<RadioChecked />}
+            icon={<RadioDefault />}
+          />
+          <Radio
+            checked={selectedValue === "c"}
+            onChange={radioChange}
+            value="c"
+            name="radio-buttons"
+            inputProps={{ "aria-label": "C" }}
+            checkedIcon={<RadioChecked />}
+            icon={<RadioDefault />}
+            disabled
+          />
+        </div>
+        <div>
+          <FormControl>
+            <RadioGroup
+              className="radio-group"
+              row
+              aria-labelledby="radio-group"
+              name="group1"
+              value={radioGroup}
+              onChange={radioGroupChange}
+            >
+              <FormControlLabel
+                value="female"
+                control={
+                  <Radio
+                    checkedIcon={<RadioChecked />}
+                    icon={<RadioDefault />}
+                  />
+                }
+                label="Female"
+              />
+              <FormControlLabel
+                className="cr-label"
+                value="male"
+                control={
+                  <Radio
+                    checkedIcon={<RadioChecked />}
+                    icon={<RadioDefault />}
+                  />
+                }
+                label="Male"
+              />
+            </RadioGroup>
+          </FormControl>
+        </div>
       </TabPanel>
+      {/* 텍스트 에어리어 */}
       <TabPanel value={value} index={6}>
-        텍스트에어리어 가이드 추가
+        <div className="text-area ">
+          {/* <TextField multiline /> */}
+          <textarea name="" id=""></textarea>
+        </div>
+        <div className="text-area required">
+          <textarea name="" id=""></textarea>
+        </div>
       </TabPanel>
+      {/* 셀렉트 */}
       <TabPanel value={value} index={7}>
-        셀렉트 가이드 추가
+        <div>
+          <Select
+            className="option-select small"
+            value={ageSelect}
+            onChange={selectChange}
+            displayEmpty
+          >
+            <MenuItem value="" disabled>
+              전체
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+          </Select>
+          <Select
+            className="option-select"
+            value={ageSelect}
+            onChange={selectChange}
+            displayEmpty
+          >
+            <MenuItem value="" disabled>
+              전체
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+          </Select>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={8}>
         데이터픽커 가이드 추가
       </TabPanel>
       <TabPanel value={value} index={9}>
-        모달 가이드 추가
+        <Button variant="primary" onClick={alertOpen}>
+          얼럿
+        </Button>
+        &nbsp;
+        <Button variant="primary" onClick={confirmOpen}>
+          컨펌
+        </Button>
+        {/* 얼럿 */}
+        <Dialog className="alert-box" open={alertStauts} onClose={alertClose}>
+          <DialogContent>
+            본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.
+          </DialogContent>
+          <DialogActions>
+            <Button variant="sub2" onClick={alertClose}>
+              닫기
+            </Button>
+          </DialogActions>
+          <IconButton className="dialog-close" onClick={alertClose}>
+            <Icons15 fill="#222 " />
+          </IconButton>
+        </Dialog>
+        {/* 컨펌 */}
+        <Dialog
+          className="confirm-box"
+          open={confirmStauts}
+          onClose={confirmClose}
+        >
+          <DialogTitle>{"타이틀"}</DialogTitle>
+          <DialogContent>
+            본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.
+          </DialogContent>
+          <DialogActions>
+            <Button variant="sub2" onClick={confirmClose}>
+              닫기
+            </Button>
+            <Button variant="primary">확인</Button>
+          </DialogActions>
+          <IconButton className="dialog-close" onClick={confirmClose}>
+            <Icons15 fill="#222 " />
+          </IconButton>
+        </Dialog>
       </TabPanel>
       <TabPanel value={value} index={10}>
-        레이어팝업 가이드 추가
+        <Button variant="primary">팝업열기</Button>
       </TabPanel>
     </Box>
   );
