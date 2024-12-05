@@ -1,5 +1,5 @@
 // necessary set
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // need content
 import Loading from "~/muiPublish/loading/Loading";
@@ -10,7 +10,7 @@ import SearchContent from "~/muiPublish/components/SearchContent";
 // import Cardlist from "~/publish/components/Cardlist";
 
 // need style
-import "~/publish/layout/layout.scss";
+import "~/muiPublish/layout/layout.scss";
 
 // Props type
 export interface IPageProps {
@@ -40,16 +40,27 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
     //table 탭
     const adminMenu = ["table 관리", "메뉴2", "메뉴3", "메뉴4"];
 
+    // subtitle search height
+    const subTitSearch = useRef<HTMLDivElement | null>(null);
+    useEffect(() => {
+        if (subTitSearch.current) {
+            const offsetHeight = subTitSearch.current.offsetHeight;
+            const offsetWidth = subTitSearch.current.offsetWidth;
+            console.log("Height:", offsetHeight + 190, "Width:", offsetWidth);
+        }
+    }, [subTitSearch]);
+
     return (
         <>
             <div className="tabs-area">
                 <AdminTab menuName={adminMenu} />
             </div>
             <div className="tabs-contents">
-                <SubTitle pageName={props.pageName} />
-                <SearchContent />
+                <div className="sub-tit-search" ref={subTitSearch}>
+                    <SubTitle pageName={props.pageName} />
+                    <SearchContent />
+                </div>
                 <div className="tabs-scroll-area">
-                    <br />
                     {/* <SearchContent />
                     <TableSample pageName={props.pageName} accordion={true} />
                     <div className="card-table">
