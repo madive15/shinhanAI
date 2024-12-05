@@ -36,10 +36,12 @@
                     font-weight: 400;
                     line-height: 17px;
                     color: var(--font-color3);
+                    box-sizing: border-box;
                 }
                 & .icon-search {
                     @include absolute-right-top(8px, 8px);
                     @include width-height(24px, 24px);
+                    padding: 0 0;
                     cursor: pointer;
                     & path {
                         fill: var(--font-color3);
@@ -68,7 +70,7 @@
                         line-height: 14px;
                     }
                     & button {
-                        @include width-height(57px, 22px);
+                        @include width-height(58px, 22px);
                         min-width: auto;
                         margin: 0 0 0 6px;
                         padding: 4px 8px 4px 8px;
@@ -94,6 +96,7 @@
                     .icon-set {
                         @include width-height(24px, 24px);
                         margin: 0 0 0 24px;
+                        padding: 0 0;
                         cursor: pointer;
                         & path {
                             fill: var(--font-color3);
