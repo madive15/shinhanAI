@@ -54,6 +54,7 @@ const Layout: React.FC<IPageProps> = (props) => {
                 <MenuContainer pageName={""} subName={""} />
                 <div className="content">
                     {/* Tab contents Page */}
+                    
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />} */}
                     {/* {props.pageName === "샘플폼" && <SampleForm pageName={props.pageName} />}
                     {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}

@@ -18,29 +18,63 @@
     &::-webkit-scrollbar {
         display: none;
     }
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 14px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14px;
+        letter-spacing: -0.025em;
+        color: var(--font-color2);
+        cursor: pointer;
+    }
     .sidebar-tab {
         width: 248px;
-        min-height: 48px;
         padding: 4px 4px;
-        background-color: var(--background-color2);
         button {
             width: 50%;
             height: 41px;
             justify-content: center;
         }
+        .menu-bookmark {
+            color: var(--font-color2);
+            .MuiListItemButton-root {
+                height: 40px;
+                margin: 0 0 4px 0;
+                background-color: var(--background-color1);
+                & .MuiTypography-root {
+                    font-family: "Pretendard";
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    letter-spacing: -0.025em;
+                }
+            }
+        }
     }
     .sidebar-nav {
-        margin-top: 16px;
+        // margin-top: 16px;
         .MuiList-root {
             .MuiListItemButton-root {
                 height: 40px;
                 border-radius: 4px;
-                border-bottom: 1px solid var(--border-color3);
                 & .MuiListItemText-primary {
                     font-size: 14px;
                     font-weight: 400;
                     line-height: 17px;
                     letter-spacing: -0.025em;
+                }
+                & .MuiTypography-root {
+                    font-family: "Pretendard";
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    letter-spacing: -0.025em;
+                }
+                & .MuiListItemIcon-root {
+                    justify-content: end;
                 }
                 &.MuiList-active {
                     color: var(--color2);
@@ -50,10 +84,6 @@
                         font-weight: 700;
                         line-height: 18px;
                         letter-spacing: -0.025em;
-                    }
-                    &::after {
-                        transform: rotate(180deg);
-                        background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='5' viewBox='0 0 7 5' fill='none'%3E%3Cpath d='M3.49501 4.49002C3.36519 4.49002 3.23538 4.44015 3.14551 4.3404L0.149786 1.34788C-0.0499287 1.15835 -0.0499287 0.839152 0.149786 0.649626C0.349501 0.4601 0.659058 0.450125 0.848787 0.649626L3.49501 3.29302L6.14123 0.649626C6.34094 0.450125 6.6505 0.450125 6.85021 0.649626C7.04993 0.849127 7.04993 1.15835 6.85021 1.35786L3.85449 4.35037C3.75464 4.45012 3.62482 4.5 3.50499 4.5L3.49501 4.49002Z' fill='%23ffffff'/%3E%3C/svg%3E");
                     }
                     &::before {
                         content: "";
@@ -66,9 +96,16 @@
                         background-color: var(--color1);
                     }
                 }
-                &.MuiList-sub-active {
-                    border-radius: 0 0;
-                    border-bottom: 2px solid var(--color3);
+                &.MuiList-sub {
+                    border-bottom: 2px solid var(--border-color3);
+                    &.MuiList-sub-active {
+                        border-radius: 0 0;
+                        border-bottom: 2px solid var(--color3);
+                        & .MuiListItemIcon-root {
+                            justify-content: flex-start;
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
             }
         }

@@ -5,6 +5,7 @@ import logoPath from "~assets/images/admin_logo.png";
 import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
 import { ReactComponent as Setting } from "~assets/images/svg/Icons-set.svg";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 
 // import Button from "~/publish/components/Button";
@@ -51,9 +52,9 @@ const Top: React.FC<IPageProps> = (props) => {
                 <div className="user-setting">
                     <div className="user-time">
                         <span>59:59</span>
-                        <IconButton type="button" aria-label="시간연장">
+                        <Button variant="secondary" type="button" aria-label="시간연장">
                             시간연장
-                        </IconButton>
+                        </Button>
                     </div>
                     <span className="nick-name">
                         <em>김멀더(MulderKim)</em> 님
