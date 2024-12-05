@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
@@ -39,6 +40,9 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
+import DatePicker from "react-datepicker";
+import { ko } from "date-fns/locale";
+import "react-datepicker/dist/react-datepicker.css";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -76,7 +80,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(8);
+  const [value, setValue] = React.useState(0);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -119,6 +123,10 @@ export default function VerticalTabs() {
     setpopupStauts(false);
   };
 
+  const [startDate, setStartDate] = useState();
+
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [rangeStartDate, rangeEndDate]: any = dateRange;
   return (
     <Box
       className="guide-wrap"
@@ -147,6 +155,7 @@ export default function VerticalTabs() {
         <Tab label="Select" {...a11yProps(7)} />
         <Tab label="DatePicker" {...a11yProps(8)} />
         <Tab label="Popup" {...a11yProps(9)} />
+        <Tab label="datepicker" {...a11yProps(10)} />
       </Tabs>
       {/* color */}
       <TabPanel value={value} index={0}>
@@ -434,6 +443,7 @@ export default function VerticalTabs() {
           </Select>
         </div>
       </TabPanel>
+      {/* 테이블 */}
       <TabPanel value={value} index={8}>
         <TableContainer className="row-table" component={Paper}>
           <Table>
@@ -625,6 +635,7 @@ export default function VerticalTabs() {
           </Table>
         </TableContainer>
       </TabPanel>
+      {/* 팝업 */}
       <TabPanel value={value} index={9}>
         <Button variant="primary" onClick={alertOpen}>
           얼럿
@@ -716,6 +727,51 @@ export default function VerticalTabs() {
             <Icons15 fill="#222 " />
           </IconButton>
         </Dialog>
+      </TabPanel>
+      <TabPanel value={value} index={10}>
+        <p>range픽커</p>
+        <div className="date-picker-area">
+          <DatePicker
+            selectsRange={true}
+            startDate={rangeStartDate}
+            endDate={rangeEndDate}
+            onChange={(update: any) => {
+              setDateRange(update);
+            }}
+            // isClearable={true}
+            dateFormat="yyyy-MM-dd"
+            locale={ko}
+          />
+          <div className="date-month-btn">
+            <button type="button" className="active">
+              3개월
+            </button>
+            <button type="button">6개월</button>
+            <button type="button">1년</button>
+            <button type="button">3년</button>
+            <button type="button">5년</button>
+          </div>
+        </div>
+        <br />
+        <div className="date-picker-area">
+          <DatePicker
+            selected={startDate}
+            onChange={(date: any) => setStartDate(date)}
+            dropdownMode="select"
+            dateFormat="yyyy-MM-dd"
+            locale={ko}
+            placeholderText="기간을 선택해주세요"
+          />
+          <div className="date-month-btn">
+            <button type="button" className="active">
+              3개월
+            </button>
+            <button type="button">6개월</button>
+            <button type="button">1년</button>
+            <button type="button">3년</button>
+            <button type="button">5년</button>
+          </div>
+        </div>
       </TabPanel>
     </Box>
   );
