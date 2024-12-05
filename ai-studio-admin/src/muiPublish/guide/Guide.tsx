@@ -14,6 +14,8 @@ import { ReactComponent as ChkDisabled } from "~assets/images/svg/Icons-chk-disa
 import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
 import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
 import { ReactComponent as RadioDisabled } from "~assets/images/svg/Icons-radio-disabled.svg";
+import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
+import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import Radio from "@mui/material/Radio";
@@ -28,7 +30,6 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
 import IconButton from "@mui/material/IconButton";
 //
 interface TabPanelProps {
@@ -102,6 +103,13 @@ export default function VerticalTabs() {
   const confirmClose = () => {
     setConfirmStauts(false);
   };
+  const [popupStauts, setpopupStauts] = React.useState(false);
+  const popupOpen = () => {
+    setpopupStauts(true);
+  };
+  const popupClose = () => {
+    setpopupStauts(false);
+  };
 
   return (
     <Box
@@ -130,8 +138,7 @@ export default function VerticalTabs() {
         <Tab label="TextArea" {...a11yProps(6)} />
         <Tab label="Select" {...a11yProps(7)} />
         <Tab label="DatePicker" {...a11yProps(8)} />
-        <Tab label="Modal" {...a11yProps(9)} />
-        <Tab label="LayerPopup" {...a11yProps(10)} />
+        <Tab label="Popup" {...a11yProps(9)} />
       </Tabs>
       {/* color */}
       <TabPanel value={value} index={0}>
@@ -333,7 +340,6 @@ export default function VerticalTabs() {
       {/* 텍스트 에어리어 */}
       <TabPanel value={value} index={6}>
         <div className="text-area ">
-          {/* <TextField multiline /> */}
           <textarea name="" id=""></textarea>
         </div>
         <div className="text-area required">
@@ -344,9 +350,25 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={7}>
         <div>
           <Select
-            className="option-select small"
+            className=" small"
             value={ageSelect}
             onChange={selectChange}
+            IconComponent={Arrow}
+            displayEmpty
+          >
+            <MenuItem value="" disabled>
+              전체
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>TwentyTwenty</MenuItem>
+          </Select>
+          <br />
+          <br />
+          <Select
+            className=""
+            value={ageSelect}
+            onChange={selectChange}
+            IconComponent={Arrow}
             displayEmpty
           >
             <MenuItem value="" disabled>
@@ -355,11 +377,46 @@ export default function VerticalTabs() {
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
           </Select>
+          <br />
+          <br />
           <Select
-            className="option-select"
+            className=" required"
             value={ageSelect}
             onChange={selectChange}
+            IconComponent={Arrow}
             displayEmpty
+          >
+            <MenuItem value="" disabled>
+              전체
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+          </Select>
+          <br />
+          <br />
+          <Select
+            className=""
+            value={ageSelect}
+            onChange={selectChange}
+            IconComponent={Arrow}
+            displayEmpty
+            disabled
+          >
+            <MenuItem value="" disabled>
+              전체
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+          </Select>
+          <br />
+          <br />
+          <Select
+            className=" required"
+            value={ageSelect}
+            onChange={selectChange}
+            IconComponent={Arrow}
+            displayEmpty
+            disabled
           >
             <MenuItem value="" disabled>
               전체
@@ -379,6 +436,10 @@ export default function VerticalTabs() {
         &nbsp;
         <Button variant="primary" onClick={confirmOpen}>
           컨펌
+        </Button>
+        &nbsp;
+        <Button variant="primary" onClick={popupOpen}>
+          레이어 팝업
         </Button>
         {/* 얼럿 */}
         <Dialog className="alert-box" open={alertStauts} onClose={alertClose}>
@@ -426,9 +487,39 @@ export default function VerticalTabs() {
             <Icons15 fill="#222 " />
           </IconButton>
         </Dialog>
-      </TabPanel>
-      <TabPanel value={value} index={10}>
-        <Button variant="primary">팝업열기</Button>
+        {/* 레이어팝업 */}
+        <Dialog className="layer-box " open={popupStauts} onClose={popupClose}>
+          <DialogTitle>{"타이틀"}</DialogTitle>
+          <DialogContent>
+            <div>
+              <Select
+                className=""
+                value={ageSelect}
+                onChange={selectChange}
+                IconComponent={Arrow}
+                displayEmpty
+              >
+                <MenuItem value="" disabled>
+                  전체
+                </MenuItem>
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+              </Select>
+            </div>
+            <div className="text-area ">
+              <textarea name="" id=""></textarea>
+            </div>
+          </DialogContent>
+          <DialogActions>
+            <Button variant="sub2" onClick={popupClose}>
+              닫기
+            </Button>
+            <Button variant="primary">확인</Button>
+          </DialogActions>
+          <IconButton className="dialog-close" onClick={popupClose}>
+            <Icons15 fill="#222 " />
+          </IconButton>
+        </Dialog>
       </TabPanel>
     </Box>
   );
