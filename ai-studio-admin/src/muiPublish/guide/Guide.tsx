@@ -31,6 +31,14 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Paper,
+} from "@mui/material";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -68,7 +76,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(9);
+  const [value, setValue] = React.useState(8);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -427,7 +435,195 @@ export default function VerticalTabs() {
         </div>
       </TabPanel>
       <TabPanel value={value} index={8}>
-        데이터픽커 가이드 추가
+        <TableContainer className="row-table" component={Paper}>
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell component="th">상품 분류</TableCell>
+                <TableCell colSpan={3}>
+                  <RadioGroup
+                    className="radio-group"
+                    row
+                    aria-labelledby="radio-group"
+                    name="group1"
+                    value={radioGroup}
+                    onChange={radioGroupChange}
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={
+                        <Radio
+                          checkedIcon={<RadioChecked />}
+                          icon={<RadioDefault />}
+                        />
+                      }
+                      label="Female"
+                    />
+                    <FormControlLabel
+                      className="cr-label"
+                      value="male"
+                      control={
+                        <Radio
+                          checkedIcon={<RadioChecked />}
+                          icon={<RadioDefault />}
+                        />
+                      }
+                      label="Male"
+                    />
+                  </RadioGroup>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th">상위 분류</TableCell>
+                <TableCell colSpan={3}>
+                  <div className="select-group">
+                    <FormControl fullWidth>
+                      <Select
+                        className=""
+                        value={ageSelect}
+                        onChange={selectChange}
+                        IconComponent={Arrow}
+                        displayEmpty
+                      >
+                        <MenuItem value="" disabled>
+                          전체
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                      </Select>
+                    </FormControl>
+                    <FormControl fullWidth>
+                      <Select
+                        className=""
+                        value={ageSelect}
+                        onChange={selectChange}
+                        IconComponent={Arrow}
+                        displayEmpty
+                      >
+                        <MenuItem value="" disabled>
+                          전체
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                      </Select>
+                    </FormControl>
+                    <FormControl fullWidth>
+                      <Select
+                        className=""
+                        value={ageSelect}
+                        onChange={selectChange}
+                        IconComponent={Arrow}
+                        displayEmpty
+                      >
+                        <MenuItem value="" disabled>
+                          전체
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th">상품 코드</TableCell>
+                <TableCell colSpan={3}>
+                  <div className="text-area required">
+                    <textarea name="" id=""></textarea>
+                  </div>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th">상품 명</TableCell>
+                <TableCell colSpan={3}>
+                  <TextField fullWidth placeholder="상품 명 입력" />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th">사용 여부</TableCell>
+                <TableCell colSpan={3}>
+                  <RadioGroup
+                    className="radio-group"
+                    row
+                    aria-labelledby="radio-group"
+                    name="group1"
+                    value={radioGroup}
+                    onChange={radioGroupChange}
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={
+                        <Radio
+                          checkedIcon={<RadioChecked />}
+                          icon={<RadioDefault />}
+                        />
+                      }
+                      label="Female"
+                    />
+                    <FormControlLabel
+                      className="cr-label"
+                      value="male"
+                      control={
+                        <Radio
+                          checkedIcon={<RadioChecked />}
+                          icon={<RadioDefault />}
+                        />
+                      }
+                      label="Male"
+                    />
+                  </RadioGroup>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th">전략 상품 여부</TableCell>
+                <TableCell colSpan={3}>
+                  <RadioGroup
+                    className="radio-group"
+                    row
+                    aria-labelledby="radio-group"
+                    name="group1"
+                    value={radioGroup}
+                    onChange={radioGroupChange}
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={
+                        <Radio
+                          checkedIcon={<RadioChecked />}
+                          icon={<RadioDefault />}
+                        />
+                      }
+                      label="Female"
+                    />
+                    <FormControlLabel
+                      className="cr-label"
+                      value="male"
+                      control={
+                        <Radio
+                          checkedIcon={<RadioChecked />}
+                          icon={<RadioDefault />}
+                        />
+                      }
+                      label="Male"
+                    />
+                  </RadioGroup>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th">등록 일시</TableCell>
+                <TableCell>2024-05-06 10:10:05</TableCell>
+                <TableCell component="th">등록자</TableCell>
+                <TableCell>김멀더 (MulderKim)</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th">수정 일시</TableCell>
+                <TableCell>2024-05-06 10:10:05</TableCell>
+                <TableCell component="th">수정자</TableCell>
+                <TableCell>김멀더 (MulderKim)</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
       </TabPanel>
       <TabPanel value={value} index={9}>
         <Button variant="primary" onClick={alertOpen}>

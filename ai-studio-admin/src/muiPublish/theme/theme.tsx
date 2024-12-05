@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 import requiredIcon from "../../assets/images/svg/Icons-required.svg";
 import requiredIconDisabled from "../../assets/images/svg/Icons-required-disabled.svg";
+import { colors } from "@mui/material";
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
     sub1: true;
@@ -233,15 +234,21 @@ const theme = createTheme({
         root: {
           padding: "0",
           marginRight: "6px",
+
           "&.Mui-disabled svg ": {
             fill: "#DDE6F3",
             "& rect": {
               stroke: "#DDE6F3",
             },
           },
+          "& label ": {
+            color: "var(--font-color1)",
+            margin: "0",
+          },
         },
       },
     },
+
     // 라디오 끝
     // 셀렉트
     MuiSelect: {
@@ -428,6 +435,41 @@ const theme = createTheme({
       },
     },
     // 다이얼로그 끝
+    //로우 테이블
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          "&.row-table": {
+            borderTop: "1px solid var(--border-color4)",
+            borderRadius: "0",
+            boxShadow: "none",
+            "& table": {
+              // maxWidth: "764px",
+              borderCollapse: "collapse",
+              tableLayout: "fixed",
+              "& th, & td": {
+                borderBottom: "1px solid var(--border-color4)",
+                padding: "12px 16px",
+                fontSize: "14px",
+              },
+              "& th": {
+                maxWidth: "160px",
+                backgroundColor: "var(--background-color2)",
+                lineHeight: "28px",
+                letterSpacing: "-0.35px",
+              },
+              "& td": {
+                backgroundColor: "var(--color2)",
+                lineHeight: "21px",
+                letterSpacing: "-0.35px",
+                color: "var(--font-color2)",
+              },
+            },
+          },
+        },
+      },
+    },
+    //로우 테이블 끝
   },
 });
 export default theme;
