@@ -84,9 +84,9 @@ export const router = createBrowserRouter([
                           element: <MuiPubIndex />,
                       },
                       {
-                        path: pathKeys.muiLayout(),
-                        element: <MuiLayout />,
-                    },
+                          path: pathKeys.muiLayout(), //mui 기본 layout
+                          element: <MuiLayout pageName={"기본레이아웃"} />,
+                      },
                       {
                           path: pathKeys.taskpage(),
                           element: <Layout pageName={"과제 신청"} />,

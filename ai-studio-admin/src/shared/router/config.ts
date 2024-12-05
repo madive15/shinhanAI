@@ -52,12 +52,11 @@ export const pathKeys = {
         return `${pathKeys.root}publish/sampleform`;
     },
 
-    //
     muiPublish(): string {
         return `${pathKeys.root}muipublish/`; // MUI 퍼블 index
     },
     muiLayout(): string {
-        return `${pathKeys.root}muipublish/layout`; // MUI layout
+        return `${pathKeys.root}muipublish/layout`; // MUI 기본 layout
     },
     taskpage(): string {
         return `${pathKeys.root}publish/task`;
