@@ -62,3 +62,62 @@
     top: 0;
   }
 }
+
+//얼럿
+.alert-box {
+  [role="dialog"] {
+    position: relative;
+    width: 368px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    font-family: var(--font-style1);
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  .MuiDialogContent-root {
+    font-size: 15px;
+    padding: 0;
+    margin: 36px 0 24px;
+  }
+  .MuiDialogActions-root {
+    padding: 0;
+  }
+  .dialog-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+//컨펌
+.confirm-box {
+  [role="dialog"] {
+    position: relative;
+    width: 500px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  h2 {
+    font-family: var(--font-style1);
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  .MuiDialogContent-root {
+    font-size: 15px;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+  .MuiDialogActions-root {
+    padding: 0;
+  }
+  .dialog-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+//레이어팝업

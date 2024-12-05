@@ -23,6 +23,13 @@ import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
+import IconButton from "@mui/material/IconButton";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -60,7 +67,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(7);
+  const [value, setValue] = React.useState(9);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -79,6 +86,23 @@ export default function VerticalTabs() {
   const selectChange = (event: SelectChangeEvent) => {
     setAgeSelect(event.target.value as string);
   };
+
+  //팝업
+  const [alertStauts, setAlertStauts] = React.useState(false);
+  const alertOpen = () => {
+    setAlertStauts(true);
+  };
+  const alertClose = () => {
+    setAlertStauts(false);
+  };
+  const [confirmStauts, setConfirmStauts] = React.useState(false);
+  const confirmOpen = () => {
+    setConfirmStauts(true);
+  };
+  const confirmClose = () => {
+    setConfirmStauts(false);
+  };
+
   return (
     <Box
       className="guide-wrap"
@@ -349,10 +373,62 @@ export default function VerticalTabs() {
         데이터픽커 가이드 추가
       </TabPanel>
       <TabPanel value={value} index={9}>
-        모달 가이드 추가
+        <Button variant="primary" onClick={alertOpen}>
+          얼럿
+        </Button>
+        &nbsp;
+        <Button variant="primary" onClick={confirmOpen}>
+          컨펌
+        </Button>
+        {/* 얼럿 */}
+        <Dialog className="alert-box" open={alertStauts} onClose={alertClose}>
+          <DialogContent>
+            본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.
+          </DialogContent>
+          <DialogActions>
+            <Button variant="sub2" onClick={alertClose}>
+              닫기
+            </Button>
+          </DialogActions>
+          <IconButton className="dialog-close" onClick={alertClose}>
+            <Icons15 fill="#222 " />
+          </IconButton>
+        </Dialog>
+        {/* 컨펌 */}
+        <Dialog
+          className="confirm-box"
+          open={confirmStauts}
+          onClose={confirmClose}
+        >
+          <DialogTitle>{"타이틀"}</DialogTitle>
+          <DialogContent>
+            본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문
+            내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+            들어갑니다.본문 내용이 들어갑니다.
+          </DialogContent>
+          <DialogActions>
+            <Button variant="sub2" onClick={confirmClose}>
+              닫기
+            </Button>
+            <Button variant="primary">확인</Button>
+          </DialogActions>
+          <IconButton className="dialog-close" onClick={confirmClose}>
+            <Icons15 fill="#222 " />
+          </IconButton>
+        </Dialog>
       </TabPanel>
       <TabPanel value={value} index={10}>
-        레이어팝업 가이드 추가
+        <Button variant="primary">팝업열기</Button>
       </TabPanel>
     </Box>
   );

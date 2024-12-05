@@ -7,6 +7,7 @@ declare module "@mui/material/Button" {
     primary: true;
     primaryBig: true;
     small: true;
+    icon: true;
   }
 }
 const theme = createTheme({
@@ -175,6 +176,25 @@ const theme = createTheme({
             },
           },
         },
+        {
+          props: { variant: "icon" },
+          style: {
+            minWidth: "unset",
+            width: "24px",
+            height: "24px",
+            padding: "0px",
+            "& svg": {
+              width: "24px",
+              height: "24px",
+            },
+            "&:hover": {
+              backgroundColor: "rgba(0, 0, 0, 0.05)",
+            },
+            "&:active": {
+              backgroundColor: "rgba(0, 0, 0, 0.10)",
+            },
+          },
+        },
       ],
     },
     MuiCheckbox: {
@@ -258,6 +278,16 @@ const theme = createTheme({
       styleOverrides: {
         list: {
           padding: "12px",
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          minWidth: "unset",
+          width: "24px",
+          height: "24px",
+          padding: "0",
         },
       },
     },
