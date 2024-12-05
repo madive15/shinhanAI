@@ -1,4 +1,6 @@
 import { createTheme } from "@mui/material/styles";
+import requiredIcon from "../../assets/images/svg/Icons-required.svg";
+import requiredIconDisabled from "../../assets/images/svg/Icons-required-disabled.svg";
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
     sub1: true;
@@ -52,6 +54,7 @@ const theme = createTheme({
         },
       },
     },
+    // 버튼
     MuiButton: {
       styleOverrides: {},
       variants: [
@@ -197,6 +200,8 @@ const theme = createTheme({
         },
       ],
     },
+    // 버튼 끝
+    // 체크박스
     MuiCheckbox: {
       styleOverrides: {
         root: {
@@ -221,6 +226,8 @@ const theme = createTheme({
         },
       },
     },
+    // 체크박스 끝
+    // 라디오
     MuiRadio: {
       styleOverrides: {
         root: {
@@ -235,19 +242,52 @@ const theme = createTheme({
         },
       },
     },
+    // 라디오 끝
+    // 셀렉트
     MuiSelect: {
       styleOverrides: {
         root: {
           border: "1px solid var(--border-color1)",
+          padding: "0",
+          fontSize: "14px",
+          lineHeight: "18px",
+          letterSpacing: "-0.35px",
+          maxWidth: "480px",
+          minWidth: "80px",
+          width: "100%",
+          "&.small": {
+            maxWidth: "100px",
+          },
           "&.Mui-focused": {
             borderColor: "var(--color1)",
           },
-          padding: "0",
           "& legend ": {
             display: "none",
           },
           "& fieldset ": {
             border: "none",
+          },
+          "& svg ": {
+            fill: "#222222",
+          },
+          "& .MuiSelect-icon ": {
+            top: "calc(50% - 0.2em)",
+          },
+          "& .MuiSelect-select ": {
+            padding: "9px 25px 9px 12px !important",
+          },
+          "&.Mui-disabled ": {
+            "&.required ": {
+              borderTopLeftRadius: 0,
+              background: `rgba(0, 0, 0, 0.02) url(${requiredIconDisabled}) top left no-repeat`,
+            },
+            "& svg ": {
+              fill: "#888888",
+            },
+          },
+          "&.required ": {
+            borderTopLeftRadius: 0,
+            background: `var(--color2) url(${requiredIcon}) top left no-repeat`,
           },
         },
       },
@@ -256,9 +296,19 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           "&.MuiMenu-paper": {
-            border: " 1px solid var(--color1)",
             boxShadow: "none",
           },
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        list: {
+          border: " 1px solid var(--color1)",
+          padding: "12px",
+          borderRadius: "4px",
+          minWidth: "80px",
+          marginTop: "4px",
         },
       },
     },
@@ -274,13 +324,8 @@ const theme = createTheme({
         },
       },
     },
-    MuiMenu: {
-      styleOverrides: {
-        list: {
-          padding: "12px",
-        },
-      },
-    },
+    // 셀렉트 끝
+    // 아이콘 버튼
     MuiIconButton: {
       styleOverrides: {
         root: {
@@ -291,6 +336,98 @@ const theme = createTheme({
         },
       },
     },
+    // 아이콘 버튼 끝
+    // 다이얼로그
+    MuiDialog: {
+      styleOverrides: {
+        root: {
+          "&.alert-box": {
+            "& .MuiPaper-root": {
+              position: "relative",
+              width: "368px",
+              padding: "16px",
+              borderRadius: "16px",
+              boxShadow: "0px 8px 20px 0px rgba(0, 0, 0, 0.1)",
+              "& h2": {
+                fontFamily: "var(--font-style1)",
+                fontSize: "14px",
+                padding: "0",
+                marginBottom: "12px",
+              },
+              "& .MuiDialogContent-root": {
+                fontSize: "15px",
+                padding: "0",
+                margin: "36px 0 24px",
+              },
+              "& .MuiDialogActions-root": { padding: "0" },
+              "& .dialog-close": {
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+              },
+            },
+          },
+          "&.confirm-box": {
+            "& .MuiPaper-root": {
+              position: "relative",
+              width: "500px",
+              padding: "16px",
+              borderRadius: "16px",
+              boxShadow: "0px 8px 20px 0px rgba(0, 0, 0, 0.1)",
+              "& h2": {
+                fontFamily: "var(--font-style1)",
+                fontSize: "14px",
+                padding: "0",
+                marginBottom: "12px",
+              },
+              "& .MuiDialogContent-root": {
+                fontSize: "15px",
+                padding: "0",
+                marginBottom: "24px",
+              },
+              "& .MuiDialogActions-root": { padding: "0" },
+              "& .dialog-close": {
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+              },
+            },
+          },
+          "&.layer-box": {
+            "& .MuiPaper-root": {
+              position: "relative",
+              width: "560px",
+              padding: "16px",
+              borderRadius: "16px",
+              boxShadow: "0px 8px 20px 0px rgba(0, 0, 0, 0.1)",
+              "& h2": {
+                fontFamily: "var(--font-style1)",
+                fontSize: "14px",
+                padding: "0",
+                marginBottom: "12px",
+              },
+              "& .MuiDialogContent-root": {
+                fontSize: "15px",
+                padding: "0",
+                marginBottom: "24px",
+              },
+              "& .MuiDialogActions-root": { padding: "0" },
+              "& .dialog-close": {
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+              },
+            },
+            "&.large": {
+              "& .MuiPaper-root": {
+                width: "680px",
+              },
+            },
+          },
+        },
+      },
+    },
+    // 다이얼로그 끝
   },
 });
 export default theme;
