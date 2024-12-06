@@ -60,7 +60,7 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
                     <SubTitle pageName={props.pageName} />
                     <SearchContent />
                 </div>
-                <div className="tabs-scroll-area">
+                <div className="tabs-scroll-area" >
                     {/* <SearchContent />
                     <TableSample pageName={props.pageName} accordion={true} />
                     <div className="card-table">
