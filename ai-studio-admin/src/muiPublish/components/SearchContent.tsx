@@ -13,7 +13,6 @@ import CheckboxGroup from "~/publish/components/CheckboxGroup";
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
-
 // need style
 import "./search.scss";
 
@@ -87,6 +86,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                         </div>
                     </div>
                 </div>
+
                 {props.pageName === "AI-OCR 검증 결과 관리" && (
                     <>
                         <div className="search-item-box">
