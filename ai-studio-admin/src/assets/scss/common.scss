@@ -222,3 +222,86 @@
     }
   }
 }
+
+//뱃지
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 21px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 17px;
+  font-weight: 700;
+  letter-spacing: -0.275px;
+  &.gray {
+    color: var(--color2);
+    background-color: var(--font-color2);
+  }
+  &.green {
+    color: var(--color2);
+    background-color: var(--positive);
+  }
+  &.red {
+    color: var(--color2);
+    background-color: var(--negative);
+  }
+  &.large {
+    height: 25px;
+    min-width: 64px;
+    border-radius: 100px;
+    justify-content: center;
+  }
+}
+.badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px 4px;
+}
+
+//해시태그
+.hash-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border-color4);
+  background-color: var(--color2);
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  color: var(--font-color2);
+  gap: 4px;
+  .hash-del {
+    text-indent: -9999px;
+    width: 8px;
+    height: 8px;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 1px;
+      background-color: var(--font-color2);
+      transform-origin: center;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+//svg icon
+svg {
+  width: 24px;
+  height: 24px;
+}

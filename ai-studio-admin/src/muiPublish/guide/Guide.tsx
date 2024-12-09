@@ -32,6 +32,9 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
+import Badge from "~/muiPublish/components/Badge";
+import Hash from "~/muiPublish/components/Hash";
+import SvgSample from "~/muiPublish/components/SvgSample";
 import {
   Table,
   TableBody,
@@ -156,6 +159,9 @@ export default function VerticalTabs() {
         <Tab label="RowTable" {...a11yProps(8)} />
         <Tab label="Popup" {...a11yProps(9)} />
         <Tab label="datepicker" {...a11yProps(10)} />
+        <Tab label="Badge" {...a11yProps(11)} />
+        <Tab label="HashTag" {...a11yProps(12)} />
+        <Tab label="SvgIcon" {...a11yProps(13)} />
       </Tabs>
       {/* color */}
       <TabPanel value={value} index={0}>
@@ -372,7 +378,6 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
-            id="test1111111"
           >
             <MenuItem value="" disabled>
               전체
@@ -730,6 +735,7 @@ export default function VerticalTabs() {
           </IconButton>
         </Dialog>
       </TabPanel>
+      {/* 데이터픽커 */}
       <TabPanel value={value} index={10}>
         <p>range픽커</p>
         <div className="date-picker-area">
@@ -774,6 +780,34 @@ export default function VerticalTabs() {
             <button type="button">5년</button>
           </div>
         </div>
+      </TabPanel>
+      {/* 뱃지 */}
+      <TabPanel value={value} index={11}>
+        <Badge value="ADM006" color="gray" />
+        <Badge value="사용중" color="green" />
+        <Badge value="사용중중중중중중중중중중" color="green" />
+        <Badge value="사용중" color="green" size="large" />
+        <Badge value="과제 종료" color="gray" size="large" />
+        <Badge value="반려" color="red" size="large" />
+        <div className="badge-wrap">
+          <Badge value="ADM006" color="gray" />
+          <Badge value="사용중" color="green" />
+          <Badge value="사용중중중중중중중중중중" color="green" />
+          <Badge value="사용중" color="green" size="large" />
+          <Badge value="과제 종료" color="gray" size="large" />
+          <Badge value="반려" color="red" size="large" />
+        </div>
+      </TabPanel>
+      {/* 해시태그 */}
+      <TabPanel value={value} index={12}>
+        <div className="badge-wrap">
+          <Hash value="해시태그" />
+          <Hash value="해시태그" del={true} />
+        </div>
+      </TabPanel>
+      {/* SVG */}
+      <TabPanel value={value} index={13}>
+        <SvgSample />
       </TabPanel>
     </Box>
   );

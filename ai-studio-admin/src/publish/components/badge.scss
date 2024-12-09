@@ -1,29 +1,29 @@
-.badge {
-  display: inline-flex;
-  align-items: center;
-  height: 21px;
-  padding: 0 8px;
-  border-radius: 8px;
-  font-size: 11px;
-  line-height: 17px;
-  font-weight: 700;
-  letter-spacing: -0.275px;
-  &.gray {
-    color: var(--color2);
-    background-color: var(--font-color2);
-  }
-  &.green {
-    color: var(--color2);
-    background-color: var(--positive);
-  }
-  &.red {
-    color: var(--color2);
-    background-color: var(--negative);
-  }
-  &.large {
-    height: 25px;
-    min-width: 64px;
-    border-radius: 100px;
-    justify-content: center;
-  }
-}
+// .badge {
+//   display: inline-flex;
+//   align-items: center;
+//   height: 21px;
+//   padding: 0 8px;
+//   border-radius: 8px;
+//   font-size: 11px;
+//   line-height: 17px;
+//   font-weight: 700;
+//   letter-spacing: -0.275px;
+//   &.gray {
+//     color: var(--color2);
+//     background-color: var(--font-color2);
+//   }
+//   &.green {
+//     color: var(--color2);
+//     background-color: var(--positive);
+//   }
+//   &.red {
+//     color: var(--color2);
+//     background-color: var(--negative);
+//   }
+//   &.large {
+//     height: 25px;
+//     min-width: 64px;
+//     border-radius: 100px;
+//     justify-content: center;
+//   }
+// }
