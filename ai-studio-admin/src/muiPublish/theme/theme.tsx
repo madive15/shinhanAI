@@ -254,15 +254,21 @@ const theme = createTheme({
     MuiSelect: {
       styleOverrides: {
         root: {
-          border: "1px solid var(--border-color1)",
-          padding: "0",
-          fontSize: "14px",
-          lineHeight: "18px",
-          letterSpacing: "-0.35px",
-          maxWidth: "480px",
-          minWidth: "80px",
-          width: "100%",
-          backgroundColor: "var(--color2)",
+          "&.select-box": {
+            border: "1px solid var(--border-color1)",
+            padding: "0",
+            fontSize: "14px",
+            lineHeight: "18px",
+            letterSpacing: "-0.35px",
+            maxWidth: "480px",
+            minWidth: "80px",
+            minHeight: "auto",
+            width: "100%",
+            backgroundColor: "var(--color2)",
+            "& .MuiSelect-select": {
+              minHeight: "auto",
+            },
+          },
           "&.small": {
             maxWidth: "100px",
           },

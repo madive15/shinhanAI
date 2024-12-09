@@ -24,11 +24,7 @@ import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+
 import IconButton from "@mui/material/IconButton";
 // need style
 import "./search.scss";
@@ -48,7 +44,6 @@ export interface IPageProps {
  * SubTitle page
  */
 const SearchContent: React.FC<IPageProps> = (props) => {
-  //셀렉트
   const [ageSelect, setAgeSelect] = React.useState("");
   const selectChange = (event: SelectChangeEvent) => {
     setAgeSelect(event.target.value as string);
@@ -57,21 +52,6 @@ const SearchContent: React.FC<IPageProps> = (props) => {
   const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRadioGroup((event.target as HTMLInputElement).value);
   };
-  //인풋
-  const [text, setText] = useState("");
-  const [selectedRadio, setSelectedRadio] = useState("");
-  const optionsRadio = ["일자별", "과제별", "라디오3"];
-
-  //체크박스
-  const [isChecked, setIsChecked] = useState(true);
-  const [isChecked2, setIsChecked2] = useState(false);
-  const [isChecked3, setIsChecked3] = useState(false);
-  const [isChecked4, setIsChecked4] = useState(true);
-  const [isChecked5, setIsChecked5] = useState(false);
-  const [isChecked6, setIsChecked6] = useState(false);
-  const [isChecked7, setIsChecked7] = useState(false);
-  const [isChecked8, setIsChecked8] = useState(true);
-  const [isChecked9, setIsChecked9] = useState(false);
 
   //데이터 픽커
   const [startDate, setStartDate] = useState();
@@ -166,13 +146,13 @@ const SearchContent: React.FC<IPageProps> = (props) => {
             <div className="search-item-box">
               <div className="search-item">
                 <span className="tit">기간 조회</span>
-                <div className="item-box select-long">
+                <div className="item-box ">
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
                     displayEmpty
-                    id="test1111111"
                   >
                     <MenuItem value="" disabled>
                       전체
@@ -225,6 +205,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 <span className="tit">조회항목</span>
                 <div className="item-box">
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
@@ -249,13 +230,14 @@ const SearchContent: React.FC<IPageProps> = (props) => {
               <div className="search-item">
                 <span className="tit">부서명</span>
                 <div className="item-box">
-                  <TextField />
+                  <TextField className="input-text" />
                 </div>
               </div>
               <div className="search-item">
                 <span className="tit">모델 ID</span>
                 <div className="item-box select-long">
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
@@ -348,6 +330,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 <span className="tit">상품 분류</span>
                 <div className="select-group">
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
@@ -360,6 +343,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                     <MenuItem value={20}>TwentyTwenty</MenuItem>
                   </Select>
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
@@ -372,6 +356,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                     <MenuItem value={20}>TwentyTwenty</MenuItem>
                   </Select>
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
@@ -384,6 +369,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                     <MenuItem value={20}>TwentyTwenty</MenuItem>
                   </Select>
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
@@ -430,6 +416,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 <span className="tit">상품 분류</span>
                 <div className="item-box select-long">
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}
@@ -447,6 +434,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 <span className="tit">상품 분류</span>
                 <div className="item-box select-long">
                   <Select
+                    className="select-box"
                     value={ageSelect}
                     onChange={selectChange}
                     IconComponent={Arrow}

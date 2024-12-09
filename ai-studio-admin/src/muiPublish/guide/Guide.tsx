@@ -367,7 +367,7 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={7}>
         <div>
           <Select
-            className="aaaaa small"
+            className="select-box small"
             value={ageSelect}
             onChange={selectChange}
             IconComponent={Arrow}
@@ -383,7 +383,7 @@ export default function VerticalTabs() {
           <br />
           <br />
           <Select
-            className=""
+            className="select-box"
             value={ageSelect}
             onChange={selectChange}
             IconComponent={Arrow}
@@ -398,7 +398,7 @@ export default function VerticalTabs() {
           <br />
           <br />
           <Select
-            className=" required"
+            className="select-box required"
             value={ageSelect}
             onChange={selectChange}
             IconComponent={Arrow}
@@ -414,7 +414,7 @@ export default function VerticalTabs() {
           <br />
           <br />
           <Select
-            className=""
+            className="select-box"
             value={ageSelect}
             onChange={selectChange}
             IconComponent={Arrow}
@@ -430,7 +430,7 @@ export default function VerticalTabs() {
           <br />
           <br />
           <Select
-            className=" required"
+            className="select-box required"
             value={ageSelect}
             onChange={selectChange}
             IconComponent={Arrow}
@@ -491,7 +491,7 @@ export default function VerticalTabs() {
                   <div className="select-group">
                     <FormControl fullWidth>
                       <Select
-                        className=""
+                        className="select-box"
                         value={ageSelect}
                         onChange={selectChange}
                         IconComponent={Arrow}
@@ -506,7 +506,7 @@ export default function VerticalTabs() {
                     </FormControl>
                     <FormControl fullWidth>
                       <Select
-                        className=""
+                        className="select-box"
                         value={ageSelect}
                         onChange={selectChange}
                         IconComponent={Arrow}
@@ -521,7 +521,7 @@ export default function VerticalTabs() {
                     </FormControl>
                     <FormControl fullWidth>
                       <Select
-                        className=""
+                        className="select-box"
                         value={ageSelect}
                         onChange={selectChange}
                         IconComponent={Arrow}
