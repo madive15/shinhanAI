@@ -245,88 +245,102 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 </div>
               </div>
             </div>
-            {/* <div className="search-item">
-              <span className="tit">부서명</span>
-              <div className="item-box">
-                <TextField />
+            <div className="search-item-box">
+              <div className="search-item">
+                <span className="tit">부서명</span>
+                <div className="item-box">
+                  <TextField />
+                </div>
+              </div>
+              <div className="search-item">
+                <span className="tit">모델 ID</span>
+                <div className="item-box select-long">
+                  <Select
+                    value={ageSelect}
+                    onChange={selectChange}
+                    IconComponent={Arrow}
+                    displayEmpty
+                  >
+                    <MenuItem value="" disabled>
+                      전체
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>TwentyTwenty</MenuItem>
+                  </Select>
+                </div>
               </div>
             </div>
-            <div className="search-item">
-              <span className="tit">모델 ID</span>
-              <div className="item-box select-long">
-                <Select
-                  value={ageSelect}
-                  onChange={selectChange}
-                  IconComponent={Arrow}
-                  displayEmpty
-                >
-                  <MenuItem value="" disabled>
-                    전체
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>TwentyTwenty</MenuItem>
-                </Select>
-              </div>
-            </div> */}
-            {/* <div className="search-item-box full">
+
+            <div className="search-item-box full">
               <div className="search-item">
                 <span className="tit">진행 상태</span>
-                <CheckboxGroup>
-                  <Checkbox
-                    id="chk1-1"
-                    label="체크박스1"
-                    checked={isChecked}
-                    onChange={setIsChecked}
+                <FormGroup row className="chk-group">
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<ChkDefault />}
+                        checkedIcon={<ChkChecked />}
+                      />
+                    }
+                    label="Label"
                   />
-                  <Checkbox
-                    id="chk1-2"
-                    label="체크박스2"
-                    checked={isChecked2}
-                    onChange={setIsChecked2}
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<ChkDefault />}
+                        checkedIcon={<ChkChecked />}
+                      />
+                    }
+                    label="Label"
                   />
-                  <Checkbox
-                    id="chk1-3"
-                    label="체크박스3"
-                    checked={isChecked3}
-                    onChange={setIsChecked3}
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<ChkDefault />}
+                        checkedIcon={<ChkChecked />}
+                      />
+                    }
+                    label="Label"
                   />
-                  <Checkbox
-                    id="chk1-4"
-                    label="체크박스4"
-                    checked={isChecked4}
-                    onChange={setIsChecked4}
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<ChkDefault />}
+                        checkedIcon={<ChkChecked />}
+                      />
+                    }
+                    label="Label"
                   />
-                  <Checkbox
-                    id="chk1-5"
-                    label="체크박스5"
-                    checked={isChecked5}
-                    onChange={setIsChecked5}
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<ChkDefault />}
+                        checkedIcon={<ChkChecked />}
+                      />
+                    }
+                    label="Label"
                   />
-                  <Checkbox
-                    id="chk1-6"
-                    label="체크박스6"
-                    checked={isChecked6}
-                    onChange={setIsChecked6}
+                  <FormControlLabel
+                    required
+                    control={
+                      <Checkbox
+                        icon={<ChkDefault />}
+                        checkedIcon={<ChkChecked />}
+                      />
+                    }
+                    label="Required"
                   />
-                  <Checkbox
-                    id="chk1-7"
-                    label="체크박스7"
-                    checked={isChecked7}
-                    onChange={setIsChecked7}
+                  <FormControlLabel
+                    disabled
+                    control={
+                      <Checkbox
+                        icon={<ChkDefault />}
+                        checkedIcon={<ChkChecked />}
+                      />
+                    }
+                    label="Disabled"
                   />
-                  <Checkbox
-                    id="chk1-8"
-                    label="체크박스8"
-                    checked={isChecked8}
-                    onChange={setIsChecked8}
-                  />
-                  <Checkbox
-                    id="chk1-9"
-                    label="체크박스9"
-                    checked={isChecked9}
-                    onChange={setIsChecked9}
-                  />
-                </CheckboxGroup>
+                </FormGroup>
               </div>
             </div>
             <div className="search-item-box full">
@@ -334,25 +348,53 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 <span className="tit">상품 분류</span>
                 <div className="select-group">
                   <Select
-                    options={options}
-                    placeholder="대분류"
-                    disabled={false}
-                  />
+                    value={ageSelect}
+                    onChange={selectChange}
+                    IconComponent={Arrow}
+                    displayEmpty
+                  >
+                    <MenuItem value="" disabled>
+                      대분류
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>TwentyTwenty</MenuItem>
+                  </Select>
                   <Select
-                    options={options}
-                    placeholder="중분류"
-                    disabled={false}
-                  />
+                    value={ageSelect}
+                    onChange={selectChange}
+                    IconComponent={Arrow}
+                    displayEmpty
+                  >
+                    <MenuItem value="" disabled>
+                      중분류
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>TwentyTwenty</MenuItem>
+                  </Select>
                   <Select
-                    options={options}
-                    placeholder="소분류"
-                    disabled={false}
-                  />
+                    value={ageSelect}
+                    onChange={selectChange}
+                    IconComponent={Arrow}
+                    displayEmpty
+                  >
+                    <MenuItem value="" disabled>
+                      소분류
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>TwentyTwenty</MenuItem>
+                  </Select>
                   <Select
-                    options={options}
-                    placeholder="세분류"
-                    disabled={false}
-                  />
+                    value={ageSelect}
+                    onChange={selectChange}
+                    IconComponent={Arrow}
+                    displayEmpty
+                  >
+                    <MenuItem value="" disabled>
+                      세분류
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>TwentyTwenty</MenuItem>
+                  </Select>
                 </div>
               </div>
             </div>
@@ -388,23 +430,37 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                 <span className="tit">상품 분류</span>
                 <div className="item-box select-long">
                   <Select
-                    options={options}
-                    placeholder="소분류"
-                    disabled={false}
-                  />
+                    value={ageSelect}
+                    onChange={selectChange}
+                    IconComponent={Arrow}
+                    displayEmpty
+                  >
+                    <MenuItem value="" disabled>
+                      전체
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>TwentyTwenty</MenuItem>
+                  </Select>
                 </div>
               </div>
               <div className="search-item">
                 <span className="tit">상품 분류</span>
                 <div className="item-box select-long">
                   <Select
-                    options={options}
-                    placeholder="세분류"
-                    disabled={false}
-                  />
+                    value={ageSelect}
+                    onChange={selectChange}
+                    IconComponent={Arrow}
+                    displayEmpty
+                  >
+                    <MenuItem value="" disabled>
+                      전체
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>TwentyTwenty</MenuItem>
+                  </Select>
                 </div>
               </div>
-            </div> */}
+            </div>
           </>
         )}
       </div>
