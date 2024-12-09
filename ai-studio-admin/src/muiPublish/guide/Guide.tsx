@@ -771,14 +771,38 @@ export default function VerticalTabs() {
             placeholderText="기간을 선택해주세요"
           />
           <div className="date-month-btn">
-            <button type="button" className="active">
-              3개월
-            </button>
-            <button type="button">6개월</button>
-            <button type="button">1년</button>
-            <button type="button">3년</button>
-            <button type="button">5년</button>
+            <span className="date-ym-radio">
+              <input type="radio" name="date1" id="3m" />
+              <label htmlFor="3m">3개월</label>
+            </span>
+            <span className="date-ym-radio">
+              <input type="radio" name="date1" id="6m" />
+              <label htmlFor="6m">6개월</label>
+            </span>
+            <span className="date-ym-radio">
+              <input type="radio" name="date1" id="1y" />
+              <label htmlFor="1y">1년</label>
+            </span>
+            <span className="date-ym-radio">
+              <input type="radio" name="date1" id="3y" />
+              <label htmlFor="3y">3년</label>
+            </span>
+            <span className="date-ym-radio">
+              <input type="radio" name="date1" id="5y" />
+              <label htmlFor="5y">5년</label>
+            </span>
           </div>
+        </div>
+        <br />
+        <div className="date-picker-area">
+          <DatePicker
+            selected={startDate}
+            onChange={(date: any) => setStartDate(date)}
+            dropdownMode="select"
+            dateFormat="yyyy-MM-dd"
+            locale={ko}
+            placeholderText="기간을 선택해주세요"
+          />
         </div>
       </TabPanel>
       {/* 뱃지 */}
