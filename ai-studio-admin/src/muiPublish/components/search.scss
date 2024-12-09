@@ -25,6 +25,7 @@
   }
   & .search-item {
     @include flex;
+    align-items: center;
     width: 50%;
     padding: 0 16px 0 0;
     .tit {

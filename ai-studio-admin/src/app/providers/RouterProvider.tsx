@@ -11,103 +11,108 @@ import Layout from "~/publish/layout/Layout";
 import MuiLayout from "~/muiPublish/layout/Layout";
 import MuiPubIndex from "~/muiPublish";
 import MuiPubGuide from "~/muiPublish/guide/Guide";
+import MuiSampleForm from "~/muiPublish/guide/MuiSampleForm";
 import { pathKeys } from "~/shared/router";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
 export const router = createBrowserRouter([
-    {
-        errorElement: <BubbleError />,
+  {
+    errorElement: <BubbleError />,
+    children: [
+      {
+        element: <MainLayout />,
         children: [
-            {
-                element: <MainLayout />,
-                children: [
-                    { path: pathKeys.home(), element: <Home /> },
-                    { path: pathKeys.user(), element: <User /> },
-                    { path: pathKeys.page404(), element: <PageNotFound /> },
-                ],
-            },
-            {
-                element: <PopupLayout />,
-                children: [{ path: pathKeys.popupMenu1(), element: <User /> }],
-            },
-            ...(isDevelopment
-                ? [
-                      {
-                          path: pathKeys.publish(),
-                          element: <PubIndex />,
-                      },
-                      {
-                          path: pathKeys.publishGuide(),
-                          element: <Guide />,
-                      },
-                      {
-                          path: pathKeys.adminLayout(),
-                          element: <Layout />,
-                      },
-                      {
-                          path: pathKeys.tablePage(),
-                          element: <Layout pageName={"샘플테이블"} />,
-                      },
-                      {
-                          path: pathKeys.authPage(),
-                          element: <Layout pageName={"권한관리"} />,
-                      },
-                      {
-                          path: pathKeys.managerPage(),
-                          element: <Layout pageName={"관리자메뉴 권한관리"} />,
-                      },
-                      {
-                          path: pathKeys.permissionPage(),
-                          element: <Layout pageName={"권한그룹관리"} />,
-                      },
-                      {
-                          path: pathKeys.memberPage(),
-                          element: <Layout pageName={"회원관리"} />,
-                      },
-                      {
-                          path: pathKeys.ocrPage(),
-                          element: <Layout pageName={"AI-OCR 검증 결과 관리"} />,
-                      },
-                      {
-                          path: pathKeys.metaPage(),
-                          element: <Layout pageName={"상품 메타관리"} />,
-                      },
-                      {
-                          path: pathKeys.sampleForm(),
-                          element: <Layout pageName={"샘플폼"} />,
-                      },
-
-                      // mui publish
-                      {
-                          path: pathKeys.muiPublish(),
-                          element: <MuiPubIndex />,
-                      },
-                      {
-                          path: pathKeys.muiLayout(), //mui 기본 layout
-                          element: <MuiLayout pageName={"기본레이아웃"} />,
-                      },
-                      {
-                          path: pathKeys.taskpage(),
-                          element: <Layout pageName={"과제 신청"} />,
-                      },
-                      {
-                          path: pathKeys.muiPublishGuide(),
-                          element: <MuiPubGuide />,
-                      },
-                  ]
-                : []),
-            {
-                loader: async () => redirect(pathKeys.page404()),
-                path: "*",
-            },
+          { path: pathKeys.home(), element: <Home /> },
+          { path: pathKeys.user(), element: <User /> },
+          { path: pathKeys.page404(), element: <PageNotFound /> },
         ],
-    },
+      },
+      {
+        element: <PopupLayout />,
+        children: [{ path: pathKeys.popupMenu1(), element: <User /> }],
+      },
+      ...(isDevelopment
+        ? [
+            {
+              path: pathKeys.publish(),
+              element: <PubIndex />,
+            },
+            {
+              path: pathKeys.publishGuide(),
+              element: <Guide />,
+            },
+            {
+              path: pathKeys.adminLayout(),
+              element: <Layout />,
+            },
+            {
+              path: pathKeys.tablePage(),
+              element: <Layout pageName={"샘플테이블"} />,
+            },
+            {
+              path: pathKeys.authPage(),
+              element: <Layout pageName={"권한관리"} />,
+            },
+            {
+              path: pathKeys.managerPage(),
+              element: <Layout pageName={"관리자메뉴 권한관리"} />,
+            },
+            {
+              path: pathKeys.permissionPage(),
+              element: <Layout pageName={"권한그룹관리"} />,
+            },
+            {
+              path: pathKeys.memberPage(),
+              element: <Layout pageName={"회원관리"} />,
+            },
+            {
+              path: pathKeys.ocrPage(),
+              element: <Layout pageName={"AI-OCR 검증 결과 관리"} />,
+            },
+            {
+              path: pathKeys.metaPage(),
+              element: <Layout pageName={"상품 메타관리"} />,
+            },
+            {
+              path: pathKeys.sampleForm(),
+              element: <Layout pageName={"샘플폼"} />,
+            },
+
+            // mui publish
+            {
+              path: pathKeys.muiPublish(),
+              element: <MuiPubIndex />,
+            },
+            {
+              path: pathKeys.muiLayout(), //mui 기본 layout
+              element: <MuiLayout pageName={"기본레이아웃"} />,
+            },
+            {
+              path: pathKeys.taskpage(),
+              element: <Layout pageName={"과제 신청"} />,
+            },
+            {
+              path: pathKeys.muiPublishGuide(),
+              element: <MuiPubGuide />,
+            },
+            {
+              path: pathKeys.muiSampleForm(),
+              element: <MuiLayout pageName={"샘플폼"} />,
+            },
+          ]
+        : []),
+      {
+        loader: async () => redirect(pathKeys.page404()),
+        path: "*",
+      },
+    ],
+  },
 ]);
 
 function BubbleError() {
-    const error = useRouteError();
+  const error = useRouteError();
 
-    if (error) throw error;
-    return null;
+  if (error) throw error;
+  return null;
 }
