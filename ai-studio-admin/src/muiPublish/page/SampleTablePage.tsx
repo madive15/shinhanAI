@@ -41,14 +41,16 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
     const adminMenu = ["table 관리", "메뉴2", "메뉴3", "메뉴4"];
 
     // subtitle search height
+    const [heiTitSearch, setHeiTitSearch] = useState<number>(190);
     const subTitSearch = useRef<HTMLDivElement | null>(null);
     useEffect(() => {
         if (subTitSearch.current) {
             const offsetHeight = subTitSearch.current.offsetHeight;
             const offsetWidth = subTitSearch.current.offsetWidth;
             console.log("Height:", offsetHeight + 190, "Width:", offsetWidth);
+            setHeiTitSearch(offsetHeight + 190);
         }
-    }, [subTitSearch]);
+    }, [heiTitSearch]);
 
     return (
         <>
@@ -60,7 +62,10 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
                     <SubTitle pageName={props.pageName} />
                     <SearchContent />
                 </div>
-                <div className="tabs-scroll-area" >
+                <div
+                    className="tabs-scroll-area"
+                    style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}
+                >
                     {/* <SearchContent />
                     <TableSample pageName={props.pageName} accordion={true} />
                     <div className="card-table">
