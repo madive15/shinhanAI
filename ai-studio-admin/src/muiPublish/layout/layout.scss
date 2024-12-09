@@ -145,7 +145,7 @@
                 }
 
                 & .tabs-scroll-area {
-                    height: calc(100vh - 368px);
+                    height: calc(100vh - var(--heiTitSearch));
                     // height: 100%;
                     flex: 1;
                     overflow-y: auto;
