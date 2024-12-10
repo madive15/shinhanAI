@@ -707,7 +707,7 @@ export default function VerticalTabs() {
           <DialogContent>
             <div>
               <Select
-                className=""
+                className="select-box"
                 value={ageSelect}
                 onChange={selectChange}
                 IconComponent={Arrow}
