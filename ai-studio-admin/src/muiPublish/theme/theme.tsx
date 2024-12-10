@@ -477,6 +477,23 @@ const theme = createTheme({
       },
     },
     //로우 테이블 끝
+    // 툴팁
+    MuiPopper: {
+      styleOverrides: {
+        root: {
+          "&.MuiPopper-root[role='tooltip']": {
+            "& div": {
+              backgroundColor: "var(--color2)",
+              color: "var(--font-color1)",
+              borderRadius: "4px",
+              padding: "8px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+            },
+          },
+        },
+      },
+    },
+    // 툴팁 끝
   },
 });
 export default theme;

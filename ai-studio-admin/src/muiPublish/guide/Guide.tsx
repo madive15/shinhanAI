@@ -35,6 +35,7 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "~/muiPublish/components/Badge";
 import Hash from "~/muiPublish/components/Hash";
 import SvgSample from "~/muiPublish/components/SvgSample";
+import Tooltip from "@mui/material/Tooltip";
 import {
   Table,
   TableBody,
@@ -130,6 +131,9 @@ export default function VerticalTabs() {
 
   const [dateRange, setDateRange] = useState([null, null]);
   const [rangeStartDate, rangeEndDate]: any = dateRange;
+
+  const tooptipText =
+    "해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다. 해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다. 해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다.";
   return (
     <Box
       className="guide-wrap"
@@ -162,6 +166,7 @@ export default function VerticalTabs() {
         <Tab label="Badge" {...a11yProps(11)} />
         <Tab label="HashTag" {...a11yProps(12)} />
         <Tab label="SvgIcon" {...a11yProps(13)} />
+        <Tab label="ToolTip" {...a11yProps(14)} />
       </Tabs>
       {/* color */}
       <TabPanel value={value} index={0}>
@@ -832,6 +837,17 @@ export default function VerticalTabs() {
       {/* SVG */}
       <TabPanel value={value} index={13}>
         <SvgSample />
+      </TabPanel>
+      {/* 툴팁 */}
+      <TabPanel value={value} index={14}>
+        <Tooltip
+          disableFocusListener
+          disableTouchListener
+          title={tooptipText}
+          placement="right"
+        >
+          <i className="ico-text">?</i>
+        </Tooltip>
       </TabPanel>
     </Box>
   );

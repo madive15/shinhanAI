@@ -358,8 +358,21 @@
   }
 }
 
-//svg icon
-// svg {
-//     width: 24px;
-//     height: 24px;
-// }
+// 텍스트 아이콘
+.ico-text {
+  font-family: var(--font-style1);
+  font-style: normal;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--font-color3);
+  color: var(--color2);
+  border-radius: 50%;
+  cursor: pointer;
+  &.blue {
+    background-color: var(--sub-color2);
+  }
+}
