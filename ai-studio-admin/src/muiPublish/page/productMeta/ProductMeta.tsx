@@ -6,7 +6,9 @@ import Loading from "~/muiPublish/loading/Loading";
 import AdminTab from "~/muiPublish/components/AdminTab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
-// import TableSample from "~/publish/components/TableSample";
+import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
+import ProductMetaFormTable from "~/muiPublish/page/productMeta/ProductMetaFormTable";
+
 // import Cardlist from "~/publish/components/Cardlist";
 
 // need style
@@ -23,10 +25,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Sample table
- * Sample table page
+ * admin-front: ProductMeta
+ * 상품메타관리 page
  */
-const SampleTablePage: React.FC<IPageProps> = (props) => {
+const ProductMeta: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -38,7 +40,7 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
     }, []);
 
     //table 탭
-    const adminMenu = ["table 관리", "메뉴2", "메뉴3", "메뉴4"];
+    const adminMenu = [props.pageName, "메뉴2", "메뉴3", "메뉴4"];
 
     // subtitle search height
     const [heiTitSearch, setHeiTitSearch] = useState<number>(190);
@@ -62,15 +64,17 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
                     <SubTitle pageName={props.pageName} />
                     <SearchContent pageName={props.pageName} />
                 </div>
-                <div
-                    className="tabs-scroll-area"
-                    style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}
-                >
-                    {props.pageName}
+                <div className="tabs-scroll-area no-scroll">
+                    <div className="left" style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}>
+                        <ProductMetaTable pageName={props.pageName} />
+                    </div>
+                    <div className="right" style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}>
+                        <ProductMetaFormTable pageName={props.pageName} />
+                    </div>
                 </div>
             </div>
         </>
     );
 };
 
-export default SampleTablePage;
+export default ProductMeta;

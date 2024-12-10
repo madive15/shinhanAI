@@ -2,219 +2,222 @@
 @import "../../assets/scss/mixin";
 
 .btn-root {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  letter-spacing: -0.35px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 36px;
-  padding: 0 16px;
-  min-width: 80px;
-  flex-shrink: 0;
-  border-radius: 6px;
-  &.sub2 {
-    border: 1px solid var(--color1);
-    color: var(--color1);
-    &:hover {
-      background-color: #e8eeff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: -0.35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 16px;
+    min-width: 80px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    &.sub2 {
+        border: 1px solid var(--color1);
+        color: var(--color1);
+        &:hover {
+            background-color: #e8eeff;
+        }
+        &:active {
+            background-color: #d1ddff;
+        }
     }
-    &:active {
-      background-color: #d1ddff;
+    &.sub1 {
+        background-color: var(--color2);
+        border: 1px solid var(--border-color4);
+        color: var(--font-color1);
+        &:hover {
+            background-color: #fafafa;
+        }
+        &:active {
+            background-color: #f0f0f0;
+        }
     }
-  }
-  &.sub1 {
-    background-color: var(--color2);
-    border: 1px solid var(--border-color4);
-    color: var(--font-color1);
-    &:hover {
-      background-color: #fafafa;
+    &.secondary {
+        background-color: var(--sub-color4);
+        color: var(--color2);
+        &:hover {
+            background-color: #001d59;
+        }
+        &:active {
+            background-color: #001748;
+        }
     }
-    &:active {
-      background-color: #f0f0f0;
+    &.primary {
+        background-color: var(--color1);
+        color: var(--color2);
+        &:hover {
+            background-color: #0039ce;
+        }
+        &:active {
+            background-color: #002ea5;
+        }
     }
-  }
-  &.secondary {
-    background-color: var(--sub-color4);
-    color: var(--color2);
-    &:hover {
-      background-color: #001d59;
+    &.primary-big {
+        padding: 0 20px;
+        height: 44px;
+        border-radius: 0px 6px 6px 6px;
+        background: linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);
+        color: var(--color2);
+        &:hover {
+            background: linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);
+        }
+        &:active {
+            background: linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);
+        }
     }
-    &:active {
-      background-color: #001748;
+    &.small {
+        padding: 0 8px;
+        height: 30px;
+        font-size: 12px;
+        letter-spacing: -0.3px;
+        border-radius: 4px;
+        color: var(--font-color2);
+        border: 1px solid var(--font-color2);
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        &:active {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        &:disabled {
+            background-color: #f0f0f0;
+            color: var(--font-color3);
+            border-color: var(--border-color4);
+            &:hover {
+                background-color: #f0f0f0;
+                color: var(--font-color3);
+                border-color: var(--border-color4);
+            }
+            &:active {
+                background-color: #f0f0f0;
+                color: var(--font-color3);
+                border-color: var(--border-color4);
+            }
+        }
     }
-  }
-  &.primary {
-    background-color: var(--color1);
-    color: var(--color2);
-    &:hover {
-      background-color: #0039ce;
+    &.toggle {
+        font-weight: 400;
+        border-radius: 100px;
+        padding: 0 12px;
+        color: var(--font-color3);
+        border: 1px solid var(--color1);
+        background-color: var(--color2);
+        &.on {
+            background-color: var(--color1);
+            color: var(--color2);
+        }
     }
-    &:active {
-      background-color: #002ea5;
-    }
-  }
-  &.primary-big {
-    padding: 0 20px;
-    height: 44px;
-    border-radius: 0px 6px 6px 6px;
-    background: linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);
-    color: var(--color2);
-    &:hover {
-      background: linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);
-    }
-    &:active {
-      background: linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);
-    }
-  }
-  &.small {
-    padding: 0 8px;
-    height: 30px;
-    font-size: 12px;
-    letter-spacing: -0.3px;
-    border-radius: 4px;
-    color: var(--font-color2);
-    border: 1px solid var(--font-color2);
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-    &:active {
-      background-color: rgba(0, 0, 0, 0.1);
+    &.switch {
+        padding: 0;
+        width: 40px;
+        min-width: auto;
+        height: 24px;
+        background-color: var(--background-color3);
+        border-radius: 100px;
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--color2);
+            position: absolute;
+            top: 2px;
+            left: 2px;
+        }
+        &.on {
+            background-color: var(--color1);
+            &::after {
+                left: auto;
+                right: 2px;
+            }
+        }
     }
     &:disabled {
-      background-color: #f0f0f0;
-      color: var(--font-color3);
-      border-color: var(--border-color4);
-      &:hover {
-        background-color: #f0f0f0;
-        color: var(--font-color3);
-        border-color: var(--border-color4);
-      }
-      &:active {
-        background-color: #f0f0f0;
-        color: var(--font-color3);
-        border-color: var(--border-color4);
-      }
+        color: #89a1c3;
+        border: 1px solid #c7d6f4;
+        background: #dde6f3;
+        cursor: not-allowed;
+        &:hover {
+            color: #89a1c3;
+            border: 1px solid #c7d6f4;
+            background: #dde6f3;
+        }
+        &:active {
+            color: #89a1c3;
+            border: 1px solid #c7d6f4;
+            background: #dde6f3;
+        }
     }
-  }
-  &.toggle {
-    font-weight: 400;
-    border-radius: 100px;
-    padding: 0 12px;
-    color: var(--font-color3);
-    border: 1px solid var(--color1);
-    background-color: var(--color2);
-    &.on {
-      background-color: var(--color1);
-      color: var(--color2);
-    }
-  }
-  &.switch {
-    padding: 0;
-    width: 40px;
-    min-width: auto;
-    height: 24px;
-    background-color: var(--background-color3);
-    border-radius: 100px;
-    position: relative;
-    &::after {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: var(--color2);
-      position: absolute;
-      top: 2px;
-      left: 2px;
-    }
-    &.on {
-      background-color: var(--color1);
-      &::after {
-        left: auto;
-        right: 2px;
-      }
-    }
-  }
-  &:disabled {
-    color: #89a1c3;
-    border: 1px solid #c7d6f4;
-    background: #dde6f3;
-    cursor: not-allowed;
-    &:hover {
-      color: #89a1c3;
-      border: 1px solid #c7d6f4;
-      background: #dde6f3;
-    }
-    &:active {
-      color: #89a1c3;
-      border: 1px solid #c7d6f4;
-      background: #dde6f3;
-    }
-  }
 }
 .btn-root-wrap {
-  display: flex;
-  margin-top: 20px;
-  &.center {
-    justify-content: center;
-  }
-  &.start {
-    justify-content: start;
-  }
-  &.end {
-    justify-content: end;
-  }
-  &.space-between {
-    justify-content: space-between;
-    > div {
-      @include flex;
+    display: flex;
+    margin-top: 20px;
+    button {
+        margin-left: 4px;
     }
-  }
-  .btn-root + .btn-root {
-    margin-left: 12px;
-  }
+    &.center {
+        justify-content: center;
+    }
+    &.start {
+        justify-content: start;
+    }
+    &.end {
+        justify-content: end;
+    }
+    &.space-between {
+        justify-content: space-between;
+        > div {
+            @include flex;
+        }
+    }
+    .btn-root + .btn-root {
+        margin-left: 12px;
+    }
 
-  & .custom-select {
-    width: 104px;
-    margin: 0 8px 0 0;
-  }
-  & .search {
-    position: relative;
-    input {
-      @include width-height(190px, 36px);
-      padding: 8px 40px 8px 12px;
-      border-radius: 4px 0px 0px 0px;
-      border: 1px solid rgba(221, 221, 221, 1);
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 17px;
-      color: var(--font-color3);
+    & .custom-select {
+        width: 104px;
+        margin: 0 8px 0 0;
     }
-    & .icon-search {
-      @include absolute-right-top(8px, 6px);
-      @include width-height(24px, 24px);
-      cursor: pointer;
-      & path {
-        fill: var(--font-color3);
-      }
+    & .search {
+        position: relative;
+        input {
+            @include width-height(190px, 36px);
+            padding: 8px 40px 8px 12px;
+            border-radius: 4px 0px 0px 0px;
+            border: 1px solid rgba(221, 221, 221, 1);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            color: var(--font-color3);
+        }
+        & .icon-search {
+            @include absolute-right-top(8px, 6px);
+            @include width-height(24px, 24px);
+            cursor: pointer;
+            & path {
+                fill: var(--font-color3);
+            }
+        }
     }
-  }
 }
 
 .ico-btn {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-  &:disabled {
-    cursor: not-allowed;
     svg {
-      opacity: 0.5;
+        width: 24px;
+        height: 24px;
     }
-  }
+    &:disabled {
+        cursor: not-allowed;
+        svg {
+            opacity: 0.5;
+        }
+    }
 }
