@@ -1,230 +1,230 @@
-@charset "utf-8";
-@import "../assets/scss/reset";
-@import "../assets/scss/mixin";
+// @charset "utf-8";
+// @import "../assets/scss/reset";
+// @import "../assets/scss/mixin";
 
-.index-wrap {
-  height: 100vh;
-  padding: 50px 50px;
-  a:hover {
-    color: #0046ff;
-  }
-  .title {
-    margin: 0 0 30px 0;
-  }
-  .index-list {
-    & li {
-      margin: 0 0 20px 0;
-    }
-  }
-}
+// .index-wrap {
+//   height: 100vh;
+//   padding: 50px 50px;
+//   a:hover {
+//     color: #0046ff;
+//   }
+//   .title {
+//     margin: 0 0 30px 0;
+//   }
+//   .index-list {
+//     & li {
+//       margin: 0 0 20px 0;
+//     }
+//   }
+// }
 
-.guide-wrap {
-  display: flex;
-  .guide-tabs {
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 120px;
-    min-height: 100vh;
-    border-right: 2px solid #0046ff;
-    max-height: 100vh;
-    overflow-y: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    .guide-tab {
-      background-color: #0046ff;
-      padding: 16px 0;
-      color: #fff;
-      font-weight: 700;
-      font-size: 16px;
-    }
-    > div {
-      .guide-title {
-        font-size: 30px;
-        margin-bottom: 20px;
-        background-color: #000;
-        color: #fff;
-        padding: 10px;
-      }
+// .guide-wrap {
+//   display: flex;
+//   .guide-tabs {
+//     padding: 20px 10px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 8px;
+//     min-width: 120px;
+//     min-height: 100vh;
+//     border-right: 2px solid #0046ff;
+//     max-height: 100vh;
+//     overflow-y: auto;
+//     -ms-overflow-style: none;
+//     scrollbar-width: none;
+//     &::-webkit-scrollbar {
+//       display: none;
+//     }
+//     .guide-tab {
+//       background-color: #0046ff;
+//       padding: 16px 0;
+//       color: #fff;
+//       font-weight: 700;
+//       font-size: 16px;
+//     }
+//     > div {
+//       .guide-title {
+//         font-size: 30px;
+//         margin-bottom: 20px;
+//         background-color: #000;
+//         color: #fff;
+//         padding: 10px;
+//       }
 
-      > strong {
-        display: inline-block;
-        padding: 0 20px;
-        margin: 12px 0;
-        position: relative;
+//       > strong {
+//         display: inline-block;
+//         padding: 0 20px;
+//         margin: 12px 0;
+//         position: relative;
 
-        &::after {
-          content: "";
-          display: block;
-          width: 10px;
-          height: 2px;
-          background-color: #000;
-          position: absolute;
-          top: 50%;
-          margin-top: -1.5px;
-        }
+//         &::after {
+//           content: "";
+//           display: block;
+//           width: 10px;
+//           height: 2px;
+//           background-color: #000;
+//           position: absolute;
+//           top: 50%;
+//           margin-top: -1.5px;
+//         }
 
-        &::before {
-          content: "";
-          display: block;
-          width: 10px;
-          height: 2px;
-          background-color: #000;
-          position: absolute;
-          top: 50%;
-          margin-top: -1.5px;
-          left: 0;
-        }
+//         &::before {
+//           content: "";
+//           display: block;
+//           width: 10px;
+//           height: 2px;
+//           background-color: #000;
+//           position: absolute;
+//           top: 50%;
+//           margin-top: -1.5px;
+//           left: 0;
+//         }
 
-        &::after {
-          right: 0;
-        }
-      }
-    }
-    .guide-input {
-      .input-area {
-        margin-bottom: 20px;
-      }
-    }
-    .guide-button {
-      div {
-        margin-bottom: 20px;
-        display: flex;
-        gap: 10px;
-      }
-    }
-  }
-  .guide-tab-content {
-    padding: 20px;
-    width: calc(100% - 138px);
-  }
-  > div {
-    .guide-title {
-      font-size: 30px;
-      margin-bottom: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 10px;
-    }
+//         &::after {
+//           right: 0;
+//         }
+//       }
+//     }
+//     .guide-input {
+//       .input-area {
+//         margin-bottom: 20px;
+//       }
+//     }
+//     .guide-button {
+//       div {
+//         margin-bottom: 20px;
+//         display: flex;
+//         gap: 10px;
+//       }
+//     }
+//   }
+//   .guide-tab-content {
+//     padding: 20px;
+//     width: calc(100% - 138px);
+//   }
+//   > div {
+//     .guide-title {
+//       font-size: 30px;
+//       margin-bottom: 20px;
+//       background-color: #000;
+//       color: #fff;
+//       padding: 10px;
+//     }
 
-    > strong {
-      display: inline-block;
-      padding: 0 20px;
-      margin: 12px 0;
-      position: relative;
+//     > strong {
+//       display: inline-block;
+//       padding: 0 20px;
+//       margin: 12px 0;
+//       position: relative;
 
-      &::after {
-        content: "";
-        display: block;
-        width: 10px;
-        height: 2px;
-        background-color: #000;
-        position: absolute;
-        top: 50%;
-        margin-top: -1.5px;
-      }
+//       &::after {
+//         content: "";
+//         display: block;
+//         width: 10px;
+//         height: 2px;
+//         background-color: #000;
+//         position: absolute;
+//         top: 50%;
+//         margin-top: -1.5px;
+//       }
 
-      &::before {
-        content: "";
-        display: block;
-        width: 10px;
-        height: 2px;
-        background-color: #000;
-        position: absolute;
-        top: 50%;
-        margin-top: -1.5px;
-        left: 0;
-      }
+//       &::before {
+//         content: "";
+//         display: block;
+//         width: 10px;
+//         height: 2px;
+//         background-color: #000;
+//         position: absolute;
+//         top: 50%;
+//         margin-top: -1.5px;
+//         left: 0;
+//       }
 
-      &::after {
-        right: 0;
-      }
-    }
-  }
-  .color-box {
-    display: flex;
-    gap: 10px;
-    .sample-color-box {
-      @include width-height(40px, 40px);
-      &.color-box1 {
-        background-color: var(--color1);
-      }
-      &.color-box2 {
-        background-color: var(--color2);
-        border: 1px solid #ddd;
-      }
-      &.color-box3 {
-        background-color: var(--color3);
-      }
-      &.sub-color-box1 {
-        background-color: var(--sub-color1);
-      }
-      &.sub-color-box2 {
-        background-color: var(--sub-color2);
-      }
-      &.sub-color-box3 {
-        background-color: var(--sub-color3);
-      }
-      &.sub-color-box4 {
-        background-color: var(--sub-color4);
-      }
-      &.text-color-box1 {
-        background-color: var(--font-color1);
-      }
-      &.text-color-box2 {
-        background-color: var(--font-color2);
-      }
-      &.text-color-box3 {
-        background-color: var(--font-color3);
-      }
-      &.border-color-box1 {
-        background-color: var(--border-color1);
-      }
-      &.border-color-box2 {
-        background-color: var(--border-color2);
-      }
-      &.border-color-box3 {
-        background-color: var(--border-color3);
-      }
-      &.border-color-box4 {
-        background-color: var(--border-color4);
-      }
-      &.bg-color-box1 {
-        background-color: var(--background-color1);
-      }
-      &.bg-color-box2 {
-        background-color: var(--background-color2);
-      }
-      &.bg-color-box3 {
-        background-color: var(--background-color3);
-      }
-      &.bg-color-box4 {
-        background: var(--gradient-bg);
-      }
-      &.positive-box {
-        background-color: var(--positive);
-      }
-      &.negative-box {
-        background-color: var(--negative);
-      }
-    }
-  }
-}
+//       &::after {
+//         right: 0;
+//       }
+//     }
+//   }
+//   .color-box {
+//     display: flex;
+//     gap: 10px;
+//     .sample-color-box {
+//       @include width-height(40px, 40px);
+//       &.color-box1 {
+//         background-color: var(--color1);
+//       }
+//       &.color-box2 {
+//         background-color: var(--color2);
+//         border: 1px solid #ddd;
+//       }
+//       &.color-box3 {
+//         background-color: var(--color3);
+//       }
+//       &.sub-color-box1 {
+//         background-color: var(--sub-color1);
+//       }
+//       &.sub-color-box2 {
+//         background-color: var(--sub-color2);
+//       }
+//       &.sub-color-box3 {
+//         background-color: var(--sub-color3);
+//       }
+//       &.sub-color-box4 {
+//         background-color: var(--sub-color4);
+//       }
+//       &.text-color-box1 {
+//         background-color: var(--font-color1);
+//       }
+//       &.text-color-box2 {
+//         background-color: var(--font-color2);
+//       }
+//       &.text-color-box3 {
+//         background-color: var(--font-color3);
+//       }
+//       &.border-color-box1 {
+//         background-color: var(--border-color1);
+//       }
+//       &.border-color-box2 {
+//         background-color: var(--border-color2);
+//       }
+//       &.border-color-box3 {
+//         background-color: var(--border-color3);
+//       }
+//       &.border-color-box4 {
+//         background-color: var(--border-color4);
+//       }
+//       &.bg-color-box1 {
+//         background-color: var(--background-color1);
+//       }
+//       &.bg-color-box2 {
+//         background-color: var(--background-color2);
+//       }
+//       &.bg-color-box3 {
+//         background-color: var(--background-color3);
+//       }
+//       &.bg-color-box4 {
+//         background: var(--gradient-bg);
+//       }
+//       &.positive-box {
+//         background-color: var(--positive);
+//       }
+//       &.negative-box {
+//         background-color: var(--negative);
+//       }
+//     }
+//   }
+// }
 
-.pub-list-table {
-  width: 100%;
-  th,
-  td {
-    text-align: center;
-    padding: 6px 12px;
-    border: 1px solid #000;
-    background-color: #fff;
-    a {
-      color: #0046ff;
-    }
-  }
-}
+// .pub-list-table {
+//   width: 100%;
+//   th,
+//   td {
+//     text-align: center;
+//     padding: 6px 12px;
+//     border: 1px solid #000;
+//     background-color: #fff;
+//     a {
+//       color: #0046ff;
+//     }
+//   }
+// }
