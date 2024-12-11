@@ -8,6 +8,7 @@ import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
 import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
 import ProductMetaFormTable from "~/muiPublish/page/productMeta/ProductMetaFormTable";
+import Button from "@mui/material/Button";
 
 // import Cardlist from "~/publish/components/Cardlist";
 
@@ -42,17 +43,55 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
     //table 탭
     const adminMenu = [props.pageName, "메뉴2", "메뉴3", "메뉴4"];
 
-    // subtitle search height
-    const [heiTitSearch, setHeiTitSearch] = useState<number>(190);
+    // subtitle search height, btn content height
+    const [leftHeight, setLeftHeight] = useState<number>(0);
+    const [rightHeight, setRightHeight] = useState<number>(0);
     const subTitSearch = useRef<HTMLDivElement | null>(null);
+    const subTitleLeft = useRef<HTMLDivElement | null>(null);
+    const subTitleRight = useRef<HTMLDivElement | null>(null);
+    const subBtnCheck = useRef<HTMLDivElement | null>(null);
+
     useEffect(() => {
         if (subTitSearch.current) {
-            const offsetHeight = subTitSearch.current.offsetHeight;
-            const offsetWidth = subTitSearch.current.offsetWidth;
-            console.log("Height:", offsetHeight + 190, "Width:", offsetWidth);
-            setHeiTitSearch(offsetHeight + 190);
+            // 조회 영역
+            const subTitSearchHeight = subTitSearch.current.offsetHeight;
+
+            // left subtitle check
+            if (subTitleLeft.current) {
+                const titleLeftHeight = subTitleLeft.current.offsetHeight;
+                setLeftHeight(subTitSearchHeight + titleLeftHeight + 206);
+            } else {
+                setLeftHeight(subTitSearchHeight + 190);
+            }
+
+            // right subtitle check
+            if (subTitleRight.current) {
+                const titleRightHeight = subTitleRight.current.offsetHeight;
+                // right btn check
+                if (subBtnCheck?.current) {
+                    const subBtnHeight = subBtnCheck.current.offsetHeight;
+                    setRightHeight(subTitSearchHeight + titleRightHeight + subBtnHeight + 214);
+                } else {
+                    setRightHeight(subTitSearchHeight + titleRightHeight + 206);
+                }
+            } else {
+                // right btn check
+                if (subBtnCheck?.current) {
+                    const subBtnHeight = subBtnCheck.current.offsetHeight;
+                    setRightHeight(subTitSearchHeight + subBtnHeight + 214);
+                } else {
+                    setRightHeight(subTitSearchHeight + 190);
+                }
+            }
         }
-    }, [subTitSearch?.current?.offsetHeight, heiTitSearch]);
+    }, [
+        subTitSearch?.current?.offsetHeight,
+        subTitleLeft?.current?.offsetHeight,
+        subTitleRight?.current?.offsetHeight,
+        subBtnCheck?.current?.offsetHeight,
+        rightHeight,
+        leftHeight,
+    ]);
 
     return (
         <>
@@ -65,11 +104,32 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
                     <SearchContent pageName={props.pageName} />
                 </div>
                 <div className="tabs-scroll-area no-scroll">
-                    <div className="left" style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}>
-                        <ProductMetaTable pageName={props.pageName} />
+                    <div className="left">
+                        <div className="table-title" ref={subTitleLeft}>
+                            <div className="tit-sum">
+                                <h2>{props.pageName}</h2>
+                                <span className="sum">총 00건</span>
+                            </div>
+                        </div>
+                        <ProductMetaTable pageName={props.pageName} heiTitSearch={leftHeight} />
                     </div>
-                    <div className="right" style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}>
-                        <ProductMetaFormTable pageName={props.pageName} />
+                    <div className="right">
+                        <div className="table-title" ref={subTitleRight}>
+                            <div className="tit-desc">
+                                <h2>상품 메타상세</h2>
+                                <span className="desc">
+                                    <i className="ico-text blue">i</i>상품분류, 상위분류, 상품ID를 수정 후 저장하면 신규
+                                    상품메타로 등록됩니다.
+                                </span>
+                            </div>
+                            <Button variant="secondary">신규 상품메타 추가</Button>
+                        </div>
+
+                        <ProductMetaFormTable pageName={props.pageName} heiTitSearch={rightHeight} />
+                        <div ref={subBtnCheck} className="btn-root-wrap end" aria-label="Basic button group">
+                            <Button variant="sub1">변경 취소</Button>
+                            <Button variant="primary">변경 사항 저장</Button>
+                        </div>
                     </div>
                 </div>
             </div>

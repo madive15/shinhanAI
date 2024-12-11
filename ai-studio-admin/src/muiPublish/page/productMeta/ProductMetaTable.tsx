@@ -6,6 +6,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Badge from "~/muiPublish/components/Badge";
 import Paper from "@mui/material/Paper";
 
 // need content
@@ -25,6 +26,7 @@ export interface IPageProps {
     subName?: string;
     loading?: boolean;
     useLoading?: (data: boolean) => void;
+    heiTitSearch?: number;
 }
 
 /**
@@ -45,14 +47,11 @@ const ProductMetaTable: React.FC<IPageProps> = (props) => {
     }, []);
 
     return (
-        <TableContainer className="">
-            <div className="table-title">
-                <div className="tit-sum">
-                    <h2>{props.pageName}</h2>
-                    <span className="sum">총 00건</span>
-                </div>
-            </div>
-            <Table className="table-defult-style" aria-label="simple table">
+        <TableContainer
+            className="table-content"
+            style={{ "--heiTitSearch": props.heiTitSearch + "px" } as React.CSSProperties}
+        >
+            <Table stickyHeader className="table-defult-style" aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell width={48} align="center">
@@ -76,66 +75,29 @@ const ProductMetaTable: React.FC<IPageProps> = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <TableRow>
-                        <TableCell width={48} align="center">
-                            번호
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품분류
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품코드
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품명
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상위분류
-                        </TableCell>
-                        <TableCell width={120} align="center">
-                            사용여부
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell width={48} align="center">
-                            번호
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품분류
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품코드
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품명
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상위분류
-                        </TableCell>
-                        <TableCell width={120} align="center">
-                            사용여부
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell width={48} align="center">
-                            번호
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품분류
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품코드
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상품명
-                        </TableCell>
-                        <TableCell width={149} align="center">
-                            상위분류
-                        </TableCell>
-                        <TableCell width={120} align="center">
-                            사용여부
-                        </TableCell>
-                    </TableRow>
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((idx) => (
+                        <TableRow key={idx}>
+                            <TableCell width={48} align="center">
+                                {idx}
+                            </TableCell>
+                            <TableCell width={149} align="center">
+                                상품분류
+                            </TableCell>
+                            <TableCell width={149} align="center">
+                                상품코드
+                            </TableCell>
+                            <TableCell width={149} align="center">
+                                상품명
+                            </TableCell>
+                            <TableCell width={149} align="center">
+                                상위분류
+                            </TableCell>
+                            <TableCell width={120} align="center">
+                                <Badge value="사용" color="green" size="large" />
+                                {/* <Badge value="미사용" color="gray" size="large" /> */}
+                            </TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </TableContainer>
