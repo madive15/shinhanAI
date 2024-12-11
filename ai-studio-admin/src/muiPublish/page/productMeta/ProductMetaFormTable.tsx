@@ -16,6 +16,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Tooltip from "@mui/material/Tooltip";
 
 // need content
 
@@ -30,6 +31,7 @@ export interface IPageProps {
     subName?: string;
     loading?: boolean;
     useLoading?: (data: boolean) => void;
+    heiTitSearch?: number;
 }
 
 /**
@@ -59,14 +61,19 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
         setAgeSelect(event.target.value as string);
     };
 
+    const tooptipText = (
+        <div>
+            <strong>타이틀</strong>
+            <br />
+            툴팁 작업 예정 툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업
+            예정툴팁 작업 예정툴팁 작업 예정.
+        </div>
+    );
     return (
-        <TableContainer className="" component={Paper}>
-            <div className="table-title">
-                <div className="tit-sum">
-                    <h2>{props.pageName}</h2>
-                    <span className="sum">총 00건</span>
-                </div>
-            </div>
+        <TableContainer
+            className="table-content row-table"
+            style={{ "--heiTitSearch": props.heiTitSearch + "px" } as React.CSSProperties}
+        >
             <Table>
                 <TableBody>
                     <TableRow>
@@ -104,6 +111,11 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                         value={ageSelect}
                                         onChange={selectChange}
                                         IconComponent={Arrow}
+                                        MenuProps={{
+                                            classes: {
+                                                paper: "select-option-class",
+                                            },
+                                        }}
                                         displayEmpty
                                     >
                                         <MenuItem value="" disabled>
@@ -119,6 +131,11 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                         value={ageSelect}
                                         onChange={selectChange}
                                         IconComponent={Arrow}
+                                        MenuProps={{
+                                            classes: {
+                                                paper: "select-option-class",
+                                            },
+                                        }}
                                         displayEmpty
                                     >
                                         <MenuItem value="" disabled>
@@ -134,6 +151,11 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                         value={ageSelect}
                                         onChange={selectChange}
                                         IconComponent={Arrow}
+                                        MenuProps={{
+                                            classes: {
+                                                paper: "select-option-class",
+                                            },
+                                        }}
                                         displayEmpty
                                     >
                                         <MenuItem value="" disabled>
@@ -155,9 +177,20 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                         </TableCell>
                     </TableRow>
                     <TableRow>
-                        <TableCell component="th">상품 명</TableCell>
+                        <TableCell component="th">
+                            상품 명
+                            <Tooltip
+                                className="tooltip"
+                                disableFocusListener
+                                disableTouchListener
+                                title={tooptipText}
+                                placement="right"
+                            >
+                                <i className="ico-text">?</i>
+                            </Tooltip>
+                        </TableCell>
                         <TableCell colSpan={3}>
-                            <TextField fullWidth placeholder="상품 명 입력" />
+                            <TextField className="input-field" fullWidth placeholder="상품 명 입력" />
                         </TableCell>
                     </TableRow>
                     <TableRow>
