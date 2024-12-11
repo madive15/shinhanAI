@@ -84,7 +84,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(3);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -262,8 +262,18 @@ export default function VerticalTabs() {
         </ToggleButton>
         <Switch className="switch-btn" />
       </TabPanel>
+      {/* 인풋 텍스트 */}
       <TabPanel value={value} index={3}>
-        인폿 가이드 추가
+        <TextField
+          className="input-field"
+          fullWidth
+          placeholder="상품 명 입력"
+        />
+        <TextField
+          className="input-field required"
+          fullWidth
+          placeholder="상품 명 입력"
+        />
       </TabPanel>
       {/* 체크박스 */}
       <TabPanel value={value} index={4}>
@@ -391,6 +401,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             <MenuItem value="" disabled>
               전체
@@ -406,6 +421,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             <MenuItem value="" disabled>
               전체
@@ -421,6 +441,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             7
             <MenuItem value="" disabled>
@@ -438,6 +463,11 @@ export default function VerticalTabs() {
             IconComponent={Arrow}
             displayEmpty
             disabled
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             <MenuItem value="" disabled>
               전체
@@ -454,6 +484,11 @@ export default function VerticalTabs() {
             IconComponent={Arrow}
             displayEmpty
             disabled
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             <MenuItem value="" disabled>
               전체
@@ -514,6 +549,11 @@ export default function VerticalTabs() {
                         onChange={selectChange}
                         IconComponent={Arrow}
                         displayEmpty
+                        MenuProps={{
+                          classes: {
+                            paper: "select-option-class",
+                          },
+                        }}
                       >
                         <MenuItem value="" disabled>
                           전체
@@ -529,6 +569,11 @@ export default function VerticalTabs() {
                         onChange={selectChange}
                         IconComponent={Arrow}
                         displayEmpty
+                        MenuProps={{
+                          classes: {
+                            paper: "select-option-class",
+                          },
+                        }}
                       >
                         <MenuItem value="" disabled>
                           전체
@@ -544,6 +589,11 @@ export default function VerticalTabs() {
                         onChange={selectChange}
                         IconComponent={Arrow}
                         displayEmpty
+                        MenuProps={{
+                          classes: {
+                            paper: "select-option-class",
+                          },
+                        }}
                       >
                         <MenuItem value="" disabled>
                           전체
@@ -566,7 +616,11 @@ export default function VerticalTabs() {
               <TableRow>
                 <TableCell component="th">상품 명</TableCell>
                 <TableCell colSpan={3}>
-                  <TextField fullWidth placeholder="상품 명 입력" />
+                  <TextField
+                    className="input-field"
+                    fullWidth
+                    placeholder="상품 명 입력"
+                  />
                 </TableCell>
               </TableRow>
               <TableRow>

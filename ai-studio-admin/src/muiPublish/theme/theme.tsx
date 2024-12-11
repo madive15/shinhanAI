@@ -456,8 +456,9 @@ const theme = createTheme({
               tableLayout: "fixed",
               "& th, & td": {
                 borderBottom: "1px solid var(--border-color4)",
-                padding: "12px 16px",
+                padding: "8px 16px",
                 fontSize: "14px",
+                height: "52px",
               },
               "& th": {
                 maxWidth: "160px",
@@ -494,6 +495,60 @@ const theme = createTheme({
       },
     },
     // 툴팁 끝
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "&.input-field": {
+            "&:focus-visible": {
+              outline: "0",
+            },
+            "& .MuiInputBase-root": {
+              height: "36px",
+              fontSize: "14px",
+
+              "&:focus-visible": {
+                outline: "0",
+              },
+            },
+            "& .MuiOutlinedInput-root": {
+              "& input": {
+                padding: "0px 12px",
+              },
+              "& fieldset": {
+                borderColor: "var(--border-color1)",
+              },
+              "&:hover fieldset": {
+                borderColor: "var(--color1)",
+              },
+              "&:active fieldset": {
+                borderColor: "var(--color1)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "var(--color1)",
+                borderWidth: "1px",
+              },
+            },
+            "&.required ": {
+              position: "relative",
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderTopLeftRadius: 0,
+                },
+              },
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                top: "0",
+                left: "0",
+                width: "8px",
+                height: "8px",
+                background: `var(--color2) url(${requiredIcon}) top left no-repeat`,
+              },
+            },
+          },
+        },
+      },
+    },
   },
 });
 export default theme;
