@@ -2,7 +2,7 @@
 import React from "react";
 
 // need style
-import "~/publish/loading/loading.scss";
+import "./loading.scss";
 /**
  *
  * @author shinhanAI
@@ -12,11 +12,11 @@ import "~/publish/loading/loading.scss";
  *
  */
 const Loading: React.FC = () => {
-    return (
-        <div className="loading-layer">
-            <div className="donut"></div>
-        </div>
-    );
+  return (
+    <div className="loading-layer">
+      <div className="donut"></div>
+    </div>
+  );
 };
 
 export default Loading;

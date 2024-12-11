@@ -252,14 +252,21 @@ const theme = createTheme({
         MuiSelect: {
             styleOverrides: {
                 root: {
-                    border: "1px solid var(--border-color1)",
-                    padding: "0",
-                    fontSize: "14px",
-                    lineHeight: "18px",
-                    letterSpacing: "-0.35px",
-                    maxWidth: "480px",
-                    minWidth: "80px",
-                    width: "100%",
+                    "&.select-box": {
+                        border: "1px solid var(--border-color1)",
+                        padding: "0",
+                        fontSize: "14px",
+                        lineHeight: "18px",
+                        letterSpacing: "-0.35px",
+                        maxWidth: "480px",
+                        minWidth: "80px",
+                        minHeight: "auto",
+                        width: "100%",
+                        backgroundColor: "var(--color2)",
+                        "& .MuiSelect-select": {
+                            minHeight: "auto",
+                        },
+                    },
                     "&.small": {
                         maxWidth: "100px",
                     },
@@ -306,17 +313,17 @@ const theme = createTheme({
                 },
             },
         },
-        MuiMenu: {
-            styleOverrides: {
-                list: {
-                    border: " 1px solid var(--color1)",
-                    padding: "12px",
-                    borderRadius: "4px",
-                    minWidth: "80px",
-                    marginTop: "4px",
-                },
-            },
-        },
+        // MuiMenu: {
+        //   styleOverrides: {
+        //     list: {
+        //       border: " 1px solid var(--color1)",
+        //       padding: "12px",
+        //       borderRadius: "4px",
+        //       minWidth: "80px",
+        //       marginTop: "4px",
+        //     },
+        //   },
+        // },
         MuiMenuItem: {
             styleOverrides: {
                 root: {
@@ -468,6 +475,23 @@ const theme = createTheme({
             },
         },
         //로우 테이블 끝
+        // 툴팁
+        MuiPopper: {
+            styleOverrides: {
+                root: {
+                    "&.MuiPopper-root[role='tooltip']": {
+                        "& div": {
+                            backgroundColor: "var(--color2)",
+                            color: "var(--font-color1)",
+                            borderRadius: "4px",
+                            padding: "8px",
+                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                        },
+                    },
+                },
+            },
+        },
+        // 툴팁 끝
     },
 });
 export default theme;

@@ -8,6 +8,7 @@ import Loading from "~/muiPublish/loading/Loading";
 import Top from "~/muiPublish/layout/Top";
 import MenuContainer from "~/muiPublish/layout/MenuContainer";
 import SampleTablePage from "~/muiPublish/page/SampleTablePage";
+import ProductMeta from "~/muiPublish/page/productMeta/ProductMeta";
 // import Auth from "~/publish/page/Auth";
 // import Manager from "~/publish/page/Manager";
 // import SampleTablePage from "~/publish/page/SampleTablePage";
@@ -15,7 +16,7 @@ import SampleTablePage from "~/muiPublish/page/SampleTablePage";
 // import Member from "~/publish/page/Member";
 // import Ocrpage from "~/publish/page/Ocrpage";
 // import Metapage from "~/publish/page/Metapage";
-// import SampleForm from "~/publish/page/SampleForm";
+import SampleForm from "~/muiPublish/guide/MuiSampleForm";
 // import Taskpage from "~/publish/page/Taskpage";
 
 // need style
@@ -57,8 +58,10 @@ const Layout: React.FC<IPageProps> = (props) => {
                     {/* Tab contents Page */}
 
                     {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}
-                    {/* {props.pageName === "샘플폼" && <SampleForm pageName={props.pageName} />}
-                    {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}
+                    {props.pageName === "샘플폼" && <SampleForm pageName={props.pageName} />}
+                    {props.pageName === "상품메타관리" && <ProductMeta pageName={props.pageName} />}
+
+                    {/* {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}
                     {props.pageName === "권한관리" && <Auth pageName={props.pageName} />}
                     {props.pageName === "관리자메뉴 권한관리" && <Manager pageName={props.pageName} />}
                     {props.pageName === "권한그룹관리" && <PermissionGroup pageName={props.pageName} />}

@@ -19,23 +19,23 @@ const pubList = [
         etc: "",
     },
     {
-        id: "1",
+        id: "2",
         name: "레이아웃",
         link: "/muipublish/layout",
         etc: "",
     },
-    // {
-    //     id: "2",
-    //     name: "폼요소 샘플",
-    //     link: "/muipublish/sampleform",
-    //     etc: "",
-    // },
-    // {
-    //     id: "3",
-    //     name: "테이블 샘플",
-    //     link: "/muipublish/table",
-    //     etc: "",
-    // },
+    {
+        id: "3",
+        name: "폼요소 샘플",
+        link: "/muipublish/MuiSampleform",
+        etc: "",
+    },
+    {
+        id: "4",
+        name: "상품메타관리",
+        link: "/muipublish/meta",
+        etc: "",
+    },
     // {
     //     id: "4",
     //     name: "권한관리",

@@ -153,33 +153,42 @@
     background-color: var(--color1);
     color: var(--color2);
   }
-  .react-datepicker__day--in-selecting-range:not([aria-disabled="true"]):hover {
+  .react-datepicker__navigation {
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
-    background-color: var(--background-color3);
-    color: var(--color3);
+    border: 1px solid #888;
+    top: 20px;
   }
-  .react-datepicker__day--in-selecting-range {
-    border-radius: 50%;
-    background-color: var(--background-color3);
-    color: var(--color3);
+  .react-datepicker__navigation--next {
+    right: 16px;
   }
-  .react-datepicker__day--in-selecting-range:not(
-      .react-datepicker__day--in-range
-    ) {
-    background-color: var(--background-color3);
-    color: var(--color3);
+  .react-datepicker__navigation--previous {
+    left: 16px;
   }
-  .react-datepicker__day--keyboard-selected {
-    border-radius: 50%;
-    background-color: var(--color1);
-    color: var(--color2);
+  .react-datepicker__navigation-icon::before {
+    top: 10px;
+    border-width: 1px 1px 0 0;
+    height: 4px;
+    width: 4px;
+    border-color: #888;
+  }
+  .react-datepicker__navigation-icon--previous::before {
+    right: -1.1px;
+  }
+  .react-datepicker__navigation-icon--next::before {
+    left: -1.1px;
+  }
+  .react-datepicker-ignore-onclickoutside {
+    &:focus-visible {
+      outline: 1px solid var(--color1);
+      border-radius: 4px;
+    }
   }
   .react-datepicker__day:not([aria-disabled="true"]):hover,
   .react-datepicker__month-text:not([aria-disabled="true"]):hover,
   .react-datepicker__quarter-text:not([aria-disabled="true"]):hover,
-  .react-datepicker__year-text:not([aria-disabled="true"]):hover {
-    border-radius: 50%;
-  }
+  .react-datepicker__year-text:not([aria-disabled="true"]):hover,
   .react-datepicker__day--selected,
   .react-datepicker__day--in-selecting-range,
   .react-datepicker__day--in-range,
@@ -194,11 +203,18 @@
   .react-datepicker__year-text--in-range {
     border-radius: 50%;
   }
-  .react-datepicker__day--selected {
-    background-color: var(--color1);
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__month-text--keyboard-selected,
+  .react-datepicker__quarter-text--keyboard-selected,
+  .react-datepicker__year-text--keyboard-selected {
+    border-radius: 50%;
   }
-  .react-datepicker__navigation {
-    top: 12px;
+  .react-datepicker__day--selected,
+  .react-datepicker__day--in-range:not([aria-disabled="true"]):hover,
+  .react-datepicker__day--selected:not([aria-disabled="true"]):hover,
+  .react-datepicker__day--keyboard-selected:not([aria-disabled="true"]):hover {
+    background-color: var(--color1);
+    color: var(--color2);
   }
   .date-month-btn {
     min-width: 300px;
@@ -221,4 +237,151 @@
       }
     }
   }
+  .date-ym-radio {
+    label {
+      border-radius: 100px;
+      min-width: 56px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 12px;
+      border: 1px solid var(--color1);
+      background-color: var(--color2);
+      color: var(--font-color3);
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.35px;
+      cursor: pointer;
+      & + label {
+        margin-left: 4px;
+      }
+    }
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      z-index: -1;
+      color: transparent;
+      background: transparent;
+      appearance: none;
+      &:checked {
+        & + label {
+          background-color: var(--color1);
+          color: var(--color2);
+          box-shadow: 0px 2px 4px 0px rgba(0, 70, 255, 0.25);
+        }
+      }
+    }
+    & + .date-ym-radio {
+      margin-left: 4px;
+    }
+  }
+}
+
+//뱃지
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 21px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 17px;
+  font-weight: 700;
+  letter-spacing: -0.275px;
+  &.gray {
+    color: var(--color2);
+    background-color: var(--font-color2);
+  }
+  &.green {
+    color: var(--color2);
+    background-color: var(--positive);
+  }
+  &.red {
+    color: var(--color2);
+    background-color: var(--negative);
+  }
+  &.large {
+    height: 25px;
+    min-width: 64px;
+    border-radius: 100px;
+    justify-content: center;
+  }
+}
+.badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px 4px;
+}
+
+//해시태그
+.hash-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border-color4);
+  background-color: var(--color2);
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  color: var(--font-color2);
+  gap: 4px;
+  .hash-del {
+    text-indent: -9999px;
+    width: 8px;
+    height: 8px;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 1px;
+      background-color: var(--font-color2);
+      transform-origin: center;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+// 텍스트 아이콘
+.ico-text {
+  font-family: var(--font-style1);
+  font-style: normal;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--font-color3);
+  color: var(--color2);
+  border-radius: 50%;
+  cursor: pointer;
+  &.blue {
+    background-color: var(--sub-color2);
+  }
+}
+
+.select-option-class {
+  border: 1px solid var(--color1);
+  padding: 12px;
+  border-radius: 4px;
+  min-width: 80px;
+  margin-top: 4px;
 }
