@@ -15,7 +15,7 @@ import { ReactComponent as Filter } from "~assets/images/svg/Icons-filter.svg";
 import { ReactComponent as SearchBig } from "~assets/images/svg/Icons-Search_big.svg";
 import { ReactComponent as Home } from "~assets/images/svg/Icons-home.svg";
 
-import "~/publish/components/svg.scss";
+import "./svg.scss";
 const SvgSample = () => {
   return (
     <div className="svg-bg">

@@ -132,8 +132,16 @@ export default function VerticalTabs() {
   const [dateRange, setDateRange] = useState([null, null]);
   const [rangeStartDate, rangeEndDate]: any = dateRange;
 
-  const tooptipText =
-    "해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다. 해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다. 해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다.";
+  const tooptipText = (
+    <div>
+      <strong>타이틀</strong>
+      <br />
+      툴팁 작업 예정 툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업
+      예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업
+      예정.
+    </div>
+  );
+
   return (
     <Box
       className="guide-wrap"
@@ -841,6 +849,19 @@ export default function VerticalTabs() {
       {/* 툴팁 */}
       <TabPanel value={value} index={14}>
         <Tooltip
+          disableFocusListener
+          disableTouchListener
+          title={tooptipText}
+          placement="right"
+        >
+          <i className="ico-text">?</i>
+        </Tooltip>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Tooltip
+          open={true}
           disableFocusListener
           disableTouchListener
           title={tooptipText}
