@@ -35,7 +35,7 @@ export interface IPageProps {
  * admin-front: ProductMeta
  * 상품메타관리 page
  */
-const ProductMetaTable: React.FC<IPageProps> = (props) => {
+const TaskRequestTable: React.FC<IPageProps> = (props) => {
   // loading
   const [loading, setLoading] = useState<boolean>(true);
   const useLoading = (onoff: boolean) => {
@@ -81,7 +81,7 @@ const ProductMetaTable: React.FC<IPageProps> = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((idx) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((idx) => (
             <TableRow key={idx}>
               <TableCell width={48} align="center">
                 {idx}
@@ -110,4 +110,4 @@ const ProductMetaTable: React.FC<IPageProps> = (props) => {
   );
 };
 
-export default ProductMetaTable;
+export default TaskRequestTable;

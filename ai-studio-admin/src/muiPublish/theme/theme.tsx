@@ -265,8 +265,12 @@ const theme = createTheme({
             minHeight: "auto",
             width: "100%",
             backgroundColor: "var(--color2)",
+            height: "36px",
             "& .MuiSelect-select": {
               minHeight: "auto",
+            },
+            "& +.input-field": {
+              marginLeft: "4px",
             },
           },
           "&.small": {
@@ -499,6 +503,9 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           "&.input-field": {
+            maxWidth: "480px",
+            width: "100%",
+            backgroundColor: "var(--color2)",
             "&:focus-visible": {
               outline: "0",
             },
