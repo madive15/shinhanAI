@@ -11,6 +11,7 @@ declare module "@mui/material/Button" {
     primaryBig: true;
     small: true;
     icon: true;
+    dashed: true;
   }
 }
 const theme = createTheme({
@@ -196,6 +197,23 @@ const theme = createTheme({
             },
             "&:active": {
               backgroundColor: "rgba(0, 0, 0, 0.10)",
+            },
+          },
+        },
+        {
+          props: { variant: "dashed" },
+          style: {
+            minWidth: "unset",
+            height: "36px",
+            padding: "6px 16px",
+            borderRadius: "100px",
+            border: "1px dashed #888",
+            fontSize: "14px",
+            lineHeight: "18px",
+            letterSpacing: "-0.35px",
+            "& svg": {
+              width: "24px",
+              height: "24px",
             },
           },
         },

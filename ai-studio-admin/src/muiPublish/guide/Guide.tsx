@@ -47,6 +47,7 @@ import {
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
+import { ReactComponent as Download } from "~assets/images/svg/Icons-download.svg";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -84,7 +85,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(3);
+  const [value, setValue] = React.useState(2);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -243,15 +244,39 @@ export default function VerticalTabs() {
       {/* 버튼 */}
       <TabPanel value={value} index={2} guideName={"guide-btn"}>
         <Button variant="primary">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="secondary">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="sub1">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="sub2">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="primaryBig">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="small">버튼 텍스트</Button>
+        <br />
+        <br />
+        <Button variant="dashed" startIcon={<Download fill="#888" />}>
+          버튼 텍스트
+        </Button>
+        <br />
+        <br />
+        <Button variant="dashed" endIcon={<Download fill="#888" />}>
+          버튼 텍스트
+        </Button>
+        <br />
+        <br />
 
         <Button variant="contained" disabled>
           Disabled
         </Button>
+        <br />
+        <br />
         <ToggleButton
           className="toggle-btn"
           value="check"
@@ -260,7 +285,11 @@ export default function VerticalTabs() {
         >
           토글 버튼
         </ToggleButton>
+        <br />
+        <br />
         <Switch className="switch-btn" />
+        <br />
+        <br />
       </TabPanel>
       {/* 인풋 텍스트 */}
       <TabPanel value={value} index={3}>
