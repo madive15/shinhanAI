@@ -1,67 +1,67 @@
 @charset "utf-8";
 
 #root {
-  .guide-wrap {
-    height: 100vh;
+    .guide-wrap {
+        height: 100vh;
 
-    [role="tabpanel"] {
-      width: 100%;
-    }
-    .guide-text {
-      * {
-        margin-bottom: 24px;
-      }
-    }
-    .guide-btn {
-      .MuiBox-root {
-        .MuiTypography-root {
-          // button {
-          //   display: block;
-          //   margin-bottom: 20px;
-          // }
+        [role="tabpanel"] {
+            width: 100%;
         }
-      }
+        .guide-text {
+            * {
+                margin-bottom: 24px;
+            }
+        }
+        .guide-btn {
+            .MuiBox-root {
+                .MuiTypography-root {
+                    // button {
+                    //   display: block;
+                    //   margin-bottom: 20px;
+                    // }
+                }
+            }
+        }
     }
-  }
-  .toggle-btn {
-    font-weight: 400;
-    border-radius: 100px;
-    padding: 7px 12px;
-    min-width: 72px;
-    height: 36px;
-    line-height: 21px;
-    font-size: 14px;
-    &[aria-pressed="false"] {
-      color: var(--font-color3);
-      border: 1px solid var(--color1);
-      background-color: var(--color2);
+    .toggle-btn {
+        font-weight: 400;
+        border-radius: 100px;
+        padding: 7px 12px;
+        min-width: 72px;
+        height: 36px;
+        line-height: 21px;
+        font-size: 14px;
+        &[aria-pressed="false"] {
+            color: var(--font-color3);
+            border: 1px solid var(--color1);
+            background-color: var(--color2);
+        }
+        &[aria-pressed="true"] {
+            font-weight: 700;
+            background-color: var(--color1);
+            color: var(--color2);
+        }
     }
-    &[aria-pressed="true"] {
-      font-weight: 700;
-      background-color: var(--color1);
-      color: var(--color2);
+    .switch-btn {
+        padding: 0;
+        height: 24px;
+        width: 40px;
+        .MuiSwitch-switchBase {
+            padding: 2px;
+        }
+        .MuiSwitch-thumb {
+            background-color: var(--color2);
+        }
+        .MuiSwitch-track {
+            border-radius: 100px;
+            background-color: var(--background-color3);
+            opacity: 1;
+        }
+        .Mui-checked {
+            transform: translateX(16px);
+            & + .MuiSwitch-track {
+                background-color: var(--color1);
+            }
+        }
     }
-  }
-  .switch-btn {
-    padding: 0;
-    height: 24px;
-    width: 40px;
-    .MuiSwitch-switchBase {
-      padding: 2px;
-    }
-    .MuiSwitch-thumb {
-      background-color: var(--color2);
-    }
-    .MuiSwitch-track {
-      border-radius: 100px;
-      background-color: var(--background-color3);
-      opacity: 1;
-    }
-    .Mui-checked {
-      transform: translateX(16px);
-      & + .MuiSwitch-track {
-        background-color: var(--color1);
-      }
-    }
-  }
 }

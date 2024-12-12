@@ -1,5 +1,6 @@
 // necessary set
 import React, { useState, useEffect, useRef } from "react";
+import Button from "@mui/material/Button";
 
 // need content
 import Loading from "~/muiPublish/loading/Loading";
@@ -8,7 +9,8 @@ import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
 import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
 import ProductMetaFormTable from "~/muiPublish/page/productMeta/ProductMetaFormTable";
-import Button from "@mui/material/Button";
+import ProductMetaPopup from "~/muiPublish/page/productMeta/ProductMetaPopup";
+import ProductMetaAlertPopup from "~/muiPublish/page/productMeta/ProductMetaAlertPopup";
 
 // import Cardlist from "~/publish/components/Cardlist";
 
@@ -93,6 +95,18 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
         leftHeight,
     ]);
 
+    // 신규 메타 추가
+    const [popupStauts, setpopupStauts] = useState(false);
+    const popupOpen = () => {
+        setpopupStauts(true);
+    };
+
+    //완료 얼럿
+    const [alertStauts, setAlertStauts] = useState(false);
+    const alertOpen = () => {
+        setAlertStauts(true);
+    };
+
     return (
         <>
             <div className="tabs-area">
@@ -122,17 +136,29 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
                                     상품메타로 등록됩니다.
                                 </span>
                             </div>
-                            <Button variant="secondary">신규 상품메타 추가</Button>
+                            <Button variant="secondary" onClick={popupOpen}>
+                                신규 상품메타 추가
+                            </Button>
                         </div>
 
                         <ProductMetaFormTable pageName={props.pageName} heiTitSearch={rightHeight} />
                         <div ref={subBtnCheck} className="btn-root-wrap end" aria-label="Basic button group">
                             <Button variant="sub1">변경 취소</Button>
-                            <Button variant="primary">변경 사항 저장</Button>
+                            <Button variant="primary" onClick={alertOpen}>
+                                변경 사항 저장
+                            </Button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* 신규 상품메타 추가 */}
+            {popupStauts === true && <ProductMetaPopup popupStauts={popupStauts} setpopupStauts={setpopupStauts} />}
+
+            {/* 저장 완료 alert */}
+            {alertStauts === true && (
+                <ProductMetaAlertPopup alertStauts={alertStauts} setAlertStauts={setAlertStauts} />
+            )}
         </>
     );
 };

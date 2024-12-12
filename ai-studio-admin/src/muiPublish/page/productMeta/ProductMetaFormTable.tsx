@@ -113,7 +113,7 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                         IconComponent={Arrow}
                                         MenuProps={{
                                             classes: {
-                                                paper: "select-option-class",
+                                                paper: "select-option-class required",
                                             },
                                         }}
                                         displayEmpty
@@ -133,7 +133,7 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                         IconComponent={Arrow}
                                         MenuProps={{
                                             classes: {
-                                                paper: "select-option-class",
+                                                paper: "select-option-class required",
                                             },
                                         }}
                                         displayEmpty
@@ -153,7 +153,7 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                         IconComponent={Arrow}
                                         MenuProps={{
                                             classes: {
-                                                paper: "select-option-class",
+                                                paper: "select-option-class required",
                                             },
                                         }}
                                         displayEmpty
@@ -171,9 +171,7 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                     <TableRow>
                         <TableCell component="th">상품 코드</TableCell>
                         <TableCell colSpan={3}>
-                            <div className="text-area required">
-                                <textarea name="" id=""></textarea>
-                            </div>
+                            <TextField className="input-field required" fullWidth placeholder="상품 코드" />
                         </TableCell>
                     </TableRow>
                     <TableRow>
@@ -190,7 +188,7 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                             </Tooltip>
                         </TableCell>
                         <TableCell colSpan={3}>
-                            <TextField className="input-field" fullWidth placeholder="상품 명 입력" />
+                            <TextField className="input-field required" fullWidth placeholder="상품 명 입력" />
                         </TableCell>
                     </TableRow>
                     <TableRow>
