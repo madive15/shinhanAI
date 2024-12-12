@@ -7,9 +7,10 @@ import AdminTab from "~/muiPublish/components/AdminTab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
 import TaskRequestTable from "~/muiPublish/page/taskRequest/TaskRequestTable";
-
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
 import Button from "@mui/material/Button";
-
+import MenuItem from "@mui/material/MenuItem";
 // import Cardlist from "~/publish/components/Cardlist";
 
 // need style
@@ -35,7 +36,10 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
   const useLoading = (onoff: boolean) => {
     setLoading(onoff);
   };
-
+  const [ageSelect, setAgeSelect] = React.useState("");
+  const selectChange = (event: SelectChangeEvent) => {
+    setAgeSelect(event.target.value as string);
+  };
   useEffect(() => {
     setLoading(false);
   }, []);
@@ -110,6 +114,27 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
             <div className="tit-sum">
               <h2>{props.pageName}</h2>
               <span className="sum">총 00건</span>
+            </div>
+            <div className="table-title-right">
+              <Select
+                className="select-box "
+                value={ageSelect}
+                onChange={selectChange}
+                IconComponent={Arrow}
+                displayEmpty
+                MenuProps={{
+                  classes: {
+                    paper: "select-option-class",
+                  },
+                }}
+              >
+                <MenuItem value="" disabled>
+                  등록일 ↑
+                </MenuItem>
+                <MenuItem value={10}>등록일 ↑</MenuItem>
+                <MenuItem value={20}>TwentyTwenty</MenuItem>
+              </Select>
+              <Button variant="sub1">상태 답변</Button>
             </div>
           </div>
           <TaskRequestTable

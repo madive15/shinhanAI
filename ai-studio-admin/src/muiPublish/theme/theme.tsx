@@ -266,6 +266,7 @@ const theme = createTheme({
             width: "100%",
             backgroundColor: "var(--color2)",
             height: "36px",
+            borderRadius: "6px",
             "& .MuiSelect-select": {
               minHeight: "auto",
             },

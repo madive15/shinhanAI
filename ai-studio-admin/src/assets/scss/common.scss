@@ -400,3 +400,17 @@
     justify-content: end;
   }
 }
+
+.table-title-right {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  .MuiInputBase-root {
+    &.select-box {
+      min-width: 120px;
+    }
+  }
+  button {
+    min-width: fit-content;
+  }
+}
