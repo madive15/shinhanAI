@@ -54,7 +54,7 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
   const subTitleLeft = useRef<HTMLDivElement | null>(null);
   const subTitleRight = useRef<HTMLDivElement | null>(null);
   const subBtnCheck = useRef<HTMLDivElement | null>(null);
-
+  const [heiTitSearch, setHeiTitSearch] = useState<number>(190);
   useEffect(() => {
     if (subTitSearch.current) {
       // 조회 영역
@@ -98,7 +98,14 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
     rightHeight,
     leftHeight,
   ]);
-
+  useEffect(() => {
+    if (subTitSearch.current) {
+      const offsetHeight = subTitSearch.current.offsetHeight;
+      const offsetWidth = subTitSearch.current.offsetWidth;
+      console.log("Height:", offsetHeight + 190, "Width:", offsetWidth);
+      setHeiTitSearch(offsetHeight + 190);
+    }
+  }, [subTitSearch?.current?.offsetHeight, heiTitSearch]);
   return (
     <>
       <div className="tabs-area">
@@ -109,7 +116,12 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
           <SubTitle pageName={props.pageName} />
           <SearchContent pageName={props.pageName} />
         </div>
-        <div className="tabs-scroll-area">
+        <div
+          className="tabs-scroll-area"
+          style={
+            { "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties
+          }
+        >
           <div className="table-title" ref={subTitleLeft}>
             <div className="tit-sum">
               <h2>{props.pageName}</h2>
@@ -137,10 +149,7 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
               <Button variant="sub1">상태 답변</Button>
             </div>
           </div>
-          <TaskRequestTable
-            pageName={props.pageName}
-            heiTitSearch={leftHeight}
-          />
+          <TaskRequestTable pageName={props.pageName} />
         </div>
       </div>
     </>
