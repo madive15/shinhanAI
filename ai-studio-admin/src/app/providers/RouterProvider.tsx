@@ -84,10 +84,10 @@ export const router = createBrowserRouter([
               path: pathKeys.muiLayout(), //mui 기본 layout
               element: <MuiLayout pageName={"기본레이아웃"} />,
             },
-            {
-              path: pathKeys.taskpage(),
-              element: <Layout pageName={"과제 신청"} />,
-            },
+            // {
+            //   path: pathKeys.taskpage(),
+            //   element: <Layout pageName={"과제 신청"} />,
+            // },
             {
               path: pathKeys.muiPublishGuide(),
               element: <MuiPubGuide />,
@@ -99,6 +99,10 @@ export const router = createBrowserRouter([
             {
               path: pathKeys.metaPage(),
               element: <MuiLayout pageName={"상품메타관리"} />,
+            },
+            {
+              path: pathKeys.taskpage(),
+              element: <MuiLayout pageName={"과제 신청"} />,
             },
           ]
         : []),

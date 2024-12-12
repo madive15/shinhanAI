@@ -28,6 +28,7 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
 import SearchProductMeta from "~/muiPublish/components/search/SearchProductMeta";
+import SearchTaskRequest from "~/muiPublish/components/search/SearchTaskRequest";
 
 // need style
 import SearchContentStyle from "~/muiPublish/theme/SearchContentStyle";
@@ -62,6 +63,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
     return (
         <SearchContentStyle>
             {props.pageName === "상품메타관리" && <SearchProductMeta />}
+            {props.pageName === "과제 신청" && <SearchTaskRequest />}
 
             {/* {props.pageName === "AI-OCR 검증 결과 관리" && (
           <>
