@@ -171,7 +171,7 @@ const theme = createTheme({
             padding: "8px",
             borderRadius: "4px",
             border: "1px solid #666",
-            minWidth: "unset",
+            minWidth: "56px",
             "&:hover": {
               backgroundColor: "rgba(0, 0, 0, 0.05)",
             },
@@ -551,6 +551,17 @@ const theme = createTheme({
                 height: "8px",
                 background: `var(--color2) url(${requiredIcon}) top left no-repeat`,
               },
+            },
+          },
+        },
+      },
+    },
+    MuiFormGroup: {
+      styleOverrides: {
+        root: {
+          "&.chk-group": {
+            "& label": {
+              margin: 0,
             },
           },
         },

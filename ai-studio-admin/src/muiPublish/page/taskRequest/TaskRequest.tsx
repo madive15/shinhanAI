@@ -6,8 +6,8 @@ import Loading from "~/muiPublish/loading/Loading";
 import AdminTab from "~/muiPublish/components/AdminTab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
-import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
-import ProductMetaFormTable from "~/muiPublish/page/productMeta/ProductMetaFormTable";
+import TaskRequestTable from "~/muiPublish/page/taskRequest/TaskRequestTable";
+
 import Button from "@mui/material/Button";
 
 // import Cardlist from "~/publish/components/Cardlist";
@@ -26,7 +26,7 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: ProductMeta
+ * admin-front: TaskRequest
  * 상품메타관리 page
  */
 const TaskRequest: React.FC<IPageProps> = (props) => {
@@ -112,7 +112,7 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
               <span className="sum">총 00건</span>
             </div>
           </div>
-          <ProductMetaTable
+          <TaskRequestTable
             pageName={props.pageName}
             heiTitSearch={leftHeight}
           />
