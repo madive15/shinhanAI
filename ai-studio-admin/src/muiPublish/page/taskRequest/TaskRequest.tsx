@@ -139,7 +139,7 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
                   등록일 ↑
                 </MenuItem>
                 <MenuItem value={10}>등록일 ↑</MenuItem>
-                <MenuItem value={20}>TwentyTwenty</MenuItem>
+                <MenuItem value={20}>↑</MenuItem>
               </Select>
               <Button variant="sub1">선택 삭제</Button>
             </div>
