@@ -44,10 +44,17 @@ const pubList = [
     },
     {
         id: "6",
+        name: "과제 신청 내용",
+        link: "/muipublish/taskDetail",
+        etc: "",
+    },
+    {
+        id: "7",
         name: "프롬프트메타관리",
         link: "/muipublish/promptmeta",
         etc: "",
     },
+
     // {
     //     id: "5",
     //     name: "관리자메뉴 권한관리",
