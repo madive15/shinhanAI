@@ -7,10 +7,10 @@ import Loading from "~/muiPublish/loading/Loading";
 import AdminTab from "~/muiPublish/components/AdminTab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
-import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
-import ProductMetaFormTable from "~/muiPublish/page/productMeta/ProductMetaFormTable";
-import ProductMetaPopup from "~/muiPublish/page/productMeta/ProductMetaPopup";
-import ProductMetaAlertPopup from "~/muiPublish/page/productMeta/ProductMetaAlertPopup";
+import ProductMetaTable from "~/muiPublish/page/promptMeta/PromptMetaTable";
+import ProductMetaFormTable from "~/muiPublish/page/promptMeta/PromptMetaFormTable";
+import ProductMetaPopup from "~/muiPublish/page/promptMeta/PromptMetaPopup";
+import ProductMetaAlertPopup from "~/muiPublish/page/promptMeta/PromptMetaAlertPopup";
 
 // import Cardlist from "~/publish/components/Cardlist";
 

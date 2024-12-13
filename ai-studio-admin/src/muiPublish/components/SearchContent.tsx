@@ -120,7 +120,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
           </>
         )} */}
             {props.pageName === "샘플폼" && (
-                <>
+                <div className="search-contnet">
                     <div className="search-item-box">
                         <div className="search-item">
                             <span className="tit">기간 조회</span>
@@ -381,7 +381,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                             </div>
                         </div>
                     </div>
-                </>
+                </div>
             )}
 
             <div className="btn-root-wrap end" aria-label="Basic button group">

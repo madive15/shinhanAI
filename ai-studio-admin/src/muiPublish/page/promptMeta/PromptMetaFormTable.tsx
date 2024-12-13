@@ -61,14 +61,6 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
         setAgeSelect(event.target.value as string);
     };
 
-    const tooptipText = (
-        <div>
-            <strong>타이틀</strong>
-            <br />
-            툴팁 작업 예정 툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업
-            예정툴팁 작업 예정툴팁 작업 예정.
-        </div>
-    );
     return (
         <TableContainer
             className="table-content row-table"
@@ -77,7 +69,15 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
             <Table>
                 <TableBody>
                     <TableRow>
-                        <TableCell component="th">상품 분류</TableCell>
+                        <TableCell component="th">프롬프트 ID</TableCell>
+                        <TableCell colSpan={3}>prom000005</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell component="th">적용화면(ID)</TableCell>
+                        <TableCell colSpan={3}>통합검색 결과 (SCSE0001)</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell component="th">콘텐츠 입력방식</TableCell>
                         <TableCell colSpan={3}>
                             <RadioGroup
                                 className="radio-group"
@@ -88,112 +88,30 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                 onChange={radioGroupChange}
                             >
                                 <FormControlLabel
-                                    value="female"
+                                    value="JSON"
                                     control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
-                                    label="Female"
+                                    label="JSON"
                                 />
                                 <FormControlLabel
                                     className="cr-label"
-                                    value="male"
+                                    value="DB입력"
                                     control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
-                                    label="Male"
+                                    label="DB입력"
                                 />
                             </RadioGroup>
                         </TableCell>
                     </TableRow>
                     <TableRow>
-                        <TableCell component="th">상위 분류</TableCell>
+                        <TableCell component="th">프롬프트 콘텐츠</TableCell>
                         <TableCell colSpan={3}>
-                            <div className="select-group">
-                                <FormControl fullWidth>
-                                    <Select
-                                        className="select-box"
-                                        value={ageSelect}
-                                        onChange={selectChange}
-                                        IconComponent={Arrow}
-                                        MenuProps={{
-                                            classes: {
-                                                paper: "select-option-class required",
-                                            },
-                                        }}
-                                        displayEmpty
-                                    >
-                                        <MenuItem value="" disabled>
-                                            전체
-                                        </MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <FormControl fullWidth>
-                                    <Select
-                                        className="select-box"
-                                        value={ageSelect}
-                                        onChange={selectChange}
-                                        IconComponent={Arrow}
-                                        MenuProps={{
-                                            classes: {
-                                                paper: "select-option-class required",
-                                            },
-                                        }}
-                                        displayEmpty
-                                    >
-                                        <MenuItem value="" disabled>
-                                            전체
-                                        </MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <FormControl fullWidth>
-                                    <Select
-                                        className="select-box"
-                                        value={ageSelect}
-                                        onChange={selectChange}
-                                        IconComponent={Arrow}
-                                        MenuProps={{
-                                            classes: {
-                                                paper: "select-option-class required",
-                                            },
-                                        }}
-                                        displayEmpty
-                                    >
-                                        <MenuItem value="" disabled>
-                                            전체
-                                        </MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                    </Select>
-                                </FormControl>
+                            <div className="text-area required">
+                                <textarea name="" id=""></textarea>
                             </div>
                         </TableCell>
                     </TableRow>
                     <TableRow>
-                        <TableCell component="th">상품 코드</TableCell>
-                        <TableCell colSpan={3}>
-                            <TextField className="input-field required" fullWidth placeholder="상품 코드" />
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th">
-                            상품 명
-                            <Tooltip
-                                className="tooltip"
-                                disableFocusListener
-                                disableTouchListener
-                                title={tooptipText}
-                                placement="right"
-                            >
-                                <i className="ico-text">?</i>
-                            </Tooltip>
-                        </TableCell>
-                        <TableCell colSpan={3}>
-                            <TextField className="input-field required" fullWidth placeholder="상품 명 입력" />
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
                         <TableCell component="th">사용 여부</TableCell>
-                        <TableCell colSpan={3}>
+                        <TableCell>
                             <RadioGroup
                                 className="radio-group"
                                 row
@@ -215,10 +133,8 @@ const ProductMetaFormTable: React.FC<IPageProps> = (props) => {
                                 />
                             </RadioGroup>
                         </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th">전략 상품 여부</TableCell>
-                        <TableCell colSpan={3}>
+                        <TableCell component="th">배치 여부</TableCell>
+                        <TableCell>
                             <RadioGroup
                                 className="radio-group"
                                 row

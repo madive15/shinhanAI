@@ -45,13 +45,19 @@ const SearchPromptMeta: React.FC<IPageProps> = (props) => {
             <div className="search-contnet">
                 <div className="search-item-box">
                     <div className="search-item">
-                        <span className="tit">기간 조회</span>
+                        <span className="tit">프롬프트 ID</span>
                         <div className="item-box ">
                             <TextField className="input-field" />
                         </div>
                     </div>
                     <div className="search-item">
-                        <span className="tit">권한구분</span>
+                        <span className="tit">화면 ID / 화면명</span>
+                        <div className="item-box ">
+                            <TextField className="input-field" />
+                        </div>
+                    </div>
+                    <div className="search-item">
+                        <span className="tit">사용 여부</span>
                         <div className="item-box">
                             <FormControl>
                                 <RadioGroup
@@ -70,12 +76,12 @@ const SearchPromptMeta: React.FC<IPageProps> = (props) => {
                                     <FormControlLabel
                                         value="user"
                                         control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
-                                        label="사용자 권한"
+                                        label="사용"
                                     />
                                     <FormControlLabel
                                         value="admin"
                                         control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
-                                        label="관리자 권한"
+                                        label="미사용"
                                     />
                                 </RadioGroup>
                             </FormControl>
