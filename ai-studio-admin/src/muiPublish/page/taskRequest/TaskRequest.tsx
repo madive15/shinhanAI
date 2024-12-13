@@ -116,12 +116,7 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
           <SubTitle pageName={props.pageName} />
           <SearchContent pageName={props.pageName} />
         </div>
-        <div
-          className="tabs-scroll-area"
-          style={
-            { "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties
-          }
-        >
+        <div className="tabs-scroll-area">
           <div className="table-title" ref={subTitleLeft}>
             <div className="tit-sum">
               <h2>{props.pageName}</h2>
@@ -146,10 +141,13 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
                 <MenuItem value={10}>등록일 ↑</MenuItem>
                 <MenuItem value={20}>TwentyTwenty</MenuItem>
               </Select>
-              <Button variant="sub1">상태 답변</Button>
+              <Button variant="sub1">선택 삭제</Button>
             </div>
           </div>
-          <TaskRequestTable pageName={props.pageName} />
+          <TaskRequestTable
+            heiTitSearch={leftHeight}
+            pageName={props.pageName}
+          />
         </div>
       </div>
     </>
