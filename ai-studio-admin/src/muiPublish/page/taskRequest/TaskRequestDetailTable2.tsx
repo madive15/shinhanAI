@@ -79,28 +79,26 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
           <TableRow>
             <TableCell component="th">진행 상태</TableCell>
             <TableCell>
-              <div className="td-flex g4">
-                <FormControl>
-                  <Select
-                    className="select-box"
-                    value={ageSelect}
-                    onChange={selectChange}
-                    IconComponent={Arrow}
-                    displayEmpty
-                    MenuProps={{
-                      classes: {
-                        paper: "select-option-class",
-                      },
-                    }}
-                  >
-                    <MenuItem value="" disabled>
-                      전체
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                  </Select>
-                </FormControl>
-                <Button variant="sub1">버튼 텍스트</Button>
+              <div className="select-box">
+                <Select
+                  className="select-box"
+                  value={ageSelect}
+                  onChange={selectChange}
+                  IconComponent={Arrow}
+                  displayEmpty
+                  MenuProps={{
+                    classes: {
+                      paper: "select-option-class",
+                    },
+                  }}
+                >
+                  <MenuItem value="" disabled>
+                    전체
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                </Select>
+                <Button variant="sub1">과제 진행 히스토리</Button>
               </div>
             </TableCell>
           </TableRow>
