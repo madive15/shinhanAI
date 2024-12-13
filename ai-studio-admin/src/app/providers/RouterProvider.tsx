@@ -104,6 +104,10 @@ export const router = createBrowserRouter([
               path: pathKeys.taskpage(),
               element: <MuiLayout pageName={"과제 신청"} />,
             },
+            {
+              path: pathKeys.taskpageDetail(),
+              element: <MuiLayout pageName={"과제 신청 내용"} />,
+            },
           ]
         : []),
       {

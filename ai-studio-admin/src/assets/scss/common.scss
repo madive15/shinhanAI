@@ -30,6 +30,11 @@
     &::-webkit-scrollbar {
       display: none;
     }
+    &:disabled {
+      background-color: rgba(0, 0, 0, 0.02);
+      color: var(--font-color3);
+      cursor: not-allowed;
+    }
   }
   &.required {
     textarea {
@@ -415,5 +420,22 @@
   }
   button {
     min-width: fit-content;
+  }
+}
+
+.table-content {
+  & + .table-title {
+    margin-top: 32px;
+  }
+}
+.td-flex {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  &.g4 {
+    gap: 4px;
+  }
+  &.g8 {
+    gap: 8px;
   }
 }

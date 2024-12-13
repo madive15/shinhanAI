@@ -10,6 +10,7 @@ import MenuContainer from "~/muiPublish/layout/MenuContainer";
 import SampleTablePage from "~/muiPublish/page/SampleTablePage";
 import ProductMeta from "~/muiPublish/page/productMeta/ProductMeta";
 import Taskpage from "~/muiPublish/page/taskRequest/TaskRequest";
+import TaskpageDetail from "~/muiPublish/page/taskRequest/TaskRequestDetail";
 // import Auth from "~/publish/page/Auth";
 // import Manager from "~/publish/page/Manager";
 // import SampleTablePage from "~/publish/page/SampleTablePage";
@@ -68,6 +69,9 @@ const Layout: React.FC<IPageProps> = (props) => {
           )}
           {props.pageName === "과제 신청" && (
             <Taskpage pageName={props.pageName} />
+          )}
+          {props.pageName === "과제 신청 내용" && (
+            <TaskpageDetail pageName={props.pageName} />
           )}
 
           {/* {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}

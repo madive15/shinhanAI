@@ -58,6 +58,9 @@ export const pathKeys = {
   taskpage(): string {
     return `${pathKeys.root}muipublish/task`;
   },
+  taskpageDetail(): string {
+    return `${pathKeys.root}muipublish/taskDetail`;
+  },
   muiPublishGuide(): string {
     return `${pathKeys.root}muipublish/guide`; // MUI 퍼블 index
   },
