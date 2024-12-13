@@ -4,7 +4,7 @@ const Badge = ({ value, color, size, style }: any) => {
   return (
     <span
       className={`badge ${color ? color : ""} ${size ? size : ""} `}
-      style={style ? style : ""}
+      style={{ ...style }}
     >
       {value}
     </span>

@@ -68,12 +68,7 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
   }, []);
 
   return (
-    <TableContainer
-      className="table-content row-table"
-      style={
-        { "--heiTitSearch": props.heiTitSearch + "px" } as React.CSSProperties
-      }
-    >
+    <TableContainer className="table-content row-table">
       <Table>
         <TableBody>
           <TableRow>
