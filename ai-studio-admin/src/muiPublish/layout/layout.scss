@@ -259,6 +259,9 @@
 .table-content {
     width: 100%;
     height: calc(100vh - var(--heiTitSearch));
+    &.view-table {
+        height: auto;
+    }
     &::-webkit-scrollbar {
         width: 4px;
         height: 8px;

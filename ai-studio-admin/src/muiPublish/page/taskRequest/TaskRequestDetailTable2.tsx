@@ -34,11 +34,11 @@ import "~/muiPublish/layout/layout.scss";
 
 // Props type
 export interface IPageProps {
-  pageName?: string;
-  subName?: string;
-  loading?: boolean;
-  useLoading?: (data: boolean) => void;
-  heiTitSearch?: number;
+    pageName?: string;
+    subName?: string;
+    loading?: boolean;
+    useLoading?: (data: boolean) => void;
+    heiTitSearch?: number;
 }
 
 /**
@@ -48,162 +48,156 @@ export interface IPageProps {
  * 상품메타관리 page
  */
 const TaskRequestTable: React.FC<IPageProps> = (props) => {
-  // loading
-  const [loading, setLoading] = useState<boolean>(true);
-  const useLoading = (onoff: boolean) => {
-    setLoading(onoff);
-  };
+    // loading
+    const [loading, setLoading] = useState<boolean>(true);
+    const useLoading = (onoff: boolean) => {
+        setLoading(onoff);
+    };
 
-  const [radioGroup, setRadioGroup] = React.useState("female");
-  const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRadioGroup((event.target as HTMLInputElement).value);
-  };
+    const [radioGroup, setRadioGroup] = React.useState("female");
+    const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setRadioGroup((event.target as HTMLInputElement).value);
+    };
 
-  const [ageSelect, setAgeSelect] = React.useState("");
-  const selectChange = (event: SelectChangeEvent) => {
-    setAgeSelect(event.target.value as string);
-  };
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+    const [ageSelect, setAgeSelect] = React.useState("");
+    const selectChange = (event: SelectChangeEvent) => {
+        setAgeSelect(event.target.value as string);
+    };
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
-  return (
-    <TableContainer className="table-content row-table">
-      <Table>
-        <TableBody>
-          <TableRow>
-            <TableCell component="th">진행 상태</TableCell>
-            <TableCell>
-              <div className="form-btn-box">
-                <Select
-                  className="select-box"
-                  value={ageSelect}
-                  onChange={selectChange}
-                  IconComponent={Arrow}
-                  displayEmpty
-                  MenuProps={{
-                    classes: {
-                      paper: "select-option-class",
-                    },
-                  }}
-                >
-                  <MenuItem value="" disabled>
-                    전체
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                </Select>
-                <Button variant="sub1">과제 진행 히스토리</Button>
-              </div>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell component="th">상위 분류</TableCell>
-            <TableCell>
-              <div className="text-area ">
-                <textarea name="" id="" disabled>
-                  과제 신청이 완료되었습니다.
-                </textarea>
-              </div>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-      <Table>
-        <TableBody>
-          <TableRow>
-            <TableCell component="th">진행 상태</TableCell>
-            <TableCell>
-              <div className="form-btn-box">
-                <Select
-                  className="select-box"
-                  value={ageSelect}
-                  onChange={selectChange}
-                  IconComponent={Arrow}
-                  displayEmpty
-                  MenuProps={{
-                    classes: {
-                      paper: "select-option-class",
-                    },
-                  }}
-                >
-                  <MenuItem value="" disabled>
-                    전체
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                </Select>
-                <Button variant="sub1">과제 진행 히스토리</Button>
-              </div>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell component="th">상위 분류</TableCell>
-            <TableCell>
-              <div className="text-area ">
-                <textarea name="" id="">
-                  부서에서 신청하신 과제를 검토중입니다. 업무일 기준 1~2일 검토
-                  완료 예정입니다.
-                </textarea>
-              </div>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-      <Table>
-        <TableBody>
-          <TableRow>
-            <TableCell component="th">진행 상태</TableCell>
-            <TableCell>
-              <div className="form-btn-box">
-                <Select
-                  className="select-box"
-                  value={ageSelect}
-                  onChange={selectChange}
-                  IconComponent={Arrow}
-                  displayEmpty
-                  MenuProps={{
-                    classes: {
-                      paper: "select-option-class",
-                    },
-                  }}
-                >
-                  <MenuItem value="" disabled>
-                    전체
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                </Select>
-                <Button variant="sub1">과제 진행 히스토리</Button>
-              </div>
-            </TableCell>
-            <TableCell component="th">과제 담당자</TableCell>
-            <TableCell>
-              <div className="form-btn-box">
-                <TextField
-                  className="input-field"
-                  fullWidth
-                  placeholder="담당자를 검색해주세요."
-                />
-                <Button variant="sub1">검색</Button>
-              </div>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell component="th">상위 분류</TableCell>
-            <TableCell colSpan={3}>
-              <div className="text-area ">
-                <textarea name="" id="">
-                  부서에서 신청하신 과제를 검토중입니다. 업무일 기준 1~2일 검토
-                  완료 예정입니다.
-                </textarea>
-              </div>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+    return (
+        <TableContainer className="table-content view-table row-table">
+            <Table>
+                <TableBody>
+                    <TableRow>
+                        <TableCell component="th">진행 상태</TableCell>
+                        <TableCell>
+                            <div className="form-btn-box">
+                                <Select
+                                    className="select-box"
+                                    value={ageSelect}
+                                    onChange={selectChange}
+                                    IconComponent={Arrow}
+                                    displayEmpty
+                                    MenuProps={{
+                                        classes: {
+                                            paper: "select-option-class",
+                                        },
+                                    }}
+                                >
+                                    <MenuItem value="" disabled>
+                                        전체
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                </Select>
+                                <Button variant="sub1">과제 진행 히스토리</Button>
+                            </div>
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell component="th">상위 분류</TableCell>
+                        <TableCell>
+                            <div className="text-area ">
+                                <textarea name="" id="" disabled>
+                                    과제 신청이 완료되었습니다.
+                                </textarea>
+                            </div>
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+            <Table>
+                <TableBody>
+                    <TableRow>
+                        <TableCell component="th">진행 상태</TableCell>
+                        <TableCell>
+                            <div className="form-btn-box">
+                                <Select
+                                    className="select-box"
+                                    value={ageSelect}
+                                    onChange={selectChange}
+                                    IconComponent={Arrow}
+                                    displayEmpty
+                                    MenuProps={{
+                                        classes: {
+                                            paper: "select-option-class",
+                                        },
+                                    }}
+                                >
+                                    <MenuItem value="" disabled>
+                                        전체
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                </Select>
+                                <Button variant="sub1">과제 진행 히스토리</Button>
+                            </div>
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell component="th">상위 분류</TableCell>
+                        <TableCell>
+                            <div className="text-area ">
+                                <textarea name="" id="">
+                                    부서에서 신청하신 과제를 검토중입니다. 업무일 기준 1~2일 검토 완료 예정입니다.
+                                </textarea>
+                            </div>
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+            <Table>
+                <TableBody>
+                    <TableRow>
+                        <TableCell component="th">진행 상태</TableCell>
+                        <TableCell>
+                            <div className="form-btn-box">
+                                <Select
+                                    className="select-box"
+                                    value={ageSelect}
+                                    onChange={selectChange}
+                                    IconComponent={Arrow}
+                                    displayEmpty
+                                    MenuProps={{
+                                        classes: {
+                                            paper: "select-option-class",
+                                        },
+                                    }}
+                                >
+                                    <MenuItem value="" disabled>
+                                        전체
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                </Select>
+                                <Button variant="sub1">과제 진행 히스토리</Button>
+                            </div>
+                        </TableCell>
+                        <TableCell component="th">과제 담당자</TableCell>
+                        <TableCell>
+                            <div className="form-btn-box">
+                                <TextField className="input-field" fullWidth placeholder="담당자를 검색해주세요." />
+                                <Button variant="sub1">검색</Button>
+                            </div>
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell component="th">상위 분류</TableCell>
+                        <TableCell colSpan={3}>
+                            <div className="text-area ">
+                                <textarea name="" id="">
+                                    부서에서 신청하신 과제를 검토중입니다. 업무일 기준 1~2일 검토 완료 예정입니다.
+                                </textarea>
+                            </div>
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </TableContainer>
+    );
 };
 
 export default TaskRequestTable;
