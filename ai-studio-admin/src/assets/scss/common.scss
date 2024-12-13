@@ -443,13 +443,14 @@
   }
 }
 
-.select-box {
+.form-btn-box {
   max-width: 480px;
   width: 100%;
   display: flex;
   align-items: center;
   gap: 4px;
-  button {
-    min-width: fit-content;
+  .select-box,
+  .input-field {
+    flex: 1;
   }
 }
