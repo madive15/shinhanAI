@@ -79,7 +79,7 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
           <TableRow>
             <TableCell component="th">진행 상태</TableCell>
             <TableCell>
-              <div className="td-flex g4">
+              <div className="select-box">
                 <Select
                   className="select-box"
                   value={ageSelect}
@@ -98,7 +98,7 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
                   <MenuItem value={10}>Ten</MenuItem>
                   <MenuItem value={20}>Twenty</MenuItem>
                 </Select>
-                <Button variant="sub1">버튼 텍스트</Button>
+                <Button variant="sub1">과제 진행 히스토리</Button>
               </div>
             </TableCell>
           </TableRow>

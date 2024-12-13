@@ -78,10 +78,13 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
           <TableRow>
             <TableCell component="th">과제 명</TableCell>
             <TableCell>
-              <div className="td-flex g8">
-                <strong>Soho 우량고객 이탈 예측 과제</strong>
-                <Badge value="과제 신청" color="green" size="large" />
-              </div>
+              <strong>Soho 우량고객 이탈 예측 과제</strong>
+              <Badge
+                style={{ marginLeft: "8px" }}
+                value="과제 신청"
+                color="green"
+                size="large"
+              />
             </TableCell>
           </TableRow>
           <TableRow>

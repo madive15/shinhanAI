@@ -319,6 +319,9 @@
     border-radius: 100px;
     justify-content: center;
   }
+  &.ml8 {
+    margin-left: 8px;
+  }
 }
 .badge-wrap {
   display: flex;
@@ -437,5 +440,16 @@
   }
   &.g8 {
     gap: 8px;
+  }
+}
+
+.select-box {
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  button {
+    min-width: fit-content;
   }
 }
