@@ -1,0 +1,124 @@
+@charset "utf-8";
+@import "../../assets/scss/mixin";
+
+/* sidebar 전체 영역 */
+.sidebar {
+    @include flex(column);
+    @include justify-content(space-between);
+    @include align-items(center);
+    position: relative;
+    width: 64px;
+    height: 100%;
+    padding: 24px 12px;
+    background-color: var(--background-color2);
+    & .logo-menu {
+        text-align: center;
+        .logo {
+            margin: 0 0 24px 0;
+        }
+        .btn-menu {
+            @include width-height(40px, 40px);
+            min-width: 40px;
+            border-radius: 8px 8px;
+            background-color: #0449fc1a;
+        }
+    }
+    & .sidebar-nav {
+        ul {
+            li {
+                @include flex;
+                @include justify-content(center);
+                @include align-items(center);
+                @include width-height(40px, 40px);
+                margin: 0 0 16px 0;
+                border-radius: 8px 8px;
+                &:hover {
+                    cursor: pointer;
+                    background-color: #0449fc1a;
+                }
+                span {
+                    font-size: 0;
+                }
+                &.active {
+                    background-color: #0046ff;
+                    path {
+                        fill: var(--color2);
+                    }
+                }
+            }
+        }
+    }
+    & .site-map {
+        @include flex;
+        @include justify-content(center);
+        @include align-items(center);
+        @include width-height(40px, 40px);
+        border-radius: 8px 8px;
+        &:hover {
+            cursor: pointer;
+        }
+        span {
+            font-size: 0;
+        }
+        &.active {
+            background-color: #0046ff;
+            path {
+                fill: var(--color2);
+            }
+        }
+    }
+    &.open {
+        width: 200px;
+        transition: all 0.2s ease-in-out;
+        & .logo-menu {
+            text-align: left;
+            .btn-menu {
+                width: 176px;
+                padding: 8px 14px;
+                @include justify-content(flex-start);
+            }
+        }
+        & .sidebar-nav {
+            ul {
+                li {
+                    width: 176px;
+                    padding: 8px 8px;
+                    @include justify-content(flex-start);
+                    transition: all 0.2s ease-in-out;
+                    span {
+                        margin: 0 0 0 12px;
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 20px;
+                        letter-spacing: -0.025em;
+                        color: var(--font-color2);
+                        transition: all 0.2s ease-in-out;
+                    }
+                    &.active {
+                        span {
+                            color: var(--color2);
+                        }
+                    }
+                }
+            }
+        }
+        & .site-map {
+            width: 176px;
+            padding: 8px 8px;
+            @include justify-content(flex-start);
+            span {
+                margin: 0 0 0 12px;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: -0.025em;
+                color: var(--font-color2);
+            }
+            &.active {
+                span {
+                    color: var(--color2);
+                }
+            }
+        }
+    }
+}

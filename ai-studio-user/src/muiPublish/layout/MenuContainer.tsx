@@ -2,7 +2,7 @@
 import React from "react";
 
 // need content
-import Adminsidebar from "~/muiPublish/components/Adminsidebar";
+import Sidebar from "~/muiPublish/components/Sidebar";
 
 // Props type
 export interface IPageProps {
@@ -17,21 +17,14 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: side MenuContainer
- * admin side menu
+ * user-front: user MenuContainer
+ * user MenuContainer
  */
 
 const MenuContainer: React.FC<IPageProps> = (props) => {
-    // console.log('Top pageName ===>', props.pageName)
-    // console.log('Top subName ===>', props.subName)
-    // const testLogout = () => {
-    //   window.sessionStorage.removeItem('authToken')
-    //   window.location.href = '/'
-    // }
-
     return (
         <div className="side-content">
-            <Adminsidebar />
+            <Sidebar />
         </div>
     );
 };
