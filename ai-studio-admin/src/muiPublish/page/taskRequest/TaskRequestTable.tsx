@@ -12,6 +12,14 @@ import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
+import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
+
 // need content
 import Loading from "~/muiPublish/loading/Loading";
 import AdminTab from "~/muiPublish/components/AdminTab";
@@ -44,7 +52,13 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
   const useLoading = (onoff: boolean) => {
     setLoading(onoff);
   };
-
+  const [popupStauts, setpopupStauts] = React.useState(false);
+  const popupOpen = () => {
+    setpopupStauts(true);
+  };
+  const popupClose = () => {
+    setpopupStauts(false);
+  };
   useEffect(() => {
     setLoading(false);
   }, []);
@@ -118,7 +132,9 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
               <TableCell width={513} align="center">
                 <div className="btn-wrap center">
                   <Button variant="small">상태 답변</Button>
-                  <Button variant="small">히스토리</Button>
+                  <Button variant="small" onClick={popupOpen}>
+                    히스토리
+                  </Button>
                   <Button variant="small">수정</Button>
                 </div>
               </TableCell>
@@ -126,6 +142,51 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
           ))}
         </TableBody>
       </Table>
+      <Dialog className="layer-box " open={popupStauts} onClose={popupClose}>
+        <DialogTitle>과제 진행 히스토리</DialogTitle>
+        <DialogContent>
+          <TableContainer className="table-content">
+            <Table
+              stickyHeader
+              className="table-defult-style"
+              aria-label="simple table"
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell width={104} align="center">
+                    <strong>일시</strong>
+                  </TableCell>
+                  <TableCell width={120} align="center">
+                    <strong>진행 상태</strong>
+                  </TableCell>
+                  <TableCell width={304} align="center">
+                    <strong>의견</strong>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {[1, 2, 3, 4].map((idx) => (
+                  <TableRow key={idx}>
+                    <TableCell width={104} align="center">
+                      2024-10-08 15:03
+                    </TableCell>
+                    <TableCell width={120} align="center">
+                      <Badge value="사용" color="green" size="large" />
+                    </TableCell>
+                    <TableCell width={304} align="left">
+                      담당자가 신청하신 과제를 검토중입니다. 업무일 기준 1~2일
+                      내 검토 완료 예정입니다.
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </DialogContent>
+        <IconButton className="dialog-close" onClick={popupClose}>
+          <Icons15 fill="#222 " />
+        </IconButton>
+      </Dialog>
     </TableContainer>
   );
 };
