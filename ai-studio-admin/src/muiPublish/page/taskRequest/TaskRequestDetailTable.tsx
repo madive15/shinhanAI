@@ -33,11 +33,11 @@ import "~/muiPublish/layout/layout.scss";
 
 // Props type
 export interface IPageProps {
-    pageName?: string;
-    subName?: string;
-    loading?: boolean;
-    useLoading?: (data: boolean) => void;
-    heiTitSearch?: number;
+  pageName?: string;
+  subName?: string;
+  loading?: boolean;
+  useLoading?: (data: boolean) => void;
+  heiTitSearch?: number;
 }
 
 /**
@@ -47,71 +47,76 @@ export interface IPageProps {
  * 상품메타관리 page
  */
 const TaskRequestTable: React.FC<IPageProps> = (props) => {
-    // loading
-    const [loading, setLoading] = useState<boolean>(true);
-    const useLoading = (onoff: boolean) => {
-        setLoading(onoff);
-    };
+  // loading
+  const [loading, setLoading] = useState<boolean>(true);
+  const useLoading = (onoff: boolean) => {
+    setLoading(onoff);
+  };
 
-    const [radioGroup, setRadioGroup] = React.useState("female");
-    const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setRadioGroup((event.target as HTMLInputElement).value);
-    };
+  const [radioGroup, setRadioGroup] = React.useState("female");
+  const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRadioGroup((event.target as HTMLInputElement).value);
+  };
 
-    const [ageSelect, setAgeSelect] = React.useState("");
-    const selectChange = (event: SelectChangeEvent) => {
-        setAgeSelect(event.target.value as string);
-    };
-    useEffect(() => {
-        setLoading(false);
-    }, []);
+  const [ageSelect, setAgeSelect] = React.useState("");
+  const selectChange = (event: SelectChangeEvent) => {
+    setAgeSelect(event.target.value as string);
+  };
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
-    return (
-        <TableContainer className="table-content view-table row-table">
-            <Table>
-                <TableBody>
-                    <TableRow>
-                        <TableCell component="th">과제 명</TableCell>
-                        <TableCell>
-                            <strong>Soho 우량고객 이탈 예측 과제</strong>
-                            <Badge style={{ marginLeft: "8px" }} value="과제 신청" color="green" size="large" />
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th">작성자</TableCell>
-                        <TableCell>김멀더 (MulderKim)</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th">등록일</TableCell>
-                        <TableCell>2024-10-18</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th">내용</TableCell>
-                        <TableCell>
-                            <p>에디터 내용이 들어갑니다.</p>
-                            <p>에디터 내용이 들어갑니다.</p>
-                            <p>에디터 내용이 들어갑니다.</p>
-                            <p>에디터 내용이 들어갑니다.</p>
-                            <p>에디터 내용이 들어갑니다.</p>
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th">파일 첨부</TableCell>
-                        <TableCell>
-                            <div className="btn-wrap">
-                                <Button variant="dashed" endIcon={<Download fill="#888" />}>
-                                    버튼 텍스트
-                                </Button>
-                                <Button variant="dashed" endIcon={<Download fill="#888" />}>
-                                    버튼 텍스트
-                                </Button>
-                            </div>
-                        </TableCell>
-                    </TableRow>
-                </TableBody>
-            </Table>
-        </TableContainer>
-    );
+  return (
+    <TableContainer className="table-content view-table row-table">
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell component="th">과제 명</TableCell>
+            <TableCell>
+              <strong>Soho 우량고객 이탈 예측 과제</strong>
+              <Badge
+                style={{ marginLeft: "8px" }}
+                value="과제 신청"
+                color="green"
+                size="large"
+              />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell component="th">작성자</TableCell>
+            <TableCell>김멀더 (MulderKim)</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell component="th">등록일</TableCell>
+            <TableCell>2024-10-18</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell component="th">내용</TableCell>
+            <TableCell>
+              <p>에디터 내용이 들어갑니다.</p>
+              <p>에디터 내용이 들어갑니다.</p>
+              <p>에디터 내용이 들어갑니다.</p>
+              <p>에디터 내용이 들어갑니다.</p>
+              <p>에디터 내용이 들어갑니다.</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell component="th">파일 첨부</TableCell>
+            <TableCell>
+              <div className="btn-wrap">
+                <Button variant="iconDashed" endIcon={<Download fill="#888" />}>
+                  버튼 텍스트
+                </Button>
+                <Button variant="iconDashed" endIcon={<Download fill="#888" />}>
+                  버튼 텍스트
+                </Button>
+              </div>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
 };
 
 export default TaskRequestTable;

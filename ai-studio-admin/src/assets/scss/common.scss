@@ -443,6 +443,7 @@
   }
 }
 
+// row테이블 인풋요소 + 버튼 케이스
 .form-btn-box {
   max-width: 480px;
   width: 100%;
@@ -452,5 +453,64 @@
   .select-box,
   .input-field {
     flex: 1;
+  }
+}
+
+//인풋 파일
+.file-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .input-file {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    label {
+      font-size: 14px;
+      color: var(--color1);
+      font-weight: 700;
+      letter-spacing: -0.35px;
+      padding: 9px 16px;
+      border: 1px solid var(--color1);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    .file-list {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      .no-file {
+        color: var(--font-color3);
+        font-size: 14px;
+        letter-spacing: -0.35px;
+      }
+    }
+  }
+
+  .file-volume {
+    color: var(--font-color3);
+    font-size: 12px;
+    letter-spacing: -0.3px;
+  }
+}
+//아이템 삭제 버튼형
+.delete-item {
+  border-radius: 100px;
+  border: 1px solid var(--border-color4);
+  background-color: var(--background-color2);
+  padding: 6px 8px 6px 16px;
+  font-size: 14px;
+  color: var(--font-color1);
+  letter-spacing: -0.35px;
+  button {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+    svg {
+      fill: #333;
+    }
   }
 }
