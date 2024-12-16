@@ -250,6 +250,10 @@ const theme = createTheme({
           marginBottom: "-4px",
           marginRight: "6px",
           "& svg": {},
+          "&+.MuiTypography-root": {
+            fontSize: "14px",
+            color: "var(--font-color1)",
+          },
           "&.Mui-disabled svg ": {
             fill: "#DDE6F3",
           },
@@ -510,6 +514,12 @@ const theme = createTheme({
                 backgroundColor: "var(--background-color2)",
                 lineHeight: "28px",
                 letterSpacing: "-0.35px",
+                "& .th-desc": {
+                  fontSize: "13px",
+                  color: "var(--font-color2)",
+                  letterSpacing: "-0.325px",
+                  lineHeight: "19.5px",
+                },
               },
               "& td": {
                 backgroundColor: "var(--color2)",
@@ -605,6 +615,14 @@ const theme = createTheme({
               margin: 0,
             },
           },
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          marginLeft: "0px",
+          marginRight: "0px",
         },
       },
     },

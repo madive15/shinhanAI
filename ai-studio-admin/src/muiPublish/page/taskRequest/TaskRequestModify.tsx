@@ -6,8 +6,7 @@ import Loading from "~/muiPublish/loading/Loading";
 import AdminTab from "~/muiPublish/components/AdminTab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
-import TaskRequestDetailTable from "~/muiPublish/page/taskRequest/TaskRequestDetailTable";
-import TaskRequestDetailTable2 from "~/muiPublish/page/taskRequest/TaskRequestDetailTable2";
+import TaskRequestModifyTable from "~/muiPublish/page/taskRequest/TaskRequestModifyTable";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
 import Button from "@mui/material/Button";
@@ -28,10 +27,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: TaskRequest
+ * admin-front: TaskRequestModify
  * 상품메타관리 page
  */
-const TaskRequest: React.FC<IPageProps> = (props) => {
+const TaskRequestModify: React.FC<IPageProps> = (props) => {
   // loading
   const [loading, setLoading] = useState<boolean>(true);
   const useLoading = (onoff: boolean) => {
@@ -121,20 +120,15 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
         </div>
         <div className="tabs-scroll-area">
           <div className="table-title" ref={subTitleLeft}>
-            <div className="tit-sum">
-              <h2>{props.pageName}</h2>
+            <div className="tit-desc">
+              <h2>신청하기</h2>
+              <span className="desc">신청할 과제 정보를 입력해주세요.</span>
             </div>
           </div>
-          <TaskRequestDetailTable pageName={props.pageName} />
-          <div className="table-title" ref={subTitleLeft}>
-            <div className="tit-sum">
-              <h2>{props.pageName}</h2>
-            </div>
-          </div>
-          <TaskRequestDetailTable2 pageName={props.pageName} />
+          <TaskRequestModifyTable pageName={props.pageName} />
           <div className="btn-root-wrap end" aria-label="Basic button group">
-            <Button variant="sub1">목록으로 돌아가기</Button>
-            <Button variant="primary">내용 등록 </Button>
+            <Button variant="sub1">수정 취소</Button>
+            <Button variant="primary">과제 신청 수정</Button>
           </div>
         </div>
       </div>
@@ -142,4 +136,4 @@ const TaskRequest: React.FC<IPageProps> = (props) => {
   );
 };
 
-export default TaskRequest;
+export default TaskRequestModify;

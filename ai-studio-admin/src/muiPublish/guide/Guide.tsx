@@ -267,7 +267,7 @@ export default function VerticalTabs() {
         <Button variant="iconDashed" startIcon={<Download fill="#888" />}>
           버튼 텍스트
         </Button>
-        <Button variant="iconLine" startIcon={<X fill="#333" />}>
+        <Button variant="iconLine" startIcon={<Download fill="#333" />}>
           버튼 텍스트
         </Button>
         <br />
@@ -275,7 +275,7 @@ export default function VerticalTabs() {
         <Button variant="iconDashed" endIcon={<Download fill="#888" />}>
           버튼 텍스트
         </Button>
-        <Button variant="iconLine" endIcon={<X fill="#333" />}>
+        <Button variant="iconLine" endIcon={<Download fill="#333" />}>
           버튼 텍스트
         </Button>
         <br />
