@@ -10,6 +10,8 @@ export interface IPageProps {
     subName?: string;
     loading?: boolean;
     useLoading?: (data: boolean) => void;
+    openClose?: boolean;
+    setOpenClose?: (data: boolean) => void;
 }
 
 // need style
@@ -24,7 +26,7 @@ export interface IPageProps {
 const MenuContainer: React.FC<IPageProps> = (props) => {
     return (
         <div className="side-content">
-            <Sidebar />
+            <Sidebar openClose={props.openClose} setOpenClose={props.setOpenClose} />
         </div>
     );
 };

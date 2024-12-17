@@ -7,6 +7,7 @@ import { Stack, styled, Container } from "@mui/material";
 import Loading from "~/muiPublish/loading/Loading";
 import Top from "~/muiPublish/layout/Top";
 import MenuContainer from "~/muiPublish/layout/MenuContainer";
+import TargetExtraction from "~/muiPublish/page/targetExtraction/TargetExtraction";
 import Main from "~/muiPublish/page/main/Main";
 
 // need style
@@ -15,10 +16,10 @@ import LayoutStyle from "~/muiPublish/theme/LayoutStyle";
 
 // Props type
 export interface IPageProps {
-  pageName?: string;
-  subName?: string;
-  loading?: boolean;
-  useLoading?: (data: boolean) => void;
+    pageName?: string;
+    subName?: string;
+    loading?: boolean;
+    useLoading?: (data: boolean) => void;
 }
 
 /**
@@ -28,35 +29,36 @@ export interface IPageProps {
  * user Layout
  */
 const Layout: React.FC<IPageProps> = (props) => {
-  // loading
-  const [loading, setLoading] = useState<boolean>(true);
-  const useLoading = (onoff: boolean) => {
-    setLoading(onoff);
-  };
+    // loading
+    const [loading, setLoading] = useState<boolean>(true);
+    const useLoading = (onoff: boolean) => {
+        setLoading(onoff);
+    };
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
-  return (
-    <LayoutStyle className="flexible-side-layout">
-      {loading && <Loading />}
-      <MenuContainer pageName={""} subName={""} />
-      <div className="container">
-        <Top pageName={""} subName={""} />
-        <div className="content">
-          <div className="tabs-area">tabs</div>
-          <div className="tabs-contents">
-            {props.pageName === "MAIN" && <Main pageName={props.pageName} />}
-          </div>
-          {/* Tab contents Page */}
+    // side menu open close
+    const [openClose, setOpenClose] = useState<boolean>(false);
 
-          {/* {props.pageName === "샘플폼" && <SampleForm pageName={props.pageName} />}
+    return (
+        <LayoutStyle className="flexible-side-layout">
+            {loading && <Loading />}
+            <MenuContainer pageName={""} subName={""} openClose={openClose} setOpenClose={setOpenClose} />
+            <div className="container">
+                <Top pageName={""} subName={""} openClose={openClose} />
+                <div className={openClose === true ? "content opne-menu" : "content"}>
+                    {props.pageName === "타겟추출" && <TargetExtraction pageName={props.pageName} />}
+                    {props.pageName === "MAIN" && <Main pageName={props.pageName} />}
+                    {/* Tab contents Page */}
+                    {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}
+                    {props.pageName === "샘플폼" && <SampleForm pageName={props.pageName} />}
                     {props.pageName === "상품메타관리" && <ProductMeta pageName={props.pageName} />} */}
-        </div>
-      </div>
-    </LayoutStyle>
-  );
+                </div>
+            </div>
+        </LayoutStyle>
+    );
 };
 
 export default Layout;

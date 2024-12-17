@@ -10,7 +10,7 @@ import Paper from "@mui/material/Paper";
 
 // need content
 import Loading from "~/muiPublish/loading/Loading";
-import AdminTab from "~/muiPublish/components/AdminTab";
+import Tab from "~/muiPublish/components/Tab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
 

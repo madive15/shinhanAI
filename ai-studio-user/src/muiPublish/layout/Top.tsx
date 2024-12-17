@@ -4,6 +4,13 @@ import { NavLink } from "react-router-dom";
 import logoPath from "~assets/images/admin_logo.png";
 import { ReactComponent as Search } from "~assets/images/svg/icon_search.svg";
 import { ReactComponent as Close } from "~assets/images/svg/icon_close.svg";
+import { ReactComponent as AllSearch } from "~assets/images/svg/icon_all_search.svg";
+import { ReactComponent as AllSearchClose } from "~assets/images/svg/Icons-Icons15.svg";
+import { ReactComponent as User } from "~assets/images/svg/icon_user.svg";
+import { ReactComponent as Mini } from "~assets/images/svg/icon_mini.svg";
+import { ReactComponent as Go } from "~assets/images/svg/icon_go.svg";
+import { ReactComponent as ArrowRight } from "~assets/images/svg/icon_arrow_right.svg";
+import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -14,6 +21,7 @@ export interface IPageProps {
     subName?: string;
     loading?: boolean;
     useLoading?: (data: boolean) => void;
+    openClose?: boolean;
 }
 
 // need style
@@ -29,25 +37,39 @@ const Top: React.FC<IPageProps> = (props) => {
     const [openClose, setOpenClose] = useState<boolean>(false);
 
     return (
-        <header>
-            <div className="top-content">
+        <header className={props.openClose === true ? "menu-open" : ""}>
+            <div className="top-content ">
                 <div className="search" onClick={() => setOpenClose(!openClose)}>
                     <IconButton type="button" aria-label="search" className="icon-search">
                         {openClose ? <Close /> : <Search />}
                     </IconButton>
                 </div>
                 <div className="user-setting">
-                    <span className="go-admin">AI Studio 관리자 바로가기</span>
-                    <span className="go-mini">AI Studio Mini</span>
+                    <span className="go-admin">
+                        AI Studio 관리자 바로가기 <Go fill="#fff" />
+                    </span>
+                    <span className="go-mini">
+                        AI Studio Mini <Mini fill="#fff" />
+                    </span>
                     <span className="nick-name">
+                        <User className="icon-user" fill="#fff" />
                         <em>김멀더</em>
+                        <ArrowRight className="icon-arrow-right" fill="#fff" />
                     </span>
                 </div>
             </div>
 
             <div className={openClose === true ? "search-layer open" : "search-layer"}>
                 <div className="search-box">
-                    <TextField hiddenLabel variant="outlined" placeholder="메뉴검색" />
+                    <Paper component="form" className="search-form">
+                        <TextField hiddenLabel variant="outlined" placeholder="검색어를 입력해주세요." />
+                        <div className="icon-allsearch">
+                            <AllSearch fill="#fff" />
+                        </div>
+                    </Paper>
+                    <IconButton className="search-close" onClick={() => setOpenClose(false)}>
+                        <AllSearchClose fill="#fff " width={16} height={16} />
+                    </IconButton>
                 </div>
             </div>
         </header>
