@@ -385,3 +385,11 @@
   min-width: 80px;
   margin-top: 4px;
 }
+
+.tabs-area {
+  height: 32px;
+}
+.tabs-contents {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}

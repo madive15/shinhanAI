@@ -9,53 +9,58 @@ import { pathKeys } from "~/shared/router";
 import MuiPubIndex from "~/muiPublish";
 import MuiPubGuide from "~/muiPublish/guide/Guide";
 import MuiLayout from "~/muiPublish/layout/Layout";
+import Main from "~/muiPublish/page/main/Main";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
 export const router = createBrowserRouter([
-    {
-        errorElement: <BubbleError />,
+  {
+    errorElement: <BubbleError />,
+    children: [
+      {
+        element: <MainLayout />,
         children: [
-            {
-                element: <MainLayout />,
-                children: [
-                    { path: pathKeys.home(), element: <Home /> },
-                    { path: pathKeys.user(), element: <User /> },
-                    { path: pathKeys.page404(), element: <PageNotFound /> },
-                ],
-            },
-            {
-                element: <PopupLayout />,
-                children: [{ path: pathKeys.popupMenu1(), element: <User /> }],
-            },
-            ...(isDevelopment
-                ? [
-                      // mui publish
-                      {
-                          path: pathKeys.muiPublish(), //mui publish index
-                          element: <MuiPubIndex />,
-                      },
-                      {
-                          path: pathKeys.muiPublishGuide(), //mui publish guide
-                          element: <MuiPubGuide />,
-                      },
-                      {
-                          path: pathKeys.muiLayout(), //mui publish layout
-                          element: <MuiLayout pageName={"기본레이아웃"} />,
-                      },
-                  ]
-                : []),
-            {
-                loader: async () => redirect(pathKeys.page404()),
-                path: "*",
-            },
+          { path: pathKeys.home(), element: <Home /> },
+          { path: pathKeys.user(), element: <User /> },
+          { path: pathKeys.page404(), element: <PageNotFound /> },
         ],
-    },
+      },
+      {
+        element: <PopupLayout />,
+        children: [{ path: pathKeys.popupMenu1(), element: <User /> }],
+      },
+      ...(isDevelopment
+        ? [
+            // mui publish
+            {
+              path: pathKeys.muiPublish(), //mui publish index
+              element: <MuiPubIndex />,
+            },
+            {
+              path: pathKeys.muiPublishGuide(), //mui publish guide
+              element: <MuiPubGuide />,
+            },
+            {
+              path: pathKeys.muiLayout(), //mui publish layout
+              element: <MuiLayout pageName={"기본레이아웃"} />,
+            },
+            {
+              path: pathKeys.main(), //메인
+              element: <MuiLayout pageName={"MAIN"} />,
+            },
+          ]
+        : []),
+      {
+        loader: async () => redirect(pathKeys.page404()),
+        path: "*",
+      },
+    ],
+  },
 ]);
 
 function BubbleError() {
-    const error = useRouteError();
+  const error = useRouteError();
 
-    if (error) throw error;
-    return null;
+  if (error) throw error;
+  return null;
 }
