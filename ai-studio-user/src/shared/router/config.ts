@@ -64,4 +64,7 @@ export const pathKeys = {
     muiPublishGuide(): string {
         return `${pathKeys.root}muipublish/guide`; // MUI 퍼블 index
     },
+    muiTarget(): string {
+        return `${pathKeys.root}muipublish/target`; // targetExtraction
+    },
 };

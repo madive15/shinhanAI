@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 // need content
 import Loading from "~/muiPublish/loading/Loading";
-import AdminTab from "~/muiPublish/components/AdminTab";
+import Tab from "~/muiPublish/components/Tab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
 import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
@@ -57,7 +57,7 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
     return (
         <>
             <div className="tabs-area">
-                <AdminTab menuName={adminMenu} />
+                <Tab menuName={adminMenu} />
             </div>
             <div className="tabs-contents">
                 <div className="sub-tit-search" ref={subTitSearch}>

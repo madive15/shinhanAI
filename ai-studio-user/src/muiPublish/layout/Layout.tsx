@@ -7,6 +7,7 @@ import { Stack, styled, Container } from "@mui/material";
 import Loading from "~/muiPublish/loading/Loading";
 import Top from "~/muiPublish/layout/Top";
 import MenuContainer from "~/muiPublish/layout/MenuContainer";
+import TargetExtraction from "~/muiPublish/page/targetExtraction/TargetExtraction";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -37,15 +38,17 @@ const Layout: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
 
+    // side menu open close
+    const [openClose, setOpenClose] = useState<boolean>(false);
+
     return (
         <LayoutStyle className="flexible-side-layout">
             {loading && <Loading />}
-            <MenuContainer pageName={""} subName={""} />
+            <MenuContainer pageName={""} subName={""} openClose={openClose} setOpenClose={setOpenClose} />
             <div className="container">
                 <Top pageName={""} subName={""} />
-                <div className="content">
-                    <div className="tabs-area">tabs</div>
-                    <div className="tabs-contents">.tabs-content</div>
+                <div className={openClose === true ? "content opne-menu" : "content"}>
+                    {props.pageName === "타겟추출" && <TargetExtraction pageName={props.pageName} />}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}
                     {props.pageName === "샘플폼" && <SampleForm pageName={props.pageName} />}

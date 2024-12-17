@@ -1,0 +1,104 @@
+.tab {
+    position: relative;
+    .tab-box {
+        position: relative;
+        padding: 0 186px 0 0;
+    }
+    .tab-content {
+        a {
+            display: flex;
+            padding: 9px 12px 9px 16px;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: var(--sub-color4);
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            letter-spacing: -0.025em;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 12px 12px 0 0;
+            .admin-tab-btn {
+                text-indent: -9999px;
+                width: 14px;
+                height: 14px;
+                border-radius: 4px;
+                position: relative;
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 10px;
+                    height: 1px;
+                    background-color: var(--sub-color4);
+                    transform-origin: center;
+                }
+
+                &::before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+
+                &::after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+        }
+        &.active {
+            a {
+                padding: 9px 12px 9px 16px;
+                background-color: rgba(255, 255, 255, 1);
+                color: var(--sub-color4);
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 14px;
+                letter-spacing: -0.025em;
+                .admin-tab-btn {
+                    &::before,
+                    &::after {
+                        background-color: var(--sub-color4);
+                    }
+                }
+            }
+        }
+        &:first-of-type {
+            a {
+                padding: 9px 16px 9px 16px;
+            }
+        }
+    }
+
+    .btn-slider {
+        position: absolute;
+        left: initial;
+        right: 36px;
+        top: 0;
+        width: 146px;
+        display: flex;
+        .prev,
+        .next {
+            display: block;
+            min-width: 28px;
+            height: 28px;
+            margin: 0 4px 0 0;
+            background-color: var(--color2);
+            border-radius: 8px 8px;
+        }
+        .all-close {
+            display: block;
+            min-width: 78px;
+            font-family: Pretendard;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: -0.025em;
+            background-color: var(--color2);
+            border-radius: 8px 8px;
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        display: none;
+    }
+}

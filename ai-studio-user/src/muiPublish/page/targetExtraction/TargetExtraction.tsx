@@ -5,9 +5,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitle from "~/muiPublish/components/SubTitle";
-import SearchContent from "~/muiPublish/components/SearchContent";
-// import TableSample from "~/publish/components/TableSample";
-// import Cardlist from "~/publish/components/Cardlist";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -23,10 +20,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: Sample table
- * Sample table page
+ * user-front: TargetExtraction
+ * TargetExtraction page
  */
-const SampleTablePage: React.FC<IPageProps> = (props) => {
+const TargetExtraction: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -38,7 +35,58 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
     }, []);
 
     //table 탭
-    const adminMenu = ["table 관리", "메뉴2", "메뉴3", "메뉴4"];
+    const adminMenu = [
+        "HOME",
+        "타겟추출 관리",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+        "메뉴2",
+        "메뉴3",
+        "메뉴4",
+    ];
 
     // subtitle search height
     const [heiTitSearch, setHeiTitSearch] = useState<number>(190);
@@ -57,20 +105,9 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
             <div className="tabs-area">
                 <Tab menuName={adminMenu} />
             </div>
-            <div className="tabs-contents">
-                <div className="sub-tit-search" ref={subTitSearch}>
-                    <SubTitle pageName={props.pageName} />
-                    <SearchContent pageName={props.pageName} />
-                </div>
-                <div
-                    className="tabs-scroll-area"
-                    style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}
-                >
-                    {props.pageName}
-                </div>
-            </div>
+            <div className="tabs-contents">content</div>
         </>
     );
 };
 
-export default SampleTablePage;
+export default TargetExtraction;

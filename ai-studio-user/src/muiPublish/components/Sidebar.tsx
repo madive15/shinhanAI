@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import ListSubheader from "@mui/material/ListSubheader";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Collapse from "@mui/material/Collapse";
 import Button from "@mui/material/Button";
 import { ReactComponent as Logo } from "~assets/images/svg/icon_logo.svg";
 import { ReactComponent as RightDouble } from "~assets/images/svg/icon_right_double.svg";
@@ -21,15 +15,29 @@ import { ReactComponent as Sitemap } from "~assets/images/svg/icon_sitemap.svg";
 
 import "~/muiPublish/components/sidebar.scss";
 
-const Sidebar = () => {
-    const [openClose, setOpenClose] = useState<boolean>(false);
+export interface IPageProps {
+    pageName?: string;
+    subName?: string;
+    loading?: boolean;
+    useLoading?: (data: boolean) => void;
+    openClose?: boolean;
+    setOpenClose?: (data: boolean) => void;
+}
 
+const Sidebar: React.FC<IPageProps> = (props) => {
+    const menuOpenClose = (onOff: boolean) => {
+        if (props.setOpenClose) {
+            props.setOpenClose(onOff);
+        }
+    };
     return (
-        <div className={openClose ? "sidebar open" : "sidebar"}>
+        <div className={props.openClose ? "sidebar open" : "sidebar"}>
             <div className="logo-menu">
-                <Logo className="logo" fill="#0046FF" />
-                <Button className="btn-menu" onClick={() => setOpenClose(!openClose)}>
-                    {openClose ? <LeftDouble fill="#0046FF" /> : <RightDouble fill="#0046FF" />}
+                <NavLink to={"/"}>
+                    <Logo className="logo" fill="#0046FF" />
+                </NavLink>
+                <Button className="btn-menu" onClick={() => menuOpenClose(!props.openClose)}>
+                    {props.openClose ? <LeftDouble fill="#0046FF" /> : <RightDouble fill="#0046FF" />}
                 </Button>
             </div>
             <nav className="sidebar-nav">
