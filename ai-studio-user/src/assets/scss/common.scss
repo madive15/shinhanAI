@@ -286,13 +286,13 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  height: 21px;
-  padding: 0 8px;
+  height: 22px;
+  padding: 0 6px;
   border-radius: 8px;
-  font-size: 11px;
-  line-height: 17px;
+  font-size: 12px;
+  line-height: 18px;
   font-weight: 700;
-  letter-spacing: -0.275px;
+  letter-spacing: -0.3px;
   &.gray {
     color: var(--color2);
     background-color: var(--font-color2);
@@ -304,6 +304,30 @@
   &.red {
     color: var(--color2);
     background-color: var(--negative);
+  }
+  &.navy {
+    color: var(--color2);
+    background-color: var(--sub-color4);
+  }
+  &.blue {
+    color: var(--color2);
+    background-color: var(--color1);
+  }
+  &.black {
+    color: var(--color2);
+    background-color: var(--color3);
+  }
+  &.orange {
+    color: var(--color2);
+    background-color: #eb8d19;
+  }
+  &.purple {
+    color: var(--color2);
+    background-color: #6d19db;
+  }
+  &.blue2 {
+    color: var(--color2);
+    background-color: #265ff1;
   }
   &.large {
     height: 25px;
@@ -357,8 +381,21 @@
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
+  &.type2 {
+    padding: 4px 8px;
+    border-radius: 20px;
+    background-color: rgba(0, 70, 255, 0.1);
+    border: none;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -0.25px;
+  }
 }
-
+.hash-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px 4px;
+}
 // 텍스트 아이콘
 .ico-text {
   font-family: var(--font-style1);
@@ -384,4 +421,242 @@
   border-radius: 4px;
   min-width: 80px;
   margin-top: 4px;
+}
+
+.tabs-area {
+  height: 32px;
+}
+.tabs-contents {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+// 타겟 추출 관련 css
+.card-box-wrap {
+  display: flex;
+  gap: 12px 12px;
+  flex-wrap: wrap;
+}
+.card-box {
+  a {
+    display: block;
+    position: relative;
+    width: 240px;
+    height: 161px;
+    border-radius: 12px;
+    background-color: var(--background-color1);
+    padding: 16px;
+    border: 1px solid transparent;
+    &.active {
+      background-color: var(--color2);
+      border: 1px solid var(--color1);
+      box-shadow: 0px 4px 8px 0px rgba(0, 70, 255, 0.25);
+    }
+  }
+  .book-mark {
+    width: 40px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dce9ff;
+    border-radius: 0 12px 0 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .MuiCheckbox-root {
+      margin: 0;
+    }
+  }
+  .badge-wrap {
+    margin-bottom: 8px;
+  }
+  .card-box-tit {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+    strong {
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: -0.18px;
+    }
+  }
+  .card-box-desc {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .card-box-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.filter-radio {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  .MuiFormControlLabel-root {
+    margin: 0;
+  }
+  .MuiButtonBase-root {
+    display: none;
+  }
+  .Mui-checked {
+    & + .MuiTypography-root {
+      background-color: var(--color1);
+      border: 1px solid var(--color1);
+      color: var(--color2);
+    }
+  }
+  .MuiTypography-root {
+    border-radius: 12px;
+    border: 1px solid var(--font-color3);
+    background-color: var(--color2);
+    color: var(--font-color3);
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.325px;
+    padding: 7px 13px;
+  }
+}
+.ico-circle20 {
+  &.MuiButtonBase-root {
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 70, 255, 0.5);
+    &:hover {
+      background-color: rgba(0, 70, 255, 0.5);
+    }
+  }
+}
+.ico-rect23 {
+  &.MuiButtonBase-root {
+    width: 23px;
+    height: 23px;
+    background-color: rgba(0, 70, 255, 0.1);
+    border-radius: 8px;
+    &:hover {
+      background-color: rgba(0, 70, 255, 0.1);
+    }
+  }
+}
+.switch-btn {
+  &.MuiSwitch-root {
+    padding: 0;
+    height: 24px;
+    width: 40px;
+    .MuiSwitch-switchBase {
+      padding: 2px;
+    }
+    .MuiSwitch-thumb {
+      background-color: var(--color2);
+    }
+    .MuiSwitch-track {
+      border-radius: 100px;
+      background-color: var(--background-color3);
+      opacity: 1;
+    }
+    .Mui-checked {
+      transform: translateX(16px);
+      & + .MuiSwitch-track {
+        background-color: var(--color1);
+      }
+    }
+    &.view-type {
+      width: 72px;
+      height: 38px;
+      .MuiSwitch-switchBase {
+        padding: 2px;
+      }
+      .MuiSwitch-thumb {
+        width: 34px;
+        height: 34px;
+        background-color: var(--color1);
+        &::before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+          width: 14px;
+          height: 14px;
+          background: url("../images/icon/ico-view-card-on.png") center center
+            no-repeat;
+          background-size: 14px 14px;
+        }
+      }
+      .MuiSwitch-track {
+        border-radius: 100px;
+        opacity: 1;
+        background: rgba(40, 120, 245, 0.1)
+          url("../images/icon/ico-view-list-off.png") calc(100% - 12px) center
+          no-repeat;
+        background-size: 14px 12px;
+      }
+
+      .Mui-checked {
+        transform: translateX(34px);
+        .MuiSwitch-thumb {
+          &::before {
+            background: url("../images/icon/ico-view-list-on.png") center center
+              no-repeat;
+          }
+        }
+        & + .MuiSwitch-track {
+          background: rgba(40, 120, 245, 0.1)
+            url("../images/icon/ico-view-card-off.png") 12px center no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.target-add-box {
+  border-radius: 12px;
+  border: 1px solid var(--border-color3);
+  background: var(--background-color2);
+  display: flex;
+  padding: 16px;
+  gap: 10px;
+  max-width: 398px;
+  align-items: center;
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: -0.4px;
+  }
+}
+.blue-box {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--background-color1);
+  max-width: 398px;
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--font-color2);
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+  }
 }

@@ -24,9 +24,10 @@
             @include flex;
             @include justify-content(flex-start);
             @include align-items(center);
-            @include width-height(100%, 36px);
+            width: calc(100% - 64px);
+            height: 36px;
             background-color: var(--sub-color4);
-
+            transition: all 0.2s ease-in-out;
             & .top-content {
                 @include flex;
                 @include justify-content(space-between);
@@ -107,6 +108,10 @@
                         }
                     }
                 }
+            }
+            &.menu-open {
+                width: calc(100% - 200px);
+                transition: all 0.2s ease-in-out;
             }
             & .search-layer {
                 display: none;

@@ -26,6 +26,12 @@ const pubList = [
     },
     {
         id: "3",
+        name: "메인",
+        link: "/muipublish/main",
+        etc: "",
+    },
+    {
+        id: "4",
         name: "타겟추출",
         link: "/muipublish/target",
         etc: "",

@@ -58,8 +58,8 @@ export const pathKeys = {
     muiLayout(): string {
         return `${pathKeys.root}muipublish/layout`; // MUI 기본 layout
     },
-    taskpage(): string {
-        return `${pathKeys.root}publish/task`;
+    main(): string {
+        return `${pathKeys.root}muipublish/main`;
     },
     muiPublishGuide(): string {
         return `${pathKeys.root}muipublish/guide`; // MUI 퍼블 index

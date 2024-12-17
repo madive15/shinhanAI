@@ -9,6 +9,7 @@ import { pathKeys } from "~/shared/router";
 import MuiPubIndex from "~/muiPublish";
 import MuiPubGuide from "~/muiPublish/guide/Guide";
 import MuiLayout from "~/muiPublish/layout/Layout";
+import Main from "~/muiPublish/page/main/Main";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
                       {
                           path: pathKeys.muiLayout(), //mui publish layout
                           element: <MuiLayout pageName={"기본레이아웃"} />,
+                      },
+                      {
+                          path: pathKeys.main(), //메인
+                          element: <MuiLayout pageName={"MAIN"} />,
                       },
                       {
                           path: pathKeys.muiTarget(), // targetExtraction

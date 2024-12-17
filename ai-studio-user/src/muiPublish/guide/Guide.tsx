@@ -11,6 +11,8 @@ import Switch from "@mui/material/Switch";
 import Checkbox from "@mui/material/Checkbox";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
+import { ReactComponent as Bookmark } from "~assets/images/svg/Icons-Bookmark.svg";
+import { ReactComponent as BookmarkOn } from "~assets/images/svg/Icons-Bookmark-on.svg";
 import { ReactComponent as ChkDisabled } from "~assets/images/svg/Icons-chk-disabled.svg";
 import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
 import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
@@ -47,6 +49,11 @@ import {
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
+import { ReactComponent as Download } from "~assets/images/svg/Icons-download.svg";
+import { ReactComponent as X } from "~assets/images/svg/Icons-x.svg";
+import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
+import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
+import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -97,6 +104,10 @@ export default function VerticalTabs() {
   const [radioGroup, setRadioGroup] = React.useState("female");
   const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRadioGroup((event.target as HTMLInputElement).value);
+  };
+  const [radioGroup2, setRadioGroup2] = React.useState("인기/추천");
+  const radioGroupChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRadioGroup2((event.target as HTMLInputElement).value);
   };
 
   const [ageSelect, setAgeSelect] = React.useState("");
@@ -151,6 +162,7 @@ export default function VerticalTabs() {
         onChange={tabChange}
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: "divider" }}
+        className="tabs-left"
       >
         <Tab label="Color" {...a11yProps(0)} />
         <Tab label="Text" {...a11yProps(1)} />
@@ -167,6 +179,7 @@ export default function VerticalTabs() {
         <Tab label="HashTag" {...a11yProps(12)} />
         <Tab label="SvgIcon" {...a11yProps(13)} />
         <Tab label="ToolTip" {...a11yProps(14)} />
+        <Tab label="타겟추출" {...a11yProps(15)} />
       </Tabs>
       {/* color */}
       <TabPanel value={value} index={0}>
@@ -235,15 +248,29 @@ export default function VerticalTabs() {
       {/* 버튼 */}
       <TabPanel value={value} index={2} guideName={"guide-btn"}>
         <Button variant="primary">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="secondary">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="sub1">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="sub2">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="primaryBig">버튼 텍스트</Button>
+        <br />
+        <br />
         <Button variant="small">버튼 텍스트</Button>
+        <br />
+        <br />
 
         <Button variant="contained" disabled>
           Disabled
         </Button>
+        <br />
+        <br />
         <ToggleButton
           className="toggle-btn"
           value="check"
@@ -252,7 +279,27 @@ export default function VerticalTabs() {
         >
           토글 버튼
         </ToggleButton>
-        <Switch className="switch-btn" />
+        <br />
+        <br />
+        <Switch className="switch-btn " />
+        <Switch className="switch-btn view-type" />
+        <br />
+        <br />
+        <IconButton>
+          <X fill="#333" />
+        </IconButton>
+        <IconButton>
+          <Download fill="#333" />
+        </IconButton>
+        <IconButton>
+          <Search fill="#333" />
+        </IconButton>
+        <IconButton className="ico-circle20">
+          <Search12 />
+        </IconButton>
+        <IconButton className="ico-rect23">
+          <Plus9 />
+        </IconButton>
       </TabPanel>
       <TabPanel value={value} index={3}>
         인폿 가이드 추가
@@ -270,6 +317,11 @@ export default function VerticalTabs() {
             icon={<ChkDefault />}
             checkedIcon={<ChkChecked />}
             disabled
+          />
+          <Checkbox
+            icon={<Bookmark />}
+            checkedIcon={<BookmarkOn />}
+            defaultChecked
           />
         </div>
 
@@ -360,6 +412,54 @@ export default function VerticalTabs() {
                   />
                 }
                 label="Male"
+              />
+            </RadioGroup>
+          </FormControl>
+        </div>
+        <div>
+          <FormControl>
+            <RadioGroup
+              className="filter-radio"
+              row
+              aria-labelledby="radio-group"
+              name="group2"
+              value={radioGroup2}
+              onChange={radioGroupChange2}
+            >
+              <FormControlLabel
+                value="인기/추천"
+                control={<Radio />}
+                label="인기/추천"
+              />
+              <FormControlLabel value="전체" control={<Radio />} label="전체" />
+              <FormControlLabel
+                value="예적금"
+                control={<Radio />}
+                label="예적금"
+              />
+              <FormControlLabel value="외환" control={<Radio />} label="외환" />
+              <FormControlLabel
+                value="퇴직연금"
+                control={<Radio />}
+                label="퇴직연금"
+              />
+              <FormControlLabel
+                value="투자상품"
+                control={<Radio />}
+                label="투자상품"
+              />
+              <FormControlLabel
+                value="보험/방카"
+                control={<Radio />}
+                label="보험/방카"
+              />
+              <FormControlLabel value="대출" control={<Radio />} label="대출" />
+              <FormControlLabel value="급여" control={<Radio />} label="급여" />
+              <FormControlLabel value="연금" control={<Radio />} label="연금" />
+              <FormControlLabel
+                value="고자산"
+                control={<Radio />}
+                label="고자산"
               />
             </RadioGroup>
           </FormControl>
@@ -825,13 +925,22 @@ export default function VerticalTabs() {
           <Badge value="사용중" color="green" size="large" />
           <Badge value="과제 종료" color="gray" size="large" />
           <Badge value="반려" color="red" size="large" />
+          <Badge value="사용중" color="blue" />
+          <Badge value="사용중" color="navy " />
+          <Badge value="사용중" color="black " />
+          <Badge value="지수" color="orange" />
+          <Badge value="필터" color="purple" />
+          <Badge value="모델" color="blue2" />
+          <Badge value="N" color="red" />
         </div>
       </TabPanel>
       {/* 해시태그 */}
       <TabPanel value={value} index={12}>
-        <div className="badge-wrap">
-          <Hash value="해시태그" />
-          <Hash value="해시태그" del={true} />
+        <div className="hash-wrap">
+          <Hash value="#해시태그" />
+          <Hash value="#해시태그" del={true} />
+          <Hash value="#해시태그" type="type2" />
+          <Hash value="+5" type="type2" />
         </div>
       </TabPanel>
       {/* SVG */}
@@ -848,6 +957,98 @@ export default function VerticalTabs() {
         >
           <i className="ico-text">?</i>
         </Tooltip>
+      </TabPanel>
+      {/* 타겟추출카드 */}
+      <TabPanel value={value} index={15}>
+        <div className="card-box-wrap">
+          <div className="card-box">
+            <a href="#" className="active">
+              <div className="book-mark">
+                <Checkbox
+                  icon={<Bookmark />}
+                  checkedIcon={<BookmarkOn />}
+                  defaultChecked
+                />
+              </div>
+              <div className="badge-wrap">
+                <Badge value="전략" color="black " />
+                <Badge value="중분류" color="navy " />
+                <Badge value="N" color="red" />
+              </div>
+              <p className="card-box-tit">
+                <strong>프리빌트 된 항목에 대한제제제제제제제</strong>
+              </p>
+              <p className="card-box-desc">
+                프리빌트된 항목에 대한 간략한 설명이 들어갑니다. 최대 2줄 까지
+                들어갑니다. 그 이후에는 말줄임표로 생략됩니다.
+              </p>
+              <div className="card-box-bottom">
+                <div className="hash-wrap">
+                  <Hash value="#TAG" type="type2" />
+                  <Hash value="#TAG" type="type2" />
+                  <Hash value="#TAG" type="type2" />
+                  <Hash value="+5" type="type2" />
+                </div>
+                <IconButton className="ico-circle20">
+                  <Search12 />
+                </IconButton>
+              </div>
+            </a>
+          </div>
+          {[1, 2, 3, 4, 5].map((v, i) => (
+            <div className="card-box" key={i}>
+              <a href="#" className="">
+                <div className="book-mark">
+                  <Checkbox
+                    icon={<Bookmark />}
+                    checkedIcon={<BookmarkOn />}
+                    defaultChecked
+                  />
+                </div>
+                <div className="badge-wrap">
+                  <Badge value="전략" color="black " />
+                  <Badge value="중분류" color="navy " />
+                  <Badge value="N" color="red" />
+                </div>
+                <p className="card-box-tit">
+                  <strong>프리빌트 된 항목에 대한제제제제제제제</strong>
+                </p>
+                <p className="card-box-desc">
+                  프리빌트된 항목에 대한 간략한 설명이 들어갑니다. 최대 2줄 까지
+                  들어갑니다. 그 이후에는 말줄임표로 생략됩니다.
+                </p>
+                <div className="card-box-bottom">
+                  <div className="hash-wrap">
+                    <Hash value="#TAG" type="type2" />
+                    <Hash value="#TAG" type="type2" />
+                    <Hash value="#TAG" type="type2" />
+                    <Hash value="+5" type="type2" />
+                  </div>
+                  <IconButton className="ico-circle20">
+                    <Search12 />
+                  </IconButton>
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+        <br />
+        <div className="target-add-box">
+          <IconButton className="ico-rect23">
+            <Plus9 />
+          </IconButton>
+          <p>모델 추가</p>
+        </div>
+        <br />
+        <div className="blue-box">
+          <div className="top">
+            <Badge value="지수" color="orange" />
+            <strong>자린고비 지수</strong>
+          </div>
+          <p className="desc">
+            1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
+          </p>
+        </div>
       </TabPanel>
     </Box>
   );
