@@ -21,6 +21,7 @@ export interface IPageProps {
     subName?: string;
     loading?: boolean;
     useLoading?: (data: boolean) => void;
+    openClose?: boolean;
 }
 
 // need style
@@ -36,8 +37,8 @@ const Top: React.FC<IPageProps> = (props) => {
     const [openClose, setOpenClose] = useState<boolean>(false);
 
     return (
-        <header>
-            <div className="top-content">
+        <header className={props.openClose === true ? "menu-open" : ""}>
+            <div className="top-content ">
                 <div className="search" onClick={() => setOpenClose(!openClose)}>
                     <IconButton type="button" aria-label="search" className="icon-search">
                         {openClose ? <Close /> : <Search />}
