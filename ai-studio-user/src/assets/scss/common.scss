@@ -11,11 +11,12 @@
 
 //텍스트 에어리어
 .text-area {
+  position: relative;
   textarea {
     width: 100%;
-    height: 148px;
+    height: 136px;
     border: 1px solid var(--border-color1);
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 12px 12px 0 12px;
     font-size: 14px;
     line-height: 21px;
@@ -30,13 +31,26 @@
     &::-webkit-scrollbar {
       display: none;
     }
+    &:disabled {
+      cursor: not-allowed;
+      border: 1px solid var(--border-color3);
+      background-color: var(--background-color2);
+    }
   }
   &.required {
-    textarea {
-      border-top-left-radius: 0;
-      background: var(--color2) url("../images/icon/ico-required.png") top left
-        no-repeat;
+    &::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: url("../images/icon/ico-required.png") top left no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
+    // textarea {
+    //   background: url("../images/icon/ico-required.png") top left no-repeat;
+    // }
   }
 }
 
@@ -45,6 +59,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+
   .react-datepicker {
     border-color: var(--color1);
     padding: 16px;
@@ -118,14 +133,12 @@
     margin-right: 8px;
   }
   .react-datepicker__input-container {
-    border: 1px solid var(--border-color1);
-    background-color: var(--color2);
-    height: 36px;
-    border-radius: 6px;
-    max-width: 480px;
-    width: 100%;
-
+    height: 38px;
     input {
+      border: 1px solid var(--border-color1);
+      background-color: var(--color2);
+      border-radius: 6px;
+      max-width: 480px;
       width: 100%;
       height: 100%;
       padding: 0 36px 0 12px;
@@ -133,6 +146,15 @@
         no-repeat;
       &.react-datepicker-ignore-onclickoutside {
         background: none;
+      }
+      &:disabled {
+        border-color: var(--border-color3);
+        background-color: var(--background-color2);
+        color: var(--font-color3);
+        cursor: not-allowed;
+        &::placeholder {
+          color: var(--font-color3);
+        }
       }
     }
   }
@@ -546,6 +568,11 @@
     &:hover {
       background-color: rgba(0, 70, 255, 0.1);
     }
+    &.x {
+      svg {
+        transform: rotate(45deg);
+      }
+    }
   }
 }
 .switch-btn {
@@ -658,5 +685,86 @@
     font-size: 12px;
     line-height: 14px;
     letter-spacing: -0.3px;
+  }
+}
+
+.simulation-box {
+  max-width: 398px;
+  border-radius: 12px;
+  background: #f7f7f7;
+  padding: 16px;
+  strong {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: -0.4px;
+  }
+  em {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: -0.35px;
+    margin-left: 10px;
+    color: var(--font-color2);
+  }
+  span {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: var(--font-color2);
+  }
+  .middle-box {
+    display: flex;
+    gap: 12px;
+  }
+  .success-rate {
+    span,
+    em {
+      color: var(--sub-color3);
+    }
+  }
+  .bench-success-rate {
+    span {
+      font-size: 14px;
+      letter-spacing: -0.35px;
+    }
+  }
+}
+
+.select-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  .custom-select {
+    max-width: 346px;
+    width: 100%;
+  }
+}
+
+//토글 버튼
+.toggle-btn {
+  &.MuiToggleButton-root {
+    font-weight: 400;
+    border-radius: 12px;
+    padding: 7px 12px;
+    min-width: 68px;
+    height: 30px;
+    line-height: 16px;
+    font-size: 13px;
+    &[aria-pressed="false"] {
+      color: var(--font-color3);
+      border: 1px solid var(--font-color3);
+      background-color: var(--color2);
+    }
+    &[aria-pressed="true"] {
+      font-weight: 700;
+      background-color: var(--color1);
+      color: var(--color2);
+      border: 1px solid var(--color1);
+      &:hover {
+        background-color: var(--color1);
+        color: var(--color2);
+      }
+    }
   }
 }

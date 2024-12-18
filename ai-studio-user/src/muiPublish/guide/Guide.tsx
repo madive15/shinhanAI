@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "~/muiPublish/guide/guide.scss";
 import Button from "@mui/material/Button";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import ToggleButton from "@mui/material/ToggleButton";
 import Switch from "@mui/material/Switch";
 import Checkbox from "@mui/material/Checkbox";
@@ -145,6 +146,17 @@ export default function VerticalTabs() {
 
   const tooptipText =
     "해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다. 해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다. 해당 항목에 대한 설명이 들어갑니다. 여러줄 들어갑니다. 이렇게 들어갑니다. 언제까지 들어갑니다.";
+
+  const [alignment, setAlignment] = React.useState("개인 고객");
+
+  const toggleBtnSwitch = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: string | null
+  ) => {
+    if (newAlignment !== null) {
+      setAlignment(newAlignment);
+    }
+  };
   return (
     <Box
       className="guide-wrap"
@@ -259,10 +271,13 @@ export default function VerticalTabs() {
         <Button variant="sub2">버튼 텍스트</Button>
         <br />
         <br />
-        <Button variant="primaryBig">버튼 텍스트</Button>
+        {/* <Button variant="primaryBig">버튼 텍스트</Button>
         <br />
-        <br />
+        <br /> */}
         <Button variant="small">버튼 텍스트</Button>
+        <br />
+        <br />
+        <Button variant="smallSub1">버튼 텍스트</Button>
         <br />
         <br />
 
@@ -271,6 +286,23 @@ export default function VerticalTabs() {
         </Button>
         <br />
         <br />
+        <Button variant="iconDashed" startIcon={<Download fill="#888" />}>
+          버튼 텍스트
+        </Button>
+        <Button variant="iconLine" startIcon={<Download fill="#333" />}>
+          Icon Button
+        </Button>
+        <br />
+        <br />
+        <Button variant="iconDashed" endIcon={<Download fill="#888" />}>
+          버튼 텍스트
+        </Button>
+        <Button variant="iconLine" endIcon={<Download fill="#333" />}>
+          버튼 텍스트
+        </Button>
+        <br />
+        <br />
+
         <ToggleButton
           className="toggle-btn"
           value="check"
@@ -279,6 +311,17 @@ export default function VerticalTabs() {
         >
           토글 버튼
         </ToggleButton>
+        <br />
+        <br />
+        <ToggleButtonGroup
+          className="toggle-group"
+          value={alignment}
+          exclusive
+          onChange={toggleBtnSwitch}
+        >
+          <ToggleButton value="개인 고객">개인 고객</ToggleButton>
+          <ToggleButton value="기업 고객">기업 고객</ToggleButton>
+        </ToggleButtonGroup>
         <br />
         <br />
         <Switch className="switch-btn " />
@@ -300,9 +343,32 @@ export default function VerticalTabs() {
         <IconButton className="ico-rect23">
           <Plus9 />
         </IconButton>
+        <IconButton className="ico-rect23 x">
+          <Plus9 />
+        </IconButton>
       </TabPanel>
+      {/* 인풋 텍스트 */}
       <TabPanel value={value} index={3}>
-        인폿 가이드 추가
+        <TextField
+          className="input-field"
+          fullWidth
+          placeholder="상품 명 입력"
+        />
+        <br />
+        <br />
+        <TextField
+          className="input-field required"
+          fullWidth
+          placeholder="상품 명 입력"
+        />
+        <br />
+        <br />
+        <TextField
+          className="input-field required"
+          fullWidth
+          placeholder="상품 명 입력"
+          disabled
+        />
       </TabPanel>
       {/* 체크박스 */}
       <TabPanel value={value} index={4}>
@@ -319,6 +385,7 @@ export default function VerticalTabs() {
             disabled
           />
           <Checkbox
+            className="book-mark"
             icon={<Bookmark />}
             checkedIcon={<BookmarkOn />}
             defaultChecked
@@ -473,6 +540,9 @@ export default function VerticalTabs() {
         <div className="text-area required">
           <textarea name="" id=""></textarea>
         </div>
+        <div className="text-area required">
+          <textarea name="" id="" disabled></textarea>
+        </div>
       </TabPanel>
       {/* 셀렉트 */}
       <TabPanel value={value} index={7}>
@@ -483,6 +553,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             <MenuItem value="" disabled>
               전체
@@ -498,6 +573,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             <MenuItem value="" disabled>
               전체
@@ -513,6 +593,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
           >
             7
             <MenuItem value="" disabled>
@@ -529,6 +614,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
             disabled
           >
             <MenuItem value="" disabled>
@@ -545,6 +635,11 @@ export default function VerticalTabs() {
             onChange={selectChange}
             IconComponent={Arrow}
             displayEmpty
+            MenuProps={{
+              classes: {
+                paper: "select-option-class",
+              },
+            }}
             disabled
           >
             <MenuItem value="" disabled>
@@ -606,6 +701,11 @@ export default function VerticalTabs() {
                         onChange={selectChange}
                         IconComponent={Arrow}
                         displayEmpty
+                        MenuProps={{
+                          classes: {
+                            paper: "select-option-class",
+                          },
+                        }}
                       >
                         <MenuItem value="" disabled>
                           전체
@@ -621,6 +721,11 @@ export default function VerticalTabs() {
                         onChange={selectChange}
                         IconComponent={Arrow}
                         displayEmpty
+                        MenuProps={{
+                          classes: {
+                            paper: "select-option-class",
+                          },
+                        }}
                       >
                         <MenuItem value="" disabled>
                           전체
@@ -636,6 +741,11 @@ export default function VerticalTabs() {
                         onChange={selectChange}
                         IconComponent={Arrow}
                         displayEmpty
+                        MenuProps={{
+                          classes: {
+                            paper: "select-option-class",
+                          },
+                        }}
                       >
                         <MenuItem value="" disabled>
                           전체
@@ -909,6 +1019,18 @@ export default function VerticalTabs() {
             placeholderText="기간을 선택해주세요"
           />
         </div>
+        <br />
+        <div className="date-picker-area">
+          <DatePicker
+            selected={startDate}
+            onChange={(date: any) => setStartDate(date)}
+            dropdownMode="select"
+            dateFormat="yyyy-MM-dd"
+            locale={ko}
+            placeholderText="기간을 선택해주세요"
+            disabled
+          />
+        </div>
       </TabPanel>
       {/* 뱃지 */}
       <TabPanel value={value} index={11}>
@@ -1048,6 +1170,24 @@ export default function VerticalTabs() {
           <p className="desc">
             1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
           </p>
+        </div>
+        <br />
+        <div className="simulation-box">
+          <strong>시뮬레이션</strong>
+          <div className="middle-box">
+            <div className="success-rate">
+              <span>예상 성공률</span>
+              <em>00.00%</em>
+            </div>
+            <div className="bench-contrast">
+              <span>벤치마크 대비</span>
+              <em>0.00% ↓</em>
+            </div>
+          </div>
+          <div className="bench-success-rate">
+            <span>벤치마크 예상 성공률</span>
+            <em>00.00%</em>
+          </div>
         </div>
       </TabPanel>
     </Box>
