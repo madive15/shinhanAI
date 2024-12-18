@@ -27,7 +27,6 @@
             width: calc(100% - 64px);
             height: 36px;
             background-color: var(--sub-color4);
-            transition: all 0.2s ease-in-out;
             & .top-content {
                 @include flex;
                 @include justify-content(space-between);
@@ -194,7 +193,6 @@
         }
         & .content {
             width: calc(100% - 64px);
-            transition: all 0.2s ease-in-out;
             padding: 24px 24px;
             & .tabs-area {
                 margin: 0 0 0 0;
