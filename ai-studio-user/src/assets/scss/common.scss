@@ -768,3 +768,49 @@
     }
   }
 }
+
+//체크완료,에러 아이콘+텍스트
+.input-area {
+  .positive-ico-txt,
+  .error-ico-txt {
+    margin-top: 6px;
+  }
+}
+.positive-ico-txt,
+.error-ico-txt {
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+  }
+}
+.positive-ico-txt {
+  color: var(--positive);
+  background: url("../images/svg/Icons-positive-14.svg") center left no-repeat;
+}
+.error-ico-txt {
+  color: var(--negative);
+  background: url("../images/svg/Icons-error-14.svg") center left no-repeat;
+}
+
+.input-area {
+  width: 100%;
+  &.inner-txt-btn {
+    .input-field {
+      .MuiOutlinedInput-root {
+        input {
+          padding-right: 50px;
+        }
+      }
+    }
+  }
+}

@@ -55,6 +55,9 @@ import { ReactComponent as X } from "~assets/images/svg/Icons-x.svg";
 import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
 import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
 import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
+import { ReactComponent as Positive } from "~assets/images/svg/Icons-positive-14.svg";
+import { ReactComponent as Error } from "~assets/images/svg/Icons-error-14.svg";
+import InputAdornment from "@mui/material/InputAdornment";
 //
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -92,7 +95,7 @@ function a11yProps(index: number) {
 }
 
 export default function VerticalTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(3);
   const [selected, setSelected] = React.useState(false);
   const tabChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -349,26 +352,58 @@ export default function VerticalTabs() {
       </TabPanel>
       {/* 인풋 텍스트 */}
       <TabPanel value={value} index={3}>
-        <TextField
-          className="input-field"
-          fullWidth
-          placeholder="상품 명 입력"
-        />
+        <div className="input-area">
+          <TextField
+            className="input-field"
+            fullWidth
+            placeholder="Full Width"
+          />
+        </div>
         <br />
+        <div className="input-area">
+          <TextField className="input-field" placeholder="Max Width 480" />
+        </div>
         <br />
-        <TextField
-          className="input-field required"
-          fullWidth
-          placeholder="상품 명 입력"
-        />
+        <div className="input-area">
+          <TextField
+            className="input-field required"
+            placeholder="상품 명 입력"
+          />
+        </div>
         <br />
+        <div className="input-area">
+          <TextField
+            className="input-field required"
+            placeholder="상품 명 입력"
+            disabled
+          />
+        </div>
         <br />
-        <TextField
-          className="input-field required"
-          fullWidth
-          placeholder="상품 명 입력"
-          disabled
-        />
+        <div className="input-area">
+          <TextField
+            className="input-field"
+            id="text1"
+            placeholder="상품 명 입력"
+          />
+          <p className="positive-ico-txt">체크 완료</p>
+        </div>
+        <br />
+        <div className="input-area">
+          <TextField
+            className="input-field"
+            id="text1"
+            placeholder="상품 명 입력"
+          />
+          <p className="error-ico-txt">경고 표시</p>
+        </div>
+        <br />
+        <div className="input-area inner-txt-btn">
+          <TextField
+            className="input-field"
+            id="text1"
+            placeholder="상품 명 입력"
+          />
+        </div>
       </TabPanel>
       {/* 체크박스 */}
       <TabPanel value={value} index={4}>
@@ -650,7 +685,7 @@ export default function VerticalTabs() {
           </Select>
         </div>
       </TabPanel>
-      {/* 테이블 */}
+      {/* 로우 테이블 */}
       <TabPanel value={value} index={8}>
         <TableContainer className="row-table" component={Paper}>
           <Table>
@@ -768,7 +803,15 @@ export default function VerticalTabs() {
               <TableRow>
                 <TableCell component="th">상품 명</TableCell>
                 <TableCell colSpan={3}>
-                  <TextField fullWidth placeholder="상품 명 입력" />
+                  <div className="input-area">
+                    <TextField
+                      className="input-field"
+                      id="text1"
+                      placeholder="상품 명 입력"
+                      fullWidth
+                    />
+                    <p className="positive-ico-txt">체크 완료</p>
+                  </div>
                 </TableCell>
               </TableRow>
               <TableRow>

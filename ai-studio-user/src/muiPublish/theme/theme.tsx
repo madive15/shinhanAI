@@ -637,6 +637,9 @@ const theme = createTheme({
             maxWidth: "480px",
             width: "100%",
             backgroundColor: "var(--color2)",
+            "&.MuiFormControl-fullWidth": {
+              maxWidth: "100%",
+            },
             "&:focus-visible": {
               outline: "0",
             },
@@ -652,8 +655,20 @@ const theme = createTheme({
               "& input": {
                 padding: "0px 12px",
                 height: "38px",
-                border: "1px solid var(--border-color1)",
+                border: "1px solid #ccc",
                 borderRadius: " 8px",
+                backgroundColor: "var(--color2) ",
+                "&:active": {
+                  borderColor: "var(--color1)",
+                  backgroundColor: "var(--color2)",
+                },
+                "&:focus": {
+                  borderColor: "var(--color1)",
+                  boxShadow: "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
+                },
+              },
+              "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input": {
+                backgroundColor: "var(--color2)",
               },
               "& fieldset": {
                 display: "none",
