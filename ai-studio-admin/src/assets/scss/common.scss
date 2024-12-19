@@ -31,9 +31,9 @@
       display: none;
     }
     &:disabled {
-      background-color: rgba(0, 0, 0, 0.02);
-      color: var(--font-color3);
       cursor: not-allowed;
+      background-color: rgba(0, 0, 0, 0.02) !important;
+      color: var(--font-color3) !important;
     }
   }
   &.required {
@@ -137,10 +137,20 @@
       width: 100%;
       height: 100%;
       padding: 0 36px 0 12px;
+      border-radius: 6px;
       background: url("../../assets/images/icon/ico-picker.png") 98.5% center
         no-repeat;
       &.react-datepicker-ignore-onclickoutside {
         background: none;
+      }
+      &:disabled {
+        border-color: var(--border-color3);
+        background-color: var(--background-color2);
+        color: var(--font-color3);
+        cursor: not-allowed;
+        &::placeholder {
+          color: var(--font-color3);
+        }
       }
     }
   }
@@ -523,3 +533,37 @@
 //   max-height: 483px;
 //   overflow-y: auto;
 // }
+
+//체크완료,에러 아이콘+텍스트
+.input-field {
+  & + .positive-ico-txt,
+  & + .error-ico-txt {
+    margin-top: 6px;
+  }
+}
+
+.positive-ico-txt,
+.error-ico-txt {
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.3px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+  }
+}
+.positive-ico-txt {
+  color: var(--positive);
+  background: url("../images/svg/Icons-positive-14.svg") center left no-repeat;
+}
+.error-ico-txt {
+  color: var(--negative);
+  background: url("../images/svg/Icons-error-14.svg") center left no-repeat;
+}
