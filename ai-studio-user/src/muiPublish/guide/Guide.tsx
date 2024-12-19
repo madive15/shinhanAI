@@ -404,6 +404,15 @@ export default function VerticalTabs() {
             placeholder="상품 명 입력"
           />
         </div>
+        <br />
+        <label className="input-has-label" htmlFor="txt1_1">
+          <span>label</span>
+          <TextField
+            className="input-field "
+            id="txt1_1"
+            placeholder="상품 명 입력"
+          />
+        </label>
       </TabPanel>
       {/* 체크박스 */}
       <TabPanel value={value} index={4}>

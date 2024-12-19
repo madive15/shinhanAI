@@ -815,3 +815,15 @@
     }
   }
 }
+
+.input-has-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  span {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: var(--font-color2);
+  }
+}
