@@ -195,6 +195,7 @@ export default function VerticalTabs() {
         <Tab label="SvgIcon" {...a11yProps(13)} />
         <Tab label="ToolTip" {...a11yProps(14)} />
         <Tab label="타겟추출" {...a11yProps(15)} />
+        <Tab label="싱글뷰 " {...a11yProps(16)} />
       </Tabs>
       {/* color */}
       <TabPanel value={value} index={0}>
@@ -262,6 +263,11 @@ export default function VerticalTabs() {
       </TabPanel>
       {/* 버튼 */}
       <TabPanel value={value} index={2} guideName={"guide-btn"}>
+        <Button variant="primary" fullWidth>
+          full Width
+        </Button>
+        <br />
+        <br />
         <Button variant="primary">버튼 텍스트</Button>
         <br />
         <br />
@@ -1145,6 +1151,7 @@ export default function VerticalTabs() {
             <a href="#" className="active">
               <div className="book-mark">
                 <Checkbox
+                  className="book-mark"
                   icon={<Bookmark />}
                   checkedIcon={<BookmarkOn />}
                   defaultChecked
@@ -1251,6 +1258,11 @@ export default function VerticalTabs() {
         <div className="error-box">
           LMS 대량 발송이 불가합니다. (최대 2,000건)
         </div>
+      </TabPanel>
+      {/* 싱글뷰 */}
+      <TabPanel value={value} index={16}>
+        싱글뷰
+        <div className="single-view-box"></div>
       </TabPanel>
     </Box>
   );
