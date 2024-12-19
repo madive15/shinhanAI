@@ -193,16 +193,72 @@
         }
         & .content {
             width: calc(100% - 64px);
-            padding: 24px 24px;
+            padding: 24px 24px 0 24px;
             & .tabs-area {
                 margin: 0 0 0 0;
             }
             & .tabs-contents {
+                @include flex;
                 position: relative;
-                padding: 24px 24px;
                 background-color: var(--background-color2);
                 border-radius: 0 16px 0 0;
                 box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+                .list-content {
+                    width: 100%;
+                    padding: 24px 24px;
+
+                    & .tit-gnb-box {
+                        @include flex;
+                        @include justify-content(space-between);
+                        @include align-items(center);
+                        height: 30px;
+                        & .nav {
+                            @include flex;
+                            @include justify-content(space-between);
+                            @include align-items(center);
+                            height: 30px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 21px;
+                            color: var(--font-color3);
+                            & .home {
+                                @include width-height(24px, 24px);
+                                path {
+                                    fill: var(--font-color3);
+                                }
+                            }
+                            & .deps {
+                                margin: 0 0 0 12px;
+                                padding: 0 0 0 12px;
+                                @include background(
+                                    url("../../assets/images/icon/icon-right-arrow.png"),
+                                    5px,
+                                    9px,
+                                    0,
+                                    6px,
+                                    no-repeat
+                                );
+                                strong {
+                                    color: var(--font-color1);
+                                }
+                            }
+                        }
+                    }
+                }
+                .list-setting {
+                    width: 446px;
+                    padding: 24px 24px;
+                    border-left: 1px solid var(--border-color4);
+
+                    .no-data {
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 21px;
+                        letter-spacing: -0.025em;
+                        text-align: center;
+                    }
+                }
+
                 .sub-tit-search {
                     display: flex;
                     flex-direction: column;
@@ -270,7 +326,7 @@
                     // }
                 }
                 @media (max-width: 1440px) {
-                    padding: 24px 22px;
+                    // padding: 24px 22px;
                 }
             }
             &.opne-menu {
