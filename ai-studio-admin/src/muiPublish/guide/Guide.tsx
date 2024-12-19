@@ -314,15 +314,31 @@ export default function VerticalTabs() {
       </TabPanel>
       {/* 인풋 텍스트 */}
       <TabPanel value={value} index={3}>
-        <TextField
-          className="input-field"
-          fullWidth
-          placeholder="상품 명 입력"
-        />
+        <TextField className="input-field" fullWidth placeholder="fullWidth" />
+        <br />
+        <br />
+        <TextField className="input-field" placeholder="MaxWidth480" />
+        <br />
+        <br />
+        <TextField className="input-field" placeholder="상품 명 입력" />
+        <p className="positive-ico-txt">체크 완료</p>
+        <br />
+        <TextField className="input-field" placeholder="상품 명 입력" />
+        <p className="error-ico-txt">경고 표시</p>
+        <br />
         <TextField
           className="input-field required"
-          fullWidth
           placeholder="상품 명 입력"
+        />
+        <br />
+        <br />
+        <TextField className="input-field" placeholder="disabled" disabled />
+        <br />
+        <br />
+        <TextField
+          className="input-field required"
+          placeholder="disabled"
+          disabled
         />
       </TabPanel>
       {/* 체크박스 */}
@@ -440,6 +456,12 @@ export default function VerticalTabs() {
         </div>
         <div className="text-area required">
           <textarea name="" id=""></textarea>
+        </div>
+        <div className="text-area ">
+          <textarea name="" id="" disabled></textarea>
+        </div>
+        <div className="text-area required">
+          <textarea name="" id="" disabled></textarea>
         </div>
       </TabPanel>
       {/* 셀렉트 */}
@@ -919,6 +941,18 @@ export default function VerticalTabs() {
             dateFormat="yyyy-MM-dd"
             locale={ko}
             placeholderText="기간을 선택해주세요"
+          />
+        </div>
+        <br />
+        <div className="date-picker-area">
+          <DatePicker
+            selected={startDate}
+            onChange={(date: any) => setStartDate(date)}
+            dropdownMode="select"
+            dateFormat="yyyy-MM-dd"
+            locale={ko}
+            placeholderText="기간을 선택해주세요"
+            disabled
           />
         </div>
       </TabPanel>

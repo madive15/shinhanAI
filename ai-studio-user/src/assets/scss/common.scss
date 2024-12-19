@@ -766,12 +766,13 @@
 }
 
 //체크완료,에러 아이콘+텍스트
-.input-area {
-    .positive-ico-txt,
-    .error-ico-txt {
+.input-field {
+    & + .positive-ico-txt,
+    & + .error-ico-txt {
         margin-top: 6px;
     }
 }
+
 .positive-ico-txt,
 .error-ico-txt {
     padding-left: 18px;
@@ -808,5 +809,38 @@
                 }
             }
         }
+    }
+}
+
+.input-has-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    span {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.3px;
+        color: var(--font-color2);
+    }
+}
+.error-box {
+    max-width: 398px;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.325px;
+    color: var(--negative);
+    padding: 12px 12px 12px 32px;
+    position: relative;
+    border-radius: 8px;
+    background-color: rgba(203, 55, 55, 0.1);
+    &::before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        background: url("../images/svg/Icons-triangle-error.svg") center center no-repeat;
+        position: absolute;
+        top: 12px;
+        left: 12px;
     }
 }

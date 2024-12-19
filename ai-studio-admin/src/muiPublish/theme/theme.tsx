@@ -550,6 +550,7 @@ const theme = createTheme({
       },
     },
     // 툴팁 끝
+    // 인풋 텍스트
     MuiTextField: {
       styleOverrides: {
         root: {
@@ -557,11 +558,14 @@ const theme = createTheme({
             maxWidth: "480px",
             width: "100%",
             backgroundColor: "var(--color2)",
+            "&.MuiFormControl-fullWidth": {
+              maxWidth: "100%",
+            },
             "&:focus-visible": {
               outline: "0",
             },
             "& .MuiInputBase-root": {
-              height: "36px",
+              height: "38px",
               fontSize: "14px",
 
               "&:focus-visible": {
@@ -571,42 +575,58 @@ const theme = createTheme({
             "& .MuiOutlinedInput-root": {
               "& input": {
                 padding: "0px 12px",
+                height: "38px",
+                border: "1px solid #ccc",
+                borderRadius: " 8px",
+                backgroundColor: "var(--color2) ",
+                "&:active": {
+                  borderColor: "var(--color1)",
+                  backgroundColor: "var(--color2)",
+                },
+                "&:focus": {
+                  borderColor: "var(--color1)",
+                  boxShadow: "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
+                },
+              },
+              "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input": {
+                backgroundColor: "var(--color2)",
               },
               "& fieldset": {
-                borderColor: "var(--border-color1)",
-              },
-              "&:hover fieldset": {
-                borderColor: "var(--color1)",
-              },
-              "&:active fieldset": {
-                borderColor: "var(--color1)",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "var(--color1)",
-                borderWidth: "1px",
+                display: "none",
               },
             },
             "&.required ": {
-              position: "relative",
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderTopLeftRadius: 0,
+              "& .MuiInputBase-root": {
+                position: "relative",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: "-1px",
+                  left: "0",
+                  width: "8px",
+                  height: "8px",
+                  background: `url(${requiredIcon}) top left no-repeat`,
+                  zIndex: "2",
+                },
+                "&.Mui-disabled": {
+                  "&::before": {
+                    opacity: ".5",
+                  },
                 },
               },
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "8px",
-                height: "8px",
-                background: `var(--color2) url(${requiredIcon}) top left no-repeat`,
+            },
+            "& .Mui-disabled": {
+              cursor: "not-allowed",
+              "& input": {
+                border: "1px solid var(--border-color3)",
+                background: "var(--background-color2)",
               },
             },
           },
         },
       },
     },
+    // 인풋 텍스트 끝
     MuiFormGroup: {
       styleOverrides: {
         root: {
