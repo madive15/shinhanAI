@@ -587,6 +587,12 @@ export default function VerticalTabs() {
         <div className="text-area required">
           <textarea name="" id="" disabled></textarea>
         </div>
+        <label className="input-has-label" htmlFor="txtarea1-1">
+          <span>label</span>
+          <div className="text-area required">
+            <textarea name="" id="txtarea1-1"></textarea>
+          </div>
+        </label>
       </TabPanel>
       {/* 셀렉트 */}
       <TabPanel value={value} index={7}>
@@ -1240,6 +1246,10 @@ export default function VerticalTabs() {
             <span>벤치마크 예상 성공률</span>
             <em>00.00%</em>
           </div>
+        </div>
+        <br />
+        <div className="error-box">
+          LMS 대량 발송이 불가합니다. (최대 2,000건)
         </div>
       </TabPanel>
     </Box>
