@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 // need content
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
-import SubTitle from "~/muiPublish/components/SubTitle";
+
 import SearchContent from "~/muiPublish/components/SearchContent";
 // import TableSample from "~/publish/components/TableSample";
 // import Cardlist from "~/publish/components/Cardlist";
@@ -59,7 +59,6 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
             </div>
             <div className="tabs-contents">
                 <div className="sub-tit-search" ref={subTitSearch}>
-                    <SubTitle pageName={props.pageName} />
                     <SearchContent pageName={props.pageName} />
                 </div>
                 <div
