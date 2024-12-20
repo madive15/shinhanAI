@@ -160,6 +160,9 @@ export default function VerticalTabs() {
             setAlignment(newAlignment);
         }
     };
+
+    const progrssBarColor = "blue";
+    const progress = "80";
     return (
         <Box
             className="guide-wrap"
@@ -1359,8 +1362,62 @@ export default function VerticalTabs() {
             </TabPanel>
             {/* 싱글뷰 */}
             <TabPanel value={value} index={16}>
-                싱글뷰
-                <div className="single-view-box"></div>
+                <div className="single-view-box blue">
+                    <div className="left">
+                        <Badge value="Profile 기반 추천" color="blue3 " />
+                        <p>
+                            <strong>골드리슈</strong>
+                        </p>
+                    </div>
+                    <div className="right">
+                        <em>87%</em>
+                        <span>(N등급)</span>
+                    </div>
+                </div>
+                <div className="single-view-box red">
+                    <div className="left">
+                        <Badge value="Profile 기반 추천" color="red " />
+                        <p>
+                            <strong>골드리슈</strong>
+                        </p>
+                    </div>
+                    <div className="right">
+                        <em>87%</em>
+                        <span>(N등급)</span>
+                    </div>
+                </div>
+                <div className="single-view-box green">
+                    <div className="left">
+                        <Badge value="Profile 기반 추천" color="green " />
+                        <p>
+                            <strong>골드리슈</strong>
+                        </p>
+                    </div>
+                    <div className="right">
+                        <em>87%</em>
+                        <span>(N등급)</span>
+                    </div>
+                </div>
+                <div className="single-view-box">
+                    <div className="left">
+                        <Badge value="Profile 기반 추천" color="black " />
+                        <p>
+                            <strong>골드리슈</strong>
+                        </p>
+                    </div>
+                    <div className="right">
+                        <em>87%</em>
+                        <span>(N등급)</span>
+                    </div>
+                </div>
+                <br />
+
+                <div className="progress-bar-track">
+                    <div
+                        className={`progress-bar ${progrssBarColor}`}
+                        style={{ width: `${progress}%` }}
+                    ></div>
+                </div>
             </TabPanel>
         </Box>
     );
