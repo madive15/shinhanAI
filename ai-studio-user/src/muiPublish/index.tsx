@@ -45,7 +45,11 @@ export default function MuiPubIndex() {
                 퍼블리싱 user 작업 리스트
             </Typography>
             <TableContainer component={Paper}>
-                <Table className="pub-list-table" sx={{ minWidth: 650 }} aria-label="simple table">
+                <Table
+                    className="pub-list-table"
+                    sx={{ minWidth: 650 }}
+                    aria-label="simple table"
+                >
                     <TableHead>
                         <TableRow>
                             <TableCell width={120} align="center">

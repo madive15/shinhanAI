@@ -51,14 +51,28 @@ const Tab = ({ menuName, ...props }: any) => {
 
     return (
         <div className="tab">
-            <Slider ref={(slider) => (slideRef.current = slider)} className="tab-box" {...settings}>
+            <Slider
+                ref={(slider) => (slideRef.current = slider)}
+                className="tab-box"
+                {...settings}
+            >
                 {menuName.map((v: any, i: number) => {
                     return (
-                        <div key={i} className={activeIndex == i ? "tab-content active" : "tab-content"}>
+                        <div
+                            key={i}
+                            className={
+                                activeIndex == i
+                                    ? "tab-content active"
+                                    : "tab-content"
+                            }
+                        >
                             <a href="#" onClick={() => tabActive(i)}>
                                 {v}
                                 {i !== 0 && (
-                                    <button type="button" className="admin-tab-btn">
+                                    <button
+                                        type="button"
+                                        className="admin-tab-btn"
+                                    >
                                         닫기
                                     </button>
                                 )}

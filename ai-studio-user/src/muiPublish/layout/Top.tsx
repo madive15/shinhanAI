@@ -39,8 +39,15 @@ const Top: React.FC<IPageProps> = (props) => {
     return (
         <header className={props.openClose === true ? "menu-open" : ""}>
             <div className="top-content ">
-                <div className="search" onClick={() => setOpenClose(!openClose)}>
-                    <IconButton type="button" aria-label="search" className="icon-search">
+                <div
+                    className="search"
+                    onClick={() => setOpenClose(!openClose)}
+                >
+                    <IconButton
+                        type="button"
+                        aria-label="search"
+                        className="icon-search"
+                    >
                         {openClose ? <Close /> : <Search />}
                     </IconButton>
                 </div>
@@ -59,15 +66,26 @@ const Top: React.FC<IPageProps> = (props) => {
                 </div>
             </div>
 
-            <div className={openClose === true ? "search-layer open" : "search-layer"}>
+            <div
+                className={
+                    openClose === true ? "search-layer open" : "search-layer"
+                }
+            >
                 <div className="search-box">
                     <Paper component="form" className="search-form">
-                        <TextField hiddenLabel variant="outlined" placeholder="검색어를 입력해주세요." />
+                        <TextField
+                            hiddenLabel
+                            variant="outlined"
+                            placeholder="검색어를 입력해주세요."
+                        />
                         <div className="icon-allsearch">
                             <AllSearch fill="#fff" />
                         </div>
                     </Paper>
-                    <IconButton className="search-close" onClick={() => setOpenClose(false)}>
+                    <IconButton
+                        className="search-close"
+                        onClick={() => setOpenClose(false)}
+                    >
                         <AllSearchClose fill="#fff " width={16} height={16} />
                     </IconButton>
                 </div>

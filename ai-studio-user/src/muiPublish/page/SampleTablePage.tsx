@@ -63,7 +63,11 @@ const SampleTablePage: React.FC<IPageProps> = (props) => {
                 </div>
                 <div
                     className="tabs-scroll-area"
-                    style={{ "--heiTitSearch": heiTitSearch + "px" } as React.CSSProperties}
+                    style={
+                        {
+                            "--heiTitSearch": heiTitSearch + "px",
+                        } as React.CSSProperties
+                    }
                 >
                     {props.pageName}
                 </div>

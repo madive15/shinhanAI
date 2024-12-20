@@ -133,7 +133,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             전체
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                 </div>
                             </div>
@@ -152,7 +154,12 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             <FormControlLabel
                                                 value="female"
                                                 control={
-                                                    <Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />
+                                                    <Radio
+                                                        checkedIcon={
+                                                            <RadioChecked />
+                                                        }
+                                                        icon={<RadioDefault />}
+                                                    />
                                                 }
                                                 label="Female"
                                             />
@@ -160,7 +167,12 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                                 className="cr-label"
                                                 value="male"
                                                 control={
-                                                    <Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />
+                                                    <Radio
+                                                        checkedIcon={
+                                                            <RadioChecked />
+                                                        }
+                                                        icon={<RadioDefault />}
+                                                    />
                                                 }
                                                 label="Male"
                                             />
@@ -184,7 +196,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             전체
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                 </div>
                             </div>
@@ -216,7 +230,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             전체
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                 </div>
                             </div>
@@ -226,33 +242,68 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                 <span className="tit">진행 상태</span>
                                 <FormGroup row className="chk-group">
                                     <FormControlLabel
-                                        control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
                                         label="Label"
                                     />
                                     <FormControlLabel
-                                        control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
                                         label="Label"
                                     />
                                     <FormControlLabel
-                                        control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
                                         label="Label"
                                     />
                                     <FormControlLabel
-                                        control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
                                         label="Label"
                                     />
                                     <FormControlLabel
-                                        control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
                                         label="Label"
                                     />
                                     <FormControlLabel
                                         required
-                                        control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
                                         label="Required"
                                     />
                                     <FormControlLabel
                                         disabled
-                                        control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
                                         label="Disabled"
                                     />
                                 </FormGroup>
@@ -273,7 +324,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             대분류
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                     <Select
                                         className="select-box"
@@ -286,7 +339,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             중분류
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                     <Select
                                         className="select-box"
@@ -299,7 +354,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             소분류
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                     <Select
                                         className="select-box"
@@ -312,7 +369,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             세분류
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                 </div>
                             </div>
@@ -323,7 +382,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                 <div className="date-picker-area">
                                     <DatePicker
                                         selected={startDate}
-                                        onChange={(date: any) => setStartDate(date)}
+                                        onChange={(date: any) =>
+                                            setStartDate(date)
+                                        }
                                         // showYearDropdown
                                         // showMonthDropdown
                                         dropdownMode="select"
@@ -333,7 +394,10 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                         placeholderText="기간을 선택해주세요"
                                     />
                                     <div className="date-month-btn">
-                                        <button type="button" className="active">
+                                        <button
+                                            type="button"
+                                            className="active"
+                                        >
                                             3개월
                                         </button>
                                         <button type="button">6개월</button>
@@ -359,7 +423,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             전체
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                 </div>
                             </div>
@@ -377,7 +443,9 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                             전체
                                         </MenuItem>
                                         <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                                        <MenuItem value={20}>
+                                            TwentyTwenty
+                                        </MenuItem>
                                     </Select>
                                 </div>
                             </div>

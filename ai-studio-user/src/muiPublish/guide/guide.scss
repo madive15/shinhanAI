@@ -1,20 +1,20 @@
 @charset "utf-8";
 
 #root {
-  .tabs-left {
-    min-width: 110px;
-  }
-  .guide-wrap {
-    height: 100vh;
+    .tabs-left {
+        min-width: 110px;
+    }
+    .guide-wrap {
+        height: 100vh;
 
-    [role="tabpanel"] {
-      width: 100%;
-      overflow: auto;
+        [role="tabpanel"] {
+            width: 100%;
+            overflow: auto;
+        }
+        .guide-text {
+            * {
+                margin-bottom: 24px;
+            }
+        }
     }
-    .guide-text {
-      * {
-        margin-bottom: 24px;
-      }
-    }
-  }
 }
