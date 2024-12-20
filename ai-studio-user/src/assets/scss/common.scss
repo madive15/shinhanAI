@@ -1,867 +1,846 @@
 .radio-group,
 .chk-group {
-  gap: 4px 24px;
+    gap: 4px 24px;
 }
 .radio-group {
-  label {
-    margin: 0;
-    color: var(--font-color1);
-  }
+    label {
+        margin: 0;
+        color: var(--font-color1);
+    }
 }
 
 //텍스트 에어리어
 .text-area {
-  position: relative;
-  textarea {
-    width: 100%;
-    height: 136px;
-    border: 1px solid var(--border-color1);
-    border-radius: 8px;
-    padding: 12px 12px 0 12px;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: -0.35px;
-    color: var(--font-color1);
-    resize: none;
-    &:focus,
-    &:active {
-      outline: none;
-      border-color: var(--color1);
+    position: relative;
+    textarea {
+        width: 100%;
+        height: 136px;
+        border: 1px solid var(--border-color1);
+        border-radius: 8px;
+        padding: 12px 12px 0 12px;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.35px;
+        color: var(--font-color1);
+        resize: none;
+        &:focus,
+        &:active {
+            outline: none;
+            border-color: var(--color1);
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            border: 1px solid var(--border-color3);
+            background-color: var(--background-color2);
+        }
     }
-    &::-webkit-scrollbar {
-      display: none;
+    &.required {
+        &::before {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: url("../images/icon/ico-required.png") top left no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        // textarea {
+        //   background: url("../images/icon/ico-required.png") top left no-repeat;
+        // }
     }
-    &:disabled {
-      cursor: not-allowed;
-      border: 1px solid var(--border-color3);
-      background-color: var(--background-color2);
-    }
-  }
-  &.required {
-    &::before {
-      content: "";
-      display: block;
-      width: 8px;
-      height: 8px;
-      background: url("../images/icon/ico-required.png") top left no-repeat;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    // textarea {
-    //   background: url("../images/icon/ico-required.png") top left no-repeat;
-    // }
-  }
 }
 
 //데이트 픽커
 .date-picker-area {
-  width: 100%;
-  display: flex;
-  align-items: center;
-
-  .react-datepicker {
-    border-color: var(--color1);
-    padding: 16px;
-  }
-  .react-datepicker__header {
-    background-color: var(--color2);
-    border: 0;
-    padding: 0;
-    .react-datepicker__current-month {
-      font-size: 14px;
-      font-family: var(--font-style2);
-    }
-  }
-  .react-datepicker__day-names {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 12px 0;
 
-    .react-datepicker__day-name {
-      margin: 0;
-      width: 18px;
-      line-height: 18px;
-      font-size: 10px;
-      &:first-of-type {
-        color: var(--sub-color2);
-      }
+    .react-datepicker {
+        border-color: var(--color1);
+        padding: 16px;
     }
-  }
-  .react-datepicker__month {
-    margin: 0;
-    .react-datepicker__week {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 8px;
-      .react-datepicker__day {
+    .react-datepicker__header {
+        background-color: var(--color2);
+        border: 0;
+        padding: 0;
+        .react-datepicker__current-month {
+            font-size: 14px;
+            font-family: var(--font-style2);
+        }
+    }
+    .react-datepicker__day-names {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 12px 0;
+
+        .react-datepicker__day-name {
+            margin: 0;
+            width: 18px;
+            line-height: 18px;
+            font-size: 10px;
+            &:first-of-type {
+                color: var(--sub-color2);
+            }
+        }
+    }
+    .react-datepicker__month {
         margin: 0;
-        width: 18px;
-        line-height: 18px;
-        font-size: 10px;
-        &:first-of-type {
-          color: var(--sub-color2);
-          &.react-datepicker__day--selected {
-            background-color: var(--color1);
-            color: var(--color2);
-          }
-          &.react-datepicker__day--keyboard-selected {
-            color: var(--color2);
-          }
-        }
-        &.react-datepicker__day--range-start {
-          color: var(--color2);
-          background-color: var(--color1);
-        }
+        .react-datepicker__week {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            .react-datepicker__day {
+                margin: 0;
+                width: 18px;
+                line-height: 18px;
+                font-size: 10px;
+                &:first-of-type {
+                    color: var(--sub-color2);
+                    &.react-datepicker__day--selected {
+                        background-color: var(--color1);
+                        color: var(--color2);
+                    }
+                    &.react-datepicker__day--keyboard-selected {
+                        color: var(--color2);
+                    }
+                }
+                &.react-datepicker__day--range-start {
+                    color: var(--color2);
+                    background-color: var(--color1);
+                }
 
-        &.react-datepicker__day--range-end {
-          color: var(--color2);
+                &.react-datepicker__day--range-end {
+                    color: var(--color2);
+                }
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
-      }
-      &:last-of-type {
-        margin-bottom: 0;
-      }
     }
-  }
-  .react-datepicker-wrapper {
-    max-width: 480px;
-    width: 100%;
-    margin-right: 8px;
-  }
-  .react-datepicker__input-container {
-    height: 38px;
-    input {
-      border: 1px solid var(--border-color1);
-      background-color: var(--color2);
-      border-radius: 6px;
-      max-width: 480px;
-      width: 100%;
-      height: 100%;
-      padding: 0 36px 0 12px;
-      background: url("../../assets/images/icon/ico-picker.png") 98.5% center
-        no-repeat;
-      &.react-datepicker-ignore-onclickoutside {
-        background: none;
-      }
-      &:disabled {
-        border-color: var(--border-color3);
-        background-color: var(--background-color2);
-        color: var(--font-color3);
-        cursor: not-allowed;
-        &::placeholder {
-          color: var(--font-color3);
+    .react-datepicker-wrapper {
+        max-width: 480px;
+        width: 100%;
+        margin-right: 8px;
+    }
+    .react-datepicker__input-container {
+        height: 38px;
+        input {
+            border: 1px solid var(--border-color1);
+            background-color: var(--color2);
+            border-radius: 6px;
+            max-width: 480px;
+            width: 100%;
+            height: 100%;
+            padding: 0 36px 0 12px;
+            background: url("../../assets/images/icon/ico-picker.png") 98.5% center no-repeat;
+            &.react-datepicker-ignore-onclickoutside {
+                background: none;
+            }
+            &:disabled {
+                border-color: var(--border-color3);
+                background-color: var(--background-color2);
+                color: var(--font-color3);
+                cursor: not-allowed;
+                &::placeholder {
+                    color: var(--font-color3);
+                }
+            }
         }
-      }
     }
-  }
-  .react-datepicker__day--today {
-    font-weight: 400;
-  }
-  .react-datepicker__triangle {
-    display: none;
-  }
-  .react-datepicker__day--in-range {
-    border-radius: 50%;
-  }
-  .react-datepicker__day--in-range {
-    background-color: var(--background-color3);
-    color: var(--color3);
-  }
-  .react-datepicker__day--range-end {
-    background-color: var(--color1);
-    color: var(--color2);
-  }
-  .react-datepicker__navigation {
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    border: 1px solid #888;
-    top: 20px;
-  }
-  .react-datepicker__navigation--next {
-    right: 16px;
-  }
-  .react-datepicker__navigation--previous {
-    left: 16px;
-  }
-  .react-datepicker__navigation-icon::before {
-    top: 10px;
-    border-width: 1px 1px 0 0;
-    height: 4px;
-    width: 4px;
-    border-color: #888;
-  }
-  .react-datepicker__navigation-icon--previous::before {
-    right: -1.1px;
-  }
-  .react-datepicker__navigation-icon--next::before {
-    left: -1.1px;
-  }
-  .react-datepicker-ignore-onclickoutside {
-    &:focus-visible {
-      outline: 1px solid var(--color1);
-      border-radius: 4px;
+    .react-datepicker__day--today {
+        font-weight: 400;
     }
-  }
-  .react-datepicker__day:not([aria-disabled="true"]):hover,
-  .react-datepicker__month-text:not([aria-disabled="true"]):hover,
-  .react-datepicker__quarter-text:not([aria-disabled="true"]):hover,
-  .react-datepicker__year-text:not([aria-disabled="true"]):hover,
-  .react-datepicker__day--selected,
-  .react-datepicker__day--in-selecting-range,
-  .react-datepicker__day--in-range,
-  .react-datepicker__month-text--selected,
-  .react-datepicker__month-text--in-selecting-range,
-  .react-datepicker__month-text--in-range,
-  .react-datepicker__quarter-text--selected,
-  .react-datepicker__quarter-text--in-selecting-range,
-  .react-datepicker__quarter-text--in-range,
-  .react-datepicker__year-text--selected,
-  .react-datepicker__year-text--in-selecting-range,
-  .react-datepicker__year-text--in-range {
-    border-radius: 50%;
-  }
-  .react-datepicker__day--keyboard-selected,
-  .react-datepicker__month-text--keyboard-selected,
-  .react-datepicker__quarter-text--keyboard-selected,
-  .react-datepicker__year-text--keyboard-selected {
-    border-radius: 50%;
-  }
-  .react-datepicker__day--selected,
-  .react-datepicker__day--in-range:not([aria-disabled="true"]):hover,
-  .react-datepicker__day--selected:not([aria-disabled="true"]):hover,
-  .react-datepicker__day--keyboard-selected:not([aria-disabled="true"]):hover {
-    background-color: var(--color1);
-    color: var(--color2);
-  }
-  .date-month-btn {
-    min-width: 300px;
-    button {
-      border-radius: 100px;
-      min-width: 56px;
-      padding: 7px 12px;
-      border: 1px solid var(--color1);
-      background-color: var(--color2);
-      color: var(--font-color3);
-      font-size: 14px;
-      line-height: 21px;
-      letter-spacing: -0.35px;
-      & + button {
-        margin-left: 4px;
-      }
-      &.active {
+    .react-datepicker__triangle {
+        display: none;
+    }
+    .react-datepicker__day--in-range {
+        border-radius: 50%;
+    }
+    .react-datepicker__day--in-range {
+        background-color: var(--background-color3);
+        color: var(--color3);
+    }
+    .react-datepicker__day--range-end {
         background-color: var(--color1);
         color: var(--color2);
-      }
     }
-  }
-  .date-ym-radio {
-    label {
-      border-radius: 100px;
-      min-width: 56px;
-      height: 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px 12px;
-      border: 1px solid var(--color1);
-      background-color: var(--color2);
-      color: var(--font-color3);
-      font-size: 14px;
-      line-height: 21px;
-      letter-spacing: -0.35px;
-      cursor: pointer;
-      & + label {
-        margin-left: 4px;
-      }
+    .react-datepicker__navigation {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        border: 1px solid #888;
+        top: 20px;
     }
-    input {
-      position: absolute;
-      width: 0;
-      height: 0;
-      padding: 0;
-      margin: 0;
-      border: 0;
-      z-index: -1;
-      color: transparent;
-      background: transparent;
-      appearance: none;
-      &:checked {
-        & + label {
-          background-color: var(--color1);
-          color: var(--color2);
-          box-shadow: 0px 2px 4px 0px rgba(0, 70, 255, 0.25);
+    .react-datepicker__navigation--next {
+        right: 16px;
+    }
+    .react-datepicker__navigation--previous {
+        left: 16px;
+    }
+    .react-datepicker__navigation-icon::before {
+        top: 10px;
+        border-width: 1px 1px 0 0;
+        height: 4px;
+        width: 4px;
+        border-color: #888;
+    }
+    .react-datepicker__navigation-icon--previous::before {
+        right: -1.1px;
+    }
+    .react-datepicker__navigation-icon--next::before {
+        left: -1.1px;
+    }
+    .react-datepicker-ignore-onclickoutside {
+        &:focus-visible {
+            outline: 1px solid var(--color1);
+            border-radius: 4px;
         }
-      }
     }
-    & + .date-ym-radio {
-      margin-left: 4px;
+    .react-datepicker__day:not([aria-disabled="true"]):hover,
+    .react-datepicker__month-text:not([aria-disabled="true"]):hover,
+    .react-datepicker__quarter-text:not([aria-disabled="true"]):hover,
+    .react-datepicker__year-text:not([aria-disabled="true"]):hover,
+    .react-datepicker__day--selected,
+    .react-datepicker__day--in-selecting-range,
+    .react-datepicker__day--in-range,
+    .react-datepicker__month-text--selected,
+    .react-datepicker__month-text--in-selecting-range,
+    .react-datepicker__month-text--in-range,
+    .react-datepicker__quarter-text--selected,
+    .react-datepicker__quarter-text--in-selecting-range,
+    .react-datepicker__quarter-text--in-range,
+    .react-datepicker__year-text--selected,
+    .react-datepicker__year-text--in-selecting-range,
+    .react-datepicker__year-text--in-range {
+        border-radius: 50%;
     }
-  }
+    .react-datepicker__day--keyboard-selected,
+    .react-datepicker__month-text--keyboard-selected,
+    .react-datepicker__quarter-text--keyboard-selected,
+    .react-datepicker__year-text--keyboard-selected {
+        border-radius: 50%;
+    }
+    .react-datepicker__day--selected,
+    .react-datepicker__day--in-range:not([aria-disabled="true"]):hover,
+    .react-datepicker__day--selected:not([aria-disabled="true"]):hover,
+    .react-datepicker__day--keyboard-selected:not([aria-disabled="true"]):hover {
+        background-color: var(--color1);
+        color: var(--color2);
+    }
+    .date-month-btn {
+        min-width: 300px;
+        button {
+            border-radius: 100px;
+            min-width: 56px;
+            padding: 7px 12px;
+            border: 1px solid var(--color1);
+            background-color: var(--color2);
+            color: var(--font-color3);
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.35px;
+            & + button {
+                margin-left: 4px;
+            }
+            &.active {
+                background-color: var(--color1);
+                color: var(--color2);
+            }
+        }
+    }
+    .date-ym-radio {
+        label {
+            border-radius: 100px;
+            min-width: 56px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 12px;
+            border: 1px solid var(--color1);
+            background-color: var(--color2);
+            color: var(--font-color3);
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.35px;
+            cursor: pointer;
+            & + label {
+                margin-left: 4px;
+            }
+        }
+        input {
+            position: absolute;
+            width: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            z-index: -1;
+            color: transparent;
+            background: transparent;
+            appearance: none;
+            &:checked {
+                & + label {
+                    background-color: var(--color1);
+                    color: var(--color2);
+                    box-shadow: 0px 2px 4px 0px rgba(0, 70, 255, 0.25);
+                }
+            }
+        }
+        & + .date-ym-radio {
+            margin-left: 4px;
+        }
+    }
 }
 
 //뱃지
 .badge {
-  display: inline-flex;
-  align-items: center;
-  height: 22px;
-  padding: 0 6px;
-  border-radius: 8px;
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  &.gray {
-    color: var(--color2);
-    background-color: var(--font-color2);
-  }
-  &.green {
-    color: var(--color2);
-    background-color: var(--positive);
-  }
-  &.red {
-    color: var(--color2);
-    background-color: var(--negative);
-  }
-  &.navy {
-    color: var(--color2);
-    background-color: var(--sub-color4);
-  }
-  &.blue {
-    color: var(--color2);
-    background-color: var(--color1);
-  }
-  &.black {
-    color: var(--color2);
-    background-color: var(--color3);
-  }
-  &.orange {
-    color: var(--color2);
-    background-color: #eb8d19;
-  }
-  &.purple {
-    color: var(--color2);
-    background-color: #6d19db;
-  }
-  &.blue2 {
-    color: var(--color2);
-    background-color: #265ff1;
-  }
-  &.large {
-    height: 25px;
-    min-width: 64px;
-    border-radius: 100px;
-    justify-content: center;
-  }
-  &.line {
-    background-color: var(--color2);
-    padding: 0 8px;
-    &.blue {
-      color: var(--color1);
-      border: 1px solid var(--color1);
-    }
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
     &.gray {
-      color: var(--font-color3);
-      border: 1px solid var(--font-color3);
+        color: var(--color2);
+        background-color: var(--font-color2);
+    }
+    &.green {
+        color: var(--color2);
+        background-color: var(--positive);
     }
     &.red {
-      color: var(--negative);
-      border: 1px solid var(--negative);
+        color: var(--color2);
+        background-color: var(--negative);
     }
-  }
+    &.navy {
+        color: var(--color2);
+        background-color: var(--sub-color4);
+    }
+    &.blue {
+        color: var(--color2);
+        background-color: var(--color1);
+    }
+    &.black {
+        color: var(--color2);
+        background-color: var(--color3);
+    }
+    &.orange {
+        color: var(--color2);
+        background-color: #eb8d19;
+    }
+    &.purple {
+        color: var(--color2);
+        background-color: #6d19db;
+    }
+    &.blue2 {
+        color: var(--color2);
+        background-color: #265ff1;
+    }
+    &.large {
+        height: 25px;
+        min-width: 64px;
+        border-radius: 100px;
+        justify-content: center;
+    }
 }
 .badge-wrap {
-  display: flex;
-  align-items: center;
-  gap: 4px 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px 4px;
 }
 
 //해시태그
 .hash-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 12px;
-  border-radius: 100px;
-  border: 1px solid var(--border-color4);
-  background-color: var(--color2);
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.3px;
-  color: var(--font-color2);
-  gap: 4px;
-  .hash-del {
-    text-indent: -9999px;
-    width: 8px;
-    height: 8px;
-    position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 8px;
-      height: 1px;
-      background-color: var(--font-color2);
-      transform-origin: center;
-    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color4);
+    background-color: var(--color2);
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: var(--font-color2);
+    gap: 4px;
+    .hash-del {
+        text-indent: -9999px;
+        width: 8px;
+        height: 8px;
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 1px;
+            background-color: var(--font-color2);
+            transform-origin: center;
+        }
 
-    &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
 
-    &::after {
-      transform: translate(-50%, -50%) rotate(-45deg);
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
     }
-  }
-  &.type2 {
-    padding: 4px 8px;
-    border-radius: 20px;
-    background-color: rgba(0, 70, 255, 0.1);
-    border: none;
-    font-size: 10px;
-    line-height: 12px;
-    letter-spacing: -0.25px;
-  }
+    &.type2 {
+        padding: 4px 8px;
+        border-radius: 20px;
+        background-color: rgba(0, 70, 255, 0.1);
+        border: none;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: -0.25px;
+    }
 }
 .hash-wrap {
-  display: flex;
-  align-items: center;
-  gap: 4px 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px 4px;
 }
 // 텍스트 아이콘
 .ico-text {
-  font-family: var(--font-style1);
-  font-style: normal;
-  font-size: 10px;
-  width: 16px;
-  height: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--font-color3);
-  color: var(--color2);
-  border-radius: 50%;
-  cursor: pointer;
-  &.blue {
-    background-color: var(--sub-color2);
-  }
+    font-family: var(--font-style1);
+    font-style: normal;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--font-color3);
+    color: var(--color2);
+    border-radius: 50%;
+    cursor: pointer;
+    &.blue {
+        background-color: var(--sub-color2);
+    }
 }
 
 .select-option-class {
-  border: 1px solid var(--color1);
-  padding: 12px;
-  border-radius: 4px;
-  min-width: 80px;
-  margin-top: 4px;
+    border: 1px solid var(--color1);
+    padding: 12px;
+    border-radius: 4px;
+    min-width: 80px;
+    margin-top: 4px;
 }
 
-.tabs-area {
-  height: 32px;
-}
-.tabs-contents {
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-}
+// .tabs-area {
+//   height: 32px;
+// }
+// .tabs-contents {
+//   max-height: calc(100vh - 100px);
+//   overflow-y: auto;
+// }
 
 // 타겟 추출 관련 css
 .card-box-wrap {
-  display: flex;
-  gap: 12px 12px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 12px 12px;
+    flex-wrap: wrap;
 }
 .card-box {
-  a {
-    display: block;
-    position: relative;
-    width: 240px;
-    height: 161px;
-    border-radius: 12px;
-    background-color: var(--background-color1);
-    padding: 16px;
-    border: 1px solid transparent;
-    &.active {
-      background-color: var(--color2);
-      border: 1px solid var(--color1);
-      box-shadow: 0px 4px 8px 0px rgba(0, 70, 255, 0.25);
+    a {
+        display: block;
+        position: relative;
+        width: 240px;
+        height: 161px;
+        border-radius: 12px;
+        background-color: var(--background-color1);
+        padding: 16px;
+        border: 1px solid transparent;
+        &.active {
+            background-color: var(--color2);
+            border: 1px solid var(--color1);
+            box-shadow: 0px 4px 8px 0px rgba(0, 70, 255, 0.25);
+        }
     }
-  }
-  .book-mark {
-    width: 40px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #dce9ff;
-    border-radius: 0 12px 0 12px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    .MuiCheckbox-root {
-      margin: 0;
+    .book-mark {
+        width: 40px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #dce9ff;
+        border-radius: 0 12px 0 12px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        .MuiCheckbox-root {
+            margin: 0;
+        }
     }
-  }
-  .badge-wrap {
-    margin-bottom: 8px;
-  }
-  .card-box-tit {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 4px;
-    strong {
-      font-size: 18px;
-      line-height: 21px;
-      letter-spacing: -0.18px;
+    .badge-wrap {
+        margin-bottom: 8px;
     }
-  }
-  .card-box-desc {
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: -0.3px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 18px;
-  }
-  .card-box-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    .card-box-tit {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 4px;
+        strong {
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.18px;
+        }
+    }
+    .card-box-desc {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.3px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 18px;
+    }
+    .card-box-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .filter-radio {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  .MuiFormControlLabel-root {
-    margin: 0;
-  }
-  .MuiButtonBase-root {
-    display: none;
-  }
-  .Mui-checked {
-    & + .MuiTypography-root {
-      background-color: var(--color1);
-      border: 1px solid var(--color1);
-      color: var(--color2);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    .MuiFormControlLabel-root {
+        margin: 0;
     }
-  }
-  .MuiTypography-root {
-    border-radius: 12px;
-    border: 1px solid var(--font-color3);
-    background-color: var(--color2);
-    color: var(--font-color3);
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: -0.325px;
-    padding: 7px 13px;
-  }
-}
-.ico-circle20 {
-  &.MuiButtonBase-root {
-    width: 20px;
-    height: 20px;
-    background: rgba(0, 70, 255, 0.5);
-    &:hover {
-      background-color: rgba(0, 70, 255, 0.5);
-    }
-  }
-}
-.ico-rect23 {
-  &.MuiButtonBase-root {
-    width: 23px;
-    height: 23px;
-    background-color: rgba(0, 70, 255, 0.1);
-    border-radius: 8px;
-    &:hover {
-      background-color: rgba(0, 70, 255, 0.1);
-    }
-    &.x {
-      svg {
-        transform: rotate(45deg);
-      }
-    }
-  }
-}
-.switch-btn {
-  &.MuiSwitch-root {
-    padding: 0;
-    height: 24px;
-    width: 40px;
-    .MuiSwitch-switchBase {
-      padding: 2px;
-    }
-    .MuiSwitch-thumb {
-      background-color: var(--color2);
-    }
-    .MuiSwitch-track {
-      border-radius: 100px;
-      background-color: var(--background-color3);
-      opacity: 1;
+    .MuiButtonBase-root {
+        display: none;
     }
     .Mui-checked {
-      transform: translateX(16px);
-      & + .MuiSwitch-track {
-        background-color: var(--color1);
-      }
-    }
-    &.view-type {
-      width: 72px;
-      height: 38px;
-      .MuiSwitch-switchBase {
-        padding: 2px;
-      }
-      .MuiSwitch-thumb {
-        width: 34px;
-        height: 34px;
-        background-color: var(--color1);
-        &::before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          display: block;
-          width: 14px;
-          height: 14px;
-          background: url("../images/icon/ico-view-card-on.png") center center
-            no-repeat;
-          background-size: 14px 14px;
+        & + .MuiTypography-root {
+            background-color: var(--color1);
+            border: 1px solid var(--color1);
+            color: var(--color2);
         }
-      }
-      .MuiSwitch-track {
-        border-radius: 100px;
-        opacity: 1;
-        background: rgba(40, 120, 245, 0.1)
-          url("../images/icon/ico-view-list-off.png") calc(100% - 12px) center
-          no-repeat;
-        background-size: 14px 12px;
-      }
-
-      .Mui-checked {
-        transform: translateX(34px);
+    }
+    .MuiTypography-root {
+        border-radius: 12px;
+        border: 1px solid var(--font-color3);
+        background-color: var(--color2);
+        color: var(--font-color3);
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: -0.325px;
+        padding: 7px 13px;
+    }
+}
+.ico-circle20 {
+    &.MuiButtonBase-root {
+        width: 20px;
+        height: 20px;
+        background: rgba(0, 70, 255, 0.5);
+        &:hover {
+            background-color: rgba(0, 70, 255, 0.5);
+        }
+    }
+}
+.ico-rect23 {
+    &.MuiButtonBase-root {
+        width: 23px;
+        height: 23px;
+        background-color: rgba(0, 70, 255, 0.1);
+        border-radius: 8px;
+        &:hover {
+            background-color: rgba(0, 70, 255, 0.1);
+        }
+        &.x {
+            svg {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+.switch-btn {
+    &.MuiSwitch-root {
+        padding: 0;
+        height: 24px;
+        width: 40px;
+        .MuiSwitch-switchBase {
+            padding: 2px;
+        }
         .MuiSwitch-thumb {
-          &::before {
-            background: url("../images/icon/ico-view-list-on.png") center center
-              no-repeat;
-          }
+            background-color: var(--color2);
         }
-        & + .MuiSwitch-track {
-          background: rgba(40, 120, 245, 0.1)
-            url("../images/icon/ico-view-card-off.png") 12px center no-repeat;
+        .MuiSwitch-track {
+            border-radius: 100px;
+            background-color: var(--background-color3);
+            opacity: 1;
         }
-      }
+        .Mui-checked {
+            transform: translateX(16px);
+            & + .MuiSwitch-track {
+                background-color: var(--color1);
+            }
+        }
+        &.view-type {
+            width: 72px;
+            height: 38px;
+            .MuiSwitch-switchBase {
+                padding: 2px;
+            }
+            .MuiSwitch-thumb {
+                width: 34px;
+                height: 34px;
+                background-color: var(--color1);
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                    background: url("../images/icon/ico-view-card-on.png") center center no-repeat;
+                    background-size: 14px 14px;
+                }
+            }
+            .MuiSwitch-track {
+                border-radius: 100px;
+                opacity: 1;
+                background: rgba(40, 120, 245, 0.1) url("../images/icon/ico-view-list-off.png") calc(100% - 12px) center
+                    no-repeat;
+                background-size: 14px 12px;
+            }
+
+            .Mui-checked {
+                transform: translateX(34px);
+                .MuiSwitch-thumb {
+                    &::before {
+                        background: url("../images/icon/ico-view-list-on.png") center center no-repeat;
+                    }
+                }
+                & + .MuiSwitch-track {
+                    background: rgba(40, 120, 245, 0.1) url("../images/icon/ico-view-card-off.png") 12px center
+                        no-repeat;
+                }
+            }
+        }
     }
-  }
 }
 
 .target-add-box {
-  border-radius: 12px;
-  border: 1px solid var(--border-color3);
-  background: var(--background-color2);
-  display: flex;
-  padding: 16px;
-  gap: 10px;
-  max-width: 398px;
-  align-items: center;
-  p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19px;
-    letter-spacing: -0.4px;
-  }
+    border-radius: 12px;
+    border: 1px solid var(--border-color3);
+    background: var(--background-color2);
+    display: flex;
+    padding: 16px;
+    gap: 10px;
+    max-width: 398px;
+    align-items: center;
+    p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        letter-spacing: -0.4px;
+    }
 }
 .blue-box {
-  padding: 16px;
-  border-radius: 12px;
-  background: var(--background-color1);
-  max-width: 398px;
-  .top {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-  .desc {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: var(--font-color2);
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: -0.3px;
-  }
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--background-color1);
+    max-width: 398px;
+    .top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+    .desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: var(--font-color2);
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: -0.3px;
+    }
 }
 
 .simulation-box {
-  max-width: 398px;
-  border-radius: 12px;
-  background: #f7f7f7;
-  padding: 16px;
-  strong {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19px;
-    letter-spacing: -0.4px;
-  }
-  em {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 17px;
-    letter-spacing: -0.35px;
-    margin-left: 10px;
-    color: var(--font-color2);
-  }
-  span {
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: -0.3px;
-    color: var(--font-color2);
-  }
-  .middle-box {
-    display: flex;
-    gap: 12px;
-  }
-  .success-rate {
-    span,
+    max-width: 398px;
+    border-radius: 12px;
+    background: #f7f7f7;
+    padding: 16px;
+    strong {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        letter-spacing: -0.4px;
+    }
     em {
-      color: var(--sub-color3);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: -0.35px;
+        margin-left: 10px;
+        color: var(--font-color2);
     }
-  }
-  .bench-success-rate {
     span {
-      font-size: 14px;
-      letter-spacing: -0.35px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.3px;
+        color: var(--font-color2);
     }
-  }
+    .middle-box {
+        display: flex;
+        gap: 12px;
+    }
+    .success-rate {
+        span,
+        em {
+            color: var(--sub-color3);
+        }
+    }
+    .bench-success-rate {
+        span {
+            font-size: 14px;
+            letter-spacing: -0.35px;
+        }
+    }
 }
 
 .select-group {
-  display: flex;
-  gap: 8px;
-  width: 100%;
-  .custom-select {
-    max-width: 346px;
+    display: flex;
+    gap: 8px;
     width: 100%;
-  }
+    .custom-select {
+        max-width: 346px;
+        width: 100%;
+    }
 }
 
 //토글 버튼
 .toggle-btn {
-  &.MuiToggleButton-root {
-    font-weight: 400;
-    border-radius: 12px;
-    padding: 7px 12px;
-    min-width: 68px;
-    height: 30px;
-    line-height: 16px;
-    font-size: 13px;
-    &[aria-pressed="false"] {
-      color: var(--font-color3);
-      border: 1px solid var(--font-color3);
-      background-color: var(--color2);
+    &.MuiToggleButton-root {
+        font-weight: 400;
+        border-radius: 12px;
+        padding: 7px 12px;
+        min-width: 68px;
+        height: 30px;
+        line-height: 16px;
+        font-size: 13px;
+        &[aria-pressed="false"] {
+            color: var(--font-color3);
+            border: 1px solid var(--font-color3);
+            background-color: var(--color2);
+        }
+        &[aria-pressed="true"] {
+            font-weight: 700;
+            background-color: var(--color1);
+            color: var(--color2);
+            border: 1px solid var(--color1);
+            &:hover {
+                background-color: var(--color1);
+                color: var(--color2);
+            }
+        }
     }
-    &[aria-pressed="true"] {
-      font-weight: 700;
-      background-color: var(--color1);
-      color: var(--color2);
-      border: 1px solid var(--color1);
-      &:hover {
-        background-color: var(--color1);
-        color: var(--color2);
-      }
-    }
-  }
 }
 
 //체크완료,에러 아이콘+텍스트
 .input-field {
-  & + .positive-ico-txt,
-  & + .error-ico-txt {
-    margin-top: 6px;
-  }
+    & + .positive-ico-txt,
+    & + .error-ico-txt {
+        margin-top: 6px;
+    }
 }
 
 .positive-ico-txt,
 .error-ico-txt {
-  padding-left: 18px;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.3px;
-  position: relative;
-  &::before {
-    content: "";
-    display: block;
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    left: 0;
-    top: 2px;
-  }
-}
-.positive-ico-txt {
-  color: var(--positive);
-  background: url("../images/svg/Icons-positive-14.svg") center left no-repeat;
-}
-.error-ico-txt {
-  color: var(--negative);
-  background: url("../images/svg/Icons-error-14.svg") center left no-repeat;
-}
-
-.input-area {
-  width: 100%;
-  &.inner-txt-btn {
-    .input-field {
-      .MuiOutlinedInput-root {
-        input {
-          padding-right: 50px;
-        }
-      }
-    }
-  }
-}
-
-.input-has-label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  span {
+    padding-left: 18px;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: -0.3px;
-    color: var(--font-color2);
-  }
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        left: 0;
+        top: 2px;
+    }
+}
+.positive-ico-txt {
+    color: var(--positive);
+    background: url("../images/svg/Icons-positive-14.svg") center left no-repeat;
+}
+.error-ico-txt {
+    color: var(--negative);
+    background: url("../images/svg/Icons-error-14.svg") center left no-repeat;
+}
+
+.input-area {
+    width: 100%;
+    &.inner-txt-btn {
+        .input-field {
+            .MuiOutlinedInput-root {
+                input {
+                    padding-right: 50px;
+                }
+            }
+        }
+    }
+}
+
+.input-has-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    span {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.3px;
+        color: var(--font-color2);
+    }
 }
 .error-box {
-  max-width: 398px;
-  font-size: 13px;
-  line-height: 16px;
-  letter-spacing: -0.325px;
-  color: var(--negative);
-  padding: 12px 12px 12px 32px;
-  position: relative;
-  border-radius: 8px;
-  background-color: rgba(203, 55, 55, 0.1);
-  &::before {
-    content: "";
-    display: block;
-    width: 14px;
-    height: 14px;
-    background: url("../images/svg/Icons-triangle-error.svg") center center
-      no-repeat;
-    position: absolute;
-    top: 12px;
-    left: 12px;
-  }
+    max-width: 398px;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.325px;
+    color: var(--negative);
+    padding: 12px 12px 12px 32px;
+    position: relative;
+    border-radius: 8px;
+    background-color: rgba(203, 55, 55, 0.1);
+    &::before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        background: url("../images/svg/Icons-triangle-error.svg") center center no-repeat;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+    }
 }
