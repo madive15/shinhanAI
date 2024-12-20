@@ -1104,13 +1104,12 @@ export default function VerticalTabs() {
         <Badge value="사용중" color="green" size="large" />
         <Badge value="과제 종료" color="gray" size="large" />
         <Badge value="반려" color="red" size="large" />
+        <br />
+        <br />
         <div className="badge-wrap">
           <Badge value="ADM006" color="gray" />
           <Badge value="사용중" color="green" />
           <Badge value="사용중중중중중중중중중중" color="green" />
-          <Badge value="사용중" color="green" size="large" />
-          <Badge value="과제 종료" color="gray" size="large" />
-          <Badge value="반려" color="red" size="large" />
           <Badge value="사용중" color="blue" />
           <Badge value="사용중" color="navy " />
           <Badge value="사용중" color="black " />
@@ -1118,6 +1117,18 @@ export default function VerticalTabs() {
           <Badge value="필터" color="purple" />
           <Badge value="모델" color="blue2" />
           <Badge value="N" color="red" />
+          <Badge value="과제 신청" color="blue" type="line" />
+          <Badge value="과제 종료" color="gray" type="line" />
+          <Badge value="미채택" color="red" type="line" />
+        </div>
+        <br />
+        <p>
+          <strong>큰 사이즈</strong>
+        </p>
+        <div className="badge-wrap">
+          <Badge value="사용중" color="green" size="large" />
+          <Badge value="과제 종료" color="gray" size="large" />
+          <Badge value="반려" color="red" size="large" />
         </div>
       </TabPanel>
       {/* 해시태그 */}
