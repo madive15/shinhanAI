@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "../../../assets/scss/mixin";
+
+.indivi-company {
+    @include flex;
+    @include justify-content(flex-end);
+    padding: 16px 0;
+    .filter-radio {
+        .MuiTypography-root {
+            min-width: 76px;
+            height: 37px;
+            padding: 8px 24px;
+            font-family: "OneShinhan";
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: -0.025em;
+            gap: 10px;
+            border-radius: 100px 100px;
+            text-align: center;
+            border: 0;
+            background-color: var(--background-color5);
+        }
+        .Mui-checked + .MuiTypography-root {
+            background-color: var(--color1);
+        }
+    }
+}
