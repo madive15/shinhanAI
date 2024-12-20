@@ -4,6 +4,8 @@ import React from "react";
 // need content
 import Sidebar from "~/muiPublish/components/Sidebar";
 
+// need style
+
 // Props type
 export interface IPageProps {
     pageName?: string;
@@ -14,13 +16,12 @@ export interface IPageProps {
     setOpenClose?: (data: boolean) => void;
 }
 
-// need style
-
 /**
  * @author shinhanAI
  * @description
  * user-front: user MenuContainer
  * user MenuContainer
+ * layout 사이드영역
  */
 
 const MenuContainer: React.FC<IPageProps> = (props) => {

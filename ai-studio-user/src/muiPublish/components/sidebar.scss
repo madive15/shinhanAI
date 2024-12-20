@@ -28,23 +28,34 @@
     & .sidebar-nav {
         ul {
             li {
-                @include flex;
-                @include justify-content(center);
-                @include align-items(center);
-                @include width-height(40px, 40px);
                 margin: 0 0 8px 0;
-                border-radius: 8px 8px;
+                & .menu {
+                    @include flex;
+                    @include justify-content(center);
+                    @include align-items(center);
+                    @include width-height(40px, 40px);
+                    border-radius: 8px 8px;
+                    span {
+                        font-size: 0;
+                    }
+                }
+                & .sub-menu {
+                    margin: 8px 0 0 0;
+                }
+
                 &:hover {
                     cursor: pointer;
-                    background-color: #0449fc1a;
+                    & .menu {
+                        background-color: #0449fc1a;
+                    }
                 }
-                span {
-                    font-size: 0;
-                }
+
                 &.active {
-                    background-color: #0046ff;
-                    path {
-                        fill: var(--color2);
+                    & .menu {
+                        background-color: #0046ff;
+                        path {
+                            fill: var(--color2);
+                        }
                     }
                 }
             }
@@ -86,22 +97,26 @@
         & .sidebar-nav {
             ul {
                 li {
-                    width: 176px;
-                    padding: 8px 8px;
-                    @include justify-content(flex-start);
-                    transition: all 0.2s ease-in-out;
-                    span {
-                        margin: 0 0 0 12px;
-                        font-size: 14px;
-                        font-weight: 700;
-                        line-height: 20px;
-                        letter-spacing: -0.025em;
-                        color: var(--font-color2);
+                    & .menu {
+                        width: 176px;
+                        padding: 8px 8px;
+                        @include justify-content(flex-start);
                         transition: all 0.2s ease-in-out;
+                        span {
+                            margin: 0 0 0 12px;
+                            font-size: 14px;
+                            font-weight: 700;
+                            line-height: 20px;
+                            letter-spacing: -0.025em;
+                            color: var(--font-color2);
+                            transition: all 0.2s ease-in-out;
+                        }
                     }
                     &.active {
-                        span {
-                            color: var(--color2);
+                        & .menu {
+                            span {
+                                color: var(--color2);
+                            }
                         }
                     }
                 }

@@ -1,3 +1,4 @@
+// necessary set
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
@@ -13,8 +14,10 @@ import { ReactComponent as Ocr } from "~assets/images/svg/icon_ocr.svg";
 import { ReactComponent as Assignment } from "~assets/images/svg/icon_assignment.svg";
 import { ReactComponent as Sitemap } from "~assets/images/svg/icon_sitemap.svg";
 
+// need style
 import "~/muiPublish/components/sidebar.scss";
 
+// Props type
 export interface IPageProps {
     pageName?: string;
     subName?: string;
@@ -24,6 +27,13 @@ export interface IPageProps {
     setOpenClose?: (data: boolean) => void;
 }
 
+/**
+ * @author shinhanAI
+ * @description
+ * user-front: user Sidebar
+ * user Sidebar
+ * 전체 메뉴
+ */
 const Sidebar: React.FC<IPageProps> = (props) => {
     const menuOpenClose = (onOff: boolean) => {
         if (props.setOpenClose) {
@@ -43,12 +53,26 @@ const Sidebar: React.FC<IPageProps> = (props) => {
             <nav className="sidebar-nav">
                 <ul>
                     <li className="home active">
-                        <Home fill="#fff" />
-                        <span>홈</span>
+                        <div className="menu home">
+                            <Home fill="#fff" />
+                            <span>홈</span>
+                        </div>
+                        <ul className="sub-menu">
+                            <li>2Depth Menu</li>
+                            <li>2Depth Menu</li>
+                            <li>2Depth Menu</li>
+                        </ul>
                     </li>
-                    <li className="my active">
-                        <Mypage fill="#0046ff99" />
-                        <span>마이페이지</span>
+                    {/* <li className="my active">
+                        <div>
+                            <Mypage fill="#0046ff99" />
+                            <span>마이페이지</span>
+                        </div>
+                        <ul>
+                            <li>2Depth Menu</li>
+                            <li>2Depth Menu</li>
+                            <li>2Depth Menu</li>
+                        </ul>
                     </li>
                     <li className="target">
                         <Target fill="#0046ff99" />
@@ -69,7 +93,7 @@ const Sidebar: React.FC<IPageProps> = (props) => {
                     <li className="Assignment">
                         <Assignment fill="#0046ff99" />
                         <span>과제신청/공지</span>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
             <div className="site-map">

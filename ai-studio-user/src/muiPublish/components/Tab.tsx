@@ -1,11 +1,21 @@
-import React, { useEffect, useState, useRef } from "react";
+// necessary set
+import React, { useState, useRef } from "react";
 import { ReactComponent as ArrowRight } from "~assets/images/svg/icon_arrow_right2.svg";
 import { ReactComponent as ArrowLeft } from "~assets/images/svg/icon_arrow_left2.svg";
 import Slider from "react-slick";
+
+// need style
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./tab.scss";
 
+/**
+ * @author shinhanAI
+ * @description
+ * user-front: user Tab
+ * user Tab page
+ * 전체 탭
+ */
 const Tab = ({ menuName, ...props }: any) => {
     const settings = {
         infinite: false,
