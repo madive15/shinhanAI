@@ -45,12 +45,25 @@ const Layout: React.FC<IPageProps> = (props) => {
     return (
         <LayoutStyle className="flexible-side-layout">
             {loading && <Loading />}
-            <MenuContainer pageName={""} subName={""} openClose={openClose} setOpenClose={setOpenClose} />
+            <MenuContainer
+                pageName={""}
+                subName={""}
+                openClose={openClose}
+                setOpenClose={setOpenClose}
+            />
             <div className="container">
                 <Top pageName={""} subName={""} openClose={openClose} />
-                <div className={openClose === true ? "content opne-menu" : "content"}>
-                    {props.pageName === "타겟추출" && <TargetExtraction pageName={props.pageName} />}
-                    {props.pageName === "MAIN" && <Main pageName={props.pageName} />}
+                <div
+                    className={
+                        openClose === true ? "content opne-menu" : "content"
+                    }
+                >
+                    {props.pageName === "타겟추출" && (
+                        <TargetExtraction pageName={props.pageName} />
+                    )}
+                    {props.pageName === "MAIN" && (
+                        <Main pageName={props.pageName} />
+                    )}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}
                     {props.pageName === "샘플폼" && <SampleForm pageName={props.pageName} />}

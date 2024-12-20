@@ -397,7 +397,14 @@
             width: 181px;
             height: 67px;
             margin: 0 0 12px 0;
-            @include background(url("../../assets/images/target_no_data.png"), 100%, 100%, 0, 0, no-repeat);
+            @include background(
+                url("../../assets/images/target_no_data.png"),
+                100%,
+                100%,
+                0,
+                0,
+                no-repeat
+            );
         }
     }
 }

@@ -12,11 +12,11 @@ import "./loading.scss";
  *
  */
 const Loading: React.FC = () => {
-  return (
-    <div className="loading-layer">
-      <div className="donut"></div>
-    </div>
-  );
+    return (
+        <div className="loading-layer">
+            <div className="donut"></div>
+        </div>
+    );
 };
 
 export default Loading;

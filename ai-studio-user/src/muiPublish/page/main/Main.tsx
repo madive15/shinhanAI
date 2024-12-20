@@ -88,9 +88,15 @@ const Main: React.FC<IPageProps> = (props) => {
                 <div className="use-top-target">
                     <h2>사용량 TOP5 타겟 리스트</h2>
                     <ol>
-                        <li className="blue">개인형 IRP 가입 가능성 높은 고객 리스트</li>
-                        <li className="blue">주택담보대출 만기 도래 고객 리스트</li>
-                        <li className="blue">신용카드 발급 가능성 높은 고객 리스트</li>
+                        <li className="blue">
+                            개인형 IRP 가입 가능성 높은 고객 리스트
+                        </li>
+                        <li className="blue">
+                            주택담보대출 만기 도래 고객 리스트
+                        </li>
+                        <li className="blue">
+                            신용카드 발급 가능성 높은 고객 리스트
+                        </li>
                         <li>예·적금 만기 도래 고객 리스트</li>
                         <li>펀드 투자 관심 고객 리스트</li>
                     </ol>
@@ -98,9 +104,15 @@ const Main: React.FC<IPageProps> = (props) => {
                 <div className="use-top-target">
                     <h2>사용량 TOP5 타겟 리스트</h2>
                     <ol>
-                        <li className="blue">개인형 IRP 가입 가능성 높은 고객 리스트</li>
-                        <li className="b lue">주택담보대출 만기 도래 고객 리스트</li>
-                        <li className="blue">신용카드 발급 가능성 높은 고객 리스트</li>
+                        <li className="blue">
+                            개인형 IRP 가입 가능성 높은 고객 리스트
+                        </li>
+                        <li className="b lue">
+                            주택담보대출 만기 도래 고객 리스트
+                        </li>
+                        <li className="blue">
+                            신용카드 발급 가능성 높은 고객 리스트
+                        </li>
                         <li>예·적금 만기 도래 고객 리스트</li>
                         <li>펀드 투자 관심 고객 리스트</li>
                     </ol>
@@ -108,9 +120,15 @@ const Main: React.FC<IPageProps> = (props) => {
                 <div className="use-top-target">
                     <h2>사용량 TOP5 타겟 리스트</h2>
                     <ol>
-                        <li className="blue">개인형 IRP 가입 가능성 높은 고객 리스트</li>
-                        <li className="blue">주택담보대출 만기 도래 고객 리스트</li>
-                        <li className="blue">신용카드 발급 가능성 높은 고객 리스트</li>
+                        <li className="blue">
+                            개인형 IRP 가입 가능성 높은 고객 리스트
+                        </li>
+                        <li className="blue">
+                            주택담보대출 만기 도래 고객 리스트
+                        </li>
+                        <li className="blue">
+                            신용카드 발급 가능성 높은 고객 리스트
+                        </li>
                         <li>예·적금 만기 도래 고객 리스트</li>
                         <li>펀드 투자 관심 고객 리스트</li>
                     </ol>

@@ -26,7 +26,10 @@ export interface IPageProps {
 const MenuContainer: React.FC<IPageProps> = (props) => {
     return (
         <div className="side-content">
-            <Sidebar openClose={props.openClose} setOpenClose={props.setOpenClose} />
+            <Sidebar
+                openClose={props.openClose}
+                setOpenClose={props.setOpenClose}
+            />
         </div>
     );
 };

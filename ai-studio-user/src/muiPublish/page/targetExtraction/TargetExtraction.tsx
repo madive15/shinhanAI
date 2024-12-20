@@ -97,8 +97,16 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
                             </div>
                         </div>
                         <div className="sub-searth">
-                            <TextField hiddenLabel variant="outlined" placeholder="검색어를 입력해주세요" />
-                            <IconButton type="button" aria-label="search" className="icon-search">
+                            <TextField
+                                hiddenLabel
+                                variant="outlined"
+                                placeholder="검색어를 입력해주세요"
+                            />
+                            <IconButton
+                                type="button"
+                                aria-label="search"
+                                className="icon-search"
+                            >
                                 <Search />
                             </IconButton>
                         </div>
@@ -114,8 +122,16 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
                                     value={radioGroup}
                                     onChange={radioGroupChange}
                                 >
-                                    <FormControlLabel value="개인" control={<Radio />} label="개인" />
-                                    <FormControlLabel value="기업" control={<Radio />} label="기업" />
+                                    <FormControlLabel
+                                        value="개인"
+                                        control={<Radio />}
+                                        label="개인"
+                                    />
+                                    <FormControlLabel
+                                        value="기업"
+                                        control={<Radio />}
+                                        label="기업"
+                                    />
                                 </RadioGroup>
                             </FormControl>
                         </div>
@@ -129,17 +145,61 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
                                     value={radioGroup2}
                                     onChange={radioGroupChange2}
                                 >
-                                    <FormControlLabel value="인기/추천" control={<Radio />} label="인기/추천" />
-                                    <FormControlLabel value="전체" control={<Radio />} label="전체" />
-                                    <FormControlLabel value="예적금" control={<Radio />} label="예적금" />
-                                    <FormControlLabel value="외환" control={<Radio />} label="외환" />
-                                    <FormControlLabel value="퇴직연금" control={<Radio />} label="퇴직연금" />
-                                    <FormControlLabel value="투자상품" control={<Radio />} label="투자상품" />
-                                    <FormControlLabel value="보험/방카" control={<Radio />} label="보험/방카" />
-                                    <FormControlLabel value="대출" control={<Radio />} label="대출" />
-                                    <FormControlLabel value="급여" control={<Radio />} label="급여" />
-                                    <FormControlLabel value="연금" control={<Radio />} label="연금" />
-                                    <FormControlLabel value="고자산" control={<Radio />} label="고자산" />
+                                    <FormControlLabel
+                                        value="인기/추천"
+                                        control={<Radio />}
+                                        label="인기/추천"
+                                    />
+                                    <FormControlLabel
+                                        value="전체"
+                                        control={<Radio />}
+                                        label="전체"
+                                    />
+                                    <FormControlLabel
+                                        value="예적금"
+                                        control={<Radio />}
+                                        label="예적금"
+                                    />
+                                    <FormControlLabel
+                                        value="외환"
+                                        control={<Radio />}
+                                        label="외환"
+                                    />
+                                    <FormControlLabel
+                                        value="퇴직연금"
+                                        control={<Radio />}
+                                        label="퇴직연금"
+                                    />
+                                    <FormControlLabel
+                                        value="투자상품"
+                                        control={<Radio />}
+                                        label="투자상품"
+                                    />
+                                    <FormControlLabel
+                                        value="보험/방카"
+                                        control={<Radio />}
+                                        label="보험/방카"
+                                    />
+                                    <FormControlLabel
+                                        value="대출"
+                                        control={<Radio />}
+                                        label="대출"
+                                    />
+                                    <FormControlLabel
+                                        value="급여"
+                                        control={<Radio />}
+                                        label="급여"
+                                    />
+                                    <FormControlLabel
+                                        value="연금"
+                                        control={<Radio />}
+                                        label="연금"
+                                    />
+                                    <FormControlLabel
+                                        value="고자산"
+                                        control={<Radio />}
+                                        label="고자산"
+                                    />
                                 </RadioGroup>
                             </FormControl>
                         </div>
@@ -150,7 +210,8 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
                     <div className="no-data">
                         <div>
                             <div className="no-data-img"></div>
-                            <strong>AI가 미리 생성해놓은 조건</strong>을 선택해서
+                            <strong>AI가 미리 생성해놓은 조건</strong>을
+                            선택해서
                             <br /> 타겟을 추출하세요.
                         </div>
                     </div>

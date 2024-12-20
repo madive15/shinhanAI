@@ -1,8 +1,8 @@
-import { Outlet } from "react-router-dom";
-export default function PopupLayout () {
+import { Outlet } from 'react-router-dom';
+export default function PopupLayout() {
     return (
         <>
-            <Outlet/>
+            <Outlet />
         </>
-    )
+    );
 }

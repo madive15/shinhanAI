@@ -36,8 +36,15 @@ const Sidebar: React.FC<IPageProps> = (props) => {
                 <NavLink to={"/"}>
                     <Logo className="logo" fill="#0046FF" />
                 </NavLink>
-                <Button className="btn-menu" onClick={() => menuOpenClose(!props.openClose)}>
-                    {props.openClose ? <LeftDouble fill="#0046FF" /> : <RightDouble fill="#0046FF" />}
+                <Button
+                    className="btn-menu"
+                    onClick={() => menuOpenClose(!props.openClose)}
+                >
+                    {props.openClose ? (
+                        <LeftDouble fill="#0046FF" />
+                    ) : (
+                        <RightDouble fill="#0046FF" />
+                    )}
                 </Button>
             </div>
             <nav className="sidebar-nav">
