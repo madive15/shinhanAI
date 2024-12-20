@@ -4,10 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 // need content
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
-import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
-import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
-import ProductMetaFormTable from "~/muiPublish/page/productMeta/ProductMetaFormTable";
 
 // import Cardlist from "~/publish/components/Cardlist";
 
