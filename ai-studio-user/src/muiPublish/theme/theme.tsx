@@ -149,8 +149,7 @@ const theme = createTheme({
                 {
                     props: { variant: "primaryBig" },
                     style: {
-                        background:
-                            "linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);",
+                        background: "linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);",
                         color: "#FFF",
                         fontSize: "16px",
                         fontWeight: "700",
@@ -159,12 +158,10 @@ const theme = createTheme({
                         padding: "12px 20px",
                         borderRadius: "0px 6px 6px 6px",
                         "&:hover": {
-                            background:
-                                "linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);",
+                            background: "linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);",
                         },
                         "&:active": {
-                            background:
-                                "linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);",
+                            background: "linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);",
                         },
                     },
                 },
@@ -179,7 +176,7 @@ const theme = createTheme({
                         lineHeight: "14px",
                         padding: "8px 10px",
                         borderRadius: "8px",
-                        border: "1px solid #666",
+                        border: "1px solid #ccc",
                         minWidth: "unset",
                         height: "28px",
                         "&:hover": {
@@ -262,7 +259,7 @@ const theme = createTheme({
                     style: {
                         minWidth: "unset",
                         height: "38px",
-                        padding: "7px 8px",
+                        padding: "7px 8px 7px 12px",
                         borderRadius: "8px",
                         border: "1px solid #CCC",
                         fontSize: "14px",
@@ -573,6 +570,17 @@ const theme = createTheme({
                                 width: "680px",
                             },
                         },
+                        "&.x-large": {
+                            "& .MuiDialog-paper": {
+                                width: "800px",
+                                maxWidth: "800px",
+                                "& .MuiPaper-root": {
+                                    width: "768px",
+                                    padding: "0 0",
+                                    borderRadius: "0 0",
+                                },
+                            },
+                        },
                     },
                 },
             },
@@ -606,6 +614,9 @@ const theme = createTheme({
                                 lineHeight: "21px",
                                 letterSpacing: "-0.35px",
                                 color: "var(--font-color2)",
+                                "&.no-space": {
+                                    padding: "0 0",
+                                },
                             },
                         },
                     },
@@ -666,14 +677,12 @@ const theme = createTheme({
                                 },
                                 "&:focus": {
                                     borderColor: "var(--color1)",
-                                    boxShadow:
-                                        "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
+                                    boxShadow: "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
                                 },
                             },
-                            "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input":
-                                {
-                                    backgroundColor: "var(--color2)",
-                                },
+                            "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input": {
+                                backgroundColor: "var(--color2)",
+                            },
                             "& fieldset": {
                                 display: "none",
                             },

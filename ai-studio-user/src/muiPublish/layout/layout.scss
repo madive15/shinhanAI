@@ -209,14 +209,58 @@
                 border-radius: 0 16px 0 0;
                 box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
                 .list-content {
-                    width: 100%;
+                    width: calc(100% - 446px);
                     padding: 24px 24px;
 
                     .sub-tab-content {
+                        height: calc(100vh - 226px);
+                        overflow-y: auto;
+                        scrollbar-width: thin;
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                        }
+
+                        .recom-list {
+                            position: relative;
+                            margin: 0 0 24px 0;
+                            padding: 16px 16px;
+                            border-radius: 16px 16px;
+                            border: 1px solid var(--border-color5);
+
+                            .prev {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                display: flex;
+                                display: block;
+                                min-width: 28px;
+                                height: 28px;
+                                margin: 0 4px 0 0;
+                                background-color: var(--color2);
+                                border-radius: 8px 8px;
+                            }
+                            .next {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                display: flex;
+                                display: block;
+                                min-width: 28px;
+                                height: 28px;
+                                margin: 0 4px 0 0;
+                                background-color: var(--color2);
+                                border-radius: 8px 8px;
+                            }
+
+                            .slick-prev,
+                            .slick-next {
+                                display: none;
+                            }
+                        }
                     }
                 }
                 .list-setting {
-                    width: 446px;
+                    min-width: 446px;
                     padding: 24px 24px;
                     border-left: 1px solid var(--border-color4);
                 }
@@ -245,14 +289,7 @@
             width: 181px;
             height: 67px;
             margin: 0 0 12px 0;
-            @include background(
-                url("../../assets/images/target_no_data.png"),
-                100%,
-                100%,
-                0,
-                0,
-                no-repeat
-            );
+            @include background(url("../../assets/images/target_no_data.png"), 100%, 100%, 0, 0, no-repeat);
         }
     }
 }

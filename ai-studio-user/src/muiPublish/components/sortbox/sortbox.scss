@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "../../../assets/scss/mixin";
+
+.sort-box {
+    @include flex;
+    justify-content: flex-end;
+    margin: 0 0 12px 0;
+    .sort-group {
+        @include flex;
+        width: 350px;
+        & .chk-group {
+            margin: 0 16px 0 0;
+            label {
+                width: 125px;
+            }
+            .MuiFormControlLabel-label {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: -0.025em;
+            }
+        }
+        .select-box {
+            width: auto;
+            margin: 0 16px 0 0;
+        }
+    }
+}

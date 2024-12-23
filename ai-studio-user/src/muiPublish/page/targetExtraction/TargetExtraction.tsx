@@ -8,6 +8,10 @@ import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNav
 import IndiviCompany from "~/muiPublish/components/indiviCompany/IndiviCompany";
 import Category from "~/muiPublish/components/category/Category";
 import NoData from "~/muiPublish/components/noData/noData";
+import SmartFilter from "~/muiPublish/components/smartFilter/SmartFilter";
+import Sortbox from "~/muiPublish/components/sortbox/Sortbox";
+import TargetThumbnail from "~/muiPublish/page/targetExtraction/TargetThumbnail";
+import TargetTable from "~/muiPublish/page/targetExtraction/TargetTable";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -58,6 +62,8 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
         "메뉴3",
     ];
 
+    const [listType, setListType] = useState<boolean>(false);
+
     return (
         <>
             <div className="tabs-area">
@@ -69,7 +75,9 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
                     <div className="sub-tab-content">
                         <IndiviCompany />
                         <Category />
-                        <div>필터</div>
+                        <SmartFilter />
+                        <Sortbox listType={listType} setListType={setListType} />
+                        {listType === false ? <TargetThumbnail /> : <TargetTable />}
                     </div>
                 </div>
                 <div className="list-setting">
