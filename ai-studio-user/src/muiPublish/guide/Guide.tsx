@@ -39,14 +39,7 @@ import Badge from "~/muiPublish/components/Badge";
 import Hash from "~/muiPublish/components/Hash";
 import SvgSample from "~/muiPublish/components/SvgSample";
 import Tooltip from "@mui/material/Tooltip";
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableRow,
-    Paper,
-} from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableRow, Paper } from "@mui/material";
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
@@ -152,10 +145,7 @@ export default function VerticalTabs() {
 
     const [alignment, setAlignment] = React.useState("개인 고객");
 
-    const toggleBtnSwitch = (
-        event: React.MouseEvent<HTMLElement>,
-        newAlignment: string | null
-    ) => {
+    const toggleBtnSwitch = (event: React.MouseEvent<HTMLElement>, newAlignment: string | null) => {
         if (newAlignment !== null) {
             setAlignment(newAlignment);
         }
@@ -248,22 +238,11 @@ export default function VerticalTabs() {
                 <h1>h1 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 20px</h1>
                 <h2>h2 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 16px</h2>
                 <h3>h3 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 14px</h3>
-                <div className="text1">
-                    본문 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 14px
-                </div>
-                <div className="text1 disabled">
-                    본문 비활성 신한은행 Ai스튜디오에 오신것을 환영합니다. --
-                    14px
-                </div>
-                <div className="text2">
-                    보조 Ai스튜디오에 오신것을 환영합니다. -- 13px
-                </div>
-                <div className="text3">
-                    캡션 Ai스튜디오에 오신것을 환영합니다. -- 12px
-                </div>
-                <div className="text4">
-                    작은글자 Ai스튜디오에 오신것을 환영합니다. -- 10px
-                </div>
+                <div className="text1">본문 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 14px</div>
+                <div className="text1 disabled">본문 비활성 신한은행 Ai스튜디오에 오신것을 환영합니다. -- 14px</div>
+                <div className="text2">보조 Ai스튜디오에 오신것을 환영합니다. -- 13px</div>
+                <div className="text3">캡션 Ai스튜디오에 오신것을 환영합니다. -- 12px</div>
+                <div className="text4">작은글자 Ai스튜디오에 오신것을 환영합니다. -- 10px</div>
             </TabPanel>
             {/* 버튼 */}
             <TabPanel value={value} index={2} guideName={"guide-btn"}>
@@ -299,10 +278,7 @@ export default function VerticalTabs() {
                 </Button>
                 <br />
                 <br />
-                <Button
-                    variant="iconDashed"
-                    startIcon={<Download fill="#888" />}
-                >
+                <Button variant="iconDashed" startIcon={<Download fill="#888" />}>
                     버튼 텍스트
                 </Button>
                 <Button variant="iconLine" startIcon={<Download fill="#333" />}>
@@ -323,20 +299,13 @@ export default function VerticalTabs() {
                     className="toggle-btn"
                     value="check"
                     selected={selected}
-                    onChange={() =>
-                        setSelected((prevSelected) => !prevSelected)
-                    }
+                    onChange={() => setSelected((prevSelected) => !prevSelected)}
                 >
                     토글 버튼
                 </ToggleButton>
                 <br />
                 <br />
-                <ToggleButtonGroup
-                    className="toggle-group"
-                    value={alignment}
-                    exclusive
-                    onChange={toggleBtnSwitch}
-                >
+                <ToggleButtonGroup className="toggle-group" value={alignment} exclusive onChange={toggleBtnSwitch}>
                     <ToggleButton value="개인 고객">개인 고객</ToggleButton>
                     <ToggleButton value="기업 고객">기업 고객</ToggleButton>
                 </ToggleButtonGroup>
@@ -368,124 +337,63 @@ export default function VerticalTabs() {
             {/* 인풋 텍스트 */}
             <TabPanel value={value} index={3}>
                 <div className="input-area">
-                    <TextField
-                        className="input-field"
-                        fullWidth
-                        placeholder="Full Width"
-                    />
+                    <TextField className="input-field" fullWidth placeholder="Full Width" />
                 </div>
                 <br />
                 <div className="input-area">
-                    <TextField
-                        className="input-field"
-                        placeholder="Max Width 480"
-                    />
+                    <TextField className="input-field" placeholder="Max Width 480" />
                 </div>
                 <br />
                 <div className="input-area">
-                    <TextField
-                        className="input-field required"
-                        placeholder="상품 명 입력"
-                    />
+                    <TextField className="input-field required" placeholder="상품 명 입력" />
                 </div>
                 <br />
                 <div className="input-area">
-                    <TextField
-                        className="input-field required"
-                        placeholder="상품 명 입력"
-                        disabled
-                    />
+                    <TextField className="input-field required" placeholder="상품 명 입력" disabled />
                 </div>
                 <br />
                 <div className="input-area">
-                    <TextField
-                        className="input-field"
-                        id="text1"
-                        placeholder="상품 명 입력"
-                    />
+                    <TextField className="input-field" id="text1" placeholder="상품 명 입력" />
                     <p className="positive-ico-txt">체크 완료</p>
                 </div>
                 <br />
                 <div className="input-area">
-                    <TextField
-                        className="input-field"
-                        id="text1"
-                        placeholder="상품 명 입력"
-                    />
+                    <TextField className="input-field" id="text1" placeholder="상품 명 입력" />
                     <p className="error-ico-txt">경고 표시</p>
                 </div>
                 <br />
                 <div className="input-area inner-txt-btn">
-                    <TextField
-                        className="input-field"
-                        id="text1"
-                        placeholder="상품 명 입력"
-                    />
+                    <TextField className="input-field" id="text1" placeholder="상품 명 입력" />
                 </div>
                 <br />
                 <label className="input-has-label" htmlFor="txt1_1">
                     <span>label</span>
-                    <TextField
-                        className="input-field "
-                        id="txt1_1"
-                        placeholder="상품 명 입력"
-                    />
+                    <TextField className="input-field " id="txt1_1" placeholder="상품 명 입력" />
                 </label>
             </TabPanel>
             {/* 체크박스 */}
             <TabPanel value={value} index={4}>
                 <div>
-                    <Checkbox
-                        icon={<ChkDefault />}
-                        checkedIcon={<ChkChecked />}
-                        defaultChecked
-                    />
-                    <Checkbox
-                        icon={<ChkDefault />}
-                        checkedIcon={<ChkChecked />}
-                    />
-                    <Checkbox
-                        icon={<ChkDefault />}
-                        checkedIcon={<ChkChecked />}
-                        disabled
-                    />
-                    <Checkbox
-                        className="book-mark"
-                        icon={<Bookmark />}
-                        checkedIcon={<BookmarkOn />}
-                        defaultChecked
-                    />
+                    <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} defaultChecked />
+                    <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />
+                    <Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} disabled />
+                    <Checkbox className="book-mark" icon={<Bookmark />} checkedIcon={<BookmarkOn />} defaultChecked />
                 </div>
 
                 <div>
                     <FormGroup row className="chk-group">
                         <FormControlLabel
-                            control={
-                                <Checkbox
-                                    icon={<ChkDefault />}
-                                    checkedIcon={<ChkChecked />}
-                                />
-                            }
+                            control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
                             label="Label"
                         />
                         <FormControlLabel
                             required
-                            control={
-                                <Checkbox
-                                    icon={<ChkDefault />}
-                                    checkedIcon={<ChkChecked />}
-                                />
-                            }
+                            control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
                             label="Required"
                         />
                         <FormControlLabel
                             disabled
-                            control={
-                                <Checkbox
-                                    icon={<ChkDefault />}
-                                    checkedIcon={<ChkChecked />}
-                                />
-                            }
+                            control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
                             label="Disabled"
                         />
                     </FormGroup>
@@ -535,23 +443,13 @@ export default function VerticalTabs() {
                         >
                             <FormControlLabel
                                 value="female"
-                                control={
-                                    <Radio
-                                        checkedIcon={<RadioChecked />}
-                                        icon={<RadioDefault />}
-                                    />
-                                }
+                                control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                 label="Female"
                             />
                             <FormControlLabel
                                 className="cr-label"
                                 value="male"
-                                control={
-                                    <Radio
-                                        checkedIcon={<RadioChecked />}
-                                        icon={<RadioDefault />}
-                                    />
-                                }
+                                control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                 label="Male"
                             />
                         </RadioGroup>
@@ -567,61 +465,17 @@ export default function VerticalTabs() {
                             value={radioGroup2}
                             onChange={radioGroupChange2}
                         >
-                            <FormControlLabel
-                                value="인기/추천"
-                                control={<Radio />}
-                                label="인기/추천"
-                            />
-                            <FormControlLabel
-                                value="전체"
-                                control={<Radio />}
-                                label="전체"
-                            />
-                            <FormControlLabel
-                                value="예적금"
-                                control={<Radio />}
-                                label="예적금"
-                            />
-                            <FormControlLabel
-                                value="외환"
-                                control={<Radio />}
-                                label="외환"
-                            />
-                            <FormControlLabel
-                                value="퇴직연금"
-                                control={<Radio />}
-                                label="퇴직연금"
-                            />
-                            <FormControlLabel
-                                value="투자상품"
-                                control={<Radio />}
-                                label="투자상품"
-                            />
-                            <FormControlLabel
-                                value="보험/방카"
-                                control={<Radio />}
-                                label="보험/방카"
-                            />
-                            <FormControlLabel
-                                value="대출"
-                                control={<Radio />}
-                                label="대출"
-                            />
-                            <FormControlLabel
-                                value="급여"
-                                control={<Radio />}
-                                label="급여"
-                            />
-                            <FormControlLabel
-                                value="연금"
-                                control={<Radio />}
-                                label="연금"
-                            />
-                            <FormControlLabel
-                                value="고자산"
-                                control={<Radio />}
-                                label="고자산"
-                            />
+                            <FormControlLabel value="인기/추천" control={<Radio />} label="인기/추천" />
+                            <FormControlLabel value="전체" control={<Radio />} label="전체" />
+                            <FormControlLabel value="예적금" control={<Radio />} label="예적금" />
+                            <FormControlLabel value="외환" control={<Radio />} label="외환" />
+                            <FormControlLabel value="퇴직연금" control={<Radio />} label="퇴직연금" />
+                            <FormControlLabel value="투자상품" control={<Radio />} label="투자상품" />
+                            <FormControlLabel value="보험/방카" control={<Radio />} label="보험/방카" />
+                            <FormControlLabel value="대출" control={<Radio />} label="대출" />
+                            <FormControlLabel value="급여" control={<Radio />} label="급여" />
+                            <FormControlLabel value="연금" control={<Radio />} label="연금" />
+                            <FormControlLabel value="고자산" control={<Radio />} label="고자산" />
                         </RadioGroup>
                     </FormControl>
                 </div>
@@ -768,27 +622,13 @@ export default function VerticalTabs() {
                                     >
                                         <FormControlLabel
                                             value="female"
-                                            control={
-                                                <Radio
-                                                    checkedIcon={
-                                                        <RadioChecked />
-                                                    }
-                                                    icon={<RadioDefault />}
-                                                />
-                                            }
+                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                             label="Female"
                                         />
                                         <FormControlLabel
                                             className="cr-label"
                                             value="male"
-                                            control={
-                                                <Radio
-                                                    checkedIcon={
-                                                        <RadioChecked />
-                                                    }
-                                                    icon={<RadioDefault />}
-                                                />
-                                            }
+                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                             label="Male"
                                         />
                                     </RadioGroup>
@@ -814,12 +654,8 @@ export default function VerticalTabs() {
                                                 <MenuItem value="" disabled>
                                                     전체
                                                 </MenuItem>
-                                                <MenuItem value={10}>
-                                                    Ten
-                                                </MenuItem>
-                                                <MenuItem value={20}>
-                                                    Twenty
-                                                </MenuItem>
+                                                <MenuItem value={10}>Ten</MenuItem>
+                                                <MenuItem value={20}>Twenty</MenuItem>
                                             </Select>
                                         </FormControl>
                                         <FormControl fullWidth>
@@ -838,12 +674,8 @@ export default function VerticalTabs() {
                                                 <MenuItem value="" disabled>
                                                     전체
                                                 </MenuItem>
-                                                <MenuItem value={10}>
-                                                    Ten
-                                                </MenuItem>
-                                                <MenuItem value={20}>
-                                                    Twenty
-                                                </MenuItem>
+                                                <MenuItem value={10}>Ten</MenuItem>
+                                                <MenuItem value={20}>Twenty</MenuItem>
                                             </Select>
                                         </FormControl>
                                         <FormControl fullWidth>
@@ -862,12 +694,8 @@ export default function VerticalTabs() {
                                                 <MenuItem value="" disabled>
                                                     전체
                                                 </MenuItem>
-                                                <MenuItem value={10}>
-                                                    Ten
-                                                </MenuItem>
-                                                <MenuItem value={20}>
-                                                    Twenty
-                                                </MenuItem>
+                                                <MenuItem value={10}>Ten</MenuItem>
+                                                <MenuItem value={20}>Twenty</MenuItem>
                                             </Select>
                                         </FormControl>
                                     </div>
@@ -891,9 +719,7 @@ export default function VerticalTabs() {
                                             placeholder="상품 명 입력"
                                             fullWidth
                                         />
-                                        <p className="positive-ico-txt">
-                                            체크 완료
-                                        </p>
+                                        <p className="positive-ico-txt">체크 완료</p>
                                     </div>
                                 </TableCell>
                             </TableRow>
@@ -910,36 +736,20 @@ export default function VerticalTabs() {
                                     >
                                         <FormControlLabel
                                             value="female"
-                                            control={
-                                                <Radio
-                                                    checkedIcon={
-                                                        <RadioChecked />
-                                                    }
-                                                    icon={<RadioDefault />}
-                                                />
-                                            }
+                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                             label="Female"
                                         />
                                         <FormControlLabel
                                             className="cr-label"
                                             value="male"
-                                            control={
-                                                <Radio
-                                                    checkedIcon={
-                                                        <RadioChecked />
-                                                    }
-                                                    icon={<RadioDefault />}
-                                                />
-                                            }
+                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                             label="Male"
                                         />
                                     </RadioGroup>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell component="th">
-                                    전략 상품 여부
-                                </TableCell>
+                                <TableCell component="th">전략 상품 여부</TableCell>
                                 <TableCell colSpan={3}>
                                     <RadioGroup
                                         className="radio-group"
@@ -951,27 +761,13 @@ export default function VerticalTabs() {
                                     >
                                         <FormControlLabel
                                             value="female"
-                                            control={
-                                                <Radio
-                                                    checkedIcon={
-                                                        <RadioChecked />
-                                                    }
-                                                    icon={<RadioDefault />}
-                                                />
-                                            }
+                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                             label="Female"
                                         />
                                         <FormControlLabel
                                             className="cr-label"
                                             value="male"
-                                            control={
-                                                <Radio
-                                                    checkedIcon={
-                                                        <RadioChecked />
-                                                    }
-                                                    icon={<RadioDefault />}
-                                                />
-                                            }
+                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
                                             label="Male"
                                         />
                                     </RadioGroup>
@@ -1007,21 +803,13 @@ export default function VerticalTabs() {
                     레이어 팝업
                 </Button>
                 {/* 얼럿 */}
-                <Dialog
-                    className="alert-box"
-                    open={alertStauts}
-                    onClose={alertClose}
-                >
+                <Dialog className="alert-box" open={alertStauts} onClose={alertClose}>
                     <DialogContent>
-                        본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문
-                        내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다. 본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다. 본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.
+                        본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.
                     </DialogContent>
                     <DialogActions>
                         <Button variant="sub2" onClick={alertClose}>
@@ -1033,22 +821,14 @@ export default function VerticalTabs() {
                     </IconButton>
                 </Dialog>
                 {/* 컨펌 */}
-                <Dialog
-                    className="confirm-box"
-                    open={confirmStauts}
-                    onClose={confirmClose}
-                >
+                <Dialog className="confirm-box" open={confirmStauts} onClose={confirmClose}>
                     <DialogTitle>{"타이틀"}</DialogTitle>
                     <DialogContent>
-                        본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문
-                        내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다. 본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다. 본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.본문 내용이
-                        들어갑니다.본문 내용이 들어갑니다.
+                        본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다. 본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다. 본문 내용이 들어갑니다.본문 내용이 들어갑니다.본문 내용이
+                        들어갑니다.본문 내용이 들어갑니다.본문 내용이 들어갑니다.
                     </DialogContent>
                     <DialogActions>
                         <Button variant="sub2" onClick={confirmClose}>
@@ -1061,11 +841,7 @@ export default function VerticalTabs() {
                     </IconButton>
                 </Dialog>
                 {/* 레이어팝업 */}
-                <Dialog
-                    className="layer-box "
-                    open={popupStauts}
-                    onClose={popupClose}
-                >
+                <Dialog className="layer-box " open={popupStauts} onClose={popupClose}>
                     <DialogTitle>{"타이틀"}</DialogTitle>
                     <DialogContent>
                         <div>
@@ -1230,12 +1006,7 @@ export default function VerticalTabs() {
             </TabPanel>
             {/* 툴팁 */}
             <TabPanel value={value} index={14}>
-                <Tooltip
-                    disableFocusListener
-                    disableTouchListener
-                    title={tooptipText}
-                    placement="right"
-                >
+                <Tooltip disableFocusListener disableTouchListener title={tooptipText} placement="right">
                     <i className="ico-text">?</i>
                 </Tooltip>
             </TabPanel>
@@ -1258,14 +1029,11 @@ export default function VerticalTabs() {
                                 <Badge value="N" color="red" />
                             </div>
                             <p className="card-box-tit">
-                                <strong>
-                                    프리빌트 된 항목에 대한제제제제제제제
-                                </strong>
+                                <strong>프리빌트 된 항목에 대한제제제제제제제</strong>
                             </p>
                             <p className="card-box-desc">
-                                프리빌트된 항목에 대한 간략한 설명이 들어갑니다.
-                                최대 2줄 까지 들어갑니다. 그 이후에는 말줄임표로
-                                생략됩니다.
+                                프리빌트된 항목에 대한 간략한 설명이 들어갑니다. 최대 2줄 까지 들어갑니다. 그 이후에는
+                                말줄임표로 생략됩니다.
                             </p>
                             <div className="card-box-bottom">
                                 <div className="hash-wrap">
@@ -1284,11 +1052,7 @@ export default function VerticalTabs() {
                         <div className="card-box" key={i}>
                             <a href="#" className="">
                                 <div className="book-mark">
-                                    <Checkbox
-                                        icon={<Bookmark />}
-                                        checkedIcon={<BookmarkOn />}
-                                        defaultChecked
-                                    />
+                                    <Checkbox icon={<Bookmark />} checkedIcon={<BookmarkOn />} defaultChecked />
                                 </div>
                                 <div className="badge-wrap">
                                     <Badge value="전략" color="black " />
@@ -1296,13 +1060,10 @@ export default function VerticalTabs() {
                                     <Badge value="N" color="red" />
                                 </div>
                                 <p className="card-box-tit">
-                                    <strong>
-                                        프리빌트 된 항목에 대한제제제제제제제
-                                    </strong>
+                                    <strong>프리빌트 된 항목에 대한제제제제제제제</strong>
                                 </p>
                                 <p className="card-box-desc">
-                                    프리빌트된 항목에 대한 간략한 설명이
-                                    들어갑니다. 최대 2줄 까지 들어갑니다. 그
+                                    프리빌트된 항목에 대한 간략한 설명이 들어갑니다. 최대 2줄 까지 들어갑니다. 그
                                     이후에는 말줄임표로 생략됩니다.
                                 </p>
                                 <div className="card-box-bottom">
@@ -1333,9 +1094,7 @@ export default function VerticalTabs() {
                         <Badge value="지수" color="orange" />
                         <strong>자린고비 지수</strong>
                     </div>
-                    <p className="desc">
-                        1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
-                    </p>
+                    <p className="desc">1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급</p>
                 </div>
                 <br />
                 <div className="simulation-box">
@@ -1356,9 +1115,7 @@ export default function VerticalTabs() {
                     </div>
                 </div>
                 <br />
-                <div className="error-box">
-                    LMS 대량 발송이 불가합니다. (최대 2,000건)
-                </div>
+                <div className="error-box">LMS 대량 발송이 불가합니다. (최대 2,000건)</div>
             </TabPanel>
             {/* 싱글뷰 */}
             <TabPanel value={value} index={16}>
