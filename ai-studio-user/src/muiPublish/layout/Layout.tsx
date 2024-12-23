@@ -9,6 +9,7 @@ import Top from "~/muiPublish/layout/Top";
 import MenuContainer from "~/muiPublish/layout/MenuContainer";
 import TargetExtraction from "~/muiPublish/page/targetExtraction/TargetExtraction";
 import Main from "~/muiPublish/page/main/Main";
+import SingleView from "~/muiPublish/page/singleView/SingleView";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -63,6 +64,9 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "MAIN" && (
                         <Main pageName={props.pageName} />
+                    )}
+                    {props.pageName === "싱글뷰" && (
+                        <SingleView pageName={props.pageName} />
                     )}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}
