@@ -609,6 +609,21 @@ const theme = createTheme({
                             },
                         },
                     },
+                    "& table": {
+                        "&.table-defult-style": {
+                            "& .MuiTableHead-root": {
+                                marginBottom: "4px",
+                            },
+                            "& th": {
+                                fontWeight: "700",
+                                padding: "0",
+                                height: "40px",
+                                fontSize: "14px",
+                                letterSpacing: "-0.35px",
+                                backgroundColor: "var(--background-color1)",
+                            },
+                        },
+                    },
                 },
             },
         },

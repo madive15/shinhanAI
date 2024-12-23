@@ -67,4 +67,7 @@ export const pathKeys = {
     muiTarget(): string {
         return `${pathKeys.root}muipublish/target`; // targetExtraction
     },
+    muiSingle(): string {
+        return `${pathKeys.root}muipublish/single`; // 싱글뷰
+    },
 };

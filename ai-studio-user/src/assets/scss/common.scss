@@ -859,6 +859,25 @@
 }
 
 //싱글뷰 컨텐츠
+.sub-tab-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 226px);
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.single-box-wrap {
+    padding-top: 24px;
+    & + .MuiFormControl-root {
+        margin-bottom: 12px;
+    }
+}
+.single-box-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 12px 0 24px;
+}
 .single-view-box {
     max-width: 576px;
     width: 100%;
@@ -868,6 +887,7 @@
     justify-content: space-between;
     border-radius: 12px;
     background-color: var(--background-color2);
+
     &.blue {
         background-color: var(--background-color1);
         .right {
@@ -919,6 +939,23 @@
             color: var(--font-color2);
             letter-spacing: -0.3px;
         }
+    }
+}
+.single-box-txt {
+    margin-top: 8px;
+    padding-left: 8px;
+    strong {
+        color: #121212;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: -0.4px;
+    }
+    p {
+        margin-top: 4px;
+        color: var(--font-color2);
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: -0.325px;
     }
 }
 .progress-bar-track {

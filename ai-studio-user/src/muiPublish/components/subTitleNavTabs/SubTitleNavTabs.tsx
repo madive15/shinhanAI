@@ -15,6 +15,7 @@ export interface IPageProps {
     pageName?: string;
     subName?: string;
     loading?: boolean;
+    subTabs?: boolean;
     useLoading?: (data: boolean) => void;
 }
 
@@ -38,15 +39,25 @@ const SubTitleNavTabs: React.FC<IPageProps> = (props) => {
             </div>
             <div className="sub-title-tab-box">
                 <div className="tit-tabs-box">
-                    <div className="sub-tit">타겟 추출</div>
-                    <div className="sub-tabs">
-                        <span className="active">프리빌트</span>
-                        <span>직접추출</span>
-                    </div>
+                    <div className="sub-tit">{props.pageName}</div>
+                    {props.subTabs && (
+                        <div className="sub-tabs">
+                            <span className="active">프리빌트</span>
+                            <span>직접추출</span>
+                        </div>
+                    )}
                 </div>
                 <div className="sub-searth">
-                    <TextField hiddenLabel variant="outlined" placeholder="검색어를 입력해주세요" />
-                    <IconButton type="button" aria-label="search" className="icon-search">
+                    <TextField
+                        hiddenLabel
+                        variant="outlined"
+                        placeholder="검색어를 입력해주세요"
+                    />
+                    <IconButton
+                        type="button"
+                        aria-label="search"
+                        className="icon-search"
+                    >
                         <Search />
                     </IconButton>
                 </div>
