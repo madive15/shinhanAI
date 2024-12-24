@@ -223,38 +223,78 @@
                         .recom-list {
                             position: relative;
                             margin: 0 0 24px 0;
-                            padding: 16px 16px;
+                            padding: 16px 16px 0;
                             border-radius: 16px 16px;
                             border: 1px solid var(--border-color5);
-
+                            .recom-tit {
+                                margin: 0 0 12px 0;
+                                font-size: 14px;
+                                font-weight: 700;
+                                line-height: 20.72px;
+                                letter-spacing: -0.025em;
+                            }
+                            .recom-list-box {
+                                margin: 0 0 16px 0;
+                            }
+                            .slick-slide {
+                                margin: 0 6px;
+                            }
                             .prev {
+                                display: none;
                                 position: absolute;
-                                left: 0;
-                                top: 0;
-                                display: flex;
-                                display: block;
+                                left: 16px;
+                                top: 119px;
                                 min-width: 28px;
                                 height: 28px;
                                 margin: 0 4px 0 0;
-                                background-color: var(--color2);
-                                border-radius: 8px 8px;
+                                background-color: var(--sub-color4);
+                                border-radius: 50% 50%;
+                                transition: all 0.2s ease-in-out;
                             }
                             .next {
+                                display: none;
                                 position: absolute;
-                                right: 0;
-                                top: 0;
-                                display: flex;
-                                display: block;
+                                right: 16px;
+                                top: 119px;
                                 min-width: 28px;
                                 height: 28px;
                                 margin: 0 4px 0 0;
-                                background-color: var(--color2);
-                                border-radius: 8px 8px;
+                                background-color: var(--sub-color4);
+                                border-radius: 50% 50%;
+                                transition: all 0.2s ease-in-out;
                             }
-
+                            &:hover {
+                                .prev,
+                                .next {
+                                    display: block;
+                                }
+                            }
                             .slick-prev,
                             .slick-next {
                                 display: none;
+                            }
+                        }
+
+                        .list-title {
+                            margin: 0 0 12px 0;
+                            font-family: "OneShinhan";
+                            font-size: 14px;
+                            font-weight: 700;
+                            line-height: 20px;
+                            letter-spacing: -0.025em;
+                            color: var(--color3);
+                        }
+                        .no-data {
+                            min-height: auto;
+                            .no-data-txt {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                min-height: 120px;
+                                margin: 0 0 24px 0;
+                                border-radius: 8px 8px;
+                                background-color: var(--background-color5);
                             }
                         }
                     }
@@ -290,6 +330,87 @@
             height: 67px;
             margin: 0 0 12px 0;
             @include background(url("../../assets/images/target_no_data.png"), 100%, 100%, 0, 0, no-repeat);
+        }
+    }
+
+    .table-tit {
+        margin: 0 0 12px 0;
+        font-family: "OneShinhan";
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20.72px;
+        letter-spacing: -0.025em;
+    }
+    .table-content {
+        width: 100%;
+        // height: calc(100vh - var(--heiTitSearch));
+        &.view-table {
+            height: auto;
+        }
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #adb5bd;
+            border-radius: 4px;
+            &:hover {
+                background: #6c757d;
+            }
+        }
+        .table-defult-style {
+            width: 100%;
+            margin: 0 0 24px 0;
+            tr {
+                &:hover {
+                    background-color: rgba(0, 70, 255, 0.1);
+                }
+            }
+            th {
+                padding: 0 0;
+                height: 40px;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 16px;
+                letter-spacing: -0.025em;
+                // border-top: 1px solid var(--border-color5);
+                // border-bottom: 1px solid var(--border-color5);
+                border-bottom: 0;
+                background-color: var(--background-color1);
+                & .icon-sort {
+                    margin: 0 0 0 3px;
+                }
+                & .MuiSvgIcon-root {
+                    display: none;
+                }
+            }
+            td {
+                padding: 0 0;
+                height: 48px;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 19px;
+                letter-spacing: -0.325px;
+                border-bottom: 1px solid var(--border-color3);
+                a {
+                    color: #0046ff;
+                }
+                .badge {
+                    margin: 0 0 0 4px;
+                }
+                .tag {
+                    display: inline-block;
+                    margin: 0 2px 0 0;
+                }
+            }
+        }
+        .tooltip {
+            margin: 0 0 0 4px;
         }
     }
 }
