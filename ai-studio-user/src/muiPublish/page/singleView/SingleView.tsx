@@ -50,12 +50,12 @@ const SingleView: React.FC<IPageProps> = (props) => {
                 <Tab menuName={tabMenu} />
             </div>
             <div className="tabs-contents">
-                <div className="list-content">
+                <div className="single-content">
                     <SubTitleNavTabs
                         subTabs={false}
                         pageName={props.pageName}
                     />
-                    <div className="sub-tab-content">
+                    <div className="scroll-content-area">
                         <SingleViewBox />
                         <Category />
                         <SingleViewTable />
