@@ -297,6 +297,9 @@ const theme = createTheme({
                     "& svg": {},
                     "&.Mui-checked ": {
                         boxShadow: "0px 2px 4px 0px rgba(0, 70, 255, 0.30)",
+                        "&.book-mark ": {
+                            boxShadow: "none !important",
+                        },
                     },
                     "&.Mui-disabled svg ": {
                         fill: "#fafafa",
