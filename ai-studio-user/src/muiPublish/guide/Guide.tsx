@@ -58,6 +58,7 @@ import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
 import { ReactComponent as Positive } from "~assets/images/svg/Icons-positive-14.svg";
 import { ReactComponent as Error } from "~assets/images/svg/Icons-error-14.svg";
 import InputAdornment from "@mui/material/InputAdornment";
+import ProgressBar from "~/muiPublish/components/ProgressBar";
 //
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -1412,12 +1413,7 @@ export default function VerticalTabs() {
                 </div>
                 <br />
 
-                <div className="progress-bar-track">
-                    <div
-                        className={`progress-bar ${progrssBarColor}`}
-                        style={{ width: `${progress}%` }}
-                    ></div>
-                </div>
+                <ProgressBar percent={60} />
             </TabPanel>
         </Box>
     );

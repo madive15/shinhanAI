@@ -1,3 +1,14 @@
+// 오른쪽 메뉴 없는 타입
+.single-content {
+    padding: 24px 24px 0 24px;
+}
+.scroll-content-area {
+    overflow-y: auto;
+    max-height: calc(100vh - 226px);
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
 .radio-group,
 .chk-group {
     gap: 4px 24px;
@@ -958,25 +969,43 @@
         letter-spacing: -0.325px;
     }
 }
-.progress-bar-track {
-    max-width: 264px;
-    width: 100%;
-    height: 8px;
-    background-color: var(--border-color4);
-    border-radius: 16px;
-    overflow: hidden;
-    .progress-bar {
+
+.progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    .progress-bar-track {
+        max-width: 264px;
+        width: 100%;
         height: 8px;
-        &.blue {
+        background-color: var(--border-color4);
+        border-radius: 16px;
+        overflow: hidden;
+        .progress-bar {
+            height: 8px;
+        }
+    }
+    &.blue {
+        .progress-bar {
             background-color: var(--sub-color3);
         }
-        &.green {
+        span {
+            font-weight: 700;
+            color: var(--color1);
+        }
+    }
+    &.green {
+        .progress-bar {
             background-color: var(--positive);
         }
-        &.gray {
+    }
+    &.gray {
+        .progress-bar {
             background-color: var(--font-color2);
         }
-        &.red {
+    }
+    &.red {
+        .progress-bar {
             background-color: var(--negative);
         }
     }

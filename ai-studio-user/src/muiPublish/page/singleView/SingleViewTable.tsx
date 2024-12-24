@@ -8,7 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import Badge from "~/muiPublish/components/Badge";
-// import { ReactComponent as Sort } from "~assets/images/svg/icon-sort.svg";
+import ProgressBar from "~/muiPublish/components/ProgressBar";
 
 // need content
 
@@ -104,7 +104,7 @@ const SingleViewTable: React.FC<IPageProps> = (props) => {
                                 Sogo 우량고객 이탈 예측 과제
                             </TableCell>
                             <TableCell width={320} align="center">
-                                상품코드
+                                <ProgressBar percent={81} />
                             </TableCell>
                             <TableCell width={220} align="center">
                                 상품명
