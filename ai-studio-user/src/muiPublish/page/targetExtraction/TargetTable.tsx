@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 
 // need content
 import Loading from "~/muiPublish/loading/Loading";
+import TargetTableRecom from "~/muiPublish/page/targetExtraction/TargetTableRecom";
+import TargetTablePopul from "~/muiPublish/page/targetExtraction/TargetTablePopul";
 
 // need style
 
@@ -32,7 +34,14 @@ const TargetTable: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
 
-    return <>TargetTable</>;
+    return (
+        <>
+            <div className="table-tit">추천 리스트</div>
+            <TargetTableRecom />
+            <div className="table-tit">인기 리스트</div>
+            <TargetTablePopul />
+        </>
+    );
 };
 
 export default TargetTable;

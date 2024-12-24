@@ -26,6 +26,8 @@ const noData: React.FC<IPageProps> = (props) => {
                     <br /> 타겟을 추출하세요.
                 </div>
             )}
+
+            {props.pageName === "타겟추출리스트" && <div className="no-data-txt">검색 결과가 없습니다.</div>}
         </div>
     );
 };

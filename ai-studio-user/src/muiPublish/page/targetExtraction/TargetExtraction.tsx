@@ -81,8 +81,10 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
                     </div>
                 </div>
                 <div className="list-setting">
-                    <NoData pageName={props.pageName} />
-                </div>
+                    <div>
+                        
+                    </div>
+                    {/* <NoData pageName={props.pageName} /> */}</div>
             </div>
         </>
     );
