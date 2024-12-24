@@ -19,7 +19,11 @@
         color: var(--font-color1);
     }
 }
-
+.book-mark {
+    .Mui-checked {
+        box-shadow: none !important;
+    }
+}
 //텍스트 에어리어
 .text-area {
     position: relative;
@@ -54,7 +58,8 @@
             display: block;
             width: 8px;
             height: 8px;
-            background: url("../images/icon/ico-required.png") top left no-repeat;
+            background: url("../images/icon/ico-required.png") top left
+                no-repeat;
             position: absolute;
             top: 0;
             left: 0;
@@ -153,7 +158,8 @@
             width: 100%;
             height: 100%;
             padding: 0 36px 0 12px;
-            background: url("../../assets/images/icon/ico-picker.png") 98.5% center no-repeat;
+            background: url("../../assets/images/icon/ico-picker.png") 98.5%
+                center no-repeat;
             &.react-datepicker-ignore-onclickoutside {
                 background: none;
             }
@@ -244,7 +250,9 @@
     .react-datepicker__day--selected,
     .react-datepicker__day--in-range:not([aria-disabled="true"]):hover,
     .react-datepicker__day--selected:not([aria-disabled="true"]):hover,
-    .react-datepicker__day--keyboard-selected:not([aria-disabled="true"]):hover {
+    .react-datepicker__day--keyboard-selected:not(
+            [aria-disabled="true"]
+        ):hover {
         background-color: var(--color1);
         color: var(--color2);
     }
@@ -646,15 +654,17 @@
                     display: block;
                     width: 14px;
                     height: 14px;
-                    background: url("../images/icon/ico-view-card-on.png") center center no-repeat;
+                    background: url("../images/icon/ico-view-card-on.png")
+                        center center no-repeat;
                     background-size: 14px 14px;
                 }
             }
             .MuiSwitch-track {
                 border-radius: 100px;
                 opacity: 1;
-                background: rgba(40, 120, 245, 0.1) url("../images/icon/ico-view-list-off.png") calc(100% - 12px) center
-                    no-repeat;
+                background: rgba(40, 120, 245, 0.1)
+                    url("../images/icon/ico-view-list-off.png")
+                    calc(100% - 12px) center no-repeat;
                 background-size: 14px 12px;
             }
 
@@ -662,11 +672,13 @@
                 transform: translateX(34px);
                 .MuiSwitch-thumb {
                     &::before {
-                        background: url("../images/icon/ico-view-list-on.png") center center no-repeat;
+                        background: url("../images/icon/ico-view-list-on.png")
+                            center center no-repeat;
                     }
                 }
                 & + .MuiSwitch-track {
-                    background: rgba(40, 120, 245, 0.1) url("../images/icon/ico-view-card-off.png") 12px center
+                    background: rgba(40, 120, 245, 0.1)
+                        url("../images/icon/ico-view-card-off.png") 12px center
                         no-repeat;
                 }
             }
@@ -869,7 +881,8 @@
         display: block;
         width: 14px;
         height: 14px;
-        background: url("../images/svg/Icons-triangle-error.svg") center center no-repeat;
+        background: url("../images/svg/Icons-triangle-error.svg") center center
+            no-repeat;
         position: absolute;
         top: 12px;
         left: 12px;
