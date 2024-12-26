@@ -647,7 +647,7 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     "&.MuiPopper-root[role='tooltip']": {
-                        "& div": {
+                        "& .MuiTooltip-tooltip": {
                             backgroundColor: "var(--color2)",
                             color: "var(--font-color1)",
                             borderRadius: "4px",
