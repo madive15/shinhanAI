@@ -542,6 +542,10 @@ const theme = createTheme({
                                 right: "16px",
                             },
                         },
+                        "& .txt-box": {
+                            padding: "12px 12px",
+                            backgroundColor: "var(--background-color5)",
+                        },
                     },
                     "&.layer-box": {
                         "& .MuiPaper-root": {
@@ -571,6 +575,7 @@ const theme = createTheme({
                         "&.large": {
                             "& .MuiPaper-root": {
                                 width: "680px",
+                                maxWidth: "680px",
                             },
                         },
                         "&.x-large": {

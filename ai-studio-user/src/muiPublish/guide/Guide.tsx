@@ -1336,7 +1336,7 @@ export default function VerticalTabs() {
                     <p>모델 추가</p>
                 </div>
                 <br />
-                <div className="blue-box">
+                <div className="item-box">
                     <div className="top">
                         <Badge value="지수" color="orange" />
                         <strong>자린고비 지수</strong>

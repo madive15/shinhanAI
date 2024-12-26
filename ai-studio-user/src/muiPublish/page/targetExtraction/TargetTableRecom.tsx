@@ -147,7 +147,7 @@ const TargetTableRecom: React.FC<IPageProps> = (props) => {
                                 hideSortIcon={true}
                                 tabIndex={-1}
                             >
-                                {idx === 0 ? <BookmarkOn /> : headCell.label}
+                                {idx === 0 ? <BookmarkOn className="book-mark" /> : headCell.label}
                                 {/* {orderBy === headCell.id ? (
                                     <span className="icon-sort">
                                         {order === "desc" ? (
@@ -231,6 +231,7 @@ const TargetTableRecom: React.FC<IPageProps> = (props) => {
                         <TableRow key={idx} hover sx={{ cursor: "pointer" }}>
                             <TableCell align="center">
                                 <Checkbox
+                                    className="book-mark"
                                     icon={<Bookmark />}
                                     checkedIcon={<BookmarkOn />}
                                     checked={row.bookmark === true ? true : false}
