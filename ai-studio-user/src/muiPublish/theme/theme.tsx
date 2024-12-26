@@ -149,7 +149,8 @@ const theme = createTheme({
                 {
                     props: { variant: "primaryBig" },
                     style: {
-                        background: "linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);",
+                        background:
+                            "linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);",
                         color: "#FFF",
                         fontSize: "16px",
                         fontWeight: "700",
@@ -158,10 +159,12 @@ const theme = createTheme({
                         padding: "12px 20px",
                         borderRadius: "0px 6px 6px 6px",
                         "&:hover": {
-                            background: "linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);",
+                            background:
+                                "linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);",
                         },
                         "&:active": {
-                            background: "linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);",
+                            background:
+                                "linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);",
                         },
                     },
                 },
@@ -649,7 +652,7 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     "&.MuiPopper-root[role='tooltip']": {
-                        "& div": {
+                        "& .MuiTooltip-tooltip": {
                             backgroundColor: "var(--color2)",
                             color: "var(--font-color1)",
                             borderRadius: "4px",
@@ -697,12 +700,14 @@ const theme = createTheme({
                                 },
                                 "&:focus": {
                                     borderColor: "var(--color1)",
-                                    boxShadow: "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
+                                    boxShadow:
+                                        "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
                                 },
                             },
-                            "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input": {
-                                backgroundColor: "var(--color2)",
-                            },
+                            "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input":
+                                {
+                                    backgroundColor: "var(--color2)",
+                                },
                             "& fieldset": {
                                 display: "none",
                             },
