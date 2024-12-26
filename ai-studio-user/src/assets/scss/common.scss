@@ -1,5 +1,6 @@
 // 오른쪽 메뉴 없는 타입
 .single-content {
+    width: 100%;
     padding: 24px 24px 0 24px;
 }
 .scroll-content-area {
@@ -885,9 +886,54 @@
 }
 
 //싱글뷰 컨텐츠
+.single-view {
+    height: 100%;
+
+    .no-data {
+        .no-data-box {
+            width: 355px;
+            height: 396px;
+            padding-top: 324px;
+            display: none;
+            &.type1 {
+                background: url("../images/single-view-nodata1.png") center top
+                    no-repeat;
+            }
+            &.type2 {
+                background: url("../images/single-view-nodata2.png") center top
+                    no-repeat;
+            }
+        }
+        p {
+            font-size: 24px;
+            line-height: 36px;
+            letter-spacing: -0.6px;
+            strong {
+                font-size: 24px;
+                line-height: 36px;
+                letter-spacing: -0.6px;
+            }
+        }
+        &.type1 {
+            .no-data-box {
+                &.type1 {
+                    display: block;
+                }
+            }
+        }
+        &.type2 {
+            .no-data-box {
+                &.type2 {
+                    display: block;
+                }
+            }
+        }
+    }
+}
 .sub-tab-content {
     overflow-y: auto;
     max-height: calc(100vh - 226px);
+
     &::-webkit-scrollbar {
         display: none;
     }

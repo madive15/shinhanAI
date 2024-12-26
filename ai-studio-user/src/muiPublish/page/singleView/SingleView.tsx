@@ -55,10 +55,26 @@ const SingleView: React.FC<IPageProps> = (props) => {
                         subTabs={false}
                         pageName={props.pageName}
                     />
-                    <div className="scroll-content-area">
+                    <div className="scroll-content-area single-view">
                         <SingleViewBox />
                         <Category />
                         <SingleViewTable />
+                        {/* <div className="no-data type2">
+                            <div className="no-data-box type1">
+                                <p>
+                                    <strong>고객 번호</strong> 또는
+                                    <strong> 사업자 등록번호</strong>로 <br />
+                                    검색해주세요.
+                                </p>
+                            </div>
+                            <div className="no-data-box type2">
+                                <p className="txt-type2">
+                                    정보가 일치하는
+                                    <br />
+                                    <strong>고객이 없습니다.</strong>
+                                </p>
+                            </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
