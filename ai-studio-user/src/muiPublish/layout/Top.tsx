@@ -1,5 +1,5 @@
 // necessary set
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logoPath from "~assets/images/admin_logo.png";
 import { ReactComponent as Search } from "~assets/images/svg/icon_search.svg";
@@ -44,6 +44,12 @@ const Top: React.FC<IPageProps> = (props) => {
     const handleBlur = () => {
         setIsFocused(false);
     };
+
+    const [openPopular, setOpenPopular] = useState<boolean>(false);
+    const popularOpen = () => {
+        setOpenPopular(true);
+    };
+
     return (
         <header className={props.openClose === true ? "menu-open" : ""}>
             <div className="top-content ">
@@ -121,6 +127,35 @@ const Top: React.FC<IPageProps> = (props) => {
                         >
                             <Search />
                         </IconButton>
+                    </div>
+                    <div
+                        className={`popular-search ${
+                            openPopular ? "active" : ""
+                        }`}
+                    >
+                        <button className="up" onClick={popularOpen}>
+                            {"정기저축지수"}
+                        </button>
+                        <ul className="popular-search-list">
+                            <li className="up">
+                                <a href="#1">암호화폐관심지수</a>
+                            </li>
+                            <li className="">
+                                <a href="#2">AppPush반응률지수</a>
+                            </li>
+                            <li className="down">
+                                <a href="#3">퇴직연금관심지수</a>
+                            </li>
+                            <li className="up">
+                                <a href="#4">정기저축지수</a>
+                            </li>
+                            <li className="down">
+                                <a href="#5">상품만기해지지수</a>
+                            </li>
+                            <li className="">
+                                <a href="#6">퇴직연금IRP</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="user-setting">

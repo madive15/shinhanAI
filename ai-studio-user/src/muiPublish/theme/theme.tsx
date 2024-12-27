@@ -680,7 +680,7 @@ const theme = createTheme({
                             outline: "0",
                         },
                         "& .MuiInputBase-root": {
-                            height: "38px",
+                            height: "36px",
                             fontSize: "14px",
 
                             "&:focus-visible": {
@@ -690,7 +690,7 @@ const theme = createTheme({
                         "& .MuiOutlinedInput-root": {
                             "& input": {
                                 padding: "0px 12px",
-                                height: "38px",
+                                height: "36px",
                                 border: "1px solid #ccc",
                                 borderRadius: " 8px",
                                 backgroundColor: "var(--color2) ",

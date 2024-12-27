@@ -34,8 +34,12 @@
                 width: 100%;
                 padding: 8px 24px;
                 & .header-search {
+                    display: flex;
+
+                    gap: 8px;
                     position: relative;
                     .search-area {
+                        position: relative;
                         .input-field {
                             input[type="text"] {
                                 width: 420px;
@@ -133,22 +137,137 @@
                                 }
                             }
                         }
+                        .icon-search {
+                            position: absolute;
+                            top: 4px;
+                            right: 6px;
+                            @include width-height(28px, 28px);
+                            padding: 0 0;
+                            background-color: var(--sub-color3);
+                            cursor: pointer;
+                            &:hover {
+                                transform: scale(1.1);
+                                transition: all 0.2s ease-in-out;
+                            }
+                            & path {
+                                fill: var(--color2);
+                            }
+                        }
                     }
 
-                    & .icon-search {
-                        position: absolute;
-                        top: 5px;
-                        right: 6px;
-                        @include width-height(28px, 28px);
-                        padding: 0 0;
-                        background-color: var(--sub-color3);
-                        cursor: pointer;
-                        &:hover {
-                            transform: scale(1.1);
-                            transition: all 0.2s ease-in-out;
+                    .popular-search {
+                        border-radius: 18px;
+                        background-color: #001237;
+                        padding: 7.5px 16px;
+                        width: 200px;
+                        height: 36px;
+                        display: inline-flex;
+                        align-items: center;
+                        button {
+                            color: var(--color2);
+                            width: 100%;
+                            text-align: left;
+                            font-size: 14px;
+                            font-weight: 700;
+                            line-height: 21px;
+                            letter-spacing: -0.35px;
+                            position: relative;
+                            &::after {
+                                content: "-";
+                                color: var(--color2);
+                                position: absolute;
+                                display: block;
+                                top: 50%;
+                                right: 0;
+                                transform: translateY(-50%);
+                            }
+                            &.up {
+                                &::after {
+                                    content: "";
+                                    width: 14px;
+                                    height: 12px;
+                                    background: url("../../assets/images/icon/ico-up.png")
+                                        no-repeat;
+                                }
+                            }
+                            &.down {
+                                &::after {
+                                    content: "";
+                                    width: 14px;
+                                    height: 12px;
+                                    background: url("../../assets/images/icon/ico-down.png")
+                                        no-repeat;
+                                }
+                            }
                         }
-                        & path {
-                            fill: var(--color2);
+                        .popular-search-list {
+                            padding-top: 8px;
+                            border-top: 1px solid rgba(255, 255, 255, 0.1);
+                            display: none;
+                            position: absolute;
+                            z-index: 2;
+                            background-color: #001237;
+                            width: 200px;
+                            border-radius: 0 0 18px 18px;
+                            padding: 0 16px;
+                            right: 0;
+                            top: 36px;
+                            li {
+                                a {
+                                    color: var(--color2);
+                                    font-size: 14px;
+                                    line-height: 21px;
+                                    letter-spacing: -0.35px;
+                                    display: block;
+                                    width: 100%;
+                                    padding: 5.5px 15px 5.5px 0;
+                                    margin: 4px 0;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    position: relative;
+                                    &::after {
+                                        content: "-";
+                                        color: var(--color2);
+                                        position: absolute;
+                                        display: block;
+                                        top: 50%;
+                                        right: 0;
+                                        transform: translateY(-50%);
+                                        width: 14px;
+                                        text-align: center;
+                                    }
+                                    &:focus {
+                                        outline: 1px solid var(--color2);
+                                    }
+                                }
+                                &.up {
+                                    a {
+                                        &::after {
+                                            content: "";
+                                            height: 12px;
+                                            background: url("../../assets/images/icon/ico-up.png")
+                                                no-repeat;
+                                        }
+                                    }
+                                }
+                                &.down {
+                                    a {
+                                        &::after {
+                                            content: "";
+                                            height: 12px;
+                                            background: url("../../assets/images/icon/ico-down.png")
+                                                no-repeat;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.active {
+                            border-radius: 18px 18px 0 0;
+                            .popular-search-list {
+                                display: block;
+                            }
                         }
                     }
                 }

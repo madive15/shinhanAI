@@ -120,8 +120,9 @@ const OcrSearch: React.FC<IPageProps> = (props) => {
                             }}
                         >
                             <MenuItem value={1}>전체</MenuItem>
-                            <MenuItem value={2}>Ten</MenuItem>
-                            <MenuItem value={3}>TwentyTwenty</MenuItem>
+                            <MenuItem value={2}>검증 완료</MenuItem>
+                            <MenuItem value={3}>검증 미완료</MenuItem>
+                            <MenuItem value={3}>검증 진행중</MenuItem>
                         </Select>
                     </div>
                 </div>
