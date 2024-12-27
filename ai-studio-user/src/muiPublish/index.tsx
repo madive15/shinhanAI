@@ -42,6 +42,12 @@ const pubList = [
         link: "/muipublish/single",
         etc: "",
     },
+    {
+        id: "6",
+        name: "ocr",
+        link: "/muipublish/ocr",
+        etc: "",
+    },
 ];
 
 export default function MuiPubIndex() {

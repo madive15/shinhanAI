@@ -70,4 +70,7 @@ export const pathKeys = {
     muiSingle(): string {
         return `${pathKeys.root}muipublish/single`; // 싱글뷰
     },
+    muiOcr(): string {
+        return `${pathKeys.root}muipublish/ocr`; // ocr
+    },
 };

@@ -1,3 +1,4 @@
+@import "../../assets/scss/mixin";
 .btn-wrap {
     display: flex;
     align-items: center;
@@ -160,7 +161,10 @@
     .react-datepicker-wrapper {
         max-width: 480px;
         width: 100%;
-        margin-right: 8px;
+        background-color: var(--color2);
+        & + .date-month-btn {
+            margin-left: 8px;
+        }
     }
     .react-datepicker__input-container {
         height: 38px;
@@ -172,8 +176,8 @@
             width: 100%;
             height: 100%;
             padding: 0 36px 0 12px;
-            background: url("../../assets/images/icon/ico-picker.png") 98.5%
-                center no-repeat;
+            background: url("../../assets/images/icon/ico-date-picker.png")
+                98.5% center no-repeat;
             &.react-datepicker-ignore-onclickoutside {
                 background: none;
             }
@@ -1107,5 +1111,224 @@
     letter-spacing: -0.025em;
     .num {
         color: var(--color1);
+    }
+}
+
+//ocr 컨텐츠
+.ocr {
+    .search-contnet {
+        margin-bottom: 24px;
+        h2 {
+            margin-bottom: 12px;
+        }
+        .btn-wrap {
+            margin-top: 8px;
+        }
+    }
+}
+.ocr-box-wrap {
+    padding-top: 24px;
+    margin-bottom: 12px;
+    .ocr-box-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        .ocr-condition-area {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            position: relative;
+            .ocr-box-condition {
+                span {
+                    font-size: 13px;
+                    letter-spacing: -0.325px;
+                    color: var(--font-color2);
+                    &:first-child {
+                        padding-right: 25px;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            width: 1px;
+                            height: 8px;
+                            display: block;
+                            background-color: var(--border-color3);
+                            position: absolute;
+                            top: 4px;
+                            right: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ocr-box-content {
+        display: flex;
+        gap: 16px;
+
+        .ocr-box {
+            width: 20%;
+            padding: 11px 16px;
+            border-radius: 12px;
+            color: var(--color2);
+            strong {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.4px;
+            }
+            .count {
+                height: 47px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: start;
+                em {
+                    font-family: var(--font-style1);
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 700;
+                    letter-spacing: -0.8px;
+                    padding-right: 4px;
+                }
+                span {
+                    font-family: var(--font-style1);
+                    font-size: 18px;
+                    font-weight: 700;
+                    letter-spacing: -0.45px;
+                    line-height: 37px;
+                }
+            }
+            &:nth-child(1) {
+                background-color: var(--sub-color4);
+            }
+            &:nth-child(2) {
+                background-color: var(--positive);
+            }
+            &:nth-child(3) {
+                background-color: var(--negative);
+            }
+            &:nth-child(4) {
+                background-color: var(--color1);
+            }
+            &:nth-child(5) {
+                background-color: #ff8b27;
+            }
+        }
+    }
+}
+.ocr-search-box {
+    width: 432px;
+    border-radius: 12px;
+    background-color: var(--color2);
+    padding: 16px;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    display: none;
+    .ico-rect23 {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+    &.active {
+        display: block;
+    }
+}
+.popup-search {
+    background-color: var(--background-color5);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 16px 0 24px;
+    .search-item {
+        display: flex;
+        align-items: center;
+        .tit {
+            display: block;
+            min-width: 80px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.35px;
+        }
+        .search-box {
+            width: 100%;
+        }
+        & + .search-item {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color6);
+        }
+    }
+}
+//search content
+.search-contnet {
+    margin: 0 0 0 0;
+
+    border-radius: 4px 4px;
+    .search-item-box {
+        @include flex;
+        @include justify-content(space-between);
+        @include align-items(center);
+        background-color: var(--background-color5);
+        border-radius: 8px;
+        padding: 8px 16px;
+        & + .search-item-box {
+            margin-top: 4px;
+        }
+        &.full {
+            width: 100%;
+            .search-item {
+                width: 100%;
+                padding: 0;
+                align-items: center;
+            }
+        }
+    }
+    & .search-item {
+        @include flex;
+        align-items: center;
+        width: 50%;
+        padding: 0 16px 0 0;
+        .tit {
+            @include flex;
+            @include justify-content(flex-start);
+            @include align-items(center);
+            min-width: 95px;
+            height: 36px;
+            margin: 0 8px 0 0;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: -0.025em;
+        }
+        .search-box {
+            @include flex;
+            width: 100%;
+            & .custom-select {
+                width: 100%;
+                min-width: 100px;
+                max-width: 100px;
+                // margin: 0 4px 0 0;
+                & + .input-area {
+                    margin-left: 4px;
+                }
+            }
+            & .input-area {
+                width: 100%;
+                input {
+                    width: 100%;
+                    max-width: 480px;
+                    min-width: 93px;
+                }
+            }
+            &.select-long {
+                & .custom-select {
+                    width: 100%;
+                    max-width: 480px;
+                }
+            }
+        }
+        &:last-of-type {
+            padding-right: 0;
+        }
     }
 }
