@@ -52,3 +52,50 @@
         margin: 12px 0;
     }
 }
+
+.extra-infor-popup {
+    width: 552px;
+    height: 490px;
+    margin: 0 auto;
+    padding: 24px 0 0 0 !important;
+    p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .tit {
+        margin: 0 0 16px 0;
+        font-family: "OneShinhan";
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 41.44px;
+        letter-spacing: -0.025em;
+        color: var(--color1);
+    }
+    .tit2 {
+        margin: 0 0 4px 0;
+        font-family: "OneShinhan";
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 29.6px;
+        letter-spacing: -0.025em;
+    }
+    .tit3 {
+        margin: 0 0 24px 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: -0.025em;
+    }
+    .slick-list {
+        // width: 500px;
+        // height: 436px;
+        // margin: 0 auto;
+    }
+}
+.extra-infor-btn {
+    justify-content: space-between !important;
+    button {
+        margin: 0 0 0 4px;
+    }
+}
