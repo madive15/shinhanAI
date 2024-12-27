@@ -73,7 +73,7 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
 
     return (
         <>
-            {/* <CreateExtractionPopup /> */}
+            <CreateExtractionPopup />
             {/* <ExtractionInforPopup /> */}
             <div className="tabs-area">
                 <Tab menuName={tabMenu} />

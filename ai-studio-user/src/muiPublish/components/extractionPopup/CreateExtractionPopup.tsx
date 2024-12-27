@@ -242,7 +242,7 @@ const CreateExtractionPopup = (props: any) => {
                             <TableRow>
                                 <TableCell component="th">중요도 설정</TableCell>
                                 <TableCell colSpan={3}>
-                                    {/* <Test /> */}
+                                    <Test />
                                     {/* <Test2 /> */}
                                 </TableCell>
                             </TableRow>
