@@ -671,7 +671,7 @@ const theme = createTheme({
                     "&.input-field": {
                         maxWidth: "480px",
                         width: "100%",
-                        backgroundColor: "var(--color2)",
+                        // backgroundColor: "var(--color2)",
 
                         "&.MuiFormControl-fullWidth": {
                             maxWidth: "100%",

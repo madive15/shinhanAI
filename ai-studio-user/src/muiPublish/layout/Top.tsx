@@ -35,11 +35,19 @@ export interface IPageProps {
 
 const Top: React.FC<IPageProps> = (props) => {
     const [openClose, setOpenClose] = useState<boolean>(false);
+    const [isFocused, setIsFocused] = useState(false);
 
+    const handleFocus = () => {
+        setIsFocused(true);
+    };
+
+    const handleBlur = () => {
+        setIsFocused(false);
+    };
     return (
         <header className={props.openClose === true ? "menu-open" : ""}>
             <div className="top-content ">
-                <div
+                {/* <div
                     className="search"
                     onClick={() => setOpenClose(!openClose)}
                 >
@@ -50,6 +58,70 @@ const Top: React.FC<IPageProps> = (props) => {
                     >
                         {openClose ? <Close /> : <Search />}
                     </IconButton>
+                </div> */}
+                <div className="header-search">
+                    <div className="search-area">
+                        <TextField
+                            className={`input-field ${
+                                isFocused ? "focus" : ""
+                            }`}
+                            placeholder="검색어를 입력해주세요"
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                        />
+
+                        <div className="search-history">
+                            <div className="top">
+                                <span>최근 검색어</span>
+                                <button type="button">전체삭제</button>
+                            </div>
+                            <ul className="history-words">
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                                <li className="history-words-item">
+                                    <a href="#">최근 검색어1</a>
+                                    <button>최근 검색어 삭제</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <IconButton
+                            type="button"
+                            aria-label="search"
+                            className="icon-search"
+                        >
+                            <Search />
+                        </IconButton>
+                    </div>
                 </div>
                 <div className="user-setting">
                     <span className="go-admin">
