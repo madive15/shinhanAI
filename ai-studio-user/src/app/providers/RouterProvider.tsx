@@ -53,8 +53,12 @@ export const router = createBrowserRouter([
                           element: <MuiLayout pageName={"타겟추출"} />,
                       },
                       {
-                          path: pathKeys.muiSingle(), // targetExtraction
+                          path: pathKeys.muiSingle(),
                           element: <MuiLayout pageName={"싱글뷰"} />,
+                      },
+                      {
+                          path: pathKeys.muiOcr(),
+                          element: <MuiLayout pageName={"AI-OCR 검증"} />,
                       },
                   ]
                 : []),

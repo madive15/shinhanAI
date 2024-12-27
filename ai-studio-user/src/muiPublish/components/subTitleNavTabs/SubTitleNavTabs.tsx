@@ -16,6 +16,7 @@ export interface IPageProps {
     subName?: string;
     loading?: boolean;
     subTabs?: boolean;
+    search?: boolean;
     useLoading?: (data: boolean) => void;
 }
 
@@ -47,20 +48,22 @@ const SubTitleNavTabs: React.FC<IPageProps> = (props) => {
                         </div>
                     )}
                 </div>
-                <div className="sub-searth">
-                    <TextField
-                        hiddenLabel
-                        variant="outlined"
-                        placeholder="검색어를 입력해주세요"
-                    />
-                    <IconButton
-                        type="button"
-                        aria-label="search"
-                        className="icon-search"
-                    >
-                        <Search />
-                    </IconButton>
-                </div>
+                {props.search && (
+                    <div className="sub-searth">
+                        <TextField
+                            hiddenLabel
+                            variant="outlined"
+                            placeholder="검색어를 입력해주세요"
+                        />
+                        <IconButton
+                            type="button"
+                            aria-label="search"
+                            className="icon-search"
+                        >
+                            <Search />
+                        </IconButton>
+                    </div>
+                )}
             </div>
         </>
     );
