@@ -17,6 +17,8 @@ import TargetThumbnail from "~/muiPublish/page/targetExtraction/TargetThumbnail"
 import TargetTable from "~/muiPublish/page/targetExtraction/TargetTable";
 import ModelIndexFilter from "~/muiPublish/components/modelIndexFilter/ModelIndexFilter";
 import TargetSumBtn from "~/muiPublish/components/targetSumBtn/TargetSumBtn";
+import ExtractionInforPopup from "~/muiPublish/components/extractionPopup/ExtractionInforPopup";
+import CreateExtractionPopup from "~/muiPublish/components/extractionPopup/CreateExtractionPopup";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -71,6 +73,8 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
 
     return (
         <>
+            {/* <CreateExtractionPopup /> */}
+            {/* <ExtractionInforPopup /> */}
             <div className="tabs-area">
                 <Tab menuName={tabMenu} />
             </div>
