@@ -149,7 +149,8 @@ const theme = createTheme({
                 {
                     props: { variant: "primaryBig" },
                     style: {
-                        background: "linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);",
+                        background:
+                            "linear-gradient(97deg, #0046ff 1.56%, #4baff5 100%);",
                         color: "#FFF",
                         fontSize: "16px",
                         fontWeight: "700",
@@ -158,10 +159,12 @@ const theme = createTheme({
                         padding: "12px 20px",
                         borderRadius: "0px 6px 6px 6px",
                         "&:hover": {
-                            background: "linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);",
+                            background:
+                                "linear-gradient(97deg, #114ce7 1.56%, #429adc 100%);",
                         },
                         "&:active": {
-                            background: "linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);",
+                            background:
+                                "linear-gradient(97deg, #1045d0 1.56%, #3a8ac6 100%);",
                         },
                     },
                 },
@@ -517,7 +520,7 @@ const theme = createTheme({
                     "&.confirm-box": {
                         "& .MuiPaper-root": {
                             position: "relative",
-                            width: "500px",
+                            width: "400px",
                             padding: "16px",
                             borderRadius: "16px",
                             boxShadow: "0px 8px 20px 0px rgba(0, 0, 0, 0.1)",
@@ -542,6 +545,10 @@ const theme = createTheme({
                         "& .txt-box": {
                             padding: "12px 12px",
                             backgroundColor: "var(--background-color5)",
+                            "& strong": {
+                                fontSize: "15px",
+                                letterSpacing: "-0.775px",
+                            },
                         },
                     },
                     "&.layer-box": {
@@ -631,21 +638,18 @@ const theme = createTheme({
                             },
                         },
                     },
-                    "& table": {
-                        "&.table-defult-style": {
-                            "& .MuiTableHead-root": {
-                                marginBottom: "4px",
-                            },
-                            "& th": {
-                                fontWeight: "700",
-                                padding: "0",
-                                height: "40px",
-                                fontSize: "14px",
-                                letterSpacing: "-0.35px",
-                                backgroundColor: "var(--background-color1)",
-                            },
-                        },
-                    },
+                    // "& table": {
+                    //     "&.table-defult-style": {
+                    //         "& th": {
+                    //             fontWeight: "700",
+                    //             padding: "0",
+                    //             height: "40px",
+                    //             fontSize: "14px",
+                    //             letterSpacing: "-0.35px",
+                    //             backgroundColor: "var(--background-color1)",
+                    //         },
+                    //     },
+                    // },
                 },
             },
         },
@@ -703,12 +707,14 @@ const theme = createTheme({
                                 },
                                 "&:focus": {
                                     borderColor: "var(--color1)",
-                                    boxShadow: "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
+                                    boxShadow:
+                                        "0px 4px 8px 0px rgba(0, 70, 255, 0.15)",
                                 },
                             },
-                            "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input": {
-                                backgroundColor: "var(--color2)",
-                            },
+                            "&.MuiInputBase-inputAdornedStart, &.MuiFilledInput-input":
+                                {
+                                    backgroundColor: "var(--color2)",
+                                },
                             "& fieldset": {
                                 display: "none",
                             },
