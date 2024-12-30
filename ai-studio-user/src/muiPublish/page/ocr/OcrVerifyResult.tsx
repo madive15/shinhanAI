@@ -52,6 +52,7 @@ const OcrVerifyResult: React.FC<IPageProps> = (props) => {
     const confirmClose = () => {
         setConfirmStauts(false);
     };
+
     return (
         <div className="ocr-verify-result">
             <div className="between-box">

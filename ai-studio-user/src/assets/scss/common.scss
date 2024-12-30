@@ -1005,8 +1005,7 @@
     &.blue {
         background-color: var(--background-color1);
         .right {
-            em,
-            span {
+            em {
                 color: var(--sub-color3);
             }
         }
@@ -1014,8 +1013,7 @@
     &.red {
         background-color: rgba(203, 55, 55, 0.1);
         .right {
-            em,
-            span {
+            em {
                 color: var(--negative);
             }
         }
@@ -1023,8 +1021,7 @@
     &.green {
         background-color: #e7f7f0;
         .right {
-            em,
-            span {
+            em {
                 color: var(--positive);
             }
         }
@@ -1057,7 +1054,18 @@
 }
 .single-box-txt {
     margin-top: 8px;
-    padding-left: 8px;
+    padding-left: 28px;
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("../images/svg/icon_logo24.svg") no-repeat;
+    }
     strong {
         color: #121212;
         font-size: 16px;
@@ -1113,7 +1121,84 @@
         }
     }
 }
-
+.single-box-area {
+    h2 {
+        margin-bottom: 12px;
+    }
+    & + .single-box-area {
+        margin-top: 24px;
+    }
+    &:last-of-type {
+        margin-bottom: 24px;
+    }
+}
+.single-box-item {
+    display: flex;
+    gap: 8px;
+    .left {
+        max-width: 581px;
+        width: 100%;
+        .single-box {
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #fafafa;
+            p {
+                line-height: 24px;
+            }
+            & + .single-box {
+                margin-top: 8px;
+            }
+            &.blue {
+                background-color: var(--background-color1);
+            }
+            &.red {
+                background-color: rgba(203, 55, 55, 0.1);
+            }
+            &.green {
+                background-color: #e7f7f0;
+            }
+        }
+    }
+    .right {
+        width: 100%;
+        .single-txt-box {
+            background-color: var(--background-color1);
+            border-radius: 12px;
+            padding: 16px 16px 16px 52px;
+            position: relative;
+            height: 100%;
+            h3 {
+                font-size: 16px;
+                letter-spacing: -0.4px;
+                margin-bottom: 12px;
+            }
+            p {
+                font-size: 14px;
+                color: var(--font-color2);
+                strong {
+                    font-size: 14px;
+                    color: var(--font-color1);
+                }
+                & + p {
+                    margin-top: 12px;
+                }
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                background: url("../images/svg/icon_logo24.svg") no-repeat;
+            }
+        }
+    }
+}
 // 팝업관련
 .model-add-tit {
     margin: 0 0 4px 0;

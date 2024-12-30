@@ -599,6 +599,17 @@ const theme = createTheme({
                                 },
                             },
                         },
+                        "&.xx-large": {
+                            "& .MuiDialog-paper": {
+                                width: "960px",
+                                maxWidth: "960px",
+                                "& .MuiPaper-root": {
+                                    width: "768px",
+                                    padding: "0 0",
+                                    borderRadius: "0 0",
+                                },
+                            },
+                        },
                     },
                 },
             },

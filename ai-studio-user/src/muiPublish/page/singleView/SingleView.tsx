@@ -54,6 +54,7 @@ const SingleView: React.FC<IPageProps> = (props) => {
                     <SubTitleNavTabs
                         subTabs={false}
                         pageName={props.pageName}
+                        search={true}
                     />
                     <div className="scroll-content-area single-view">
                         <SingleViewBox />
