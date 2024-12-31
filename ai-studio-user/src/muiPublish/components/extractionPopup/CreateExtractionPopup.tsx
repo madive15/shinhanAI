@@ -259,7 +259,7 @@ const CreateExtractionPopup = (props: any) => {
                 </TableContainer>
             </DialogContent>
             <DialogActions>
-                <div>
+                <div className="btn-wrap">
                     <Button variant="sub1" onClick={popupClose}>
                         닫기
                     </Button>
