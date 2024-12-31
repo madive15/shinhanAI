@@ -84,8 +84,8 @@ const CreateExtractionPopup = (props: any) => {
     return (
         <Dialog className="layer-box l-large" open={popupStauts} onClose={popupClose}>
             <DialogTitle>{"모델 생성"}</DialogTitle>
-            <DialogContent>
-                <p>신용카드</p>
+            <DialogContent className="create-extraction-popup">
+                <p className="popup-title">신용카드</p>
                 <div className="model-add-tit">적금 신규 가입 예측 모델</div>
                 <div className="hash-wrap">
                     <Hash value="#TAG" type="type2" />
