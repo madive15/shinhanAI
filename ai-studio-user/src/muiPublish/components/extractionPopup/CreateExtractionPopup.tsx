@@ -1,5 +1,5 @@
 // necessary set
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
 import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
 import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
@@ -25,8 +25,8 @@ import Category from "~/muiPublish/components/category/Category";
 
 // need content
 import Hash from "~/muiPublish/components/Hash";
-import Test from "~/muiPublish/components/extractionPopup/Test";
-import Test2 from "~/muiPublish/components/extractionPopup/Test2";
+import Importance from "~/muiPublish/components/extractionPopup/Importance";
+import LearningType from "~/muiPublish/components/extractionPopup/LearningType";
 
 // need style
 
@@ -49,40 +49,43 @@ const CreateExtractionPopup = (props: any) => {
         setPopupStauts(false);
     };
 
-    const [radioGroup, setRadioGroup] = React.useState("신규");
+    const [radioGroup, setRadioGroup] = useState("신규");
     const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup((event.target as HTMLInputElement).value);
     };
 
-    const [radioGroup2, setRadioGroup2] = React.useState("1개월");
+    const [radioGroup2, setRadioGroup2] = useState("1개월");
     const radioGroupChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup2((event.target as HTMLInputElement).value);
     };
 
-    const [radioGroup3, setRadioGroup3] = React.useState("거래기간 1개월 이상");
+    const [radioGroup3, setRadioGroup3] = useState("거래기간 1개월 이상");
     const radioGroupChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup3((event.target as HTMLInputElement).value);
     };
 
-    const [radioGroup4, setRadioGroup4] = React.useState("6개월 수신평잔 20만원 이상");
+    const [radioGroup4, setRadioGroup4] = useState("6개월 수신평잔 20만원 이상");
     const radioGroupChange4 = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup4((event.target as HTMLInputElement).value);
     };
 
-    const [radioGroup5, setRadioGroup5] = React.useState("LGBM");
+    const [radioGroup5, setRadioGroup5] = useState("LGBM");
     const radioGroupChange5 = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup5((event.target as HTMLInputElement).value);
     };
 
-    const [ageSelect, setAgeSelect] = React.useState("");
+    const [ageSelect, setAgeSelect] = useState("");
     const selectChange = (event: SelectChangeEvent) => {
         setAgeSelect(event.target.value as string);
     };
 
+    const [monthType, setMonthType] = useState(false); // true : 24개월, falce :12개월
+
     return (
-        <Dialog className="layer-box x-large" open={popupStauts} onClose={popupClose}>
-            <DialogTitle>{"적금"}</DialogTitle>
+        <Dialog className="layer-box l-large" open={popupStauts} onClose={popupClose}>
+            <DialogTitle>{"모델 생성"}</DialogTitle>
             <DialogContent>
+                <p>신용카드</p>
                 <div className="model-add-tit">적금 신규 가입 예측 모델</div>
                 <div className="hash-wrap">
                     <Hash value="#TAG" type="type2" />
@@ -242,8 +245,13 @@ const CreateExtractionPopup = (props: any) => {
                             <TableRow>
                                 <TableCell component="th">중요도 설정</TableCell>
                                 <TableCell colSpan={3}>
-                                    <Test />
-                                    {/* <Test2 /> */}
+                                    <Importance monthType={monthType} setMonthType={setMonthType} />
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell component="th">학습 형태 분할</TableCell>
+                                <TableCell colSpan={3}>
+                                    <LearningType monthType={monthType} setMonthType={setMonthType} />
                                 </TableCell>
                             </TableRow>
                         </TableBody>
