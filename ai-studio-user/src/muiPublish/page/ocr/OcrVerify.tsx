@@ -5,9 +5,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
-import OcrBox from "~/muiPublish/page/ocr/OcrBox";
-import OcrSearch from "~/muiPublish/page/ocr/OcrSearch";
-import OcrSearchTable from "~/muiPublish/page/ocr/OcrSearchTable";
+import OcrVerifyThumb from "~/muiPublish/page/ocr/OcrVerifyThumb";
+import OcrVerifyResult from "~/muiPublish/page/ocr/OcrVerifyResult";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -26,9 +25,9 @@ export interface IPageProps {
  * @description
  * user-front: Ocr
  * Ocr page
- * Ocr
+ * Ocr검증
  */
-const Ocr: React.FC<IPageProps> = (props) => {
+const OcrVerify: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -54,10 +53,9 @@ const Ocr: React.FC<IPageProps> = (props) => {
                         search={false}
                         pageName={props.pageName}
                     />
-                    <div className="scroll-content-area">
-                        <OcrBox />
-                        <OcrSearch />
-                        <OcrSearchTable />
+                    <div className="scroll-content-area half-content">
+                        <OcrVerifyThumb />
+                        <OcrVerifyResult />
                     </div>
                 </div>
             </div>
@@ -65,4 +63,4 @@ const Ocr: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default Ocr;
+export default OcrVerify;

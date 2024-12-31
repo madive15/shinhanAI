@@ -1,6 +1,6 @@
 // necessary set
 import React, { useState, useEffect, useRef } from "react";
-
+import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
 // need content
 import Button from "@mui/material/Button";
 import DatePicker from "react-datepicker";
@@ -8,7 +8,6 @@ import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
 import TextField from "@mui/material/TextField";
 // need style
 
@@ -120,8 +119,9 @@ const OcrSearch: React.FC<IPageProps> = (props) => {
                             }}
                         >
                             <MenuItem value={1}>전체</MenuItem>
-                            <MenuItem value={2}>Ten</MenuItem>
-                            <MenuItem value={3}>TwentyTwenty</MenuItem>
+                            <MenuItem value={2}>검증 완료</MenuItem>
+                            <MenuItem value={3}>검증 미완료</MenuItem>
+                            <MenuItem value={3}>검증 진행중</MenuItem>
                         </Select>
                     </div>
                 </div>

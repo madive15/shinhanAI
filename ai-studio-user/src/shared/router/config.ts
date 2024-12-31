@@ -73,4 +73,7 @@ export const pathKeys = {
     muiOcr(): string {
         return `${pathKeys.root}muipublish/ocr`; // ocr
     },
+    muiOcrVeri(): string {
+        return `${pathKeys.root}muipublish/ocrveri`; // ocr검증
+    },
 };
