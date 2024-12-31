@@ -588,6 +588,20 @@ const theme = createTheme({
                                 maxWidth: "680px",
                             },
                         },
+                        "&.l-large": {
+                            "& .MuiDialog-paper": {
+                                width: "800px",
+                                maxWidth: "800px",
+                                "& .MuiPaper-root": {
+                                    width: "750px",
+                                    padding: "0 0",
+                                    borderRadius: "0 0",
+                                },
+                                "& .MuiDialogContent-root": {
+                                    scrollbarWidth: "thin",
+                                },
+                            },
+                        },
                         "&.x-large": {
                             "& .MuiDialog-paper": {
                                 width: "800px",

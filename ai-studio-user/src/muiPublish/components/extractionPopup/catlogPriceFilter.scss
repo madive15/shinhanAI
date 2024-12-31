@@ -1,124 +1,188 @@
-.double-slider-box {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 300px;
-    margin: auto;
-}
+.LearningType-slider {
+    width: 500px;
+    margin: 10px 0;
+    .MuiSlider-root {
+        height: 7px;
+        margin: 0 0;
+    }
 
-.range-slider {
-    position: relative;
-    width: 100%;
-    height: 5px;
-    margin: 30px 0;
-    background-color: #8a8a8a;
-    border-radius: 5px;
+    & .MuiSlider-track {
+        background: #eb8d19;
+        border-color: white;
+    }
+    & .MuiSlider-mark {
+        background: none;
+    }
+    & .MuiSlider-markLabel {
+        display: none;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: -0.025em;
+        color: #000;
+    }
 }
-
-.slider-track {
-    height: 100%;
-    position: absolute;
-    background-color: #fe696a;
-    left: 0;
-    right: 100%;
-    border-radius: 5px;
+.learning-division {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 5px 0;
 }
-
-.range-slider input[type="range"] {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    transform: translateY(-50%);
-    background: none;
-    pointer-events: none;
-    appearance: none;
-    height: 5px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    background: #fe696a;
-    pointer-events: auto;
-    appearance: none;
-    cursor: pointer;
-    box-shadow: 0 0.125rem 0.5625rem -0.125rem rgba(0, 0, 0, 0.25);
-    position: relative;
-    z-index: 2; /* Ensure thumbs appear above the track */
-}
-
-input[type="range"]::-moz-range-thumb {
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    background: #fe696a;
-    pointer-events: auto;
-    cursor: pointer;
-    box-shadow: 0 0.125rem 0.5625rem -0.125rem rgba(0, 0, 0, 0.25);
-    position: relative;
-    z-index: 2;
-}
-
-.input-box {
+.import-box {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    margin: 0 0 8px 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.025em;
+    span {
+        margin: 0 0 0 5px;
+    }
+    .sum1 {
+        span {
+            font-size: 15px;
+            font-weight: 600;
+            color: #15b86c;
+        }
+    }
+    .sum2 {
+        span {
+            font-size: 15px;
+            font-weight: 600;
+            color: #eb8d19;
+        }
+    }
+    .sum3 {
+        span {
+            font-size: 15px;
+            font-weight: 600;
+            color: #6d19db;
+        }
+    }
 }
 
-.min-box,
-.max-box {
-    width: 50%;
-}
+// .double-slider-box {
+//     background-color: #fff;
+//     border-radius: 10px;
+//     padding: 20px;
+//     width: 100%;
+//     max-width: 300px;
+//     margin: auto;
+// }
 
-.min-box {
-    margin-right: 10px;
-}
-.max-box input {
-    float: right;
-}
-input[type="number"] {
-    width: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-}
+// .range-slider {
+//     position: relative;
+//     width: 100%;
+//     height: 5px;
+//     margin: 30px 0;
+//     background-color: #8a8a8a;
+//     border-radius: 5px;
+// }
 
-.min-tooltip,
-.max-tooltip {
-    position: absolute;
-    top: -35px;
-    font-size: 12px;
-    color: #555;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    white-space: nowrap;
-    z-index: 1;
-}
+// .slider-track {
+//     height: 100%;
+//     position: absolute;
+//     background-color: #fe696a;
+//     left: 0;
+//     right: 100%;
+//     border-radius: 5px;
+// }
 
-.min-tooltip {
-    left: 0;
-    transform: translateX(-50%);
-}
+// .range-slider input[type="range"] {
+//     position: absolute;
+//     width: 100%;
+//     top: 0;
+//     transform: translateY(-50%);
+//     background: none;
+//     pointer-events: none;
+//     appearance: none;
+//     height: 5px;
+// }
 
-.max-tooltip {
-    right: 0;
-    transform: translateX(50%);
-}
-/* Chrome, Safari, Edge, and Opera */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
+// input[type="range"]::-webkit-slider-thumb {
+//     height: 25px;
+//     width: 25px;
+//     border-radius: 50%;
+//     border: 3px solid #fff;
+//     background: #fe696a;
+//     pointer-events: auto;
+//     appearance: none;
+//     cursor: pointer;
+//     box-shadow: 0 0.125rem 0.5625rem -0.125rem rgba(0, 0, 0, 0.25);
+//     position: relative;
+//     z-index: 2; /* Ensure thumbs appear above the track */
+// }
 
-/* Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
-}
+// input[type="range"]::-moz-range-thumb {
+//     height: 25px;
+//     width: 25px;
+//     border-radius: 50%;
+//     border: 3px solid #fff;
+//     background: #fe696a;
+//     pointer-events: auto;
+//     cursor: pointer;
+//     box-shadow: 0 0.125rem 0.5625rem -0.125rem rgba(0, 0, 0, 0.25);
+//     position: relative;
+//     z-index: 2;
+// }
+
+// .input-box {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+// }
+
+// .min-box,
+// .max-box {
+//     width: 50%;
+// }
+
+// .min-box {
+//     margin-right: 10px;
+// }
+// .max-box input {
+//     float: right;
+// }
+// input[type="number"] {
+//     width: 40px;
+//     padding: 10px;
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+//     text-align: center;
+// }
+
+// .min-tooltip,
+// .max-tooltip {
+//     position: absolute;
+//     top: -35px;
+//     font-size: 12px;
+//     color: #555;
+//     background-color: #fff;
+//     padding: 5px;
+//     border: 1px solid #ddd;
+//     border-radius: 5px;
+//     white-space: nowrap;
+//     z-index: 1;
+// }
+
+// .min-tooltip {
+//     left: 0;
+//     transform: translateX(-50%);
+// }
+
+// .max-tooltip {
+//     right: 0;
+//     transform: translateX(50%);
+// }
+// /* Chrome, Safari, Edge, and Opera */
+// input[type="number"]::-webkit-inner-spin-button,
+// input[type="number"]::-webkit-outer-spin-button {
+//     -webkit-appearance: none;
+//     margin: 0;
+// }
+
+// /* Firefox */
+// input[type="number"] {
+//     -moz-appearance: textfield;
+// }
