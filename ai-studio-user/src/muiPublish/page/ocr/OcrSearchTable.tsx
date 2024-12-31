@@ -136,7 +136,9 @@ const OcrSearchTable: React.FC<IPageProps> = (props) => {
                                     {idx}
                                 </TableCell>
                                 <TableCell width={440} align="left">
-                                    차량미납과태료자동등록
+                                    <a className="is-file ellipsis">
+                                        차량미납과태료자동등록
+                                    </a>
                                 </TableCell>
                                 <TableCell width={136} align="center">
                                     2024-10-08

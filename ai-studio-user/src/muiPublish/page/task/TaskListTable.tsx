@@ -147,9 +147,18 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                                     {idx + 2}
                                 </TableCell>
                                 <TableCell width={1232} align="left">
-                                    <p className="is-file">
-                                        SOHO 우량고객 이탈 예측 과제
-                                    </p>
+                                    <a className="is-file ellipsis">
+                                        SOHO 우량고객 이탈 예측 과제SOHO
+                                        우량고객 이탈 예측 과제SOHOSOHO 우량고객
+                                        이탈 예측 과제SOHOSOHO 우량고객 이탈
+                                        예측 과제SOHOSOHO 우량고객 이탈 예측
+                                        과제SOHOSOHO 우량고객 이탈 예측
+                                        과제SOHOSOHO 우량고객 이탈 예측
+                                        과제SOHOSOHO 우량고객 이탈 예측
+                                        과제SOHOSOHO 우량고객 이탈 예측
+                                        과제SOHOSOHO 우량고객 이탈 예측
+                                        과제SOHOSOHO
+                                    </a>
                                 </TableCell>
                                 <TableCell width={160} align="center">
                                     김멀더 (MulderKim)
