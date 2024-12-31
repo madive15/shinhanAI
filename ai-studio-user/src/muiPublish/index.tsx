@@ -54,6 +54,12 @@ const pubList = [
         link: "/muipublish/ocrveri",
         etc: "",
     },
+    {
+        id: "7",
+        name: "과제신청목록",
+        link: "/muipublish/tasklist",
+        etc: "",
+    },
 ];
 
 export default function MuiPubIndex() {

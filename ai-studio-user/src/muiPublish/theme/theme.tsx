@@ -379,7 +379,7 @@ const theme = createTheme({
                 root: {
                     "&.select-box": {
                         position: "relative",
-                        border: "1px solid var(--border-color1)",
+                        border: "1px solid var(--border-color6)",
                         padding: "0",
                         fontSize: "14px",
                         lineHeight: "18px",

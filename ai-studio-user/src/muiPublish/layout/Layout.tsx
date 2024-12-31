@@ -12,6 +12,7 @@ import Main from "~/muiPublish/page/main/Main";
 import SingleView from "~/muiPublish/page/singleView/SingleView";
 import Ocr from "~/muiPublish/page/ocr/Ocr";
 import OcrVerify from "~/muiPublish/page/ocr/OcrVerify";
+import TaskList from "~/muiPublish/page/task/TaskList";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -75,6 +76,9 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "AI-OCR 검증" && (
                         <OcrVerify pageName={props.pageName} />
+                    )}
+                    {props.pageName === "과제신청목록" && (
+                        <TaskList pageName={props.pageName} />
                     )}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}

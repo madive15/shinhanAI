@@ -76,4 +76,7 @@ export const pathKeys = {
     muiOcrVeri(): string {
         return `${pathKeys.root}muipublish/ocrveri`; // ocr검증
     },
+    taskList(): string {
+        return `${pathKeys.root}muipublish/tasklist`; // 과제신청목록
+    },
 };

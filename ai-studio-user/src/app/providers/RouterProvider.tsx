@@ -64,6 +64,10 @@ export const router = createBrowserRouter([
                           path: pathKeys.muiOcrVeri(),
                           element: <MuiLayout pageName={"AI-OCR 검증"} />,
                       },
+                      {
+                          path: pathKeys.taskList(),
+                          element: <MuiLayout pageName={"과제신청목록"} />,
+                      },
                   ]
                 : []),
             {

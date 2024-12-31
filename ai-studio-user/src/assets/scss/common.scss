@@ -409,6 +409,22 @@
         border-radius: 100px;
         justify-content: center;
     }
+    &.line {
+        background-color: #fff;
+        border: 1px solid;
+        &.blue {
+            color: var(--color1);
+            border-color: var(--color1);
+        }
+        &.gray {
+            color: var(--font-color3);
+            border-color: var(--font-color3);
+        }
+        &.red {
+            color: var(--negative);
+            border-color: var(--negative);
+        }
+    }
 }
 .badge-wrap {
     display: flex;
@@ -1220,17 +1236,6 @@
 }
 
 //ocr 컨텐츠
-.ocr {
-    .search-contnet {
-        margin-bottom: 24px;
-        h2 {
-            margin-bottom: 12px;
-        }
-        .btn-wrap {
-            margin-top: 8px;
-        }
-    }
-}
 .ocr-box-wrap {
     padding-top: 24px;
     margin-bottom: 24px;
@@ -1340,9 +1345,6 @@
     }
 }
 .ocr-search-table {
-    .between-box {
-        margin-bottom: 12px;
-    }
     .complete {
         color: var(--font-color3);
     }
@@ -1484,6 +1486,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 12px;
     .left {
         display: flex;
         align-items: center;
@@ -1503,7 +1506,7 @@
 }
 //search content
 .search-contnet {
-    margin: 0 0 0 0;
+    margin: 0 0 16px 0;
 
     border-radius: 4px 4px;
     .search-item-box {
@@ -1545,10 +1548,11 @@
         .search-box {
             @include flex;
             width: 100%;
+            max-width: 480px;
             & .custom-select {
                 width: 100%;
-                min-width: 100px;
-                max-width: 100px;
+                min-width: 120px;
+                max-width: 120px;
                 // margin: 0 4px 0 0;
                 & + .input-area {
                     margin-left: 4px;
@@ -1573,4 +1577,15 @@
             padding-right: 0;
         }
     }
+    h2 {
+        margin-bottom: 12px;
+    }
+    .btn-wrap {
+        margin-top: 8px;
+    }
+}
+
+//과제신청
+.task {
+    padding-top: 24px;
 }

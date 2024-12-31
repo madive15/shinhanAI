@@ -6,7 +6,7 @@ import { ReactComponent as Home } from "~assets/images/svg/icon_navi_home.svg";
 import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
-
+import Button from "@mui/material/Button";
 // need style
 import "~/muiPublish/components/subTitleNavTabs/subTitleNavTabs.scss";
 
@@ -17,6 +17,7 @@ export interface IPageProps {
     loading?: boolean;
     subTabs?: boolean;
     search?: boolean;
+    btn?: string;
     useLoading?: (data: boolean) => void;
 }
 
@@ -62,6 +63,11 @@ const SubTitleNavTabs: React.FC<IPageProps> = (props) => {
                         >
                             <Search />
                         </IconButton>
+                    </div>
+                )}
+                {props.btn && (
+                    <div className="btn-wrap">
+                        <Button variant="primary">{props.btn}</Button>
                     </div>
                 )}
             </div>

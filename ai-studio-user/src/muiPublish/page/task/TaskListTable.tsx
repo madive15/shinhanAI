@@ -45,7 +45,7 @@ interface Data {
  * admin-front: OcrSearchTable
  * OcrSearchTable
  */
-const OcrSearchTable: React.FC<IPageProps> = (props) => {
+const TaskListTable: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -57,10 +57,10 @@ const OcrSearchTable: React.FC<IPageProps> = (props) => {
     }, []);
 
     return (
-        <div className="ocr-search-table">
+        <div className="task-list-table">
             <div className="between-box">
                 <div className="left">
-                    <h2>검증 결과</h2>
+                    <h2>검색 결과</h2>
                     <span className="sum">총 00건</span>
                 </div>
                 <div className="right">
@@ -72,13 +72,9 @@ const OcrSearchTable: React.FC<IPageProps> = (props) => {
                                     checkedIcon={<ChkChecked />}
                                 />
                             }
-                            label="검증 미완료만 표시"
+                            label="내 신청 현황만 보기"
                         />
                     </FormGroup>
-                    <div className="btn-wrap">
-                        <Button variant="small">일괄 검증 수행</Button>
-                        <Button variant="small">실시간 검증 불러오기</Button>
-                    </div>
                 </div>
             </div>
             <TableContainer className="table-content">
@@ -86,87 +82,87 @@ const OcrSearchTable: React.FC<IPageProps> = (props) => {
                     <TableHead>
                         <TableRow>
                             <TableCell width={48} align="center">
-                                <Checkbox
-                                    icon={<ChkDefault />}
-                                    checkedIcon={<ChkChecked />}
-                                />
-                            </TableCell>
-                            <TableCell width={48} align="center">
                                 번호
                             </TableCell>
-                            <TableCell width={440} align="left">
-                                모델ID
+                            <TableCell width={1232} align="left">
+                                신청 과제명
                             </TableCell>
-                            <TableCell width={136} align="center">
-                                실행일자
+                            <TableCell width={160} align="center">
+                                작성자
                             </TableCell>
-                            <TableCell width={440} align="left">
-                                문서 파일명
+                            <TableCell width={160} align="center">
+                                등록일
                             </TableCell>
-                            <TableCell width={80} align="center">
-                                페이지 수
-                            </TableCell>
-                            <TableCell width={104} align="center">
-                                모델 결과
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                검증 상태
-                            </TableCell>
-                            <TableCell width={96} align="center">
-                                검증자
-                            </TableCell>
-                            <TableCell width={136} align="center">
-                                검증 일시
-                            </TableCell>
-                            <TableCell width={112} align="center">
-                                검증 화면
+                            <TableCell width={160} align="center">
+                                진행 현황
                             </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((idx) => (
+                        <TableRow>
+                            <TableCell width={48} align="center">
+                                1
+                            </TableCell>
+                            <TableCell width={1232} align="left">
+                                <p className="is-file">
+                                    SOHO 우량고객 이탈 예측 과제
+                                </p>
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                김멀더 (MulderKim)
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                2024-10-08
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                <Badge
+                                    value="과제 신청"
+                                    color="blue"
+                                    type="line"
+                                />
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell width={48} align="center">
+                                2
+                            </TableCell>
+                            <TableCell width={1232} align="left">
+                                <p className="is-file">
+                                    SOHO 우량고객 이탈 예측 과제
+                                </p>
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                김멀더 (MulderKim)
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                2024-10-08
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                <Badge value="미채택" color="red" type="line" />
+                            </TableCell>
+                        </TableRow>
+                        {[1, 2, 3, 4, 5, 6].map((idx) => (
                             <TableRow key={idx}>
                                 <TableCell width={48} align="center">
-                                    <Checkbox
-                                        icon={<ChkDefault />}
-                                        checkedIcon={<ChkChecked />}
-                                    />
+                                    {idx + 2}
                                 </TableCell>
-                                <TableCell width={48} align="center">
-                                    {idx}
+                                <TableCell width={1232} align="left">
+                                    <p className="is-file">
+                                        SOHO 우량고객 이탈 예측 과제
+                                    </p>
                                 </TableCell>
-                                <TableCell width={440} align="left">
-                                    차량미납과태료자동등록
+                                <TableCell width={160} align="center">
+                                    김멀더 (MulderKim)
                                 </TableCell>
-                                <TableCell width={136} align="center">
+                                <TableCell width={160} align="center">
                                     2024-10-08
                                 </TableCell>
-                                <TableCell width={440} align="left">
-                                    과태료파일_01.tif
-                                </TableCell>
-                                <TableCell width={80} align="center">
-                                    4장
-                                </TableCell>
-                                <TableCell width={104} align="center">
+                                <TableCell width={160} align="center">
                                     <Badge
-                                        value="성공"
-                                        color="green"
-                                        size="large"
+                                        value="과제 종료"
+                                        color="gray"
+                                        type="line"
                                     />
-                                </TableCell>
-                                <TableCell width={120} align="center">
-                                    <span className="complete">검증완료</span>
-                                </TableCell>
-                                <TableCell width={96} align="center">
-                                    이신한
-                                </TableCell>
-                                <TableCell width={136} align="center">
-                                    2024-10-08
-                                </TableCell>
-                                <TableCell width={112} align="center">
-                                    <IconButton className="ico-circle20">
-                                        <Search12 />
-                                    </IconButton>
                                 </TableCell>
                             </TableRow>
                         ))}
@@ -176,4 +172,4 @@ const OcrSearchTable: React.FC<IPageProps> = (props) => {
         </div>
     );
 };
-export default OcrSearchTable;
+export default TaskListTable;

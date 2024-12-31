@@ -1222,6 +1222,15 @@ export default function VerticalTabs() {
                     <Badge value="과제 종료" color="gray" size="large" />
                     <Badge value="반려" color="red" size="large" />
                 </div>
+                <br />
+                <p>
+                    <strong>라인 형</strong>
+                </p>
+                <div className="badge-wrap">
+                    <Badge value="사용중" color="green" size="large" />
+                    <Badge value="과제 종료" color="gray" size="large" />
+                    <Badge value="반려" color="red" size="large" />
+                </div>
             </TabPanel>
             {/* 해시태그 */}
             <TabPanel value={value} index={12}>
