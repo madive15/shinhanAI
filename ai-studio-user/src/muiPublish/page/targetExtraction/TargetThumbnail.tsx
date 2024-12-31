@@ -67,7 +67,12 @@ const TargetThumbnail: React.FC<IPageProps> = (props) => {
                         <div className="card-box" key={i}>
                             <a href="#" className="">
                                 <div className="book-mark">
-                                    <Checkbox icon={<Bookmark />} checkedIcon={<BookmarkOn />} defaultChecked />
+                                    <Checkbox
+                                        className="book-mark"
+                                        icon={<Bookmark />}
+                                        checkedIcon={<BookmarkOn />}
+                                        defaultChecked
+                                    />
                                 </div>
                                 <div className="badge-wrap">
                                     <Badge value="전략" color="black " />
@@ -75,10 +80,13 @@ const TargetThumbnail: React.FC<IPageProps> = (props) => {
                                     <Badge value="N" color="red" />
                                 </div>
                                 <p className="card-box-tit">
-                                    <strong>프리빌트 된 항목에 대한제제제제제제제</strong>
+                                    <strong>
+                                        프리빌트 된 항목에 대한제제제제제제제
+                                    </strong>
                                 </p>
                                 <p className="card-box-desc">
-                                    프리빌트된 항목에 대한 간략한 설명이 들어갑니다. 최대 2줄 까지 들어갑니다. 그
+                                    프리빌트된 항목에 대한 간략한 설명이
+                                    들어갑니다. 최대 2줄 까지 들어갑니다. 그
                                     이후에는 말줄임표로 생략됩니다.
                                 </p>
                                 <div className="card-box-bottom">

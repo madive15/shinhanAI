@@ -93,36 +93,64 @@ const TargetThumbnailRecom: React.FC<IPageProps> = (props) => {
                 <div className="recom-tit">추천 리스트</div>
                 {tumbnail.length > 0 ? (
                     <>
-                        <Slider ref={(slider) => (slideRef.current = slider)} className="recom-list-box" {...settings}>
+                        <Slider
+                            ref={(slider) => (slideRef.current = slider)}
+                            className="recom-list-box"
+                            {...settings}
+                        >
                             {[1, 2, 3, 4, 5].map((v: any, i: number) => {
                                 return (
                                     <div className="card-box" key={i}>
                                         <a href="#" className="">
                                             <div className="book-mark">
                                                 <Checkbox
+                                                    className="book-mark"
                                                     icon={<Bookmark />}
                                                     checkedIcon={<BookmarkOn />}
                                                     defaultChecked
                                                 />
                                             </div>
                                             <div className="badge-wrap">
-                                                <Badge value="전략" color="black " />
-                                                <Badge value="중분류" color="navy " />
+                                                <Badge
+                                                    value="전략"
+                                                    color="black "
+                                                />
+                                                <Badge
+                                                    value="중분류"
+                                                    color="navy "
+                                                />
                                                 <Badge value="N" color="red" />
                                             </div>
                                             <p className="card-box-tit">
-                                                <strong>프리빌트 된 항목에 대한제제제제제제제</strong>
+                                                <strong>
+                                                    프리빌트 된 항목에
+                                                    대한제제제제제제제
+                                                </strong>
                                             </p>
                                             <p className="card-box-desc">
-                                                프리빌트된 항목에 대한 간략한 설명이 들어갑니다. 최대 2줄 까지
-                                                들어갑니다. 그 이후에는 말줄임표로 생략됩니다.
+                                                프리빌트된 항목에 대한 간략한
+                                                설명이 들어갑니다. 최대 2줄 까지
+                                                들어갑니다. 그 이후에는
+                                                말줄임표로 생략됩니다.
                                             </p>
                                             <div className="card-box-bottom">
                                                 <div className="hash-wrap">
-                                                    <Hash value="#TAG" type="type2" />
-                                                    <Hash value="#TAG" type="type2" />
-                                                    <Hash value="#TAG" type="type2" />
-                                                    <Hash value="+5" type="type2" />
+                                                    <Hash
+                                                        value="#TAG"
+                                                        type="type2"
+                                                    />
+                                                    <Hash
+                                                        value="#TAG"
+                                                        type="type2"
+                                                    />
+                                                    <Hash
+                                                        value="#TAG"
+                                                        type="type2"
+                                                    />
+                                                    <Hash
+                                                        value="+5"
+                                                        type="type2"
+                                                    />
                                                 </div>
                                                 <IconButton className="ico-circle20">
                                                     <Search12 />
