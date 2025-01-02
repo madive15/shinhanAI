@@ -79,4 +79,10 @@ export const pathKeys = {
     taskList(): string {
         return `${pathKeys.root}muipublish/tasklist`; // 과제신청목록
     },
+    taskApply(): string {
+        return `${pathKeys.root}muipublish/taskapply`; // 과제신청
+    },
+    taskDetail(): string {
+        return `${pathKeys.root}muipublish/taskdetail`; // 과제신청상세
+    },
 };

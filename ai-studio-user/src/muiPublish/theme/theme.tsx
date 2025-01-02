@@ -337,6 +337,7 @@ const theme = createTheme({
                 root: {
                     marginLeft: "0px",
                     marginRight: "0px",
+                    minWidth: "fit-content",
                 },
             },
         },
@@ -399,7 +400,7 @@ const theme = createTheme({
                         },
                     },
                     "&.small": {
-                        maxWidth: "100px",
+                        maxWidth: "120px",
                     },
                     "&.Mui-focused": {
                         borderColor: "var(--color1)",
@@ -647,10 +648,20 @@ const theme = createTheme({
                                 fontSize: "14px",
                             },
                             "& th": {
-                                maxWidth: "160px",
+                                width: "160px",
                                 backgroundColor: "var(--background-color2)",
                                 lineHeight: "28px",
                                 letterSpacing: "-0.35px",
+                                color: "#000",
+                                "& .th-desc": {
+                                    fontSize: "13px",
+                                    letterSpacing: "-0.325px",
+                                    lineHeight: "19.5px",
+                                    color: "var(--font-color2)",
+                                },
+                                "& .ico-text": {
+                                    marginLeft: "6px",
+                                },
                             },
                             "& td": {
                                 backgroundColor: "var(--color2)",
@@ -763,6 +774,9 @@ const theme = createTheme({
                                 border: "1px solid var(--border-color3)",
                                 background: "var(--background-color2)",
                             },
+                        },
+                        "& + .MuiFormControlLabel-root": {
+                            marginLeft: "16px",
                         },
                     },
                 },

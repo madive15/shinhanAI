@@ -18,6 +18,7 @@ export interface IPageProps {
     subTabs?: boolean;
     search?: boolean;
     btn?: string;
+    btnTwo?: string;
     useLoading?: (data: boolean) => void;
 }
 
@@ -67,6 +68,9 @@ const SubTitleNavTabs: React.FC<IPageProps> = (props) => {
                 )}
                 {props.btn && (
                     <div className="btn-wrap">
+                        {props.btnTwo && (
+                            <Button variant="sub1">{props.btnTwo}</Button>
+                        )}
                         <Button variant="primary">{props.btn}</Button>
                     </div>
                 )}

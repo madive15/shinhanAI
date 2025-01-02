@@ -1,0 +1,216 @@
+// necessary set
+import React, { useState, useEffect, useRef } from "react";
+
+import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
+import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
+import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
+import { ReactComponent as X } from "~assets/images/svg/Icons-x.svg";
+// need content
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormGroup from "@mui/material/FormGroup";
+import Checkbox from "@mui/material/Checkbox";
+import Badge from "~/muiPublish/components/Badge";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
+import TextField from "@mui/material/TextField";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+// need style
+import "~/muiPublish/layout/layout.scss";
+
+// Props type
+export interface IPageProps {
+    pageName?: string;
+    subName?: string;
+    loading?: boolean;
+    useLoading?: (data: boolean) => void;
+    heiTitSearch?: number;
+}
+
+interface Data {
+    id: number;
+    calories: number;
+    carbs: number;
+    fat: number;
+    name: string;
+    protein: number;
+    use: number;
+}
+
+/**
+ * @author shinhanAI
+ * @description
+ * admin-front: TaskApplyTable
+ * TaskApplyTable
+ */
+const TaskApplyTable: React.FC<IPageProps> = (props) => {
+    // loading
+    const [loading, setLoading] = useState<boolean>(true);
+    const useLoading = (onoff: boolean) => {
+        setLoading(onoff);
+    };
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
+
+    const tooptipText = (
+        <div>
+            <strong>타이틀</strong>
+            <br />
+            툴팁 작업 예정 툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업
+            예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁
+            작업 예정.
+        </div>
+    );
+    const defaultEditorContent = `
+    <p><strong>1.프로젝트명</strong> : 프로젝트명을 입력해주세요.<br />
+    예) SOHO 우량고객 이탈 예측</p>
+    <br />
+    <p><strong>2.담당자</strong> : 부서명, 직급/성함을 입력해주세요.<br />
+    예) 디지털전략부 김신한 수석</p>
+    <br />
+    <p><strong>3.추진배경</strong> : 프로젝트 목적을 입력해주세요.<br />
+    예) SOHO 우량고객 이탈 예측을 통한 사전 관리로 전행 수익성 제고 및 업무효율화</p>
+    <br />
+    <p><strong>4.추진요건</strong> : 과제를 수행하는데 필요한 요건들을 상세히 기술해주세요.<br />
+    예) 최근 3개월 이내 SOHO 우량고객의 여신 이탈 확률을 예측<br />
+    - 예측 대상 : SOHO 우량고객<br />
+    - 예측 목표 : 이탈여부<br />
+    - 예측 범위 : 최근 3개월 이내<br />
+    - 기준<br />
+    &nbsp - 분석대상 고객 : 활동성 고객<br />
+    &nbsp - 이탈여부 : 여신 이탈 시 이탈로 정의<br />
+    &nbsp - 우량기준 : 잔액 1억원 이상</p>
+    <br />
+    <p><strong>5.활용방안</strong><br />
+    활용채널 : 예) 통합단말<br />
+    활용주기 : 예) 매월<br />
+    배포대상 : 예) 대직원, 전체고객, SOHO 고객, PWM 예상 가능 고객 등</p>
+    <br />
+    <p><strong>6.정성적 기대효과</strong> : 과제 수행 시 예쌍되는 기대효과를 정성적 측면에서 작성해주세요</p>
+    <br />
+    <p><strong>7.정량적 기대효과</strong><br />
+    - 수익창출 예) 연 평균 ooo 원 절감 가능
+    - 인력효율화 (시간절감) 예) 연 평균 ooo 시간 절감 가능
+    </p>
+        <br />
+    <p><strong>8.성과평가</strong><br />
+    - 이행 후 AI 서비스 성과평가, 성과측정 기준 및 지표 <br/>
+    - "AI SOHO 우량고객 여신 이탈 예층모델" 활용 이전 대비 활용 후 <u>접촉고객 중 이탈률 감소</u>로 성과 평가 
+    </p>
+    <br />
+    <p><strong>9.완료기한</strong> : 과제 완료 요청기한을 입력해주세요</p>
+    <br />
+    <p><strong>10.기타</strong> : 기타 필요한 사항을 입력해주세요</p>
+    `;
+    const [editorContent, setEditorContent] =
+        useState<string>(defaultEditorContent);
+
+    return (
+        <div className="task-list-table">
+            <TableContainer className="row-table" component={Paper}>
+                <Table>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell component="th">
+                                과제 명
+                                <Tooltip
+                                    disableFocusListener
+                                    disableTouchListener
+                                    title={tooptipText}
+                                    placement="right"
+                                >
+                                    <i className="ico-text">?</i>
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell>
+                                <div className="input-group">
+                                    <TextField
+                                        className="input-field"
+                                        placeholder="텍스트를 입력하세요."
+                                    />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                icon={<ChkDefault />}
+                                                checkedIcon={<ChkChecked />}
+                                            />
+                                        }
+                                        label="비밀글"
+                                    />
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell component="th">파일 첨부</TableCell>
+                            <TableCell>
+                                <div className="file-area">
+                                    <div className="input-file">
+                                        <label htmlFor="file1-2">
+                                            파일 선택
+                                            <input
+                                                type="file"
+                                                name=""
+                                                id="file1-2"
+                                            />
+                                        </label>
+                                        <div className="file-list">
+                                            <div className="delete-item">
+                                                <span>과제명파일명.png</span>
+                                                <IconButton>
+                                                    <X />
+                                                </IconButton>
+                                            </div>
+                                            <div className="delete-item">
+                                                <span>과제명파일명2.png</span>
+                                                <IconButton>
+                                                    <X />
+                                                </IconButton>
+                                            </div>
+                                            <span className="no-file">
+                                                등록된 파일이 없습니다.
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="file-volume">
+                                        <span>0</span>개<span> / </span>
+                                        <span>0</span>Ktyte
+                                    </div>
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell component="th">
+                                과제 신청 내용
+                                <p className="th-desc">
+                                    게시글 양식에 맞춰 내용을 입력하거나, 파일의
+                                    과제 신청 양식을 작성하여 파일첨부 해주세요.
+                                </p>
+                            </TableCell>
+                            <TableCell>
+                                <div className="ql-editor-wrap">
+                                    <ReactQuill
+                                        theme="snow"
+                                        value={editorContent}
+                                        onChange={setEditorContent}
+                                        placeholder="내용을 입력하세요."
+                                    />
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </div>
+    );
+};
+export default TaskApplyTable;

@@ -13,6 +13,8 @@ import SingleView from "~/muiPublish/page/singleView/SingleView";
 import Ocr from "~/muiPublish/page/ocr/Ocr";
 import OcrVerify from "~/muiPublish/page/ocr/OcrVerify";
 import TaskList from "~/muiPublish/page/task/TaskList";
+import TaskApply from "~/muiPublish/page/task/TaskApply";
+import TaskDetail from "~/muiPublish/page/task/TaskDetail";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -79,6 +81,12 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "과제신청목록" && (
                         <TaskList pageName={props.pageName} />
+                    )}
+                    {props.pageName === "과제 신청" && (
+                        <TaskApply pageName={props.pageName} />
+                    )}
+                    {props.pageName === "과제 신청 상세" && (
+                        <TaskDetail pageName={props.pageName} />
                     )}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}

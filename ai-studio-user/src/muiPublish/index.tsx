@@ -60,6 +60,18 @@ const pubList = [
         link: "/muipublish/tasklist",
         etc: "",
     },
+    {
+        id: "8",
+        name: "과제신청",
+        link: "/muipublish/taskapply",
+        etc: "",
+    },
+    {
+        id: "8",
+        name: "과제신청상세",
+        link: "/muipublish/taskdetail",
+        etc: "",
+    },
 ];
 
 export default function MuiPubIndex() {

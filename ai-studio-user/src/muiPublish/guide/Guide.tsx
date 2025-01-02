@@ -207,6 +207,7 @@ export default function VerticalTabs() {
                 <Tab label="ToolTip" {...a11yProps(14)} />
                 <Tab label="타겟추출" {...a11yProps(15)} />
                 <Tab label="싱글뷰 " {...a11yProps(16)} />
+                <Tab label="인풋파일" {...a11yProps(17)} />
             </Tabs>
             {/* color */}
             <TabPanel value={value} index={0}>
@@ -1227,9 +1228,9 @@ export default function VerticalTabs() {
                     <strong>라인 형</strong>
                 </p>
                 <div className="badge-wrap">
-                    <Badge value="사용중" color="green" size="large" />
-                    <Badge value="과제 종료" color="gray" size="large" />
-                    <Badge value="반려" color="red" size="large" />
+                    <Badge value="과제 신청" color="blue" type="line" />
+                    <Badge value="과제 종료" color="gray" type="line" />
+                    <Badge value="미채택" color="red" type="line" />
                 </div>
             </TabPanel>
             {/* 해시태그 */}
@@ -1430,6 +1431,53 @@ export default function VerticalTabs() {
                 <br />
 
                 <ProgressBar percent={60} />
+            </TabPanel>
+            {/* 인풋 파일 */}
+            <TabPanel value={value} index={17}>
+                <div className="file-area">
+                    <div className="input-file">
+                        <label htmlFor="file1-1">
+                            파일 선택
+                            <input type="file" name="" id="file1-1" />
+                        </label>
+                        <div className="file-list">
+                            <div className="delete-item">
+                                <span>과제명파일명.png</span>
+                                <IconButton>
+                                    <X />
+                                </IconButton>
+                            </div>
+                            <div className="delete-item">
+                                <span>과제명파일명2.png</span>
+                                <IconButton>
+                                    <X />
+                                </IconButton>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="file-volume">
+                        <span>2</span>개<span> / </span>
+                        <span>1,124</span>Ktyte
+                    </div>
+                </div>
+                <br />
+                <div className="file-area">
+                    <div className="input-file">
+                        <label htmlFor="file1-2">
+                            파일 선택
+                            <input type="file" name="" id="file1-2" />
+                        </label>
+                        <div className="file-list">
+                            <span className="no-file">
+                                등록된 파일이 없습니다.
+                            </span>
+                        </div>
+                    </div>
+                    <div className="file-volume">
+                        <span>0</span>개<span> / </span>
+                        <span>0</span>Ktyte
+                    </div>
+                </div>
             </TabPanel>
         </Box>
     );

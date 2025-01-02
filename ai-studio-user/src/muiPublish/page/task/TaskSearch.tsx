@@ -31,9 +31,10 @@ const OcrSearch: React.FC<IPageProps> = (props) => {
             <div className="search-item-box">
                 <div className="search-item">
                     <span className="tit">과제검색</span>
-                    <div className="search-box">
+
+                    <div className="input-group">
                         <Select
-                            className="select-box custom-select "
+                            className="select-box small"
                             value={selectOne}
                             onChange={selectOneChange}
                             IconComponent={Arrow}
@@ -44,17 +45,14 @@ const OcrSearch: React.FC<IPageProps> = (props) => {
                                 },
                             }}
                         >
-                            <MenuItem value={1}>전체</MenuItem>
-                            <MenuItem value={2}>추후 추가 예정</MenuItem>
-                            <MenuItem value={3}>추후 추가 예정</MenuItem>
-                            <MenuItem value={4}>추후 추가 예정</MenuItem>
+                            <MenuItem value={1}>제목 및 내용</MenuItem>
+                            <MenuItem value={2}>제목</MenuItem>
+                            <MenuItem value={3}>내용</MenuItem>
                         </Select>
-                        <div className="input-area">
-                            <TextField
-                                className="input-field"
-                                placeholder="텍스트를 입력하세요."
-                            />
-                        </div>
+                        <TextField
+                            className="input-field"
+                            placeholder="텍스트를 입력하세요."
+                        />
                     </div>
                 </div>
             </div>

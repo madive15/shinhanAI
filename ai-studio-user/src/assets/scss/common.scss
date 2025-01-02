@@ -424,6 +424,10 @@
             color: var(--negative);
             border-color: var(--negative);
         }
+        &.blue2 {
+            color: var(--sub-color3);
+            border-color: var(--sub-color3);
+        }
     }
 }
 .badge-wrap {
@@ -887,9 +891,21 @@
     color: var(--negative);
     background: url("../images/svg/Icons-error-14.svg") center left no-repeat;
 }
-
+.input-group {
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    .select-box {
+        &.small {
+            width: 100%;
+            min-width: 120px;
+            max-width: 120px;
+        }
+    }
+}
 .input-area {
     width: 100%;
+
     &.inner-txt-btn {
         .input-field {
             .MuiOutlinedInput-root {
@@ -1588,6 +1604,13 @@
 //과제신청
 .task {
     padding-top: 24px;
+    .task-list-table {
+        td {
+            .badge {
+                margin: 0 8px 0 0 !important;
+            }
+        }
+    }
 }
 
 .create-extraction-popup {
@@ -1606,11 +1629,221 @@
 //말줄임표 1줄
 .ellipsis {
     color: var(--font-color1) !important;
-    width: 100%;
+    width: fit-content;
     text-overflow: ellipsis;
     overflow: hidden;
     word-break: break-word;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+//인풋 파일
+.file-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .input-file {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        label {
+            font-size: 14px;
+            color: var(--color1);
+            font-weight: 700;
+            letter-spacing: -0.35px;
+            padding: 9px 16px;
+            line-height: 17px;
+            border: 1px solid var(--color1);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-list {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            .no-file {
+                color: var(--font-color3);
+                font-size: 14px;
+                letter-spacing: -0.35px;
+            }
+        }
+    }
+
+    .file-volume {
+        color: var(--font-color3);
+        font-size: 12px;
+        letter-spacing: -0.3px;
+    }
+}
+//아이템 삭제 버튼형
+.delete-item {
+    border-radius: 100px;
+    border: 1px solid var(--border-color4);
+    background-color: var(--background-color2);
+    padding: 6px 8px 6px 16px;
+    font-size: 14px;
+    color: var(--font-color1);
+    letter-spacing: -0.35px;
+    button {
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        svg {
+            fill: #333;
+        }
+    }
+}
+
+//ql 에디터
+.ql-editor-wrap {
+    .quill {
+        .ql-container {
+            .ql-editor {
+                min-height: 700px;
+                strong {
+                    color: var(--font-color1);
+                }
+            }
+        }
+    }
+}
+// 텍스트 뒤 아이콘
+.txt-end-icon {
+    padding-right: 20px;
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        border: 1px solid red;
+        position: absolute;
+        top: 50%;
+        margin-top: -7px;
+        right: 0;
+    }
+    &.file {
+        &::after {
+            border-color: #2878f5;
+        }
+    }
+    &.secret {
+        &::after {
+            border-color: #000;
+        }
+    }
+}
+// step box
+.step-box {
+    h3 {
+        margin-bottom: 12px;
+    }
+    ol {
+        padding: 24px;
+        border-radius: 8px;
+        background-color: var(--background-color1);
+        display: flex;
+        counter-reset: number 0;
+        li {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            &:last-of-type {
+                &::after {
+                    content: none;
+                }
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 4px;
+                background-color: #dde6f3;
+                position: absolute;
+                top: 42px;
+                right: 0%;
+                transform: translateX(50%);
+                z-index: 1;
+                opacity: 0.5;
+            }
+            .circle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: var(--background-color3);
+                margin: 0 auto;
+
+                margin-bottom: 8px;
+                position: relative;
+                z-index: 2;
+                &::before {
+                    counter-increment: number 1;
+                    content: counter(number);
+                    color: var(--font-color3);
+                    font-size: 24px;
+                    font-weight: 700;
+                    letter-spacing: -0.6px;
+                }
+            }
+            span {
+                font-size: 12px;
+                color: var(--font-color3);
+                letter-spacing: -0.3px;
+                font-weight: 700;
+                line-height: 18px;
+            }
+            &.active {
+                .circle {
+                    background: linear-gradient(
+                        140deg,
+                        #0046ff 0%,
+                        #4baff5 100%
+                    );
+                    &::before {
+                        color: var(--color2);
+                    }
+                }
+                span {
+                    color: var(--color1);
+                }
+            }
+            &.pass {
+                .circle {
+                    border: 4px solid var(--color1);
+                    background: var(--color2)
+                        url("../images/icon/ico-step-pass.png") center center
+                        no-repeat;
+                    &::before {
+                        content: none;
+                    }
+                }
+                span {
+                    color: var(--font-color1);
+                }
+            }
+            &.error {
+                .circle {
+                    border: 4px solid var(--negative);
+                    background: var(--color2)
+                        url("../images/icon/ico-step-error.png") center center
+                        no-repeat;
+                    &::before {
+                        content: none;
+                    }
+                }
+                span {
+                    color: var(--font-color1);
+                }
+            }
+        }
+    }
+    & + .task-list-table {
+        margin-top: 16px;
+    }
 }
