@@ -1,7 +1,6 @@
 // necessary set
 import React, { useState, useEffect, useRef } from "react";
-
-import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
+import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 // need content
@@ -16,7 +15,9 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import Checkbox from "@mui/material/Checkbox";
 import Badge from "~/muiPublish/components/Badge";
-import IconButton from "@mui/material/IconButton";
+import MenuItem from "@mui/material/MenuItem";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -51,7 +52,10 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
     const useLoading = (onoff: boolean) => {
         setLoading(onoff);
     };
-
+    const [selectOne, setAgeSelectOne] = React.useState("1");
+    const selectOneChange = (event: SelectChangeEvent) => {
+        setAgeSelectOne(event.target.value as string);
+    };
     useEffect(() => {
         setLoading(false);
     }, []);
@@ -75,6 +79,29 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                             label="내 신청 현황만 보기"
                         />
                     </FormGroup>
+                    <div className="input-group">
+                        <Select
+                            className="select-box small"
+                            value={selectOne}
+                            onChange={selectOneChange}
+                            IconComponent={Arrow}
+                            displayEmpty
+                            MenuProps={{
+                                classes: {
+                                    paper: "select-option-class",
+                                },
+                            }}
+                        >
+                            <MenuItem value={1}>제목 및 내용</MenuItem>
+                            <MenuItem value={2}>제목</MenuItem>
+                            <MenuItem value={3}>내용</MenuItem>
+                        </Select>
+                        <TextField
+                            className="input-field"
+                            placeholder="텍스트를 입력하세요."
+                        />
+                    </div>
+                    <Button variant="sub2">조회</Button>
                 </div>
             </div>
             <TableContainer className="table-content">
@@ -104,7 +131,7 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                                 1
                             </TableCell>
                             <TableCell width={1232} align="left">
-                                <p className="is-file">
+                                <p className="ellipsis txt-end-icon file">
                                     SOHO 우량고객 이탈 예측 과제
                                 </p>
                             </TableCell>
@@ -117,7 +144,7 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                             <TableCell width={160} align="center">
                                 <Badge
                                     value="과제 신청"
-                                    color="blue"
+                                    color="blue2"
                                     type="line"
                                 />
                             </TableCell>
@@ -127,7 +154,7 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                                 2
                             </TableCell>
                             <TableCell width={1232} align="left">
-                                <p className="is-file">
+                                <p className="ellipsis txt-end-icon secret">
                                     SOHO 우량고객 이탈 예측 과제
                                 </p>
                             </TableCell>
@@ -147,7 +174,7 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                                     {idx + 2}
                                 </TableCell>
                                 <TableCell width={1232} align="left">
-                                    <a className="is-file ellipsis">
+                                    <a className="txt-end-icon ellipsis file">
                                         SOHO 우량고객 이탈 예측 과제SOHO
                                         우량고객 이탈 예측 과제SOHOSOHO 우량고객
                                         이탈 예측 과제SOHOSOHO 우량고객 이탈

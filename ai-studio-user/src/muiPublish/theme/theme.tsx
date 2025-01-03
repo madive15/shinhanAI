@@ -16,6 +16,7 @@ declare module "@mui/material/Button" {
         smallSub1: true;
         iconDashed: true;
         iconLine: true;
+        iconLineBlue: true;
     }
 }
 const theme = createTheme({
@@ -69,6 +70,7 @@ const theme = createTheme({
                     borderRadius: "8px",
                     height: "38px",
                     textTransform: "none",
+                    minWidth: "80px",
                     "&:disabled": {
                         border: "1px solid var(--border-color3)",
                         background: "var(--background-color2)",
@@ -284,6 +286,34 @@ const theme = createTheme({
                         },
                     },
                 },
+                {
+                    props: { variant: "iconLineBlue" },
+                    style: {
+                        minWidth: "unset",
+                        height: "36px",
+                        padding: "6px 10px 6px 12px",
+                        borderRadius: "4px",
+                        border: "1px solid var(--border-color1)",
+                        fontSize: "14px",
+                        lineHeight: "18px",
+                        letterSpacing: "-0.35px",
+                        fontWeight: "400",
+                        color: "var(--sub-color3)",
+                        backgroundColor: " var(--background-color1)",
+                        "& svg": {
+                            width: "24px",
+                            height: "24px",
+                        },
+                        "& .MuiButton-startIcon": {
+                            marginLeft: "0",
+                            marginRight: "4px",
+                        },
+                        "& .MuiButton-endIcon": {
+                            marginLeft: "4px",
+                            marginRight: "0",
+                        },
+                    },
+                },
             ],
         },
         // 버튼 끝
@@ -338,6 +368,9 @@ const theme = createTheme({
                     marginLeft: "0px",
                     marginRight: "0px",
                     minWidth: "fit-content",
+                    "& .MuiFormControlLabel-label": {
+                        fontSize: "14px",
+                    },
                 },
             },
         },
@@ -400,7 +433,7 @@ const theme = createTheme({
                         },
                     },
                     "&.small": {
-                        maxWidth: "120px",
+                        maxWidth: "160px",
                     },
                     "&.Mui-focused": {
                         borderColor: "var(--color1)",
@@ -698,9 +731,22 @@ const theme = createTheme({
                         "& .MuiTooltip-tooltip": {
                             backgroundColor: "var(--color2)",
                             color: "var(--font-color1)",
-                            borderRadius: "4px",
-                            padding: "8px",
+                            borderRadius: "12px",
+                            padding: "16px",
                             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+                            maxWidth: "500px",
+                            "& .tooltip-top": {
+                                display: "flex",
+                                alignItem: "center,",
+                                justifyContent: "space-between",
+                            },
+                            "& .tooltip-content": {
+                                margin: "16px 0 24px",
+                                fontSsize: "13px",
+                                letterSspacing: "-0.325px",
+                                color: "var(--font-color2)",
+                                lineHeight: "16px",
+                            },
                         },
                     },
                 },

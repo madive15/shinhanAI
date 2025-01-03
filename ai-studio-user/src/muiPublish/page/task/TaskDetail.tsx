@@ -5,10 +5,9 @@ import React, { useState, useEffect, useRef } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
-import IndiviCompany from "~/muiPublish/components/indiviCompany/IndiviCompany";
-import Category from "~/muiPublish/components/category/Category";
 import NoData from "~/muiPublish/components/noData/noData";
 import TaskDetailTable from "~/muiPublish/page/task/TaskDetailTable";
+import TaskDetailContent from "~/muiPublish/page/task/TaskDetailContent";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -53,7 +52,9 @@ const TaskDetail: React.FC<IPageProps> = (props) => {
                         subTabs={false}
                         pageName={props.pageName}
                         search={false}
-                        btn="과제 신청하기"
+                        btnTwo="삭제"
+                        btnThree="목록으로 돌아가기"
+                        btn="수정"
                     />
                     <div className="scroll-content-area task">
                         <div className="step-box">
@@ -82,6 +83,7 @@ const TaskDetail: React.FC<IPageProps> = (props) => {
                             </ol>
                         </div>
                         <TaskDetailTable />
+                        <TaskDetailContent />
                     </div>
                 </div>
             </div>

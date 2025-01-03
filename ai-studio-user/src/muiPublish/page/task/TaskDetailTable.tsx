@@ -1,9 +1,6 @@
 // necessary set
 import React, { useState, useEffect, useRef } from "react";
 
-import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
-import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
-import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 // need content
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -12,11 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Button from "@mui/material/Button";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
-import Checkbox from "@mui/material/Checkbox";
 import Badge from "~/muiPublish/components/Badge";
-import IconButton from "@mui/material/IconButton";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -97,7 +90,10 @@ const TaskDetailTable: React.FC<IPageProps> = (props) => {
                     <h3>검색 결과</h3>
                 </div>
                 <div className="right">
-                    <Button variant="sub1" onClick={() => setShowAll(!showAll)}>
+                    <Button
+                        variant="small"
+                        onClick={() => setShowAll(!showAll)}
+                    >
                         {showAll ? "히스토리 닫기" : "히스토리 열기"}
                     </Button>
                 </div>

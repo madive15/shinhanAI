@@ -51,6 +51,7 @@ import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
 import "react-datepicker/dist/react-datepicker.css";
 import { ReactComponent as Download } from "~assets/images/svg/Icons-download.svg";
+import { ReactComponent as DownloadBlue } from "~assets/images/svg/icons-download-blue.svg";
 import { ReactComponent as X } from "~assets/images/svg/Icons-x.svg";
 import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
 import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
@@ -147,14 +148,33 @@ export default function VerticalTabs() {
 
     const [dateRange, setDateRange] = useState([null, null]);
     const [rangeStartDate, rangeEndDate]: any = dateRange;
+    const [tooltipOpen, setTooltipOpen] = React.useState(false);
 
+    const TooltipClose = () => {
+        setTooltipOpen(false);
+    };
+
+    const TooltipOpen = () => {
+        setTooltipOpen(true);
+    };
     const tooptipText = (
-        <div>
-            <strong>타이틀</strong>
-            <br />
-            툴팁 작업 예정 툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업
-            예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁
-            작업 예정.
+        <div className="tooltip-wrap">
+            <div className="tooltip-top">
+                <h3>과제명</h3>
+                <IconButton className="ico-rect23 x" onClick={TooltipClose}>
+                    <Plus9 />
+                </IconButton>
+            </div>
+            <div className="tooltip-content">
+                주요 AI 소개를 참고하여, 원하는 기능의 신청 과제명 및 내용을
+                작성해주세요.
+            </div>
+            <div className="btn-wrap end">
+                {/* <Button variant="sub2">자세히보기</Button> */}
+                <a href="#" className="ank sub2">
+                    자세히보기
+                </a>
+            </div>
         </div>
     );
 
@@ -169,8 +189,6 @@ export default function VerticalTabs() {
         }
     };
 
-    const progrssBarColor = "blue";
-    const progress = "80";
     return (
         <Box
             className="guide-wrap"
@@ -324,6 +342,9 @@ export default function VerticalTabs() {
                 </Button>
                 <Button variant="iconLine" endIcon={<Download fill="#333" />}>
                     버튼 텍스트
+                </Button>
+                <Button variant="iconLineBlue" endIcon={<DownloadBlue />}>
+                    과제명파일명.png
                 </Button>
                 <br />
                 <br />
@@ -1210,9 +1231,6 @@ export default function VerticalTabs() {
                     <Badge value="필터" color="purple" />
                     <Badge value="모델" color="blue2" />
                     <Badge value="N" color="red" />
-                    <Badge value="과제 신청" color="blue" type="line" />
-                    <Badge value="과제 종료" color="gray" type="line" />
-                    <Badge value="미채택" color="red" type="line" />
                 </div>
                 <br />
                 <p>
@@ -1229,6 +1247,9 @@ export default function VerticalTabs() {
                 </p>
                 <div className="badge-wrap">
                     <Badge value="과제 신청" color="blue" type="line" />
+                    <Badge value="과제 신청" color="blue2" type="line" />
+                    <Badge value="검토중" color="blue2" type="line" />
+                    <Badge value="진행중" color="blue2" type="line" />
                     <Badge value="과제 종료" color="gray" type="line" />
                     <Badge value="미채택" color="red" type="line" />
                 </div>
@@ -1249,12 +1270,22 @@ export default function VerticalTabs() {
             {/* 툴팁 */}
             <TabPanel value={value} index={14}>
                 <Tooltip
+                    onClose={TooltipClose}
+                    open={tooltipOpen}
                     disableFocusListener
+                    disableHoverListener
                     disableTouchListener
                     title={tooptipText}
-                    placement="right"
+                    placement="bottom-start"
+                    slotProps={{
+                        popper: {
+                            disablePortal: true,
+                        },
+                    }}
                 >
-                    <i className="ico-text">?</i>
+                    <i className="ico-text" onClick={TooltipOpen}>
+                        ?
+                    </i>
                 </Tooltip>
             </TabPanel>
             {/* 타겟추출카드 */}

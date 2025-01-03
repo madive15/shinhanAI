@@ -5,10 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
-import IndiviCompany from "~/muiPublish/components/indiviCompany/IndiviCompany";
-import Category from "~/muiPublish/components/category/Category";
 import NoData from "~/muiPublish/components/noData/noData";
-import Badge from "~/muiPublish/components/Badge";
 import TaskApplyTable from "~/muiPublish/page/task/TaskApplyTable";
 // need style
 import "~/muiPublish/layout/layout.scss";

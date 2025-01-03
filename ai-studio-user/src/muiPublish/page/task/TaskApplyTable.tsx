@@ -1,29 +1,26 @@
 // necessary set
 import React, { useState, useEffect, useRef } from "react";
 
-import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 import { ReactComponent as X } from "~assets/images/svg/Icons-x.svg";
+import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
 // need content
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
 import Checkbox from "@mui/material/Checkbox";
-import Badge from "~/muiPublish/components/Badge";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import TextField from "@mui/material/TextField";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+
 // need style
+import "react-quill/dist/quill.snow.css";
 import "~/muiPublish/layout/layout.scss";
 
 // Props type
@@ -62,15 +59,6 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
 
-    const tooptipText = (
-        <div>
-            <strong>타이틀</strong>
-            <br />
-            툴팁 작업 예정 툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업
-            예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁 작업 예정툴팁
-            작업 예정.
-        </div>
-    );
     const defaultEditorContent = `
     <p><strong>1.프로젝트명</strong> : 프로젝트명을 입력해주세요.<br />
     예) SOHO 우량고객 이탈 예측</p>
@@ -114,7 +102,35 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
     `;
     const [editorContent, setEditorContent] =
         useState<string>(defaultEditorContent);
+    const [tooltipOpen, setTooltipOpen] = React.useState(false);
 
+    const TooltipClose = () => {
+        setTooltipOpen(false);
+    };
+
+    const TooltipOpen = () => {
+        setTooltipOpen(true);
+    };
+    const tooptipText = (
+        <div className="tooltip-wrap">
+            <div className="tooltip-top">
+                <h3>과제명</h3>
+                <IconButton className="ico-rect23 x" onClick={TooltipClose}>
+                    <Plus9 />
+                </IconButton>
+            </div>
+            <div className="tooltip-content">
+                주요 AI 소개를 참고하여, 원하는 기능의 신청 과제명 및 내용을
+                작성해주세요.
+            </div>
+            <div className="btn-wrap end">
+                {/* <Button variant="sub2">자세히보기</Button> */}
+                <a href="#" className="ank sub2">
+                    자세히보기
+                </a>
+            </div>
+        </div>
+    );
     return (
         <div className="task-list-table">
             <TableContainer className="row-table" component={Paper}>
@@ -124,12 +140,25 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
                             <TableCell component="th">
                                 과제 명
                                 <Tooltip
+                                    onClose={TooltipClose}
+                                    open={tooltipOpen}
                                     disableFocusListener
+                                    disableHoverListener
                                     disableTouchListener
                                     title={tooptipText}
-                                    placement="right"
+                                    placement="bottom-start"
+                                    slotProps={{
+                                        popper: {
+                                            disablePortal: true,
+                                        },
+                                    }}
                                 >
-                                    <i className="ico-text">?</i>
+                                    <i
+                                        className="ico-text"
+                                        onClick={TooltipOpen}
+                                    >
+                                        ?
+                                    </i>
                                 </Tooltip>
                             </TableCell>
                             <TableCell>

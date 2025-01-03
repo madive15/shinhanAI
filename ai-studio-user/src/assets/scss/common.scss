@@ -403,7 +403,7 @@
         background-color: #2878f5;
     }
     &.large {
-        height: 25px;
+        height: 26px;
         // min-width: 64px;
         padding: 4px 12px;
         border-radius: 100px;
@@ -412,6 +412,9 @@
     &.line {
         background-color: #fff;
         border: 1px solid;
+        height: 26px;
+        min-width: 60px;
+        justify-content: center;
         &.blue {
             color: var(--color1);
             border-color: var(--color1);
@@ -895,17 +898,9 @@
     max-width: 480px;
     width: 100%;
     display: flex;
-    .select-box {
-        &.small {
-            width: 100%;
-            min-width: 120px;
-            max-width: 120px;
-        }
-    }
 }
 .input-area {
     width: 100%;
-
     &.inner-txt-btn {
         .input-field {
             .MuiOutlinedInput-root {
@@ -1517,13 +1512,20 @@
     }
     .right {
         display: flex;
-        gap: 16px;
+        flex: 1;
+        justify-content: end;
+        // gap: 16px;
+        .chk-group {
+            margin-right: 16px;
+        }
+        button {
+            margin-left: 4px;
+        }
     }
 }
 //search content
 .search-contnet {
     margin: 0 0 16px 0;
-
     border-radius: 4px 4px;
     .search-item-box {
         @include flex;
@@ -1706,20 +1708,25 @@
                 strong {
                     color: var(--font-color1);
                 }
+                ul {
+                    padding-left: 0;
+                    li:not(.ql-direction-rtl) {
+                        padding-left: 16px;
+                    }
+                }
             }
         }
     }
 }
 // 텍스트 뒤 아이콘
 .txt-end-icon {
-    padding-right: 20px;
+    padding-right: 16px;
     position: relative;
     &::after {
         content: "";
         display: block;
-        width: 14px;
-        height: 14px;
-        border: 1px solid red;
+        width: 12px;
+        height: 12px;
         position: absolute;
         top: 50%;
         margin-top: -7px;
@@ -1727,12 +1734,12 @@
     }
     &.file {
         &::after {
-            border-color: #2878f5;
+            background: url("../images/icon/icon-isfile.png") no-repeat;
         }
     }
     &.secret {
         &::after {
-            border-color: #000;
+            // background: url("../images/icon/icon-isfile.png") no-repeat;
         }
     }
 }
@@ -1845,5 +1852,119 @@
     }
     & + .task-list-table {
         margin-top: 16px;
+    }
+}
+// 게시판형 상세
+.board-detail-content {
+    h3 {
+    }
+    > div {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border-color4);
+        min-height: 52px;
+    }
+    .board-detail-tit {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-top: 1px solid var(--border-color4);
+    }
+    .board-detail-info {
+        display: flex;
+        align-items: center;
+        gap: 33px;
+        p {
+            position: relative;
+            &::after {
+                content: "";
+                width: 1px;
+                height: 16px;
+                background-color: var(--border-color4);
+                position: absolute;
+                top: 50%;
+                margin-top: -8px;
+                right: -16px;
+            }
+            &:last-of-type {
+                &::after {
+                    content: none;
+                }
+            }
+            span {
+                font-size: 14px;
+                &:first-of-type {
+                    color: var(--font-color3);
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+    .board-detail-file {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        span {
+            color: var(--font-color3);
+            font-size: 14px;
+            letter-spacing: -0.35px;
+            min-width: fit-content;
+        }
+        .file-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+    }
+}
+
+//앵커태그
+.ank {
+    line-height: 20px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    height: 38px;
+    min-width: 80px;
+    font-size: 14px;
+    &.primary {
+        background-color: var(--color1);
+        color: var(--color2);
+        &:hover {
+            background-color: #0039ce;
+        }
+        &:active {
+            background-color: #002ea5;
+        }
+    }
+    &.secondary {
+        background-color: var(--sub-color4);
+        color: var(--color2);
+        &:hover {
+            background-color: #001d59;
+        }
+        &:active {
+            background-color: #001748;
+        }
+    }
+    &.sub1 {
+        background-color: var(--color2);
+        border: 1px solid var(--border-color4);
+        &:hover {
+            background-color: #fafafa;
+        }
+        &:active {
+            background-color: #ddd;
+        }
+    }
+    &.sub2 {
+        background-color: var(--color2);
+        color: var(--color1);
+        border: 1px solid var(--color1);
+        &:hover {
+            background-color: #e8eeff;
+        }
+        &:active {
+            background-color: #d1ddff;
+        }
     }
 }

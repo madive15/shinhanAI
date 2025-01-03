@@ -5,10 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
-import IndiviCompany from "~/muiPublish/components/indiviCompany/IndiviCompany";
-import Category from "~/muiPublish/components/category/Category";
 import NoData from "~/muiPublish/components/noData/noData";
-import Badge from "~/muiPublish/components/Badge";
 import TaskSearch from "~/muiPublish/page/task/TaskSearch";
 import TaskListTable from "~/muiPublish/page/task/TaskListTable";
 // need style
@@ -58,7 +55,7 @@ const TaskList: React.FC<IPageProps> = (props) => {
                         btn="과제 신청하기"
                     />
                     <div className="scroll-content-area task">
-                        <TaskSearch />
+                        {/* <TaskSearch /> */}
                         <TaskListTable />
                     </div>
                 </div>
