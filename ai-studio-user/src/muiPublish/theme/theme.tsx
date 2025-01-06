@@ -182,7 +182,7 @@ const theme = createTheme({
                         padding: "8px 10px",
                         borderRadius: "8px",
                         border: "1px solid #ccc",
-                        minWidth: "unset",
+                        minWidth: "56px",
                         height: "28px",
                         "&:hover": {
                             backgroundColor: "rgba(0, 0, 0, 0.05)",
@@ -204,7 +204,7 @@ const theme = createTheme({
                         padding: "8px 10px",
                         borderRadius: "8px",
                         border: "1px solid #0046FF",
-                        minWidth: "unset",
+                        minWidth: "56px",
                         height: "28px",
                         "&:hover": {
                             backgroundColor: "#E8EEFF",
@@ -541,13 +541,21 @@ const theme = createTheme({
                             "& .MuiDialogContent-root": {
                                 fontSize: "15px",
                                 padding: "0",
-                                margin: "36px 0 24px",
+                                margin: "0 0 24px",
                             },
                             "& .MuiDialogActions-root": { padding: "0" },
                             "& .dialog-close": {
                                 position: "absolute",
                                 top: "16px",
                                 right: "16px",
+                            },
+                            "& .txt-box": {
+                                padding: "12px 12px",
+                                backgroundColor: "var(--background-color5)",
+                                "& strong": {
+                                    fontSize: "15px",
+                                    letterSpacing: "-0.775px",
+                                },
                             },
                         },
                     },

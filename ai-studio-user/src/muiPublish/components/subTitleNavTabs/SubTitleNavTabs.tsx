@@ -20,6 +20,7 @@ export interface IPageProps {
     btn?: string;
     btnTwo?: string;
     btnThree?: string;
+    desc?: string;
     useLoading?: (data: boolean) => void;
 }
 
@@ -43,7 +44,15 @@ const SubTitleNavTabs: React.FC<IPageProps> = (props) => {
             </div>
             <div className="sub-title-tab-box">
                 <div className="tit-tabs-box">
-                    <div className="sub-tit">{props.pageName}</div>
+                    <div className="sub-tit">
+                        {props.pageName}
+                        {props.desc && (
+                            <div
+                                className="sub-desc"
+                                dangerouslySetInnerHTML={{ __html: props.desc }}
+                            />
+                        )}
+                    </div>
                     {props.subTabs && (
                         <div className="sub-tabs">
                             <span className="active">프리빌트</span>
@@ -68,7 +77,7 @@ const SubTitleNavTabs: React.FC<IPageProps> = (props) => {
                     </div>
                 )}
 
-                {(props.btn || props.btnTwo) && (
+                {(props.btn || props.btnTwo || props.btnThree) && (
                     <div className="btn-wrap">
                         {props.btnThree && (
                             <Button variant="sub1">{props.btnThree}</Button>

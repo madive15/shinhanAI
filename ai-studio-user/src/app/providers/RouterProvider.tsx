@@ -76,6 +76,14 @@ export const router = createBrowserRouter([
                           path: pathKeys.taskDetail(),
                           element: <MuiLayout pageName={"과제 신청 상세"} />,
                       },
+                      {
+                          path: pathKeys.noticeList(),
+                          element: <MuiLayout pageName={"공지사항목록"} />,
+                      },
+                      {
+                          path: pathKeys.noticeDetail(),
+                          element: <MuiLayout pageName={"공지 사항 상세"} />,
+                      },
                   ]
                 : []),
             {

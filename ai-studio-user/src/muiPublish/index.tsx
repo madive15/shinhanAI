@@ -67,9 +67,21 @@ const pubList = [
         etc: "",
     },
     {
-        id: "8",
+        id: "9",
         name: "과제신청상세",
         link: "/muipublish/taskdetail",
+        etc: "",
+    },
+    {
+        id: "10",
+        name: "공지사항목록",
+        link: "/muipublish/noticelist",
+        etc: "",
+    },
+    {
+        id: "11",
+        name: "공지사항상세",
+        link: "/muipublish/noticedetail",
         etc: "",
     },
 ];

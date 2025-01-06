@@ -43,8 +43,8 @@ interface Data {
 /**
  * @author shinhanAI
  * @description
- * admin-front: TaskListTable
- * TaskListTable
+ * admin-front: NoticeListTable
+ * NoticeListTable
  */
 const TaskListTable: React.FC<IPageProps> = (props) => {
     // loading
@@ -59,26 +59,15 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
     useEffect(() => {
         setLoading(false);
     }, []);
-
+    const notice = "공지";
     return (
-        <div className="task-list-table">
+        <div className="notice-list-table">
             <div className="between-box">
                 <div className="left">
                     <h2>검색 결과</h2>
                     <span className="sum">총 00건</span>
                 </div>
                 <div className="right">
-                    <FormGroup row className="chk-group">
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    icon={<ChkDefault />}
-                                    checkedIcon={<ChkChecked />}
-                                />
-                            }
-                            label="내 신청 현황만 보기"
-                        />
-                    </FormGroup>
                     <div className="input-group">
                         <Select
                             className="select-box small"
@@ -108,64 +97,68 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                 <Table className="table-defult-style">
                     <TableHead>
                         <TableRow>
-                            <TableCell width={48} align="center">
+                            <TableCell width={56} align="center">
                                 번호
                             </TableCell>
-                            <TableCell width={1232} align="left">
-                                신청 과제명
+                            <TableCell width={1224} align="left">
+                                제목
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                조회수
                             </TableCell>
                             <TableCell width={160} align="center">
                                 작성자
                             </TableCell>
                             <TableCell width={160} align="center">
-                                등록일
-                            </TableCell>
-                            <TableCell width={160} align="center">
-                                진행 현황
+                                작성일
                             </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         <TableRow>
-                            <TableCell width={48} align="center">
-                                1
+                            <TableCell width={56} align="center">
+                                {notice}
                             </TableCell>
-                            <TableCell width={1232} align="left">
-                                <a className="ellipsis txt-end-icon file">
-                                    SOHO 우량고객 이탈 예측 과제
+                            <TableCell width={1224} align="left">
+                                <a
+                                    className={`ellipsis txt-end-icon secret ${
+                                        notice === "공지" ? "font-bold" : ""
+                                    }`}
+                                >
+                                    공지사항
                                 </a>
                             </TableCell>
                             <TableCell width={160} align="center">
-                                김멀더 (MulderKim)
+                                99999999
                             </TableCell>
                             <TableCell width={160} align="center">
-                                2024-10-08
+                                작성자
                             </TableCell>
                             <TableCell width={160} align="center">
-                                <Badge
-                                    value="과제 신청"
-                                    color="blue2"
-                                    type="line"
-                                />
+                                2024-10-19
                             </TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell width={48} align="center">
-                                2
+                                {notice}
                             </TableCell>
                             <TableCell width={1232} align="left">
-                                <a className="ellipsis txt-end-icon secret">
-                                    SOHO 우량고객 이탈 예측 과제
+                                <a
+                                    className={`ellipsis txt-end-icon secret ${
+                                        notice === "공지" ? "font-bold" : ""
+                                    }`}
+                                >
+                                    공지사항
                                 </a>
                             </TableCell>
                             <TableCell width={160} align="center">
-                                김멀더 (MulderKim)
+                                99999999
                             </TableCell>
                             <TableCell width={160} align="center">
-                                2024-10-08
+                                작성자
                             </TableCell>
                             <TableCell width={160} align="center">
-                                <Badge value="미채택" color="red" type="line" />
+                                2024-10-19
                             </TableCell>
                         </TableRow>
                         {[1, 2, 3, 4, 5, 6].map((idx) => (
@@ -175,30 +168,17 @@ const TaskListTable: React.FC<IPageProps> = (props) => {
                                 </TableCell>
                                 <TableCell width={1232} align="left">
                                     <a className="txt-end-icon ellipsis file">
-                                        SOHO 우량고객 이탈 예측 과제SOHO
-                                        우량고객 이탈 예측 과제SOHOSOHO 우량고객
-                                        이탈 예측 과제SOHOSOHO 우량고객 이탈
-                                        예측 과제SOHOSOHO 우량고객 이탈 예측
-                                        과제SOHOSOHO 우량고객 이탈 예측
-                                        과제SOHOSOHO 우량고객 이탈 예측
-                                        과제SOHOSOHO 우량고객 이탈 예측
-                                        과제SOHOSOHO 우량고객 이탈 예측
-                                        과제SOHOSOHO 우량고객 이탈 예측
-                                        과제SOHOSOHO
+                                        공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항
                                     </a>
                                 </TableCell>
                                 <TableCell width={160} align="center">
-                                    김멀더 (MulderKim)
+                                    99999999
                                 </TableCell>
                                 <TableCell width={160} align="center">
-                                    2024-10-08
+                                    작성자
                                 </TableCell>
                                 <TableCell width={160} align="center">
-                                    <Badge
-                                        value="과제 종료"
-                                        color="gray"
-                                        type="line"
-                                    />
+                                    2024-10-19
                                 </TableCell>
                             </TableRow>
                         ))}

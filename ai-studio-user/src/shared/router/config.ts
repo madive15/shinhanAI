@@ -85,4 +85,10 @@ export const pathKeys = {
     taskDetail(): string {
         return `${pathKeys.root}muipublish/taskdetail`; // 과제신청상세
     },
+    noticeList(): string {
+        return `${pathKeys.root}muipublish/noticelist`; // 공지사항목록
+    },
+    noticeDetail(): string {
+        return `${pathKeys.root}muipublish/noticeDetail`; // 공지사항상세
+    },
 };

@@ -35,7 +35,7 @@
 
 .scroll-content-area {
     overflow-y: auto;
-    max-height: calc(100vh - 242px);
+    max-height: calc(100vh - 243px);
     &::-webkit-scrollbar {
         display: none;
     }
@@ -56,7 +56,7 @@
     textarea {
         width: 100%;
         height: 136px;
-        border: 1px solid var(--border-color1);
+        border: 1px solid var(--border-color6);
         border-radius: 8px;
         padding: 12px 12px 0 12px;
         font-size: 14px;
@@ -350,6 +350,10 @@
         }
     }
 }
+// 폰트 굵기
+.font-bold {
+    font-weight: 700;
+}
 
 //뱃지
 .badge {
@@ -486,6 +490,7 @@
         font-size: 10px;
         line-height: 12px;
         letter-spacing: -0.25px;
+        color: var(--sub-color4);
     }
     &.check {
         font-size: 12px;
@@ -1857,6 +1862,8 @@
 // 게시판형 상세
 .board-detail-content {
     h3 {
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border-color4);
     }
     > div {
         padding: 12px 16px;
@@ -1864,11 +1871,11 @@
         min-height: 52px;
     }
     .board-detail-tit {
-        margin-top: 12px;
+        // margin-top: 12px;
         display: flex;
         align-items: center;
         gap: 8px;
-        border-top: 1px solid var(--border-color4);
+        // border-top: 1px solid var(--border-color4);
     }
     .board-detail-info {
         display: flex;
@@ -1914,6 +1921,90 @@
             display: flex;
             flex-wrap: wrap;
             gap: 4px;
+        }
+    }
+    .ql-editor {
+        min-height: 240px;
+    }
+    .board-comment-wrap {
+        padding: 0;
+        .comment-top {
+            color: var(--font-color2);
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.35px;
+            padding: 12px 16px;
+            margin-top: 12px;
+            background-color: var(--background-color5);
+            border-bottom: 1px solid var(--border-color4);
+            strong {
+                color: var(--color1);
+                margin-left: 6px;
+            }
+        }
+        .comment-list {
+            .comment-list-item {
+                padding: 12px 16px;
+                border-bottom: 1px solid var(--border-color4);
+                .comment-item-top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+                    .name {
+                        font-size: 14px;
+                        line-height: 21px;
+                        letter-spacing: -0.35px;
+                        font-weight: 700;
+                    }
+                    .date {
+                        color: var(--font-color2);
+                        font-size: 13px;
+                        letter-spacing: -0.325px;
+                        .time {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+                .comment-item {
+                    display: flex;
+                    align-items: end;
+                    justify-content: space-between;
+                    .txt {
+                        font-size: 14px;
+                        line-height: 21px;
+                        letter-spacing: -0.35px;
+                    }
+                }
+            }
+        }
+        .comment-modify {
+            display: flex;
+            align-items: end;
+            gap: 8px;
+            padding-top: 12px;
+            margin-top: 12px;
+            border-top: 1px solid var(--border-color6);
+            .text-area {
+                flex: 1;
+                height: 120px;
+                textarea {
+                    height: 120px;
+                }
+            }
+        }
+        .comment-write {
+            display: flex;
+            align-items: end;
+            gap: 8px;
+            padding: 12px 0;
+            .text-area {
+                flex: 1;
+                height: 120px;
+                textarea {
+                    height: 120px;
+                }
+            }
         }
     }
 }

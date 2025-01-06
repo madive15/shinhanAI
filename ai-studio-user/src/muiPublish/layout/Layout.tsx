@@ -15,6 +15,8 @@ import OcrVerify from "~/muiPublish/page/ocr/OcrVerify";
 import TaskList from "~/muiPublish/page/task/TaskList";
 import TaskApply from "~/muiPublish/page/task/TaskApply";
 import TaskDetail from "~/muiPublish/page/task/TaskDetail";
+import NoticeList from "~/muiPublish/page/notice/NoticeList";
+import NoticeDetail from "~/muiPublish/page/notice/NoticeDetail";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -87,6 +89,12 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "과제 신청 상세" && (
                         <TaskDetail pageName={props.pageName} />
+                    )}
+                    {props.pageName === "공지사항목록" && (
+                        <NoticeList pageName={props.pageName} />
+                    )}
+                    {props.pageName === "공지 사항 상세" && (
+                        <NoticeDetail pageName={props.pageName} />
                     )}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}
