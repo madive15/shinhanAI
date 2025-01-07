@@ -84,6 +84,36 @@ const pubList = [
         link: "/muipublish/noticedetail",
         etc: "",
     },
+    {
+        id: "12",
+        name: "임시게시판목록",
+        link: "/muipublish/tempBoardlist",
+        etc: "",
+    },
+    {
+        id: "13",
+        name: "임시게시판등록",
+        link: "/muipublish/tempBoardapply",
+        etc: "",
+    },
+    {
+        id: "14",
+        name: "임시게시판상세",
+        link: "/muipublish/tempBoarddetail",
+        etc: "",
+    },
+    {
+        id: "14",
+        name: "마이페이지-과제신청내역",
+        link: "/muipublish/mytask",
+        etc: "",
+    },
+    {
+        id: "16",
+        name: "마이페이지-타겟추출내역",
+        link: "/muipublish/mytarget",
+        etc: "",
+    },
 ];
 
 export default function MuiPubIndex() {

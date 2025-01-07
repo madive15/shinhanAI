@@ -24,7 +24,7 @@ export interface IPageProps {
  * @description
  * user-front: TaskApply
  * TaskApply page
- * 과제신청목록
+ * 과제신청 등록
  */
 const TaskApply: React.FC<IPageProps> = (props) => {
     // loading

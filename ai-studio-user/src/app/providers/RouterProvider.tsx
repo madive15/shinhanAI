@@ -9,6 +9,7 @@ import { pathKeys } from "~/shared/router";
 import MuiPubIndex from "~/muiPublish";
 import MuiPubGuide from "~/muiPublish/guide/Guide";
 import MuiLayout from "~/muiPublish/layout/Layout";
+import MuiPupup from "~/muiPublish/components/popup/MuiPupup";
 import Main from "~/muiPublish/page/main/Main";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
                       {
                           path: pathKeys.muiPublishGuide(), //mui publish guide
                           element: <MuiPubGuide />,
+                      },
+                      {
+                          path: pathKeys.muiPublishPopup(),
+                          element: <MuiPupup />,
                       },
                       {
                           path: pathKeys.muiLayout(), //mui publish layout
@@ -83,6 +88,32 @@ export const router = createBrowserRouter([
                       {
                           path: pathKeys.noticeDetail(),
                           element: <MuiLayout pageName={"공지 사항 상세"} />,
+                      },
+                      {
+                          path: pathKeys.tempBoard(),
+                          element: <MuiLayout pageName={"임시게시판 목록"} />,
+                      },
+                      {
+                          path: pathKeys.tempBoardApply(),
+                          element: <MuiLayout pageName={"임시게시판 등록"} />,
+                      },
+                      {
+                          path: pathKeys.tempBoardDetail(),
+                          element: <MuiLayout pageName={"임시게시판 상세"} />,
+                      },
+                      {
+                          path: pathKeys.myTaskList(),
+                          element: <MuiLayout pageName={"과제 신청 내역"} />,
+                      },
+                      {
+                          path: pathKeys.myTaskListDetail(),
+                          element: (
+                              <MuiLayout pageName={"과제 신청 내역 상세"} />
+                          ),
+                      },
+                      {
+                          path: pathKeys.myTargetList(),
+                          element: <MuiLayout pageName={"타겟 추출 내역"} />,
                       },
                   ]
                 : []),

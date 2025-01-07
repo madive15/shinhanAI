@@ -1,5 +1,5 @@
 // necessary set
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
 
 // need content
@@ -25,13 +25,23 @@ export interface IPageProps {
     heiTitSearch?: number;
 }
 
+interface Data {
+    id: number;
+    calories: number;
+    carbs: number;
+    fat: number;
+    name: string;
+    protein: number;
+    use: number;
+}
+
 /**
  * @author shinhanAI
  * @description
- * admin-front: NoticeListTable
- * NoticeListTable
+ * admin-front: TempBoardListTable
+ * TempBoardListTable
  */
-const NoticeListTable: React.FC<IPageProps> = (props) => {
+const TempBoardListTable: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -44,7 +54,6 @@ const NoticeListTable: React.FC<IPageProps> = (props) => {
     useEffect(() => {
         setLoading(false);
     }, []);
-    const notice = "공지";
     return (
         <div className="notice-list-table">
             <div className="between-box">
@@ -100,60 +109,19 @@ const NoticeListTable: React.FC<IPageProps> = (props) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <TableRow>
-                            <TableCell width={56} align="center">
-                                {notice}
-                            </TableCell>
-                            <TableCell width={1224} align="left">
-                                <a
-                                    className={`ellipsis txt-end-icon secret ${
-                                        notice === "공지" ? "font-bold" : ""
-                                    }`}
-                                >
-                                    공지사항
-                                </a>
-                            </TableCell>
-                            <TableCell width={160} align="center">
-                                99999999
-                            </TableCell>
-                            <TableCell width={160} align="center">
-                                작성자
-                            </TableCell>
-                            <TableCell width={160} align="center">
-                                2024-10-19
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell width={48} align="center">
-                                {notice}
-                            </TableCell>
-                            <TableCell width={1232} align="left">
-                                <a
-                                    className={`ellipsis txt-end-icon secret ${
-                                        notice === "공지" ? "font-bold" : ""
-                                    }`}
-                                >
-                                    공지사항
-                                </a>
-                            </TableCell>
-                            <TableCell width={160} align="center">
-                                99999999
-                            </TableCell>
-                            <TableCell width={160} align="center">
-                                작성자
-                            </TableCell>
-                            <TableCell width={160} align="center">
-                                2024-10-19
-                            </TableCell>
-                        </TableRow>
                         {[1, 2, 3, 4, 5, 6].map((idx) => (
                             <TableRow key={idx}>
                                 <TableCell width={48} align="center">
-                                    {idx + 2}
+                                    {idx}
                                 </TableCell>
                                 <TableCell width={1232} align="left">
                                     <a className="txt-end-icon ellipsis file">
-                                        공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항공지사항
+                                        글 제목 글 제목 글 제목 글 제목 글 제목
+                                        글 제목 글 제목 글 제목 글 제목 글 제목
+                                        글 제목 글 제목 글 제목 글 제목 글 제목
+                                        글 제목 글 제목 글 제목 글 제목 글 제목
+                                        글 제목 글 제목 글 제목 글 제목 글 제목
+                                        글 제목 글 제목 글 제목 글 제목글 제목
                                     </a>
                                 </TableCell>
                                 <TableCell width={160} align="center">
@@ -173,4 +141,4 @@ const NoticeListTable: React.FC<IPageProps> = (props) => {
         </div>
     );
 };
-export default NoticeListTable;
+export default TempBoardListTable;

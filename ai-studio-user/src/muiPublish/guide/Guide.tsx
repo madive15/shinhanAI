@@ -226,6 +226,7 @@ export default function VerticalTabs() {
                 <Tab label="타겟추출" {...a11yProps(15)} />
                 <Tab label="싱글뷰 " {...a11yProps(16)} />
                 <Tab label="인풋파일" {...a11yProps(17)} />
+                <Tab label="페이지네이션" {...a11yProps(18)} />
             </Tabs>
             {/* color */}
             <TabPanel value={value} index={0}>
@@ -1507,6 +1508,41 @@ export default function VerticalTabs() {
                     <div className="file-volume">
                         <span>0</span>개<span> / </span>
                         <span>0</span>Ktyte
+                    </div>
+                </div>
+            </TabPanel>
+            <TabPanel value={value} index={18}>
+                <div className="pagination-wrap">
+                    <div className="pagination">
+                        <button type="button" className="first" disabled>
+                            처음으로
+                        </button>
+                        <button type="button" className="prev" disabled>
+                            이전
+                        </button>
+                        <button type="button" className="active">
+                            1
+                        </button>
+                        <button type="button">2</button>
+                        <button type="button">3</button>
+                        <button type="button">4</button>
+                        <button type="button">5</button>
+                        <button type="button">6</button>
+                        <button type="button">7</button>
+                        <button type="button">8</button>
+                        <button type="button">9</button>
+                        <button type="button">10</button>
+                        <button type="button" className="next">
+                            다음
+                        </button>
+                        <button type="button" className="last">
+                            맨끝으로
+                        </button>
+                    </div>
+                    <div className="page">
+                        <div className="now">1</div>
+                        <span>/</span>
+                        <span className="total">17</span>
                     </div>
                 </div>
             </TabPanel>

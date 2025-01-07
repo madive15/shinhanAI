@@ -1,9 +1,6 @@
 // necessary set
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
-import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
-import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
-import { ReactComponent as X } from "~assets/images/svg/Icons-x.svg";
 import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
 // need content
 import Table from "@mui/material/Table";
@@ -12,8 +9,6 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import TextField from "@mui/material/TextField";
@@ -45,10 +40,10 @@ interface Data {
 /**
  * @author shinhanAI
  * @description
- * admin-front: TaskApplyTable
- * TaskApplyTable
+ * admin-front: TempBoardApplyTable
+ * TempBoardApplyTable
  */
-const TaskApplyTable: React.FC<IPageProps> = (props) => {
+const TempBoardApplyTable: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -114,7 +109,7 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
     const tooptipText = (
         <div className="tooltip-wrap">
             <div className="tooltip-top">
-                <h3>과제명</h3>
+                <h3>제목</h3>
                 <IconButton className="ico-rect23 x" onClick={TooltipClose}>
                     <Plus9 />
                 </IconButton>
@@ -132,17 +127,16 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
         </div>
     );
     return (
-        <div className="task-list-table">
+        <div className="temp-list-table">
             <div className="row-table-tit">
-                <p>신청하기</p>
-                <span>신청할 과제 정보를 입력해주세요.</span>
+                <p>게시글 등록</p>
             </div>
             <TableContainer className="row-table" component={Paper}>
                 <Table>
                     <TableBody>
                         <TableRow>
                             <TableCell component="th">
-                                과제 명
+                                제목
                                 <Tooltip
                                     onClose={TooltipClose}
                                     open={tooltipOpen}
@@ -166,21 +160,10 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
                                 </Tooltip>
                             </TableCell>
                             <TableCell>
-                                <div className="input-group">
-                                    <TextField
-                                        className="input-field"
-                                        placeholder="텍스트를 입력하세요."
-                                    />
-                                    <FormControlLabel
-                                        control={
-                                            <Checkbox
-                                                icon={<ChkDefault />}
-                                                checkedIcon={<ChkChecked />}
-                                            />
-                                        }
-                                        label="비밀글"
-                                    />
-                                </div>
+                                <TextField
+                                    className="input-field"
+                                    placeholder="텍스트를 입력하세요."
+                                />
                             </TableCell>
                         </TableRow>
                         <TableRow>
@@ -197,7 +180,7 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
                                             />
                                         </label>
                                         <div className="file-list">
-                                            <div className="delete-item">
+                                            {/* <div className="delete-item">
                                                 <span>과제명파일명.png</span>
                                                 <IconButton>
                                                     <X />
@@ -208,7 +191,7 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
                                                 <IconButton>
                                                     <X />
                                                 </IconButton>
-                                            </div>
+                                            </div> */}
                                             <span className="no-file">
                                                 등록된 파일이 없습니다.
                                             </span>
@@ -222,13 +205,7 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
                             </TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell component="th">
-                                과제 신청 내용
-                                <p className="th-desc">
-                                    게시글 양식에 맞춰 내용을 입력하거나, 파일의
-                                    과제 신청 양식을 작성하여 파일첨부 해주세요.
-                                </p>
-                            </TableCell>
+                            <TableCell component="th">게시글 내용</TableCell>
                             <TableCell>
                                 <div className="ql-editor-wrap">
                                     <ReactQuill
@@ -246,4 +223,4 @@ const TaskApplyTable: React.FC<IPageProps> = (props) => {
         </div>
     );
 };
-export default TaskApplyTable;
+export default TempBoardApplyTable;

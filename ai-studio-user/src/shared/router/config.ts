@@ -64,6 +64,9 @@ export const pathKeys = {
     muiPublishGuide(): string {
         return `${pathKeys.root}muipublish/guide`; // MUI 퍼블 index
     },
+    muiPublishPopup(): string {
+        return `${pathKeys.root}muipublish/popupBundle`;
+    },
     muiTarget(): string {
         return `${pathKeys.root}muipublish/target`; // targetExtraction
     },
@@ -90,5 +93,23 @@ export const pathKeys = {
     },
     noticeDetail(): string {
         return `${pathKeys.root}muipublish/noticeDetail`; // 공지사항상세
+    },
+    tempBoard(): string {
+        return `${pathKeys.root}muipublish/tempBoardlist`; // 임시게시판목록
+    },
+    tempBoardApply(): string {
+        return `${pathKeys.root}muipublish/tempBoardapply`; // 임시게시판등록
+    },
+    tempBoardDetail(): string {
+        return `${pathKeys.root}muipublish/tempBoarddetail`; // 임시게시판상세
+    },
+    myTaskList(): string {
+        return `${pathKeys.root}muipublish/mytask`; // 마이페이지 과제신청내역
+    },
+    myTaskListDetail(): string {
+        return `${pathKeys.root}muipublish/mytaskdetail`; // 마이페이지 과제신청내역상세
+    },
+    myTargetList(): string {
+        return `${pathKeys.root}muipublish/mytarget`; // 마이페이지 타겟추출내역
     },
 };

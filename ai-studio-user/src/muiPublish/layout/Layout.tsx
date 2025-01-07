@@ -17,7 +17,11 @@ import TaskApply from "~/muiPublish/page/task/TaskApply";
 import TaskDetail from "~/muiPublish/page/task/TaskDetail";
 import NoticeList from "~/muiPublish/page/notice/NoticeList";
 import NoticeDetail from "~/muiPublish/page/notice/NoticeDetail";
-
+import TempBoardList from "~/muiPublish/page/tempBoard/TempBoardList";
+import TempBoardApply from "~/muiPublish/page/tempBoard/TempBoardApply";
+import TempBoardDetail from "~/muiPublish/page/tempBoard/TempBoardDetail";
+import MyTaskList from "~/muiPublish/page/myPageTask/MyTaskList";
+import MyTargetList from "~/muiPublish/page/myPageTarget/MyTargetList";
 // need style
 import "~/muiPublish/layout/layout.scss";
 import LayoutStyle from "~/muiPublish/theme/LayoutStyle";
@@ -95,6 +99,21 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "공지 사항 상세" && (
                         <NoticeDetail pageName={props.pageName} />
+                    )}
+                    {props.pageName === "임시게시판 목록" && (
+                        <TempBoardList pageName={props.pageName} />
+                    )}
+                    {props.pageName === "임시게시판 등록" && (
+                        <TempBoardApply pageName={props.pageName} />
+                    )}
+                    {props.pageName === "임시게시판 상세" && (
+                        <TempBoardDetail pageName={props.pageName} />
+                    )}
+                    {props.pageName === "과제 신청 내역" && (
+                        <MyTaskList pageName={props.pageName} />
+                    )}
+                    {props.pageName === "타겟 추출 내역" && (
+                        <MyTargetList pageName={props.pageName} />
                     )}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}

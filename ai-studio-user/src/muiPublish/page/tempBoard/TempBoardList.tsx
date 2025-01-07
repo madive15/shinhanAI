@@ -1,12 +1,12 @@
 // necessary set
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // need content
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
 import NoData from "~/muiPublish/components/noData/noData";
-import NoticeListTable from "~/muiPublish/page/notice/NoticeListTable";
+import TempBoardListTable from "~/muiPublish/page/tempBoard/TempBoardListTable";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -23,11 +23,11 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * user-front: NoticeList
- * NoticeList page
- * 공지사항 목록
+ * user-front: TempBoardList
+ * TempBoardList page
+ * 임시게시판 목록
  */
-const NoticeList: React.FC<IPageProps> = (props) => {
+const TempBoardList: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -39,7 +39,7 @@ const NoticeList: React.FC<IPageProps> = (props) => {
     }, []);
 
     //tabMenu 탭
-    const tabMenu = ["HOME", "공지 사항"];
+    const tabMenu = ["HOME", "임시게시판"];
 
     return (
         <>
@@ -52,10 +52,17 @@ const NoticeList: React.FC<IPageProps> = (props) => {
                         subTabs={false}
                         pageName={props.pageName}
                         search={false}
-                        desc={`AI Studio의 업데이트 정보 등 다양한 소식을 알려 드립니다. <br/> AI Studio의 업데이트 정보 등 다양한 소식을 알려 드립니다.`}
+                        btn="글쓰기"
+                        desc={`
+                            IT 및 기술 분야의 최신 동향과 기술적인 특징을 제공하는 서비스입니다.
+                            <br/>
+                            새로운 기술과 제품, 그리고 산업 동향을 파악할 수 있으며, 다양한 분야의 전문가들의 인사이트를 얻을 수 있습니다.
+                            <br/>
+                            빠르게 변화하는 기술과 시장 환경에서는 최신 정보를 빠르게 수집하고 분석하는 것이 비즈니스 전략 수립 및 개인의 전문성 향상에 큰 도움을 줄 것입니다.
+                            `}
                     />
-                    <div className="scroll-content-area notice">
-                        <NoticeListTable />
+                    <div className="scroll-content-area ">
+                        <TempBoardListTable />
                     </div>
                 </div>
             </div>
@@ -63,4 +70,4 @@ const NoticeList: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default NoticeList;
+export default TempBoardList;
