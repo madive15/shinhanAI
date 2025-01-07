@@ -19,7 +19,7 @@ import {
     MenuItem,
 } from "@mui/material";
 import Hash from "~/muiPublish/components/Hash";
-import ProgressBar from "~/muiPublish/components/ProgressBar";
+import PointProgressBar from "~/muiPublish/components/PointProgressBar";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -370,7 +370,7 @@ const MuiPupup: React.FC<IPageProps> = () => {
                                             SOL 트래블 카드
                                         </TableCell>
                                         <TableCell width={216} align="center">
-                                            <ProgressBar percent={81} />
+                                            <PointProgressBar percent={1} />
                                         </TableCell>
                                         <TableCell width={216} align="center">
                                             D
@@ -380,6 +380,7 @@ const MuiPupup: React.FC<IPageProps> = () => {
                             </Table>
                         </TableContainer>
                     </div>
+                    <div className=""></div>
                 </DialogContent>
                 <DialogActions>
                     <Button variant="sub2" onClick={ModelClose}>
