@@ -1,5 +1,5 @@
 // necessary set
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
 // need content
 import Button from "@mui/material/Button";

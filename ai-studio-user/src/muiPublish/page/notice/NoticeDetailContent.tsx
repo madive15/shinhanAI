@@ -1,10 +1,9 @@
 // necessary set
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as DownloadBlue } from "~assets/images/svg/icons-download-blue.svg";
 
 // need content
 import Button from "@mui/material/Button";
-import Badge from "~/muiPublish/components/Badge";
 import Hash from "~/muiPublish/components/Hash";
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -16,16 +15,6 @@ export interface IPageProps {
     loading?: boolean;
     useLoading?: (data: boolean) => void;
     heiTitSearch?: number;
-}
-
-interface Data {
-    id: number;
-    calories: number;
-    carbs: number;
-    fat: number;
-    name: string;
-    protein: number;
-    use: number;
 }
 
 /**

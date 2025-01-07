@@ -435,6 +435,9 @@ const theme = createTheme({
                     "&.small": {
                         maxWidth: "160px",
                     },
+                    "&.x-small": {
+                        maxWidth: "120px",
+                    },
                     "&.Mui-focused": {
                         borderColor: "var(--color1)",
                     },
@@ -594,9 +597,10 @@ const theme = createTheme({
                         },
                     },
                     "&.layer-box": {
-                        "& .MuiPaper-root": {
+                        "& .MuiDialog-paper": {
                             position: "relative",
-                            width: "560px",
+                            width: "680px",
+                            maxWidth: "680px",
                             padding: "16px",
                             borderRadius: "16px",
                             boxShadow: "0px 8px 20px 0px rgba(0, 0, 0, 0.1)",
@@ -605,6 +609,20 @@ const theme = createTheme({
                                 fontSize: "14px",
                                 padding: "0",
                                 marginBottom: "12px",
+                            },
+                            "& .popup-tit-desc": {
+                                maxWidth: "612px",
+                                fontFamily: "var(--font-style2)",
+                                fontSize: "14px",
+                                color: "var(--font-color2)",
+                                letterSpacing: "-0.35px",
+                            },
+                            "& .row-table": {
+                                "& table": {
+                                    "& th": {
+                                        width: "138px",
+                                    },
+                                },
                             },
                             "& .MuiDialogContent-root": {
                                 fontSize: "15px",

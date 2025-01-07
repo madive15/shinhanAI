@@ -5,9 +5,10 @@ import React, { useState, useEffect } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
-import OcrBox from "~/muiPublish/page/ocr/OcrBox";
-import OcrSearch from "~/muiPublish/page/ocr/OcrSearch";
-import OcrSearchTable from "~/muiPublish/page/ocr/OcrSearchTable";
+import NoData from "~/muiPublish/components/noData/noData";
+import MyTargetListTable from "~/muiPublish/page/myPageTarget/MyTargetListTable";
+import MyTargetIndiviCompany from "~/muiPublish/page/myPageTarget/MyTargetIndiviCompany";
+
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -17,47 +18,48 @@ export interface IPageProps {
     subName?: string;
     loading?: boolean;
     subTabs?: boolean;
-    search?: boolean;
     useLoading?: (data: boolean) => void;
 }
 
 /**
  * @author shinhanAI
  * @description
- * user-front: Ocr
- * Ocr page
- * Ocr
+ * user-front: MyTargetList
+ * MyTargetList page
+ * 마이페이지 타겟 추출 내역
  */
-const Ocr: React.FC<IPageProps> = (props) => {
+const MyTargetList: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
         setLoading(onoff);
     };
-
+    const [radioGroup, setRadioGroup] = React.useState("개인");
+    const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setRadioGroup((event.target as HTMLInputElement).value);
+    };
     useEffect(() => {
         setLoading(false);
     }, []);
 
     //tabMenu 탭
-    const tabMenu = ["HOME", "AI-OCR 검증"];
+    const tabMenu = ["HOME", "타겟 추출 내역"];
 
     return (
         <>
             <div className="tabs-area">
                 <Tab menuName={tabMenu} />
             </div>
-            <div className="tabs-contents ocr">
+            <div className="tabs-contents">
                 <div className="single-content">
                     <SubTitleNavTabs
                         subTabs={false}
-                        search={false}
                         pageName={props.pageName}
+                        search={false}
                     />
-                    <div className="scroll-content-area">
-                        <OcrBox />
-                        <OcrSearch />
-                        <OcrSearchTable />
+                    <div className="scroll-content-area task">
+                        <MyTargetIndiviCompany />
+                        <MyTargetListTable />
                     </div>
                 </div>
             </div>
@@ -65,4 +67,4 @@ const Ocr: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default Ocr;
+export default MyTargetList;

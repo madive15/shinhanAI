@@ -1,5 +1,5 @@
 // necessary set
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
 // need content
 import Loading from "~/muiPublish/loading/Loading";
@@ -10,7 +10,6 @@ import NoticeDetailContent from "~/muiPublish/page/notice/NoticeDetailContent";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";

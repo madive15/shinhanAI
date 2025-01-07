@@ -1,5 +1,5 @@
 // necessary set
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
@@ -27,16 +27,6 @@ export interface IPageProps {
     loading?: boolean;
     useLoading?: (data: boolean) => void;
     heiTitSearch?: number;
-}
-
-interface Data {
-    id: number;
-    calories: number;
-    carbs: number;
-    fat: number;
-    name: string;
-    protein: number;
-    use: number;
 }
 
 /**
