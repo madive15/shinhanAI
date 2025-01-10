@@ -103,7 +103,7 @@ const pubList = [
         etc: "",
     },
     {
-        id: "14",
+        id: "15",
         name: "마이페이지-과제신청내역",
         link: "/muipublish/mytask",
         etc: "",
@@ -112,6 +112,36 @@ const pubList = [
         id: "16",
         name: "마이페이지-타겟추출내역",
         link: "/muipublish/mytarget",
+        etc: "",
+    },
+    {
+        id: "17",
+        name: "마이페이지-타겟추출상세내역",
+        link: "/muipublish/mytargetdetail",
+        etc: "",
+    },
+    {
+        id: "18",
+        name: "마이페이지-모델생성내역",
+        link: "/muipublish/mymodel",
+        etc: "",
+    },
+    {
+        id: "19",
+        name: "마이페이지-모델생성상세내역",
+        link: "/muipublish/mymodeldetail",
+        etc: "",
+    },
+    {
+        id: "",
+        name: "팝업 모음",
+        link: "/muipublish/popupBundle",
+        etc: "",
+    },
+    {
+        id: "",
+        name: "에러 페이지",
+        link: "/muipublish/error",
         etc: "",
     },
 ];

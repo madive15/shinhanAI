@@ -35,7 +35,7 @@ const IndiviCompany: React.FC<IPageProps> = (props) => {
         <>
             <div className="indivi-company between">
                 <div className="refresh-box">
-                    <span>타겟 추출 완료된 항목이 있습니다.</span>
+                    <span>모델 생성이 완료된 항목이 있습니다.</span>
                     <button type="button">새로고침</button>
                 </div>
                 <FormControl>

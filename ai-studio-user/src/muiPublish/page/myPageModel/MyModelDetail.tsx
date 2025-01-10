@@ -6,8 +6,9 @@ import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
 import NoData from "~/muiPublish/components/noData/noData";
-import MyTargetListTable from "~/muiPublish/page/myPageTarget/MyTargetListTable";
-import MyTargetIndiviCompany from "~/muiPublish/page/myPageTarget/MyTargetIndiviCompany";
+import MyModelDetailTable from "~/muiPublish/page/myPageModel/MyModelDetailTable";
+import MyModelDetailInfoTable from "~/muiPublish/page/myPageModel/MyModelDetailInfoTable";
+import MyModelDetailInfoTable2 from "~/muiPublish/page/myPageModel/MyModelDetailInfoTable2";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -24,26 +25,21 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * user-front: MyTargetList
- * MyTargetList page
- * 마이페이지 타겟 추출 내역
+ * user-front: MyModelDetail
+ * MyModelDetail page
  */
-const MyTargetList: React.FC<IPageProps> = (props) => {
+const MyModelDetail: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
         setLoading(onoff);
-    };
-    const [radioGroup, setRadioGroup] = React.useState("개인");
-    const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setRadioGroup((event.target as HTMLInputElement).value);
     };
     useEffect(() => {
         setLoading(false);
     }, []);
 
     //tabMenu 탭
-    const tabMenu = ["HOME", "타겟 추출 내역"];
+    const tabMenu = ["HOME", "타겟 추출 상세 내역"];
 
     return (
         <>
@@ -56,10 +52,12 @@ const MyTargetList: React.FC<IPageProps> = (props) => {
                         subTabs={false}
                         pageName={props.pageName}
                         search={false}
+                        btnTwo="목록으로 돌아가기"
                     />
-                    <div className="scroll-content-area ">
-                        <MyTargetIndiviCompany />
-                        <MyTargetListTable />
+                    <div className="scroll-content-area">
+                        <MyModelDetailInfoTable />
+                        <MyModelDetailInfoTable2 />
+                        <MyModelDetailTable />
                     </div>
                 </div>
             </div>
@@ -67,4 +65,4 @@ const MyTargetList: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default MyTargetList;
+export default MyModelDetail;

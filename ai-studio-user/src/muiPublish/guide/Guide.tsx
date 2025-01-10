@@ -1222,15 +1222,15 @@ export default function VerticalTabs() {
                 <br />
                 <br />
                 <div className="badge-wrap">
-                    <Badge value="ADM006" color="gray" />
-                    <Badge value="사용중" color="green" />
-                    <Badge value="사용중중중중중중중중중중" color="green" />
-                    <Badge value="사용중" color="blue" />
-                    <Badge value="사용중" color="navy " />
-                    <Badge value="사용중" color="black " />
+                    <Badge value="반응률" color="green" />
+                    <Badge value="인기" color="blue" />
+                    <Badge value="중분류" color="navy " />
+                    <Badge value="추천" color="black " />
                     <Badge value="지수" color="orange" />
                     <Badge value="필터" color="purple" />
                     <Badge value="모델" color="blue2" />
+                    <Badge value="고객성향" color="blue3" />
+                    <Badge value="고객정보" color="blue4" />
                     <Badge value="N" color="red" />
                 </div>
                 <br />
@@ -1247,7 +1247,7 @@ export default function VerticalTabs() {
                     <strong>라인 형</strong>
                 </p>
                 <div className="badge-wrap">
-                    <Badge value="과제 신청" color="blue" type="line" />
+                    {/* <Badge value="과제 신청" color="blue" type="line" /> */}
                     <Badge value="과제 신청" color="blue2" type="line" />
                     <Badge value="검토중" color="blue2" type="line" />
                     <Badge value="진행중" color="blue2" type="line" />
@@ -1511,6 +1511,7 @@ export default function VerticalTabs() {
                     </div>
                 </div>
             </TabPanel>
+            {/* 페이지네이션 */}
             <TabPanel value={value} index={18}>
                 <div className="pagination-wrap">
                     <div className="pagination">

@@ -112,4 +112,16 @@ export const pathKeys = {
     myTargetList(): string {
         return `${pathKeys.root}muipublish/mytarget`; // 마이페이지 타겟추출내역
     },
+    myTargetDetail(): string {
+        return `${pathKeys.root}muipublish/mytargetdetail`; // 마이페이지 타겟추출상세내역
+    },
+    myModelList(): string {
+        return `${pathKeys.root}muipublish/mymodel`; // 마이페이지 모델생성내역
+    },
+    myModelDetail(): string {
+        return `${pathKeys.root}muipublish/mymodeldetail`; // 마이페이지 모델생성상세내역
+    },
+    errorPage(): string {
+        return `${pathKeys.root}muipublish/error`; // 에러페이지
+    },
 };

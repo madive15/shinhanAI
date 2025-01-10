@@ -9,7 +9,7 @@ import { pathKeys } from "~/shared/router";
 import MuiPubIndex from "~/muiPublish";
 import MuiPubGuide from "~/muiPublish/guide/Guide";
 import MuiLayout from "~/muiPublish/layout/Layout";
-import MuiPupup from "~/muiPublish/components/popup/MuiPupup";
+import MuiPupup from "~/muiPublish/components/popup/MuiPopup";
 import Main from "~/muiPublish/page/main/Main";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -114,6 +114,26 @@ export const router = createBrowserRouter([
                       {
                           path: pathKeys.myTargetList(),
                           element: <MuiLayout pageName={"타겟 추출 내역"} />,
+                      },
+                      {
+                          path: pathKeys.myTargetDetail(),
+                          element: (
+                              <MuiLayout pageName={"타겟 추출 상세 내역"} />
+                          ),
+                      },
+                      {
+                          path: pathKeys.myModelList(),
+                          element: <MuiLayout pageName={"모델 생성 내역"} />,
+                      },
+                      {
+                          path: pathKeys.myModelDetail(),
+                          element: (
+                              <MuiLayout pageName={"모델 생성 상세 내역"} />
+                          ),
+                      },
+                      {
+                          path: pathKeys.errorPage(),
+                          element: <MuiLayout pageName={"에러샘플"} />,
                       },
                   ]
                 : []),

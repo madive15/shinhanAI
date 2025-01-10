@@ -1,4 +1,10 @@
 @import "../../assets/scss/mixin";
+
+.box {
+    & + .box {
+        margin-top: 24px;
+    }
+}
 .btn-wrap {
     display: flex;
     align-items: center;
@@ -66,7 +72,7 @@
     position: relative;
     textarea {
         width: 100%;
-        height: 136px;
+        height: 120px;
         border: 1px solid var(--border-color6);
         border-radius: 8px;
         padding: 12px 12px 0 12px;
@@ -104,6 +110,12 @@
         // textarea {
         //   background: url("../images/icon/ico-required.png") top left no-repeat;
         // }
+    }
+    &.big {
+        height: 160px;
+    }
+    &.small {
+        height: 72px;
     }
 }
 
@@ -415,7 +427,11 @@
     }
     &.blue3 {
         color: var(--color2);
-        background-color: #2878f5;
+        background-color: var(--sub-color3);
+    }
+    &.blue4 {
+        color: var(--color2);
+        background-color: var(--sub-color2);
     }
     &.large {
         height: 26px;
@@ -1513,6 +1529,10 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+    // margin: 24px 0 12px;
+    // &:first-of-type {
+    //     margin-top: 0;
+    // }
     .left {
         display: flex;
         align-items: center;
@@ -1529,12 +1549,28 @@
         display: flex;
         flex: 1;
         justify-content: end;
+        align-items: center;
         // gap: 16px;
         .chk-group {
             margin-right: 16px;
         }
         button {
             margin-left: 4px;
+        }
+        .count {
+            margin-right: 16px;
+            span {
+                color: var(--font-color2);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.35px;
+            }
+            em {
+                margin-left: 8px;
+                font-size: 14px;
+                color: var(--sub-color3);
+                font-weight: 700;
+            }
         }
     }
 }
@@ -1627,11 +1663,6 @@
                 margin: 0 8px 0 0 !important;
             }
         }
-    }
-    .indivi-company {
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 0 24px 0;
     }
 }
 
@@ -2006,9 +2037,6 @@
             .text-area {
                 flex: 1;
                 height: 120px;
-                textarea {
-                    height: 120px;
-                }
             }
         }
         .comment-write {
@@ -2019,9 +2047,6 @@
             .text-area {
                 flex: 1;
                 height: 120px;
-                textarea {
-                    height: 120px;
-                }
             }
         }
     }
@@ -2215,15 +2240,14 @@
     }
 }
 
-//팝업 row 테이블 관련
-.pop-table-tit {
+//팝업 컨텐츠 관련
+.pop-content-tit {
     font-family: var(--font-style1);
     font-size: 14px;
     letter-spacing: -0.35px;
+    margin-bottom: 12px;
 }
-.pop-rowtable-wrap {
-    padding-top: 16px;
-
+.pop-content {
     .sub-tit {
         margin: 12px 0 8px;
         color: var(--font-color2);
@@ -2231,10 +2255,138 @@
         letter-spacing: -0.35px;
         line-height: 21px;
     }
-}
-.pop-table-wrap {
-    padding-top: 16px;
+    & + .pop-content {
+        margin-top: 16px;
+    }
     .progress-wrap {
         gap: 8px;
+        .progress-bar-track {
+            max-width: 160px;
+        }
+    }
+    .prebuilt-target-list {
+        ul {
+            li {
+                border-radius: 8px;
+                background-color: var(--background-color1);
+                padding: 4px 16px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 42px;
+                margin-bottom: 8px;
+                span {
+                    font-size: 13px;
+                    letter-spacing: -0.325px;
+                }
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+//사이트맵
+.sitemap {
+    > ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 20px;
+        li {
+            p {
+                padding-bottom: 8px;
+                font-style: var(--font-style1);
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: -0.3px;
+                border-bottom: 1px solid var(--border-color4);
+            }
+            ul {
+                padding-top: 12px;
+                li {
+                    margin-bottom: 8px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//에러 페이지
+.error-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &::before {
+        content: "";
+        display: block;
+        width: 355px;
+        height: 300px;
+        margin-bottom: 24px;
+    }
+    &.type1 {
+        &::before {
+            background: url("../images/error-type1.png") no-repeat;
+        }
+    }
+    &.type2 {
+        &::before {
+            background: url("../images/error-type2.png") no-repeat;
+        }
+    }
+    strong {
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.6px;
+    }
+    .error-txt {
+        color: var(--font-color3);
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.35px;
+        margin: 12px 0;
+        text-align: center;
+    }
+}
+
+//새로 고침 박스
+.refresh-box {
+    border-radius: 8px;
+    background-color: var(--background-color5);
+    padding: 12px 12px 12px 32px;
+    max-width: 398px;
+    width: 100%;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+        font-size: 13px;
+        letter-spacing: -0.325px;
+    }
+    button {
+        text-decoration: underline;
+        color: var(--color1);
+        font-size: 13px;
+        letter-spacing: -0.325px;
+    }
+    &::before {
+        content: "";
+        width: 14px;
+        height: 15px;
+        display: block;
+        background: url("../images/icon/ico-exclamation-mark.png") no-repeat;
+        position: absolute;
+        top: 11px;
+        left: 12px;
+    }
+}
+
+.notice {
+    .board-detail-tit {
+        padding-top: 0;
     }
 }

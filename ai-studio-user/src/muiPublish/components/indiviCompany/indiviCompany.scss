@@ -25,4 +25,7 @@
             background-color: var(--color1);
         }
     }
+    &.between {
+        justify-content: space-between;
+    }
 }

@@ -37,10 +37,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: MyTargetListTable
- * MyTargetListTable
+ * admin-front: MyModelListTable
+ * MyModelListTable
  */
-const MyTargetListTable: React.FC<IPageProps> = (props) => {
+const MyModelListTable: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -64,7 +64,7 @@ const MyTargetListTable: React.FC<IPageProps> = (props) => {
         <>
             <div className="between-box">
                 <div className="left">
-                    <h2>타겟 추출 내역</h2>
+                    <h2>모델 생성 내역</h2>
                     <span className="sum">총 00건</span>
                 </div>
                 <div className="right">
@@ -104,74 +104,52 @@ const MyTargetListTable: React.FC<IPageProps> = (props) => {
                             <TableCell width={54} align="center">
                                 대상
                             </TableCell>
-                            <TableCell width={120} align="center">
-                                구분
+                            <TableCell width={160} align="center">
+                                사용 모델
                             </TableCell>
-                            <TableCell width={386} align="left">
-                                타겟명
+                            <TableCell width={746} align="left">
+                                모델명
                             </TableCell>
-                            <TableCell width={120} align="center">
+                            <TableCell width={160} align="center">
                                 상태
                             </TableCell>
-                            <TableCell width={240} align="center">
-                                타겟수
+                            <TableCell width={160} align="center">
+                                타겟추출
                             </TableCell>
                             <TableCell width={160} align="center">
-                                엑셀
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                LMS 발송
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                자체 마케팅
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                추출 요청자
+                                생성 요청자
                             </TableCell>
                             <TableCell width={160} align="center">
-                                추출일
+                                생성 요청일
                             </TableCell>
                             <TableCell width={160} align="center">
-                                재추출
+                                재 생성 신청
                             </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         <TableRow>
                             <TableCell width={54} align="center">
-                                개인
+                                대상
                             </TableCell>
-                            <TableCell width={120} align="center">
-                                직접추출
+                            <TableCell width={160} align="center">
+                                사용 모델
                             </TableCell>
-                            <TableCell width={386} align="left">
+                            <TableCell width={746} align="left">
                                 <a className="ellipsis">
-                                    유저가 생성한 타겟 추출 조건명
+                                    이용자가 설정한 모델명
                                 </a>
                             </TableCell>
-                            <TableCell width={120} align="center">
-                                추출중
-                            </TableCell>
-                            <TableCell width={240} align="center">
-                                1,202,312
+                            <TableCell width={160} align="center">
+                                상태
                             </TableCell>
                             <TableCell width={160} align="center">
                                 <button type="button" className="txt-btn">
-                                    다운로드
+                                    타겟추출
                                 </button>
                             </TableCell>
-                            <TableCell width={120} align="center">
-                                <button type="button" className="txt-btn">
-                                    실행
-                                </button>
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                <button type="button" className="txt-btn">
-                                    실행
-                                </button>
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                홍길동
+                            <TableCell width={160} align="center">
+                                박흥부
                             </TableCell>
                             <TableCell width={160} align="center">
                                 2024-10-08
@@ -182,39 +160,26 @@ const MyTargetListTable: React.FC<IPageProps> = (props) => {
                         </TableRow>
                         <TableRow>
                             <TableCell width={54} align="center">
-                                개인
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                직접추출
-                            </TableCell>
-                            <TableCell width={386} align="left">
-                                <a className="ellipsis">
-                                    유저가 생성한 타겟 추출 조건명
-                                </a>
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                추출중
-                            </TableCell>
-                            <TableCell width={240} align="center">
-                                1,202,312
+                                대상
                             </TableCell>
                             <TableCell width={160} align="center">
-                                <button
-                                    type="button"
-                                    className="txt-btn"
-                                    disabled
-                                >
-                                    다운로드 불가
+                                사용 모델
+                            </TableCell>
+                            <TableCell width={746} align="left">
+                                <a className="ellipsis">
+                                    이용자가 설정한 모델명
+                                </a>
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                상태
+                            </TableCell>
+                            <TableCell width={160} align="center">
+                                <button type="button" className="txt-btn">
+                                    타겟추출
                                 </button>
                             </TableCell>
-                            <TableCell width={120} align="center">
-                                -
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                -
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                홍길동
+                            <TableCell width={160} align="center">
+                                박흥부
                             </TableCell>
                             <TableCell width={160} align="center">
                                 2024-10-08
@@ -228,30 +193,18 @@ const MyTargetListTable: React.FC<IPageProps> = (props) => {
                                 <TableCell width={54} align="center">
                                     개인
                                 </TableCell>
-                                <TableCell width={120} align="center">
-                                    프리빌트
+                                <TableCell width={160} align="center">
+                                    새희망홀씨대출
                                 </TableCell>
-                                <TableCell width={386} align="left">
+                                <TableCell width={746} align="left">
                                     <a className="ellipsis">
-                                        프리빌트된 타켓 추출 조건명
+                                        이용자가 설정한 모델명
                                     </a>
                                 </TableCell>
-                                <TableCell width={120} align="center">
+                                <TableCell width={160} align="center">
                                     상태
                                 </TableCell>
-                                <TableCell width={240} align="center">
-                                    타겟수
-                                </TableCell>
                                 <TableCell width={160} align="center">
-                                    <button
-                                        type="button"
-                                        className="txt-btn"
-                                        disabled
-                                    >
-                                        다운로드 불가
-                                    </button>
-                                </TableCell>
-                                <TableCell width={120} align="center">
                                     <button
                                         type="button"
                                         className="txt-btn"
@@ -260,27 +213,18 @@ const MyTargetListTable: React.FC<IPageProps> = (props) => {
                                         불가
                                     </button>
                                 </TableCell>
-                                <TableCell width={120} align="center">
-                                    <button
-                                        type="button"
-                                        className="txt-btn"
-                                        disabled
-                                    >
-                                        불가
-                                    </button>
-                                </TableCell>
-                                <TableCell width={120} align="center">
-                                    추출 요청자
+                                <TableCell width={160} align="center">
+                                    임꺽정
                                 </TableCell>
                                 <TableCell width={160} align="center">
-                                    추출일
+                                    2024-10-08
                                 </TableCell>
                                 <TableCell width={160} align="center">
                                     <Button
                                         variant="small"
                                         onClick={confirmOpen}
                                     >
-                                        재추출
+                                        재 생성 신청
                                     </Button>
                                 </TableCell>
                             </TableRow>
@@ -329,7 +273,7 @@ const MyTargetListTable: React.FC<IPageProps> = (props) => {
                 <DialogTitle>알림</DialogTitle>
                 <DialogContent>
                     <div className="txt-box">
-                        선택하신 항목의 타겟을 재추출 하시겠습니까?
+                        선택하신 항목의 모델을 다시 생성 신청 하시겠습니까?
                     </div>
                 </DialogContent>
                 <DialogActions>
@@ -345,4 +289,4 @@ const MyTargetListTable: React.FC<IPageProps> = (props) => {
         </>
     );
 };
-export default MyTargetListTable;
+export default MyModelListTable;

@@ -22,6 +22,10 @@ import TempBoardApply from "~/muiPublish/page/tempBoard/TempBoardApply";
 import TempBoardDetail from "~/muiPublish/page/tempBoard/TempBoardDetail";
 import MyTaskList from "~/muiPublish/page/myPageTask/MyTaskList";
 import MyTargetList from "~/muiPublish/page/myPageTarget/MyTargetList";
+import MyTargetDetail from "~/muiPublish/page/myPageTarget/MyTargetDetail";
+import MyModelList from "~/muiPublish/page/myPageModel/MyModelList";
+import MyModelDetail from "~/muiPublish/page/myPageModel/MyModelDetail";
+import Error from "~/muiPublish/page/error/Error";
 // need style
 import "~/muiPublish/layout/layout.scss";
 import LayoutStyle from "~/muiPublish/theme/LayoutStyle";
@@ -114,6 +118,23 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "타겟 추출 내역" && (
                         <MyTargetList pageName={props.pageName} />
+                    )}
+                    {props.pageName === "타겟 추출 상세 내역" && (
+                        <MyTargetDetail pageName={props.pageName} />
+                    )}
+                    {props.pageName === "모델 생성 내역" && (
+                        <MyModelList pageName={props.pageName} />
+                    )}
+                    {props.pageName === "모델 생성 상세 내역" && (
+                        <MyModelDetail pageName={props.pageName} />
+                    )}
+
+                    {/*  */}
+                    {props.pageName === "팝업샘플" && (
+                        <Error pageName={props.pageName} />
+                    )}
+                    {props.pageName === "에러샘플" && (
+                        <Error pageName={props.pageName} />
                     )}
                     {/* Tab contents Page */}
                     {/* {props.pageName === "기본레이아웃" && <SampleTablePage pageName={props.pageName} />}

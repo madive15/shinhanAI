@@ -6,8 +6,8 @@ import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
 import NoData from "~/muiPublish/components/noData/noData";
-import MyTargetListTable from "~/muiPublish/page/myPageTarget/MyTargetListTable";
-import MyTargetIndiviCompany from "~/muiPublish/page/myPageTarget/MyTargetIndiviCompany";
+import MyModelListTable from "~/muiPublish/page/myPageModel/MyModelListTable";
+import MyModelIndiviCompany from "~/muiPublish/page/myPageModel/MyModelIndiviCompany";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -24,26 +24,23 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * user-front: MyTargetList
- * MyTargetList page
- * 마이페이지 타겟 추출 내역
+ * user-front: MyModelList
+ * MyModelList page
+ * 마이페이지 모델 생성 내역
  */
-const MyTargetList: React.FC<IPageProps> = (props) => {
+const MyModelList: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
         setLoading(onoff);
     };
-    const [radioGroup, setRadioGroup] = React.useState("개인");
-    const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setRadioGroup((event.target as HTMLInputElement).value);
-    };
+
     useEffect(() => {
         setLoading(false);
     }, []);
 
     //tabMenu 탭
-    const tabMenu = ["HOME", "타겟 추출 내역"];
+    const tabMenu = ["HOME", "모델 생성 내역"];
 
     return (
         <>
@@ -58,8 +55,8 @@ const MyTargetList: React.FC<IPageProps> = (props) => {
                         search={false}
                     />
                     <div className="scroll-content-area ">
-                        <MyTargetIndiviCompany />
-                        <MyTargetListTable />
+                        <MyModelIndiviCompany />
+                        <MyModelListTable />
                     </div>
                 </div>
             </div>
@@ -67,4 +64,4 @@ const MyTargetList: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default MyTargetList;
+export default MyModelList;

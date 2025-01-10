@@ -726,11 +726,19 @@ const theme = createTheme({
                                 backgroundColor: "var(--color2)",
                                 lineHeight: "21px",
                                 letterSpacing: "-0.35px",
-                                color: "var(--font-color2)",
+                                // color: "var(--font-color2)",
                                 "&.no-space": {
                                     padding: "0 0",
                                 },
+                                "& .td-flex ": {
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                },
                             },
+                        },
+                        "&+.between-box": {
+                            marginTop: "12px",
+                            marginBottom: "0px",
                         },
                     },
                     // "& table": {

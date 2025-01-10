@@ -5,9 +5,7 @@ import React, { useState, useEffect } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
-import NoData from "~/muiPublish/components/noData/noData";
-import MyTargetListTable from "~/muiPublish/page/myPageTarget/MyTargetListTable";
-import MyTargetIndiviCompany from "~/muiPublish/page/myPageTarget/MyTargetIndiviCompany";
+import Error from "~/muiPublish/components/error/Error";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -24,26 +22,22 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * user-front: MyTargetList
- * MyTargetList page
- * 마이페이지 타겟 추출 내역
+ * user-front: Error
+ * Error page
  */
-const MyTargetList: React.FC<IPageProps> = (props) => {
+const NoticeList: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
         setLoading(onoff);
     };
-    const [radioGroup, setRadioGroup] = React.useState("개인");
-    const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setRadioGroup((event.target as HTMLInputElement).value);
-    };
+
     useEffect(() => {
         setLoading(false);
     }, []);
 
     //tabMenu 탭
-    const tabMenu = ["HOME", "타겟 추출 내역"];
+    const tabMenu = ["HOME", "에러 샘플"];
 
     return (
         <>
@@ -58,8 +52,7 @@ const MyTargetList: React.FC<IPageProps> = (props) => {
                         search={false}
                     />
                     <div className="scroll-content-area ">
-                        <MyTargetIndiviCompany />
-                        <MyTargetListTable />
+                        <Error type="type1" />
                     </div>
                 </div>
             </div>
@@ -67,4 +60,4 @@ const MyTargetList: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default MyTargetList;
+export default NoticeList;
