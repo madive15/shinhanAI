@@ -50,7 +50,7 @@ const OcrSearchTable: React.FC<IPageProps> = (props) => {
         <div className="ocr-search-table">
             <div className="between-box">
                 <div className="left">
-                    <h2>검증 결과</h2>
+                    <h3>검증 결과</h3>
                     <span className="sum">총 00건</span>
                 </div>
                 <div className="right">

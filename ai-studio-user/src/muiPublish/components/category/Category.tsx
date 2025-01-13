@@ -30,7 +30,7 @@ const Category: React.FC<IPageProps> = (props) => {
     };
     return (
         <>
-            <FormControl>
+            <FormControl className="filter-radio-wrap">
                 <RadioGroup
                     className="filter-radio"
                     row
@@ -39,17 +39,61 @@ const Category: React.FC<IPageProps> = (props) => {
                     value={radioGroup2}
                     onChange={radioGroupChange2}
                 >
-                    <FormControlLabel value="인기/추천" control={<Radio />} label="인기/추천" />
-                    <FormControlLabel value="전체" control={<Radio />} label="전체" />
-                    <FormControlLabel value="예적금" control={<Radio />} label="예적금" />
-                    <FormControlLabel value="외환" control={<Radio />} label="외환" />
-                    <FormControlLabel value="퇴직연금" control={<Radio />} label="퇴직연금" />
-                    <FormControlLabel value="투자상품" control={<Radio />} label="투자상품" />
-                    <FormControlLabel value="보험/방카" control={<Radio />} label="보험/방카" />
-                    <FormControlLabel value="대출" control={<Radio />} label="대출" />
-                    <FormControlLabel value="급여" control={<Radio />} label="급여" />
-                    <FormControlLabel value="연금" control={<Radio />} label="연금" />
-                    <FormControlLabel value="고자산" control={<Radio />} label="고자산" />
+                    <FormControlLabel
+                        value="인기/추천"
+                        control={<Radio />}
+                        label="인기/추천"
+                    />
+                    <FormControlLabel
+                        value="전체"
+                        control={<Radio />}
+                        label="전체"
+                    />
+                    <FormControlLabel
+                        value="예적금"
+                        control={<Radio />}
+                        label="예적금"
+                    />
+                    <FormControlLabel
+                        value="외환"
+                        control={<Radio />}
+                        label="외환"
+                    />
+                    <FormControlLabel
+                        value="퇴직연금"
+                        control={<Radio />}
+                        label="퇴직연금"
+                    />
+                    <FormControlLabel
+                        value="투자상품"
+                        control={<Radio />}
+                        label="투자상품"
+                    />
+                    <FormControlLabel
+                        value="보험/방카"
+                        control={<Radio />}
+                        label="보험/방카"
+                    />
+                    <FormControlLabel
+                        value="대출"
+                        control={<Radio />}
+                        label="대출"
+                    />
+                    <FormControlLabel
+                        value="급여"
+                        control={<Radio />}
+                        label="급여"
+                    />
+                    <FormControlLabel
+                        value="연금"
+                        control={<Radio />}
+                        label="연금"
+                    />
+                    <FormControlLabel
+                        value="고자산"
+                        control={<Radio />}
+                        label="고자산"
+                    />
                 </RadioGroup>
             </FormControl>
         </>

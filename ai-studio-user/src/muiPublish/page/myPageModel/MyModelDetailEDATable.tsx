@@ -8,7 +8,6 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import MyModelTopFiveChart from "~/muiPublish/page/myPageModel/MyModelTopFiveChart";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -24,10 +23,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: MyModelDetailTable
- * MyModelDetailTable
+ * admin-front: MyModelDetailEDATable
+ * MyModelDetailEDATable
  */
-const MyModelDetailTable: React.FC<IPageProps> = (props) => {
+const MyModelDetailEDATable: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -42,43 +41,49 @@ const MyModelDetailTable: React.FC<IPageProps> = (props) => {
         <div className="box">
             <div className="between-box">
                 <div className="left">
-                    <h3>변수 중요도 상위 TOP 5</h3>
+                    <h3>모델링 변수 EDA</h3>
                 </div>
             </div>
             <TableContainer className="table-content">
                 <Table className="table-defult-style">
                     <TableHead>
                         <TableRow>
-                            <TableCell width={54} align="center">
-                                순위
-                            </TableCell>
-                            <TableCell width={1386} align="center">
+                            <TableCell width={1160} align="center">
                                 변수명
                             </TableCell>
-                            <TableCell width={320} align="center">
-                                중요도 수치
+                            <TableCell width={200} align="center">
+                                Lv
+                            </TableCell>
+                            <TableCell width={200} align="center">
+                                Lv-direction
+                            </TableCell>
+                            <TableCell width={200} align="center">
+                                Ar
                             </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {[1, 2, 3, 4, 5].map((v, i) => (
                             <TableRow key={i}>
-                                <TableCell width={54} align="center">
-                                    {i + 1}
+                                <TableCell width={1160} align="center">
+                                    타발 송금 개인외 이전거래 금액합 6개월 대비
+                                    증가 비율
                                 </TableCell>
-                                <TableCell width={1386} align="center">
-                                    신용카드 이용금액
+                                <TableCell width={200} align="center">
+                                    2.22997
                                 </TableCell>
-                                <TableCell width={320} align="center">
-                                    999
+                                <TableCell width={200} align="center">
+                                    D
+                                </TableCell>
+                                <TableCell width={200} align="center">
+                                    0.108696
                                 </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
-            <MyModelTopFiveChart />
         </div>
     );
 };
-export default MyModelDetailTable;
+export default MyModelDetailEDATable;

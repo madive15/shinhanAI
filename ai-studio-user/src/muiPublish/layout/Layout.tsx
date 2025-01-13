@@ -25,6 +25,7 @@ import MyTargetList from "~/muiPublish/page/myPageTarget/MyTargetList";
 import MyTargetDetail from "~/muiPublish/page/myPageTarget/MyTargetDetail";
 import MyModelList from "~/muiPublish/page/myPageModel/MyModelList";
 import MyModelDetail from "~/muiPublish/page/myPageModel/MyModelDetail";
+import MyBookmark from "~/muiPublish/page/myPageBookmark/MyBookmark";
 import Error from "~/muiPublish/page/error/Error";
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -127,6 +128,9 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "모델 생성 상세 내역" && (
                         <MyModelDetail pageName={props.pageName} />
+                    )}
+                    {props.pageName === "즐겨찾기 관리" && (
+                        <MyBookmark pageName={props.pageName} />
                     )}
 
                     {/*  */}

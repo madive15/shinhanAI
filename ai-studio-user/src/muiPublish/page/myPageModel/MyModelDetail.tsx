@@ -10,6 +10,9 @@ import MyModelDetailTable from "~/muiPublish/page/myPageModel/MyModelDetailTable
 import MyModelDetailInfoTable from "~/muiPublish/page/myPageModel/MyModelDetailInfoTable";
 import MyModelDetailInfoTable2 from "~/muiPublish/page/myPageModel/MyModelDetailInfoTable2";
 
+import MyModelDetailEDATable from "~/muiPublish/page/myPageModel/MyModelDetailEDATable";
+import MyModelPerformance from "~/muiPublish/page/myPageModel/MyModelPerformance";
+
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -58,6 +61,8 @@ const MyModelDetail: React.FC<IPageProps> = (props) => {
                         <MyModelDetailInfoTable />
                         <MyModelDetailInfoTable2 />
                         <MyModelDetailTable />
+                        <MyModelDetailEDATable />
+                        <MyModelPerformance />
                     </div>
                 </div>
             </div>

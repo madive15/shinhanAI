@@ -31,14 +31,14 @@ const pubList = [
         etc: "",
     },
     {
-        id: "4",
+        id: "UI_USR_0140",
         name: "타겟추출",
         link: "/muipublish/target",
         etc: "",
     },
     {
-        id: "5",
-        name: "싱글뷰",
+        id: "UI_USR_0390",
+        name: "싱글뷰-개인",
         link: "/muipublish/single",
         etc: "",
     },
@@ -55,81 +55,94 @@ const pubList = [
         etc: "",
     },
     {
-        id: "7",
+        id: "UI_USR_0450",
         name: "과제신청목록",
         link: "/muipublish/tasklist",
         etc: "",
     },
     {
-        id: "8",
-        name: "과제신청",
-        link: "/muipublish/taskapply",
-        etc: "",
-    },
-    {
-        id: "9",
+        id: "UI_USR_0460",
         name: "과제신청상세",
         link: "/muipublish/taskdetail",
         etc: "",
     },
     {
-        id: "10",
+        id: "UI_USR_0470",
+        name: "과제신청",
+        link: "/muipublish/taskapply",
+        etc: "",
+    },
+    {
+        id: "UI_USR_0480",
         name: "공지사항목록",
         link: "/muipublish/noticelist",
         etc: "",
     },
     {
-        id: "11",
+        id: "UI_USR_0490",
         name: "공지사항상세",
         link: "/muipublish/noticedetail",
         etc: "",
     },
     {
-        id: "12",
+        id: "UI_USR_0500",
         name: "임시게시판목록",
         link: "/muipublish/tempBoardlist",
         etc: "",
     },
     {
-        id: "13",
+        id: "UI_USR_0510",
         name: "임시게시판등록",
         link: "/muipublish/tempBoardapply",
         etc: "",
     },
     {
-        id: "14",
+        id: "UI_USR_0520",
         name: "임시게시판상세",
         link: "/muipublish/tempBoarddetail",
         etc: "",
     },
+
     {
-        id: "15",
-        name: "마이페이지-과제신청내역",
-        link: "/muipublish/mytask",
-        etc: "",
-    },
-    {
-        id: "16",
+        id: "UI_USR_0030",
         name: "마이페이지-타겟추출내역",
         link: "/muipublish/mytarget",
         etc: "",
     },
     {
-        id: "17",
+        id: "UI_USR_0040",
         name: "마이페이지-타겟추출상세내역",
         link: "/muipublish/mytargetdetail",
         etc: "",
     },
     {
-        id: "18",
+        id: "UI_USR_0070",
         name: "마이페이지-모델생성내역",
         link: "/muipublish/mymodel",
         etc: "",
     },
     {
-        id: "19",
+        id: "UI_USR_0080",
         name: "마이페이지-모델생성상세내역",
         link: "/muipublish/mymodeldetail",
+        etc: "",
+    },
+    {
+        id: "UI_USR_0110",
+        name: "마이페이지-즐겨찾기 관리",
+        link: "/muipublish/mymodeldetail",
+        etc: "",
+    },
+    {
+        id: "UI_USR_0090",
+        name: "마이페이지-과제신청내역",
+        link: "/muipublish/mytask",
+        etc: "",
+    },
+    {
+        id: "UI_USR_0110",
+        name: "마이페이지-즐겨찾기 관리(프리빌트)",
+        link: "/muipublish/mybookmark",
         etc: "",
     },
     {
@@ -166,7 +179,7 @@ export default function MuiPubIndex() {
                             <TableCell width={200} align="center">
                                 <strong>화면아이디</strong>
                             </TableCell>
-                            <TableCell width={200} align="center">
+                            <TableCell width={300} align="center">
                                 <strong>화면명</strong>
                             </TableCell>
                             <TableCell width={300} align="center">
@@ -178,10 +191,10 @@ export default function MuiPubIndex() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {pubList.map((row) => (
+                        {pubList.map((row, i) => (
                             <TableRow key={row.name}>
                                 <TableCell width={120} align="center">
-                                    {row.id}
+                                    {i + 1}
                                 </TableCell>
                                 <TableCell width={200} align="center">
                                     {row.id}

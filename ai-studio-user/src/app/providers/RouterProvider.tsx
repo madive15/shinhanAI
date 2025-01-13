@@ -132,6 +132,10 @@ export const router = createBrowserRouter([
                           ),
                       },
                       {
+                          path: pathKeys.myBookmark(),
+                          element: <MuiLayout pageName={"즐겨찾기 관리"} />,
+                      },
+                      {
                           path: pathKeys.errorPage(),
                           element: <MuiLayout pageName={"에러샘플"} />,
                       },

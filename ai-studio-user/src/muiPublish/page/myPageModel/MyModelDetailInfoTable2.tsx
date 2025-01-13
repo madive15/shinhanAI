@@ -42,7 +42,7 @@ const MyModelDetailInfoTable2: React.FC<IPageProps> = (props) => {
         <div className="box">
             <div className="between-box">
                 <div className="left">
-                    <h2>모델 설정 정보</h2>
+                    <h3>모델 설정 정보</h3>
                 </div>
             </div>
             <TableContainer className="row-table" component={Paper}>

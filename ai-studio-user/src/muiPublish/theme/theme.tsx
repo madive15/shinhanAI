@@ -895,6 +895,15 @@ const theme = createTheme({
             },
         },
         //토글 버튼 끝
+        MuiFormControl: {
+            styleOverrides: {
+                root: {
+                    "&.filter-radio-wrap": {
+                        marginBottom: "16px",
+                    },
+                },
+            },
+        },
     },
 });
 export default theme;

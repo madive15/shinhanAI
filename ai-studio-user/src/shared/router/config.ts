@@ -121,6 +121,9 @@ export const pathKeys = {
     myModelDetail(): string {
         return `${pathKeys.root}muipublish/mymodeldetail`; // 마이페이지 모델생성상세내역
     },
+    myBookmark(): string {
+        return `${pathKeys.root}muipublish/myBookmark`; // 즐겨찾기 관리
+    },
     errorPage(): string {
         return `${pathKeys.root}muipublish/error`; // 에러페이지
     },

@@ -47,7 +47,7 @@ const MyTaskListTable: React.FC<IPageProps> = (props) => {
         <div className="task-list-table">
             <div className="between-box">
                 <div className="left">
-                    <h2>과제 신청 내역</h2>
+                    <h3>과제 신청 내역</h3>
                     <span className="sum">총 00건</span>
                 </div>
                 <div className="right">

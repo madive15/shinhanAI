@@ -41,7 +41,7 @@ const MyTargetDetailTable: React.FC<IPageProps> = (props) => {
         <div className="box">
             <div className="between-box">
                 <div className="left">
-                    <h2>조합 데이터</h2>
+                    <h3>조합 데이터</h3>
                 </div>
             </div>
             <TableContainer className="table-content">
