@@ -27,6 +27,7 @@ import MyModelList from "~/muiPublish/page/myPageModel/MyModelList";
 import MyModelDetail from "~/muiPublish/page/myPageModel/MyModelDetail";
 import MyBookmark from "~/muiPublish/page/myPageBookmark/MyBookmark";
 import Error from "~/muiPublish/page/error/Error";
+import PopupBundle from "~/muiPublish/components/popup/MuiPopup";
 // need style
 import "~/muiPublish/layout/layout.scss";
 import LayoutStyle from "~/muiPublish/theme/LayoutStyle";
@@ -135,7 +136,7 @@ const Layout: React.FC<IPageProps> = (props) => {
 
                     {/*  */}
                     {props.pageName === "팝업샘플" && (
-                        <Error pageName={props.pageName} />
+                        <PopupBundle pageName={props.pageName} />
                     )}
                     {props.pageName === "에러샘플" && (
                         <Error pageName={props.pageName} />
