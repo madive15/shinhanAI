@@ -17,6 +17,7 @@ declare module "@mui/material/Button" {
         iconDashed: true;
         iconLine: true;
         iconLineBlue: true;
+        iconTxt: true;
     }
 }
 const theme = createTheme({
@@ -314,6 +315,32 @@ const theme = createTheme({
                         },
                     },
                 },
+                {
+                    props: { variant: "iconTxt" },
+                    style: {
+                        minWidth: "unset",
+                        height: "auto",
+                        padding: "0",
+                        border: "none",
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        letterSpacing: "-0.35px",
+                        fontWeight: "400",
+                        backgroundColor: "transparent",
+                        "& svg": {
+                            width: "14px",
+                            height: "14px",
+                        },
+                        "& .MuiButton-startIcon": {
+                            marginLeft: "0",
+                            marginRight: "4px",
+                        },
+                        "& .MuiButton-endIcon": {
+                            marginLeft: "4px",
+                            marginRight: "0",
+                        },
+                    },
+                },
             ],
         },
         // 버튼 끝
@@ -370,6 +397,7 @@ const theme = createTheme({
                     minWidth: "fit-content",
                     "& .MuiFormControlLabel-label": {
                         fontSize: "14px",
+                        letterSpacing: "-0.35px",
                     },
                 },
             },

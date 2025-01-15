@@ -440,61 +440,6 @@
                             width: 5px;
                         }
 
-                        .recom-list {
-                            position: relative;
-                            margin: 0 0 24px 0;
-                            padding: 16px 16px 0;
-                            border-radius: 16px 16px;
-                            border: 1px solid var(--border-color5);
-                            .recom-tit {
-                                margin: 0 0 12px 0;
-                                font-size: 14px;
-                                font-weight: 700;
-                                line-height: 20.72px;
-                                letter-spacing: -0.025em;
-                            }
-                            .recom-list-box {
-                                margin: 0 0 16px 0;
-                            }
-                            .slick-slide {
-                                margin: 0 6px;
-                            }
-                            .prev {
-                                display: none;
-                                position: absolute;
-                                left: 16px;
-                                top: 119px;
-                                min-width: 28px;
-                                height: 28px;
-                                margin: 0 4px 0 0;
-                                background-color: var(--sub-color4);
-                                border-radius: 50% 50%;
-                                transition: all 0.2s ease-in-out;
-                            }
-                            .next {
-                                display: none;
-                                position: absolute;
-                                right: 16px;
-                                top: 119px;
-                                min-width: 28px;
-                                height: 28px;
-                                margin: 0 4px 0 0;
-                                background-color: var(--sub-color4);
-                                border-radius: 50% 50%;
-                                transition: all 0.2s ease-in-out;
-                            }
-                            &:hover {
-                                .prev,
-                                .next {
-                                    display: block;
-                                }
-                            }
-                            .slick-prev,
-                            .slick-next {
-                                display: none;
-                            }
-                        }
-
                         .list-title {
                             margin: 0 0 12px 0;
                             font-family: "OneShinhan";
@@ -737,5 +682,61 @@
     }
     .tooltip {
         margin: 0 0 0 4px;
+    }
+}
+
+// 슬라이더
+.recom-list {
+    position: relative;
+    margin: 0 0 24px 0;
+    padding: 16px 16px 0;
+    border-radius: 16px 16px;
+    border: 1px solid var(--border-color5);
+    .recom-tit {
+        margin: 0 0 12px 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20.72px;
+        letter-spacing: -0.025em;
+    }
+    .recom-list-box {
+        margin: 0 0 16px 0;
+    }
+    .slick-slide {
+        margin: 0 6px;
+    }
+    .prev {
+        display: none;
+        position: absolute;
+        left: 16px;
+        top: 119px;
+        min-width: 28px;
+        height: 28px;
+        margin: 0 4px 0 0;
+        background-color: var(--sub-color4);
+        border-radius: 50% 50%;
+        transition: all 0.2s ease-in-out;
+    }
+    .next {
+        display: none;
+        position: absolute;
+        right: 16px;
+        top: 119px;
+        min-width: 28px;
+        height: 28px;
+        margin: 0 4px 0 0;
+        background-color: var(--sub-color4);
+        border-radius: 50% 50%;
+        transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+        .prev,
+        .next {
+            display: block;
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        display: none;
     }
 }

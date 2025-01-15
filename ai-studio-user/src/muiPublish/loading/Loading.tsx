@@ -14,7 +14,10 @@ import "./loading.scss";
 const Loading: React.FC = () => {
     return (
         <div className="loading-layer">
-            <div className="donut"></div>
+            <div className="loading-area">
+                <div className="donut"></div>
+                <p className="loading-txt">잠시만 기다려주세요.</p>
+            </div>
         </div>
     );
 };

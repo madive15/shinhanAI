@@ -28,6 +28,8 @@ import MyModelDetail from "~/muiPublish/page/myPageModel/MyModelDetail";
 import MyBookmark from "~/muiPublish/page/myPageBookmark/MyBookmark";
 import Error from "~/muiPublish/page/error/Error";
 import PopupBundle from "~/muiPublish/components/popup/MuiPopup";
+import Login from "~/muiPublish/page/login/Login";
+import Search from "~/muiPublish/page/search/Search";
 // need style
 import "~/muiPublish/layout/layout.scss";
 import LayoutStyle from "~/muiPublish/theme/LayoutStyle";
@@ -133,8 +135,14 @@ const Layout: React.FC<IPageProps> = (props) => {
                     {props.pageName === "즐겨찾기 관리" && (
                         <MyBookmark pageName={props.pageName} />
                     )}
+                    {props.pageName === "검색 결과" && (
+                        <Search pageName={props.pageName} />
+                    )}
 
                     {/*  */}
+                    {props.pageName === "로그인" && (
+                        <Login pageName={props.pageName} />
+                    )}
                     {props.pageName === "팝업샘플" && (
                         <PopupBundle pageName={props.pageName} />
                     )}

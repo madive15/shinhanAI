@@ -60,6 +60,11 @@ import { ReactComponent as Positive } from "~assets/images/svg/Icons-positive-14
 import { ReactComponent as Error } from "~assets/images/svg/Icons-error-14.svg";
 import InputAdornment from "@mui/material/InputAdornment";
 import ProgressBar from "~/muiPublish/components/ProgressBar";
+import { Pagination, PaginationItem } from "@mui/material";
+import { ReactComponent as Next } from "~assets/images/svg/icon-page-next.svg";
+import { ReactComponent as Prev } from "~assets/images/svg/icon-page-prev.svg";
+import { ReactComponent as First } from "~assets/images/svg/icon-page-first.svg";
+import { ReactComponent as Last } from "~assets/images/svg/icon-page-last.svg";
 //
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -188,6 +193,8 @@ export default function VerticalTabs() {
             setAlignment(newAlignment);
         }
     };
+
+    //파일 업로드
 
     return (
         <Box
@@ -345,6 +352,9 @@ export default function VerticalTabs() {
                     버튼 텍스트
                 </Button>
                 <Button variant="iconLineBlue" endIcon={<DownloadBlue />}>
+                    과제명파일명.png
+                </Button>
+                <Button variant="iconTxt" endIcon={<DownloadBlue />}>
                     과제명파일명.png
                 </Button>
                 <br />
@@ -1510,42 +1520,27 @@ export default function VerticalTabs() {
                         <span>0</span>Ktyte
                     </div>
                 </div>
+                <br />
             </TabPanel>
             {/* 페이지네이션 */}
             <TabPanel value={value} index={18}>
-                <div className="pagination-wrap">
-                    <div className="pagination">
-                        <button type="button" className="first" disabled>
-                            처음으로
-                        </button>
-                        <button type="button" className="prev" disabled>
-                            이전
-                        </button>
-                        <button type="button" className="active">
-                            1
-                        </button>
-                        <button type="button">2</button>
-                        <button type="button">3</button>
-                        <button type="button">4</button>
-                        <button type="button">5</button>
-                        <button type="button">6</button>
-                        <button type="button">7</button>
-                        <button type="button">8</button>
-                        <button type="button">9</button>
-                        <button type="button">10</button>
-                        <button type="button" className="next">
-                            다음
-                        </button>
-                        <button type="button" className="last">
-                            맨끝으로
-                        </button>
-                    </div>
-                    <div className="page">
-                        <div className="now">1</div>
-                        <span>/</span>
-                        <span className="total">17</span>
-                    </div>
-                </div>
+                <Pagination
+                    className="pagination"
+                    count={10}
+                    showFirstButton
+                    showLastButton
+                    renderItem={(item) => (
+                        <PaginationItem
+                            slots={{
+                                previous: Prev,
+                                next: Next,
+                                first: First,
+                                last: Last,
+                            }}
+                            {...item}
+                        />
+                    )}
+                />
             </TabPanel>
         </Box>
     );

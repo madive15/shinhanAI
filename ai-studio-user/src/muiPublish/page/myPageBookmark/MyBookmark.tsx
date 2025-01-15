@@ -42,6 +42,7 @@ const MyBookmark: React.FC<IPageProps> = (props) => {
 
     return (
         <>
+            {/* <Loding /> */}
             <div className="tabs-area">
                 <Tab menuName={tabMenu} />
             </div>

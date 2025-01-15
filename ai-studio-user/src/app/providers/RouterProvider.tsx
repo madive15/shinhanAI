@@ -10,6 +10,7 @@ import MuiPubIndex from "~/muiPublish";
 import MuiPubGuide from "~/muiPublish/guide/Guide";
 import MuiLayout from "~/muiPublish/layout/Layout";
 import MuiPupup from "~/muiPublish/components/popup/MuiPopup";
+import Login from "~/muiPublish/page/login/Login";
 import Main from "~/muiPublish/page/main/Main";
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -138,6 +139,14 @@ export const router = createBrowserRouter([
                       {
                           path: pathKeys.errorPage(),
                           element: <MuiLayout pageName={"에러샘플"} />,
+                      },
+                      {
+                          path: pathKeys.login(), //로그인 페이지
+                          element: <Login />,
+                      },
+                      {
+                          path: pathKeys.search(),
+                          element: <MuiLayout pageName={"검색 결과"} />,
                       },
                   ]
                 : []),

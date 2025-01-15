@@ -26,6 +26,12 @@ const pubList = [
     },
     {
         id: "3",
+        name: "로그인",
+        link: "/muipublish/login",
+        etc: "",
+    },
+    {
+        id: "3",
         name: "메인",
         link: "/muipublish/main",
         etc: "",
@@ -143,6 +149,12 @@ const pubList = [
         id: "UI_USR_0110",
         name: "마이페이지-즐겨찾기 관리(프리빌트)",
         link: "/muipublish/mybookmark",
+        etc: "",
+    },
+    {
+        id: "UI_USR_0020",
+        name: "통합검색",
+        link: "/muipublish/search",
         etc: "",
     },
     {

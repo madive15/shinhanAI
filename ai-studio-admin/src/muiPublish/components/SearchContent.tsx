@@ -154,13 +154,27 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                                     >
                                         <FormControlLabel
                                             value="female"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="Female"
                                         />
                                         <FormControlLabel
                                             className="cr-label"
                                             value="male"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="Male"
                                         />
                                     </RadioGroup>
@@ -225,33 +239,68 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                             <span className="tit">진행 상태</span>
                             <FormGroup row className="chk-group">
                                 <FormControlLabel
-                                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
                                     label="Label"
                                 />
                                 <FormControlLabel
-                                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
                                     label="Label"
                                 />
                                 <FormControlLabel
-                                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
                                     label="Label"
                                 />
                                 <FormControlLabel
-                                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
                                     label="Label"
                                 />
                                 <FormControlLabel
-                                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
                                     label="Label"
                                 />
                                 <FormControlLabel
                                     required
-                                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
                                     label="Required"
                                 />
                                 <FormControlLabel
                                     disabled
-                                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
                                     label="Disabled"
                                 />
                             </FormGroup>
@@ -383,7 +432,191 @@ const SearchContent: React.FC<IPageProps> = (props) => {
                     </div>
                 </div>
             )}
-
+            {props.pageName === "프리빌트 메타관리" && (
+                <div className="search-contnet">
+                    <div className="search-item-box">
+                        <div className="search-item">
+                            <span className="tit">개인/기업구분</span>
+                            <div className="item-box ">
+                                <FormControl>
+                                    <RadioGroup
+                                        className="radio-group"
+                                        row
+                                        aria-labelledby="radio-group"
+                                        name="group1"
+                                        value={radioGroup}
+                                        onChange={radioGroupChange}
+                                    >
+                                        <FormControlLabel
+                                            value="전체"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="전체"
+                                        />
+                                        <FormControlLabel
+                                            value="개인"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="개인"
+                                        />
+                                        <FormControlLabel
+                                            value="기업"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="기업"
+                                        />
+                                    </RadioGroup>
+                                </FormControl>
+                            </div>
+                        </div>
+                        <div className="search-item">
+                            <span className="tit">콘텐츠 분류</span>
+                            <div className="item-box">
+                                <Select
+                                    className="select-box"
+                                    value={ageSelect}
+                                    onChange={selectChange}
+                                    IconComponent={Arrow}
+                                    displayEmpty
+                                >
+                                    <MenuItem value="" disabled>
+                                        전체
+                                    </MenuItem>
+                                    <MenuItem value={10}>건전성</MenuItem>
+                                    <MenuItem value={20}>마케팅</MenuItem>
+                                    <MenuItem value={20}>내부통제</MenuItem>
+                                    <MenuItem value={20}>고객관리</MenuItem>
+                                    <MenuItem value={20}>해당없음 </MenuItem>
+                                </Select>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="search-item-box">
+                        <div className="search-item">
+                            <span className="tit">사용 여부</span>
+                            <div className="item-box">
+                                <FormControl>
+                                    <RadioGroup
+                                        className="radio-group"
+                                        row
+                                        aria-labelledby="radio-group"
+                                        name="group1"
+                                        value={radioGroup}
+                                        onChange={radioGroupChange}
+                                    >
+                                        <FormControlLabel
+                                            value="전체"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="전체"
+                                        />
+                                        <FormControlLabel
+                                            value="사용"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="사용"
+                                        />
+                                        <FormControlLabel
+                                            value="미사용"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="미사용"
+                                        />
+                                    </RadioGroup>
+                                </FormControl>
+                            </div>
+                        </div>
+                        <div className="search-item">
+                            <span className="tit">노출 여부</span>
+                            <div className="item-box">
+                                <FormControl>
+                                    <RadioGroup
+                                        className="radio-group"
+                                        row
+                                        aria-labelledby="radio-group"
+                                        name="group1"
+                                        value={radioGroup}
+                                        onChange={radioGroupChange}
+                                    >
+                                        <FormControlLabel
+                                            value="전체"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="전체"
+                                        />
+                                        <FormControlLabel
+                                            value="노출"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="노출"
+                                        />
+                                        <FormControlLabel
+                                            value="미노출"
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
+                                            label="미노출"
+                                        />
+                                    </RadioGroup>
+                                </FormControl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
             <div className="btn-root-wrap end" aria-label="Basic button group">
                 <Button variant="sub1">초기화</Button>
                 <Button variant="sub2">조회</Button>

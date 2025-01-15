@@ -51,6 +51,8 @@ import { ReactComponent as Download } from "~assets/images/svg/Icons-download.sv
 import { ReactComponent as X } from "~assets/images/svg/Icons-x.svg";
 import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
 import { ReactComponent as Home } from "~assets/images/svg/Icons-home.svg";
+import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
+import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
 //
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -102,7 +104,10 @@ export default function VerticalTabs() {
     const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup((event.target as HTMLInputElement).value);
     };
-
+    const [radioGroup2, setRadioGroup2] = React.useState("인기/추천");
+    const radioGroupChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setRadioGroup2((event.target as HTMLInputElement).value);
+    };
     const [ageSelect, setAgeSelect] = React.useState("");
     const selectChange = (event: SelectChangeEvent) => {
         setAgeSelect(event.target.value as string);
@@ -303,6 +308,7 @@ export default function VerticalTabs() {
                 <br />
                 <br />
                 <Switch className="switch-btn" />
+                <Switch className="switch-btn view-type" />
                 <br />
                 <br />
                 <IconButton>
@@ -316,6 +322,15 @@ export default function VerticalTabs() {
                 </IconButton>
                 <IconButton>
                     <Home fill="#333" />
+                </IconButton>
+                <IconButton className="ico-circle20">
+                    <Search12 />
+                </IconButton>
+                <IconButton className="ico-rect23">
+                    <Plus9 />
+                </IconButton>
+                <IconButton className="ico-rect23 x">
+                    <Plus9 />
                 </IconButton>
             </TabPanel>
             {/* 인풋 텍스트 */}
@@ -470,6 +485,74 @@ export default function VerticalTabs() {
                                     />
                                 }
                                 label="Male"
+                            />
+                        </RadioGroup>
+                    </FormControl>
+                </div>
+                <div>
+                    <FormControl>
+                        <RadioGroup
+                            className="filter-radio"
+                            row
+                            aria-labelledby="radio-group"
+                            name="group2"
+                            value={radioGroup2}
+                            onChange={radioGroupChange2}
+                        >
+                            <FormControlLabel
+                                value="인기/추천"
+                                control={<Radio />}
+                                label="인기/추천"
+                            />
+                            <FormControlLabel
+                                value="전체"
+                                control={<Radio />}
+                                label="전체"
+                            />
+                            <FormControlLabel
+                                value="예적금"
+                                control={<Radio />}
+                                label="예적금"
+                            />
+                            <FormControlLabel
+                                value="외환"
+                                control={<Radio />}
+                                label="외환"
+                            />
+                            <FormControlLabel
+                                value="퇴직연금"
+                                control={<Radio />}
+                                label="퇴직연금"
+                            />
+                            <FormControlLabel
+                                value="투자상품"
+                                control={<Radio />}
+                                label="투자상품"
+                            />
+                            <FormControlLabel
+                                value="보험/방카"
+                                control={<Radio />}
+                                label="보험/방카"
+                            />
+                            <FormControlLabel
+                                value="대출"
+                                control={<Radio />}
+                                label="대출"
+                            />
+                            <FormControlLabel
+                                value="급여"
+                                control={<Radio />}
+                                label="급여"
+                            />
+                            <FormControlLabel
+                                value="연금"
+                                control={<Radio />}
+                                label="연금"
+                            />
+                            <FormControlLabel
+                                value="고자산"
+                                control={<Radio />}
+                                label="고자산"
                             />
                         </RadioGroup>
                     </FormControl>
@@ -1036,12 +1119,38 @@ export default function VerticalTabs() {
                     <Badge value="과제 종료" color="gray" size="large" />
                     <Badge value="반려" color="red" size="large" />
                 </div>
+                <p>
+                    <strong>큰 사이즈</strong>
+                </p>
+                <div className="badge-wrap">
+                    <Badge value="사용중" color="green" size="large" />
+                    <Badge value="과제 종료" color="gray" size="large" />
+                    <Badge value="반려" color="red" size="large" />
+                </div>
+                <br />
+                <p>
+                    <strong>라인 형</strong>
+                </p>
+                <div className="badge-wrap">
+                    {/* <Badge value="과제 신청" color="blue" type="line" /> */}
+                    <Badge value="과제 신청" color="blue2" type="line" />
+                    <Badge value="검토중" color="blue2" type="line" />
+                    <Badge value="진행중" color="blue2" type="line" />
+                    <Badge value="과제 종료" color="gray" type="line" />
+                    <Badge value="미채택" color="red" type="line" />
+                </div>
             </TabPanel>
             {/* 해시태그 */}
             <TabPanel value={value} index={12}>
-                <div className="badge-wrap">
+                <div className="hash-wrap">
                     <Hash value="해시태그" />
                     <Hash value="해시태그" del={true} />
+                </div>
+                <div className="hash-wrap">
+                    <Hash value="#TAG" type="type2" />
+                    <Hash value="#TAG" type="type2" />
+                    <Hash value="#TAG" type="type2" />
+                    <Hash value="+5" type="type2" />
                 </div>
             </TabPanel>
             {/* SVG */}

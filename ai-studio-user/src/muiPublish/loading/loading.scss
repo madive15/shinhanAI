@@ -10,9 +10,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     z-index: 300;
-
+    .loading-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 16px;
+    }
     .loading {
         @include absolute-left-top(50%, 50%);
         width: 100px;
@@ -29,21 +37,29 @@
     }
 
     .donut {
-        @include absolute-left-top(50%, 50%);
+        // @include absolute-left-top(50%, 50%);
         display: inline-block;
-        border: 2px solid rgba(0, 0, 0, 0.1);
-        border-left-color: #0046ff;
+        border: 4px solid rgba(0, 0, 0, 0.2);
+        border-left-color: var(--sub-color3);
         border-radius: 50%;
-        width: 24px;
-        height: 24px;
+        width: 72px;
+        height: 72px;
         animation: donut-spin 1.2s linear infinite;
     }
+
     @keyframes donut-spin {
         0% {
-            transform: translate(-50%, -50%) rotate(0deg);
+            transform: rotate(0deg);
         }
         100% {
-            transform: translate(-50%, -50%) rotate(360deg);
+            transform: rotate(360deg);
         }
+    }
+    .loading-txt {
+        // position: absolute;
+        // top: 55%;
+        // left: 47%;
+        // color: var(--color2);
+        font-size: 14px;
     }
 }

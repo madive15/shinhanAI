@@ -1,7 +1,7 @@
 export const pathKeys = {
     root: "/",
     login(): string {
-        return `${pathKeys.root}login/`;
+        return `${pathKeys.root}muipublish/login`;
     },
     home(): string {
         return pathKeys.root;
@@ -126,5 +126,8 @@ export const pathKeys = {
     },
     errorPage(): string {
         return `${pathKeys.root}muipublish/error`; // 에러페이지
+    },
+    search(): string {
+        return `${pathKeys.root}muipublish/search`; // 검색 결과 페이지
     },
 };

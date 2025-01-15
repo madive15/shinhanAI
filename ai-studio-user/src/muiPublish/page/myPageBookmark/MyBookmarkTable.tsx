@@ -5,6 +5,11 @@ import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-defau
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 import { ReactComponent as Bookmark } from "~assets/images/svg/Icons-Bookmark.svg";
 import { ReactComponent as BookmarkOn } from "~assets/images/svg/Icons-Bookmark-on.svg";
+import { ReactComponent as Icons15 } from "~assets/images/svg/Icons-Icons15.svg";
+import { ReactComponent as Next } from "~assets/images/svg/icon-page-next.svg";
+import { ReactComponent as Prev } from "~assets/images/svg/icon-page-prev.svg";
+import { ReactComponent as First } from "~assets/images/svg/icon-page-first.svg";
+import { ReactComponent as Last } from "~assets/images/svg/icon-page-last.svg";
 // need content
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -19,6 +24,13 @@ import FormGroup from "@mui/material/FormGroup";
 import Checkbox from "@mui/material/Checkbox";
 import MenuItem from "@mui/material/MenuItem";
 import Badge from "~/muiPublish/components/Badge";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
+import { Pagination, PaginationItem } from "@mui/material";
+import Stack from "@mui/material/Stack";
 // import Pagi
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -52,6 +64,14 @@ const MyBookmarkTable: React.FC<IPageProps> = (props) => {
     const selectTwoChange = (event: SelectChangeEvent) => {
         setAgeSelectTwo(event.target.value as string);
     };
+
+    const [confirmStauts, setConfirmStauts] = React.useState(false);
+    const confirmOpen = () => {
+        setConfirmStauts(true);
+    };
+    const confirmClose = () => {
+        setConfirmStauts(false);
+    };
     useEffect(() => {
         setLoading(false);
     }, []);
@@ -75,7 +95,9 @@ const MyBookmarkTable: React.FC<IPageProps> = (props) => {
                             label="즐겨찾기 먼저보기"
                         />
                     </FormGroup>
-                    <Button variant="sub2">즐겨찾기 초기화</Button>
+                    <Button variant="sub2" onClick={confirmOpen}>
+                        즐겨찾기 초기화
+                    </Button>
                     <Select
                         className="select-box x-small"
                         value={selectOne}
@@ -169,39 +191,47 @@ const MyBookmarkTable: React.FC<IPageProps> = (props) => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <div className="pagination-wrap">
-                <div className="pagination">
-                    <button type="button" className="first" disabled>
-                        처음으로
-                    </button>
-                    <button type="button" className="prev" disabled>
-                        이전
-                    </button>
-                    <button type="button" className="active">
-                        1
-                    </button>
-                    <button type="button">2</button>
-                    <button type="button">3</button>
-                    <button type="button">4</button>
-                    <button type="button">5</button>
-                    <button type="button">6</button>
-                    <button type="button">7</button>
-                    <button type="button">8</button>
-                    <button type="button">9</button>
-                    <button type="button">10</button>
-                    <button type="button" className="next">
-                        다음
-                    </button>
-                    <button type="button" className="last">
-                        맨끝으로
-                    </button>
-                </div>
-                <div className="page">
-                    <div className="now">1</div>
-                    <span>/</span>
-                    <span className="total">17</span>
-                </div>
-            </div>
+            <Pagination
+                className="pagination"
+                count={10}
+                showFirstButton
+                showLastButton
+                renderItem={(item) => (
+                    <PaginationItem
+                        slots={{
+                            previous: Prev,
+                            next: Next,
+                            first: First,
+                            last: Last,
+                        }}
+                        {...item}
+                    />
+                )}
+            />
+            <Dialog
+                className="confirm-box"
+                open={confirmStauts}
+                onClose={confirmClose}
+            >
+                <DialogTitle>알림</DialogTitle>
+                <DialogContent>
+                    <div className="txt-box">
+                        {"$탭이름"} 탭의 즐겨찾기 항목이 모두 <br />
+                        삭제되며 복구할 수 없습니다.
+                        <br />
+                        삭제하시겠습니까?
+                    </div>
+                </DialogContent>
+                <DialogActions>
+                    <Button variant="sub2" onClick={confirmClose}>
+                        취소
+                    </Button>
+                    <Button variant="primary">확인</Button>
+                </DialogActions>
+                <IconButton className="dialog-close" onClick={confirmClose}>
+                    <Icons15 fill="#222 " />
+                </IconButton>
+            </Dialog>
         </>
     );
 };
