@@ -1,17 +1,16 @@
 // necessary set
 import React, { useState, useEffect, useRef } from "react";
-import Button from "@mui/material/Button";
 
 // need content
 import Loading from "~/muiPublish/loading/Loading";
 import AdminTab from "~/muiPublish/components/AdminTab";
 import SubTitle from "~/muiPublish/components/SubTitle";
 import SearchContent from "~/muiPublish/components/SearchContent";
-import ProductMetaTable from "~/muiPublish/page/productMeta/ProductMetaTable";
-import ProductMetaFormTable from "~/muiPublish/page/productMeta/ProductMetaFormTable";
-import ProductMetaPopup from "~/muiPublish/page/productMeta/ProductMetaPopup";
-import ProductMetaAlertPopup from "~/muiPublish/page/productMeta/ProductMetaAlertPopup";
-
+import PopupManageTable from "~/muiPublish/page/popupManage/PopupManageTable";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
 // import Cardlist from "~/publish/components/Cardlist";
 
 // need style
@@ -28,16 +27,18 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: ProductMeta
- * 상품메타관리 page
+ * admin-front: PopupManage
  */
-const ProductMeta: React.FC<IPageProps> = (props) => {
+const PopupManage: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
         setLoading(onoff);
     };
-
+    const [ageSelect, setAgeSelect] = React.useState("");
+    const selectChange = (event: SelectChangeEvent) => {
+        setAgeSelect(event.target.value as string);
+    };
     useEffect(() => {
         setLoading(false);
     }, []);
@@ -52,7 +53,7 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
     const subTitleLeft = useRef<HTMLDivElement | null>(null);
     const subTitleRight = useRef<HTMLDivElement | null>(null);
     const subBtnCheck = useRef<HTMLDivElement | null>(null);
-
+    const [heiTitSearch, setHeiTitSearch] = useState<number>(190);
     useEffect(() => {
         if (subTitSearch.current) {
             // 조회 영역
@@ -99,19 +100,14 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
         rightHeight,
         leftHeight,
     ]);
-
-    // 신규 메타 추가
-    const [popupStauts, setpopupStauts] = useState(false);
-    const popupOpen = () => {
-        setpopupStauts(true);
-    };
-
-    //완료 얼럿
-    const [alertStauts, setAlertStauts] = useState(false);
-    const alertOpen = () => {
-        setAlertStauts(true);
-    };
-
+    useEffect(() => {
+        if (subTitSearch.current) {
+            const offsetHeight = subTitSearch.current.offsetHeight;
+            const offsetWidth = subTitSearch.current.offsetWidth;
+            console.log("Height:", offsetHeight + 190, "Width:", offsetWidth);
+            setHeiTitSearch(offsetHeight + 190);
+        }
+    }, [subTitSearch?.current?.offsetHeight, heiTitSearch]);
     return (
         <>
             <div className="tabs-area">
@@ -122,69 +118,45 @@ const ProductMeta: React.FC<IPageProps> = (props) => {
                     <SubTitle pageName={props.pageName} />
                     <SearchContent pageName={props.pageName} />
                 </div>
-                <div className="tabs-scroll-area no-scroll">
-                    <div className="left">
-                        <div className="table-title" ref={subTitleLeft}>
-                            <div className="tit-sum">
-                                <h2>{props.pageName}</h2>
-                                <span className="sum">총 00건</span>
-                            </div>
+                <div className="tabs-scroll-area">
+                    <div className="table-title" ref={subTitleLeft}>
+                        <div className="tit-sum">
+                            <h2>팝업 목록</h2>
+                            <span className="sum">총 00건</span>
                         </div>
-                        <ProductMetaTable
-                            pageName={props.pageName}
-                            heiTitSearch={leftHeight}
-                        />
-                    </div>
-                    <div className="right">
-                        <div className="table-title" ref={subTitleRight}>
-                            <div className="tit-desc">
-                                <h2>상품 메타상세</h2>
-                                <span className="desc">
-                                    <i className="ico-exclamation"></i>상품분류,
-                                    상위분류, 상품ID를 수정 후 저장하면 신규
-                                    상품메타로 등록됩니다.
-                                </span>
-                            </div>
-                            <Button variant="secondary" onClick={popupOpen}>
-                                신규 상품메타 추가
+                        <div className="table-title-right">
+                            <Select
+                                className="select-box "
+                                value={ageSelect}
+                                onChange={selectChange}
+                                IconComponent={Arrow}
+                                displayEmpty
+                                MenuProps={{
+                                    classes: {
+                                        paper: "select-option-class",
+                                    },
+                                }}
+                            >
+                                <MenuItem value="" disabled>
+                                    등록일 ↑
+                                </MenuItem>
+                                <MenuItem value={10}>등록일 ↑</MenuItem>
+                                <MenuItem value={20}>등록일 ↓</MenuItem>
+                            </Select>
+                            <Button variant="sub2" disabled>
+                                선택 삭제
                             </Button>
-                        </div>
-
-                        <ProductMetaFormTable
-                            pageName={props.pageName}
-                            heiTitSearch={rightHeight}
-                        />
-                        <div
-                            ref={subBtnCheck}
-                            className="btn-root-wrap end"
-                            aria-label="Basic button group"
-                        >
-                            <Button variant="sub1">변경 취소</Button>
-                            <Button variant="primary" onClick={alertOpen}>
-                                변경 사항 저장
-                            </Button>
+                            <Button variant="primary">팝업 등록</Button>
                         </div>
                     </div>
+                    <PopupManageTable
+                        heiTitSearch={leftHeight}
+                        pageName={props.pageName}
+                    />
                 </div>
             </div>
-
-            {/* 신규 상품메타 추가 */}
-            {popupStauts === true && (
-                <ProductMetaPopup
-                    popupStauts={popupStauts}
-                    setpopupStauts={setpopupStauts}
-                />
-            )}
-
-            {/* 저장 완료 alert */}
-            {alertStauts === true && (
-                <ProductMetaAlertPopup
-                    alertStauts={alertStauts}
-                    setAlertStauts={setAlertStauts}
-                />
-            )}
         </>
     );
 };
 
-export default ProductMeta;
+export default PopupManage;

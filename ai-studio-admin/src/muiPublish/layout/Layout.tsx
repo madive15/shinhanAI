@@ -14,6 +14,8 @@ import PromptMeta from "~/muiPublish/page/promptMeta/PromptMeta";
 import TaskpageDetail from "~/muiPublish/page/taskRequest/TaskRequestDetail";
 import TaskpageModify from "~/muiPublish/page/taskRequest/TaskRequestModify";
 import PrebulitMeta from "~/muiPublish/page/prebulitmeta/PrebulitMeta";
+import PopupManage from "~/muiPublish/page/popupManage/PopupManage";
+import PopupRegistration from "~/muiPublish/page/popupManage/PopupRegistration";
 // import Auth from "~/publish/page/Auth";
 // import Manager from "~/publish/page/Manager";
 // import SampleTablePage from "~/publish/page/SampleTablePage";
@@ -84,6 +86,12 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "프리빌트 메타관리" && (
                         <PrebulitMeta pageName={props.pageName} />
+                    )}
+                    {props.pageName === "팝업 관리" && (
+                        <PopupManage pageName={props.pageName} />
+                    )}
+                    {props.pageName === "팝업 등록" && (
+                        <PopupRegistration pageName={props.pageName} />
                     )}
 
                     {/* {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}

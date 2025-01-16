@@ -184,6 +184,7 @@ export default function VerticalTabs() {
                 <Tab label="HashTag" {...a11yProps(12)} />
                 <Tab label="SvgIcon" {...a11yProps(13)} />
                 <Tab label="ToolTip" {...a11yProps(14)} />
+                <Tab label="Input File" {...a11yProps(15)} />
             </Tabs>
             {/* color */}
             <TabPanel value={value} index={0}>
@@ -476,7 +477,6 @@ export default function VerticalTabs() {
                                 label="Female"
                             />
                             <FormControlLabel
-                                className="cr-label"
                                 value="male"
                                 control={
                                     <Radio
@@ -1180,6 +1180,53 @@ export default function VerticalTabs() {
                 >
                     <i className="ico-text">?</i>
                 </Tooltip>
+            </TabPanel>
+            {/* 인풋 파일 */}
+            <TabPanel value={value} index={15}>
+                <div className="file-area">
+                    <div className="input-file">
+                        <label htmlFor="file1-1">
+                            파일 선택
+                            <input type="file" name="" id="file1-1" />
+                        </label>
+                        <div className="file-list">
+                            <div className="delete-item">
+                                <span>과제명파일명.png</span>
+                                <IconButton>
+                                    <X />
+                                </IconButton>
+                            </div>
+                            <div className="delete-item">
+                                <span>과제명파일명2.png</span>
+                                <IconButton>
+                                    <X />
+                                </IconButton>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="file-volume">
+                        <span>2</span>개<span> / </span>
+                        <span>1,124</span>Ktyte
+                    </div>
+                </div>
+                <br />
+                <div className="file-area">
+                    <div className="input-file">
+                        <label htmlFor="file1-2">
+                            파일 선택
+                            <input type="file" name="" id="file1-2" />
+                        </label>
+                        <div className="file-list">
+                            <span className="no-file">
+                                등록된 파일이 없습니다.
+                            </span>
+                        </div>
+                    </div>
+                    <div className="file-volume">
+                        <span>0</span>개<span> / </span>
+                        <span>0</span>Ktyte
+                    </div>
+                </div>
             </TabPanel>
         </Box>
     );

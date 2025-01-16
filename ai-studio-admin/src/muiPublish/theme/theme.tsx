@@ -62,6 +62,11 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     minWidth: "80px",
+                    "&:disabled": {
+                        border: "1px solid #c7d6f4",
+                        backgroundColor: "var(--background-color3)",
+                        color: "#89a1c3",
+                    },
                 },
             },
             variants: [
@@ -184,6 +189,12 @@ const theme = createTheme({
                         },
                         "&:active": {
                             backgroundColor: "rgba(0, 0, 0, 0.10)",
+                        },
+
+                        "&:disabled": {
+                            border: "1px solid #DDD",
+                            backgroundColor: "#F0F0F0",
+                            color: "var(--font-color3)",
                         },
                     },
                 },
@@ -321,9 +332,11 @@ const theme = createTheme({
                     },
                     "&.small": {
                         width: "120px",
+                        minWidth: "120px",
                     },
                     "&.x-small": {
                         width: "100px",
+                        minWidth: "100px",
                     },
                     "&.Mui-focused": {
                         borderColor: "var(--color1)",
@@ -524,12 +537,18 @@ const theme = createTheme({
                                     letterSpacing: "-0.325px",
                                     lineHeight: "19.5px",
                                 },
+                                "&.required": {
+                                    background: `var(--background-color2) url(${requiredIcon}) top left no-repeat`,
+                                },
                             },
                             "& td": {
                                 backgroundColor: "var(--color2)",
                                 lineHeight: "21px",
                                 letterSpacing: "-0.35px",
-                                color: "var(--font-color2)",
+                                color: "var(--font-color1)",
+                                "& .desc": {
+                                    margin: "6px 0 0 0",
+                                },
                             },
                         },
                     },
@@ -561,7 +580,7 @@ const theme = createTheme({
                     "&.input-field": {
                         maxWidth: "480px",
                         width: "100%",
-                        backgroundColor: "var(--color2)",
+                        // backgroundColor: "var(--color2)",
                         "&.MuiFormControl-fullWidth": {
                             maxWidth: "100%",
                         },
@@ -580,9 +599,10 @@ const theme = createTheme({
                             "& input": {
                                 padding: "0px 12px",
                                 height: "38px",
-                                border: "1px solid #ccc",
+                                border: "1px solid var(--border-color1)",
                                 borderRadius: " 8px",
                                 backgroundColor: "var(--color2) ",
+                                boxSizing: "border-box",
                                 "&:active": {
                                     borderColor: "var(--color1)",
                                     backgroundColor: "var(--color2)",

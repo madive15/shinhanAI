@@ -79,4 +79,10 @@ export const pathKeys = {
     prebuiltmeta(): string {
         return `${pathKeys.root}muipublish/prebuiltmeta`;
     },
+    popupManage(): string {
+        return `${pathKeys.root}muipublish/popupManage`;
+    },
+    popupRegistration(): string {
+        return `${pathKeys.root}muipublish/popupRegi`;
+    },
 };

@@ -123,6 +123,14 @@ export const router = createBrowserRouter([
                           path: pathKeys.prebuiltmeta(),
                           element: <MuiLayout pageName={"프리빌트 메타관리"} />,
                       },
+                      {
+                          path: pathKeys.popupManage(),
+                          element: <MuiLayout pageName={"팝업 관리"} />,
+                      },
+                      {
+                          path: pathKeys.popupRegistration(),
+                          element: <MuiLayout pageName={"팝업 등록"} />,
+                      },
                   ]
                 : []),
             {

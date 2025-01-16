@@ -66,6 +66,18 @@ const pubList = [
         link: "/muipublish/prebuiltmeta",
         etc: "",
     },
+    {
+        id: "9",
+        name: "팝업 관리",
+        link: "/muipublish/popupManage",
+        etc: "",
+    },
+    {
+        id: "9",
+        name: "팝업 등록",
+        link: "/muipublish/popupRegi",
+        etc: "",
+    },
 
     // {
     //     id: "5",

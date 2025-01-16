@@ -11,9 +11,11 @@
 
 //텍스트 에어리어
 .text-area {
+    width: 100%;
+    height: 120px;
     textarea {
         width: 100%;
-        height: 148px;
+        height: 100%;
         border: 1px solid var(--border-color1);
         border-radius: 6px;
         padding: 12px 12px 0 12px;
@@ -747,8 +749,10 @@
         }
         .Mui-checked {
             transform: translateX(16px);
+
             & + .MuiSwitch-track {
                 background-color: var(--color1);
+                opacity: 1;
             }
         }
         &.view-type {
@@ -998,6 +1002,132 @@
         > div {
             width: 50%;
             display: flex;
+        }
+    }
+}
+.ico-exclamation {
+    width: 14px;
+    height: 15px;
+    background: url("../images/icon/ico-exclamation-mark.png") no-repeat;
+}
+.desc {
+    font-size: 13px;
+    color: var(--font-color2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+.input-group {
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+}
+.pop-img-wrap {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 8px 0;
+    .img-box {
+        width: 160px;
+        height: 120px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .img-info-txt {
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.35px;
+        text-align: left;
+    }
+}
+.date-time-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    .date-tiem {
+        display: flex;
+        gap: 4px;
+        max-width: 480px;
+        width: 100%;
+        .date-picker-area {
+            .react-datepicker-wrapper {
+                margin-right: 0;
+                width: 238px;
+            }
+        }
+    }
+}
+.popup-position-input {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    .MuiFormControl-root {
+        &.input-field {
+            max-width: 120px;
+        }
+    }
+}
+
+.mb-6 {
+    margin-bottom: 6px;
+}
+.popup-size-input {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .MuiFormControl-root {
+        &.input-field {
+            max-width: 120px;
+        }
+    }
+}
+.popup-image-wrap {
+    .file-area {
+        border-top: 1px solid var(--border-color3);
+        margin-top: 8px;
+        padding-top: 8px;
+        flex-wrap: wrap;
+        .desc {
+            width: 100%;
+        }
+    }
+    .editor-wrap {
+        border-top: 1px solid var(--border-color3);
+        margin-top: 8px;
+        padding-top: 8px;
+        .thumb-wrap {
+            padding: 16px;
+            display: flex;
+            gap: 8px;
+            border: 1px solid var(--border-color4);
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            li {
+                max-width: 104px;
+                max-height: 104px;
+                cursor: pointer;
+                border-radius: 8px;
+                border: 2px solid transparent;
+                img {
+                    width: 100%;
+                }
+                &.active {
+                    border-color: var(--color1);
+                }
+            }
+        }
+        .editor {
+            padding: 16px;
+            border: 1px solid var(--border-color4);
         }
     }
 }
