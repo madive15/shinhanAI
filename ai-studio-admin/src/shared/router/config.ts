@@ -85,4 +85,13 @@ export const pathKeys = {
     popupRegistration(): string {
         return `${pathKeys.root}muipublish/popupRegi`;
     },
+    boardManage(): string {
+        return `${pathKeys.root}muipublish/boardManage`;
+    },
+    boardManageDetail(): string {
+        return `${pathKeys.root}muipublish/boardManageDetail`;
+    },
+    errorPage(): string {
+        return `${pathKeys.root}muipublish/error`; // 에러페이지
+    },
 };

@@ -13,7 +13,7 @@ import MuiPubIndex from "~/muiPublish";
 import MuiPubGuide from "~/muiPublish/guide/Guide";
 import MuiSampleForm from "~/muiPublish/guide/MuiSampleForm";
 import { pathKeys } from "~/shared/router";
-
+import Login from "~/muiPublish/page/login/Login";
 const isDevelopment = process.env.NODE_ENV === "development";
 
 export const router = createBrowserRouter([
@@ -76,6 +76,7 @@ export const router = createBrowserRouter([
                           path: pathKeys.sampleForm(),
                           element: <Layout pageName={"샘플폼"} />,
                       },
+
                       // {
                       //   path: pathKeys.taskpage(),
                       //   element: <Layout pageName={"과제 신청"} />,
@@ -130,6 +131,22 @@ export const router = createBrowserRouter([
                       {
                           path: pathKeys.popupRegistration(),
                           element: <MuiLayout pageName={"팝업 등록"} />,
+                      },
+                      {
+                          path: pathKeys.boardManage(),
+                          element: <MuiLayout pageName={"게시글 관리"} />,
+                      },
+                      {
+                          path: pathKeys.boardManageDetail(),
+                          element: <MuiLayout pageName={"게시글 관리 상세"} />,
+                      },
+                      {
+                          path: pathKeys.login(), //로그인 페이지
+                          element: <Login />,
+                      },
+                      {
+                          path: pathKeys.errorPage(),
+                          element: <MuiLayout pageName={"에러샘플"} />,
                       },
                   ]
                 : []),

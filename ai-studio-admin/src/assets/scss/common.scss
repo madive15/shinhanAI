@@ -1022,6 +1022,10 @@
     max-width: 480px;
     width: 100%;
     display: flex;
+    gap: 4px;
+    button {
+        min-width: fit-content;
+    }
 }
 .pop-img-wrap {
     display: flex;
@@ -1129,5 +1133,293 @@
             padding: 16px;
             border: 1px solid var(--border-color4);
         }
+    }
+}
+.popup-box {
+    margin-top: 16px;
+    .popup-box-tit {
+        font-family: var(--font-style1);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: -0.3px;
+        margin-bottom: 8px;
+    }
+}
+.board-comment-wrap {
+    padding: 0;
+    border-bottom: 1px solid var(--border-color4);
+    .comment-top {
+        color: var(--font-color2);
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.35px;
+        padding: 12px 16px;
+        margin-top: 12px;
+        background-color: var(--background-color5);
+        border-top: 1px solid var(--border-color4);
+        border-bottom: 1px solid var(--border-color4);
+        strong {
+            color: var(--color1);
+            margin-left: 6px;
+        }
+    }
+    .comment-list {
+        .comment-list-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color4);
+            .comment-item-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 8px;
+                .name {
+                    font-size: 14px;
+                    line-height: 21px;
+                    letter-spacing: -0.35px;
+                    font-weight: 700;
+                }
+                .date {
+                    color: var(--font-color2);
+                    font-size: 13px;
+                    letter-spacing: -0.325px;
+                    .time {
+                        margin-left: 8px;
+                    }
+                }
+            }
+            .comment-item {
+                display: flex;
+                align-items: end;
+                justify-content: space-between;
+                .txt {
+                    font-size: 14px;
+                    line-height: 21px;
+                    letter-spacing: -0.35px;
+                }
+            }
+        }
+    }
+    .comment-modify {
+        display: flex;
+        align-items: end;
+        gap: 8px;
+        padding-top: 12px;
+        margin-top: 12px;
+        border-top: 1px solid var(--border-color6);
+        .text-area {
+            flex: 1;
+            height: 120px;
+        }
+        .comment-modify-user {
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -0.35px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+    }
+    .comment-write {
+        display: flex;
+        align-items: end;
+        gap: 8px;
+        padding: 12px 0;
+        .text-area {
+            flex: 1;
+            height: 120px;
+        }
+    }
+}
+
+//로그인 페이지
+.login-wrap {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color1) url("../images/img-login-bg.png")
+        no-repeat;
+    .login-box {
+        height: 640px;
+        display: flex;
+        .left {
+            border-radius: 20px 0px 0px 20px;
+            width: 520px;
+            height: 640px;
+            position: relative;
+            background: var(--sub-color4) url("../images/img-login-box-bg.png")
+                left bottom no-repeat;
+            padding-left: 72px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            .login-tit {
+                color: var(--color2);
+                font-family: var(--font-style1);
+                strong {
+                    display: block;
+                    font-size: 72px;
+                    letter-spacing: 1.8px;
+                    line-height: 107px;
+                }
+                span {
+                    font-size: 32px;
+                    line-height: 47px;
+                    letter-spacing: 0.8px;
+                }
+            }
+            p {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px;
+                letter-spacing: -0.4px;
+                color: var(--color2);
+                margin-top: 24px;
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: 43px;
+                height: 39px;
+                background: url("../images/svg/icon-login-logo.svg") no-repeat;
+                position: absolute;
+                top: 40px;
+                left: 40px;
+            }
+        }
+        .right {
+            border-radius: 0px 20px 20px 0px;
+            width: 640px;
+            height: 640px;
+            padding: 0 72px;
+            background-color: var(--color2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .input-field {
+                max-width: 100%;
+                height: auto;
+                .MuiInputBase-root {
+                    height: auto;
+                }
+                input {
+                    height: auto;
+                    padding: 24px;
+                    border: none;
+                    background-color: var(--background-color1);
+                    &:active {
+                        background-color: var(--background-color1);
+                    }
+                }
+            }
+            .password-area {
+                margin: 24px 0 12px;
+                position: relative;
+                .input-field {
+                    input {
+                        padding-right: 50px;
+                    }
+                }
+                .show-btn {
+                    position: absolute;
+                    top: 45px;
+                    right: 24px;
+                }
+            }
+            .id-save-area {
+                button {
+                    margin-left: 32px;
+                }
+                position: relative;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 8px;
+                    background-color: #888;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -4px;
+                    left: 133px;
+                    cursor: default;
+                }
+            }
+            .mate-btn {
+                margin: 32px 0 12px;
+                padding: 24px;
+                // background-color: var(--color3);
+                color: var(--color2);
+                text-align: left;
+                border-radius: 8px;
+                font-weight: 700;
+                background: var(--color3) url("../images/icon/ico-mate-arr.png")
+                    calc(100% - 24px) 50% no-repeat;
+                &:disabled {
+                    background: var(--background-color2)
+                        url("../images/icon/ico-mate-arr-disabled.png")
+                        calc(100% - 24px) 50% no-repeat;
+                    color: var(--font-color3);
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}
+// 서클 에러 텍스트
+.error-circle {
+    padding-left: 20px;
+    color: var(--negative);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.35px;
+    position: relative;
+    &::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        background: url("../images/icon/ico-error-circle.png") no-repeat;
+    }
+}
+//에러 페이지
+.error-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color2);
+    height: calc(100% - 45px);
+    border-radius: 12px;
+    &::before {
+        content: "";
+        display: block;
+        width: 355px;
+        height: 300px;
+        margin-bottom: 24px;
+    }
+    &.type1 {
+        &::before {
+            background: url("../images/error-type1.png") no-repeat;
+        }
+    }
+    &.type2 {
+        &::before {
+            background: url("../images/error-type2.png") no-repeat;
+        }
+    }
+    strong {
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.6px;
+    }
+    .error-txt {
+        color: var(--font-color3);
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.35px;
+        margin: 12px 0;
+        text-align: center;
     }
 }

@@ -34,10 +34,10 @@ const IndiviCompany: React.FC<IPageProps> = (props) => {
     return (
         <>
             <div className="indivi-company between">
-                <div className="refresh-box">
+                {/* <div className="refresh-box">
                     <span>모델 생성이 완료된 항목이 있습니다.</span>
                     <button type="button">새로고침</button>
-                </div>
+                </div> */}
                 <FormControl>
                     <RadioGroup
                         className="filter-radio"

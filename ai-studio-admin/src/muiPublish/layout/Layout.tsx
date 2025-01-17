@@ -16,6 +16,8 @@ import TaskpageModify from "~/muiPublish/page/taskRequest/TaskRequestModify";
 import PrebulitMeta from "~/muiPublish/page/prebulitmeta/PrebulitMeta";
 import PopupManage from "~/muiPublish/page/popupManage/PopupManage";
 import PopupRegistration from "~/muiPublish/page/popupManage/PopupRegistration";
+import BoardManage from "~/muiPublish/page/boardManage/BoardManage";
+import BoardDetail from "~/muiPublish/page/boardManage/BoardDetail";
 // import Auth from "~/publish/page/Auth";
 // import Manager from "~/publish/page/Manager";
 // import SampleTablePage from "~/publish/page/SampleTablePage";
@@ -24,7 +26,8 @@ import PopupRegistration from "~/muiPublish/page/popupManage/PopupRegistration";
 // import Ocrpage from "~/publish/page/Ocrpage";
 // import Metapage from "~/publish/page/Metapage";
 import SampleForm from "~/muiPublish/guide/MuiSampleForm";
-
+import Login from "~/muiPublish/page/login/Login";
+import Error from "~/muiPublish/page/error/Error";
 // need style
 // import "~/publish/layout/layout.scss";
 import LayoutStyle from "~/muiPublish/theme/LayoutStyle";
@@ -93,7 +96,18 @@ const Layout: React.FC<IPageProps> = (props) => {
                     {props.pageName === "팝업 등록" && (
                         <PopupRegistration pageName={props.pageName} />
                     )}
-
+                    {props.pageName === "게시글 관리" && (
+                        <BoardManage pageName={props.pageName} />
+                    )}
+                    {props.pageName === "게시글 관리 상세" && (
+                        <BoardDetail pageName={props.pageName} />
+                    )}
+                    {props.pageName === "로그인" && (
+                        <Login pageName={props.pageName} />
+                    )}
+                    {props.pageName === "에러샘플" && (
+                        <Error pageName={props.pageName} />
+                    )}
                     {/* {props.pageName === "샘플테이블" && <SampleTablePage pageName={props.pageName} />}
                     {props.pageName === "권한관리" && <Auth pageName={props.pageName} />}
                     {props.pageName === "관리자메뉴 권한관리" && <Manager pageName={props.pageName} />}

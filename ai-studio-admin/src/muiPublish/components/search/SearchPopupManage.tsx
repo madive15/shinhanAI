@@ -1,24 +1,17 @@
 // necessary set
 import React from "react";
 import { useState } from "react";
-// need content
-import "react-datepicker/dist/react-datepicker.css";
 import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
 import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
-import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
+import "react-datepicker/dist/react-datepicker.css";
+// need content
+
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import Checkbox from "@mui/material/Checkbox";
-import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
-import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
-import FormGroup from "@mui/material/FormGroup";
 import DatePicker from "react-datepicker";
 import { ko } from "date-fns/locale";
-import "react-datepicker/dist/react-datepicker.css";
 import TextField from "@mui/material/TextField";
 // need style
 
@@ -33,15 +26,9 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: SearchTaskRequest
- * 상품메타관리 Search
+ * admin-front: SearchPopupManage
  */
-const SearchTaskRequest: React.FC<IPageProps> = (props) => {
-    const [ageSelect, setAgeSelect] = React.useState("");
-    const selectChange = (event: SelectChangeEvent) => {
-        setAgeSelect(event.target.value as string);
-    };
-
+const SearchPopupManage: React.FC<IPageProps> = (props) => {
     const [startDate, setStartDate] = useState();
 
     const [radioGroup, setRadioGroup] = React.useState("전체");
@@ -88,7 +75,7 @@ const SearchTaskRequest: React.FC<IPageProps> = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="search-item-box full">
+                <div className="search-item-box">
                     <div className="search-item">
                         <span className="tit">팝업 검색</span>
                         <div className="item-box ">
@@ -150,4 +137,4 @@ const SearchTaskRequest: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default SearchTaskRequest;
+export default SearchPopupManage;

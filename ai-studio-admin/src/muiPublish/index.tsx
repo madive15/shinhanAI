@@ -13,69 +13,78 @@ import "~/muiPublish/pubilsh.scss";
 
 const pubList = [
     {
-        id: "1",
         name: "가이드",
         link: "/muipublish/guide",
         etc: "",
     },
     {
-        id: "2",
         name: "레이아웃",
         link: "/muipublish/layout",
         etc: "",
     },
     {
-        id: "3",
+        name: "로그인",
+        link: "/login",
+        etc: "",
+    },
+    {
         name: "폼요소 샘플",
         link: "/muipublish/MuiSampleform",
         etc: "",
     },
     {
-        id: "4",
         name: "상품메타관리",
         link: "/muipublish/meta",
         etc: "",
     },
     {
-        id: "5",
         name: "과제 신청",
         link: "/muipublish/task",
         etc: "",
     },
     {
-        id: "6",
         name: "과제 신청 내용",
         link: "/muipublish/taskDetail",
         etc: "",
     },
     {
-        id: "7",
         name: "프롬프트메타관리",
         link: "/muipublish/promptmeta",
         etc: "",
     },
     {
-        id: "8",
         name: "과제 신청 수정",
         link: "/muipublish/taskModify",
         etc: "",
     },
     {
-        id: "9",
         name: "프리빌트 메타관리",
         link: "/muipublish/prebuiltmeta",
         etc: "",
     },
     {
-        id: "9",
         name: "팝업 관리",
         link: "/muipublish/popupManage",
         etc: "",
     },
     {
-        id: "9",
         name: "팝업 등록",
         link: "/muipublish/popupRegi",
+        etc: "",
+    },
+    {
+        name: "게시글 관리",
+        link: "/muipublish/boardManage",
+        etc: "",
+    },
+    {
+        name: "게시글 관리 상세",
+        link: "/muipublish/boardManageDetail",
+        etc: "",
+    },
+    {
+        name: "에러 페이지",
+        link: "/muipublish/error",
         etc: "",
     },
 
@@ -134,9 +143,9 @@ export default function MuiPubIndex() {
                             <TableCell width={120} align="center">
                                 <strong>No</strong>
                             </TableCell>
-                            <TableCell width={200} align="center">
+                            {/* <TableCell width={200} align="center">
                                 <strong>화면아이디</strong>
-                            </TableCell>
+                            </TableCell> */}
                             <TableCell width={200} align="center">
                                 <strong>화면명</strong>
                             </TableCell>
@@ -149,14 +158,14 @@ export default function MuiPubIndex() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {pubList.map((row) => (
+                        {pubList.map((row, i) => (
                             <TableRow key={row.name}>
                                 <TableCell width={120} align="center">
-                                    {row.id}
+                                    {i}
                                 </TableCell>
-                                <TableCell width={200} align="center">
+                                {/* <TableCell width={200} align="center">
                                     {row.id}
-                                </TableCell>
+                                </TableCell> */}
                                 <TableCell width={200} align="center">
                                     {row.name}
                                 </TableCell>

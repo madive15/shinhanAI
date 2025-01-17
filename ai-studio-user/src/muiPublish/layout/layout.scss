@@ -159,7 +159,7 @@
                         border-radius: 18px;
                         background-color: #001237;
                         padding: 7.5px 16px;
-                        width: 200px;
+                        min-width: 200px;
                         height: 36px;
                         display: inline-flex;
                         align-items: center;
@@ -314,7 +314,7 @@
                         }
                     }
                     .nick-name {
-                        margin: 0 24px 0 40px;
+                        margin: 0 24px 0 8px;
                         font-size: 16px;
                         font-weight: 700;
                         line-height: 19px;
@@ -322,6 +322,22 @@
                         cursor: pointer;
                         em {
                             font-weight: 700;
+                            padding-right: 25px;
+                            position: relative;
+                            &::after {
+                                content: "";
+                                display: block;
+                                width: 1px;
+                                height: 12px;
+                                background-color: rgba(255, 255, 255, 0.25);
+                                position: absolute;
+                                top: 50%;
+                                margin-top: -6px;
+                                right: 12px;
+                            }
+                        }
+                        svg {
+                            margin: 0;
                         }
                         .icon-user {
                             margin: 0 8px 0 0;
@@ -738,5 +754,103 @@
     .slick-prev,
     .slick-next {
         display: none;
+    }
+}
+
+.indiv-company {
+    position: relative;
+}
+.indiv-company-btn {
+    border-radius: 12px;
+    border: 1px solid var(--color1);
+    background-color: var(--color2);
+    padding: 4px 12px;
+    color: var(--color1);
+    width: 61px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: -0.3px;
+    text-align: left;
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url("../../assets/images/icon/ico-blue-arr.png") no-repeat;
+        position: absolute;
+        top: 4px;
+        right: 8px;
+    }
+    &.active {
+        border-bottom: 0;
+        border-radius: 12px 12px 0 0;
+    }
+}
+.indiv-company-selet {
+    position: absolute;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid var(--color1);
+    background-color: var(--color2);
+    padding: 4px 11px;
+    z-index: 2;
+    border-top: 0;
+    display: none;
+    &.active {
+        display: block;
+    }
+    li {
+        button {
+            padding: 3px 0px;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: -0.3px;
+            width: 100%;
+            text-align: left;
+            &.active {
+                background: url("../../assets/images/icon/ico-blue-arr-type2.png")
+                    center right no-repeat;
+            }
+        }
+        &:first-of-type {
+            border-top: 1px solid var(--border-color4);
+        }
+    }
+}
+
+.refresh-box {
+    border-radius: 18px;
+    background-color: #001237;
+    padding: 12px 12px 12px 32px;
+    width: 336px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    color: var(--color2);
+    span {
+        font-size: 13px;
+        letter-spacing: -0.325px;
+    }
+    button {
+        text-decoration: underline;
+        color: var(--color1);
+        font-size: 13px;
+        letter-spacing: -0.325px;
+    }
+    &::before {
+        content: "";
+        width: 14px;
+        height: 15px;
+        display: block;
+        background: url("../../assets/images/icon/ico-exclamation-mark.png")
+            no-repeat;
+        position: absolute;
+        top: 11px;
+        left: 12px;
     }
 }

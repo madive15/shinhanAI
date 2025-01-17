@@ -13,6 +13,8 @@ declare module "@mui/material/Button" {
         icon: true;
         iconDashed: true;
         iconLine: true;
+        smallSub1: true;
+        iconTxt: true;
     }
 }
 const theme = createTheme({
@@ -199,6 +201,27 @@ const theme = createTheme({
                     },
                 },
                 {
+                    props: { variant: "smallSub1" },
+                    style: {
+                        backgroundColor: "#FFF",
+                        color: "#0046FF",
+                        fontSize: "12px",
+                        fontWeight: "700",
+                        letterSpacing: "-0.3px",
+                        lineHeight: "14px",
+                        padding: "8px",
+                        borderRadius: "4px",
+                        border: "1px solid #0046FF",
+                        minWidth: "56px",
+                        "&:hover": {
+                            backgroundColor: "#E8EEFF",
+                        },
+                        "&:active": {
+                            backgroundColor: "#D1DDFF",
+                        },
+                    },
+                },
+                {
                     props: { variant: "icon" },
                     style: {
                         minWidth: "unset",
@@ -245,9 +268,36 @@ const theme = createTheme({
                         fontSize: "14px",
                         lineHeight: "18px",
                         letterSpacing: "-0.35px",
+                        backgroundColor: "var(--background-color2)",
                         "& svg": {
                             width: "24px",
                             height: "24px",
+                        },
+                    },
+                },
+                {
+                    props: { variant: "iconTxt" },
+                    style: {
+                        minWidth: "unset",
+                        height: "auto",
+                        padding: "0",
+                        border: "none",
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        letterSpacing: "-0.35px",
+                        fontWeight: "400",
+                        backgroundColor: "transparent",
+                        "& svg": {
+                            width: "14px",
+                            height: "14px",
+                        },
+                        "& .MuiButton-startIcon": {
+                            marginLeft: "0",
+                            marginRight: "4px",
+                        },
+                        "& .MuiButton-endIcon": {
+                            marginLeft: "4px",
+                            marginRight: "0",
                         },
                     },
                 },
@@ -326,9 +376,9 @@ const theme = createTheme({
                         "& .MuiSelect-select": {
                             minHeight: "auto",
                         },
-                        "& +.input-field": {
-                            marginLeft: "4px",
-                        },
+                        // "& +.input-field": {
+                        //     marginLeft: "4px",
+                        // },
                     },
                     "&.small": {
                         width: "120px",
@@ -488,8 +538,8 @@ const theme = createTheme({
                             },
                             "& .MuiDialogContent-root": {
                                 fontSize: "15px",
-                                padding: "0",
-                                marginBottom: "24px",
+                                padding: "0 0 24px 0",
+                                // marginBottom: "24px",
                             },
                             "& .MuiDialogActions-root": { padding: "0" },
                             "& .dialog-close": {
@@ -549,6 +599,9 @@ const theme = createTheme({
                                 "& .desc": {
                                     margin: "6px 0 0 0",
                                 },
+                                "& .btn-root-wrap": {
+                                    margin: "0",
+                                },
                             },
                         },
                     },
@@ -588,7 +641,7 @@ const theme = createTheme({
                             outline: "0",
                         },
                         "& .MuiInputBase-root": {
-                            height: "38px",
+                            height: "36px",
                             fontSize: "14px",
 
                             "&:focus-visible": {
@@ -598,7 +651,7 @@ const theme = createTheme({
                         "& .MuiOutlinedInput-root": {
                             "& input": {
                                 padding: "0px 12px",
-                                height: "38px",
+                                height: "36px",
                                 border: "1px solid var(--border-color1)",
                                 borderRadius: " 8px",
                                 backgroundColor: "var(--color2) ",

@@ -10,6 +10,8 @@ import { ReactComponent as User } from "~assets/images/svg/icon_user.svg";
 import { ReactComponent as Mini } from "~assets/images/svg/icon_mini.svg";
 import { ReactComponent as Go } from "~assets/images/svg/icon_go.svg";
 import { ReactComponent as ArrowRight } from "~assets/images/svg/icon_arrow_right.svg";
+import { ReactComponent as Logout } from "~assets/images/svg/icon-logout.svg";
+import { ReactComponent as WhiteX } from "~assets/images/svg/icon-x-white.svg";
 import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -50,6 +52,22 @@ const Top: React.FC<IPageProps> = (props) => {
         setOpenPopular(true);
     };
 
+    const [indiv, setIndiv] = useState<string>("개인");
+    const [isActive, setIsActive] = useState<boolean>(false);
+    const indivClick = () => {
+        setIndiv("개인");
+        setIsActive(false);
+        setIsActive(!isActive);
+    };
+
+    const companyClick = () => {
+        setIndiv("기업");
+        setIsActive(false);
+        setIsActive(!isActive);
+    };
+    const toggleActive = () => {
+        setIsActive(!isActive);
+    };
     return (
         <header className={props.openClose === true ? "menu-open" : ""}>
             <div className="top-content ">
@@ -157,9 +175,18 @@ const Top: React.FC<IPageProps> = (props) => {
                             </li>
                         </ul>
                     </div>
+                    <div className="refresh-box">
+                        <span>모델 생성이 완료된 항목이 있습니다.</span>
+                        <div className="refresh-btn-wrap">
+                            <button type="button">상세보기</button>
+                            <IconButton>
+                                <WhiteX />
+                            </IconButton>
+                        </div>
+                    </div>
                 </div>
                 <div className="user-setting">
-                    <span className="go-admin">
+                    {/* <span className="go-admin">
                         AI Studio 관리자 바로가기 <Go fill="#fff" />
                     </span>
                     <span className="go-mini">
@@ -169,6 +196,47 @@ const Top: React.FC<IPageProps> = (props) => {
                         <User className="icon-user" fill="#fff" />
                         <em>김멀더</em>
                         <ArrowRight className="icon-arrow-right" fill="#fff" />
+                    </span> */}
+                    <div className="indiv-company ">
+                        <button
+                            type="button"
+                            className={`indiv-company-btn ${
+                                isActive ? "active" : ""
+                            }`}
+                            onClick={toggleActive}
+                        >
+                            {indiv}
+                        </button>
+                        <ul
+                            className={`indiv-company-selet ${
+                                isActive ? "active" : ""
+                            }`}
+                        >
+                            <li>
+                                <button
+                                    type="button"
+                                    className={indiv === "개인" ? "active" : ""}
+                                    onClick={indivClick}
+                                >
+                                    개인
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    className={indiv === "기업" ? "active" : ""}
+                                    onClick={companyClick}
+                                >
+                                    기업
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <span className="nick-name">
+                        <em>김멀더</em>
+                        <IconButton>
+                            <Logout />
+                        </IconButton>
                     </span>
                 </div>
             </div>

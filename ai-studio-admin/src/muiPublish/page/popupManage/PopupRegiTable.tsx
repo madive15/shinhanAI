@@ -36,10 +36,9 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: TaskRequestTable
- * 상품메타관리 page
+ * admin-front: PopupRegiTable
  */
-const TaskRequestTable: React.FC<IPageProps> = (props) => {
+const PopupRegiTable: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -574,4 +573,4 @@ const TaskRequestTable: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default TaskRequestTable;
+export default PopupRegiTable;

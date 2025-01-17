@@ -33,6 +33,7 @@ import SearchTaskRequest from "~/muiPublish/components/search/SearchTaskRequest"
 import SearchPromptMeta from "~/muiPublish/components/search/SearchPromptMeta";
 import SearchPrebuiltMeta from "~/muiPublish/components/search/SearchPrebuiltMeta";
 import SearchPopupManage from "~/muiPublish/components/search/SearchPopupManage";
+import SearchBoardManage from "~/muiPublish/components/search/SearchBoardManage";
 
 // need style
 import SearchContentStyle from "~/muiPublish/theme/SearchContentStyle";
@@ -68,6 +69,7 @@ const SearchContent: React.FC<IPageProps> = (props) => {
             {props.pageName === "팝업 관리" && <SearchPopupManage />}
             {props.pageName === "프리빌트 메타관리" && <SearchPrebuiltMeta />}
             {props.pageName === "샘플폼" && <Sample />}
+            {props.pageName === "게시글 관리" && <SearchBoardManage />}
 
             <div className="btn-root-wrap end" aria-label="Basic button group">
                 <Button variant="sub1">초기화</Button>

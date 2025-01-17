@@ -2297,37 +2297,37 @@
 }
 
 //새로 고침 박스
-.refresh-box {
-    border-radius: 8px;
-    background-color: var(--background-color5);
-    padding: 12px 12px 12px 32px;
-    max-width: 398px;
-    width: 100%;
-    height: 37px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    span {
-        font-size: 13px;
-        letter-spacing: -0.325px;
-    }
-    button {
-        text-decoration: underline;
-        color: var(--color1);
-        font-size: 13px;
-        letter-spacing: -0.325px;
-    }
-    &::before {
-        content: "";
-        width: 14px;
-        height: 15px;
-        display: block;
-        background: url("../images/icon/ico-exclamation-mark.png") no-repeat;
-        position: absolute;
-        top: 11px;
-        left: 12px;
-    }
-}
+// .refresh-box {
+//     border-radius: 8px;
+//     background-color: var(--background-color5);
+//     padding: 12px 12px 12px 32px;
+//     max-width: 398px;
+//     width: 100%;
+//     height: 37px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     span {
+//         font-size: 13px;
+//         letter-spacing: -0.325px;
+//     }
+//     button {
+//         text-decoration: underline;
+//         color: var(--color1);
+//         font-size: 13px;
+//         letter-spacing: -0.325px;
+//     }
+//     &::before {
+//         content: "";
+//         width: 14px;
+//         height: 15px;
+//         display: block;
+//         background: url("../images/icon/ico-exclamation-mark.png") no-repeat;
+//         position: absolute;
+//         top: 11px;
+//         left: 12px;
+//     }
+// }
 
 .notice {
     .board-detail-tit {
@@ -2658,6 +2658,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--background-color1) url("../images/img-login-bg.png")
+        no-repeat;
     .login-box {
         height: 640px;
         display: flex;
