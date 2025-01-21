@@ -136,19 +136,15 @@ const TargetThumbnailRecom: React.FC<IPageProps> = (props) => {
                                             <div className="card-box-bottom">
                                                 <div className="hash-wrap">
                                                     <Hash
-                                                        value="#TAG"
+                                                        value="#한글한글한글"
                                                         type="type2"
                                                     />
                                                     <Hash
-                                                        value="#TAG"
+                                                        value="#한글한글한글"
                                                         type="type2"
                                                     />
                                                     <Hash
-                                                        value="#TAG"
-                                                        type="type2"
-                                                    />
-                                                    <Hash
-                                                        value="+5"
+                                                        value="+3"
                                                         type="type2"
                                                     />
                                                 </div>

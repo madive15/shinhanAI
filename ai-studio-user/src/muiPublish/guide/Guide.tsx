@@ -1367,10 +1367,15 @@ export default function VerticalTabs() {
                                 </p>
                                 <div className="card-box-bottom">
                                     <div className="hash-wrap">
-                                        <Hash value="#TAG" type="type2" />
-                                        <Hash value="#TAG" type="type2" />
-                                        <Hash value="#TAG" type="type2" />
-                                        <Hash value="+5" type="type2" />
+                                        <Hash
+                                            value="#한글한글한글"
+                                            type="type2"
+                                        />
+                                        <Hash
+                                            value="#한글한글한글"
+                                            type="type2"
+                                        />
+                                        <Hash value="+2" type="type2" />
                                     </div>
                                     <IconButton className="ico-circle20">
                                         <Search12 />

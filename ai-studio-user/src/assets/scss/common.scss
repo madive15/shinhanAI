@@ -540,6 +540,7 @@
     display: flex;
     align-items: center;
     gap: 4px 4px;
+    flex-wrap: wrap;
 }
 // 텍스트 아이콘
 .ico-text {
@@ -578,15 +579,18 @@
 
 // 타겟 추출 관련 css
 .card-box-wrap {
-    display: flex;
-    gap: 12px 12px;
-    flex-wrap: wrap;
+    // display: flex;
+    // gap: 12px 12px;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+    gap: 12px;
 }
 .card-box {
     a {
         display: block;
         position: relative;
-        width: 240px;
+        width: 100%;
         height: 161px;
         border-radius: 12px;
         background-color: var(--background-color1);
@@ -641,6 +645,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+    .hash-wrap {
+        .hash-tag {
+            max-width: 72px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 }
 
@@ -1032,6 +1045,38 @@
                 }
             }
         }
+    }
+}
+.no-marketing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, #fff 55%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.no-marketing-box {
+    padding: 316px 32px 32px 32px;
+    width: 419px;
+    height: 462px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    background: #fff url("../images/single-view-maket.png") center top no-repeat;
+    text-align: center;
+    strong {
+        font-family: var(--font-style1);
+        font-size: 16px;
+        letter-spacing: -0.4px;
+    }
+    p {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.35px;
+        color: var(--font-color2);
     }
 }
 .sub-tab-content {
@@ -2803,5 +2848,68 @@
         top: 3px;
         left: 0;
         background: url("../images/icon/ico-error-circle.png") no-repeat;
+    }
+}
+
+//메인
+.main-wrap {
+    padding: 24px;
+    flex-wrap: wrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.main-tap {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 16px;
+    button {
+        margin-right: 24px;
+        font-family: var(--font-style1);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--font-color2);
+        padding: 0 8px 8px 8px;
+        position: relative;
+        &.active {
+            color: var(--color1);
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: var(--color1);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+.main-left {
+    max-width: 1314px;
+    width: 100%;
+}
+.branch-crm {
+    .branch-card-box {
+        .branch-card {
+            max-width: 430px;
+            width: 100%;
+            height: 248px;
+            border-radius: 16px;
+            &:nth-child(1) {
+                background: var(--color1) url("../images/main-item1.png") left
+                    center no-repeat;
+            }
+            &:nth-child(2) {
+                background: #fb833e url("../images/main-item2.png") left center
+                    no-repeat;
+            }
+            &:nth-child(3) {
+                background: var(--positive) url("../images/main-item3.png") left
+                    center no-repeat;
+            }
+        }
     }
 }

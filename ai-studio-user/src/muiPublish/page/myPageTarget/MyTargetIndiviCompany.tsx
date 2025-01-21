@@ -33,7 +33,7 @@ const IndiviCompany: React.FC<IPageProps> = (props) => {
     };
     return (
         <>
-            <div className="indivi-company between">
+            <div className="indivi-company ">
                 {/* <div className="refresh-box">
                     <span>타겟 추출 완료된 항목이 있습니다.</span>
                     <button type="button">새로고침</button>

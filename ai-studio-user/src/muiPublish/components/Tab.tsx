@@ -51,14 +51,39 @@ const Tab = ({ menuName, ...props }: any) => {
 
     return (
         <div className="tab">
-            <Slider ref={(slider) => (slideRef.current = slider)} className="tab-box" {...settings}>
+            <div className="tab-box">
+                <div className={"tab-content active"}>
+                    <a href="#">Home</a>
+                    <a href="#">
+                        메뉴
+                        <button type="button" className="admin-tab-btn">
+                            닫기
+                        </button>
+                    </a>
+                </div>
+            </div>
+            {/* <Slider
+                ref={(slider) => (slideRef.current = slider)}
+                className="tab-box"
+                {...settings}
+            >
                 {menuName.map((v: any, i: number) => {
                     return (
-                        <div key={i} className={activeIndex == i ? "tab-content active" : "tab-content"}>
+                        <div
+                            key={i}
+                            className={
+                                activeIndex == i
+                                    ? "tab-content active"
+                                    : "tab-content"
+                            }
+                        >
                             <a href="#" onClick={() => tabActive(i)}>
                                 {v}
                                 {i !== 0 && (
-                                    <button type="button" className="admin-tab-btn">
+                                    <button
+                                        type="button"
+                                        className="admin-tab-btn"
+                                    >
                                         닫기
                                     </button>
                                 )}
@@ -66,14 +91,14 @@ const Tab = ({ menuName, ...props }: any) => {
                         </div>
                     );
                 })}
-            </Slider>
+            </Slider> */}
             <div className="btn-slider">
-                <button className="prev" onClick={previous}>
+                {/* <button className="prev" onClick={previous}>
                     <ArrowLeft fill="#00236E" />{" "}
                 </button>
                 <button className="next" onClick={next}>
                     <ArrowRight fill="#00236E" />{" "}
-                </button>
+                </button> */}
                 {/*  */}
                 <button className="all-close">전체 닫기</button>
             </div>

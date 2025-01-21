@@ -24,7 +24,7 @@
             @include flex;
             @include justify-content(flex-start);
             @include align-items(center);
-            width: calc(100% - 64px);
+            // width: calc(100% - 64px);
             // height: 36px;
             background-color: var(--sub-color4);
             & .top-content {
@@ -349,7 +349,7 @@
                 }
             }
             &.menu-open {
-                width: calc(100% - 200px);
+                // width: calc(100% - 200px);
                 transition: all 0.2s ease-in-out;
             }
             & .search-layer {
@@ -432,15 +432,24 @@
             }
         }
         & .content {
-            width: calc(100% - 64px);
+            // width: calc(100% - 64px);
             padding: 24px 24px 0 24px;
             & .tabs-area {
                 margin: 0 0 0 0;
+                // .tab-box {
+                //     height: 32px;
+                // }
+                // .slick-list {
+                //     height: 32px;
+                // }
+                // .slick-track {
+                //     position: absolute;
+                // }
             }
             & .tabs-contents {
                 @include flex;
                 position: relative;
-                height: calc(100vh - 108px);
+                height: calc(100vh - 109px);
                 background-color: var(--color2);
                 border-radius: 0 16px 0 0;
                 box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
@@ -449,7 +458,7 @@
                     padding: 24px 24px;
 
                     .sub-tab-content {
-                        height: calc(100vh - 239px);
+                        height: calc(100vh - 240px);
                         overflow-y: auto;
                         scrollbar-width: thin;
                         &::-webkit-scrollbar {
@@ -555,7 +564,7 @@
                 }
             }
             &.opne-menu {
-                width: calc(100% - 200px);
+                // width: calc(100% - 200px);
                 transition: all 0.2s ease-in-out;
             }
         }
@@ -587,6 +596,19 @@
                 0,
                 no-repeat
             );
+        }
+        &.search {
+            width: 100%;
+            height: 478px;
+            background-color: var(--background-color5);
+            p {
+                font-size: 13px;
+                letter-spacing: -0.325px;
+                color: var(--font-color2);
+                padding-left: 20px;
+                background: url("../../assets/images/icon/ico-exclamation-mark2.png")
+                    left center no-repeat;
+            }
         }
     }
 }
@@ -670,7 +692,7 @@
             }
         }
         td {
-            padding: 0 0;
+            padding: 8px 0;
             height: 48px;
             font-size: 13px;
             font-weight: 400;
@@ -694,6 +716,15 @@
                 display: inline-block;
                 margin: 0 2px 0 0;
             }
+            .hash-wrap {
+                .hash-tag {
+                    max-width: 200px;
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
         }
     }
     .tooltip {
@@ -708,6 +739,15 @@
     padding: 16px 16px 0;
     border-radius: 16px 16px;
     border: 1px solid var(--border-color5);
+    max-width: 1302px;
+    &.search {
+        max-width: 1760px;
+    }
+    .card-box {
+        a {
+            width: 260px;
+        }
+    }
     .recom-tit {
         margin: 0 0 12px 0;
         font-size: 14px;

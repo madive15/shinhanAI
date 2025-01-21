@@ -8,6 +8,8 @@ import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNav
 import Category from "~/muiPublish/components/category/Category";
 import SearchSlider from "~/muiPublish/page/search/SearchSlider";
 import SearchCategory from "~/muiPublish/page/search/SearchCategory";
+import SearchTable from "~/muiPublish/page/search/SearchTable";
+import SearchTable2 from "~/muiPublish/page/search/SearchTable2";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -52,6 +54,8 @@ const Search: React.FC<IPageProps> = (props) => {
                     <div className="scroll-content-area">
                         <SearchSlider />
                         <SearchCategory />
+                        <SearchTable />
+                        <SearchTable2 />
                     </div>
                 </div>
             </div>

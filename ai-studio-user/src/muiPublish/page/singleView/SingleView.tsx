@@ -76,6 +76,18 @@ const SingleView: React.FC<IPageProps> = (props) => {
                                 </p>
                             </div>
                         </div> */}
+                        {/* <div className="no-marketing">
+                            <div className="no-marketing-box">
+                                <strong>
+                                    마케팅 활용에 동의하지 않으신 고객님입니다.
+                                </strong>
+                                <p>
+                                    오늘 동의를 받으면, <br />
+                                    내일 부터 고객님의 정보를 확인하실 수
+                                    있어요.
+                                </p>
+                            </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

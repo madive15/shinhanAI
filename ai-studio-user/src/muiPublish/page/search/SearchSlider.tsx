@@ -88,13 +88,13 @@ const SearchSlider: React.FC<IPageProps> = (props) => {
 
     return (
         <>
-            <div className="recom-list">
+            <div className="recom-list search">
                 <div className="recom-tit">추천 타겟 리스트</div>
                 {tumbnail.length > 0 ? (
                     <>
                         <Slider
                             ref={(slider) => (slideRef.current = slider)}
-                            className="recom-list-box"
+                            className="recom-list-box search-box-list"
                             {...settings}
                         >
                             {[1, 2, 3, 4, 5].map((v: any, i: number) => {
@@ -135,15 +135,11 @@ const SearchSlider: React.FC<IPageProps> = (props) => {
                                             <div className="card-box-bottom">
                                                 <div className="hash-wrap">
                                                     <Hash
-                                                        value="#TAG"
+                                                        value="#TssdsdsAG"
                                                         type="type2"
                                                     />
                                                     <Hash
-                                                        value="#TAG"
-                                                        type="type2"
-                                                    />
-                                                    <Hash
-                                                        value="#TAG"
+                                                        value="#TssdsdsAGTssdsdsAG"
                                                         type="type2"
                                                     />
                                                     <Hash
