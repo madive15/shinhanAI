@@ -3,7 +3,7 @@ import React from "react";
 
 // need content
 import { ReactComponent as Home } from "~assets/images/svg/icon_navi_home.svg";
-import { ReactComponent as Search } from "~assets/images/svg/Icons-search.svg";
+import { ReactComponent as Search } from "~assets/images/svg/icon-search.svg";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
@@ -61,7 +61,7 @@ const SubTitleNavTabs: React.FC<IPageProps> = (props) => {
                     )}
                 </div>
                 {props.search && (
-                    <div className="sub-searth">
+                    <div className="sub-search">
                         <TextField
                             hiddenLabel
                             variant="outlined"

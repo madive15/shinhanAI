@@ -54,6 +54,8 @@ const Tab = ({ menuName, ...props }: any) => {
             <div className="tab-box">
                 <div className={"tab-content active"}>
                     <a href="#">Home</a>
+                </div>
+                <div className={"tab-content "}>
                     <a href="#">
                         메뉴
                         <button type="button" className="admin-tab-btn">

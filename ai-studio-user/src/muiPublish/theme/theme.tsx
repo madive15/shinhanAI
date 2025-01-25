@@ -18,6 +18,7 @@ declare module "@mui/material/Button" {
         iconLine: true;
         iconLineBlue: true;
         iconTxt: true;
+        iconDel: true;
     }
 }
 const theme = createTheme({
@@ -90,6 +91,7 @@ const theme = createTheme({
                         fontSize: "14px",
                         fontWeight: "700",
                         letterSpacing: "-0.35px",
+                        boxShadow: "0px 4px 8px 0px rgba(0, 70, 255, 0.25)",
                         "&:hover": {
                             backgroundColor: "#0039CE",
                         },
@@ -330,6 +332,33 @@ const theme = createTheme({
                         "& svg": {
                             width: "14px",
                             height: "14px",
+                        },
+                        "& .MuiButton-startIcon": {
+                            marginLeft: "0",
+                            marginRight: "4px",
+                        },
+                        "& .MuiButton-endIcon": {
+                            marginLeft: "4px",
+                            marginRight: "0",
+                        },
+                    },
+                },
+                {
+                    props: { variant: "iconDel" },
+                    style: {
+                        minWidth: "unset",
+                        height: "auto",
+                        padding: "6px 12px",
+                        border: "1px solid var(--border-color4)",
+                        fontSize: "14px",
+                        lineHeight: "20px",
+                        letterSpacing: "-0.35px",
+                        fontWeight: "400",
+                        backgroundColor: "var(--color2)",
+                        borderRadius: "100px",
+                        "& svg": {
+                            width: "8px",
+                            height: "8px",
                         },
                         "& .MuiButton-startIcon": {
                             marginLeft: "0",

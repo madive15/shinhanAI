@@ -113,28 +113,38 @@
             }
         }
     }
-    .sub-searth {
-        position: relative;
-        input {
-            @include width-height(480px, 38px);
-            padding: 8px 40px 8px 12px;
-            border-radius: 4px 4px;
-            border: 1px solid var(--border-color6);
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 17px;
-            color: var(--font-color3);
-            box-sizing: border-box;
-            gap: 8px;
-        }
-        & .icon-search {
-            @include absolute-right-top(8px, 8px);
-            @include width-height(24px, 24px);
-            padding: 0 0;
-            cursor: pointer;
-            & path {
-                fill: var(--font-color3);
+}
+.sub-search {
+    position: relative;
+    .MuiInputBase-root {
+        border-radius: 8px;
+        &.Mui-focused {
+            .MuiOutlinedInput-notchedOutline {
+                border-color: var(--color1);
+                border-width: 1px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 70, 255, 0.15);
             }
+        }
+    }
+    input {
+        @include width-height(480px, 38px);
+        padding: 8px 40px 8px 12px;
+        border-radius: 4px 4px;
+        // border: 1px solid var(--border-color6);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        // color: var(--font-color1);
+        box-sizing: border-box;
+        gap: 8px;
+    }
+    & .icon-search {
+        @include absolute-right-top(8px, 8px);
+        @include width-height(24px, 24px);
+        padding: 0 0;
+        cursor: pointer;
+        & path {
+            fill: var(--font-color3);
         }
     }
 }

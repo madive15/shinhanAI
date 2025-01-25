@@ -954,6 +954,11 @@
         line-height: 14px;
         letter-spacing: -0.3px;
     }
+    button {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
 }
 //말줄임표 1줄
 .ellipsis {

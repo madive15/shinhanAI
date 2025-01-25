@@ -1,6 +1,8 @@
 // necessary set
 import React, { useState, useEffect } from "react";
 import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
+import { ReactComponent as X8 } from "~assets/images/svg/icons-x-8.svg";
+import { ReactComponent as Search } from "~assets/images/svg/icon-search.svg";
 // need content
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -20,6 +22,11 @@ import {
 } from "@mui/material";
 import Hash from "~/muiPublish/components/Hash";
 import PointProgressBar from "~/muiPublish/components/PointProgressBar";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+
+import Checkbox from "@mui/material/Checkbox";
+import FormGroup from "@mui/material/FormGroup";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -54,6 +61,18 @@ const MuiPopup: React.FC<IPageProps> = () => {
     const SitemapClose = () => {
         setSitemapStauts(false);
     };
+    const [TagStauts, setTagStauts] = React.useState(false);
+    const TagOpen = () => {
+        setTagStauts(true);
+    };
+    const TagClose = () => {
+        setTagStauts(false);
+    };
+
+    const [radioGroup, setRadioGroup] = React.useState("인기/추천");
+    const radioGroupChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setRadioGroup((event.target as HTMLInputElement).value);
+    };
     return (
         <div className="Popup-list-wrap">
             <Button variant="primary" onClick={PrebuiltOpen}>
@@ -66,6 +85,10 @@ const MuiPopup: React.FC<IPageProps> = () => {
             &nbsp;
             <Button variant="primary" onClick={SitemapOpen}>
                 사이트 맵
+            </Button>
+            &nbsp;
+            <Button variant="primary" onClick={TagOpen}>
+                태그 검색
             </Button>
             {/* 프리빌트 상세팝업 */}
             <Dialog
@@ -538,6 +561,282 @@ const MuiPopup: React.FC<IPageProps> = () => {
                 <IconButton
                     className="dialog-close ico-rect23 x"
                     onClick={SitemapClose}
+                >
+                    <Plus9 />
+                </IconButton>
+            </Dialog>
+            {/* 태그 검색*/}
+            <Dialog
+                className="layer-box l-large"
+                open={TagStauts}
+                onClose={TagClose}
+            >
+                <DialogTitle>태그 검색</DialogTitle>
+                <DialogContent>
+                    <div className="tag-search">
+                        <div className="sub-search">
+                            <TextField
+                                hiddenLabel
+                                variant="outlined"
+                                placeholder="검색어를 입력해주세요"
+                            />
+                            <IconButton
+                                type="button"
+                                aria-label="search"
+                                className="icon-search"
+                            >
+                                <Search />
+                            </IconButton>
+                        </div>
+                        <FormGroup row className="filter-chk">
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="전체"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㄱ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㄴ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㄷ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㄹ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅁ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅅ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅇ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅈ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅊ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅋ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅌ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅍ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="ㅎ"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="기타"
+                            />
+                        </FormGroup>
+                        <div className="tag-fillter-box">
+                            <span>ㄱ</span>
+                            <FormGroup row className="filter-chk">
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="가게 여신"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="개인형"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="거치식"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="골드"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="공모"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="금리"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="기부"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="기업형"
+                                />
+                            </FormGroup>
+                        </div>
+                        <div className="tag-fillter-box">
+                            <span>ㄷ</span>
+                            <FormGroup row className="filter-chk">
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="단기"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="담보"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="대출"
+                                />
+                            </FormGroup>
+                        </div>
+                        <div className="tag-fillter-box">
+                            <span>ㄱ</span>
+                            <FormGroup row className="filter-chk">
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="가게 여신"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="개인형"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="거치식"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="골드"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="공모"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="금리"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="기부"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="기업형"
+                                />
+                            </FormGroup>
+                        </div>
+                        <div className="tag-fillter-box">
+                            <span>ㄱ</span>
+                            <FormGroup row className="filter-chk">
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="가게 여신"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="개인형"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="거치식"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="골드"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="공모"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="금리"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="기부"
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label="기업형"
+                                />
+                            </FormGroup>
+                        </div>
+                        <div className="tag-choice-box">
+                            <div className="tag-choice-list">
+                                <p>
+                                    선택항목 <em>3</em>
+                                </p>
+                                <div className="choice-list">
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        거치식
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        단기
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        보장
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        거치식
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        단기
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        보장
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        거치식
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        단기
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        보장
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        거치식
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        단기
+                                    </Button>
+                                    <Button variant="iconDel" endIcon={<X8 />}>
+                                        보장
+                                    </Button>
+                                </div>
+                            </div>
+                            <Button variant="small">전체 삭제</Button>
+                        </div>
+                    </div>
+                </DialogContent>
+                <DialogActions>
+                    <Button variant="sub1" onClick={TagClose}>
+                        적용 취소
+                    </Button>
+                    <Button variant="primary" onClick={TagClose}>
+                        선택항목 적용
+                    </Button>
+                </DialogActions>
+                <IconButton
+                    className="dialog-close ico-rect23 x"
+                    onClick={TagClose}
                 >
                     <Plus9 />
                 </IconButton>

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logoPath from "~assets/images/admin_logo.png";
-import { ReactComponent as Search } from "~assets/images/svg/icon_search.svg";
+import { ReactComponent as Search } from "~assets/images/svg/icon-main-search.svg";
 import { ReactComponent as Close } from "~assets/images/svg/icon_close.svg";
 import { ReactComponent as AllSearch } from "~assets/images/svg/icon_all_search.svg";
 import { ReactComponent as AllSearchClose } from "~assets/images/svg/Icons-Icons15.svg";

@@ -531,6 +531,19 @@ export default function VerticalTabs() {
                         />
                     </FormGroup>
                 </div>
+
+                <div>
+                    <FormGroup row className="filter-chk">
+                        <FormControlLabel control={<Checkbox />} label="전체" />
+                        <FormControlLabel control={<Checkbox />} label="ㄱ" />
+                        <FormControlLabel control={<Checkbox />} label="ㄴ" />
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="ㄷ"
+                            disabled
+                        />
+                    </FormGroup>
+                </div>
             </TabPanel>
             {/* 라디오 */}
             <TabPanel value={value} index={5}>
