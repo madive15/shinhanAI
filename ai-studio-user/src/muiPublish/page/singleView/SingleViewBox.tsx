@@ -21,65 +21,68 @@ const SingleViewBox: React.FC<IPageProps> = (props) => {
     return (
         // 싱글뷰 타입1
         <div className="single-box-wrap">
-            <h2>{`김*더`} 고객님을 위한 추천</h2>
-            <div className="single-box-txt">
-                <strong>최근 유동성 평찬이 증가하고 있습니다.</strong>
-                <p>
-                    유동성의 평잔이 최근 6개월간 지속적으로 증가하고 있습니다.
-                    과거 상품 가입 이력을 고려했을 때, 골드리슈 상품을 추천 해
-                    보세요.
-                </p>
+            <div className="single-ai-box">
+                <h2>AI 상품 추천</h2>
+                <div className="single-box-content">
+                    <div className="single-box">
+                        <div className="single-view-box blue">
+                            <div className="left">
+                                <Badge value="Profile 기반" color="blue3" />
+                                <p>
+                                    <strong>골드리슈</strong>
+                                </p>
+                            </div>
+                            <div className="right">
+                                <em>87%</em>
+                                <span>(N등급)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="single-box">
+                        <div className="single-view-box blue">
+                            <div className="left">
+                                <Badge value="맥락 기반" color="blue3" />
+                                <p>
+                                    <strong>SOL 트래블 카드</strong>
+                                </p>
+                            </div>
+                            <div className="right">
+                                <em>87%</em>
+                                <span>(N등급)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="single-box">
+                        <div className="single-view-box blue">
+                            <div className="left">
+                                <Badge value="전략 상품" color="blue3" />
+                                <p>
+                                    <strong>퇴직연금 IRP 추가 불입</strong>
+                                </p>
+                            </div>
+                            <div className="right">
+                                <em>87%</em>
+                                <span>(N등급)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="single-box-txt">
+                    <strong>최근 유동성 평찬이 증가하고 있습니다.</strong>
+                    <p>
+                        유동성의 평잔이 최근 6개월간 지속적으로 증가하고
+                        있습니다. 과거 상품 가입 이력을 고려했을 때, 골드리슈
+                        상품을 추천 해 보세요.
+                    </p>
+                </div>
             </div>
-            <div className="single-box-content">
-                <div className="single-box">
-                    <div className="single-view-box blue">
-                        <div className="left">
-                            <Badge value="Profile 기반 추천" color="blue3 " />
-                            <p>
-                                <strong>골드리슈</strong>
-                            </p>
-                        </div>
-                        {/* <div className="right">
-                            <em>87%</em>
-                            <span>(N등급)</span>
-                        </div> */}
-                    </div>
-                </div>
-                <div className="single-box">
-                    <div className="single-view-box">
-                        <div className="left">
-                            <Badge value="맥락 기반 추천" color="black " />
-                            <p>
-                                <strong>SOL 트래블 카드</strong>
-                            </p>
-                        </div>
-                        {/* <div className="right">
-                            <em>87%</em>
-                            <span>(N등급)</span>
-                        </div> */}
-                    </div>
-                </div>
-                <div className="single-box">
-                    <div className="single-view-box">
-                        <div className="left">
-                            <Badge value="맥락 기반 추천" color="black " />
-                            <p>
-                                <strong>퇴직연금 IRP 추가 불입</strong>
-                            </p>
-                        </div>
-                        {/* <div className="right">
-                            <em>87%</em>
-                            <span>(N등급)</span>
-                        </div> */}
-                    </div>
-                </div>
-            </div>
+
             <h2>{`김*더`} 고객의 주요 관리 사항 </h2>
             <div className="single-box-content">
                 <div className="single-box">
                     <div className="single-view-box red">
                         <div className="left">
-                            <Badge value="고갹 관리 포인트" color="red " />
+                            <Badge value="고갹 관리" color="red " />
                             <p>
                                 <strong>ISA 중도 해지</strong>
                             </p>
@@ -98,9 +101,9 @@ const SingleViewBox: React.FC<IPageProps> = (props) => {
                     </div>
                 </div>
                 <div className="single-box">
-                    <div className="single-view-box green">
+                    <div className="single-view-box">
                         <div className="left">
-                            <Badge value="고객 주요 관심사" color="green " />
+                            <Badge value="고객 성향" color="black" />
                             <p>
                                 <strong>반려동물</strong>
                             </p>
@@ -126,26 +129,47 @@ const SingleViewBox: React.FC<IPageProps> = (props) => {
         // 싱글뷰 타입2
         // <div className="single-box-wrap">
         //     <div className="single-box-area">
-        //         <h2>{"김*더"} 고객님을 위한 AI 추천</h2>
+        //         <h2>AI 상품 추천</h2>
         //         <div className="single-box-item">
         //             <div className="left">
         //                 <div className="single-box blue">
-        //                     <Badge value="Profile 기반 추천" color="blue3 " />
-        //                     <p>
-        //                         <strong>골드리슈</strong>
-        //                     </p>
+        //                     <div className="left">
+        //                         <Badge
+        //                             value="Profile 기반 추천"
+        //                             color="blue3 "
+        //                         />
+        //                         <p>
+        //                             <strong>골드리슈</strong>
+        //                         </p>
+        //                     </div>
+        //                     <div className="right">
+        //                         <em>87%</em>
+        //                         <span>(N등급)</span>
+        //                     </div>
         //                 </div>
         //                 <div className="single-box blue">
-        //                     <Badge value="맥락 기반" color="blue3 " />
-        //                     <p>
-        //                         <strong>SOL 트래블 카드</strong>
-        //                     </p>
+        //                     <div className="left">
+        //                         <Badge value="맥락 기반" color="blue3 " />
+        //                         <p>
+        //                             <strong>SOL 트래블 카드</strong>
+        //                         </p>
+        //                     </div>
+        //                     <div className="right">
+        //                         <em>87%</em>
+        //                         <span>(N등급)</span>
+        //                     </div>
         //                 </div>
         //                 <div className="single-box green">
-        //                     <Badge value="전략 상품" color="green" />
-        //                     <p>
-        //                         <strong>퇴직연금 IRP 추가 불입</strong>
-        //                     </p>
+        //                     <div className="left">
+        //                         <Badge value="전략 상품" color="green" />
+        //                         <p>
+        //                             <strong>퇴직연금 IRP 추가 불입</strong>
+        //                         </p>
+        //                     </div>
+        //                     <div className="right">
+        //                         <em>87%</em>
+        //                         <span>(N등급)</span>
+        //                     </div>
         //                 </div>
         //             </div>
         //             <div className="right">
@@ -172,43 +196,55 @@ const SingleViewBox: React.FC<IPageProps> = (props) => {
         //                 </div>
         //             </div>
         //         </div>
-        //     </div>
-        //     <div className="single-box-area">
-        //         <h2>고객 관리</h2>
         //         <div className="single-box-item">
         //             <div className="left">
-        //                 <div className="single-box red">
-        //                     <Badge value="고객 관리 포인트" color="red " />
-        //                     <p>
-        //                         <strong>ISA 중도 해지</strong>
-        //                     </p>
+        //                 <div className="single-box">
+        //                     <div className="left">
+        //                         <Badge
+        //                             value="고객 주요 관심사"
+        //                             color="black "
+        //                         />
+        //                         <p>
+        //                             <strong>반려 동물</strong>
+        //                         </p>
+        //                     </div>
+        //                     <div className="right">
+        //                         <em>87%</em>
+        //                         <span>(N등급)</span>
+        //                     </div>
         //                 </div>
         //             </div>
         //             <div className="right">
         //                 <div className="single-txt-box">
         //                     <p>
-        //                         <strong>ISA 중도 해지 : </strong>
-        //                         최근 ISA 평가금액이 줄어들고 있어 이탈 조짐이
-        //                         보입니다. ISA 중도 해지를 하지 않게 각별히
-        //                         관리해주세요.
+        //                         <strong>반려동물 : </strong>
+        //                         반려 동물에 관심이 있을 것으로 추정 됩니다. 반려
+        //                         동물을 테마로 간단한 Samll Talk으로 대화를
+        //                         시작해보세요.
         //                     </p>
         //                 </div>
         //             </div>
         //         </div>
-        //     </div>
-        //     <div className="single-box-area">
-        //         <h2>고객 성향</h2>
         //         <div className="single-box-item">
         //             <div className="left">
         //                 <div className="single-box">
-        //                     <Badge value="고객 주요 관심사" color="black " />
-        //                     <p>
-        //                         <strong>반려 동물</strong>
-        //                     </p>
+        //                     <div className="left">
+        //                         <Badge
+        //                             value="Profile 기반 추천"
+        //                             color="blue3 "
+        //                         />
+        //                         <p>
+        //                             <strong>골드리슈</strong>
+        //                         </p>
+        //                     </div>
+        //                     <div className="right">
+        //                         <em>87%</em>
+        //                         <span>(N등급)</span>
+        //                     </div>
         //                 </div>
         //             </div>
         //             <div className="right">
-        //                 <div className="single-txt-box">
+        //                 <div className="single-txt-box gray">
         //                     <p>
         //                         <strong>반려동물 : </strong>
         //                         반려 동물에 관심이 있을 것으로 추정 됩니다. 반려

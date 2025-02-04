@@ -63,6 +63,14 @@ export const router = createBrowserRouter([
                           element: <MuiLayout pageName={"싱글뷰"} />,
                       },
                       {
+                          path: pathKeys.muiSingleCorporation(),
+                          element: <MuiLayout pageName={"싱글뷰 기업"} />,
+                      },
+                      {
+                          path: pathKeys.muiSingleOffice(),
+                          element: <MuiLayout pageName={"싱글뷰 영업점"} />,
+                      },
+                      {
                           path: pathKeys.muiOcr(),
                           element: <MuiLayout pageName={"AI-OCR"} />,
                       },

@@ -70,12 +70,12 @@ const SingleViewTable: React.FC<IPageProps> = (props) => {
     }, []);
 
     return (
-        <TableContainer className="table-content">
-            <Table className="table-defult-style">
+        <TableContainer className="table-content ">
+            <Table className="table-defult-style rowspan-table">
                 <TableHead>
                     <TableRow>
                         <TableCell width={180} align="center">
-                            유형
+                            분류
                         </TableCell>
                         <TableCell width={260} align="center">
                             추천
@@ -92,25 +92,219 @@ const SingleViewTable: React.FC<IPageProps> = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((idx) => (
-                        <TableRow key={idx}>
-                            <TableCell width={180} align="center">
-                                1
-                            </TableCell>
-                            <TableCell width={260} align="center">
-                                {idx}
-                            </TableCell>
-                            <TableCell width={780} align="left">
-                                Sogo 우량고객 이탈 예측 과제
-                            </TableCell>
-                            <TableCell width={320} align="center">
-                                <ProgressBar percent={81} />
-                            </TableCell>
-                            <TableCell width={220} align="center">
-                                상품명
-                            </TableCell>
-                        </TableRow>
-                    ))}
+                    <TableRow>
+                        <TableCell
+                            rowSpan={3}
+                            className="row-span-first"
+                            width={180}
+                            align="center"
+                        >
+                            Profile 기반 추천
+                        </TableCell>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            3등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            2등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            1등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell
+                            rowSpan={3}
+                            className="row-span-first"
+                            width={180}
+                            align="center"
+                        >
+                            맥락 기반
+                        </TableCell>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            3등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            2등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            1등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell
+                            rowSpan={3}
+                            className="row-span-first"
+                            width={180}
+                            align="center"
+                        >
+                            전략 상품 추천
+                        </TableCell>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            3등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            2등급
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell width={260} align="center">
+                            <strong>퇴직연금 IRP 추가 불입</strong>
+                        </TableCell>
+                        <TableCell width={780}>
+                            <p className="ellipsis">
+                                최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인최근 1년 내 해외여행 관련
+                                항공권, 숙박 예약 내역이 다수 확인최근 1년 내
+                                해외여행 관련 항공권, 숙박 예약 내역이 다수
+                                확인최근 1년 내 해외여행 관련 항공권, 숙박 예약
+                                내역이 다수 확인
+                            </p>
+                        </TableCell>
+                        <TableCell width={320}>
+                            <ProgressBar percent={81} />
+                        </TableCell>
+                        <TableCell width={220} align="center">
+                            1등급
+                        </TableCell>
+                    </TableRow>
                 </TableBody>
             </Table>
         </TableContainer>

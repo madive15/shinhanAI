@@ -27,6 +27,9 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 
 import Checkbox from "@mui/material/Checkbox";
 import FormGroup from "@mui/material/FormGroup";
+import FormControl from "@mui/material/FormControl";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -588,68 +591,97 @@ const MuiPopup: React.FC<IPageProps> = () => {
                                 <Search />
                             </IconButton>
                         </div>
-                        <FormGroup row className="filter-chk">
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="전체"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㄱ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㄴ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㄷ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㄹ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅁ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅅ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅇ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅈ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅊ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅋ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅌ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅍ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="ㅎ"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label="기타"
-                            />
-                        </FormGroup>
+                        <FormControl>
+                            <RadioGroup
+                                className="filter-radio"
+                                row
+                                aria-labelledby="radio-group"
+                                name="group2"
+                                value={radioGroup}
+                                onChange={radioGroupChange}
+                            >
+                                <FormControlLabel
+                                    value="전체"
+                                    control={<Radio />}
+                                    label="전체"
+                                />
+                                <FormControlLabel
+                                    value="ㄱ"
+                                    control={<Radio />}
+                                    label="ㄱ"
+                                />
+                                <FormControlLabel
+                                    value="ㄴ"
+                                    control={<Radio />}
+                                    label="ㄴ"
+                                />
+                                <FormControlLabel
+                                    value="ㄷ"
+                                    control={<Radio />}
+                                    label="ㄷ"
+                                />
+                                <FormControlLabel
+                                    value="ㄹ"
+                                    control={<Radio />}
+                                    label="ㄹ"
+                                />
+                                <FormControlLabel
+                                    value="ㅁ"
+                                    control={<Radio />}
+                                    label="ㅁ"
+                                />
+                                <FormControlLabel
+                                    value="ㅂ"
+                                    control={<Radio />}
+                                    label="ㅂ"
+                                />
+                                <FormControlLabel
+                                    value="ㅅ"
+                                    control={<Radio />}
+                                    label="ㅅ"
+                                />
+                                <FormControlLabel
+                                    value="ㅇ"
+                                    control={<Radio />}
+                                    label="ㅇ"
+                                />
+                                <FormControlLabel
+                                    value="ㅈ"
+                                    control={<Radio />}
+                                    label="ㅈ"
+                                />
+                                <FormControlLabel
+                                    value="ㅊ"
+                                    control={<Radio />}
+                                    label="ㅊ"
+                                />
+                                <FormControlLabel
+                                    value="ㅋ"
+                                    control={<Radio />}
+                                    label="ㅋ"
+                                />
+                                <FormControlLabel
+                                    value="ㅌ"
+                                    control={<Radio />}
+                                    label="ㅌ"
+                                />
+                                <FormControlLabel
+                                    value="ㅍ"
+                                    control={<Radio />}
+                                    label="ㅍ"
+                                />
+                                <FormControlLabel
+                                    value="ㅎ"
+                                    control={<Radio />}
+                                    label="ㅎ"
+                                />
+                                <FormControlLabel
+                                    value="그 외"
+                                    control={<Radio />}
+                                    label="그 외"
+                                />
+                            </RadioGroup>
+                        </FormControl>
                         <div className="tag-fillter-box">
                             <span>ㄱ</span>
                             <FormGroup row className="filter-chk">

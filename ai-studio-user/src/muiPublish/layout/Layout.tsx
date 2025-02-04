@@ -10,6 +10,8 @@ import MenuContainer from "~/muiPublish/layout/MenuContainer";
 import TargetExtraction from "~/muiPublish/page/targetExtraction/TargetExtraction";
 import Main from "~/muiPublish/page/main/Main";
 import SingleView from "~/muiPublish/page/singleView/SingleView";
+import SingleViewOffice from "~/muiPublish/page/singleViewOffice/SingleViewOffice";
+// import SingleView from "~/muiPublish/page/singleView/SingleView";
 import Ocr from "~/muiPublish/page/ocr/Ocr";
 import OcrVerify from "~/muiPublish/page/ocr/OcrVerify";
 import TaskList from "~/muiPublish/page/task/TaskList";
@@ -86,6 +88,9 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "싱글뷰" && (
                         <SingleView pageName={props.pageName} />
+                    )}
+                    {props.pageName === "싱글뷰 영업점" && (
+                        <SingleViewOffice pageName={props.pageName} />
                     )}
                     {props.pageName === "AI-OCR" && (
                         <Ocr pageName={props.pageName} />

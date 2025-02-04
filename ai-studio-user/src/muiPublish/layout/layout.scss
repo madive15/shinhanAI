@@ -665,6 +665,19 @@
                 background-color: rgba(0, 70, 255, 0.1);
             }
         }
+        &.rowspan-table {
+            tr {
+                &:hover {
+                    background-color: transparent;
+                    td {
+                        background-color: rgba(0, 70, 255, 0.1);
+                        &.row-span-first {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
         thead {
             tr {
                 &:nth-child(2) {
@@ -702,6 +715,11 @@
             border-bottom: 1px solid var(--border-color3);
             a {
                 color: #0046ff;
+            }
+            strong {
+                a {
+                    color: var(--font-color1);
+                }
             }
             .badge {
                 margin: 0 0 0 4px;

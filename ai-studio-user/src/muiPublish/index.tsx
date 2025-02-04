@@ -49,6 +49,19 @@ const pubList = [
         etc: "",
     },
     {
+        id: "UI_USR_0400",
+        name: "싱글뷰-기업",
+        link: "/muipublish/singleCorporation",
+        etc: "",
+    },
+    {
+        id: "UI_USR_0410",
+        name: "싱글뷰-영업점",
+        link: "/muipublish/singleOffice",
+        etc: "",
+    },
+
+    {
         id: "6",
         name: "ocr",
         link: "/muipublish/ocr",

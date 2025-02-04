@@ -1284,7 +1284,8 @@ export default function VerticalTabs() {
                     <Hash value="#해시태그" />
                     <Hash value="#해시태그" del={true} />
                     <Hash value="#해시태그" type="type2" />
-                    <Hash value="+5" type="type2" />
+                    <Hash value="#급여이체" type="type3" />
+                    <Hash value="+5" type="type3 bg" />
                 </div>
             </TabPanel>
             {/* SVG */}

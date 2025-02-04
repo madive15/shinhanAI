@@ -5,13 +5,11 @@ import React, { useState, useEffect, useRef } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import Tab from "~/muiPublish/components/Tab";
 import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNavTabs";
-import IndiviCompany from "~/muiPublish/components/indiviCompany/IndiviCompany";
-import Category from "~/muiPublish/components/category/Category";
 import NoData from "~/muiPublish/components/noData/noData";
 import Badge from "~/muiPublish/components/Badge";
-import SingleViewBox from "~/muiPublish/page/singleView/SingleViewBox";
-import SingleViewTable from "~/muiPublish/page/singleView/SingleViewTable";
-import SingleViewTable2 from "~/muiPublish/page/singleView/SingleViewTable2";
+import SingleViewOfficeBox from "~/muiPublish/page/singleViewOffice/SingleViewOfficeBox";
+import SingleViewOfficeTable from "~/muiPublish/page/singleViewOffice/SingleViewOfficeTable";
+import SingleViewOfficeTable2 from "~/muiPublish/page/singleViewOffice/SingleViewOfficeTable2";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -27,11 +25,11 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * user-front: SingleView
- * SingleView page
+ * user-front: SingleViewOffice
+ * SingleViewOffice page
  * 싱글뷰
  */
-const SingleView: React.FC<IPageProps> = (props) => {
+const SingleViewOffice: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -55,77 +53,39 @@ const SingleView: React.FC<IPageProps> = (props) => {
                     <SubTitleNavTabs
                         subTabs={false}
                         pageName={props.pageName}
-                        search={true}
+                        search={false}
                     />
                     <div className="scroll-content-area single-view">
-                        <SingleViewBox />
-                        {/* <Category /> */}
+                        <div className="single-office-name">
+                            <strong>{"서소문"}</strong> 지점
+                        </div>
+                        <SingleViewOfficeBox />
                         <div className="contents-tab type2">
                             <button
                                 type="button"
                                 className={activeTab === 0 ? "active" : ""}
                                 onClick={() => setActiveTab(0)}
                             >
-                                AI 추천
+                                실적
                             </button>
                             <button
                                 type="button"
                                 className={activeTab === 1 ? "active" : ""}
                                 onClick={() => setActiveTab(1)}
                             >
-                                상품
+                                점주권
                             </button>
                             <button
                                 type="button"
                                 className={activeTab === 2 ? "active" : ""}
                                 onClick={() => setActiveTab(2)}
                             >
-                                서비스
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 3 ? "active" : ""}
-                                onClick={() => setActiveTab(3)}
-                            >
-                                고객 성향
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 4 ? "active" : ""}
-                                onClick={() => setActiveTab(4)}
-                            >
-                                건정성
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 5 ? "active" : ""}
-                                onClick={() => setActiveTab(5)}
-                            >
-                                내부통제
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 6 ? "active" : ""}
-                                onClick={() => setActiveTab(6)}
-                            >
-                                고객관리
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 7 ? "active" : ""}
-                                onClick={() => setActiveTab(7)}
-                            >
-                                마케팅
+                                트렌드
                             </button>
                         </div>
-                        {activeTab === 0 && <SingleViewTable />}
-                        {activeTab === 1 && <SingleViewTable2 />}
-                        {activeTab === 2 && <div>3</div>}
-                        {activeTab === 3 && <div>4</div>}
-                        {activeTab === 4 && <div>5</div>}
-                        {activeTab === 5 && <div>6</div>}
-                        {activeTab === 6 && <div>7</div>}
-                        {activeTab === 7 && <div>8</div>}
+                        {activeTab === 0 && <SingleViewOfficeTable />}
+                        {activeTab === 1 && <SingleViewOfficeTable2 />}
+                        {activeTab === 2 && <SingleViewOfficeTable2 />}
                         {/* <div className="no-data type2">
                             <div className="no-data-box type1">
                                 <p>
@@ -161,4 +121,4 @@ const SingleView: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default SingleView;
+export default SingleViewOffice;

@@ -73,6 +73,12 @@ export const pathKeys = {
     muiSingle(): string {
         return `${pathKeys.root}muipublish/single`; // 싱글뷰
     },
+    muiSingleCorporation(): string {
+        return `${pathKeys.root}muipublish/singleCorporation`; // 싱글뷰 기업
+    },
+    muiSingleOffice(): string {
+        return `${pathKeys.root}muipublish/singleOffice`; // 싱글뷰 영업
+    },
     muiOcr(): string {
         return `${pathKeys.root}muipublish/ocr`; // ocr
     },
