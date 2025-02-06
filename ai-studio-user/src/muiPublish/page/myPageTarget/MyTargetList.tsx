@@ -8,6 +8,7 @@ import SubTitleNavTabs from "~/muiPublish/components/subTitleNavTabs/SubTitleNav
 import NoData from "~/muiPublish/components/noData/noData";
 import MyTargetListTable from "~/muiPublish/page/myPageTarget/MyTargetListTable";
 import MyTargetIndiviCompany from "~/muiPublish/page/myPageTarget/MyTargetIndiviCompany";
+import MyTargetSearch from "~/muiPublish/page/myPageTarget/MyTargetSearch";
 
 // need style
 import "~/muiPublish/layout/layout.scss";
@@ -59,6 +60,7 @@ const MyTargetList: React.FC<IPageProps> = (props) => {
                     />
                     <div className="scroll-content-area ">
                         <MyTargetIndiviCompany />
+                        <MyTargetSearch />
                         <MyTargetListTable />
                     </div>
                 </div>

@@ -49,13 +49,6 @@ const SearchTable2: React.FC<IPageProps> = (props) => {
     }, []);
     return (
         <div className="notice-list-table">
-            <div className="between-box">
-                <div className="left">
-                    <h3>검색 결과</h3>
-                    <span className="sum">총 00건</span>
-                </div>
-                <div className="right"></div>
-            </div>
             <TableContainer className="table-content">
                 <Table className="table-defult-style">
                     <TableHead>

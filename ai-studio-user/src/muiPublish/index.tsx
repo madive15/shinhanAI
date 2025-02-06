@@ -31,7 +31,7 @@ const pubList = [
         etc: "",
     },
     {
-        id: "3",
+        id: "UI_USR_0010",
         name: "메인",
         link: "/muipublish/main",
         etc: "",
@@ -62,13 +62,13 @@ const pubList = [
     },
 
     {
-        id: "6",
+        id: "UI_USR_0420",
         name: "ocr",
         link: "/muipublish/ocr",
         etc: "",
     },
     {
-        id: "6",
+        id: "UI_USR_0430",
         name: "ocr검증",
         link: "/muipublish/ocrveri",
         etc: "",

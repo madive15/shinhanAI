@@ -46,17 +46,19 @@ const OcrSearch: React.FC<IPageProps> = (props) => {
                 <div className="search-item">
                     <span className="tit">기간</span>
                     <div className="date-picker-area">
-                        <DatePicker
-                            selectsRange={true}
-                            startDate={rangeStartDate}
-                            endDate={rangeEndDate}
-                            onChange={(update: any) => {
-                                setDateRange(update);
-                            }}
-                            // isClearable={true}
-                            dateFormat="yyyy-MM-dd"
-                            locale={ko}
-                        />
+                        <div className="picker-area">
+                            <DatePicker
+                                selectsRange={true}
+                                startDate={rangeStartDate}
+                                endDate={rangeEndDate}
+                                onChange={(update: any) => {
+                                    setDateRange(update);
+                                }}
+                                // isClearable={true}
+                                dateFormat="yyyy-MM-dd"
+                                locale={ko}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="search-item">

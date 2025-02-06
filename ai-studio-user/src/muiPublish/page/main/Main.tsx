@@ -274,6 +274,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                                     <Badge
                                                         value="중분류중분류중분류"
                                                         color="navy "
+                                                        classifi={true}
                                                     />
                                                 </div>
                                                 <p className="card-box-tit">
@@ -312,6 +313,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                                     <Badge
                                                         value="중분류"
                                                         color="navy "
+                                                        classifi={true}
                                                     />
                                                 </div>
                                                 <p className="card-box-tit">
@@ -350,6 +352,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                                     <Badge
                                                         value="중분류"
                                                         color="navy "
+                                                        classifi={true}
                                                     />
                                                 </div>
                                                 <p className="card-box-tit">

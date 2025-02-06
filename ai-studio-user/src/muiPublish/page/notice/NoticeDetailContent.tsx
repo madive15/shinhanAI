@@ -83,7 +83,7 @@ const NoticeDetailContent: React.FC<IPageProps> = (props) => {
                     </Button>
                 </div>
             </div>
-            <div className="board-comment-wrap">
+            {/* <div className="board-comment-wrap">
                 <div className="comment-top">
                     댓글 <strong>총 {"12"}개</strong>
                 </div>
@@ -117,12 +117,12 @@ const NoticeDetailContent: React.FC<IPageProps> = (props) => {
                                     <textarea name="" id=""></textarea>
                                 </div>
                                 <div className="btn-wrap">
-                                    {/* <Button
+                                    <Button
                                         variant="sub1"
                                         onClick={modifyClose}
                                     >
                                         취소
-                                    </Button> */}
+                                    </Button>
                                     <Button variant="sub2">댓글 수정</Button>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@ const NoticeDetailContent: React.FC<IPageProps> = (props) => {
                     </div>
                     <Button variant="sub2">댓글 등록</Button>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

@@ -29,7 +29,7 @@ const TargetSelectInfor: React.FC<IPageProps> = (props) => {
                     <Hash value="#TAG" type="type2" />
                     <Hash value="#TAG" type="type2" />
                     <Hash value="#TAG" type="type2" />
-                    <Hash value="+5" type="type2" />
+                    <Hash value="+5" type="type2 bg" />
                 </div>
             </div>
         </>

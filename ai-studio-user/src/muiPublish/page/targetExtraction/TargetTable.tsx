@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Loading from "~/muiPublish/loading/Loading";
 import TargetTableRecom from "~/muiPublish/page/targetExtraction/TargetTableRecom";
 import TargetTablePopul from "~/muiPublish/page/targetExtraction/TargetTablePopul";
-
+import Button from "@mui/material/Button";
 // need style
 
 // Props type
@@ -38,7 +38,14 @@ const TargetTable: React.FC<IPageProps> = (props) => {
         <>
             <div className="table-tit">추천 리스트</div>
             <TargetTableRecom />
-            <div className="table-tit">인기 리스트</div>
+            <div className="between-box">
+                <div className="left">
+                    <div className="table-tit">인기 리스트</div>
+                </div>
+                <div className="right">
+                    <Button variant="small">더보기</Button>
+                </div>
+            </div>
             <TargetTablePopul />
         </>
     );

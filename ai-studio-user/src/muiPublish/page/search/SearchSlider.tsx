@@ -115,8 +115,9 @@ const SearchSlider: React.FC<IPageProps> = (props) => {
                                                     color="black "
                                                 />
                                                 <Badge
-                                                    value="중분류"
+                                                    value="중분류중분류중분류중분류"
                                                     color="navy "
+                                                    classifi={true}
                                                 />
                                                 <Badge value="N" color="red" />
                                             </div>
@@ -144,7 +145,7 @@ const SearchSlider: React.FC<IPageProps> = (props) => {
                                                     />
                                                     <Hash
                                                         value="+5"
-                                                        type="type2"
+                                                        type="type2 bg"
                                                     />
                                                 </div>
                                                 <IconButton className="ico-circle20">

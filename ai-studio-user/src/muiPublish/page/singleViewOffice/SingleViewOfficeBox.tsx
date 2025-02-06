@@ -104,6 +104,14 @@ const SingleViewOfficeBox: React.FC<IPageProps> = (props) => {
                     </div>
                 </div>
             </div>
+            {/* <div className="no-target">
+                <p>
+                    추출할 타겟리스트가 없습니다.
+                    <br />
+                    최근 추출한 타겟 리스트를 확인 할까요?
+                </p>
+                <Button variant="sub1">타겟 추출 내역</Button>
+            </div> */}
         </div>
     );
 };

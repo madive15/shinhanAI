@@ -679,6 +679,85 @@ export default function VerticalTabs() {
                         </RadioGroup>
                     </FormControl>
                 </div>
+                <br />
+                <div>
+                    <FormControl>
+                        <RadioGroup
+                            className="filter-radio type2"
+                            row
+                            aria-labelledby="radio-group"
+                            name="group2"
+                            value={radioGroup2}
+                            onChange={radioGroupChange2}
+                        >
+                            <FormControlLabel
+                                value="전체"
+                                control={<Radio />}
+                                label="전체"
+                            />
+                            <FormControlLabel
+                                value="신용대출(대면)"
+                                control={<Radio />}
+                                label="신용대출(대면)"
+                            />
+                            <FormControlLabel
+                                value="신용대출(비대면)"
+                                control={<Radio />}
+                                label="신용대출(비대면)"
+                            />
+                            <FormControlLabel
+                                value="자동차대출"
+                                control={<Radio />}
+                                label="자동차대출"
+                            />
+                            <FormControlLabel
+                                value="서민금융"
+                                control={<Radio />}
+                                label="서민금융"
+                            />
+                            <FormControlLabel
+                                value="담보대출"
+                                control={<Radio />}
+                                label="담보대출"
+                            />
+                            <FormControlLabel
+                                value="기금재원대출"
+                                control={<Radio />}
+                                label="기금재원대출"
+                            />
+                            <FormControlLabel
+                                value="가계여신기타대출"
+                                control={<Radio />}
+                                label="가계여신기타대출"
+                            />
+                            <FormControlLabel
+                                value="신택대출"
+                                control={<Radio />}
+                                label="신택대출"
+                            />
+                            <FormControlLabel
+                                value="일반자금대출"
+                                control={<Radio />}
+                                label="일반자금대출"
+                            />
+                            <FormControlLabel
+                                value="전세대출"
+                                control={<Radio />}
+                                label="전세대출"
+                            />
+                            <FormControlLabel
+                                value="주택담보대출"
+                                control={<Radio />}
+                                label="주택담보대출"
+                            />
+                            <FormControlLabel
+                                value="특별대환대출"
+                                control={<Radio />}
+                                label="특별대환대출"
+                            />
+                        </RadioGroup>
+                    </FormControl>
+                </div>
             </TabPanel>
             {/* 텍스트 에어리어 */}
             <TabPanel value={value} index={6}>
@@ -1156,82 +1235,103 @@ export default function VerticalTabs() {
             <TabPanel value={value} index={10}>
                 <p>range픽커</p>
                 <div className="date-picker-area">
-                    <DatePicker
-                        selectsRange={true}
-                        startDate={rangeStartDate}
-                        endDate={rangeEndDate}
-                        onChange={(update: any) => {
-                            setDateRange(update);
-                        }}
-                        // isClearable={true}
-                        dateFormat="yyyy-MM-dd"
-                        locale={ko}
-                    />
-                    <div className="date-month-btn">
-                        <button type="button" className="active">
-                            3개월
-                        </button>
-                        <button type="button">6개월</button>
-                        <button type="button">1년</button>
-                        <button type="button">3년</button>
-                        <button type="button">5년</button>
+                    <div className="picker-area">
+                        <DatePicker
+                            selectsRange={true}
+                            startDate={rangeStartDate}
+                            endDate={rangeEndDate}
+                            onChange={(update: any) => {
+                                setDateRange(update);
+                            }}
+                            // isClearable={true}
+                            dateFormat="yyyy-MM-dd"
+                            locale={ko}
+                        />
                     </div>
-                </div>
-                <br />
-                <div className="date-picker-area">
-                    <DatePicker
-                        selected={startDate}
-                        onChange={(date: any) => setStartDate(date)}
-                        dropdownMode="select"
-                        dateFormat="yyyy-MM-dd"
-                        locale={ko}
-                        placeholderText="기간을 선택해주세요"
-                    />
                     <div className="date-month-btn">
                         <span className="date-ym-radio">
                             <input type="radio" name="date1" id="3m" />
-                            <label htmlFor="3m">3개월</label>
+                            <label htmlFor="3m">7일</label>
                         </span>
                         <span className="date-ym-radio">
                             <input type="radio" name="date1" id="6m" />
-                            <label htmlFor="6m">6개월</label>
+                            <label htmlFor="6m">15일</label>
                         </span>
                         <span className="date-ym-radio">
                             <input type="radio" name="date1" id="1y" />
-                            <label htmlFor="1y">1년</label>
+                            <label htmlFor="1y">1개월</label>
                         </span>
                         <span className="date-ym-radio">
                             <input type="radio" name="date1" id="3y" />
-                            <label htmlFor="3y">3년</label>
+                            <label htmlFor="3y">3개월</label>
                         </span>
                         <span className="date-ym-radio">
                             <input type="radio" name="date1" id="5y" />
-                            <label htmlFor="5y">5년</label>
+                            <label htmlFor="5y">전체</label>
                         </span>
                     </div>
                 </div>
                 <br />
                 <div className="date-picker-area">
-                    <DatePicker
-                        selected={startDate}
-                        onChange={(date: any) => setStartDate(date)}
-                        dropdownMode="select"
-                        dateFormat="yyyy-MM-dd"
-                        locale={ko}
-                        placeholderText="기간을 선택해주세요"
-                    />
+                    <div className="picker-area">
+                        <DatePicker
+                            selected={startDate}
+                            onChange={(date: any) => setStartDate(date)}
+                            dropdownMode="select"
+                            dateFormat="yyyy-MM-dd"
+                            locale={ko}
+                            placeholderText="기간을 선택해주세요"
+                        />
+                    </div>
+                    <div className="date-month-btn">
+                        <span className="date-ym-radio">
+                            <input type="radio" name="date1" id="3m" />
+                            <label htmlFor="3m">7일</label>
+                        </span>
+                        <span className="date-ym-radio">
+                            <input type="radio" name="date1" id="6m" />
+                            <label htmlFor="6m">15일</label>
+                        </span>
+                        <span className="date-ym-radio">
+                            <input type="radio" name="date1" id="1y" />
+                            <label htmlFor="1y">1개월</label>
+                        </span>
+                        <span className="date-ym-radio">
+                            <input type="radio" name="date1" id="3y" />
+                            <label htmlFor="3y">3개월</label>
+                        </span>
+                        <span className="date-ym-radio">
+                            <input type="radio" name="date1" id="5y" />
+                            <label htmlFor="5y">전체</label>
+                        </span>
+                    </div>
                 </div>
                 <br />
                 <div className="date-picker-area">
-                    <DatePicker
-                        selected={startDate}
-                        onChange={(date: any) => setStartDate(date)}
-                        dropdownMode="select"
-                        dateFormat="yyyy-MM-dd"
-                        locale={ko}
-                        placeholderText="기간을 선택해주세요"
-                        disabled
-                    />
+                    <div className="picker-area">
+                        <DatePicker
+                            selected={startDate}
+                            onChange={(date: any) => setStartDate(date)}
+                            dropdownMode="select"
+                            dateFormat="yyyy-MM-dd"
+                            locale={ko}
+                            placeholderText="기간을 선택해주세요"
+                        />
+                    </div>
+                </div>
+                <br />
+                <div className="date-picker-area">
+                    <div className="picker-area">
+                        <DatePicker
+                            selected={startDate}
+                            onChange={(date: any) => setStartDate(date)}
+                            dropdownMode="select"
+                            dateFormat="yyyy-MM-dd"
+                            locale={ko}
+                            placeholderText="기간을 선택해주세요"
+                            disabled
+                        />
+                    </div>
                 </div>
             </TabPanel>
             {/* 뱃지 */}
@@ -1247,7 +1347,11 @@ export default function VerticalTabs() {
                 <div className="badge-wrap">
                     <Badge value="반응률" color="green" />
                     <Badge value="인기" color="blue" />
-                    <Badge value="중분류" color="navy " />
+                    <Badge
+                        value="중분류중분류중분류중분류"
+                        color="navy"
+                        classifi={true}
+                    />
                     <Badge value="추천" color="black " />
                     <Badge value="지수" color="orange" />
                     <Badge value="필터" color="purple" />
@@ -1284,8 +1388,8 @@ export default function VerticalTabs() {
                     <Hash value="#해시태그" />
                     <Hash value="#해시태그" del={true} />
                     <Hash value="#해시태그" type="type2" />
+                    <Hash value="+5" type="type2 bg" />
                     <Hash value="#급여이체" type="type3" />
-                    <Hash value="+5" type="type3 bg" />
                 </div>
             </TabPanel>
             {/* SVG */}
@@ -1328,7 +1432,10 @@ export default function VerticalTabs() {
                             </div>
                             <div className="badge-wrap">
                                 <Badge value="전략" color="black " />
-                                <Badge value="중분류" color="navy " />
+                                <Badge
+                                    value="중분류중분류중분류중분류"
+                                    color="navy "
+                                />
                                 <Badge value="N" color="red" />
                             </div>
                             <p className="card-box-tit">

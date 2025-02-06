@@ -9,9 +9,9 @@ import IndiviCompany from "~/muiPublish/components/indiviCompany/IndiviCompany";
 import Category from "~/muiPublish/components/category/Category";
 import NoData from "~/muiPublish/components/noData/noData";
 import Badge from "~/muiPublish/components/Badge";
-import SingleViewBox from "~/muiPublish/page/singleView/SingleViewBox";
-import SingleViewTable from "~/muiPublish/page/singleView/SingleViewTable";
-import SingleViewTable2 from "~/muiPublish/page/singleView/SingleViewTable2";
+import SingleViewCorporBox from "~/muiPublish/page/singleViewCorpor/SingleViewCorporBox";
+import SingleViewCorporTable from "~/muiPublish/page/singleViewCorpor/SingleViewCorporTable";
+import SingleViewCorporTable2 from "~/muiPublish/page/singleViewCorpor/SingleViewCorporTable2";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -27,11 +27,11 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * user-front: SingleView
- * SingleView page
+ * user-front: SingleViewCorpor
+ * SingleViewCorpor page
  * 싱글뷰
  */
-const SingleView: React.FC<IPageProps> = (props) => {
+const SingleViewCorpor: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -58,8 +58,7 @@ const SingleView: React.FC<IPageProps> = (props) => {
                         search={true}
                     />
                     <div className="scroll-content-area single-view">
-                        <SingleViewBox />
-                        {/* <Category /> */}
+                        <SingleViewCorporBox />
                         <div className="contents-tab type2">
                             <button
                                 type="button"
@@ -73,59 +72,19 @@ const SingleView: React.FC<IPageProps> = (props) => {
                                 className={activeTab === 1 ? "active" : ""}
                                 onClick={() => setActiveTab(1)}
                             >
-                                상품
+                                건전성
                             </button>
                             <button
                                 type="button"
                                 className={activeTab === 2 ? "active" : ""}
                                 onClick={() => setActiveTab(2)}
                             >
-                                서비스
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 3 ? "active" : ""}
-                                onClick={() => setActiveTab(3)}
-                            >
-                                고객 성향
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 4 ? "active" : ""}
-                                onClick={() => setActiveTab(4)}
-                            >
-                                건정성
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 5 ? "active" : ""}
-                                onClick={() => setActiveTab(5)}
-                            >
-                                내부통제
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 6 ? "active" : ""}
-                                onClick={() => setActiveTab(6)}
-                            >
-                                고객관리
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 7 ? "active" : ""}
-                                onClick={() => setActiveTab(7)}
-                            >
-                                마케팅
+                                RM OneTeam
                             </button>
                         </div>
-                        {activeTab === 0 && <SingleViewTable />}
-                        {activeTab === 1 && <SingleViewTable2 />}
+                        {activeTab === 0 && <SingleViewCorporTable />}
+                        {activeTab === 1 && <SingleViewCorporTable2 />}
                         {activeTab === 2 && <div>3</div>}
-                        {activeTab === 3 && <div>4</div>}
-                        {activeTab === 4 && <div>5</div>}
-                        {activeTab === 5 && <div>6</div>}
-                        {activeTab === 6 && <div>7</div>}
-                        {activeTab === 7 && <div>8</div>}
                         {/* <div className="no-data type2">
                             <div className="no-data-box type1">
                                 <p>
@@ -145,12 +104,12 @@ const SingleView: React.FC<IPageProps> = (props) => {
                         {/* <div className="no-marketing">
                             <div className="no-marketing-box">
                                 <strong>
-                                    마케딩 활용에 동의하지 않으시거나 <br/>
-                                    데이터가 없는 고객님입니다.
+                                    마케팅 활용에 동의하지 않으신 고객님입니다.
                                 </strong>
                                 <p>
-                                    오늘 마케팅 활용 동의를 받으시면 <br/>
-                                    내일부터 고객님의 정보 확인이 가능합니다.
+                                    오늘 동의를 받으면, <br />
+                                    내일 부터 고객님의 정보를 확인하실 수
+                                    있어요.
                                 </p>
                             </div>
                         </div> */}
@@ -161,4 +120,4 @@ const SingleView: React.FC<IPageProps> = (props) => {
     );
 };
 
-export default SingleView;
+export default SingleViewCorpor;

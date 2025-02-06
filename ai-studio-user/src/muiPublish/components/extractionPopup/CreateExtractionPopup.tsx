@@ -14,7 +14,14 @@ import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import Checkbox from "@mui/material/Checkbox";
-import { Table, TableBody, TableCell, TableContainer, TableRow, Paper } from "@mui/material";
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableRow,
+    Paper,
+} from "@mui/material";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControl from "@mui/material/FormControl";
@@ -64,7 +71,8 @@ const CreateExtractionPopup = (props: any) => {
         setRadioGroup3((event.target as HTMLInputElement).value);
     };
 
-    const [radioGroup4, setRadioGroup4] = useState("6개월 수신평잔 20만원 이상");
+    const [radioGroup4, setRadioGroup4] =
+        useState("6개월 수신평잔 20만원 이상");
     const radioGroupChange4 = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup4((event.target as HTMLInputElement).value);
     };
@@ -82,7 +90,11 @@ const CreateExtractionPopup = (props: any) => {
     const [monthType, setMonthType] = useState(false); // true : 24개월, falce :12개월
 
     return (
-        <Dialog className="layer-box l-large" open={popupStauts} onClose={popupClose}>
+        <Dialog
+            className="layer-box l-large"
+            open={popupStauts}
+            onClose={popupClose}
+        >
             <DialogTitle>{"모델 생성"}</DialogTitle>
             <DialogContent className="create-extraction-popup">
                 <p className="popup-title">신용카드</p>
@@ -91,7 +103,7 @@ const CreateExtractionPopup = (props: any) => {
                     <Hash value="#TAG" type="type2" />
                     <Hash value="#TAG" type="type2" />
                     <Hash value="#TAG" type="type2" />
-                    <Hash value="+5" type="type2" />
+                    <Hash value="+5" type="type2 bg" />
                 </div>
 
                 <TableContainer className="row-table" component={Paper}>
@@ -110,7 +122,14 @@ const CreateExtractionPopup = (props: any) => {
                                     >
                                         <FormControlLabel
                                             value="신규"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="신규"
                                         />
                                     </RadioGroup>
@@ -129,17 +148,38 @@ const CreateExtractionPopup = (props: any) => {
                                     >
                                         <FormControlLabel
                                             value="1개월"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="1개월"
                                         />
                                         <FormControlLabel
                                             value="2개월"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="2개월"
                                         />
                                         <FormControlLabel
                                             value="3개월"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="3개월"
                                         />
                                     </RadioGroup>
@@ -158,17 +198,38 @@ const CreateExtractionPopup = (props: any) => {
                                     >
                                         <FormControlLabel
                                             value="거래기간 1개월 이상"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="거래기간 1개월 이상"
                                         />
                                         <FormControlLabel
                                             value="거래기간 3개월 이상"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="거래기간 3개월 이상"
                                         />
                                         <FormControlLabel
                                             value="거래기간 6개월 이상"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="거래기간 6개월 이상"
                                         />
                                     </RadioGroup>
@@ -187,29 +248,59 @@ const CreateExtractionPopup = (props: any) => {
                                     >
                                         <FormControlLabel
                                             value="6개월 수신평잔 20만원 이상"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="6개월 수신평잔 20만원 이상"
                                         />
                                         <FormControlLabel
                                             value="6개월 수신평잔 40만원 이상"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="6개월 수신평잔 40만원 이상"
                                         />
                                         <FormControlLabel
                                             value="6개월 수신평잔 80만원 이상"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="6개월 수신평잔 80만원 이상"
                                         />
                                         <FormControlLabel
                                             value="6개월 수신평잔 100만원 이상"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="6개월 수신평잔 100만원 이상"
                                         />
                                     </RadioGroup>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell component="th">분류 모델 종류</TableCell>
+                                <TableCell component="th">
+                                    분류 모델 종류
+                                </TableCell>
                                 <TableCell colSpan={3}>
                                     <RadioGroup
                                         className="radio-group"
@@ -221,37 +312,75 @@ const CreateExtractionPopup = (props: any) => {
                                     >
                                         <FormControlLabel
                                             value="LGBM"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="LGBM"
                                         />
                                         <FormControlLabel
                                             value="XGBOOST"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="XGBOOST"
                                         />
                                         <FormControlLabel
                                             value="CATBOOST"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="CATBOOST"
                                         />
                                         <FormControlLabel
                                             value="DNN"
-                                            control={<Radio checkedIcon={<RadioChecked />} icon={<RadioDefault />} />}
+                                            control={
+                                                <Radio
+                                                    checkedIcon={
+                                                        <RadioChecked />
+                                                    }
+                                                    icon={<RadioDefault />}
+                                                />
+                                            }
                                             label="DNN"
                                         />
                                     </RadioGroup>
                                 </TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell component="th">중요도 설정</TableCell>
+                                <TableCell component="th">
+                                    중요도 설정
+                                </TableCell>
                                 <TableCell colSpan={3}>
-                                    <Importance monthType={monthType} setMonthType={setMonthType} />
+                                    <Importance
+                                        monthType={monthType}
+                                        setMonthType={setMonthType}
+                                    />
                                 </TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell component="th">학습 형태 분할</TableCell>
+                                <TableCell component="th">
+                                    학습 형태 분할
+                                </TableCell>
                                 <TableCell colSpan={3}>
-                                    <LearningType monthType={monthType} setMonthType={setMonthType} />
+                                    <LearningType
+                                        monthType={monthType}
+                                        setMonthType={setMonthType}
+                                    />
                                 </TableCell>
                             </TableRow>
                         </TableBody>

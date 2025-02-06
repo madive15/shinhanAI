@@ -105,7 +105,7 @@ const TaskDetailTable: React.FC<IPageProps> = (props) => {
                             <TableCell width={144} align="center">
                                 일시
                             </TableCell>
-                            <TableCell width={1616} align="left">
+                            <TableCell width={1616} align="center">
                                 결과
                             </TableCell>
                         </TableRow>

@@ -124,7 +124,11 @@
     width: 100%;
     display: flex;
     align-items: center;
-
+    gap: 8px;
+    .picker-area {
+        max-width: 480px;
+        width: 100%;
+    }
     .react-datepicker {
         border-color: var(--color1);
         padding: 16px;
@@ -196,9 +200,9 @@
         max-width: 480px;
         width: 100%;
         background-color: var(--color2);
-        & + .date-month-btn {
-            margin-left: 8px;
-        }
+        // & + .date-month-btn {
+        //     margin-left: 8px;
+        // }
     }
     .react-datepicker__input-container {
         height: 38px;
@@ -311,14 +315,14 @@
     .date-month-btn {
         min-width: 300px;
         button {
-            border-radius: 100px;
+            border-radius: 12px;
             min-width: 56px;
             padding: 7px 12px;
-            border: 1px solid var(--color1);
+            border: 1px solid var(--font-color3);
             background-color: var(--color2);
             color: var(--font-color3);
-            font-size: 14px;
-            line-height: 21px;
+            font-size: 13px;
+            line-height: 16px;
             letter-spacing: -0.35px;
             & + button {
                 margin-left: 4px;
@@ -331,18 +335,18 @@
     }
     .date-ym-radio {
         label {
-            border-radius: 100px;
+            border-radius: 12px;
             min-width: 56px;
-            height: 36px;
+            height: 30px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 0px 12px;
-            border: 1px solid var(--color1);
+            border: 1px solid var(--font-color3);
             background-color: var(--color2);
             color: var(--font-color3);
-            font-size: 14px;
-            line-height: 21px;
+            font-size: 13px;
+            line-height: 16px;
             letter-spacing: -0.35px;
             cursor: pointer;
             & + label {
@@ -364,6 +368,7 @@
                 & + label {
                     background-color: var(--color1);
                     color: var(--color2);
+                    border-color: var(--color1);
                     box-shadow: 0px 2px 4px 0px rgba(0, 70, 255, 0.25);
                 }
             }
@@ -391,7 +396,13 @@
     letter-spacing: -0.3px;
     overflow: hidden;
     text-overflow: ellipsis;
-
+    &.classifi {
+        max-width: 89px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        line-height: 22px;
+    }
     &.gray {
         color: var(--color2);
         background-color: var(--font-color2);
@@ -467,6 +478,28 @@
             border-color: var(--sub-color3);
         }
     }
+    &:hover {
+        + .badge-pop {
+            display: block;
+        }
+    }
+}
+.badge-box {
+    position: relative;
+    display: inline-flex;
+}
+.badge-pop {
+    background-color: var(--color2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 19.5px;
+    letter-spacing: -0.325px;
+    position: absolute;
+    display: none;
+    word-break: keep-all;
+    top: 28px;
+    left: 0;
 }
 .badge-wrap {
     display: flex;
@@ -513,7 +546,7 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
     }
-    &.type2 {
+    &.type3 {
         padding: 4px 8px;
         border-radius: 20px;
         background-color: rgba(0, 70, 255, 0.1);
@@ -527,7 +560,7 @@
             color: var(--color2);
         }
     }
-    &.type3 {
+    &.type2 {
         border-radius: 20px;
         padding: 0 6px;
         border: 1px solid var(--color1);
@@ -714,6 +747,12 @@
             background-color: var(--color1);
             border: 1px solid var(--color1);
             color: var(--color2);
+        }
+    }
+    &.type2 {
+        .MuiTypography-root {
+            border-radius: 100px;
+            border: 1px solid var(--border-color4);
         }
     }
     .MuiTypography-root {
@@ -1211,6 +1250,12 @@
             letter-spacing: -0.3px;
         }
     }
+    &.wrap {
+        flex-wrap: wrap;
+        button {
+            margin-top: 16px;
+        }
+    }
 }
 .single-box-txt {
     margin-top: 8px;
@@ -1351,6 +1396,7 @@
             padding: 16px 16px 16px 52px;
             position: relative;
             height: 100%;
+            position: relative;
             h3 {
                 font-size: 16px;
                 letter-spacing: -0.4px;
@@ -1379,6 +1425,11 @@
             }
             &.gray {
                 background-color: #fafafa;
+            }
+            button {
+                position: absolute;
+                top: 16px;
+                right: 16px;
             }
         }
     }
@@ -1415,6 +1466,14 @@
             letter-spacing: -0.325px;
             line-height: 19.5px;
             margin: 4px 0 8px;
+        }
+    }
+    .no-target {
+        background-color: var(--background-color2);
+        text-align: center;
+        padding: 24px;
+        p {
+            margin-bottom: 12px;
         }
     }
 }
@@ -1847,12 +1906,21 @@
         display: flex;
         align-items: center;
         height: 28px;
+        gap: 8px;
+        flex: 1;
+        .select-box {
+        }
         .sum {
             margin: 0 0 0 8px;
             font-size: 14px;
             font-weight: 700;
             line-height: 16px;
             color: var(--sub-color3);
+        }
+        .table-tit,
+        .list-title {
+            margin-bottom: 0 !important;
+            min-width: fit-content;
         }
     }
     .right {
@@ -1893,7 +1961,7 @@
         }
     }
 }
-//search content
+//통합검색 content
 .search-contnet {
     margin: 0 0 16px 0;
     border-radius: 4px 4px;
@@ -1979,7 +2047,12 @@
         margin-top: 8px;
     }
 }
-
+.search-category {
+    border-radius: 8px;
+    padding: 12px;
+    background-color: var(--background-color2);
+    margin: 12px 0;
+}
 //과제신청
 .task {
     padding-top: 24px;
@@ -3830,6 +3903,23 @@
         & + button {
             min-width: fit-content;
         }
+    }
+}
+.tag-no-data {
+    height: 308px;
+    background-color: var(--background-color2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    p {
+        padding-top: 20px;
+        color: var(--font-color2);
+        font-size: 13px;
+        line-height: 19.5px;
+        letter-spacing: -0.325px;
+        background: url("../images/icon/ico-exclamation-mark2.png") top center
+            no-repeat;
     }
 }
 //

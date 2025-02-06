@@ -3,13 +3,17 @@ import React, { useState, useEffect, useRef } from "react";
 import { ReactComponent as Bookmark } from "~assets/images/svg/Icons-Bookmark.svg";
 import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
 import { ReactComponent as BookmarkOn } from "~assets/images/svg/Icons-Bookmark-on.svg";
+import { ReactComponent as Arrow } from "~assets/images/svg/Icons-arr11.svg";
+import { ReactComponent as ArrowR } from "~assets/images/svg/icon_arrow_right.svg";
+// need content
 import TargetThumbnailRecom from "~/muiPublish/page/targetExtraction/TargetThumbnailRecom";
 import Checkbox from "@mui/material/Checkbox";
 import Badge from "~/muiPublish/components/Badge";
 import Hash from "~/muiPublish/components/Hash";
 import IconButton from "@mui/material/IconButton";
-
-// need content
+import Button from "@mui/material/Button";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import Loading from "~/muiPublish/loading/Loading";
 import NoData from "~/muiPublish/components/noData/noData";
 
@@ -55,12 +59,40 @@ const TargetThumbnail: React.FC<IPageProps> = (props) => {
         "썸네일",
         "썸네일",
     ];
-
+    const [ageSelect, setAgeSelect] = React.useState("");
+    const selectChange = (event: SelectChangeEvent) => {
+        setAgeSelect(event.target.value as string);
+    };
     return (
         <>
             <TargetThumbnailRecom />
-            <div className="list-title">인기 리스트</div>
-
+            <div className="between-box">
+                <div className="left">
+                    <div className="list-title">인기 리스트</div>
+                    <ArrowR fill="#222" />
+                    <Select
+                        className="select-box small"
+                        value={ageSelect}
+                        onChange={selectChange}
+                        IconComponent={Arrow}
+                        displayEmpty
+                        MenuProps={{
+                            classes: {
+                                paper: "select-option-class",
+                            },
+                        }}
+                    >
+                        <MenuItem value="" disabled>
+                            전체
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>TwentyTwenty</MenuItem>
+                    </Select>
+                </div>
+                <div className="right">
+                    <Button variant="small">더보기</Button>
+                </div>
+            </div>
             {tumbnail.length > 0 ? (
                 <div className="card-box-wrap">
                     {tumbnail.map((v: string, i: number) => (
@@ -76,7 +108,11 @@ const TargetThumbnail: React.FC<IPageProps> = (props) => {
                                 </div>
                                 <div className="badge-wrap">
                                     <Badge value="전략" color="black " />
-                                    <Badge value="중분류" color="navy " />
+                                    <Badge
+                                        value="중분류중분류중분류"
+                                        color="navy "
+                                        classifi={true}
+                                    />
                                     <Badge value="N" color="red" />
                                 </div>
                                 <p className="card-box-tit">
@@ -96,7 +132,7 @@ const TargetThumbnail: React.FC<IPageProps> = (props) => {
                                             type="type2"
                                         />
                                         <Hash value="#TAGTAGTAG" type="type2" />
-                                        <Hash value="+3" type="type2" />
+                                        <Hash value="+3" type="type2 bg" />
                                     </div>
                                     <IconButton className="ico-circle20">
                                         <Search12 />

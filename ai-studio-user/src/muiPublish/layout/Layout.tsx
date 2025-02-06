@@ -11,7 +11,7 @@ import TargetExtraction from "~/muiPublish/page/targetExtraction/TargetExtractio
 import Main from "~/muiPublish/page/main/Main";
 import SingleView from "~/muiPublish/page/singleView/SingleView";
 import SingleViewOffice from "~/muiPublish/page/singleViewOffice/SingleViewOffice";
-// import SingleView from "~/muiPublish/page/singleView/SingleView";
+import SingleViewCorpor from "~/muiPublish/page/singleViewCorpor/SingleViewCorpor";
 import Ocr from "~/muiPublish/page/ocr/Ocr";
 import OcrVerify from "~/muiPublish/page/ocr/OcrVerify";
 import TaskList from "~/muiPublish/page/task/TaskList";
@@ -91,6 +91,9 @@ const Layout: React.FC<IPageProps> = (props) => {
                     )}
                     {props.pageName === "싱글뷰 영업점" && (
                         <SingleViewOffice pageName={props.pageName} />
+                    )}
+                    {props.pageName === "싱글뷰 기업" && (
+                        <SingleViewCorpor pageName={props.pageName} />
                     )}
                     {props.pageName === "AI-OCR" && (
                         <Ocr pageName={props.pageName} />

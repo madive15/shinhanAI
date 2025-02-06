@@ -810,6 +810,10 @@ const MuiPopup: React.FC<IPageProps> = () => {
                                 />
                             </FormGroup>
                         </div>
+
+                        <div className="tag-no-data">
+                            <p>검색 결과가 없습니다.</p>
+                        </div>
                         <div className="tag-choice-box">
                             <div className="tag-choice-list">
                                 <p>

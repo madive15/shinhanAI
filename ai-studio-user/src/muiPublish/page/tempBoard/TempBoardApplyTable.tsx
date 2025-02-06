@@ -1,6 +1,7 @@
 // necessary set
 import React, { useState, useEffect } from "react";
-
+import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
+import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
 // need content
 import Table from "@mui/material/Table";
@@ -13,7 +14,8 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import TextField from "@mui/material/TextField";
 import ReactQuill from "react-quill";
-
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
 // need style
 import "react-quill/dist/quill.snow.css";
 import "~/muiPublish/layout/layout.scss";
@@ -202,6 +204,20 @@ const TempBoardApplyTable: React.FC<IPageProps> = (props) => {
                                         <span>0</span>Ktyte
                                     </div>
                                 </div>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell component="th">게시글 설정</TableCell>
+                            <TableCell>
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox
+                                            icon={<ChkDefault />}
+                                            checkedIcon={<ChkChecked />}
+                                        />
+                                    }
+                                    label="비밀글"
+                                />
                             </TableCell>
                         </TableRow>
                         <TableRow>

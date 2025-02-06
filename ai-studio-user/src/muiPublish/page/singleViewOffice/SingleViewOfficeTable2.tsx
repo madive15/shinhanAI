@@ -55,10 +55,10 @@ interface HeadCell {
 /**
  * @author shinhanAI
  * @description
- * admin-front: SingleViewOfficeTable
- * SingleViewOfficeTable
+ * admin-front: SingleViewOfficeTable2
+ * SingleViewOfficeTable2
  */
-const SingleViewOfficeTable: React.FC<IPageProps> = (props) => {
+const SingleViewOfficeTable2: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -281,4 +281,4 @@ const SingleViewOfficeTable: React.FC<IPageProps> = (props) => {
         </TableContainer>
     );
 };
-export default SingleViewOfficeTable;
+export default SingleViewOfficeTable2;

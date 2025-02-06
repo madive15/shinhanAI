@@ -13,11 +13,12 @@
         border-radius: 12px 12px;
         background-color: var(--background-color5);
         .btn-smart {
-            min-width: 115px;
+            min-width: 99px;
             font-size: 14px;
             font-weight: 700;
             line-height: 20px;
             letter-spacing: -0.025em;
+            padding: 0;
         }
         .smart-filer-view {
             position: relative;

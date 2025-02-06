@@ -1,6 +1,7 @@
 // necessary set
 import React, { useState, useEffect } from "react";
-
+import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
+import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
 import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
 // need content
 import Table from "@mui/material/Table";
@@ -16,6 +17,10 @@ import TextField from "@mui/material/TextField";
 import Badge from "~/muiPublish/components/Badge";
 import Hash from "~/muiPublish/components/Hash";
 import IconButton from "@mui/material/IconButton";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
+import FormControl from "@mui/material/FormControl";
 // need style
 import "~/muiPublish/layout/layout.scss";
 
@@ -44,17 +49,93 @@ const SearchTable: React.FC<IPageProps> = (props) => {
     const selectOneChange = (event: SelectChangeEvent) => {
         setAgeSelectOne(event.target.value as string);
     };
+
+    const [radioGroup2, setRadioGroup2] = React.useState("전체");
+    const radioGroupChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setRadioGroup2((event.target as HTMLInputElement).value);
+    };
     useEffect(() => {
         setLoading(false);
     }, []);
     return (
         <div className="notice-list-table">
-            <div className="between-box">
-                <div className="left">
-                    <h3>검색 결과</h3>
-                    <span className="sum">총 00건</span>
-                </div>
-                <div className="right"></div>
+            <div className="search-category">
+                <FormControl>
+                    <RadioGroup
+                        className="filter-radio type2"
+                        row
+                        aria-labelledby="radio-group"
+                        name="group2"
+                        value={radioGroup2}
+                        onChange={radioGroupChange2}
+                    >
+                        <FormControlLabel
+                            value="전체"
+                            control={<Radio />}
+                            label="전체"
+                        />
+                        <FormControlLabel
+                            value="신용대출(대면)"
+                            control={<Radio />}
+                            label="신용대출(대면)"
+                        />
+                        <FormControlLabel
+                            value="신용대출(비대면)"
+                            control={<Radio />}
+                            label="신용대출(비대면)"
+                        />
+                        <FormControlLabel
+                            value="자동차대출"
+                            control={<Radio />}
+                            label="자동차대출"
+                        />
+                        <FormControlLabel
+                            value="서민금융"
+                            control={<Radio />}
+                            label="서민금융"
+                        />
+                        <FormControlLabel
+                            value="담보대출"
+                            control={<Radio />}
+                            label="담보대출"
+                        />
+                        <FormControlLabel
+                            value="기금재원대출"
+                            control={<Radio />}
+                            label="기금재원대출"
+                        />
+                        <FormControlLabel
+                            value="가계여신기타대출"
+                            control={<Radio />}
+                            label="가계여신기타대출"
+                        />
+                        <FormControlLabel
+                            value="신택대출"
+                            control={<Radio />}
+                            label="신택대출"
+                        />
+                        <FormControlLabel
+                            value="일반자금대출"
+                            control={<Radio />}
+                            label="일반자금대출"
+                        />
+                        <FormControlLabel
+                            value="전세대출"
+                            control={<Radio />}
+                            label="전세대출"
+                        />
+                        <FormControlLabel
+                            value="주택담보대출"
+                            control={<Radio />}
+                            label="주택담보대출"
+                        />
+                        <FormControlLabel
+                            value="특별대환대출"
+                            control={<Radio />}
+                            label="특별대환대출"
+                        />
+                    </RadioGroup>
+                </FormControl>
             </div>
             <TableContainer className="table-content">
                 <Table className="table-defult-style">

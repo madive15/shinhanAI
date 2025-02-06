@@ -61,6 +61,7 @@ const SearchCategory: React.FC<IPageProps> = (props) => {
                     />
                 </RadioGroup>
             </FormControl>
+            <h2>프리빌트</h2>
         </>
     );
 };
