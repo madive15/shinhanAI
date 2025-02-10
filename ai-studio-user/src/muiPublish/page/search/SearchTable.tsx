@@ -58,7 +58,7 @@ const SearchTable: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
     return (
-        <div className="notice-list-table">
+        <>
             <div className="search-category">
                 <FormControl>
                     <RadioGroup
@@ -278,7 +278,7 @@ const SearchTable: React.FC<IPageProps> = (props) => {
                     </div>
                 </Table>
             </TableContainer>
-        </div>
+        </>
     );
 };
 export default SearchTable;

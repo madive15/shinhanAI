@@ -1,12 +1,13 @@
 // necessary set
 import React from "react";
+import { ReactComponent as Plus9 } from "~assets/images/svg/Icons-plus-9.svg";
 import { ReactComponent as ChkDefault } from "~assets/images/svg/Icons-chk-default.svg";
 import { ReactComponent as ChkChecked } from "~assets/images/svg/Icons-chk-checked.svg";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
-
+import IconButton from "@mui/material/IconButton";
 // need content
 import TargetAddArea from "~/muiPublish/components/modelIndexFilter/TargetAddArea";
 import Badge from "~/muiPublish/components/Badge";
@@ -34,7 +35,12 @@ const ConditionList: React.FC<IPageProps> = (props) => {
         <div className="condition-list">
             <FormGroup row className="chk-group item-view">
                 <FormControlLabel
-                    control={<Checkbox icon={<ChkDefault />} checkedIcon={<ChkChecked />} />}
+                    control={
+                        <Checkbox
+                            icon={<ChkDefault />}
+                            checkedIcon={<ChkChecked />}
+                        />
+                    }
                     label="설정 항목 자세히 보기"
                 />
             </FormGroup>
@@ -44,35 +50,60 @@ const ConditionList: React.FC<IPageProps> = (props) => {
                         <Badge value="모델" color="blue" />
                         <strong>자린고비 지수</strong>
                     </div>
-                    <p className="desc">1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급</p>
+                    <p className="desc">
+                        1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
+                    </p>
+                    <IconButton className="ico-rect23 x">
+                        <Plus9 />
+                    </IconButton>
                 </div>
                 <div className="item-box">
                     <div className="top">
                         <Badge value="필터" color="purple" />
                         <strong>자린고비 지수</strong>
                     </div>
-                    <p className="desc">1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급</p>
+                    <p className="desc">
+                        1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
+                    </p>
+                    <IconButton className="ico-rect23 x">
+                        <Plus9 />
+                    </IconButton>
                 </div>
                 <div className="item-box">
                     <div className="top">
                         <Badge value="지수" color="orange" />
                         <strong>자린고비 지수</strong>
                     </div>
-                    <p className="desc">1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급</p>
+                    <p className="desc">
+                        1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
+                    </p>
+                    <IconButton className="ico-rect23 x">
+                        <Plus9 />
+                    </IconButton>
                 </div>
                 <div className="item-box">
                     <div className="top">
                         <Badge value="필터" color="purple" />
                         <strong>자린고비 지수</strong>
                     </div>
-                    <p className="desc">1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급</p>
+                    <p className="desc">
+                        1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
+                    </p>
+                    <IconButton className="ico-rect23 x">
+                        <Plus9 />
+                    </IconButton>
                 </div>
                 <div className="item-box">
                     <div className="top">
                         <Badge value="지수" color="orange" />
                         <strong>자린고비 지수</strong>
                     </div>
-                    <p className="desc">1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급</p>
+                    <p className="desc">
+                        1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
+                    </p>
+                    <IconButton className="ico-rect23 x">
+                        <Plus9 />
+                    </IconButton>
                 </div>
             </div>
 

@@ -80,21 +80,38 @@ const TargetExtraction: React.FC<IPageProps> = (props) => {
             </div>
             <div className="tabs-contents">
                 <div className="list-content">
-                    <SubTitleNavTabs pageName={props.pageName} subTabs={true} />
+                    <SubTitleNavTabs
+                        pageName={props.pageName}
+                        subTabs={true}
+                        search={true}
+                    />
                     <div className="sub-tab-content">
                         <IndiviCompany />
                         <Category />
                         <SmartFilter />
-                        <Sortbox listType={listType} setListType={setListType} />
-                        {listType === false ? <TargetThumbnail /> : <TargetTable />}
+                        <Sortbox
+                            listType={listType}
+                            setListType={setListType}
+                        />
+                        {listType === false ? (
+                            <TargetThumbnail />
+                        ) : (
+                            <TargetTable />
+                        )}
                     </div>
                 </div>
                 <div className="list-setting">
                     <div className="btn-wrap end">
-                        <Button variant="iconLine" endIcon={<Search fill="#333" />}>
+                        <Button
+                            variant="iconLine"
+                            endIcon={<Search fill="#333" />}
+                        >
                             원래 설정으로 되돌리기
                         </Button>
-                        <Button variant="iconLine" endIcon={<Search fill="#333" />}>
+                        <Button
+                            variant="iconLine"
+                            endIcon={<Search fill="#333" />}
+                        >
                             초기화
                         </Button>
                     </div>

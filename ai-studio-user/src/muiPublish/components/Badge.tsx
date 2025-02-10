@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Badge = ({ value, color, size, type, classifi }: any) => {
-    console.log(value.length);
     return (
         <div className="badge-box">
             <span

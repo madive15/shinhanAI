@@ -1389,7 +1389,7 @@ export default function VerticalTabs() {
                     <Hash value="#해시태그" del={true} />
                     <Hash value="#해시태그" type="type2" />
                     <Hash value="+5" type="type2 bg" />
-                    <Hash value="#급여이체" type="type3" />
+                    <Hash value="가계여신 > 전세대출" type="type3" />
                 </div>
             </TabPanel>
             {/* SVG */}
@@ -1522,6 +1522,9 @@ export default function VerticalTabs() {
                     <p className="desc">
                         1등급, 2등급, 3등급, 4등급, 5등급, 6등급, 7등급, 8등급
                     </p>
+                    <IconButton className="ico-rect23 x">
+                        <Plus9 />
+                    </IconButton>
                 </div>
                 <br />
                 <div className="simulation-box">

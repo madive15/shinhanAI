@@ -1,6 +1,7 @@
 // necessary set
 import React, { useState, useEffect } from "react";
-
+import { ReactComponent as RadioDefault } from "~assets/images/svg/Icons-radio-default.svg";
+import { ReactComponent as RadioChecked } from "~assets/images/svg/Icons-radio-checked.svg";
 import { ReactComponent as Search12 } from "~assets/images/svg/Icons-search-12.svg";
 // need content
 import Table from "@mui/material/Table";
@@ -35,10 +36,10 @@ export interface IPageProps {
 /**
  * @author shinhanAI
  * @description
- * admin-front: SearchTable2
- * SearchTable2
+ * admin-front: SearchResult
+ * SearchResult
  */
-const SearchTable2: React.FC<IPageProps> = (props) => {
+const SearchResult: React.FC<IPageProps> = (props) => {
     // loading
     const [loading, setLoading] = useState<boolean>(true);
     const useLoading = (onoff: boolean) => {
@@ -48,6 +49,7 @@ const SearchTable2: React.FC<IPageProps> = (props) => {
     const selectOneChange = (event: SelectChangeEvent) => {
         setAgeSelectOne(event.target.value as string);
     };
+
     const [radioGroup2, setRadioGroup2] = React.useState("전체");
     const radioGroupChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRadioGroup2((event.target as HTMLInputElement).value);
@@ -56,7 +58,7 @@ const SearchTable2: React.FC<IPageProps> = (props) => {
         setLoading(false);
     }, []);
     return (
-        <>
+        <div className="search-result-wrap">
             <div className="search-category">
                 <FormControl>
                     <RadioGroup
@@ -135,82 +137,50 @@ const SearchTable2: React.FC<IPageProps> = (props) => {
                     </RadioGroup>
                 </FormControl>
             </div>
-            <TableContainer className="table-content">
-                <Table className="table-defult-style">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell width={48} align="center">
-                                번호
-                            </TableCell>
-                            <TableCell width={80} align="center">
-                                분류
-                            </TableCell>
-                            <TableCell width={320} align="center">
-                                프리빌트명
-                            </TableCell>
-                            <TableCell width={692} align="left">
-                                상세설명
-                            </TableCell>
-                            <TableCell width={260} align="center">
-                                태그
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                상세보기
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                타겟추출
-                            </TableCell>
-                            <TableCell width={120} align="center">
-                                모델생성
-                            </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((idx) => (
-                            <TableRow key={idx}>
-                                <TableCell width={48} align="center">
-                                    {idx + 1}
-                                </TableCell>
-                                <TableCell width={80} align="center">
-                                    <Badge value="퇴직연금" color="orange" />
-                                </TableCell>
-                                <TableCell width={320} align="left">
-                                    <strong>프리빌트 항목 명</strong>
-                                </TableCell>
-                                <TableCell width={692} align="left">
-                                    <p className="ellipsis">
-                                        프리빌트된 항목에 대한 설명
-                                    </p>
-                                </TableCell>
-                                <TableCell width={260} align="center">
-                                    <div className="hash-wrap">
-                                        <Hash
-                                            value="#해시태그해시태그해시태그해시태그해시태그해시태그"
-                                            type="type2"
-                                        />
-                                        <Hash value="#해시태그" type="type2" />
-                                        <Hash value="#해시태그" type="type2" />
-                                        <Hash value="#해시태그" type="type2" />
-                                        <Hash value="#해시태그" type="type2" />
-                                    </div>
-                                </TableCell>
-                                <TableCell width={120} align="center">
-                                    <IconButton className="ico-circle20">
-                                        <Search12 />
-                                    </IconButton>
-                                </TableCell>
-                                <TableCell width={120} align="center">
-                                    <Button variant="small">타겟 추출</Button>
-                                </TableCell>
-                                <TableCell width={120} align="center">
-                                    <Button variant="small">모델 생성</Button>
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </>
+            {/* <ul className="search-result-list">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+                    <li key={i} className="search-result-item">
+                        <div className="result-item">
+                            <div className="search-result-tit">
+                                <Hash
+                                    value="가계여신 > 전세대출"
+                                    type="type3"
+                                />
+                                <strong>
+                                    <span>검색어</span>와 연관된 프리빌트 타이틀
+                                    <span>검색어</span>와 연관된 프리빌트 타이틀
+                                    <span>검색어</span>와 연관된 프리빌트 타이틀
+                                    <span>검색어</span>와 연관된 프리빌트 타이틀
+                                    <span>검색어</span>와 연관된 프리빌트 타이틀
+                                    <span>검색어</span>와 연관된 프리빌트 타이틀
+                                </strong>
+                                <IconButton className="ico-circle20">
+                                    <Search12 />
+                                </IconButton>
+                            </div>
+                            <p className="search-result-txt">
+                                IRP 계약 이전으로 유입할 확률이 높은 고객 중
+                                퇴직연금에 관심이 있으며 신한에 대한 충성도가
+                                높은 고객 리스트 입니다. 이 중 마케팅 활용 동의
+                                고객 및 LMS 반응률이 높은 고객을 필터링
+                                하였습니다.
+                            </p>
+                            <div className="hash-wrap">
+                                <Hash value="#해시태그" type="type2" />
+                                <Hash value="#해시태그" type="type2" />
+                                <Hash value="#해시태그" type="type2" />
+                                <Hash value="#해시태그" type="type2" />
+                                <Hash value="#해시태그" type="type2" />
+                            </div>
+                        </div>
+                        <Button variant="sub1">타겟추출</Button>
+                    </li>
+                ))}
+            </ul> */}
+            <div className="no-data search">
+                <p>검색 결과가 없습니다.</p>
+            </div>
+        </div>
     );
 };
-export default SearchTable2;
+export default SearchResult;

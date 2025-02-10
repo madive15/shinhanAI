@@ -548,14 +548,16 @@
         }
     }
     &.type3 {
-        padding: 4px 8px;
-        border-radius: 20px;
+        padding: 2px 4px;
+        border-radius: 8px;
         background-color: rgba(0, 70, 255, 0.1);
         border: none;
-        font-size: 10px;
-        line-height: 12px;
-        letter-spacing: -0.25px;
-        color: var(--sub-color4);
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+        color: var(--color1);
+        min-width: fit-content;
         &.blue {
             background-color: var(--color1);
             color: var(--color2);
@@ -890,6 +892,7 @@
     border-radius: 12px;
     background: var(--background-color1);
     max-width: 398px;
+    position: relative;
     .top {
         display: flex;
         align-items: center;
@@ -907,8 +910,8 @@
     }
     button {
         position: absolute;
-        top: 16px;
-        right: 16px;
+        top: 8px;
+        right: 8px;
     }
 }
 
@@ -1191,6 +1194,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin: 12px 0 24px;
+    &.repeat-two {
+        grid-template-columns: repeat(2, 1fr);
+        .single-view-box {
+            max-width: 100%;
+        }
+    }
 }
 .single-view-box {
     max-width: 576px;
@@ -1275,14 +1284,14 @@
     strong {
         color: #121212;
         font-size: 16px;
-        line-height: 19px;
+        line-height: 24px;
         letter-spacing: -0.4px;
     }
     p {
         margin-top: 4px;
         color: var(--font-color2);
         font-size: 13px;
-        line-height: 16px;
+        line-height: 20px;
         letter-spacing: -0.325px;
     }
 }
@@ -1471,10 +1480,21 @@
     }
     .no-target {
         background-color: var(--background-color2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 24px;
+        height: 248px;
         p {
+            padding-top: 20px;
+            background: url("../images/icon/ico-exclamation-mark2.png") top
+                center no-repeat;
             margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 19.5px;
+            letter-spacing: -0.325px;
+            color: var(--font-color2);
         }
     }
 }
@@ -1626,6 +1646,41 @@
         -webkit-line-clamp: 1;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+}
+.office-target-list {
+    ul {
+        li {
+            padding: 11px 16px 11px 28px;
+            background-color: var(--background-color1);
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 19.5px;
+            letter-spacing: -0.325px;
+            position: relative;
+            margin-bottom: 8px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            &::before {
+                content: "";
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                background-color: #222;
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                margin-top: -1px;
+            }
+        }
+    }
+    & + p {
+        color: var(--font-color2);
+        font-size: 13px;
+        line-height: 19.5px;
+        letter-spacing: -0.325px;
+        margin-top: 8px;
     }
 }
 // 팝업관련
@@ -2053,6 +2108,55 @@
     padding: 12px;
     background-color: var(--background-color2);
     margin: 12px 0;
+}
+.search-result-wrap {
+    // margin-top: 12px;
+    .search-result-list {
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0 16px 16px;
+            border-bottom: 1px solid var(--border-color3);
+        }
+    }
+    .search-result-tit {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        strong {
+            font-size: 18px;
+            line-height: 27px;
+            letter-spacing: -0.45px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            span {
+                color: var(--color1);
+            }
+        }
+    }
+    .search-result-txt {
+        margin: 8px 0;
+        color: var(--font-color2);
+        display: -webkit-box;
+        max-width: 1200px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.35px;
+        overflow: hidden;
+        span {
+            color: var(--color1);
+        }
+    }
 }
 //과제신청
 .task {
@@ -3195,6 +3299,9 @@
 }
 
 //메인
+.skeleton-img {
+    width: 100%;
+}
 .main-wrap {
     padding: 24px;
     overflow-y: auto;
@@ -3240,6 +3347,76 @@
     min-width: 794px;
     width: 100%;
     margin-right: 24px;
+    .branch-crm {
+        // min-height: 284px;
+        margin-bottom: 24px;
+    }
+    .single-ai-box {
+        margin-bottom: 12px;
+    }
+    .single-view-box {
+        padding: 16px 24px;
+        align-items: center;
+        .left {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            .badge-box {
+                min-width: fit-content;
+            }
+        }
+        strong {
+            font-size: 16px;
+            font-family: var(--font-style1);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            color: #121212;
+            letter-spacing: -0.4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 24px;
+        }
+        button {
+            min-width: fit-content;
+        }
+    }
+    .single-box-txt {
+        margin-top: 12px;
+        p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
+.single-box-tip {
+    position: relative;
+    p {
+        &:hover {
+            & + .tip-box {
+                display: block;
+            }
+        }
+    }
+    .tip-box {
+        display: none;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        z-index: 2;
+        border-radius: 8px;
+        padding: 8px 12px;
+        background-color: var(--color2);
+        color: var(--font-color2);
+        font-size: 13px;
+        line-height: 19.5px;
+        letter-spacing: -0.325px;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+        word-break: keep-all;
+    }
 }
 .branch-card-box {
     display: flex;
@@ -3389,9 +3566,15 @@
             text-overflow: ellipsis;
         }
     }
+    .skeleton-img {
+        height: 238px;
+    }
 }
 .main-ank-tit {
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     a {
         padding-right: 12px;
         position: relative;
@@ -3414,7 +3597,10 @@
     // grid-template-columns: minmax(0, 2fr) 1fr;
     display: flex;
     gap: 16px;
-    margin: 12px 0 24px;
+    margin-bottom: 24px;
+    .skeleton-img {
+        height: 238px;
+    }
 }
 .target-history {
     max-width: 871px;
@@ -3426,7 +3612,7 @@
         padding: 16px;
         display: flex;
         gap: 16px;
-        height: 238px;
+        height: 233px;
         .card-box-wrap {
             grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
             .card-box-bottom {
@@ -3453,7 +3639,7 @@
         .target-count {
             border-radius: 12px;
             padding: 24px;
-            height: 206px;
+            height: 201px;
             max-width: 144px;
             width: 100%;
             background: linear-gradient(140deg, #0046ff 0%, #4baff5 100%);
@@ -3558,10 +3744,10 @@
         border-radius: 16px;
         background-color: var(--background-color1);
         padding: 16px;
-        height: 238px;
+        height: 233px;
         ul {
             li {
-                height: 48.5px;
+                height: 47.25px;
                 background-color: #fff;
                 margin-bottom: 4px;
                 display: flex;
@@ -3622,7 +3808,7 @@
                 width: calc(50% - 4px);
                 background-color: var(--color2);
                 border-radius: 12px;
-                height: 99px;
+                height: 96.5px;
                 padding: 12px;
                 display: flex;
                 flex-direction: column;
@@ -3657,6 +3843,9 @@
     .notice-task-box {
         padding-bottom: 0;
     }
+    .skeleton-img {
+        height: 274px;
+    }
 }
 .contents-tab {
     display: flex;
@@ -3676,9 +3865,11 @@
     }
     &.type2 {
         border-bottom: 1px solid var(--border-color4);
+        gap: 24px;
         button {
             font-size: 14px;
             font-family: var(--font-style1);
+            color: var(--font-color3);
             &.active {
                 border-bottom: 2px solid var(--color1);
                 color: var(--color1);
@@ -3749,11 +3940,27 @@
         background: url("../images/img-no-task.png") no-repeat;
     }
 }
+.no-bookmark {
+    text-align: center;
+    color: var(--font-color2);
+    padding-top: 42px;
+    &::before {
+        content: "";
+        display: block;
+        margin: 0 auto 12px;
+        width: 58px;
+        height: 58px;
+        background: url("../images/img-no-bookmark.png") no-repeat;
+    }
+}
 .main-right {
     min-width: 302px;
     max-width: 422px;
     width: 100%;
     padding-top: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .use-top-target {
     border-radius: 12px;
@@ -3762,6 +3969,9 @@
     margin-bottom: 16px;
     h2 {
         margin-bottom: 12px;
+    }
+    .skeleton-img {
+        height: 587px;
     }
 }
 
@@ -3821,7 +4031,10 @@
     border-radius: 12px;
     padding: 16px;
     background-color: var(--background-color1);
-    max-height: 231px;
+    height: 231px;
+    .skeleton-img {
+        height: 199px;
+    }
 }
 .use-bookmark-item {
     display: flex;

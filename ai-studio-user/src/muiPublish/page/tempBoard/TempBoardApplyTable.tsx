@@ -108,6 +108,17 @@ const TempBoardApplyTable: React.FC<IPageProps> = (props) => {
     const TooltipOpen = () => {
         setTooltipOpen(true);
     };
+    const modules = {
+        toolbar: {
+            container: [
+                [{ header: [1, 2, false] }],
+                ["bold", "italic", "underline"],
+                [{ list: "ordered" }, { list: "bullet" }],
+                ["image"], // 이미지 버튼 추가
+                ["clean"],
+            ],
+        },
+    };
     const tooptipText = (
         <div className="tooltip-wrap">
             <div className="tooltip-top">
@@ -226,6 +237,7 @@ const TempBoardApplyTable: React.FC<IPageProps> = (props) => {
                                 <div className="ql-editor-wrap">
                                     <ReactQuill
                                         theme="snow"
+                                        modules={modules}
                                         value={editorContent}
                                         onChange={setEditorContent}
                                         placeholder="내용을 입력하세요."

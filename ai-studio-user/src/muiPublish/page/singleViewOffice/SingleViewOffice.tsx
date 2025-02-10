@@ -10,8 +10,8 @@ import Badge from "~/muiPublish/components/Badge";
 import SingleViewOfficeBox from "~/muiPublish/page/singleViewOffice/SingleViewOfficeBox";
 import SingleViewOfficeTable from "~/muiPublish/page/singleViewOffice/SingleViewOfficeTable";
 import SingleViewOfficeTable2 from "~/muiPublish/page/singleViewOffice/SingleViewOfficeTable2";
+import Button from "@mui/material/Button";
 // need style
-import "~/muiPublish/layout/layout.scss";
 
 // Props type
 export interface IPageProps {
@@ -86,6 +86,40 @@ const SingleViewOffice: React.FC<IPageProps> = (props) => {
                         {activeTab === 0 && <SingleViewOfficeTable />}
                         {activeTab === 1 && <SingleViewOfficeTable2 />}
                         {activeTab === 2 && <SingleViewOfficeTable2 />}
+                        <div className="office-target-list-wrap">
+                            <div className="between-box">
+                                <div className="left">
+                                    <h2>
+                                        우리 영업점에서 최근 추출한 타겟 리스트
+                                    </h2>
+                                </div>
+                                <div className="right">
+                                    <Button variant="sub1">
+                                        타겟 추출 내역
+                                    </Button>
+                                </div>
+                            </div>
+                            <div className="office-target-list">
+                                <ul>
+                                    <li>
+                                        %이몽룡%님이 %프리빌트% 명을&#40;를&#41;
+                                        추출했어요&#40;2025-02-05&#41;
+                                    </li>
+                                    <li>
+                                        %이몽룡%님이 %프리빌트% 명을&#40;를&#41;
+                                        추출했어요&#40;2025-02-05&#41;
+                                    </li>
+                                    <li>
+                                        %이몽룡%님이 %프리빌트% 명을&#40;를&#41;
+                                        추출했어요&#40;2025-02-05&#41;
+                                    </li>
+                                </ul>
+                            </div>
+                            <p>
+                                *최근 추출한 타겟 리스트는 타겟 추출 내역에서
+                                확인할 수 있습니다.
+                            </p>
+                        </div>
                         {/* <div className="no-data type2">
                             <div className="no-data-box type1">
                                 <p>

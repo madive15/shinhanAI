@@ -62,7 +62,7 @@
 .sub-title-tab-box {
     @include flex;
     @include justify-content(space-between);
-    _height: 54px;
+    _min-height: 54px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--border-color3);
     .tit-tabs-box {
