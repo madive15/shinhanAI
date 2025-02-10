@@ -55,6 +55,8 @@ const Main: React.FC<IPageProps> = (props) => {
     const skeletonNotice = "/images/skeleton-notice.png";
     const skeletonTop = "/images/skeleton-top10.png";
     const skeletonBookmark = "/images/skeleton-bookmark.png";
+    const skeletonsingle1 = "/images/skeleton-single1.png";
+    const skeletonsingle2 = "/images/skeleton-single2.png";
     return (
         <>
             <div className="tabs-area">
@@ -203,138 +205,162 @@ const Main: React.FC<IPageProps> = (props) => {
                                     <a href="#">기업 고객 싱글뷰</a>
                                 </h2>
                                 <div className="single-box-wrap">
-                                    <div className="single-ai-box">
-                                        <div className="single-box-content">
-                                            <div className="single-box">
-                                                <div className="single-view-box blue">
-                                                    <div className="left">
-                                                        <Badge
-                                                            value="Profile 기반"
-                                                            color="blue3"
-                                                        />
-                                                        <strong>
-                                                            기업 퇴직연금DC형
-                                                            신규 기업
-                                                            퇴직연금DC형 신규
-                                                        </strong>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="single-box">
-                                                <div className="single-view-box blue">
-                                                    <div className="left">
-                                                        <Badge
-                                                            value="맥락 기반"
-                                                            color="blue3"
-                                                        />
-                                                        <strong>
-                                                            SOL 트래블 카드
-                                                        </strong>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="single-box">
-                                                <div className="single-view-box blue">
-                                                    <div className="left">
-                                                        <Badge
-                                                            value="전략 상품"
-                                                            color="blue3"
-                                                        />
-                                                        <strong>
-                                                            퇴직연금 IRP 추가
-                                                            불입
-                                                        </strong>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    {exSkeleton ? (
+                                        <div className="single-ai-box">
+                                            <img
+                                                src={skeletonsingle1}
+                                                alt="로딩 중"
+                                                className="skeleton-img"
+                                            />
                                         </div>
-                                        <div className="between-box">
-                                            <div className="single-box-txt">
-                                                <strong>
-                                                    우선순위가 높은
-                                                    타겟리스트입니다.
-                                                </strong>
-                                                <p>
-                                                    지표 수준, 평가항목 중요도
-                                                    등을 종합 고려하여 평가항목
-                                                    관련 타겟리스트 중 추천 상위
-                                                    3개의 항목입니다.
-                                                </p>
+                                    ) : (
+                                        <div className="single-ai-box">
+                                            <div className="single-box-content">
+                                                <div className="single-box">
+                                                    <div className="single-view-box blue">
+                                                        <div className="left">
+                                                            <Badge
+                                                                value="Profile 기반"
+                                                                color="blue3"
+                                                            />
+                                                            <strong>
+                                                                기업
+                                                                퇴직연금DC형
+                                                                신규 기업
+                                                                퇴직연금DC형
+                                                                신규
+                                                            </strong>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="single-box">
+                                                    <div className="single-view-box blue">
+                                                        <div className="left">
+                                                            <Badge
+                                                                value="맥락 기반"
+                                                                color="blue3"
+                                                            />
+                                                            <strong>
+                                                                SOL 트래블 카드
+                                                            </strong>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="single-box">
+                                                    <div className="single-view-box blue">
+                                                        <div className="left">
+                                                            <Badge
+                                                                value="전략 상품"
+                                                                color="blue3"
+                                                            />
+                                                            <strong>
+                                                                퇴직연금 IRP
+                                                                추가 불입
+                                                            </strong>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <Button variant="primary">
-                                                Sprut 연계
-                                            </Button>
-                                        </div>
-                                    </div>
-                                    <div className="single-box-content repeat-two">
-                                        <div className="single-box">
-                                            <div className="single-view-box">
-                                                <div className="left">
-                                                    <Badge
-                                                        value="건전성"
-                                                        color="black"
-                                                    />
+                                            <div className="between-box">
+                                                <div className="single-box-txt">
                                                     <strong>
-                                                        기업연체예측 관리
+                                                        우선순위가 높은
+                                                        타겟리스트입니다.
                                                     </strong>
+                                                    <p>
+                                                        지표 수준, 평가항목
+                                                        중요도 등을 종합
+                                                        고려하여 평가항목 관련
+                                                        타겟리스트 중 추천 상위
+                                                        3개의 항목입니다.
+                                                    </p>
                                                 </div>
-                                                <Button variant="smallSub1">
-                                                    타겟 추출
+                                                <Button variant="primary">
+                                                    Sprut 연계
                                                 </Button>
                                             </div>
-                                            <div className="single-box-txt">
-                                                <strong>
-                                                    기업의 연체가 예측됩니다.
-                                                </strong>
-                                                <div className="single-box-tip">
-                                                    <p>
-                                                        기업의 연체가 되지
-                                                        않도록 각별한 주의가
-                                                        필요합니다.
-                                                    </p>
-                                                    <div className="tip-box">
-                                                        기업의 연체가 되지
-                                                        않도록 각별한 주의가
-                                                        필요합니다.
+                                        </div>
+                                    )}
+                                    {exSkeleton ? (
+                                        <div className="single-ai-box">
+                                            <img
+                                                src={skeletonsingle2}
+                                                alt="로딩 중"
+                                                className="skeleton-img"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className="single-box-content repeat-two">
+                                            <div className="single-box">
+                                                <div className="single-view-box">
+                                                    <div className="left">
+                                                        <Badge
+                                                            value="건전성"
+                                                            color="black"
+                                                        />
+                                                        <strong>
+                                                            기업연체예측 관리
+                                                        </strong>
+                                                    </div>
+                                                    <Button variant="smallSub1">
+                                                        타겟 추출
+                                                    </Button>
+                                                </div>
+                                                <div className="single-box-txt">
+                                                    <strong>
+                                                        기업의 연체가
+                                                        예측됩니다.
+                                                    </strong>
+                                                    <div className="single-box-tip">
+                                                        <p>
+                                                            기업의 연체가 되지
+                                                            않도록 각별한 주의가
+                                                            필요합니다.
+                                                        </p>
+                                                        <div className="tip-box">
+                                                            기업의 연체가 되지
+                                                            않도록 각별한 주의가
+                                                            필요합니다.
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="single-box">
-                                            <div className="single-view-box">
-                                                <div className="left">
-                                                    <Badge
-                                                        value="RM OneTeam"
-                                                        color="black"
-                                                    />
+                                            <div className="single-box">
+                                                <div className="single-view-box">
+                                                    <div className="left">
+                                                        <Badge
+                                                            value="RM OneTeam"
+                                                            color="black"
+                                                        />
 
-                                                    <strong>
-                                                        BB+ 법인 중 CEO 예측 BB+
-                                                        법인 중 CEO 예측
-                                                    </strong>
+                                                        <strong>
+                                                            BB+ 법인 중 CEO 예측
+                                                            BB+ 법인 중 CEO 예측
+                                                        </strong>
+                                                    </div>
+                                                    <Button variant="smallSub1">
+                                                        타겟 추출
+                                                    </Button>
                                                 </div>
-                                                <Button variant="smallSub1">
-                                                    타겟 추출
-                                                </Button>
-                                            </div>
-                                            <div className="single-box-txt">
-                                                <strong>
-                                                    종합 솔루션 타겟
-                                                    리스트입니다.
-                                                </strong>
-                                                <div className="single-box-tip">
-                                                    <p>
+                                                <div className="single-box-txt">
+                                                    <strong>
                                                         종합 솔루션 타겟
                                                         리스트입니다.
-                                                    </p>
-                                                    <div className="tip-box">
-                                                        종합 솔루션 타겟
-                                                        리스트입니다.
+                                                    </strong>
+                                                    <div className="single-box-tip">
+                                                        <p>
+                                                            종합 솔루션 타겟
+                                                            리스트입니다.
+                                                        </p>
+                                                        <div className="tip-box">
+                                                            종합 솔루션 타겟
+                                                            리스트입니다.
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -730,11 +756,8 @@ const Main: React.FC<IPageProps> = (props) => {
                                     {activeTab === 0 && (
                                         <div className="contents-tab-panel">
                                             <ul className="notice-task-list">
-                                                <li>
-                                                    <a
-                                                        href="#"
-                                                        className="top-fixed"
-                                                    >
+                                                <li className="top-fixed">
+                                                    <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검 AI STUODIO
@@ -743,103 +766,120 @@ const Main: React.FC<IPageProps> = (props) => {
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
-                                                    <a
-                                                        href="#"
-                                                        className="top-fixed"
-                                                    >
-                                                        <span className="txt">
-                                                            AI STUODIO 서비스
-                                                            점검
-                                                        </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
-                                                    </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li className="top-fixed">
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             AI STUODIO 서비스
                                                             점검
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
+                                                    </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span className="txt">
+                                                            AI STUODIO 서비스
+                                                            점검
                                                         </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -858,100 +898,109 @@ const Main: React.FC<IPageProps> = (props) => {
                                                             우량고객 이탈 예측
                                                             과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
+                                                </li>
+                                                <li>
                                                     <a href="#">
                                                         <span className="txt">
                                                             SOHO 우량고객 이탈
                                                             예측 과제
                                                         </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
                                                     </a>
-                                                    <a href="#">
-                                                        <span className="txt">
-                                                            SOHO 우량고객 이탈
-                                                            예측 과제
-                                                        </span>
-                                                        <span className="status-txt">
-                                                            2024-02-22
-                                                        </span>
-                                                    </a>
+                                                    <span className="status-txt">
+                                                        2024-02-22
+                                                    </span>
                                                 </li>
                                             </ul>
                                             {/* 데이터 없을때 */}

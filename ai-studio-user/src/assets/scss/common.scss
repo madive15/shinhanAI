@@ -1188,6 +1188,9 @@
     .single-box-content {
         margin-bottom: 0;
     }
+    .skeleton-img {
+        height: 116px;
+    }
 }
 .single-box-content {
     display: grid;
@@ -3884,14 +3887,14 @@
         display: none;
     }
     li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        padding: 6px 12px;
+        background-color: var(--background-color3);
+        border-radius: 6px;
         a {
-            padding: 6px 12px;
-            background-color: var(--background-color3);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 4px;
             .txt {
                 line-height: 24px;
                 font-size: 14px;
@@ -3906,24 +3909,26 @@
                     padding-right: 24px;
                 }
             }
-            .status-txt {
-                color: var(--font-color2);
-                font-size: 13px;
-                letter-spacing: -0.325px;
-                font-weight: 400;
-                min-width: fit-content;
-            }
-            &.top-fixed {
+        }
+        .status-txt {
+            color: var(--font-color2);
+            font-size: 13px;
+            letter-spacing: -0.325px;
+            font-weight: 400;
+            min-width: fit-content;
+        }
+        &.top-fixed {
+            padding-left: 40px;
+            background: var(--color2)
+                url("../images/icon/ico-exclamation-blue24.png") 12px center
+                no-repeat;
+            a {
                 font-weight: 700;
                 color: var(--sub-color3);
-                padding-left: 40px;
-                background: var(--color2)
-                    url("../images/icon/ico-exclamation-blue24.png") 12px center
-                    no-repeat;
             }
-            &:last-of-type {
-                margin-bottom: 0;
-            }
+        }
+        &:last-of-type {
+            margin-bottom: 0;
         }
     }
 }
