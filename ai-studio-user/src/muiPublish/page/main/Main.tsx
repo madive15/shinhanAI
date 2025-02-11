@@ -82,6 +82,7 @@ const Main: React.FC<IPageProps> = (props) => {
                 <div className="main-contents">
                     <div className="main-left">
                         {activeMainTab === 0 && (
+                            // 영업점 싱글뷰
                             <div className="branch-crm">
                                 <h2 className="main-ank-tit">
                                     <a href="#">영업점 싱글뷰</a>
@@ -200,6 +201,7 @@ const Main: React.FC<IPageProps> = (props) => {
                             </div>
                         )}
                         {activeMainTab === 1 && (
+                            // 기업 고객 싱글뷰
                             <div className="branch-crm">
                                 <h2 className="main-ank-tit">
                                     <a href="#">기업 고객 싱글뷰</a>
@@ -378,6 +380,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                     />
                                 </div>
                             ) : (
+                                // 타겟 추출 내역
                                 <div className="target-history">
                                     <h2 className="main-ank-tit">
                                         <a href="#">타겟 추출 내역</a>
@@ -621,6 +624,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                     />
                                 </div>
                             ) : (
+                                // 모델 생성 내역
                                 <div className="model-history">
                                     <h2 className="main-ank-tit">
                                         <a href="#">모델 생성 내역</a>
@@ -659,6 +663,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                     />
                                 </div>
                             ) : (
+                                // ai 스튜디오 현황
                                 <div className="studio-box">
                                     <h2 className="main-ank-tit">
                                         AI Studio 현황
@@ -755,6 +760,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                     </div>
                                     {activeTab === 0 && (
                                         <div className="contents-tab-panel">
+                                            {/* 공지사항 리스트 */}
                                             <ul className="notice-task-list">
                                                 <li className="top-fixed">
                                                     <a href="#">
@@ -886,6 +892,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                     )}
                                     {activeTab === 1 && (
                                         <div className="contents-tab-panel">
+                                            {/* 과제신청 리스트 */}
                                             <ul className="notice-task-list">
                                                 <li>
                                                     <a href="#">
@@ -1023,6 +1030,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                 />
                             </div>
                         ) : (
+                            // 사용량 TOP10
                             <div className="use-top-target">
                                 <h2>타겟 추출 사용량 TOP 10 </h2>
                                 <div className="contents-tab">
@@ -1332,6 +1340,7 @@ const Main: React.FC<IPageProps> = (props) => {
                                 />
                             </div>
                         ) : (
+                            //즐겨찾기
                             <div className="use-bookmark">
                                 <h2 className="main-ank-tit">
                                     <a href="#">즐겨 찾기</a>

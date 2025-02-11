@@ -58,6 +58,15 @@ const TargetThumbnail: React.FC<IPageProps> = (props) => {
         "썸네일",
         "썸네일",
         "썸네일",
+        "썸네일",
+        "썸네일",
+        "썸네일",
+        "썸네일",
+        "썸네일",
+        "썸네일",
+        "썸네일",
+        "썸네일",
+        "썸네일",
     ];
     const [ageSelect, setAgeSelect] = React.useState("");
     const selectChange = (event: SelectChangeEvent) => {
@@ -94,7 +103,88 @@ const TargetThumbnail: React.FC<IPageProps> = (props) => {
                 </div>
             </div>
             {tumbnail.length > 0 ? (
-                <div className="card-box-wrap">
+                <div className="card-box-wrap scroll">
+                    <div className="card-box">
+                        <a href="#" className="">
+                            <div className="book-mark">
+                                <Checkbox
+                                    className="book-mark"
+                                    icon={<Bookmark />}
+                                    checkedIcon={<BookmarkOn />}
+                                    defaultChecked
+                                />
+                            </div>
+                            <div className="badge-wrap">
+                                <Badge value="전략" color="black " />
+                                <Badge
+                                    value="중분류중분류중분류"
+                                    color="navy "
+                                    classifi={true}
+                                />
+                                <Badge value="N" color="red" />
+                            </div>
+                            <p className="card-box-tit">
+                                <strong>프리빌트 된 항목</strong>
+                            </p>
+                            <p className="card-box-desc">
+                                프리빌트된 항목에 대한 간략한 설명이 들어갑니다.
+                                최대 2줄 까지 들어갑니다. 그 이후에는 말줄임표로
+                                생략됩니다.
+                            </p>
+                            <div className="card-box-bottom">
+                                <div className="hash-wrap">
+                                    <Hash value="#한글한글한글" type="type2" />
+                                    <Hash value="#TAGTAGTAG" type="type2" />
+                                    <Hash value="+3" type="type2 bg" />
+                                </div>
+                                <IconButton className="ico-circle20">
+                                    <Search12 />
+                                </IconButton>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="card-box">
+                        <a href="#" className="">
+                            <div className="book-mark">
+                                <Checkbox
+                                    className="book-mark"
+                                    icon={<Bookmark />}
+                                    checkedIcon={<BookmarkOn />}
+                                    defaultChecked
+                                />
+                            </div>
+                            <div className="badge-wrap">
+                                <Badge value="전략" color="black " />
+                                <Badge
+                                    value="중분류중분류중분류"
+                                    color="navy "
+                                    classifi={true}
+                                />
+                                <Badge value="N" color="red" />
+                            </div>
+                            <p className="card-box-tit">
+                                <strong>
+                                    프리빌트 된 항목 프리빌트 된 항목 프리빌트
+                                    된 항목 프리빌트 된 항목
+                                </strong>
+                            </p>
+                            <p className="card-box-desc">
+                                프리빌트된 항목에 대한 간략한 설명이 들어갑니다.
+                                최대 2줄 까지 들어갑니다. 그 이후에는 말줄임표로
+                                생략됩니다.
+                            </p>
+                            <div className="card-box-bottom">
+                                <div className="hash-wrap">
+                                    <Hash value="#한글한글한글" type="type2" />
+                                    <Hash value="#TAGTAGTAG" type="type2" />
+                                    <Hash value="+3" type="type2 bg" />
+                                </div>
+                                <IconButton className="ico-circle20">
+                                    <Search12 />
+                                </IconButton>
+                            </div>
+                        </a>
+                    </div>
                     {tumbnail.map((v: string, i: number) => (
                         <div className="card-box" key={i}>
                             <a href="#" className="">
