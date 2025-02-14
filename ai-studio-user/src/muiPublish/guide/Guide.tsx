@@ -1285,23 +1285,48 @@ export default function VerticalTabs() {
                     </div>
                     <div className="date-month-btn">
                         <span className="date-ym-radio">
-                            <input type="radio" name="date1" id="3m" />
+                            <input
+                                type="radio"
+                                name="date1"
+                                id="3m"
+                                value="1"
+                            />
                             <label htmlFor="3m">7일</label>
                         </span>
                         <span className="date-ym-radio">
-                            <input type="radio" name="date1" id="6m" />
+                            <input
+                                type="radio"
+                                name="date1"
+                                id="6m"
+                                value="2"
+                            />
                             <label htmlFor="6m">15일</label>
                         </span>
                         <span className="date-ym-radio">
-                            <input type="radio" name="date1" id="1y" />
+                            <input
+                                type="radio"
+                                name="date1"
+                                id="1y"
+                                value="3"
+                            />
                             <label htmlFor="1y">1개월</label>
                         </span>
                         <span className="date-ym-radio">
-                            <input type="radio" name="date1" id="3y" />
+                            <input
+                                type="radio"
+                                name="date1"
+                                id="3y"
+                                value="4"
+                            />
                             <label htmlFor="3y">3개월</label>
                         </span>
                         <span className="date-ym-radio">
-                            <input type="radio" name="date1" id="5y" />
+                            <input
+                                type="radio"
+                                name="date1"
+                                id="5y"
+                                value="5"
+                            />
                             <label htmlFor="5y">전체</label>
                         </span>
                     </div>

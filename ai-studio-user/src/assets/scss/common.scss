@@ -1962,6 +1962,15 @@
         }
     }
 }
+
+.ocr-origin,
+.ocr-thumb {
+    background-color: var(--background-color3);
+    border-radius: 16px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
 .between-box {
     display: flex;
     align-items: center;

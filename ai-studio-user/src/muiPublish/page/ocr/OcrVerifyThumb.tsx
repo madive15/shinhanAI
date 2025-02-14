@@ -72,8 +72,12 @@ const OcrVerifyThumb: React.FC<IPageProps> = (props) => {
                 className="thumb-box"
                 {...settings}
             >
-                <img src={data} alt="" />
-                <img src={data2} alt="" />
+                <div className="ocr-thumb">
+                    <img src={data} alt="" />
+                </div>
+                <div className="ocr-thumb">
+                    <img src={data2} alt="" />
+                </div>
             </Slider>
             <div className="slide-control">
                 <button className="prev" onClick={previous}>
@@ -95,7 +99,9 @@ const OcrVerifyThumb: React.FC<IPageProps> = (props) => {
             >
                 <DialogTitle>AI-OCR검증 원본보기</DialogTitle>
                 <DialogContent>
-                    <img src={data} alt="" />
+                    <div className="ocr-origin">
+                        <img src={data} alt="" />
+                    </div>
                 </DialogContent>
                 {/* <DialogActions>
                     <Button variant="sub2" onClick={popupClose}>
